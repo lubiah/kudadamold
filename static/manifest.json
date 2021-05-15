@@ -1,19 +1,19 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"name": "Kudadam",
+	"short_name": "Kudadam",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
 		{
-			"src": "logo-192.png",
+			"src": "https://kudadam.sirv.com/logo/logo.png",
 			"sizes": "192x192",
 			"type": "image/png",
 			"purpose": "any maskable"
 		},
 		{
-			"src": "logo-512.png",
+			"src": "https://kudadam.sirv.com/logo/logo.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "any maskable"

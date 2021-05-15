@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	let number = 0;
+	let number = 56;
 </script>
 
 <div class="mx-auto text-center" id="body">

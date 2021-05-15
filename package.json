@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "Kudadam",
+  "description": "Kudadam, my personal website",
   "version": "0.0.1",
   "scripts": {
     "watch:tailwind": "postcss static/tailwind.css -o static/index.css -w",

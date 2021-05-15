@@ -13,7 +13,7 @@
     import Button from "../../../Components/Button.svelte";
     export let tool;   
 
-	let number = 3;
+	let number = 2;
 	let results = '';
 	function get_factors(number){
     //Function responsible for generating factors
@@ -59,6 +59,6 @@
     	<Button on:click={generate}>Generate</Button>
     <div>
         <p class="block font-semibold">Factors</p>
-       	<p class="m-3 max-w-sm">{results}</p>
+       	<p class="m-3 max-w-sm">[{results}]</p>
     </div>
 </Body>

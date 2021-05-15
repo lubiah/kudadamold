@@ -15,24 +15,27 @@
 
     import * as Palindrome from "./_script.js";
     import jquery from "jquery";
-    let text;
-    let case_sensitive;
-    let ignore_whitespaces;
+
+    let data = {
+        text : '',
+        case_sensitive: false,
+        ignore_whitespaces: false
+    };
+    let explanation = '';
     const isPalindrome = ()=>{
-        case_sensitive = case_sensitive === undefined ? false : true;
-        ignore_whitespaces = ignore_whitespaces === undefined ? true : false;
-        text  = ignore_whitespaces ? text.replace(/\s/g, '') : text;
-        let formatted_text = case_sensitive ? text : text.toLowerCase();
-        let res = Palindrome.palindrome_checker(text);
+        console.log(data);
+        data.text  = ignore_whitespaces ? data.text.replace(/\s/g, '') : data.text;
+        let formatted_text = data.case_sensitive ? data.text : data.text.toLowerCase();
+        let res = Palindrome.palindrome_checker(data.text);
         if (res)
             jquery("#results_input").val("Text is a palindrome");
         else
             jquery("#results_input").val("Text is not a palindrome");
 
-        if (text.length >= 3){
+        if (data.text.length >= 3){
 
-           let explanation = Palindrome.explanation(res,formatted_text,case_sensitive, ignore_whitespaces);
-            console.log(explanation);
+           explanation = Palindrome.explanation(res,data.text,formatted_text,data.case_sensitive, data.ignore_whitespaces);  
+           console.log(explanation);
         }
 
     }
@@ -43,20 +46,22 @@
 <Body>
     <div>
         <label for="word">Enter a word or sentence</label>
-        <input type="text" name="word" required id="word" placeholder="Enter word here" bind:value={text}>
+        <input type="text" name="word" required id="word" placeholder="Enter word here" bind:value={data.text}>
     </div>
     <div class="mt-2">
         <label for="case_sensitive">Case Sensitive</label>      
-        <input type="checkbox" name="case_sensitive" id="case_sensitive" bind:checked={case_sensitive}>  
+        <input type="checkbox" name="case_sensitive" id="case_sensitive" bind:checked={data.case_sensitive}>  
     </div>
     <div>
         <label for="ignore_whitespaces">Ignore whitespaces</label>
-        <input type="checkbox" name="ignore_whitespaces" id="ignore_whitespaces" bind:checked={ignore_whitespaces}>
-       	<Button Class="block" on:click={isPalindrome}>Check</Button>
+        <input type="checkbox" name="ignore_whitespaces" id="ignore_whitespaces" bind:checked={data.ignore_whitespaces}>
+       	<Button block on:click={isPalindrome}>Check</Button>
     </div>
     <div>
         <span>Answer will show here</span>
         <input type="text" name="results_input" id="results_input" class="form-control" placeholder="Answer will show here">
     </div>
-<div id="explanation_div"></div>
+<div id="explanation_div">
+<h2>Explanation</h2> 
+{@html explanation}</div>
 </Body>
