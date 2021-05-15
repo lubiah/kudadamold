@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import url from '@rollup/plugin-url';
+import  json  from "@rollup/plugin-json";
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
@@ -23,6 +24,9 @@ export default {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
+			json({
+				compact:true
+			}),
 			replace({
 				preventAssignment: true,
 				values:{
@@ -76,6 +80,9 @@ export default {
 		input: config.server.input(),
 		output: config.server.output(),
 		plugins: [
+		json({
+			compact: true
+		}),
 			replace({
 				preventAssignment: true,
 				values:{

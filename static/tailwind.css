@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+html {
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+}
+
+@layer base {
+
+  html {
+  	scroll-behavior: smooth;
+  	scrollbar-width: thin;
+  	font-size: 1rem;
+  }
+
+ p, li,b,strong  {
+    font-size: clamp(1.08rem, 1em + 2vw, 1.14rem);
+    @apply text-gray-700 leading-relaxed;
+  }
+  b, strong {
+    @apply font-medium;
+  }
+  h1 {
+  	font-size: clamp(33px, 1em + 2vw, 45px);
+    margin: 24px;
+  }
+  h2 {
+  	font-size: clamp(28px, 1em + 2vw, 35px);
+    margin: 24px;
+  }
+h3 {
+	font-size: clamp(23px, 1em + 2vw, 26px);
+  margin: 24px;
+}
+h4 {
+	font-size: clamp(20px, 1em + 2vw, 22px);
+  margin: 24px;
+}
+h5 {
+	font-size: clamp(16px, 1em + 2vw, 19px);
+  margin: 24px;
+}
+h6 {
+	font-size: clamp(13px, 1em + 2vw, 15px);
+  margin: 24px;
+}
+a {
+  color: #1266f1;
+}
+
+
+}
+
+@screen lg {
+    h1 {
+      font-size: 40px;
+      margin: 20px;
+    }
+    h2 {
+      font-size: 32px;
+      margin: 24px;
+    }
+    h3 {
+      font-size: 28px;
+      margin: 24px;
+    }
+    h4 {
+      font-size: 24px;
+      margin: 24px;
+    }
+    h5 {
+      font-size: 20px;
+      margin: 24px;
+    }
+    h6 {
+      font-size: 16px;
+      margin: 24px;
+    }
+  }
