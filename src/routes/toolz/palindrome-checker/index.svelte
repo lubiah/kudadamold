@@ -23,7 +23,6 @@
     };
     let explanation = '';
     const isPalindrome = ()=>{
-        console.log(data);
         data.text  = ignore_whitespaces ? data.text.replace(/\s/g, '') : data.text;
         let formatted_text = data.case_sensitive ? data.text : data.text.toLowerCase();
         let res = Palindrome.palindrome_checker(data.text);
@@ -35,7 +34,7 @@
         if (data.text.length >= 3){
 
            explanation = Palindrome.explanation(res,data.text,formatted_text,data.case_sensitive, data.ignore_whitespaces);  
-           console.log(explanation);
+
         }
 
     }
@@ -59,7 +58,7 @@
     </div>
     <div>
         <span>Answer will show here</span>
-        <input type="text" name="results_input" id="results_input" class="form-control" placeholder="Answer will show here">
+        <input disabled type="text" name="results_input" id="results_input" class="form-control" placeholder="Answer will show here">
     </div>
 <div id="explanation_div">
 <h2>Explanation</h2> 

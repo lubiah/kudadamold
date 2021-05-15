@@ -31,7 +31,6 @@
             i++;
         }
         while (i !== data.no_of_times);
-        console.log(res);
     }
 </script>
 <Header tool={tool}/>
