@@ -41,22 +41,27 @@ twitter={{
   }}
 />
 <div class="text-center capitalize mb-5">
-	<h2 class="font-bold">The Blog</h2>
-	<p>
+	<h1 class="font-bold transform hover:rotate-6 transition duration-100">The Blog</h1>
+	<p class="text-lg">
 		<i>My personal journal where I write about tutorials, hacks and everything in between</i>
 	</p>
 </div>
-<h2 class="text-center font-bold">Latest Articles</h2>
-<div class="flex flex-wrap md:mx-20">
-	{#each posts as post (post.id) }
-		<Card
-		title = {post.title}
-		image = {post.image}
-		date = {post.date}
-		category = {post.category}
-		slug = {post.slug}
-		/>
-	{/each}
+
+<div class="md:mx-20">
+
+	<h2 class="ml-4 my-6 font-bold headings inline-block">Latest Articles</h2>
+
+	<div class="flex flex-wrap ">
+		{#each posts as post (post.id) }
+			<Card
+			title = {post.title}
+			image = {post.image}
+			date = {post.date}
+			category = {post.category}
+			slug = {post.slug}
+			/>
+		{/each}
+	</div>
 </div>
 <style type="text/css">
 
@@ -74,5 +79,14 @@ twitter={{
 	}
 	:global(.category_personal) {
 		background: #01a9bc;
+	}
+
+	:global(.headings::after){
+		display: block;
+		content: "";
+		padding: 2px;
+		border-radius: 8px;
+		width: 98%;
+		background-color: tomato;
 	}
 </style>

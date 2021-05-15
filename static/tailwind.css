@@ -51,6 +51,9 @@ a {
   color: #1266f1;
 }
 
+button * {
+  @apply text-white;
+}
 
 }
 
@@ -80,3 +83,4 @@ a {
       margin: 24px;
     }
   }
+

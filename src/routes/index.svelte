@@ -62,7 +62,7 @@ imageAlt: "Logo of Kudadam",
     </div>
 </section>
 <section class="my-4">
-    <h3 class="text-center text-red-500">Languages I <span style='color: green'>&lt;</span><span class="text-danger">speak</span><span style="color: green">/&gt;</span></h3>
+    <h3 class="text-center">Languages I <span style='color: green'>&lt;</span><span class="text-danger">speak</span><span style="color: green">/&gt;</span></h3>
 
     <div class="grid md:grid-cols-10">
         <div class="md:col-span-4">

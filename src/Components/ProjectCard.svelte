@@ -19,7 +19,7 @@ This component is used to display my projects in a more organized manner
 		<p>{description}</p>
 	</div>
 	<div class="flex">
-		<Button button_type="theme"><a href="{url}">Visit</a></Button>
+		<Button secondary><a href="{url}">Visit</a></Button>
 	</div>
 </div>
 
