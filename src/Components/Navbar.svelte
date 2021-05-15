@@ -14,7 +14,7 @@
 <a class="flex font-medium md:font-semibold text-lg items-center justify-center text-gray-700" href="/"><img src="https://kudadam.sirv.com/logo/logo.png?h=55&q=100" alt="">Kudadam</a>
 	<button class="ml-auto px-1 md:hidden" on:click={()=>{hidden = !hidden}}>
 		<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  <path stroke-linecap="round" class="text-gray-700" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 </svg>
 </button>
 	<div class="block md:flex md:ml-auto w-full md:w-auto" class:hidden id="nav-menu">
@@ -37,6 +37,6 @@
 		<slot>
 		</slot>
 		</ul>
-	</div>
+	</div>	
 	
 </nav>

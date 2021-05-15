@@ -37,7 +37,7 @@
 <div>
     <div class="flex flex-wrap gap-x-6">
         <label for="number">Number</label>
-        <input type="number" name=""  id="number" required on:input={(e)=>{data.number = parseInt(e.target.value)}} value={data.number}>
+        <input type="number" name=""  id="number" required on:input={(e)=>{data.number = parseInt(e.target.value)}} value={data.number} class="">
     </div>
     <div>
         <label for="min">Min. number</label>

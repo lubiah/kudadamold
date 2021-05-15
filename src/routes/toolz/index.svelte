@@ -18,14 +18,14 @@ description = "A set of tools designed and curated by me. Over here are free Jav
 />
 <div class="text-center">
 	<h1 class="font-bold my-2 text-blue-500">Toolz</h1>
-	<p><i>A set of tools curated and designed by me</i></p>
+	<p class="text-lg"><i>A set of tools curated and designed by me</i></p>
 </div>
 
 <div class="md:mx-32">
 	<ul class="divide-y divide-gray-300">
 		{#each tools as tool (tool.id) }
 			<li class="py-3 px-2">
-				<p class="my-2 text-lg text-blue-500 font-semibold">
+				<p class="my-1 text-lg text-blue-500 font-semibold">
 					<a href="{tool.url}" rel=prefetch>{tool.name}</a>
 				</p>
 				<p>{tool.description}</p>
