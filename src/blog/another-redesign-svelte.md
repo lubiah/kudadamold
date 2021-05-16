@@ -33,7 +33,7 @@ Since I wanted my website to be rendered server-side, I had to opt in for Sapper
 ## Sapper Is A Dead
 
 When I started using Sapper, I realized that it is dead. It is no longer in active development and it's new replacement is [SvelteKit](https://kit.svelte.dev). So why am I using Sapper? Well, it's because SvelteKit is still in early development and there might be some changes so am just waiting for the version 1 of SvelteKit before migrating to it.
-Also, they have a migrating guide which helps you to migrate from Sapper to SvelteKit so it's not a big deal. But maybe, I might switch to SvelteKit before they hit version 1, it looks promising.
+Also, they have a migration guide which helps you to migrate from Sapper to SvelteKit so it's not a big deal. But maybe, I might switch to SvelteKit before they hit version 1, it looks promising.
 
 
 
