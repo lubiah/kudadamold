@@ -26,8 +26,7 @@
 
 		if (data.valid){
 			data.id = Date.now();
-			data.value= 0
-			console.log("Data is Valid");
+			data.value= 0;
 			dispatch("add",data);
 			hidden = true;
 			data = [];

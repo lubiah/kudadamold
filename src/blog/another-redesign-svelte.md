@@ -50,3 +50,8 @@ file = files.map((file)=> file.slug === slug)
 If the slug is valid, it will then return a markdown file which will then be processed and returned in a json format, so actually, any blog url plus '.json' will return the json form of the blog post. For example, if you visited https://www.kudadam.com/blog/gettting-a-diary.json, you will receive the json form of the blog post. Or, if you visit https://wwww.kudadam.com/blog.json, you will recieve a json format of all the blog posts on the homepage. 
 After the url is processed, the HTML and other important information such as title and description is appended in a JSON and returned to the page and rendered. Very Cool!
 
+
+
+## Wrapping up...
+
+I think Svelte is really cool and you should really try it out. It helps you to build applications blazing fast. Just head over to their [site](https://svelte.dev) and try it out.

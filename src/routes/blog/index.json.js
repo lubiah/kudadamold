@@ -5,7 +5,14 @@ import fs from "fs";
 const crawler = new fdir().glob("*.md"); //The crawler 
 const files = crawler.crawl("./src/blog").sync();
 let id = 1;
-let posts = files.map((file)=>{
+
+let filtered = files.filter((file)=>{
+	let contents = fs.readFileSync(`./src/blog/${file}`,'utf-8');
+	let fm = front_matter(contents).attributes;
+	if (fm.draft !== true)
+		return fm;
+});
+let posts = filtered.map((file)=>{
 	let contents = fs.readFileSync(`./src/blog/${file}`,'utf-8');
 	let fm = front_matter(contents).attributes;
 	fm['slug'] = file.slice(0, file.lastIndexOf("."));

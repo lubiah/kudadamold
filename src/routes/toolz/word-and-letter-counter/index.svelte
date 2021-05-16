@@ -14,17 +14,26 @@
     import Add from './Add.svelte';
     export let tool;
     let hidden = true;
-    let text;
     let data = [];
 
     const addRule = (e)=>{
         hidden = true;
         data = [...data, e.detail];
-        console.log(data);  
     }
 
-    const check = ()=>{
-
+    const check = (e)=>{
+        let text = e.target.value;
+        console.log(e);
+        console.log(text);
+        data.map(item => {
+            if (item.type === "string"){
+                let reg = new RegExp(`[${item.data}]`,'g');
+                let value = text.match(reg);
+                if (value !== null)
+                    item.value = parseInt(value.length);
+            }
+        });
+        data = data;
     }
 </script>
 
@@ -35,12 +44,12 @@
 <Add {hidden} on:add={addRule}/>
 
 
-<textarea rows="5" cols="5" class="border-blue-500 border w-full rounded p-3 my-3" on:input={check} bind:value={text}></textarea>
+<textarea rows="5" cols="5" class="border-blue-500 border w-full rounded p-3 my-3" on:keypress={check}></textarea>
 <Button on:click={()=> hidden = !hidden}>Add Rule</Button>
 
-<table class="border border-gray-300 divide-y divide-gray-300">
+<table class="border border-gray-300 divide-gray-300 divide-x divide-y">
     <thead>
-        <tr class="font-semibold divide-x divide-gray-300">
+        <tr class="divide-gray-300 divide-x font-semibold">
             <td class="p-3">Name</td>
             <td class="p-3">Match</td>
             <td class="p-3">Match Type</td>
@@ -49,7 +58,7 @@
     </thead>
     <tbody>
     {#each data as item (item.id) }
-        <tr class="divide-x divide-y divide-gray-300">
+        <tr class="divide-gray-300 divide-y">
             <td class="p-5">{item.name}</td>
             <td class="p-5">{item.data}</td>
             <td class="p-5">{item.type}</td>
