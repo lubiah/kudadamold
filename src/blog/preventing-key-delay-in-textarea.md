@@ -5,7 +5,6 @@ category: Programming
 image: https://kudadam.sirv.com/blog/prevent_key_delay_textarea/hero.jpg
 keywords: textarea events, textarea input, textarea delay, input delay html
 date: 2021-05-16
-draft: true
 ---
 
 [TOC]
@@ -22,6 +21,27 @@ Initially, I thought this was a bug with my code but after a careful considerati
 
 ## What was really happening
 
-When ever we want to get the value of an element from an event, what we normally do is to take the `event.target.value`, this code is what returns the current value in the element.
+When ever we want to get the value of an element from an event, what we normally do is to take the `event.target.value`, this code is the code that returns the content in the element. Now when the contents are returned with `event.target.value` code, it returns everything excluding the current event, that means, excluding the current character.
 
-If we are to log the event to the console as well as the `event.target.value`, this is what we see.
+We are going to run an experiment to show what is happening. In the gif below, we add a function to the textarea `oninput` event.
+
+```js
+const show = e =>{
+	console.log(e.target.value);
+	console.log(e);
+}
+```
+[A gif debugging the problem](https://kudadam.sirv.com/blog/prevent_key_delay_textarea/debugging.gif)
+When the first character is entered, the `event.target.value` is '', this is because, the value is contained in the event object not the `event.target.value`.
+This same analogy happens as we continue to type
+
+## Solving the problem...
+
+Now as we are seeing what is the causing the problem, we can see the solution, 
+to prevent the key delay, we just need to adjust our function to add `event.key` which contains the current character to `event.target.value` which also contains the 'already' text, so the function will now be like this
+```js
+	const get_value = (e){
+		let text = e.target.value + e.key
+	}
+```
+So, that's the solution folks.
