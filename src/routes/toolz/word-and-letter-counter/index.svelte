@@ -22,9 +22,7 @@
     }
 
     const check = (e)=>{
-        let text = e.target.value;
-        console.log(e);
-        console.log(text);
+        let text = e.target.value + e.key;
         data.map(item => {
             if (item.type === "string"){
                 let reg = new RegExp(`[${item.data}]`,'g');
