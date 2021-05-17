@@ -9,12 +9,17 @@
 		data : null,
 		type : 'string',
 		valid : true,
-		regexFlags : null
+		regexFlags : 'g'
 	} //Also, it is reactive
 	let error = {
 		name: '',
 		data: ''
 	}; //This is the variable which will hold all the error messages
+
+	const hide = ()=> {
+		hidden = !hidden;
+		dispatch("close", true);
+	}
 
 	const add = ()=>{
 		data.valid = true;
@@ -39,7 +44,7 @@
 	}
 </script>
 
-<div class="fixed" id="backdrop" class:hidden>
+<div class="fixed" id="backdrop" class:hidden on:click|self={hide}>
 <div class="bg-white p-4 border border-gray-300 max-w-sm m-auto mt-28">
 	<p class="font-semibold text-2xl text-center my-1">Add new Type</p>
 	<div class="my-1">
@@ -73,7 +78,7 @@
 	<div class="border border-red-500 bg-red-100 p-2 my-1 rounded-md">
 		Don't include '/ /' when entering your regular Expressions, it is already done for you
 	</div>
-		<Button on:click={add}>Add</Button>
+		<Button on:click={add}>Add</Button><Button on:click={hide} danger primary={false}>Cancel</Button>
 </div>
 </div>
 
