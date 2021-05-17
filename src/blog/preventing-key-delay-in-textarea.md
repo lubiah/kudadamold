@@ -14,16 +14,16 @@ Whiles working with the textarea element today, I found a problem {.intro}
 
 ## The problem...
 
-I was using the `oninput` event to grab the text from the textarea element but I realized that the data collected was one character delayed. I then tried the `onkeypress`,`onkeyup` and `onkeydown` but it was still one character delayed.
+I was using the `onkeypress` event to grab the text from the textarea element but I realized that the data collected was one character delayed. I then tried the `onkeyup` and `onkeydown` but it was still one character delayed.
 
-Initially, I thought this was a bug with my code but after a careful consideration, I realized my code was fine and the `oninput` event was also working correctly so why the one character delay?
+Initially, I thought this was a bug with my code but after a careful consideration, I realized my code was fine and the `onkeypress` event was also working correctly so why the one character delay?
 ![A gif showing the problem](https://kudadam.sirv.com/blog/prevent_key_delay_textarea/keydelay.gif)
 
 ## What was really happening
 
 When ever we want to get the value of an element from an event, what we normally do is to take the `event.target.value`, this code is the code that returns the content in the element. Now when the contents are returned with `event.target.value` code, it returns everything excluding the current event, that means, excluding the current character.
 
-We are going to run an experiment to show what is happening. In the gif below, we add a function to the textarea `oninput` event.
+We are going to run an experiment to show what is happening. In the gif below, we add a function to the textarea `onkeypress` event.
 
 ```js
 const show = e =>{
