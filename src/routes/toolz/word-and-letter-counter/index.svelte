@@ -16,6 +16,30 @@
     export let tool;
     let hidden = true; //This is to show that the Add modal dialog is hidden;
     let data = [
+    {
+        name: "Lowercase Letters",
+        data: "[a-z]",
+        type: "regex",
+        regexFlags: "g",
+        value: 0,
+        id: 1
+    },
+    {
+        name: "Uppercase Letters",
+        data: "[A-Z]",
+        type: "regex",
+        regexFlags: "g",
+        value: 0,
+        id: 2
+    },
+    {
+        name: "Digits",
+        data: "0123456789",
+        type: "string",
+        regexFlags: "g",
+        value: 0,
+        id: 3
+    }
     ];//This variable contains all the data which will enable the application to work
     let text = ""; //The default value for the textarea element.
     const addRule = (e)=>{ 
@@ -49,11 +73,11 @@
     }
 </script>
 
-<Header tool={tool} buggy={true}/>
+<Header tool={tool}/>
 
 <Body>
 
-<Add {hidden} on:add={addRule}/>
+<Add {hidden} on:add={addRule} on:close={()=>hidden = !hidden}/>
 
 
 <textarea  bind:value={text} rows="5" cols="5" class="border-blue-500 border w-full rounded p-3 my-3" on:input={check}></textarea>
