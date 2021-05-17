@@ -4,12 +4,13 @@
 	export let primary = true;
 	export let secondary = false;
 	export let block = false;
+	export let danger = false;
 
 </script>
 <button on:click
 	{type} 
 	{disabled} 
- class="rounded my-3 py-1 mx-3 my-1 px-3 text-white" class:bg-blue-600={primary} class:secondary class:block>
+ class="rounded my-3 py-1 mx-3 my-1 px-3 text-white" class:bg-blue-600={primary} class:secondary class:block class:bg-red-600={danger}>
 	<slot></slot>
 </button>
 
