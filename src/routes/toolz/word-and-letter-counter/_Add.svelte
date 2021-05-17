@@ -3,16 +3,19 @@
 	import { createEventDispatcher } from "svelte";
 	export let hidden = false;
 	let dispatch = createEventDispatcher();
-	let data = {
+	let data; //This is the variable which is going to hold all the values which we will take from the user
+	$: data = {
 		name: null,
 		data : null,
 		type : 'string',
-		valid : true
-	}
+		valid : true,
+		regexFlags : null
+	} //Also, it is reactive
 	let error = {
 		name: '',
 		data: ''
-	};
+	}; //This is the variable which will hold all the error messages
+
 	const add = ()=>{
 		data.valid = true;
 		if (data.name === null || data.name.length === 0){
@@ -27,7 +30,8 @@
 		if (data.valid){
 			data.id = Date.now();
 			data.value= 0;
-			dispatch("add",data);
+			data.regexFlags = (data.regexFlags === null ? '': data.regexFlags); //If the flags are null, it will replace it with an empty string
+			dispatch("add",data); //The data is then added as an event
 			hidden = true;
 			data = [];
 			data.type = "string";
@@ -45,21 +49,29 @@
 	</div>
 	<div class="my-1">
 		<label for="regex">Match</label>
-		<input type="text" placeholder="Regex Code or Normal String" bind:value={data.data} on:input={()=>error.data = ''}>
-		<div class="my-2">
-		<div>
-		<label for="string">String</label>
-		<input type="radio" name="string" value="string" id="string" bind:group={data.type}>
-		</div>
-		<div>
-		<label for="regex">Regular Expression</label>
-		<input type="radio" name="regex" value="regex" id="regex" bind:group={data.type}>
-		</div>
-	</div>
+
+		<input type="text" class="w-2/3" placeholder="Regex Code or Normal String" bind:value={data.data} on:input={()=>error.data = ''}>
 		<span class="text-red-600">{error.data}</span>
+		{#if data.type === 'regex'}
+			<div>
+				<label for="flags">Flags</label>
+				<input type="text" id="flags" placeholder="Regex Flags" bind:value={data.regexFlags}>
+			</div>
+		{/if}
+		
 	</div>
-	<div class="border border-green-500 bg-green-100 p-2 my-1 rounded-md">
-		If you are entering a regular expression, provide the flags, example "/[a-z]/gi".
+	<div class="my-2">
+		<div>
+			<label for="string">String</label>
+			<input type="radio" name="string" value="string" id="string" bind:group={data.type}>
+		</div>
+		<div>
+			<label for="regex">Regular Expression</label>
+			<input type="radio" name="regex" value="regex" id="regex" bind:group={data.type}>
+		</div>
+	</div>
+	<div class="border border-red-500 bg-red-100 p-2 my-1 rounded-md">
+		Don't include '/ /' when entering your regular Expressions, it is already done for you
 	</div>
 		<Button on:click={add}>Add</Button>
 </div>
