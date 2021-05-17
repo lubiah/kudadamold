@@ -31,7 +31,7 @@ const show = e =>{
 	console.log(e);
 }
 ```
-[A gif debugging the problem](https://kudadam.sirv.com/blog/prevent_key_delay_textarea/debugging.gif)
+![A gif debugging the problem](https://kudadam.sirv.com/blog/prevent_key_delay_textarea/debugging.gif)
 When the first character is entered, the `event.target.value` is '', this is because, the value is contained in the event object not the `event.target.value`.
 This same analogy happens as we continue to type
 
