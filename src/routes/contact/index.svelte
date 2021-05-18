@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    import Contact from "../Components/ContactForm.svelte";
+    import Contact from "../../Components/ContactForm.svelte";
     import SEO from "svelte-seo";
     let email = "\u0020\u006c\u0075\u0063\u0072\u0065\u0074\u0069\u0075\u0073\u0062\u0069\u0061\u0068\u0040\u0070\u0072\u006f\u0074\u006f\u006e\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d";
 

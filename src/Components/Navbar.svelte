@@ -27,7 +27,7 @@
 						</a>
 					</li>
 					{:else}
-					<li class="@apply p-2 text-base text-gray-700 text-lg font-medium md:font-semibold dark:text-white">
+					<li class="p-2 text-base text-gray-700 text-lg font-medium md:font-semibold dark:text-white">
 						<a href={url} rel=prefetch class:active={segment === name.toLowerCase()} class="text-gray-700 block">
 						{name}
 						</a>
@@ -38,5 +38,15 @@
 		</slot>
 		</ul>
 	</div>	
-	
 </nav>
+<style type="text/css">
+	a {
+		transition: color 1s ease;
+	}
+	.active {
+		@apply text-red-500;
+	}
+	a:not(.active):hover {
+		@apply text-red-200;
+	}
+</style>
