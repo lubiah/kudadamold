@@ -15,8 +15,16 @@
 
 	let number = 2;
 	let results = '';
+    let valid = true;
+    let error = '';
 	function get_factors(number){
     //Function responsible for generating factors
+    if (number == null){
+        error = `Number value is empty or invalid`;
+        valid = false;
+    }
+    if (!valid)
+        return;
     let array = [];
     if (number % 2 == 0){
         for (let i = 0; i <= number/2; i++){
@@ -54,11 +62,12 @@
 <Body>
     <div>
         <label for="number">Enter the number</label>
-        <input bind:value={number} type="number" id="number">
+        <input bind:value={number} type="number" id="number" on:input={()=>error=''}>
+        <span class="text-red-500 text-sm">{error}</span>
     </div>
     	<Button on:click={generate}>Generate</Button>
     <div>
         <p class="block font-semibold">Factors</p>
-       	<p class="m-3 max-w-sm">[{results}]</p>
+       	<p class="m-3 max-w-sm text-lg">[ {results} ]</p>
     </div>
 </Body>

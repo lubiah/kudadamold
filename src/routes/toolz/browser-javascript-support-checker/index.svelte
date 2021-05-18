@@ -16,7 +16,8 @@
     export let tool;
 
     onMount(()=>{
-        jquery('#body').html(`<h2 class='text-green-500 my-2'>Congratulations</h2><p>Your web browser has JavaScript enabled</p>`);
+        jquery('#body').html(`<h2 class='text-green-500 my-2 text-4xl'>Congratulations</h2>
+            <p class='text-lg'>Your web browser has JavaScript enabled</p>`);
     });
 </script>
 
@@ -24,8 +25,7 @@
 <Body>
 <div id="body" class="text-center">  
     <noscript>
-        <h2 style="color: red">Sorry, JavaScript is disabled in your browser.</h2>
-        <i class="fas fa-times" style="color: red; font-size: 150px"></i>
+        <h2 class="text-red-600">Sorry, JavaScript is disabled in your browser.</h2>
     </noscript>
 </div>
 </Body>

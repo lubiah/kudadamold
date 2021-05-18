@@ -19,10 +19,19 @@
     let data = {
         text : '',
         case_sensitive: false,
-        ignore_whitespaces: false
+        ignore_whitespaces: false,
+        valid: true,
+        error: ''
     };
     let explanation = '';
     const isPalindrome = ()=>{
+        data.valid = true;
+        if (data.text.length < 1 || data.length == ''){
+            data.error = 'Enter a word or phrase';
+            data.valid = false;
+        }
+        if (!data.valid)
+            return;
         data.text  = ignore_whitespaces ? data.text.replace(/\s/g, '') : data.text;
         let formatted_text = data.case_sensitive ? data.text : data.text.toLowerCase();
         let res = Palindrome.palindrome_checker(data.text);
@@ -45,7 +54,8 @@
 <Body>
     <div>
         <label for="word">Enter a word or sentence</label>
-        <input type="text" name="word" required id="word" placeholder="Enter word here" bind:value={data.text}>
+        <input type="text" name="word" required id="word" placeholder="Enter word here" bind:value={data.text} on:input={()=> data.error=''}>
+        <span class="text-red-500 text-sm">{data.error}</span>
     </div>
     <div class="mt-2">
         <label for="case_sensitive">Case Sensitive</label>      

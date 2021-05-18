@@ -54,7 +54,7 @@ const tools = [
 		updated: null,
 	},
 	{
-		name: "Word and Letter Counter",
+		name: "Advanced Word and Letter Counter",
 		description: `A tool which counts the number of words, letters and punctuations in a given text`,
 		created: new Date('2021-05-11'),
 		updated: null,

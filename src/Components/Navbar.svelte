@@ -22,13 +22,13 @@
 			{#each nav_links as { name , url, id }  (id) }
 				{#if name === "Home"}
 					<li class="dark:text-white p-2 text-base text-gray-700 text-lg font-medium md:font-semibold">
-						<a href={segment === undefined ? "#":"/"} class:text-red-500={segment === undefined} class="text-gray-700 block">
+						<a href={segment === undefined ? "#":"/"} class:active={segment === undefined} class="text-gray-700 block">
 						{name}
 						</a>
 					</li>
 					{:else}
 					<li class="@apply p-2 text-base text-gray-700 text-lg font-medium md:font-semibold dark:text-white">
-						<a href={url} rel=prefetch class:text-red-500={segment === name.toLowerCase()} class="text-gray-700 block">
+						<a href={url} rel=prefetch class:active={segment === name.toLowerCase()} class="text-gray-700 block">
 						{name}
 						</a>
 					</li>

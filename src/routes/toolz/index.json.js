@@ -24,7 +24,7 @@ export function get(req, res, next){
 			result = get_info(query['info']);
 	}
 	else{
-		result = tools;
+		result = _.orderBy(tools, 'name', 'asc');
 	}
 	res.writeHead(200, {
 		"Context-Type" : "application/json"

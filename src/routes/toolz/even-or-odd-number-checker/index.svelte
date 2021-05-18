@@ -13,10 +13,20 @@
     import jquery from "jquery";
     import Button from "../../../Components/Button.svelte";
     export let tool;
+    let error = '';
     let number = 0;
+    let valid = false;
     const handleForm = ()=> {
+        valid = true;
+        if (number === null)
+        {
+            error = 'Number value is empty or invalid';
+            valid = false;
+        };
+        if (valid){
         let is_even = (number % 2 == 0) ? true : false;
         is_even ? jquery("#results").val("Number is an even number") : jquery("#results").val("Number is an odd number");
+        }
     }
 </script>
 
@@ -26,7 +36,8 @@
 <div>
     <div class="flex flex-wrap gap-x-6">
         <label for="number">Enter number</label>
-        <input type="number" bind:value={number}  id="number" required placeholder="Enter number">
+        <input type="number" on:input={()=>error = ''} bind:value={number}  id="number" required placeholder="Enter number">
+        <span class="text-red-500 text-sm">{error}</span>
     </div>
     <Button  on:click={handleForm}>Check</Button>
 </div>

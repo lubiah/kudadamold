@@ -18,11 +18,32 @@
         min_number : 1,
         max_number : 50,
         output_type: 'normal',
-        no_of_times : 1
+        no_of_times : 1,
+        valid: false
+    };
+    let error = {
+        min_number: '',
+        max_number: '',
+        no_of_times: ''
     };
     let res = [];
 
     const generate = ()=>{
+        data.valid = true;
+        if (data.max_number == null){
+            error.max_number = 'Maximum number is empty or invaild';
+            data.valid = false;
+        }
+        if (data.min_number == null){
+            error.min_number = `Mininum number is empty or invalid`;
+            data.valid = false;
+        }
+        if (data.no_of_times == null){
+            error.no_of_times = 'This value can not be empty';
+            data.valid = false;
+        }
+        if (!data.valid)
+            return;
         let i = 0;
         res = [];
         do {
@@ -38,8 +59,14 @@
     <div>
         <fieldset>
             <legend>Range</legend>
-            <label for="min_number">Min. number</label> <input type="number" id="min_number" required max="9223372036854775806" bind:value={data.min_number}><br>
-                    <label for="max_number">Max. number</label> <input type="number" id="max_number" required max="9223372036854775807" bind:value={data.max_number}>
+            <label for="min_number">Min. number</label>
+            <input type="number" class="block" id="min_number" required max="9223372036854775806" bind:value={data.min_number} on:input={()=>error.min_number = ''}>
+            <span class="text-red-500 text-sm block">{error.min_number}</span>
+
+            <label for="max_number">Max. number</label>
+            <input type="number" id="max_number" required max="9223372036854775807" bind:value={data.max_number} on:input={()=>error.max_number = ''}>
+            <span class="text-red-500 text-sm block">{error.max_number}</span>
+                    
         </fieldset>
             <fieldset>
                 <legend>Output type</legend>
@@ -56,8 +83,9 @@
             </fieldset>
             <fieldset>
                 <legend>No. of times</legend>
-                    <input type="number" id="no_of_times" name="no_of_times" required max="3333333" bind:value={data.no_of_times}>
+                    <input type="number" id="no_of_times" name="no_of_times" required max="3333333" bind:value={data.no_of_times} on:input={()=> error.no_of_times= ''}>
                     </fieldset>
+                    <span class="text-red-500 text-sm">{error.no_of_times}</span>
             </div>
             <div>
                 <Button on:click={generate}>Generate</Button>
