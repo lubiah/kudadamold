@@ -19,7 +19,6 @@ So today, I wanted to move my website to my server. I had been using [netlify](h
 First of all, am assuming you have finished with your Sapper project and you are ready to deploy. Since I want to run my website server side, am going to use the `npm run build` command. However, if you want to deploy yours statically, you can also use the `npm run export` command. So in the directory of the project, open your terminal and run any of the two commands.
 If it was able to build successfully, your output should look similar to the image below ↓
 <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building.jpg" alt="" />
-Now, we are done with step 1, let's move on to setting up our cpanel.
 
 ## Setting up on project on Cpanel
 
@@ -32,6 +31,7 @@ Now we have finished building our project, move on to your cpanel's homepage. It
 
 * __Click on "Create Application"__
   After you are taken to a new page after clicking on "Setup Node.js App", you will see a button on your upper right hand side labelled 'Create Application'.
+
   <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_application.jpg" alt="Create application button on Cpanel" />
 
 * __Fill in the Form__
@@ -43,6 +43,7 @@ Now we have finished building our project, move on to your cpanel's homepage. It
   Now, we are done, for the environmental variables, the one I would recommend for you to set is PORT and it's value as 80, this will ensure that all your fetch requests and user requests will use port 80.
   Then click on  CREATE on the upper right hand side of your screen.
   When you are done, your output should be similar to mine. 
+
   <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/filling_form.jpg" alt="Filling the Node app form" />
 
   Now, if you are to visit your application url, you will see a simple text that says 'it works'. This shows that our application is working correctly, now head over to your server's file manager and delete all the files in your application root, they are not needed.

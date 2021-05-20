@@ -72,8 +72,7 @@ twitter={{
 <style type="text/css">
   #post :global(h2,h3,h4)  {
     margin: 10px 2px;
-    color: tomato;
-    @apply font-semibold;
+    @apply font-semibold text-red-500;
   }
   #post :global(.toc) {
     @apply my-10;
