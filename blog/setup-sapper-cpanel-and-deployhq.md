@@ -56,4 +56,5 @@ We are going to use a service called [deployhq](https://www.deployhq.com) which 
 
 Head over to their website at [deployhq.com/signup](https://www.deployhq.com/signup) and create an account.
 After filling all the forms and creating your account, you will be directed to their dashboard which looks like the image below Then you click on "Create a project". 
+	
 <img src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/deployhq_dashboard.jpg" width="1266" height="783" alt="Dashboard of deployhq" />
