@@ -32,7 +32,7 @@ openGraph={{
     type: "article",
     url: `https://www.kudadam.com/blog/${post.url}`,
     article: {
-      //publishedTime: `${post[0].date}`,
+      publishedTime: `${post.date}`,
      // modifiedTime: `${post[0].last_updated}`,
       authors: [
         `Lucretius Biah`
@@ -77,5 +77,9 @@ twitter={{
   }
   #post :global(.toc) {
     @apply my-10;
+  } 
+  :global(img.Sirv:not([width]):not([height])){
+    max-width: 100%;
+    max-height: 400px;
   }
 </style>

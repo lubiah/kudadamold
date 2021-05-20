@@ -6,7 +6,7 @@ import 'highlight.js/styles/github.css';
 
 let page = new Object();
 const crawler = new fdir().glob("*.md"); 
-var files  = crawler.crawl("./src/blog").sync(); //Fetches all files with 'md' extension
+var files  = crawler.crawl("./blog").sync(); //Fetches all files with 'md' extension
 files = files.map(file => file.slice(0, file.lastIndexOf("."))); //Removes the file extension
 
 const markdown = new MarkdownIt({
@@ -39,7 +39,7 @@ export function get(req, res, next){
 	var exists = (files.filter(file => file === slug).length === 1) ? true : false;	//Checks if the slug exists or not
 	if (exists){
 		page.slug = slug;
-		let contents = fs.readFileSync(`./src/blog/${slug}.md`,`utf8`);
+		let contents = fs.readFileSync(`./blog/${slug}.md`,`utf8`);
 		let fm  = require("front-matter");
 		let front_matter = fm(contents).attributes;
 		let marked = markdown.render(fm(contents).body);

@@ -6,11 +6,13 @@ import url from '@rollup/plugin-url';
 import  json  from "@rollup/plugin-json";
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
+import dotenv from 'dotenv';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import sveltePreprocess from 'svelte-preprocess';	
 import pkg from './package.json';
 
+dotenv.config();
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
