@@ -1,0 +1,72 @@
+<script context="module">
+  import _ from "lodash";
+  export async function preload(page, session) {
+    let res = await this.fetch("/blog.json");
+    let posts = await res.json();
+    let categories = posts.map(post => {return post.category});
+    categories = _.uniq(categories);
+    return {
+      categories
+    };
+  }
+</script>
+<script>
+	import SEO from "svelte-seo";
+  export let categories;
+
+  const classify = data =>{
+    return data.toLowerCase().replace(/\s/g,"_");
+  }
+</script>
+
+<SEO
+title = "Category • Kudadam Blog"
+description = "A page which lists the various categories of the blog section"
+
+openGraph={{
+    title: 'Category • Kudadam Blog',
+    description: 'Category • Kudadam Blog',
+    url: 'https://www.kudadam.com/blog/category',
+    type: 'website',
+    images: [
+      {
+        url: 'https://kudadam.sirv.com/logo/logo.png',
+        width: 850,
+        height: 650,
+        alt: 'Logo'
+      }
+     ]
+  }}
+
+  twitter={{
+    site: "@lucretius_1",
+    title: "Category • Kudadam Blog",
+    description: "A page which lists the various categories of the blog section",
+    image: "https://kudadam.sirv.com/logo/logo.png",
+    imageAlt: "Logo of Kudadam",
+  }}
+/>
+
+<div>
+  <h1 class="text-center font-bold dark:text-white text-red-500 my-4">Blog Category</h1>
+  <p class='text-black dark:text-white text-center'><i>Various categories for the blog</i></p>
+  <div class="flex flex-wrap my-4 mx-auto h-screen">
+    {#each categories as category }
+      <a href="/blog/category/{classify(category)}">
+      <span class="m-4 p-3 rounded-md text-white category_{classify(category)}">{category}</span>
+    </a>
+    {/each}
+  </div>
+</div>
+
+<style>
+  :global(.category_programming) {
+    background: orange;
+  }
+  :global(.category_tips_and_tricks) {
+    background: #142f54;
+  }
+  :global(.category_personal) {
+    background: #01a9bc;
+  }
+</style>
