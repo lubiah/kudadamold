@@ -41,11 +41,11 @@ export function  get(req, res, next){
 			<language>en-us</language>
 			<description>Lucretius' personal blog on tech, programming and stuff</description>
 			 <category>Technology</category>
-			   <image>
+			 <image>
     			<url>https://kudadam.sirv.com/logo/logo.png</url>
     			<title>Kudadam Blog logo</title>
-    			<link>https://www.kudadam.com</link>
-  				</image>
+    			<link>https://www.kudadam.com/blog</link>
+  			</image>
 			${items}
 		</channel>
 	</rss>
