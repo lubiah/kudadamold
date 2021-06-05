@@ -5,3 +5,22 @@ body {
 	color: #333;
 
 }
+
+
+.category {
+	position: absolute;
+	padding: 2px 5px;
+	border-radius: 5px;
+	color: white;
+	top: 10px;
+	left: 15px;
+}
+.category_programming {
+	background: orange;
+}
+.category_tips_and_tricks {
+	background: #142f54;
+}
+.category_personal {
+	background: #01a9bc;
+}

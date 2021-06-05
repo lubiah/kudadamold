@@ -24,6 +24,7 @@
     "jquery": "^3.6.0",
     "js-cookie": "^2.2.1",
     "mdsvex": "^0.9.6",
+    "node-fetch": "^2.6.1",
     "nodemailer": "^6.6.0",
     "polka": "next",
     "regex-escape": "^3.4.10",
@@ -55,7 +56,6 @@
     "sapper": "^0.28.0",
     "svelte": "^3.17.3",
     "svelte-notifications": "^0.9.9",
-    "svelte-page-progress": "^1.0.1",
     "svelte-seo": "^1.2.1",
     "tailwindcss": "^2.1.2"
   }

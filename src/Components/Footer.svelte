@@ -1,9 +1,9 @@
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 w-full mt-8">
 	<div class="flex flex-wrap mb-4 gap-x-20 mx-auto w-full px-4" id="flexible">
-		<div class="w-full md:w-auto pb-2">
+		<div class="w-full md:w-auto mb-4">
 			<div class="flex items-center justify-center">
 			<img src="https://kudadam.sirv.com/logo/logo.png?thumbnail=100" alt="Kudadam logo">
-			<strong>Kudadam</strong>
+			<strong class="invisible md:visible">Kudadam</strong>
 			</div>
 		</div>
 		<div>
@@ -24,7 +24,8 @@
 				<li><a href="/about">About</a></li>
 				<li><a href="/contact">Contact</a></li>
 				<li><a href="/blog">Blog</a></li>
-				<li><a href="toolz">Toolz</a></li>
+				<li><a href="/toolz">Toolz</a></li>
+				<li><a href="feed">RSS feed</a></li>
 			</ul>
 		</div>
 		<div>

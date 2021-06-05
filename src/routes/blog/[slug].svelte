@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import SEO from "svelte-seo";
 	import Head from "../../Components/Head.svelte";
-	import PageProgress from "svelte-page-progress";
+	import PageProgress from "../../Components/PageProgress.svelte";
   import "prismjs/themes/prism-dark.css";
 
   
@@ -91,9 +91,9 @@ twitter={{
 	</div>
 </div>
 
-<!-- {#if process.browser}
-<PageProgress color="tomato" height="6px" position="bottom"/>
-{/if} -->
+{#if process.browser}
+<PageProgress color="red" position="bottom"/>
+{/if}
 
 <style type="text/css">
   #post :global(h2,h3,h4)  {
@@ -114,14 +114,14 @@ twitter={{
     list-style-type: lower-roman;
   }
   :global(#post-image){
-    max-height: 400px !important;
+    max-height: 350px !important;
     width: 100%;
-    height: auto;
+    height: 350px;
     border-radius: 5px;
   }
   :global(#post-image:empty){
-    max-height: 400px;
-    background-color: #888888;
+    max-height: 300px;
+    background: linear-gradient(pink,violet);
     width: 100%;
   }
   :global(.toc){
