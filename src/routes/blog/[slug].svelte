@@ -79,12 +79,12 @@ twitter={{
 <div class="my-4" id="post">
 	<div class="md:w-2/3 md:mx-auto">
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
-    <img src="{metadata.image}" alt="" id="post-image">
-    <div class="py-4 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
+    <div class="py-2 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
       <p class="pl-2">
         <span>{metadata.author || "Lucretius Biah"}</span> • <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
       </p>
     </div>
+    <img src="{metadata.image}" alt="" id="post-image" class="h-52 my-4 md:h-80 max-h-52 w-full">
 		<div class="leading-tight px-2">
       <svelte:component this={content}/>  
     </div>
@@ -114,14 +114,11 @@ twitter={{
     list-style-type: lower-roman;
   }
   :global(#post-image){
-    max-height: 350px !important;
-    width: 100%;
-    height: 350px;
     border-radius: 5px;
   }
   :global(#post-image:empty){
-    max-height: 300px;
-    background: linear-gradient(pink,violet);
+    @apply max-h-80 h-80;
+    background: linear-gradient(black,grey);
     width: 100%;
   }
   :global(.toc){
@@ -131,4 +128,11 @@ twitter={{
     list-style-position: inside;
     list-style-type: disc;
   }
+
+  @screen sm {
+    :global(#post-image:empty){
+      @apply h-52;
+    }
+  }
+
 </style>

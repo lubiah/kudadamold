@@ -9,7 +9,6 @@ const get_items = async ()=>{
 }
 
 
-
 const sort_items = async ()=>{
 	let posts = await get_items();
 	let rss = ``;

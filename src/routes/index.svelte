@@ -4,12 +4,12 @@ import Button from "../Components/Button.svelte";
 import ProjectCard from "../Components/ProjectCard.svelte";
 </script>
 <SEO
-title = "Kudadam • Home"
+title = "Kudadam"
 description = "Hey, am Lucretius, a software developer and website designer. Welcome to my part of the internet. Feel free to read my blog post, download my softwares or just look around"
 keywords = "lucretius, biah, lucretius biah, lucretius website"
 canonical = "https://www.kudadam.com"
 openGraph={{
-title: 'Kudadam • Home',
+title: 'Kudadam',
 description: 'Hey, am Lucretius, a software developer and website designer. Welcome to my part of the internet. Feel free to read my blog post, download my softwares or just look around',
 url: 'https://www.kudadam.com',
 type: 'website',
@@ -24,7 +24,7 @@ alt: 'Kudadam Logo'
 }}
 twitter={{
 site: "@lucretius_1",
-title: "Kudadam • Home",
+title: "Kudadam",
 description: "Hey, am Lucretius, a software developer and website designer. Welcome to my part of the internet. Feel free to read my blog post, download my softwares or just look around",
 image: "https://kudadam.sirv.com/logo/logo.png",
 imageAlt: "Logo of Kudadam",
@@ -73,37 +73,20 @@ imageAlt: "Logo of Kudadam",
                 <div class="col-span-7 md:col-span-4">
                     <p class="font-bold my-3">Backend languages</p>
                     <ul class="rounded border divide-y divide-gray-300 p-0">
-                        <li class="flex p-2">
-                            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg" class="h-10 w-10 mr-1" alt=""/>
-                            Ruby
-                        </li>
-                        <li class="flex p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/150px-ISO_C%2B%2B_Logo.svg.png" alt="" class="h-10 w-10 mr-1" />
-                        C++</li>
-                        <li class="flex p-2">
-                            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="h-10 w-10 mr-1" alt=""/>
-                        Python</li>
-                        <li class="flex p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/labs/8/8e/Mysql_logo.png" alt="MySQL logo" class="h-10 w-10 mr-1">
-                        MySQL</li>
-                        <li class="flex p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript logo" class="h-10 w-10 mr-1" />
-                        JavaScript</li>
-                        <li class="flex p-2"><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP logo" class="h-10 w-10 mr-1" />PHP</li>
+                        <li class="flex p-2">Ruby</li>
+                        <li class="flex p-2">C++</li>
+                        <li class="flex p-2">Python</li>
+                        <li class="flex p-2">MySQL</li>
+                        <li class="flex p-2">JavaScript</li>
+                        <li class="flex p-2">PHP</li>
                     </ul>
                 </div>
                 <div class="col-span-7 md:col-span-4 m-2">
                     <p class="font-bold my-3">Front-end languages</p>
                         <ul class="rounded border divide-y divide-gray-300 p-0">
-                            <li class="flex p-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="Logo of HTML" class="h-10 w-10" />
-                            HTML</li>
-                            <li class="flex p-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="Logo of CSS3" class="h-10 w-10">
-                            CSS</li>
-                            <li class="flex p-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg" alt="SASS logo" class="h-10 w-10" />
-                            SASS</li>
+                            <li class="flex p-2">HTML</li>
+                            <li class="flex p-2">CSS</li>
+                            <li class="flex p-2">SASS</li>
                         </ul>
                 </div>
             </div>
