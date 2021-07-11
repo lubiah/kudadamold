@@ -2,30 +2,15 @@
 	<div class="flex flex-wrap mb-4 gap-x-20 mx-auto w-full px-4" id="flexible">
 		<div class="w-full md:w-auto mb-4">
 			<div class="flex items-center justify-center">
-			<img src="https://kudadam.sirv.com/logo/logo.png?thumbnail=100" alt="Kudadam logo">
+			<img src="https://kudadam.sirv.com/logo/logo.png?thumbnail=100&q=30" alt="Kudadam logo">
 			<strong class="invisible md:visible">Kudadam</strong>
 			</div>
 		</div>
 		<div>
-			<p class="font-bold">Sitemap</p>
-			<ul>
-				<li>
-					<a href="/sitemap">Sitemap</a>
-				</li>
-				<li>
-					<a href="sitemap.xml">Sitemap <i>(xml file)</i></a>
-				</li>
-			</ul>
-		</div>
-		<div>
 			<p class="font-bold">Quick Links</p>
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/contact">Contact</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/toolz">Toolz</a></li>
-				<li><a href="feed">RSS feed</a></li>
+				<li><a href="blog/feed">RSS feed</a></li>
+				<li><a href="sitemap.xml">Sitemap.xml</a></li>
 			</ul>
 		</div>
 		<div>
@@ -33,11 +18,6 @@
 			<ul>
 				<li>
 					<a href="mailto:lucretiusbiah@protonmail.com"><span class="fas fa-envelope"></span> Email
-					</a>
-				</li>
-				<li>
-					<a href="tel:0249005710">
-						<span class="fas fa-phone-alt"></span> +233 24 900 5710
 					</a>
 				</li>
 				<li>
