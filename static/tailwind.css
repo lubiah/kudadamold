@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply transition-colors duration-500;
+  @apply transition-colors;
   box-sizing: border-box;
 }
 
