@@ -1,6 +1,7 @@
 import { fdir } from "fdir";
 import front_matter from "front-matter";
 import fs from "fs";
+import _ from "lodash";	
 
 const crawler = new fdir().glob("*.md"); //The crawler 
 const files = crawler.crawl("src/routes/blog/_blog").sync();
@@ -23,9 +24,27 @@ let posts = filtered.map((file)=>{
 
 posts.sort((a,b)=> new Date(b.date) - new Date(a.date));
 
-export function get(req, res, next){
+let unsorted = posts;
+posts = _.chunk(posts,9);
+ 
+export async function get(req, res, next){
+	let results = posts[0];
+	let query = JSON.parse(JSON.stringify(req.query));
+	if (query["page"]){
+		let page = query["page"];
+		results = posts[page - 1]; 
+	}
+
+	if (query['limit']){
+		results = posts.length;
+	}
+
+	if (query['all']){
+		results = unsorted
+	}
+
 	res.writeHead(200, {
 		"Content-Type" : "application/json"
 	});
-	res.end(JSON.stringify(posts));
+	res.end(JSON.stringify(results));
 }

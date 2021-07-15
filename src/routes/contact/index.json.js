@@ -1,14 +1,19 @@
 import nodemailer from "nodemailer";
+
 let dotenv = require("dotenv").config();
 if (dotenv.error){
 }
 let transporter = nodemailer.createTransport({
+	host : "smtp.gmail.com",
+	secure: true,
 	service: 'gmail', 
+	ignoreTLS: true,
 	auth: {
-		user: process.env.GMAIL_ACCOUNT,
-		pass: process.env.GMAIL_PASSWORD
+		user: `${process.env.GMAIL_ACCOUNT}`,
+		pass: `${process.env.GMAIL_PASSWORD}`
 	}
 });
+
 
 export function post(req, res, next){
 	let sent = true;

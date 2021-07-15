@@ -3,7 +3,11 @@ title: Preventing Key Delay In TextArea Using Event
 description: A tutorial showing how to prevent a key delay in a textarea element when using event to listen for change
 category: Programming
 image: https://kudadam.sirv.com/blog/prevent_key_delay_textarea/hero.jpg
-keywords: textarea events, textarea input, textarea delay, input delay html
+keywords: 
+  - textarea events
+  - textarea input
+  - textarea delay
+  - input delay html
 date: 2021-05-16
 ---
 

@@ -13,9 +13,13 @@ html {
 }
 
 @layer base {
-  code {
-    @apply px-1 break-words rounded-sm bg-red-100 text-red-600;
-    font-family: monospace;
+  
+  input[type="text"],input[type="number"] {
+   width: 100%; 
+  }
+
+  textarea {
+    width: 100%;
   }
 
   ul {

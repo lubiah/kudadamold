@@ -6,6 +6,12 @@ body {
 
 }
 
+code {
+    background: #8888;
+    border-radius: 3px;
+    padding: 0.5px 1.5px;
+  }
+
 
 .category {
 	position: absolute;

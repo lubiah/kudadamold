@@ -3,7 +3,10 @@ title: Getting a diary
 description: A blog post about diaries
 category: Personal
 image: https://kudadam.sirv.com/blog/person_writing.jpg
-keywords: diary, getting diary pigpen cipher
+keywords: 
+  - diary
+  - getting diary 
+  - pigpen cipher
 date: 2021-04-11
 ---
 

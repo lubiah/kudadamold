@@ -3,11 +3,15 @@ title: Another Website Redesign, But with Sapper
 description: A post describing how I migrated my old website from PHP and HTML to Svelte sapper.
 category: Personal 
 image: https://kudadam.sirv.com/blog/another_website_redesign_with_svelte/hero.jpg
-keywords: website redesign, redesign website
+keywords: 
+  - website 
+  - redesign
+  - redesign website
 date: 2021-05-13
+
 ---
 
-I thought I had finished re-designing my website and everything was perfect, till one day, I was browsing the internet and I stubled upon [svelte](https://svelte.dev) <!--rehype:.intro-->
+I thought I had finished re-designing my website and everything was perfect, till one day, I was browsing the internet and I stubled upon [svelte](https://svelte.dev)
 
 On the 16th of April, I made a new re-design to my website. I made it look really cool. I was impressed with myself. 
 After the re-design, I resorted to using my spare time to learn [React](https://reactjs.org). It was kinda hard for me but I was trying to get the grasp of it. I really wanted to create a SPA (Single Page Application) and I realised React was just the framework to help me to accomplish that task. Well, this wasn't the first time I was learning React, I just don't get it. It kinda seems complicated (to me). I had no choice, I had to learn

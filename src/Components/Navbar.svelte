@@ -46,8 +46,7 @@
 
 
 
-<nav class="flex fixed p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 shadow-md">
-
+<nav class="flex fixed p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 dark:border-b border-gray-500">
 
 <a class="flex font-medium md:font-semibold text-lg items-center dark:text-white justify-center text-gray-700" href="/"><img src="https://kudadam.sirv.com/logo/logo.png?h=55&q=100" alt="">Kudadam</a>
 

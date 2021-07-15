@@ -3,7 +3,10 @@ title:  Lazy-loading stylesheets with your own javascript function
 description: A tutorial on how to generate random words in python
 category: Programming
 image: https://kudadam.sirv.com/blog/slow_sign_board.jpg
-keywords: lazy-loading, stylesheets, lazyloading stylesheets, slow loading
+keywords: 
+  - lazy-loading
+  - lazyloading stylesheets
+  - slow loading
 date: 2021-03-29
 ---
 

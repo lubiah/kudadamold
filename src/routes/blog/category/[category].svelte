@@ -1,7 +1,7 @@
 <script context="module">
 	export async function preload(page, session){
 		let { category } = page.params;
-		const res = await this.fetch("/blog.json");
+		const res = await this.fetch("/blog.json?all=true");
 		let posts = await res.json();
 		posts = posts.filter(post => {
 			let post_category = post.category.toLowerCase().replace(/\s/g,'_');
@@ -10,6 +10,9 @@
 			}
 		});
 
+		if (posts.length == 0){
+			return this.error(404,'category not found')
+		}
 
 		category = posts[0].category;
 		return {

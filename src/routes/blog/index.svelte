@@ -1,16 +1,33 @@
 <script context="module">
 	import Card from "../../Components/BlogCard.svelte";
 	import SEO from "svelte-seo";
+	import Button from "../../Components/Button.svelte";
+
 	export async function preload(page, session){
-		const res = await this.fetch("/blog.json");	
+		let res = await this.fetch("/blog.json?page=1");	
 		const posts = await res.json();
-		return { posts };
+		res = await this.fetch("/blog.json?limit=true");
+		const limit = await res.json();
+
+		return { posts, limit };
+
 	}
-</script>
+
+</script>	
 
 
 <script type="text/javascript">
-	export let posts;
+	export let posts,limit;
+
+	let page = 1;
+
+	const loadData = async ()=>{
+		let res = await fetch(`blog.json?page=${page+1}`);
+		let data = await res.json();
+		posts = [...posts, ...data];
+		page++;
+	}
+	
 </script>
 
 <SEO
@@ -53,7 +70,7 @@ twitter={{
 
 	<div class="flex flex-wrap ">
 		{#each posts as post (post.id) }
-			<Card
+				<Card 
 			title = {post.title}
 			image = {post.image}
 			date = {post.date}
@@ -63,6 +80,10 @@ twitter={{
 		{/each}
 	</div>
 </div>
+
+{#if page != limit}
+	<Button danger primary={false} center on:click={loadData}>Load More</Button>
+{/if}
 <style type="text/css">
 
 	:global(.post_category) {

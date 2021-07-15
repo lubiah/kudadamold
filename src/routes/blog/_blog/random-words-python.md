@@ -3,7 +3,12 @@ title:  Generating random words in python
 description: A tutorial showing how you can generate random words using python
 category: Programming
 image: https://kudadam.sirv.com/blog/random_image.jpg
-keywords: random words, python, random words python, random, python
+keywords: 
+  - random words
+  - python
+  - random words python
+  - random
+  - python
 date: 2021-03-29
 ---
 
@@ -72,6 +77,7 @@ For this one, am not going to really explain it. Everything is the same as the `
 
 ## Generating Mixed-Case Random Words
 So, over here, we are going to generate random words which are a mix of uppercase and lowercase.
+
 ```python
 import string #Python module for strings. It contains a collection of string constants 
 import random #Python's module for generating random objects 
@@ -85,6 +91,7 @@ def mixedcase_word(): #The function responsible for generating #random words whi
     word += random.choice(letters)
     return word 
 ```
+
 Also, this one won't get much explanation because it uses the same formats of the other functions.
 We only defined a new variable `letter`s which contains all uppercase and lowercase letters combined.
 Then, we replaced the code `word += random.choice(uppercase_letters)` with `word += random.choice(letters)` and that was all. 

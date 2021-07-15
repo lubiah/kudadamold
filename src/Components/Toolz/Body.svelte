@@ -13,7 +13,7 @@
 		width: inherit;
 	}
 	#main :global(input[type="text"], input[type="number"], textarea) {
-		@apply rounded p-1 border-gray-400 border w-full text-gray-700;
+		@apply rounded p-1 border-gray-400 border text-gray-700;
 	}
 	#main :global(input:focus-visible) {
 		outline: unset;

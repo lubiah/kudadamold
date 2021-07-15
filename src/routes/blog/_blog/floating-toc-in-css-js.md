@@ -3,7 +3,9 @@ title: Designing a floating Table Of Contents With CSS and JavaScript
 description: A tutorial which show how to generate a floating table of contents 
 category: Programming 
 image: https://kudadam.sirv.com/blog/designing_a_floating_toc/open_book.jpg
-keywords: floating toc, table of contents
+keywords: 
+  - floating toc
+  - table of contents
 date: 2021-04-18
 ---
 
@@ -15,6 +17,7 @@ Let's get started...
 In order to have a table of contents, we must first have an HTML document first. So let's start by creating our HTML document, with a normal TOC (Table of contents) which we will hardcode into the HTML.
 
 ## Creating Our HTML file
+
 ```html
 <!DOCTYPE html>
 <html>

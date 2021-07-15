@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300;1,400;1,700;1,800&display=swap" rel="stylesheet"> 
 </Head>
 <NavBar {segment} />
-<main class="container mx-auto mt-20 min-h-screen px-3">
+<main class="container mx-auto min-h-screen mt-20 px-3">
 	<slot></slot>
 </main>
 <Footer/>

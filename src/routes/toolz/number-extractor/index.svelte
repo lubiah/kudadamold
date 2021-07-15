@@ -15,14 +15,12 @@
 
     let data;
     $:data = {
-        text: "",
         results : ""
     };
     let number_regex = /\d+/g;
     let not_number_regex = /\D+/g
 
-    const get_numbers = ()=>{
-        let text = data.text;
+    const get_numbers = (text)=>{
         data.results = text.replace(not_number_regex, "");
         }
 </script>
@@ -32,11 +30,11 @@
 <Body>
     <div>
         <label for="textarea" class="ml-4">Enter your text here</label>
-        <div contenteditable class="border w-full border-gray-300 rounded p-2 bg-white" id="textarea" on:input={e=> data.text = e.target.innerText} on:input={get_numbers}>{data.text}</div>
-    </div>
+        <textarea class="border w-full border-gray-300 rounded p-2 bg-white" id="textarea" on:input={get_numbers} on:input={e=>{get_numbers(e.target.value)}}></textarea>
+    </div>  
     <div class="mt-8">
         <label for="results">Results appear here</label>
-        <div id="results" class="border-gray-300 border p-2 w-full bg-white">{data.results}</div>
+        <textarea id="results" class="border-gray-300 border p-2 w-full bg-white">{data.results}</textarea>
     </div>
 </Body>
 

@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 
 const get_items = async ()=>{
-	let res = await fetch("https://kudadam.com/blog.json")
+	let res = await fetch("https://kudadam.com/blog.json?all=true")
 	let posts = await res.json();
 	return posts
 }

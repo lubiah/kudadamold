@@ -1,4 +1,4 @@
-<script context="module">
+  <script context="module">
 	import { onMount } from "svelte";
 	import SEO from "svelte-seo";
 	import Head from "../../Components/Head.svelte";
@@ -8,16 +8,18 @@
   
 	export async function preload(page, session){
 		const { slug } = page.params;
-    const component = await import(`./_blog/${slug}.md`);
+    let res = await this.fetch(`/blog/${slug}.json`);
+    let data = await res.json();
+    if (data['error'])
+      return this.error(404,'Blog Post not found');
     return { 
-      metadata : component.metadata,
-      content: component.default
+      metadata : data.data.fm,
+      content: data.code,
      }
 	}
 </script>
 <script type="text/javascript">
   export let metadata, content;
-
   const fix_links = ()=> {
     let links = document.querySelectorAll("a");
     links.forEach(link =>{
@@ -52,9 +54,7 @@ openGraph={{
     article: {
       publishedTime: `${metadata.date}`,
      // modifiedTime: `${post[0].last_updated}`,
-      authors: [
-        `Lucretius Biah`
-      ],
+      authors: [`Lucretius Biah`],
     },
     images: [
       {
@@ -84,15 +84,15 @@ twitter={{
         <span>{metadata.author || "Lucretius Biah"}</span> • <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
       </p>
     </div>
-    <img src="{metadata.image}" alt="" id="post-image" class="h-52 my-4 md:h-80 max-h-52 w-full">
+    <img src="{metadata.image}" alt="" id="post-image" class="h-52 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full">
 		<div class="leading-tight px-2">
-      <svelte:component this={content}/>  
+      {@html content}
     </div>
 	</div>
 </div>
 
 {#if process.browser}
-<PageProgress color="red" position="bottom"/>
+<PageProgress color="red" position="bottom" height="5px"/>
 {/if}
 
 <style type="text/css">
@@ -107,17 +107,15 @@ twitter={{
   #post :global(img:not(#post-image)){
     max-height: 400px;
   }
+
   #post :global(ul){
     list-style-type: disc;
   }
   #post :global(ol){
     list-style-type: lower-roman;
   }
-  :global(#post-image){
-    border-radius: 5px;
-  }
+
   :global(#post-image:empty){
-    @apply max-h-80 h-80;
     background: linear-gradient(black,grey);
     width: 100%;
   }
@@ -127,12 +125,6 @@ twitter={{
   :global(.toc ol){
     list-style-position: inside;
     list-style-type: disc;
-  }
-
-  @screen sm {
-    :global(#post-image:empty){
-      @apply h-52;
-    }
   }
 
 </style>

@@ -3,6 +3,9 @@ The Card component is used to house the blog posts
  -->
 
  <script type="text/javascript">
+
+ 	import optimizeSirv from "../../scripts/optimize_image.js";
+
  	export let image;
  	export let title;
  	export let date;
@@ -13,8 +16,10 @@ The Card component is used to house the blog posts
  	if (category)
  		var category_lowercase = category.toLowerCase().replace(/\s/g,"_");
 
- 	import optimizeSirv from "../../scripts/optimize_image.js";
+ 	
  </script>
+
+
 <div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-9 relative" id="card">
 	<a rel="prefetch" href="blog/{slug}" class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500" id="card-title">
 		<img src="{optimizeSirv(image)}" class="rounded w-full" alt="" id="card-image">
