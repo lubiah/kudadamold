@@ -25,7 +25,7 @@ const mdsvexOptions = {
 }
 
 const crawler = new fdir().glob("*.md"); //The crawler 
-let files = crawler.crawl("src/routes/blog/_blog").sync();
+let files = crawler.crawl("exclude/blog").sync();
 files  = files.map(file=>{
 	return file.slice(0, file.lastIndexOf("."));
 });
@@ -41,7 +41,7 @@ const file_exists = (page,files) =>{
 export async function get(req,res, next){
 	let page = req.params['slug'];
 	if (file_exists(page,files)){
-		let compiled = await compile(fs.readFileSync(`src/routes/blog/_blog/${page}.md`,'utf-8'), mdsvexOptions);
+		let compiled = await compile(fs.readFileSync(`exclude/blog/${page}.md`,'utf-8'), mdsvexOptions);
 		res.writeHead(200, {
 		"Content-Type" : "application/json"
 	});
