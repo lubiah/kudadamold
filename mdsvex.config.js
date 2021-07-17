@@ -1,11 +1,15 @@
-const remark_slug = require("remark-slug");
-const remark_emoji = require("remark-emoji");
-const remark_attr = require("remark-attr");
+import remark_slug  from "remark-slug";
+import remark_emoji from "remark-emoji";
+import remark_attr from "remark-attr";
 
-const rehype_toc = require("rehype-toc");
+import rehype_toc from "rehype-toc";
 
-module.exports = {
+const settings = {
 	extension: ".md",
+	highlight: (code,lang) =>{
+		console.log(code);
+		return `<pre><code>${code}</code></pre>`;
+	},
 	rehypePlugins: [
 		rehype_toc
 	],
@@ -17,3 +21,4 @@ module.exports = {
 	]
 }
 
+export default settings

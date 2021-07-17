@@ -1,5 +1,5 @@
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 w-full mt-8">
-	<div class="flex flex-wrap mb-4 gap-x-20 mx-auto w-full px-4" id="flexible">
+	<div class="flex flex-wrap mb-4 gap-x-20 mx-auto text-center w-full px-4" id="flexible">
 		<div class="w-full md:w-auto mb-4">
 			<div class="flex items-center justify-center">
 			<img src="https://kudadam.sirv.com/logo/logo.png?thumbnail=100&q=30" alt="Kudadam logo">

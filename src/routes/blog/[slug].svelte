@@ -1,9 +1,8 @@
   <script context="module">
 	import { onMount } from "svelte";
 	import SEO from "svelte-seo";
-	import Head from "../../Components/Head.svelte";
 	import PageProgress from "../../Components/PageProgress.svelte";
-  import "prismjs/themes/prism-dark.css";
+  import "prismjs/themes/prism-tomorrow.css";
 
   
 	export async function preload(page, session){
@@ -36,9 +35,6 @@ onMount(()=>{
 })
 </script>
 
-<Head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.css">
-</Head>
 
 <SEO
 title = "{metadata.title} • Kudadam Blog"

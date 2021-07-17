@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 
 const get_items = async ()=>{
-	let res = await fetch("https://kudadam.com/blog.json")
+	let res = await fetch("https://kudadam.com/blog.json?all=true")
 	let posts = await res.json();
 	return posts
 }
@@ -15,13 +15,13 @@ const sort_items = async ()=>{
 	let rss = ``;
 	posts.forEach(post => {
 		rss += `\n
-		<item>
-			<title>${post.title}</title>
-			<link>https://www.kudadam.com/blog/${post.slug}</link>
-			<description>${post.description}</description>
-			<category>${post.category}</category>
-			<pubDate>${post.date}</pubDate>
-		</item>
+<item>
+	<title>${post.title}</title>
+	<link>https://www.kudadam.com/blog/${post.slug}</link>
+	<description>${post.description}</description>
+	<category>${post.category}</category>
+	<pubDate>${post.date}</pubDate>
+</item>
 		\n
 		`
 	});

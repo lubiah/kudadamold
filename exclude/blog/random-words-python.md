@@ -61,6 +61,7 @@ Then on the last line, I just printed it out.
 
 ## Generating Random Uppercase words
 Well, in this section, we will generate random uppercase letters.
+
 ```python
 import string #Python module for strings. It contains a collection of string constants 
 import random #Python's module for generating random objects 

@@ -84,6 +84,8 @@ button * {
 
 code {
   @apply leading-relaxed;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 pre > code {

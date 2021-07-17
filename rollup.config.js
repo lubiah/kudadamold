@@ -8,6 +8,8 @@ import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
 import dotenv from 'dotenv';
 import { terser } from 'rollup-plugin-terser';
+import mdsvexOptions from "./mdsvex.config.js";
+import { mdsvex } from "mdsvex";
 import config from 'sapper/config/rollup.js';
 import sveltePreprocess from 'svelte-preprocess';
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';	
@@ -41,7 +43,8 @@ export default {
 			svelte({
 				  extensions: [".md",".svelte"],
 				  preprocess: [
-				  sveltePreprocess({postcss : true})
+				  mdsvex(mdsvexOptions),
+				  sveltePreprocess({postcss : true}),
 				  ],
 				compilerOptions: {
 					dev,
@@ -102,6 +105,7 @@ export default {
 			svelte({
 			      extensions: [".svelte",".md"],
 				  preprocess: [
+				  mdsvex(mdsvexOptions),
 				  sveltePreprocess({postcss : true})
 				  ],
 				compilerOptions: {
