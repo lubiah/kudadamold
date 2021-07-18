@@ -75,7 +75,7 @@ twitter={{
 	<div class="flex flex-wrap ">
 		{#each posts as post (post.id) }
 				<div 
-				 transition:fly={{duration:3000}}
+				 transition:fly={{duration:4000}}
 				 animate:flip
 				 class="w-full md:w-1/2 lg:w-1/3 px-2 mb-9 relative">
 				<Card 
