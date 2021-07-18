@@ -86,6 +86,7 @@ code {
   @apply leading-relaxed;
   word-wrap: break-word;
   white-space: pre-wrap;
+  background-color: #B3B1B1;
 }
 
 pre > code {

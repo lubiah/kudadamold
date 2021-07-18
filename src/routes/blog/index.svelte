@@ -1,6 +1,8 @@
 <script context="module">
 	import Card from "../../Components/BlogCard.svelte";
 	import SEO from "svelte-seo";
+	import { flip } from "svelte/animate";
+	import { fly } from "svelte/transition";
 	import Button from "../../Components/Button.svelte";
 
 	export async function preload(page, session){
@@ -18,6 +20,8 @@
 
 <script type="text/javascript">
 	export let posts,limit;
+
+
 
 	let page = 1;
 
@@ -70,6 +74,10 @@ twitter={{
 
 	<div class="flex flex-wrap ">
 		{#each posts as post (post.id) }
+				<div 
+				 transition:fly={{duration:3000}}
+				 animate:flip
+				 class="w-full md:w-1/2 lg:w-1/3 px-2 mb-9 relative">
 				<Card 
 			title = {post.title}
 			image = {post.image}
@@ -77,6 +85,7 @@ twitter={{
 			category = {post.category}
 			slug = {post.slug}
 			/>
+			</div>
 		{/each}
 	</div>
 </div>

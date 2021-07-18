@@ -1,13 +1,21 @@
 <script>
 	import SEO from "svelte-seo";
 	export let status;
-	let message;
+	let message,image;
 
 	switch(status){
 		case 404:
 			message = "Hey, it seems you are lost";
 			image = "https://kudadam.sirv.com/svg/astronaut.svg";
 			break;
+		case 500:
+			message = "Sorry, Error from my server";
+			image = "https://kudadam.sirv.com/svg/Error%20Server.svg";
+			break;
+		default:
+			message = "There seems to be an error somewhere";
+			image = "https://kudadam.sirv.com/svg/Error%20Server.svg";	
+
 	}
 </script>
 
@@ -36,5 +44,8 @@ title = "{status} Error"
 
 	#image {
 		height: 400px;
+
 	}
+
+
 </style>

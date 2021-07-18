@@ -25,7 +25,7 @@ let posts = filtered.map((file)=>{
 posts.sort((a,b)=> new Date(b.date) - new Date(a.date));
 
 let unsorted = posts;
-posts = _.chunk(posts,9);
+posts = _.chunk(posts,7);
  
 export async function get(req, res, next){
 	let results = posts[0];

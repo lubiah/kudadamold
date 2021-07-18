@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 mx-auto text-gray-400 text-base pt-4 w-full mt-8">
+<footer class="bg-gray-800 mx-auto text-gray-400 text-base text-center block pt-4 w-full mt-8">
 	<div class="flex flex-wrap mb-4 gap-x-20 mx-auto text-center w-full px-4" id="flexible">
 		<div class="w-full md:w-auto mb-4">
 			<div class="flex items-center justify-center">
