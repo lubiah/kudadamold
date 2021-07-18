@@ -1,8 +1,14 @@
 <script>
 	import SEO from "svelte-seo";
 	export let status;
-	export let error;
-	console.log(error);	
+	let message;
+
+	switch(status){
+		case 404:
+			message = "Hey, it seems you are lost";
+			image = "https://kudadam.sirv.com/svg/astronaut.svg";
+			break;
+	}
 </script>
 
 
@@ -10,18 +16,25 @@
 title = "{status} Error"
 />
 
-<div>
-	{#if status == 404}
-		<h1 class="text-center text-5xl md:text-7xl text-red-500">{status} Error</h1>
-		<p class="text-2xl text-center mt-4" id="message">
-			Hmm..., I guess you are lost
+<div class="text-center">
+		<h1 id="heading">{status} Error</h1>
+		<p id="message">
+			{message}
 		</p>
-
-	{:else if status == 500}
-		<h1 class="text-center text-5xl md:text-7xl text-red-500">{status} Error</h1>
-		<p class="text-2xl text-center mt-4" id="message">
-			Sorry, error from my server<br>
-			My bad...
-		</p>
-	{/if}
+		<img id="image" src="{image}" class="block mx-auto w-full"  alt="astronaut in space suit"/>
+		
 </div>
+
+<style>
+	#heading {
+		@apply text-5xl md:text-7xl text-red-500 font-bold mt-8
+	}
+
+	#message {
+		@apply text-2xl text-center mt-4
+	}
+
+	#image {
+		height: 400px;
+	}
+</style>

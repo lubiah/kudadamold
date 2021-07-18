@@ -1,17 +1,10 @@
 body {
 	margin: 0;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: 'Open Sans', Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	line-height: 1.5;
 	color: #333;
 
 }
-
-code {
-    background: #8888;
-    border-radius: 3px;
-    padding: 0.5px 1.5px;
-  }
-
 
 .category {
 	position: absolute;
