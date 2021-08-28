@@ -1,8 +1,8 @@
 <script context="module">
   import _ from "lodash";
   export async function preload(page, session) {
-    let res = await this.fetch("/blog.json");
-    let posts = await res.json();
+    let res = await this.fetch("/blog.json?all=true");
+    let { posts } = await res.json();
     let categories = posts.map(post => {return post.category});
     categories = _.uniq(categories);
     return {

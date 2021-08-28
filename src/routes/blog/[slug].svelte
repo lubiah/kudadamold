@@ -3,17 +3,13 @@
 	import SEO from "svelte-seo";
 	import PageProgress from "../../Components/PageProgress.svelte";
   import "prismjs/themes/prism-tomorrow.css";
-
-  
+  import snakeCase from "lodash/fp/snakecase.js";
 	export async function preload(page, session){
 		const { slug } = page.params;
-    let res = await this.fetch(`/blog/${slug}.json`);
-    let data = await res.json();
-    if (data['error'])
-      return this.error(404,'Blog Post not found');
+    let component = await import(`./_blog/${slug}/index.md`);
     return { 
-      metadata : data.data.fm,
-      content: data.code,
+      metadata: component.metadata,
+      content: component.default
      }
 	}
 </script>
@@ -23,7 +19,6 @@
     let links = document.querySelectorAll("a");
     links.forEach(link =>{
       if (link.getAttribute("href").startsWith("#")){
-        link.style.color = "green"
       }
       link.href = (link.getAttribute("href").startsWith("#")) ? `${window.location.href}${link.getAttribute("href")}` : `${link.href}`;
       
@@ -77,12 +72,12 @@ twitter={{
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
     <div class="py-2 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
       <p class="pl-2">
-        <span>{metadata.author || "Lucretius Biah"}</span> • <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
+        <span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span> • <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
       </p>
     </div>
     <img src="{metadata.image}" alt="" id="post-image" class="h-52 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full">
 		<div class="leading-tight px-2">
-      {@html content}
+      <svelte:component this={content}/>
     </div>
 	</div>
 </div>

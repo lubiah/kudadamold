@@ -2,7 +2,7 @@
 	export async function preload(page, session){
 		let { category } = page.params;
 		const res = await this.fetch("/blog.json?all=true");
-		let posts = await res.json();
+		let { posts } = await res.json();
 		posts = posts.filter(post => {
 			let post_category = post.category.toLowerCase().replace(/\s/g,'_');
 			if (post_category == category){
