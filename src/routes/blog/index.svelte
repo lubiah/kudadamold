@@ -1,15 +1,12 @@
 <script context="module">
 	import Card from "../../Components/BlogCard.svelte";
 	import SEO from "svelte-seo";
-	import { flip } from "svelte/animate";
-	import { fly } from "svelte/transition";
 	import Button from "../../Components/Button.svelte";
 
 	export async function preload(page, session){
-		let res = await this.fetch("/blog.json?page=1");	
-		const posts = await res.json();
-		res = await this.fetch("/blog.json?limit=true");
-		const limit = await res.json();
+		let res = await this.fetch("/blog.json?limit=true");
+		let data = await res.json();
+		let { posts, limit } = data;
 
 		return { posts, limit };
 
@@ -20,15 +17,12 @@
 
 <script type="text/javascript">
 	export let posts,limit;
-
-
-
 	let page = 1;
 
 	const loadData = async ()=>{
 		let res = await fetch(`blog.json?page=${page+1}`);
 		let data = await res.json();
-		posts = [...posts, ...data];
+		posts = [...posts, ...data.posts];
 		page++;
 	}
 	
@@ -72,12 +66,8 @@ twitter={{
 
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white inline-block">Latest Articles</h2>
 
-	<div class="flex flex-wrap ">
+	<div class="flex flex-wrap">
 		{#each posts as post (post.id) }
-				<div 
-				 transition:fly={{duration:4000}}
-				 animate:flip
-				 class="w-full md:w-1/2 lg:w-1/3 px-2 mb-9 relative">
 				<Card 
 			title = {post.title}
 			image = {post.image}
@@ -85,7 +75,6 @@ twitter={{
 			category = {post.category}
 			slug = {post.slug}
 			/>
-			</div>
 		{/each}
 	</div>
 </div>

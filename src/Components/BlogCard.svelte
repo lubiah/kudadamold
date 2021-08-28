@@ -4,8 +4,7 @@ The Card component is used to house the blog posts
 
  <script type="text/javascript">
 
- 	import optimizeSirv from "../../scripts/optimize_image.js";
-
+ 	import optimizeSirv from "../../scripts/optimizeSirvImage.js";
  	export let image;
  	export let title;
  	export let date;
@@ -20,9 +19,9 @@ The Card component is used to house the blog posts
  </script>
 
 
-<div id="card">
+<div id="card"class="w-full md:w-1/2 lg:w-1/3 px-2 mb-9 relative">
 	<a rel="prefetch" href="blog/{slug}" class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500" id="card-title">
-		<img src="{optimizeSirv(image)}" class="rounded w-full" alt="" id="card-image">
+		<img src="{optimizeSirv(image,2)}" class="rounded w-full" alt="" id="card-image">
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{category_lowercase}">
 	<span class="category category_{category_lowercase}">{category}</span></a>

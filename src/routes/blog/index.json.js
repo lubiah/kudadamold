@@ -25,22 +25,24 @@ let posts = filtered.map((file)=>{
 posts.sort((a,b)=> new Date(b.date) - new Date(a.date));
 
 let unsorted = posts;
-posts = _.chunk(posts,7);
+posts = _.chunk(posts,6);
  
 export async function get(req, res, next){
-	let results = posts[0];
+	let results = new Object();
+	results['posts'] = posts[0];
+
 	let query = JSON.parse(JSON.stringify(req.query));
 	if (query["page"]){
 		let page = query["page"];
-		results = posts[page - 1]; 
+		results["posts"] = posts[page - 1]; 
 	}
 
 	if (query['limit']){
-		results = posts.length;
+		results["limit"] = posts.length;
 	}
 
 	if (query['all']){
-		results = unsorted
+		results["posts"] =unsorted;
 	}
 
 	res.writeHead(200, {

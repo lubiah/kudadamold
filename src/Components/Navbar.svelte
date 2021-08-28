@@ -46,9 +46,9 @@
 
 
 
-<nav class="flex fixed p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 dark:border-b border-gray-500">
+<nav class="flex fixed p-1 md:p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 dark:border-b border-gray-500">
 
-<a class="flex font-medium md:font-semibold text-lg items-center dark:text-white justify-center text-gray-700" href="/"><img src="https://kudadam.sirv.com/logo/logo.png?h=55&q=100" alt="">Kudadam</a>
+<a class="flex font-medium md:font-semibold text-lg items-center dark:text-white justify-center text-gray-700" href="/"><img src="https://kudadam.sirv.com/logo/logo.png?h=55&q=100" alt=""><span class="invisible md:visible">Kudadam</span></a>
 
 <img on:click={set_mode} id="theme" loading="lazy" alt="Mode" src="https://kudadam.sirv.com/icons/sun.png" class="ml-auto my-auto h-3/4"  title="Change Mode" />
 
@@ -61,13 +61,13 @@
 		<ul class="md:flex">
 			{#each nav_links as { name , url, id }  (id) }
 				{#if name === "Home"}
-					<li class="dark:text-white p-2 text-base text-gray-700 text-lg font-medium md:font-semibold">
+					<li class="dark:text-white p-1 md:p-2 text-base text-gray-700 text-lg font-medium md:font-semibold">
 						<a href={segment === undefined ? "#":"/"} class:active={segment === undefined} class="text-gray-700 block">
 						{name}
 						</a>
 					</li>
 					{:else}
-					<li class="p-2 text-base text-gray-700 text-lg font-medium md:font-semibold">
+					<li class="p-1 md:p-2 text-base text-gray-700 text-lg font-medium md:font-semibold">
 						<a href={url} rel=prefetch class:active={segment === name.toLowerCase()} class="text-gray-700 block">
 						{name}
 						</a>

@@ -1,10 +1,9 @@
 import fetch from "node-fetch";
-
-
+let dotenv = require("dotenv").config();
 
 const get_items = async ()=>{
-	let res = await fetch("https://kudadam.com/blog.json?all=true")
-	let posts = await res.json();
+	let res = await fetch(`http://localhost:${process.env.PORT}/blog.json?all=true`);
+	let { posts } = await res.json();
 	return posts
 }
 
@@ -14,7 +13,7 @@ const sort_items = async ()=>{
 	let posts = await get_items();
 	let rss = ``;
 	posts.forEach(post => {
-		rss += `\n
+		rss += `
 <item>
 	<title>${post.title}</title>
 	<link>https://www.kudadam.com/blog/${post.slug}</link>
