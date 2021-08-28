@@ -1,7 +1,7 @@
 let domain = /(https?:\/\/)?kudadam.sirv.com.+/;
 let quality_check = /\?q=([\d]+)|&q=([\d]+)/;
 
-const check_url = (url)=>{
+const check_url = (url, quality)=>{
 	if (domain.test(url)){
 		if (quality_check.test(url)) {
 			let match = url.match(quality_check);
@@ -11,10 +11,10 @@ const check_url = (url)=>{
 		}
 		else {
 			if (url.lastIndexOf("?") === -1){
-				return `${url}?q=5`;
+				return `${url}?q=${quality}`;
 			}
 			else {
-				return `${url}&q=5`
+				return `${url}&q=${quality}`
 			}
 		}
 	}
