@@ -8,7 +8,6 @@ const SitemapGenerator = require('sitemap-generator');
 const generator = SitemapGenerator(`https://www.kudadam.com`, {
   stripQuerystring: false,
   changeFreq: "weekly",
-  filepath: "/sitemap.xml",
   lastMod: true,
   priorityMap: [1.0, 0.9]
 });
