@@ -2,7 +2,6 @@
 	import SEO from "svelte-seo";
 	export let status;
 	let message,image;
-
 	switch(status){
 		case 404:
 			message = "Hey, it seems you are lost";
