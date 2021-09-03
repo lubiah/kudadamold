@@ -1,8 +1,6 @@
-import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
-import url from '@rollup/plugin-url';
 import  json  from "@rollup/plugin-json";
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
@@ -50,10 +48,6 @@ export default {
 					dev,
 					hydratable: true
 				}
-			}),
-			url({
-				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
-				publicPath: '/client/'
 			}),
 			resolve({
 				browser: true,
@@ -114,11 +108,6 @@ export default {
 					hydratable: true
 				},
 				emitCss: false
-			}),
-			url({
-				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
-				publicPath: '/client/',
-				emitFiles: false // already emitted by client build
 			}),
 			resolve({
 				dedupe: ['svelte']

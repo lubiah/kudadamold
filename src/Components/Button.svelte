@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 
 	let Class = "";
 
@@ -15,7 +15,7 @@
 <button on:click
 	{type} 
 	{disabled} 
- class="rounded my-3 py-1 mx-3 my-1 px-3 text-white {Class}" class:bg-blue-600={primary} class:secondary class:block class:bg-red-600={danger} class:center>
+ class="rounded my-3 py-1 my-1 px-3 text-white {Class}" class:bg-blue-600={primary} class:secondary class:block class:bg-red-600={danger} class:center>
 	<slot></slot>
 </button>
 

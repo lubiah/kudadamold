@@ -1,6 +1,7 @@
 <script>
 	import SEO from "svelte-seo";
-	export let status;
+	export let status
+
 	let message,image;
 	switch(status){
 		case 404:

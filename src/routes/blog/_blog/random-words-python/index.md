@@ -43,7 +43,8 @@ random_word = lowercase_word()
 ```
 Well, after running the code, this is what I got :arrow_down:
 
-`pniaryiw [Finished in 0.2s]`<!--rehype:.terminal-->
+`pniaryiw [Finished in 0.2s]`
+
 
 Let me now explain my code.
 On the first line, I imported the string module. Python's :snake: string module contains a collection of string constants. Meaning, it contains lowercase letters, uppercase letters, and other constants defined.   Then on the second line, I imported the random module. It contains classes which helps us to generate random objects.
@@ -74,6 +75,7 @@ def uppercase_word(): #The function responsible for generating #random words whi
         word += random.choice(uppercase_letters)
     return word 
 ```
+
 For this one, am not going to really explain it. Everything is the same as the `lowercase_word` function except that we replaced the code `word += random.choice(lowercase_letters)` with `word += random.choice(uppercase_letters)`. The variable `uppercase_letters` contains uppercase letters. 
 
 ## Generating Mixed-Case Random Words
@@ -111,6 +113,7 @@ def lowercase_word(number = 5): #The function responsible for generating #random
     word += random.choice(lowercase_letters)
     return word 
 ```
+
 So let me explain, I modified the `lowercase_word` function. Let's look at the changes.
 Our function now accepts a parameter called number, As you can see, it is already initialized with a value, 5. The reason is that, if you choose not to provide a number, it uses the default value in the parameter.
 In calling the function, it will be like this `word = lowercase_word(number)` with your desired number being in the brackets.
@@ -137,6 +140,7 @@ def lowercase_word(first_letter = None, last_letter = None): #The function respo
             word += random.choice(lowercase_letters)
             return word 
 ```
+
 The function is called `lowercase_word` , it's same as the first one, just modified it a bit. So our function takes two parameters, first_letter and last_letter. Initially, they are set to None, since it won't be compulsory for you to specify the first and last letters.
 
 So, in the first line of our function, there is a variable `number` which contains a random number and it's going to be the length of our random word.
@@ -149,6 +153,7 @@ To simplify it more, it means, _"before you assign the last letter,..."_
 Then the next line will check if the value of the parameter `last_letter` is not None. If it is not None, it will assign the value there to the word `variable` instead of generating a new letter.
 Then the next line, will return the word.
 So let's see ways which we can use the function. 
+
 ```python
 print(lowercase_word('a')) #This will print a random word starting with 'a' 
 print(lowercase_word('m','b')) #This will print a random word starting with 'm' and ending with 'b'. 

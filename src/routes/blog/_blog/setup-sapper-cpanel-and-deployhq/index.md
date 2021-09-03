@@ -16,6 +16,7 @@ So today, I wanted to move my website to my server. I had been using [netlify](h
 
 First of all, am assuming you have finished with your Sapper project and you are ready to deploy. Since I want to run my website server side, am going to use the `npm run build` command. However, if you want to deploy yours statically, you can also use the `npm run export` command. So in the directory of the project, open your terminal and run any of the two commands.
 If it was able to build successfully, your output should look similar to the image below ↓
+
 <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building.jpg" alt="" />
 
 ## Setting up project on Cpanel

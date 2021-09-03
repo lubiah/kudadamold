@@ -5,12 +5,15 @@ category: Personal
 keywords: re-design, website redesign
 image: https://kudadam.sirv.com/blog/redesigning_my_website/red_construction_hat.jpg
 date: 2021-04-16
+tags: 
+  - website redesign
 ---
 
-
+<p class="intro">
 Not only buildings need renovations, websites too need renovations once in a while. With new of everything, colour, libraries and anything you can think of...
+</p>
 
-## Why re-design:question:
+## Why re-design
 
 I sort of bought my first domain in a rush.  I did not really  like the domain name so I decided to change to another domain name.  I started planning around January this year to move to the new domain but  _"school"_ :weary: so it had to be postponed.
 so...
@@ -66,10 +69,10 @@ Since all the files were stored in a database, it meant that those files didn't 
 
 Well, it's simple, let's say a person visits this blog post through this URL  https://kudadam.com/blog/redesigning-my-website. Under normal circumstance, it's going to generate a 404 error because there's no folder called "redesigning-my-website" in my blog folder. With URL re-writing, we will create an .htaccess file in our server root (works only if you are using Apache). Then we will write something like this
   
-<code class='d-inline-block'>
+```plaintext
 RewriteEngine On
 RewriteRule ^blog/([\w+-]+) index.php?title=$1
-</code>
+```
 
 I know it sounds complicated but that's a little bit of [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). It grabs any text after the blog word and sends everything to another PHP file called maybe `index.php` and the text which was grabbed will  be sent to this file for processing.
 
@@ -103,13 +106,13 @@ It's simple, I modified the first python script I made to handle the blog files.
 
 Whenever I want to create a new blog post, I just open my terminal and type in `kudadam create blog --title "Hello World" --description "Greeting the word" --category life` All the arguments starting with "--" are optional, meaning I can create a blog post without them.
 
-<img class="Sirv" data-src="https://kudadam.sirv.com/blog/redesigning_my_website/kudadam_cli_create.png?q=100" alt="" />
+<img class="Sirv" data-src="https://kudadam.sirv.com/blog/redesigning_my_website/kudadam_cli_create.png" alt="" />
 
 When I provide the title parameter, it checks to see if an article with the same name exists in the database, if it does, it will raise an error and will not continue to create the file. Also, if I use the command without specify a title, it raises a warning and uses a random word as file name.
 
 #### Updating blog posts...
 
-When ever I finish writing a blog post, I don't also manually insert them into the database. I just run `kudadam update blog blog_directory`	then tadaa...
+When ever I finish writing a blog post, I don't also manually insert them into the database. I just run `kudadam update blog %blog_directory%`	then tadaa...
 
 <img class="Sirv d-block mx-auto" data-src="https://kudadam.sirv.com/blog/redesigning_my_website/kudadam_cli_update.png?q=100%" alt="" />
 

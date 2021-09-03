@@ -11,7 +11,7 @@ keywords:
 date: 2021-05-16
 ---
 
-Whiles working with the textarea element today, I found a problem <!--rehype:.intro-->
+Whiles working with the textarea element today, I found a problem
 
 ## The problem...
 

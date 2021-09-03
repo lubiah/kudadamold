@@ -39,7 +39,16 @@
 
 
 	afterUpdate(()=>{
+
+		document.addEventListener("mouseup", e =>{
+			let selected = e.target;
+			let closest = selected.closest("nav");
+			if (closest == null)
+				hidden = true;
+		} );
+
 		check_mode();
+
 	})
 </script>
 

@@ -1,0 +1,9 @@
+/__sapper__/dev
+/__sapper__/dev/**/*
+/node_modules
+/node_modules/**/*
+/.git
+/.git/**/*
+.deployignore
+README.md
+.env

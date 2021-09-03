@@ -11,7 +11,7 @@ module.exports = {
   variants: {
     extend: {
     	borderWidth: ['dark']
-    },
+    }
   },
   plugins: [],
 }

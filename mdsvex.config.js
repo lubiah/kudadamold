@@ -7,7 +7,6 @@ import rehype_toc from "rehype-toc";
 const settings = {
 	extension: ".md",
 	highlight: (code,lang) =>{
-		console.log(code);
 		return `<pre><code>${code}</code></pre>`;
 	},
 	rehypePlugins: [

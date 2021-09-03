@@ -1,6 +1,6 @@
 ---
 title: Getting a diary
-description: A blog post about diaries
+description: The importance of diaries and why you should get yourself one
 category: Personal
 image: https://kudadam.sirv.com/blog/person_writing.jpg
 keywords: 
@@ -29,13 +29,13 @@ When I completed Junior High School, I was bored at home so I resorted to watchi
 
 ## Taking pre-cautions
 ![PigPen Cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pigpen_cipher_key.svg/1200px-Pigpen_cipher_key.svg.png)
-One of the many reasons why people don't like to write in their diaries is that, they fear someone will read their secrets. Yeah, it's kind of embarrassing when your friend picks up your diary and finds out your secrets. So, I decided to take precautions, I surely knew that my diary could get missing and I don't want any stranger reading into my personal life.
-So after careful thinking, I decided to encipher it. Well, that's the only possible way to keep someone from reading even if they steal your diary. After careful considerations, I decided to learn the [PigPen cipher](https://en.wikipedia.org/wiki/Pigpen_cipher). This cipher is very easy to memorize as each letter is replaced by a symbol. So after learning it for a few days, I decided to use it in my diary.
+One of the many reasons why people don't like to write in their diaries is that, they fear someone will read their secrets. Yeah, it's kind of embarrassing when your friend picks up your diary and finds out your secrets. So, I decided to take precautions, I surely knew that my diary could get missing and I don't want any stranger reading into my personal details.
+So after careful thinking, I decided to encrypt it. Well, that's the only possible way to keep someone from reading even if they steal your diary. After careful considerations, I decided to learn the [PigPen cipher](https://en.wikipedia.org/wiki/Pigpen_cipher). This cipher is very easy to memorize as each letter is replaced by a symbol. So after learning it for a few days, I decided to use it in my diary.
 
 ## My first diary entry
 ![first entry inside my diary](https://kudadam.sirv.com/blog/picture_of_my_diary.jpg?h=300&q=100)
 So after learning the Pig-Pen cipher, I never tried it in my diary. I wanted to become comfortable with it before writing in my diary. I did not want to make my diary dirty by canceling all the time.
-The first time I made an entry was on the 6th of January, 2020. That was the second day after I went to Senior High School, I was too tired to write on the 5th so I decided to write the next day, well. I didn't write anything sensible the first day, I was just itching to start using my diary.
+The first time I made an entry was on the 6th of January, 2020. That was the second day after I went to school, I was too tired to write on the 5th so I decided to write the next day, well. I didn't write anything sensible the first day, I was just itching to start using my diary.
 One good advantage of Pig-Pen cipher is that, you can always change the pattern of the letters, if you are to use the cheat sheet above, you won't still be able to decode all the letters.
 
 ## Wrapping up...

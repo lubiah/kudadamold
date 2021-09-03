@@ -10,8 +10,7 @@ date: 2021-04-18
 ---
 
 Normally, when we visit some websites, we do see the table of contents at the top of the page. However, when you scroll down, it vanishes and there's no way to access it unless you scroll to the top.
-Well, that's unconvenient at all.
-We are going to learn how to create a floating table of contents that appears on the click of a button. If you are a regular visitor to this site, you will already see that a similar one existed here.	
+We are going to learn how to create a floating table of contents that appears on the click of a button. If you were a regular visitor to this site, you will already see that a similar one existed here.	
 Let's get started...
 
 In order to have a table of contents, we must first have an HTML document first. So let's start by creating our HTML document, with a normal TOC (Table of contents) which we will hardcode into the HTML.

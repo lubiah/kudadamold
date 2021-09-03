@@ -1,6 +1,6 @@
 ---
 title: Programatically Close A Program With Python After A Certain Time
-description: A post describing how you can use python to close a program after a certain time
+description: Learn how to use Python to close a program at a certain time.
 category: Programming
 image: https://kudadam.sirv.com/blog/close_program_time/hero.jpg
 keywords: 
@@ -17,7 +17,6 @@ date: 2021-07-15
   Today, out of boredom, I decided to make a python application that will be able to automatically close other applications at the time given to it.<br/>
   This could be a perfect idea for an application but I do not think I will make it now, maybe later...
 </p>
-
 
 For now, am going to name the program "App Killer". Sounds cool right? :cool:
 Am going to code it in Python, am going to use Object Oriented approach since that seems cooler than functional programming to me.

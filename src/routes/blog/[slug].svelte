@@ -6,11 +6,18 @@
   import snakeCase from "lodash/fp/snakecase.js";
 	export async function preload(page, session){
 		const { slug } = page.params;
-    let component = await import(`./_blog/${slug}/index.md`);
-    return { 
+    try{
+      let component = await import(`./_blog/${slug}/index.md`);
+
+      return { 
       metadata: component.metadata,
       content: component.default
      }
+    }
+    catch(e){
+      return this.error(404);
+    }
+    
 	}
 </script>
 <script type="text/javascript">
@@ -83,11 +90,11 @@ twitter={{
 </div>
 
 {#if process.browser}
-<PageProgress color="red" position="bottom" height="5px"/>
+<PageProgress color="red" height="5px"/>
 {/if}
 
 <style type="text/css">
-  #post :global(h2,h3,h4)  {
+  #post :global(h2,h3,h4,h5,h6)  {
     margin: 10px 2px;
     @apply font-semibold text-red-500;
   }
@@ -95,27 +102,21 @@ twitter={{
     max-width: 100%;
     max-height: 400px;
   }
-  #post :global(img:not(#post-image)){
-    max-height: 400px;
-  }
-
-  #post :global(ul){
-    list-style-type: disc;
-  }
-  #post :global(ol){
-    list-style-type: lower-roman;
-  }
 
   :global(#post-image:empty){
     background: linear-gradient(black,grey);
     width: 100%;
   }
   :global(.toc){
-    @apply my-4; 
+    @apply my-4;
   }
-  :global(.toc ol){
-    list-style-position: inside;
-    list-style-type: disc;
+  :global(.toc::before){
+    display: block;
+    conent: "Table Of Contents";
+    padding: 2px;
+  }
+  :global(.toc ol li){
+    list-style: none;
   }
 
 </style>

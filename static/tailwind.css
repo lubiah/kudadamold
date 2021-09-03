@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+* .dark {
   @apply transition-colors;
   box-sizing: border-box;
 }
@@ -13,16 +13,17 @@ html {
 }
 
 @layer base {
-  
-  input[type="text"],input[type="number"] {
-   width: 100%; 
+
+  input {
+    @apply dark:bg-gray-600 p-0.5 dark:border-0 w-full dark:rounded-none;
   }
 
   textarea {
     width: 100%;
+    @apply border-gray-300 border-b dark:bg-gray-600 dark:border-0 dark:text-white
   }
 
-  ul {
+  ul,ol {
     padding-inline-start: 40px;
   }
 
@@ -88,9 +89,10 @@ code {
   white-space: pre-wrap;
   background-color: black;
   display: inline-block;
-  padding: 0.5px 1px;
+  padding: 0.5px;
   color: white;
-  border-radius: 5px;
+  border-radius: 3px;
+  font: monospace;
 }
 
 pre > code {

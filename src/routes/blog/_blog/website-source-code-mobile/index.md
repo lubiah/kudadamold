@@ -2,7 +2,10 @@
 title: How to view source code of a website on mobile device  
 description: A tutorial showing how the view the source code of any website on your mobile device.
 category: Tips and Tricks
-keywords: source code, website source code, mobile
+keywords: 
+  - source code
+  - website source code
+  - mobile
 image: https://kudadam.sirv.com/blog/code_image.jpg
 date: 2021-04-07
 ---
