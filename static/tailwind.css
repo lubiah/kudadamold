@@ -2,25 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+* :focus-visible {
+  outline: none;
+}
+
 * .dark {
   @apply transition-colors;
   box-sizing: border-box;
 }
 
-html {
-	scroll-behavior: smooth;
-	scrollbar-width: thin;
-}
-
 @layer base {
 
+  input:focus-visible, textarea:focus-visible {
+    border: 1px solid tomato;
+  }
+
+
+
   input {
-    @apply dark:bg-gray-600 p-0.5 dark:border-0 w-full dark:rounded-none;
+    @apply dark:bg-gray-600 border border-gray-300 px-1 rounded p-0.5 dark:border-0 w-full
   }
 
   textarea {
-    width: 100%;
-    @apply border-gray-300 border-b dark:bg-gray-600 dark:border-0 dark:text-white
+    @apply border-gray-300 border rounded dark:bg-gray-600 dark:border-0 dark:text-white w-full p-1;
   }
 
   ul,ol {
@@ -34,7 +43,7 @@ html {
   }
 
   body {
-    @apply dark:bg-gray-700 dark:text-gray-300 text-gray-300;
+    @apply dark:bg-gray-700 dark:text-gray-300 text-gray-700;
   }
 
  p, li,b,strong,pre  {
@@ -79,8 +88,11 @@ blockquote {
   padding: 5px 5px 5px 20px;
   border-radius: 4px;
 }
+
+
 button * {
   @apply text-white dark:text-white;
+
 }
 
 code {

@@ -10,7 +10,8 @@ module.exports = {
   },
   variants: {
     extend: {
-    	borderWidth: ['dark']
+    	borderWidth: ['dark'],
+      borderRadius: ['dark']
     }
   },
   plugins: [],

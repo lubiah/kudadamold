@@ -40,7 +40,6 @@
 <style>
 
 
-
     input, textarea {
         @apply w-full my-1;
     }
