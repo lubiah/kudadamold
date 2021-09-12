@@ -1,0 +1,104 @@
+[
+	{
+		"name": "Addition Table Generator",
+		"description": "Generate addition table for both positive and negative numbers",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Browser Javascript Support Checker",
+		"description": "Check if your browser supports JavaScript or has it enabled",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Division Table Generator",
+		"description": "Generate division table for both positive and negative numbers",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Even or Odd Number Checker",
+		"description": "Check if a given number is even or odd",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Multiplication Table Generator",
+		"description": "Generate multiplication table for both positive and negative numbers",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Number Factor Generator",
+		"description": "Generate the factors of any given number",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Palindrome Checker",
+		"description": "Check if a word or phrase is the same when run backwards",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Random Number Generator",
+		"description": "Generate true cryptographically secure random numbers",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Subtraction Table Generator",
+		"description": "Generate subtraction table for both positive and negative numbers",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Advanced Word and Letter Counter",
+		"description": "Count the number of words, letters or customized data in a given text",
+		"created": "2021-05-11",
+		"updated": null
+	},
+	{
+		"name": "Regular Expression Escaper",
+		"description": "Escapes regular expressions",
+		"created": "2021-05-27",
+		"updated": null
+	},
+	{
+		"name": "Number Counter",
+		"description": "Count numbers by clicking on buttons",
+		"created": "2021-05-31",
+		"updated": null
+	},
+	{
+		"name": "Text to Camel Case",
+		"description": "Convert text to camel case",
+		"created": "2021-05-31",
+		"updated": null
+	},
+	{
+		"name": "Text to Snake Case",
+		"description": "Convert text to snake case",
+		"created": "2021-05-31",
+		"updated": null
+	},
+	{
+		"name": "Text to Kebab Case",
+		"description": "Convert text to khebab case",
+		"created": "2021-05-31",
+		"updated": null
+	},
+	{
+		"name": "Number Extractor",
+		"description": "Extract digits or numbers from your text",
+		"created": "2021-05-31",
+		"updated": null
+	},
+	{
+		"name": "Text Duplicator",
+		"description": "Duplicate text any number of times",
+		"created": "2021-06-02",
+		"updated": null
+	}
+]	

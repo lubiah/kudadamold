@@ -1,0 +1,7 @@
+{
+	"name": "Kudadam",
+	"short_name": "Kudadam",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone"
+}
