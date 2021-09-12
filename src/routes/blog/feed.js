@@ -1,58 +1,36 @@
-import fetch from "node-fetch";
+export const get = async requests => {
+  const res = await fetch(`http://${requests.host}/blog.json?all=true`);
+  const { posts } = await res.json();
+  const body = render(posts);
+  const headers = {
+    'Content-Type': 'application/xml',
+  };
+  return {
+    body,
+    headers,
+  };
+};
 
-const get_items = async ()=>{
-	let res = await fetch(`http://localhost:${process.env.PORT}/blog.json?all=true`);
-	let { posts } = await res.json();
-	return posts
-}
+const render = (posts) => 
+`<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
 
-
-
-const sort_items = async ()=>{
-	let posts = await get_items();
-	let rss = ``;
-	posts.forEach(post => {
-		rss += `
+<channel>
+  <title>Kudadam Blog</title>
+  <link>https://www.kudadam.com/blog</link>
+<description>A place where I write about everthing tech related</description>
+<category> Technology </category>
+${posts
+  .map(
+    (post) => `
 <item>
-	<title>${post.title}</title>
-	<link>https://www.kudadam.com/blog/${post.slug}</link>
-	<description>${post.description}</description>
-	<category>${post.category}</category>
-	<pubDate>${post.date}</pubDate>
-</item>
-		\n
-		`
-	});
-	return rss;
-}
-
-
-export function  get(req, res, next){
-
-	let rss = sort_items().then(items => {
-
-		let feed = `<?xml version="1.0" encoding="UTF-8" ?>
-	<rss version="2.0">
-		<channel>
-			<title>Kudadam Blog</title>
-			<link>https://www.kudadam.com/blog</link>
-			<language>en-us</language>
-			<description>Lucretius' personal blog on tech, programming and stuff</description>
-			 <category>Technology</category>
-			 <image>
-    			<url>https://kudadam.sirv.com/logo/logo.png</url>
-    			<title>Kudadam Blog logo</title>
-    			<link>https://www.kudadam.com/blog</link>
-  			</image>
-			${items}
-		</channel>
-	</rss>
-
-		`;
-		res.setHeader("Content-Type","application/xml");
-		res.end(feed);
-
-	});
-
-
-}
+  <title>${post.title}</title>
+  <link>https://www.davidwparker.com/posts/${post.slug}</link>
+  <description>${post.description}</description>
+<pubDate>${new Date(post.date).toUTCString()}</pubDate>
+</item>`
+  )
+  .join('')}
+</channel>
+</rss>
+`;

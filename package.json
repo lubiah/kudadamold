@@ -9,6 +9,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@sveltejs/adapter-node": "^1.0.0-next.46",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.3.4",
 		"cssnano": "^5.0.8",
@@ -33,7 +34,6 @@
 		"front-matter": "^4.0.2",
 		"jquery": "^3.6.0",
 		"mdsvex": "^0.9.8",
-		"node-fetch": "^3.0.0",
 		"nodemailer": "^6.6.3",
 		"regex-escape": "^3.4.10",
 		"rehype-toc": "^3.0.2",
