@@ -3,8 +3,8 @@
 		<div>
 			<p class="font-bold">Quick Links</p>
 			<ul>
-				<li><a href="blog/feed">RSS feed</a></li>
-				<li><a href="sitemap.xml">Sitemap.xml</a></li>
+				<!-- <li><a href="blog/feed">RSS feed</a></li> -->
+				<!-- <li><a href="sitemap.xml">Sitemap.xml</a></li> -->
 			</ul>
 		</div>
 		<div>
