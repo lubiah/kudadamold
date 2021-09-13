@@ -10,9 +10,8 @@ const config = {
 		target: '#svelte',
         adapter: node({
             out: "build"
-        })
+        }),
 	},
-    
     extensions: [".svelte",".md"],
     preprocess: [
     mdsvex(mdsvexOptions),
