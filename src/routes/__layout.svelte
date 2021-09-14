@@ -5,7 +5,10 @@
 	import Head from 'svelte-seo';
 </script>
 
-<Head />
+<Head>
+	<script src="https://kit.fontawesome.com/596a0831ed.js" crossorigin="anonymous" defer></script>
+	<script src="https://scripts.sirv.com/sirv.nospin.js" defer></script>
+</Head>
 
 <NavBar />
 <div class="container mx-auto min-h-screen mt-20 px-1 md:px-3">
