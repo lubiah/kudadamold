@@ -27,6 +27,18 @@
 		}
 	};
 
+
+	const add_border_on_scroll_down = ()=>{
+		let html = document.querySelector("html");
+		let scroll_point = html.scrollTop;
+		console.log(scroll_point);
+		if (scroll_point >= 5){
+				document.querySelector("nav#header").classList.add("border-b");
+		} else {
+			document.querySelector("nav#header").classList.remove("border-b");
+		}
+	}
+
 	const check_mode = () => {
 		if (
 			localStorage.theme === 'dark' ||
@@ -48,12 +60,12 @@
 			let closest = selected.closest('nav');
 			if (closest == null) hidden = true;
 		});
-
 		check_mode();
+		window.addEventListener("scroll",add_border_on_scroll_down);
 	});
 </script>
 
-<nav
+<nav id="header" 
 	class="flex fixed p-1 md:p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 border-b border-gray-200 dark:border-gray-500"
 >
 	<a
