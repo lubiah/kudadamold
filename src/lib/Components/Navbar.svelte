@@ -31,8 +31,7 @@
 	const add_border_on_scroll_down = ()=>{
 		let html = document.querySelector("html");
 		let scroll_point = html.scrollTop;
-		console.log(scroll_point);
-		if (scroll_point >= 20){
+		if (scroll_point >= 50){
 				document.querySelector("nav#header").classList.add("border-b");
 		} else {
 			document.querySelector("nav#header").classList.remove("border-b");

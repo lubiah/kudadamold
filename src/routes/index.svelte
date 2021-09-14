@@ -96,33 +96,26 @@
 		>
 	</h3>
 
-	<div class="grid md:grid-cols-10">
-		<div class="md:col-span-4">
-			<img loading="lazy" src="https://kudadam.sirv.com/svg/chart_1.svg?q=1" alt="" />
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:px-10">
+		<div>
+			<p class="font-bold my-3">Backend languages</p>
+				<ul class="rounded border divide-y divide-gray-300 p-0">
+					<li class="flex p-2">Ruby</li>
+					<li class="flex p-2">C++</li>
+					<li class="flex p-2">Python</li>
+					<li class="flex p-2">MySQL</li>
+					<li class="flex p-2">JavaScript</li>
+					<li class="flex p-2">PHP</li>
+				</ul>
 		</div>
-		<div class="md:col-span-6">
-			<div class="grid grid-cols-8">
-				<div class="col-span-7 md:col-span-4">
-					<p class="font-bold my-3">Backend languages</p>
-					<ul class="rounded border divide-y divide-gray-300 p-0">
-						<li class="flex p-2">Ruby</li>
-						<li class="flex p-2">C++</li>
-						<li class="flex p-2">Python</li>
-						<li class="flex p-2">MySQL</li>
-						<li class="flex p-2">JavaScript</li>
-						<li class="flex p-2">PHP</li>
-					</ul>
-				</div>
-				<div class="col-span-7 md:col-span-4 m-2">
-					<p class="font-bold my-3">Front-end languages</p>
-					<ul class="rounded border divide-y divide-gray-300 p-0">
-						<li class="flex p-2">HTML</li>
-						<li class="flex p-2">CSS</li>
-						<li class="flex p-2">SASS</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<div class="w-full">
+			<p class="font-bold my-3">Front-end languages</p>
+				<ul class="rounded border divide-y divide-gray-300 p-0">
+					<li class="flex p-2">HTML</li>
+					<li class="flex p-2">CSS</li>
+					<li class="flex p-2">SASS</li>
+				</ul>
+		</div>			
 	</div>
 </section>
 <section>
