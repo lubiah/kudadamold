@@ -69,7 +69,6 @@
 		id="theme"
 		loading="lazy"
 		alt="Mode"
-		src="https://kudadam.sirv.com/icons/sun.png"
 		class="ml-auto my-auto h-3/4"
 		title="Change Mode"
 	/>

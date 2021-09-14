@@ -20,6 +20,7 @@ const sort_items = (posts) => {
 };
 
 export async function get(request) {
+	try {
 	const PORT = parseInt(new URL(request.host).pathname);
 	let posts = await get_items(PORT);
 	let sorted = sort_items(posts);
@@ -46,4 +47,12 @@ export async function get(request) {
 		},
 		body: rss
 	};
+	}
+
+	catch(e){
+		return {
+			body: "Error Occured"
+		}
+	}
+	
 }
