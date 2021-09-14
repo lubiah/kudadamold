@@ -32,7 +32,7 @@
 		let html = document.querySelector("html");
 		let scroll_point = html.scrollTop;
 		console.log(scroll_point);
-		if (scroll_point >= 5){
+		if (scroll_point >= 20){
 				document.querySelector("nav#header").classList.add("border-b");
 		} else {
 			document.querySelector("nav#header").classList.remove("border-b");
@@ -66,7 +66,7 @@
 </script>
 
 <nav id="header" 
-	class="flex fixed p-1 md:p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 border-b border-gray-200 dark:border-gray-500"
+	class="flex fixed p-1 md:p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 border-gray-200 dark:border-gray-500"
 >
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center dark:text-white justify-center text-gray-700"
