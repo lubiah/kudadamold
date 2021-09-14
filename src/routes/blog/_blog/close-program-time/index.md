@@ -3,8 +3,8 @@ title: Programatically Close A Program With Python After A Certain Time
 description: Learn how to use Python to close a program at a certain time.
 category: Programming
 image: https://kudadam.sirv.com/blog/close_program_time/hero.jpg
-keywords: 
-  - automation 
+keywords:
+  - automation
   - python automation
   - taskkill command
   - terminal
@@ -82,7 +82,7 @@ Now that we are done coding the script, it's now time to use it. The most suitab
 
 So, to make the App Killer watch and kill an app, you pass two parameters to it's constructor, the app's executable name and the time at which it is to quit.
 
-So for the example which I am going to be making, am going to kill two apps, Node JS and my Brave browser, NodeJS will close at `08:30 (ie. 8:30 AM)` and Brave Browser will close at `21:21 (ie. 9:21PM)`. 
+So for the example which I am going to be making, am going to kill two apps, Node JS and my Brave browser, NodeJS will close at `08:30 (ie. 8:30 AM)` and Brave Browser will close at `21:21 (ie. 9:21PM)`.
 
 So in our code, we will write:
 
@@ -92,7 +92,7 @@ brave.watch()
 
 node_js = AppKiller("node.exe","08:30")
 node_js.watch()
-``` 
+```
 
 That's all that is need to initiate the simple program we created.
 Now, when you look at the little snippet I wrote, you will notice that the time `21:21` comes before `08:30`. Since each instance of the `AppKiller` class runs on a different thread, the time won't be affected, that is, `brave.exe` will not close before `node.exe`, they will all close when their time is due since they all run on different threads.

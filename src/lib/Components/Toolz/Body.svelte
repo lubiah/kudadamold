@@ -1,24 +1,23 @@
 <script>
-	import ToolzList from "./ToolList.svelte";
+	import ToolzList from './ToolList.svelte';
 </script>
 
-<div id='main' class="mx-auto md:w-2/3 mt-10">
-	<slot>
-	</slot>
+<div id="main" class="mx-auto md:w-2/3 mt-10">
+	<slot />
 </div>
-<ToolzList/>
+<ToolzList />
 
 <style>
-	:global(input[type="checkbox"]){
+	:global(input[type='checkbox']) {
 		width: inherit;
 	}
 
-	#main :global(pre){
+	#main :global(pre) {
 		max-height: 400px;
 		white-space: pre-wrap;
 		word-break: break-all;
 		scroll-behavior: smooth;
-		scrollbar-width:thin;
+		scrollbar-width: thin;
 		overflow-y: scroll;
 	}
 </style>

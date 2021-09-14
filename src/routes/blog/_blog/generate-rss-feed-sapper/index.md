@@ -3,7 +3,7 @@ title: How To Generate RSS Feed For Your Sapper Website
 description: How to generate an RSS feed for your sapper based website using javascript
 category: Programming
 image: https://kudadam.sirv.com/blog/generate_rss_feed_sapper/hero.jpg
-keywords: 
+keywords:
   - rss
   - rss feed
   - sapper
@@ -29,24 +29,23 @@ Inside the root of my blog folder `/src/routes/blog`, I created a file named `fe
 ## Writing the code
 
 First of all, you will need to install the `node-fetch` module, you can simply install it by entering `npm i node-fetch` in your terminal.
-After that, we open our `feed.js` file and write the following  code. 
+After that, we open our `feed.js` file and write the following code.
 I will explain below
 
 ```js
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
-const get_items = async ()=>{
-  let res = await fetch("https://kudadam.com/blog.json?all=true")
-  let posts = await res.json();
-  return posts
-}
+const get_items = async () => {
+	let res = await fetch('https://kudadam.com/blog.json?all=true');
+	let posts = await res.json();
+	return posts;
+};
 
-
-const sort_items = async ()=>{
-  let posts = await get_items();
-  let rss = ``;
-  posts.forEach(post => {
-    rss += `\n
+const sort_items = async () => {
+	let posts = await get_items();
+	let rss = ``;
+	posts.forEach((post) => {
+		rss += `\n
 <item>
   <title>${post.title}</title>
   <link>https://www.kudadam.com/blog/${post.slug}</link>
@@ -55,17 +54,14 @@ const sort_items = async ()=>{
   <pubDate>${post.date}</pubDate>
 </item>
     \n
-    `
-  });
-  return rss;
-}
+    `;
+	});
+	return rss;
+};
 
-
-export function  get(req, res, next){
-
-  let rss = sort_items().then(items => {
-
-    let feed = `<?xml version="1.0" encoding="UTF-8" ?>
+export function get(req, res, next) {
+	let rss = sort_items().then((items) => {
+		let feed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
       <title>Kudadam Blog</title>
@@ -83,11 +79,9 @@ export function  get(req, res, next){
   </rss>
 
     `;
-    res.setHeader("Content-Type","application/xml");
-    res.end(feed);
-
-  });
-
+		res.setHeader('Content-Type', 'application/xml');
+		res.end(feed);
+	});
 }
 ```
 
@@ -95,7 +89,7 @@ So that's all the code for the RSS Feed file.
 
 ## Explaining the code
 
-First of all, I defined an asynchronous function called `get_items`. This function performs a fetch call to `https://www.kudadam.com/blog.json?all=true` and this returns all the blog posts in a JSON format. 
+First of all, I defined an asynchronous function called `get_items`. This function performs a fetch call to `https://www.kudadam.com/blog.json?all=true` and this returns all the blog posts in a JSON format.
 
 Then I defined another function called `sort_items` which fetches the posts using the `get_items` functions, it then iterates through the metadata of each post and creates RSS tags for each metadata and returns all the blog posts containing the RSS tags.
 

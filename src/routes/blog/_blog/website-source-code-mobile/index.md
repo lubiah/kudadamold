@@ -1,8 +1,8 @@
 ---
-title: How to view source code of a website on mobile device  
+title: How to view source code of a website on mobile device
 description: A tutorial showing how the view the source code of any website on your mobile device.
 category: Tips and Tricks
-keywords: 
+keywords:
   - source code
   - website source code
   - mobile
@@ -18,13 +18,12 @@ If we apply this same trick on a mobile device, it works as expected.
 ## Steps to view source code
 
 1. Visit the website which you want to view it's source code.
-![A screenshot of Google's homepage](https://kudadam.sirv.com/blog/view_source_code_of_website_on_phone_img_1.png)
+   ![A screenshot of Google's homepage](https://kudadam.sirv.com/blog/view_source_code_of_website_on_phone_img_1.png)
 
 2. Click inside the address bar and append `view-source:` before the url of the website.
-![view source being highlighted](https://kudadam.sirv.com/blog/view_source_code_of_website_on_phone_img_3.png)
+   ![view source being highlighted](https://kudadam.sirv.com/blog/view_source_code_of_website_on_phone_img_3.png)
 
 3. Click the send button and the page will load with the source code of the file.
-![Google's website](https://kudadam.sirv.com/blog/view_source_code_of_website_on_phone_img_2.png)
+   ![Google's website](https://kudadam.sirv.com/blog/view_source_code_of_website_on_phone_img_2.png)
 
-
-__NB:__ Even though I used Chrome's mobile browser, the method is the same in all the major browsers.
+**NB:** Even though I used Chrome's mobile browser, the method is the same in all the major browsers.

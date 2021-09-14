@@ -1,18 +1,18 @@
 ---
-title: Designing A Simple Keylogger In Python  
-description: A tutorial which teaches you how to develop a simple keylogger in Python. Keyloggers are applications which are used to log keys when typed, naturally, keyloggers are not illegal unless used unlawful purposes 
-category: Programming 
+title: Designing A Simple Keylogger In Python
+description: A tutorial which teaches you how to develop a simple keylogger in Python. Keyloggers are applications which are used to log keys when typed, naturally, keyloggers are not illegal unless used unlawful purposes
+category: Programming
 image: https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/hero.jpg
-keywords: 
+keywords:
   - keylogger
   - keylogging in python
   - python keylogger
 date: 2021-04-24
 ---
 
->**Keystroke logging**, often referred to as **keylogging** or **keyboard capturing**, is the action of recording (logging) the keys struck on a keyboard, [\[1\]](https://en.wikipedia.org/wiki/Keystroke_logging#cite_note-1) typically covertly, so that a person using the keyboard is unaware that their actions are being monitored. Data can then be retrieved by the  person operating the logging program. A **keystroke recorder** or **keylogger** can be either software or [hardware](https://en.wikipedia.org/wiki/Computer_hardware).
+> **Keystroke logging**, often referred to as **keylogging** or **keyboard capturing**, is the action of recording (logging) the keys struck on a keyboard, [\[1\]](https://en.wikipedia.org/wiki/Keystroke_logging#cite_note-1) typically covertly, so that a person using the keyboard is unaware that their actions are being monitored. Data can then be retrieved by the person operating the logging program. A **keystroke recorder** or **keylogger** can be either software or [hardware](https://en.wikipedia.org/wiki/Computer_hardware).
 >
->~ [Wikipedia](https://en.wikipedia.org/wiki/Keystroke_logging) ~
+> ~ [Wikipedia](https://en.wikipedia.org/wiki/Keystroke_logging) ~
 
 The above context is extracted from Wikipedia and it explains what a keylogger is and what it does. Well, I hope most of you know what a keylogger is. Keyloggers are in two forms, software and hardware but the one we are going to be creating today is the software form of a keylogger. It is going to listen to all the key strokes and log them to a file. Cool right?
 
@@ -20,7 +20,7 @@ Before we start, you need to be conversant with the python programming language,
 
 ## Installing the required modules
 
-We are going to use the [keyboard](https://pypi.org/project/keyboard/) module for the keylogger.  To install it, open your terminal type in `pip install keyboard`. If no error occured, you are good to go.
+We are going to use the [keyboard](https://pypi.org/project/keyboard/) module for the keylogger. To install it, open your terminal type in `pip install keyboard`. If no error occured, you are good to go.
 
 After that, open a new python file and let's start coding :dark_sunglasses:
 
@@ -41,11 +41,11 @@ I can say we are done, maybe above 50% done. Let me explain the code; on the fir
 If we are to run our code in the terminal, it runs successfully without any errors. However, there is a problem, try typing this sentence after activating the logger `"am a hacker"`.
 <img class="Sirv" data-src="https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/before_filter.gif" alt="" />
 
-We really might not see the effect because, when the program is ran on the terminal, each character is printed on a new line but if the results were stored in  a file, this is how it will look.
+We really might not see the effect because, when the program is ran on the terminal, each character is printed on a new line but if the results were stored in a file, this is how it will look.
 
 <img class="Sirv" data-src="https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/before_filter_txt.png" alt="" />
 
-You might be confused, let me explain, when special keys are pressed, their names are returned and thus it makes it difficult for us to know if it was a character or special key. For example, if a user presses <kbd>space</kbd>, it will print out "space" or if <kbd>enter</kbd>, it will print out "enter", when this data is appended to a file, it just adds up to the letters and makes it difficult for us to know whether it was a special key or not. 
+You might be confused, let me explain, when special keys are pressed, their names are returned and thus it makes it difficult for us to know if it was a character or special key. For example, if a user presses <kbd>space</kbd>, it will print out "space" or if <kbd>enter</kbd>, it will print out "enter", when this data is appended to a file, it just adds up to the letters and makes it difficult for us to know whether it was a special key or not.
 
 ## Solving the special key problem
 
@@ -65,7 +65,7 @@ Well, this new code just popped into my head :laughing: , the first time I made 
 
 <img class="Sirv" data-src="https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/first_filter_function.png" alt="" />
 
-This function above was  98 lines, this was because,  I hard-coded every key inside my function, but now, I use a simple logic for the filter function. if we are to look at all the "special keys", we will find out that the  length of their name is more than one whereas the length of normal characters or letters is one. So in our new `filter` function, we first checked if the `char == 'space'`,  we then return `" "` if true. Then on the next line, we check if the length of the `char` is greater than one, if it is, then it means it is a special key so we wrap `[]`around it. else, we just return the `char`. Now our keylogger logs the characters much better.
+This function above was 98 lines, this was because, I hard-coded every key inside my function, but now, I use a simple logic for the filter function. if we are to look at all the "special keys", we will find out that the length of their name is more than one whereas the length of normal characters or letters is one. So in our new `filter` function, we first checked if the `char == 'space'`, we then return `" "` if true. Then on the next line, we check if the length of the `char` is greater than one, if it is, then it means it is a special key so we wrap `[]`around it. else, we just return the `char`. Now our keylogger logs the characters much better.
 
 ```python
 import keyboard #The keyboard module
@@ -87,9 +87,9 @@ keyboard.wait()
 
 Now, we are 95% done, our keylogger works as expected but it's not logging to any file. It's only writing to stdout. In order to make a real keylogger, we need to log the output to a file.
 
-## Logging  data to a file
+## Logging data to a file
 
-The final step is to create a function which will write the data to a file. 
+The final step is to create a function which will write the data to a file.
 
 ```python
 import keyboard #The keyboard module
@@ -113,8 +113,8 @@ keyboard.on_press(logger)
 keyboard.wait()
 ```
 
-We created a function called `writer` which takes `data` as parameter, it then writes the data to a file named "logs.txt", the file is going to be located in the directory as the python file. 
+We created a function called `writer` which takes `data` as parameter, it then writes the data to a file named "logs.txt", the file is going to be located in the directory as the python file.
 
-Let's have a look at our `logger` function again, we called the `writer` function and we passed the `event.name` to it but we wrapped it with the `filter` function to filter it and that's our keylogger.  just run your python file and you are good to go
+Let's have a look at our `logger` function again, we called the `writer` function and we passed the `event.name` to it but we wrapped it with the `filter` function to filter it and that's our keylogger. just run your python file and you are good to go
 
-**Tip:** You can hide the console from popping up if you save your python file with a .pyw extension 
+**Tip:** You can hide the console from popping up if you save your python file with a .pyw extension

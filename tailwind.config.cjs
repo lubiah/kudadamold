@@ -1,13 +1,11 @@
 const config = {
-	mode: "jit",
-	purge: [
-		"./src/**/*.{html,js,svelte,ts}",
-	],
-	darkMode: "class",
+	mode: 'jit',
+	purge: ['./src/**/*.{html,js,svelte,ts}'],
+	darkMode: 'class',
 	theme: {
-		extend: {},
+		extend: {}
 	},
-	plugins: [],
+	plugins: []
 };
 
 module.exports = config;

@@ -1,16 +1,16 @@
 ---
-title: Designing a floating Table Of Contents With CSS and JavaScript  
-description: A tutorial which show how to generate a floating table of contents 
-category: Programming 
+title: Designing a floating Table Of Contents With CSS and JavaScript
+description: A tutorial which show how to generate a floating table of contents
+category: Programming
 image: https://kudadam.sirv.com/blog/designing_a_floating_toc/open_book.jpg
-keywords: 
+keywords:
   - floating toc
   - table of contents
 date: 2021-04-18
 ---
 
 Normally, when we visit some websites, we do see the table of contents at the top of the page. However, when you scroll down, it vanishes and there's no way to access it unless you scroll to the top.
-We are going to learn how to create a floating table of contents that appears on the click of a button. If you were a regular visitor to this site, you will already see that a similar one existed here.	
+We are going to learn how to create a floating table of contents that appears on the click of a button. If you were a regular visitor to this site, you will already see that a similar one existed here.
 Let's get started...
 
 In order to have a table of contents, we must first have an HTML document first. So let's start by creating our HTML document, with a normal TOC (Table of contents) which we will hardcode into the HTML.
@@ -20,47 +20,54 @@ In order to have a table of contents, we must first have an HTML document first.
 ```html
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Sample Text</title>
+	</head>
 
-<head>
-  <title>Sample Text</title>
-</head>
-
-<body>
-  <h1>A Simple Blog Post</h1>
-  <div class="toc">
-    <h4>Table of Contents</h4>
-    <ul>
-      <li><a href="#sec-1">What is Lorem Ipsum?</a></li>
-      <li><a href='#sec-2'>Where does it come from?</a></li>
-      <li><a href='#sec-3'>Why do we use it?</a></li>
-       <li><a href="#sec-1">What is Lorem Ipsum?</a></li>
-      <li><a href='#sec-2'>Where does it come from?</a></li>
-      <li><a href='#sec-3'>Why do we use it?</a></li>
-       <li><a href="#sec-1">What is Lorem Ipsum?</a></li>
-      <li><a href='#sec-2'>Where does it come from?</a></li>
-      <li><a href='#sec-3'>Why do we use it?</a></li>
-    </ul>
-  </div>
-  <main>
-    <h2 id='sec-1'>What is Lorem Ipsum?</h2>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-    </p>
-    <h2 id='sec-2'>Where does it come from?</h2>
-    <p>
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-    </p>
-    <h2 id='sec-3'>Why do we use it?</h2>
-    <p>
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-    </p>
-    <a id='toc-button'><i class="far fa-bookmark"></i></a>
-  </main>
-</body>
-
+	<body>
+		<h1>A Simple Blog Post</h1>
+		<div class="toc">
+			<h4>Table of Contents</h4>
+			<ul>
+				<li><a href="#sec-1">What is Lorem Ipsum?</a></li>
+				<li><a href="#sec-2">Where does it come from?</a></li>
+				<li><a href="#sec-3">Why do we use it?</a></li>
+				<li><a href="#sec-1">What is Lorem Ipsum?</a></li>
+				<li><a href="#sec-2">Where does it come from?</a></li>
+				<li><a href="#sec-3">Why do we use it?</a></li>
+				<li><a href="#sec-1">What is Lorem Ipsum?</a></li>
+				<li><a href="#sec-2">Where does it come from?</a></li>
+				<li><a href="#sec-3">Why do we use it?</a></li>
+			</ul>
+		</div>
+		<main>
+			<h2 id="sec-1">What is Lorem Ipsum?</h2>
+			<p>
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+				been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+				galley of type and scrambled it to make a type specimen book.
+			</p>
+			<h2 id="sec-2">Where does it come from?</h2>
+			<p>
+				Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
+				of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+				a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
+				Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the
+				word in classical literature, discovered the undoubtable source.
+			</p>
+			<h2 id="sec-3">Why do we use it?</h2>
+			<p>
+				It is a long established fact that a reader will be distracted by the readable content of a
+				page when looking at its layout. The point of using Lorem Ipsum is that it has a
+				more-or-less normal distribution of letters, as opposed to using 'Content here, content
+				here', making it look like readable English.
+			</p>
+			<a id="toc-button"><i class="far fa-bookmark"></i></a>
+		</main>
+	</body>
 </html>
-	
 ```
+
 Well, that's our HTML, let's forget the fact that the Table of Contents are repeated. I did that in order to make the table of contents long. Notice that, we added a class of `toc` to our Table Of Contents element. This will help us to style the TOC in our CSS file.
 So now we have finished creating the HTML, let's go on to create our CSS file.
 
@@ -69,58 +76,59 @@ So now we have finished creating the HTML, let's go on to create our CSS file.
 Open a new CSS file and paste the following contents in.
 
 ```css
-body{
-  margin: 10px 50px;
-  }
+body {
+	margin: 10px 50px;
+}
 .toc {
-  margin: 15px; /*Provides space around the table of content*/
-  padding: 5px;
-  border: 1px solid grey; /* Adds a grey border with a size of one pixel. */
-  display: inline-block; /* Makes the TOC an inline-block element to prevent it from taking the while space */
-  border-radius: 5px; /* Makes the element rounded by given a 5px radius*/
-  }
-.toc h4{
-  margin: 0px; /* Removes the margin from the TOC heading. */
-  margin-bottom: 5px;
-  font-size: 1.2rem;
-  font-weight: bold; /* Makes the font-weight of the TOC heading bold */
-  color: #5faeea;
+	margin: 15px; /*Provides space around the table of content*/
+	padding: 5px;
+	border: 1px solid grey; /* Adds a grey border with a size of one pixel. */
+	display: inline-block; /* Makes the TOC an inline-block element to prevent it from taking the while space */
+	border-radius: 5px; /* Makes the element rounded by given a 5px radius*/
+}
+.toc h4 {
+	margin: 0px; /* Removes the margin from the TOC heading. */
+	margin-bottom: 5px;
+	font-size: 1.2rem;
+	font-weight: bold; /* Makes the font-weight of the TOC heading bold */
+	color: #5faeea;
 }
 .toc ul {
-  margin:0px;
-  list-style:none; /* This removes the list styling which are provided by default */
-  padding:0px /* Removes the front padding */
+	margin: 0px;
+	list-style: none; /* This removes the list styling which are provided by default */
+	padding: 0px; /* Removes the front padding */
 }
-.toc ul li a{
-  color: #4c74b9;
-  text-decoration : none; /* Removes the underline from the link tags */
+.toc ul li a {
+	color: #4c74b9;
+	text-decoration: none; /* Removes the underline from the link tags */
 }
-.toc ul li{
-  padding: 2px; /* Adds a little space around each <li> tag */
+.toc ul li {
+	padding: 2px; /* Adds a little space around each <li> tag */
 }
-#toc-button i{
+#toc-button i {
 	/* This is the table of content button toggler */
-  border-radius:50%; /* The border-radius 50% gives it a rouned shape */
-  padding:15px; /* This also provides space around the element */
-  margin:20px;
-  float:right; /* This makes the button to go to the right side of the screen, you can change it to left if you want it to place your button on the left side of the screen */
-  color:white;
-  background-color:red; /* Gives it a red background colour */
-  position:fixed; /* The position fixed allows it to remain fixed on a part of the screen. */
-  bottom:10px; /* This makes it to position itself at the very bottom of the screen. 10px from the bottom  */
-  right:10px;
+	border-radius: 50%; /* The border-radius 50% gives it a rouned shape */
+	padding: 15px; /* This also provides space around the element */
+	margin: 20px;
+	float: right; /* This makes the button to go to the right side of the screen, you can change it to left if you want it to place your button on the left side of the screen */
+	color: white;
+	background-color: red; /* Gives it a red background colour */
+	position: fixed; /* The position fixed allows it to remain fixed on a part of the screen. */
+	bottom: 10px; /* This makes it to position itself at the very bottom of the screen. 10px from the bottom  */
+	right: 10px;
 }
 
-.custom-toc{
+.custom-toc {
 	/* The CSS applied to our floating application */
-  position:fixed; 
-  border:1px solid grey;
-  bottom:10px;
-  background-color:white;
-  right:200px;
+	position: fixed;
+	border: 1px solid grey;
+	bottom: 10px;
+	background-color: white;
+	right: 200px;
 }
 ```
-These are responsible for styling our table of contents. 
+
+These are responsible for styling our table of contents.
 
 Then to our JavaScript file.
 

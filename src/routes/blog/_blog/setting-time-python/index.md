@@ -3,13 +3,12 @@ title: Automatically Setting Your Computer's time with Python
 description: Learn how to make a python script which can set your computer's time correctly whenever it goes wrong
 category: Programming
 image: https://kudadam.sirv.com/blog/setting_time_python/hero.jpg
-keywords: 
+keywords:
   - python
   - setting time
   - automation with python
   - python automation
 date: 2021-07-14
-
 ---
 
 <p class="intro">
@@ -24,9 +23,10 @@ I had to set it on each boot and it was very boring so I decided to make a pytho
 
 So, here's how the script works,
 On every reboot:
-  * The script makes a call to an API to get the current time based on my I.P address,
-    If my computer is not connected to the internet, it sleeps and check again in five minutes time :cool:
-  * It then sets the time using the value it got from the API
+
+- The script makes a call to an API to get the current time based on my I.P address,
+  If my computer is not connected to the internet, it sleeps and check again in five minutes time :cool:
+- It then sets the time using the value it got from the API
 
 ## Writing the code
 

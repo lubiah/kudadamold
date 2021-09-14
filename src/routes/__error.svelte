@@ -1,40 +1,44 @@
 <script context="module">
-	export function load({ error, status }){
+	export function load({ error, status }) {
 		return {
-			props:{
+			props: {
 				error,
 				status
 			}
-		}
-	}	
+		};
+	}
 </script>
 
-
 <script>
-	import SEO from "svelte-seo";
+	import SEO from 'svelte-seo';
 	export let status;
 </script>
 
-<SEO
- title = "{status} Error"	
-
-/>
+<SEO title="{status} Error" />
 
 <div class="text-center">
 	{#if status === 404}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
-	<p class="text-3xl mt-10">Hey, it seems you are lost</p>
-	<img src="https://kudadam.sirv.com/svg/astronaut.svg" loading="lazy" alt="Error" class="block mx-auto w-full">
-
+		<p class="text-3xl mt-10">Hey, it seems you are lost</p>
+		<img
+			src="https://kudadam.sirv.com/svg/astronaut.svg"
+			loading="lazy"
+			alt="Error"
+			class="block mx-auto w-full"
+		/>
 	{:else if status === 500}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
 		<p class="text-3xl mt-10">Sorry, Error from my server</p>
-		<img src="https://kudadam.sirv.com/svg/error_server.svg" loading="lazy" alt="Error" class="block mx-auto w-full">
+		<img
+			src="https://kudadam.sirv.com/svg/error_server.svg"
+			loading="lazy"
+			alt="Error"
+			class="block mx-auto w-full"
+		/>
 	{:else}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
 		<p class="text-3xl mt-10">There seem to be an error somewhere</p>
 	{/if}
-	
 </div>
 
 <style>
@@ -42,4 +46,3 @@
 		height: 400px;
 	}
 </style>
-
