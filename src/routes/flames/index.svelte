@@ -1,7 +1,7 @@
 <script>
 	import Banner from "./_components/banner.svelte";
 	import { onMount, onDestroy } from "svelte";
-
+	import Head from "svelte-seo";
 	let animate = true;
 
 	const animate_banner = async ()=>{
@@ -29,6 +29,26 @@
 	})
 </script>
 
+<Head
+title = "FLAMES GAME • Kudadam"
+description = "Flames is a simple and fun game which can determine the relationship between two individuals with the use of their names"
+keywords = "flames, flames game, real flames, real flames game"
+canonical = "https://www.kudadam.com/flames"
+
+OpenGraph = {{
+	title: "FLAMES GAME • Kudadam",
+	description: "Flames is a simple and fun game which can determine the relationship between two individuals with the use of their names",
+	url:"https://www.kudadam.com/flames",
+	type: "website"
+}}
+
+
+twitter = {{
+	site:"@lucretius_1",
+	title:"FLAMES GAME • Kudadam",
+	description: "Flames is a simple and fun game which can determine the relationship between two individuals with the use of their names"
+}}
+/>
 
 <Banner/>
 

@@ -2,6 +2,7 @@
 	import Banner from "./_components/banner.svelte";
 	import Flames from "./_flames.js";
 	import Modal from "./_components/show_relationship.svelte";
+	import Head from "svelte-seo";
 
 	let hide_modal = true;
 	let results = {
@@ -67,6 +68,11 @@
 		partner_name: ""
 	}
 </script>
+
+<Head
+title = "FLAMES Play • Kudadam"
+description = "Play the flames game"
+/>
 
 <Banner/>
 
