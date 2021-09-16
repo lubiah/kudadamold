@@ -2,7 +2,9 @@
 title: Re-designing my website
 description: A blog post which shows how I re-designed my website from scratch up
 category: Personal
-keywords: re-design, website redesign
+keywords:
+  - re-design
+  - website redesign
 image: https://kudadam.sirv.com/blog/redesigning_my_website/red_construction_hat.jpg
 date: 2021-04-16
 tags:

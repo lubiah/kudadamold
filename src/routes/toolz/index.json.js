@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import tools_list from './_tools.json';
+import * as JsSearch from "js-search";
 
 let id = 1;
 let tools = tools_list.map((tool) => {
@@ -23,6 +24,16 @@ export async function get(request) {
 		delete result['tools'];
 	}
 
+	if (query.has('search')){
+		//When the user is searching for a particular tool...
+		const search = new JsSearch.Search("id");
+		search.addIndex("name");
+		search.addDocuments(tools);
+		let search_query = query.get('search');
+		result["search"] = search.search(search_query);
+		delete result["tools"];
+	}
+	
 	return {
 		body: {
 			...result

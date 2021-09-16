@@ -32,6 +32,7 @@
 		"fdir": "^5.1.0",
 		"front-matter": "^4.0.2",
 		"jquery": "^3.6.0",
+		"js-search": "^2.0.0",
 		"mdsvex": "^0.9.8",
 		"nodemailer": "^6.6.3",
 		"regex-escape": "^3.4.10",

@@ -16,6 +16,18 @@
 <script type="text/javascript">
 	import SEO from 'svelte-seo';
 	export let tools;
+	let reserved = tools; //The reserved is a duplicate copy of the tools. It is used to reset the tools so we don't make another fetch request
+
+	let search_value = "";
+	const search = async ()=>{
+		if (search_value.trim().length === 0){
+			tools = [...reserved];
+			return;
+		}
+		let res = await fetch(`/toolz.json?search=${search_value}`);
+		let { search } = await res.json();
+		tools = [...search];
+	}
 </script>
 
 <SEO
@@ -48,8 +60,12 @@
 	}}
 />
 <div class="text-center">
-	<h1 class="font-bold my-2 text-blue-500">Toolz</h1>
+	<h1 class="font-bold my-1 text-blue-500">Toolz</h1>
 	<p class="text-lg"><i>A set of tools curated and designed by me</i></p>
+</div>
+
+<div id="search__container" class="mt-6 block ml-auto mr-4 md:mr-32 w-[60%] md:w-[25%]">
+	<input type="search" class="p-1.5" placeholder="Search..." bind:value={search_value} on:input={search}>
 </div>
 
 <div class="md:mx-36 md:pl-6 my-10">
@@ -70,4 +86,6 @@
 	ul {
 		padding: 0px !important;
 	}
+
+	
 </style>

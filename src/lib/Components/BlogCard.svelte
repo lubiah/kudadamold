@@ -4,7 +4,7 @@ The Card component is used to house the blog posts
 <script type="text/javascript">
 	import _ from 'lodash';
 	import optimizeSirv from '$lib/scripts/optimizeSirvImage.js';
-	export let image;
+	export let image = "https://kudadam.sirv.com/logo/logo_blog.png";
 	export let title;
 	export let date;
 	export let slug;
