@@ -108,10 +108,17 @@
 
 	:global(.toc::before) {
 		content: 'Table Of Contents';
-		@apply font-semibold text-xl block my-1;
+		@apply font-semibold text-xl inline-block my-1;
 	}
 
 	:global(.toc ol) {
 		list-style: none;
+	}
+	:global(.toc ol li a){
+		color: inherit;
+	}
+	:global(.toc li::before){
+		content: "✓ ";
+		color: red;
 	}
 </style>

@@ -1,6 +1,6 @@
 
 <div id="body">
-	<slot/>
+	<slot></slot>
 </div>
 
 <style>
