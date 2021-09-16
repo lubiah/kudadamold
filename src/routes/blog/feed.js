@@ -1,5 +1,5 @@
-const get_items = async (port) => {
-	let res = await fetch(`http://localhost:${port}/blog.json?all=true`);
+const get_items = async () => {
+	let res = await fetch(`https://kudadam.com/blog.json?all=true`);
 	let { posts } = await res.json();
 	return posts;
 };
@@ -21,8 +21,7 @@ const sort_items = (posts) => {
 
 export async function get(request) {
 	try {
-	const PORT = parseInt(new URL(request.host).pathname);
-	let posts = await get_items(PORT);
+	let posts = await get_items();
 	let sorted = sort_items(posts);
 	let rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">

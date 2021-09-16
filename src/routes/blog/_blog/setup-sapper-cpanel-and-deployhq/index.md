@@ -110,7 +110,7 @@ I will recommend you create a `.deployignore` file in your repository root or us
 
 Inside your repository root, create a `.deployignore` file, if you want syntax highlighting, you can use `git ignore` syntax.
 
-```plaintext
+```gitignore
 **/*
 
 !__sapper__
@@ -145,7 +145,7 @@ The build pipeline refers to commands which we want to run on DeployHQ's server 
 
 <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building_files.jpg" alt="Using deployHQ's build pipeline" />
  
-__Steps...__
+<b>Steps...</b>
 
 - Select NPM as the template
 - Enter a description
