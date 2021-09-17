@@ -1,5 +1,8 @@
+import { mode } from "$app/env";
+
 const get_items = async () => {
-	let res = await fetch(`https://kudadam.com/blog.json?all=true`);
+	let url = (mode == "development") ? "http://localhost:3000/blog.json?all=true" : "https://kudadam.com/blog.json?all=true";
+	let res = await fetch(url);
 	let { posts } = await res.json();
 	return posts;
 };

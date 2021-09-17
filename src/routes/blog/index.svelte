@@ -84,7 +84,7 @@
 </div>
 
 {#if page != limit}
-	<Button danger primary={false} center on:click={loadData}>Load More</Button>
+	<Button class="mx-auto block" danger center on:click={loadData}>Load More</Button>
 {/if}
 
 <style type="text/css">

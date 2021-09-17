@@ -31,7 +31,7 @@
 		<p class="pb-1">
 			<span class="block md:inline"
 				>Made with <i class="fas fa-heart text-red-500 animate-pulse" /> and built with
-				<a href="https://kit.svelte.dev" target="_blank">SvelteKit</a></span
+				<a href="https://kit.svelte.dev" target="_blank">Svelte-Kit</a></span
 			>
 			<span class="invisible md:visible">·</span>
 			<span

@@ -48,7 +48,6 @@ export async function get({ query }) {
 	if (query.get('all')) {
 		results['posts'] = unsorted;
 	}
-
 	return {
 		body: {
 			...results
