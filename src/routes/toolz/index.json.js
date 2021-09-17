@@ -14,7 +14,7 @@ const get_info = (tool_name) => {
 	let tool = tools.filter((tool) => tool.url === `/toolz/${tool_name}`);
 	return tool[0];
 };
-
+  
 export async function get(request) {
 	let result = new Object();
 	let query = request.query;
