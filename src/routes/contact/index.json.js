@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 
+
 const GMAIL_ACCOUNT = import.meta.env.VITE_GMAIL_ACCOUNT;
 const GMAIL_PASSWORD = import.meta.env.VITE_GMAIL_PASSWORD;
 

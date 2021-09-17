@@ -63,7 +63,7 @@
 				Want me to help you with an interesting project?<br />
 				<span class="font-bold block">OR</span>
 				Wanna design a website?<br />
-				<Button primary><a href="contact">Contact me</a></Button>
+				<Button danger class="my-6"><a href="contact">Contact me</a></Button>
 			</p>
 		</div>
 	</div>

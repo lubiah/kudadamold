@@ -3,6 +3,7 @@ import front_matter from 'front-matter';
 import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
+import { mode } from "$app/env";
 
 const blog_contents_dir = 'src/routes/blog/_blog';
 const crawler = new fdir().onlyDirs().normalize(); //The crawler
@@ -16,7 +17,7 @@ let id = 1;
 let filtered = files.filter((file) => {
 	let contents = fs.readFileSync(`${blog_contents_dir}/${file}/index.md`, 'utf-8');
 	let fm = front_matter(contents).attributes;
-	if (fm.draft !== true) return fm;
+	if (fm.draft !== true || mode == "development") return fm;
 });
 let posts = filtered.map((file) => {
 	let contents = fs.readFileSync(`${blog_contents_dir}/${file}/index.md`, 'utf-8');

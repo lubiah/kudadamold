@@ -118,7 +118,8 @@
 		color: inherit;
 	}
 	:global(.toc li::before){
-		content: "✓ ";
+		content: "✓";
 		color: red;
+		@apply pr-1
 	}
 </style>

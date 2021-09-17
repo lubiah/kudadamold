@@ -15,18 +15,22 @@
 
 <script type="text/javascript">
 	import SEO from 'svelte-seo';
+	import * as JsSearch from "js-search";
 	export let tools;
 	let reserved = tools; //The reserved is a duplicate copy of the tools. It is used to reset the tools so we don't make another fetch request
 
+	const search = new JsSearch.Search("id");
+	search.addIndex("name");
+	search.addDocuments(tools);
+
 	let search_value = "";
-	const search = async ()=>{
+	const search_function = async ()=>{
 		if (search_value.trim().length === 0){
 			tools = [...reserved];
 			return;
+
 		}
-		let res = await fetch(`/toolz.json?search=${search_value}`);
-		let { search } = await res.json();
-		tools = [...search];
+		tools = [...search.search(search_value)];
 	}
 </script>
 
@@ -64,8 +68,8 @@
 	<p class="text-lg"><i>A set of tools curated and designed by me</i></p>
 </div>
 
-<div id="search__container" class="mt-6 block ml-auto mr-4 md:mr-32 w-[60%] md:w-[25%]">
-	<input type="search" class="p-1.5" placeholder="Search..." bind:value={search_value} on:input={search}>
+<div class="mt-6 block ml-auto mr-4 md:mr-32 w-[60%] md:w-[25%]">
+	<input type="search" class="p-1.5 pl-3 rounded-xl" placeholder="Search..." bind:value={search_value} on:input={search_function}>
 </div>
 
 <div class="md:mx-36 md:pl-6 my-10">

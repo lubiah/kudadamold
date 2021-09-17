@@ -5,10 +5,7 @@
 	export let type = 'button';
 	export let disabled = false;
 	export let primary = true;
-	export let secondary = false;
-	export let block = false;
 	export let danger = false;
-	export let center = false;
 </script>
 
 <button
@@ -17,21 +14,18 @@
 	{disabled}
 	class="py-1 my-1 px-3 rounded text-white {Class}"
 	class:bg-blue-600={primary}
-	class:secondary
-	class:block
-	class:bg-red-600={danger}
-	class:center
+	class:!bg-red-600={danger}
 >
 	<slot />
 </button>
 
 <style type="text/css">
-	:global(.secondary) {
-		background: tomato;
+	button:active{
+		transform: translateY(0.5px);
+		box-shadow: unset;
 	}
 
-	.center {
-		display: block;
-		@apply mx-auto;
+	button {
+		box-shadow: 1px 1px 2px black
 	}
 </style>

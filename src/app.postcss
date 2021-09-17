@@ -3,8 +3,17 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-	width: 5px;
+	width: 8px;
+	background: #DADADA;
 }
+::-webkit-scrollbar-thumb {
+			background: #757575
+}
+::-webkit-scrollbar-thumb:active{
+	background: #484444
+}
+
+
 
 * :focus-visible {
 	outline: none;
@@ -141,11 +150,16 @@ body {
 		overflow: scroll;
 		max-height: 300px;
 		scrollbar-width: thin;
+		white-space: none;
 	}
 
-	pre > code::-webkit-scrollbar {
-		width: 2px;
-	}
+pre[class*="language-"] {
+	padding: 0px !important;
+}
+
+code[class*="language-"] {
+	overflow-x: hidden;
+}
 
 	table,
 	thead,
