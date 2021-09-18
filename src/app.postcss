@@ -89,9 +89,7 @@ body {
 		font-size: clamp(1.08rem, 1em + 2vw, 1.14rem);
 		@apply leading-relaxed;
 	}
-	pre::-webkit-scrollbar,code::-webkit-scrollbar {
-		width:5px !important;
-	}
+
 	b,
 	strong {
 		@apply font-medium;
@@ -151,19 +149,16 @@ body {
 	pre > code {
 		display: block;
 		padding: 5px;
-		overflow: scroll;
+		overflow: auto;
 		max-height: 300px;
 		scrollbar-width: thin;
-		white-space: none;
+		white-space: pre-wrap !important;
 	}
 
 pre[class*="language-"] {
 	padding: 0px !important;
 }
 
-code[class*="language-"] {
-	overflow-x: hidden;
-}
 
 	table,
 	thead,
