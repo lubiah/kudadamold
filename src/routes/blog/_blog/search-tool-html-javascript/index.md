@@ -174,3 +174,6 @@ Below the body tag, create a script tag and insert the following code inside
 So in the first script tag, we imported the search-js module.
 Then, in the next script tag, we defined an asynchronous function called `get_data()`, this function makes a fetch request to this URL (https://dev.to/api/articles?per_page=900) and it returns a list of 900 dev.to articles in JSON format.
 To the next part, we add an event listener to the load event of the page, when the event is fired, we retrieve the articles from the `get_data()` function, then we create a new [search-js](https://github.com/bvaughn/js-search) instance. The constructor of search-js requires an identifier so we use the `id` of the articles. The `search.addIndex('title')` tells search-js to search for our query in the titles only, then finally, `search.addDocuments` is used to add the articles JSON data to the search-js instance. 
+
+To the next part, we added an event listener to the input event of the search box, on every input, we run a function to get the search results, `search.search(value)` takes the user's input and tries to search for it in the JSON we provided to it earlier, it then returns a new array based on the search results.
+We then iterate over each data item and create HTML elements for them. Finally, we insert the HTML elements into the HTML documents.
