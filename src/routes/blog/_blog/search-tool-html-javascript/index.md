@@ -11,7 +11,6 @@ date: 2021-09-16
 tags:
   - html
   - javascript
-draft: true
 ---
 
 <p class="intro">
@@ -177,3 +176,8 @@ To the next part, we add an event listener to the load event of the page, when t
 
 To the next part, we added an event listener to the input event of the search box, on every input, we run a function to get the search results, `search.search(value)` takes the user's input and tries to search for it in the JSON we provided to it earlier, it then returns a new array based on the search results.
 We then iterate over each data item and create HTML elements for them. Finally, we insert the HTML elements into the HTML documents.
+
+## Preview Of The Project
+
+So if you followed the tutorial correctly, your page should be working and looking like the gif bellow
+![Preview of the code](https://kudadam.sirv.com/blog/search_tool_html_javascript/preview.gif)

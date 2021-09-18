@@ -8,7 +8,7 @@ const minification_options = {
 	html5: true,
 	ignoreCustomComments: [/^#/],
 	minifyCSS: true,
-	minifyJS: false,
+	minifyJS: true,
 	removeAttributeQuotes: true,
 	removeComments: true,
 	removeOptionalTags: true,
@@ -16,7 +16,8 @@ const minification_options = {
 	removeScriptTypeAttributes: true,
 	removeStyleLinkTypeAttributes: true,
 	sortAttributes: true,
-	sortClassName: true
+	sortClassName: true,
+	removeEmptyElements: true
 };
 
 export async function handle({ request, resolve }) {
@@ -25,6 +26,6 @@ export async function handle({ request, resolve }) {
   if (response.headers['content-type'] === 'text/html') {
     response.body = minify(response.body, minification_options);
   }
-
+  
   return response;
 }
