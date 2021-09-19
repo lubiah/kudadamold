@@ -1,6 +1,4 @@
 <script>
-	export let Class;
-	export { Class as class };
 	export let height = "24";
 	export let width = "24";
 </script>

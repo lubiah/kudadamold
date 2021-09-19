@@ -1,7 +1,32 @@
 {
-	"name": "Kudadam",
+	"name": "Kudadam Website",
 	"short_name": "Kudadam",
 	"start_url": "/",
 	"scope": "/",
-	"display": "standalone"
+	"display": "standalone",
+	"background_color": "white",
+	"theme_color":"red",
+	"orientation":"portrait-primary",
+	"icons": [
+		{
+			"src":"https://kudadam.sirv.com/logo/logo.png?h=72&w=72",
+			"type":"image/png",
+			"sizes":"72x72"
+		},
+		{
+			"src":"https://kudadam.sirv.com/logo/logo.png?h=96&w=96",
+			"type":"image/png",
+			"sizes":"96x96"
+		},
+		{
+			"src":"https://kudadam.sirv.com/logo/logo.png?h=128&w=128",
+			"type":"image/png",
+			"sizes":"128x128"
+		},
+		{
+			"src":"https://kudadam.sirv.com/logo/logo.png?h=512&w=512",
+			"type":"image/png",
+			"sizes":"512x512"
+		}
+	]
 }
