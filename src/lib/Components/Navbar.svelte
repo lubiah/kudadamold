@@ -1,6 +1,8 @@
 <script type="text/javascript">
 	import { afterUpdate } from 'svelte';
 	import { page } from '$app/stores';
+	import Moon from "$lib/Icons/moon.svelte";
+	import { mode } from "/src/stores/store.js"; 
 
 	let segment;
 	$: segment = $page.path === '/' ? '/home' : $page.path;
@@ -15,14 +17,13 @@
 	];
 
 	const set_mode = (e) => {
-		let theme = localStorage.theme;
-		if (!theme || theme === 'light') {
+		if ($mode === 'light') {
 			document.documentElement.classList.add('dark');
-			localStorage.theme = 'dark';
+			mode.set("dark");
 			e.target.src = 'https://kudadam.sirv.com/icons/sun.svg';
-		} else if (theme === 'dark') {
+		} else if ($mode === 'dark') {
 			document.documentElement.classList.remove('dark');
-			localStorage.theme = 'light';
+			mode.set("light");
 			e.target.src = 'https://kudadam.sirv.com/icons/moon.svg';
 		}
 	};
