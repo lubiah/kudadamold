@@ -20,7 +20,7 @@ This component is used to display my projects in a more organized manner
 	<div class="flex">
 		<Button class="ml-2 my-2" danger><a href={url}>Visit</a></Button>
 	</div>
-</div>http://localhost:3000/contact
+</div>
 
 <style type="text/css">
 	img {

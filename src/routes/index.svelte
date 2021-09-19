@@ -132,10 +132,10 @@
 	</div>
 	<div class="flex flex-wrap">
 		<ProjectCard
-			image="https://kudadam.sirv.com/quickbase64/version_3.png?thumbnail=200&q=90"
-			title="Quick Base64"
-			description="A software which allows you to encode and decode your files into base 64 format with ease"
-			url="https://www.kudadam.com/quickbase64"
+			image="https://kudadam.sirv.com/FLAMES/image.png"
+			title="FLAMES Game"
+			description="A simple game which can tell the relationship between two people with the use of their names"
+			url="https://www.kudadam.com/flames"
 		/>
 		<ProjectCard
 			image="https://kudadam.sirv.com/extractfrom/version_5.png?thumbnail=200"

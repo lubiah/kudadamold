@@ -2,6 +2,7 @@
 	import { afterUpdate } from 'svelte';
 	import { page } from '$app/stores';
 	import Moon from "$lib/Icons/moon.svelte";
+	import Sun from "$lib/Icons/sun.svelte";
 	import { mode } from "/src/stores/store.js"; 
 
 	let segment;
@@ -16,15 +17,14 @@
 		{ name: 'Toolz', url: '/toolz', id: 5 }
 	];
 
-	const set_mode = (e) => {
+	const setMode = () => {
 		if ($mode === 'light') {
 			document.documentElement.classList.add('dark');
 			mode.set("dark");
-			e.target.src = 'https://kudadam.sirv.com/icons/sun.svg';
-		} else if ($mode === 'dark') {
+		} 
+		else {
 			document.documentElement.classList.remove('dark');
 			mode.set("light");
-			e.target.src = 'https://kudadam.sirv.com/icons/moon.svg';
 		}
 	};
 
@@ -41,16 +41,14 @@
 
 	const check_mode = () => {
 		if (
-			localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			$mode === 'dark' ||
+			(window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
 			document.documentElement.classList.add('dark');
-			localStorage.theme = 'dark';
-			document.querySelector('#theme').src = 'https://kudadam.sirv.com/icons/sun.svg';
+			mode.set("dark");
 		} else {
 			document.documentElement.classList.remove('dark');
-			localStorage.theme = 'light';
-			document.querySelector('#theme').src = 'https://kudadam.sirv.com/icons/moon.svg';
+			mode.set("light");
 		}
 	};
 
@@ -76,14 +74,21 @@
 		></a
 	>
 
-	<img
+	<span class="ml-auto my-auto h-3/4" on:click={setMode} title="Change Mode">
+		{#if $mode === "light"}
+			<Moon/>
+		{:else}
+			<Sun class/>
+		{/if}
+	</span>
+	<!-- <img
 		on:click={set_mode}
 		id="theme"
 		loading="lazy"
 		alt="Mode"
 		class="ml-auto my-auto h-3/4"
 		title="Change Mode"
-	/>
+	/> -->
 
 	<button
 		class="ml-auto px-1 md:hidden"
