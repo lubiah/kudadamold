@@ -14,14 +14,14 @@
 					<a href="mailto:lucretiusbiah@protonmail.com"><span class="fas fa-envelope" /> Email </a>
 				</li>
 				<li>
-					<a href="https://www.github.com/biah" target="_blank">
+					<a href="https://www.github.com/biah" target="_blank" rel="noopener">
 						<span class="fab fa-github" />
 						Github
 					</a>
 				</li>
 				<li>
 					<span class="fab fa-twitter" />
-					<a href="https://twitter.com/lucretius_1" target="_blank">Lucretius_1</a>
+					<a href="https://twitter.com/lucretius_1" target="_blank" rel="noopener">Lucretius_1</a>
 				</li>
 			</ul>
 		</div>
@@ -31,12 +31,13 @@
 		<p class="pb-1">
 			<span class="block md:inline"
 				>Made with <i class="fas fa-heart text-red-500 animate-pulse" /> and built with
-				<a href="https://kit.svelte.dev" target="_blank">Svelte-Kit</a></span
+				<a href="https://kit.svelte.dev" target="_blank" rel="noopener">Svelte-Kit</a></span
 			>
 			<span class="invisible md:visible">·</span>
 			<span
 				>Source code is available on <a
 					target="_blank"
+					rel="noopener"
 					href="https://www.github.com/biah/www.kudadam.com"><i class="fab fa-github" /> Github</a
 				></span
 			>

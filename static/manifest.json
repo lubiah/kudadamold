@@ -24,9 +24,15 @@
 			"sizes":"128x128"
 		},
 		{
+			"src":"https://kudadam.sirv.com/logo/logo.png?h=144&w=144",
+			"type":"image/png",
+			"sizes":"144x144"
+		},
+		{
 			"src":"https://kudadam.sirv.com/logo/logo.png?h=512&w=512",
 			"type":"image/png",
 			"sizes":"512x512"
 		}
+
 	]
 }

@@ -69,7 +69,7 @@
 	</div>
 </section>
 <section>
-	<h3 class="text-center font-semibold text-red-500">Area of interest</h3>
+	<h2 class="text-center font-semibold text-red-500">Area of interest</h2>
 	<div class="flex flex-wrap md:flex-row-reverse mb-2">
 		<div class="w-full md:w-1/2">
 			<img
@@ -90,11 +90,11 @@
 	</div>
 </section>
 <section class="my-4">
-	<h3 class="text-center text-red-500">
+	<h2 class="text-center text-red-500">
 		Languages I <span style="color: green">&lt;</span><span class="text-red-500">speak</span><span
 			style="color: green">/&gt;</span
 		>
-	</h3>
+	</h2>
 
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:px-10">
 		<div>
@@ -119,7 +119,7 @@
 	</div>
 </section>
 <section>
-	<h3 class="text-center font-semibold text-red-500">Softwares I made...</h3>
+	<h2 class="text-center font-semibold text-red-500">Softwares I made...</h2>
 	<p class="text-center">I also design and make softwares too</p>
 	<div class="my-5">
 		<img
