@@ -1,0 +1,93 @@
+- pipeline: "Build Application"
+  on: "CLICK"
+  refs:
+  - "refs/heads/master"
+  priority: "NORMAL"
+  target_site_url: "https://www.kudadam.com"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Execute: npm run build"
+    type: "BUILD"
+    working_directory: "/buddy/www-kudadam-com"
+    docker_image_name: "library/node"
+    docker_image_tag: "latest"
+    execute_commands:
+    - "npm install"
+    - "npm run build"
+    volume_mappings:
+    - "/:/buddy/www-kudadam-com"
+    cache_base_image: true
+    shell: "BASH"
+- pipeline: "Deploy to Server"
+  on: "CLICK"
+  refs:
+  - "refs/heads/master"
+  priority: "NORMAL"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Copy files from www.kudadam.com/Build Application"
+    type: "COPY_FILES"
+    source_path: "/"
+    target_path: "/"
+    deployment_excludes:
+    - "/.github/"
+    - "/src/"
+    deployment_includes:
+    - "/src/routes/blog/_blog/"
+    source_project_name: "www-kudadam-com"
+    source_pipeline_name: "Build Application"
+  - action: "Upload files to ftp.kudadam.com"
+    type: "FTP"
+    input_type: "BUILD_ARTIFACTS"
+    local_path: "/"
+    remote_path: "/public_html/www.kudadam.com"
+    login: "eakloeor"
+    password: "secure!fIrXPq0NhWrGfjg7HrYwFEboK9e+UjmOjx3BRCxr1K0=.5hxyZVjVU+OiGdNgVl+dPQ=="
+    host: "kudadam.com"
+    port: "21"
+    use_temporary_files: true
+    deployment_excludes:
+    - "/.svelte-kit/"
+    - "/node_modules/"
+    - "/src/"
+    - "/README.md"
+    - "/static/"
+    deployment_includes:
+    - "/src/routes/blog/_blog/"
+    - "generateSitemap.js"
+  - action: "[kudadam.com] Execute: touch tmp/restart.txt"
+    type: "SSH_COMMAND"
+    working_directory: "/home5/eakloeor/public_html/www.kudadam.com"
+    login: "eakloeor"
+    password: "secure!fIrXPq0NhWrGfjg7HrYwFEboK9e+UjmOjx3BRCxr1K0=.5hxyZVjVU+OiGdNgVl+dPQ=="
+    host: "kudadam.com"
+    port: "22"
+    authentication_mode: "PASS"
+    commands:
+    - "bash build.bash"
+    run_as_script: true
+    shell: "BASH"
+- pipeline: "Run Pipelines"
+  on: "EVENT"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/master"
+  priority: "NORMAL"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Run www.kudadam.com/Build Application"
+    type: "RUN_NEXT_PIPELINE"
+    comment: "Triggered by $BUDDY_PIPELINE_NAME execution #$BUDDY_EXECUTION_ID"
+    revision: "INHERIT"
+    next_project_name: "www-kudadam-com"
+    next_pipeline_name: "Build Application"
+  - action: "Run www.kudadam.com/Deploy to Server"
+    type: "RUN_NEXT_PIPELINE"
+    comment: "Triggered by $BUDDY_PIPELINE_NAME execution #$BUDDY_EXECUTION_ID"
+    revision: "INHERIT"
+    next_project_name: "www-kudadam-com"
+    next_pipeline_name: "Deploy to Server"
