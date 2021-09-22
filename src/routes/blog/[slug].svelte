@@ -55,7 +55,7 @@
 		title: `${metadata.title}`,
 		description: `${metadata.description}`,
 		image: `${metadata.image}`,
-		imageAlt: 'Alt image'
+		imageAlt: `${metadata.title}`
 	}}
 />
 
@@ -101,6 +101,10 @@
 	:global(#post-image:empty) {
 		background: #d5d5d5;
 		width: 100%;
+	}
+
+	:global(.intro){
+		@apply italic text-xl py-6;
 	}
 	:global(.toc) {
 		@apply my-4;

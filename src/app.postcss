@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
 	width: 8px;
 	background: #DADADA;
 }
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
 			background: #757575
 }
-::-webkit-scrollbar-thumb:active{
+body::-webkit-scrollbar-thumb:active{
 	background: #484444
 }
 
@@ -25,11 +25,15 @@
 }
 
 body {
-
 	font-family: 'Open Sans', Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,sans-serif
 }
 
 @layer base {
+
+	* {
+		@apply leading-relaxed;
+	}
+
 	input:focus-visible,
 	textarea:focus-visible {
 		border: 1px solid tomato;
@@ -74,20 +78,10 @@ body {
 	html {
 		scroll-behavior: smooth;
 		scrollbar-width: thin;
-		font-size: 1rem;
 	}
 
 	body {
-		@apply dark:bg-gray-700 dark:text-gray-300 text-gray-700;
-	}
-
-	p,
-	li,
-	b,
-	strong,
-	pre {
-		font-size: clamp(1.08rem, 1em + 2vw, 1.14rem);
-		@apply leading-relaxed;
+		@apply dark:bg-gray-700 dark:text-gray-300 text-gray-700 text-[1.15rem] md:text-[1.17rem];
 	}
 
 	b,

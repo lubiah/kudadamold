@@ -1,4 +1,3 @@
-
 <div id="body">
 	<slot></slot>
 </div>
@@ -9,8 +8,7 @@
 		background-image: url("https://kudadam.sirv.com/svg/rainbow.svg");
 		background-repeat: no-repeat;
 		background-position: center;
-		background-size: cover;
-	
+		background-size: cover;	
 	}
 
 </style>

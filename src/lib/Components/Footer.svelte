@@ -1,3 +1,8 @@
+<script>
+	import Github from "$lib/Icons/github.svelte";
+	import Twitter from "$lib/Icons/twitter.svelte";
+</script>
+
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-8">
 	<div class="pl-3 flex flex-wrap justify-center gap-x-10 mt-4 mb-2" id="flexible">
 		<div>
@@ -15,12 +20,12 @@
 				</li>
 				<li>
 					<a href="https://www.github.com/biah" target="_blank" rel="noopener">
-						<span class="fab fa-github" />
+						<Github class="text-inherit inline"/>
 						Github
 					</a>
 				</li>
 				<li>
-					<span class="fab fa-twitter" />
+					<Twitter/>
 					<a href="https://twitter.com/lucretius_1" target="_blank" rel="noopener">Lucretius_1</a>
 				</li>
 			</ul>
@@ -31,14 +36,14 @@
 		<p class="pb-1">
 			<span class="block md:inline"
 				>Made with <i class="fas fa-heart text-red-500 animate-pulse" /> and built with
-				<a href="https://kit.svelte.dev" target="_blank" rel="noopener">Svelte-Kit</a></span
+				<a href="https://kit.svelte.dev" target="_blank" rel="noopener">SvelteKit</a></span
 			>
 			<span class="invisible md:visible">·</span>
 			<span
 				>Source code is available on <a
 					target="_blank"
 					rel="noopener"
-					href="https://www.github.com/biah/www.kudadam.com"><i class="fab fa-github" /> Github</a
+					href="https://www.github.com/biah/www.kudadam.com">Github</a
 				></span
 			>
 		</p>

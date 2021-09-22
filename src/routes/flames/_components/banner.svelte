@@ -1,4 +1,4 @@
-<div id="banner" class="text-center pt-10  text-[20vw] md:text-[200px] font-bold">
+<div id="banner" class="text-center pt-5  text-[20vw] md:text-[200px] font-bold">
 	FLAMES
 </div>
 

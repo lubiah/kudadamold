@@ -3,6 +3,7 @@
 	"short_name": "Kudadam",
 	"start_url": "/",
 	"scope": "/",
+	"description": "Lucretius' personal website",
 	"display": "standalone",
 	"background_color": "white",
 	"theme_color":"#ef4444",
@@ -24,6 +25,11 @@
 			"sizes":"128x128"
 		},
 		{
+			"src":"https://kudadam.sirv.com/logo/logo.png?h=192&w=192",
+			"type":"image/png",
+			"sizes":"192x192"
+		},
+		{
 			"src":"https://kudadam.sirv.com/logo/logo.png?h=144&w=144",
 			"type":"image/png",
 			"sizes":"144x144"
@@ -34,5 +40,13 @@
 			"sizes":"512x512"
 		}
 
+	],
+	"shortcuts":[
+		{
+			"name": "Blog Posts",
+			"short_name": "Blog",
+			"description" : "Read Lucretius' Blog Posts",
+			"url":"/blog"
+		}
 	]
 }
