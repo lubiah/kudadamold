@@ -1,6 +1,7 @@
 <script>
 	import Github from "$lib/Icons/github.svelte";
 	import Twitter from "$lib/Icons/twitter.svelte";
+	import Envelope from "$lib/Icons/envelope.svelte";
 </script>
 
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-8">
@@ -16,17 +17,16 @@
 			<p class="font-bold">Contact</p>
 			<ul>
 				<li>
-					<a href="mailto:lucretiusbiah@protonmail.com"><span class="fas fa-envelope" /> Email </a>
+					<a href="mailto:lucretiusbiah@protonmail.com"><Envelope/> Email </a>
 				</li>
 				<li>
 					<a href="https://www.github.com/biah" target="_blank" rel="noopener">
-						<Github class="text-inherit inline"/>
+						<Github/>
 						Github
 					</a>
 				</li>
 				<li>
-					<Twitter/>
-					<a href="https://twitter.com/lucretius_1" target="_blank" rel="noopener">Lucretius_1</a>
+					<a href="https://twitter.com/lucretius_1" target="_blank" rel="noopener"><Twitter/> Lucretius_1</a>
 				</li>
 			</ul>
 		</div>
