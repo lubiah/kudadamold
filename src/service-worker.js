@@ -8,14 +8,26 @@ const dynamic_pages = [
 	"/",
 	"/blog",
 	"/blog.json?limit=true",
-	"/blog.json?page=2",
-	"/blog.json?page=3",
 	"/toolz",
 	"/toolz.json",
 	"/offline",
 	"/about",
 	"/contact"
 ]
+
+
+const limitCacheSize = (name,size)=>{
+	caches.open(name)
+	.then(cache=>{
+		cache.keys()
+		.then(keys=>{
+			if (keys.length > size){
+				cache.delete(keys[0]).
+				then(limitCacheSize(name,size));
+			}
+		})
+	})
+}
 
 self.addEventListener("install", event =>{
 
@@ -55,19 +67,23 @@ self.addEventListener("fetch", event =>{
 	event.respondWith(
 		caches.match(event.request)
 		.then(response => {
-			return response || fetch(event.request)
+			if (response)
+				return response
+			return fetch(event.request)
 			.then(fetch_res=>{
+				if (!fetch_res || fetch_res.status !== 200)
+					return fetch_res;
 				return caches.open(dynamic_cache)
 				.then(cache =>{
 					cache.put(event.request.url, fetch_res.clone());
+					limitCacheSize(dynamic_cache,80);
 					return fetch_res;
 				})
 			})
+			.catch(err=>{
+				if (new URL(event.request.url).origin === self.location.origin && event.request.url.search("_app/pages") === 1)
+				return caches.match("/offline");
+			});
 		})
-		.catch(
-			()=>{
-				caches.match("/offline");
-			}
-			)
 		)
 })
