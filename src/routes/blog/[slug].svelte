@@ -3,15 +3,17 @@
 	import SEO from 'svelte-seo';
 	import PageProgress from '$lib/Components/PageProgress.svelte';
 	import 'prismjs/themes/prism-tomorrow.css';
-	import snakeCase from 'lodash';
+	import _ from 'lodash';
 	import { browser } from '$app/env';
 
-	export async function load({ page }) {
+	export async function load({ page, fetch }) {
 		const slug = page.params.slug;
+
+		let res = await fetch(`/blog/${slug}.json`);
+		let data = await res.json();
 
 		try {
 			let component = await import(`./_blog/${slug}/index.md`);
-
 			return {
 				props: {
 					metadata: component.metadata,
@@ -24,6 +26,32 @@
 
 <script type="text/javascript">
 	export let metadata, content;
+
+	let __semio__params = {
+    graphcommentId: "Kudadam-Website", // make sure the id is yours
+
+    behaviour: {
+      // HIGHLY RECOMMENDED
+      uid: `${metadata.slug}`, // uniq identifer for the comments thread on your page (ex: your page id)
+    },
+
+    // configure your variables here
+
+  }
+ 
+	function __semio__onload() {
+    __semio__gc_graphlogin(__semio__params)
+  	}
+
+	onMount(()=>{
+		let comment_tag = document.createElement("script");
+		comment_tag.async = true; comment_tag.type = "text/javascript";
+		comment_tag.onload = __semio__onload; comment_tag.defer = true;
+		comment_tag.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+		document.getElementsByTagName('head')[0].appendChild(comment_tag);
+
+
+	})
 </script>
 
 <SEO
@@ -64,8 +92,8 @@
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
 		<div class="py-2 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
 			<p class="pl-2 text-base">
-				<span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span>
-				• <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
+				<span><a href="/blog/category/{_.snakeCase(metadata.category)}">{metadata.category}</a></span>
+				• <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date> • <span></span>
 			</p>
 		</div>
 		<img
@@ -74,8 +102,9 @@
 			id="post-image"
 			class="h-52 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
 		/>
-		<div class="leading-tight px-2">
-			<svelte:component this={content} />
+		
+		<div class="leading-tight px-2" id="content">
+			<svelte:component  this={content} />
 		</div>
 	</div>
 </div>
@@ -83,6 +112,10 @@
 {#if browser}
 	<PageProgress color="red" height="5px" />
 {/if}
+
+<div>
+	<div id="graphcomment"></div>
+</div>
 
 <style type="text/css">
 	#post :global(h2),

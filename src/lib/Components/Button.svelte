@@ -12,7 +12,7 @@
 	on:click
 	{type}
 	{disabled}
-	class="py-1 my-1 px-3 rounded text-white {Class}"
+	class="py-1 my-1 px-5 text-sm rounded text-white {Class}"
 	class:bg-blue-600={primary}
 	class:!bg-red-600={danger}
 >

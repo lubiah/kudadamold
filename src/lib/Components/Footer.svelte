@@ -2,6 +2,7 @@
 	import Github from "$lib/Icons/github.svelte";
 	import Twitter from "$lib/Icons/twitter.svelte";
 	import Envelope from "$lib/Icons/envelope.svelte";
+	import RSS from "$lib/Icons/rss.svelte";
 </script>
 
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-8">
@@ -9,7 +10,7 @@
 		<div>
 			<p class="font-bold">Quick Links</p>
 			<ul>
-				<li><a href="/blog/feed">RSS feed</a></li>
+				<li><a href="/blog/feed"><RSS/> RSS feed</a></li>
 				<li><a href="/sitemap.xml">Sitemap.xml</a></li>
 			</ul>
 		</div>

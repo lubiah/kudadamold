@@ -7,7 +7,7 @@ The Card component is used to house the blog posts
 	export let image = "https://kudadam.sirv.com/logo/logo_blog.png";
 	export let title;
 	export let date;
-	export let slug;
+	export let slug = "";
 	export let category;
 	export let hide_category = false;
 </script>
@@ -28,7 +28,7 @@ The Card component is used to house the blog posts
 		<h2 class="text-xl mx-1 my-2 font-semibold">
 			<a
 				rel="prefetch"
-				href="blog/{slug}"
+				href="/blog/{slug}"
 				class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500"
 				id="card-title">{title}</a
 			>
