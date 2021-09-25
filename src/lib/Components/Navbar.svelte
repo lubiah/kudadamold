@@ -69,7 +69,7 @@
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center dark:text-white justify-center text-gray-700"
 		href="/"
-		><img src="https://kudadam.sirv.com/logo/logo.png?q=5" class="h-10" alt="" /><span
+		><img src="https://kudadam.sirv.com/logo/logo.png?q=5" class="h-10" height="40" width="40" alt="" /><span
 			class="hidden md:inline">Kudadam</span
 		></a
 	>
@@ -135,7 +135,7 @@
 		list-style: none !important;
 	}
 	.active {
-		@apply text-red-500;
+		color: var(--primary-color);
 	}
 
 	#nav-menu ul li *:not(.active) {

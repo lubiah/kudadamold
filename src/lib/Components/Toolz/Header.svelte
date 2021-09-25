@@ -7,7 +7,7 @@
 
 <SEO
 	title="{tool.name} • Kudadam Toolz"
-	description={tool.description}
+	description="{tool.description}"
 	canonical="https://kudadam.com/toolz/{tool.url}"
 	openGraph={{
 		title: `${tool.name} • Kudadam Toolz`,

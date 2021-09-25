@@ -37,7 +37,7 @@
 		imageAlt: 'Logo of Kudadam'
 	}}
 />
-<h1 class="text-center font-bold text-red-500">Contact</h1>
+<h1 class="text-center font-bold">Contact</h1>
 <p>
 	In case you ever want to contact me, just pick an option below. The fastest is email.<br />
 	If I don't reply, them maybe am in school.

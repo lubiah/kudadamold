@@ -41,7 +41,7 @@ The Card component is used to house the blog posts
 
 <style type="text/css">
 	#card:hover #card-title {
-		@apply text-red-500;
+		color: var(--primary-color);
 	}
 
 	#card-image {

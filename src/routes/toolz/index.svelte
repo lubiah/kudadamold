@@ -64,7 +64,7 @@
 	}}
 />
 <div class="text-center">
-	<h1 class="font-bold my-1 text-blue-500">Toolz</h1>
+	<h1 class="font-bold my-1">Toolz</h1>
 	<p class="text-lg"><i>A set of tools curated and designed by me</i></p>
 </div>
 
@@ -76,8 +76,8 @@
 	<ul class="divide-y list-none divide-gray-300 dark:divide-gray-500">
 		{#each tools as tool (tool.id)}
 			<li class="py-3 px-2">
-				<p class="my-1 text-lg text-blue-500 font-semibold">
-					<a href={tool.url} rel="prefetch">{tool.name}</a>
+				<p class="my-1 text-lg font-semibold">
+					<a href={tool.url} sveltekit:prefetch>{tool.name}</a>
 				</p>
 				<p>{tool.description}</p>
 			</li>

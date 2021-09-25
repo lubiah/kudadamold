@@ -13,7 +13,7 @@
 	{type}
 	{disabled}
 	class="py-1 my-1 px-5 text-sm rounded text-white {Class}"
-	class:bg-blue-600={primary}
+	class:primary
 	class:!bg-red-600={danger}
 >
 	<slot />
@@ -23,6 +23,10 @@
 	button:active{
 		transform: translateY(0.5px);
 		box-shadow: unset;
+	}
+
+	.primary {
+		background: var(--primary-color);
 	}
 
 	button {

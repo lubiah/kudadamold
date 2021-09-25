@@ -41,41 +41,40 @@
 	}}
 />
 
+<div>
 <section>
-	<div class="text-center">
-		<h1 class="font-bold text-red-500">Hey, am Lucretius</h1>
-		<p>
-			Am a web designer and software developer<br />I bring your imaginations into reality with
-			<span>
-				<span style="color: green">&lt;</span><span style="color: red">code</span><span
-					style="color: green">/</span
-				><span style="color: green">&gt;</span></span
-			>
-		</p>
-		<img
-			class="w-80 mx-auto my-3"
+	<div>
+		<div class="flex justify-center flex-wrap md:flex-nowrap mx-auto" id="banner">
+			<div>
+				<h1 class="font-bold !m-1">Hey, I'm Lucretius</h1>
+				<p>
+				Am a software developer and website designer located somewhere in Wakanda.
+				Also, am an open-source enthusiast, frequent gamer and an avid reader.
+				Welcome to my part of the internet where I <a href="/blog">share my knowledge</a>, <a href="/toolz">create useful tools</a> and <a href="/projects">showcase my projects</a>
+				</p>
+				<p>Want me to help you with a project? <a href="/contact" class="font-bold">Contact me</a></p>
+			</div>
+			<img
+			class="w-80"
+			width="320"
+			height="320.5"
 			loading="lazy"
 			src="https://kudadam.sirv.com/svg/boy.svg?q=1"
 			alt="Cartoonish boy winking his eye"
 		/>
-		<div class="py-3">
-			<p>
-				Want me to help you with an interesting project?<br />
-				<span class="font-bold block">OR</span>
-				Wanna design a website?<br />
-				<Button danger class="my-6"><a href="contact">Contact me</a></Button>
-			</p>
 		</div>
 	</div>
 </section>
 <section>
-	<h2 class="text-center font-semibold text-red-500">Area of interest</h2>
+	<h2 class="text-center font-semibold">Area of interest</h2>
 	<div class="flex flex-wrap md:flex-row-reverse mb-2">
 		<div class="w-full md:w-1/2">
 			<img
 				loading="lazy"
 				src="https://kudadam.sirv.com/svg/showing_resume.svg?q=1"
-				alt=""
+				alt="Showing a resume"
+				width="491"
+				height="365"
 				style="max-height: 400px;width: 100%"
 			/>
 		</div>
@@ -90,7 +89,7 @@
 	</div>
 </section>
 <section class="my-4">
-	<h2 class="text-center text-red-500">
+	<h2 class="text-center">
 		Languages I <span style="color: green">&lt;</span><span class="text-red-500">speak</span><span
 			style="color: green">/&gt;</span
 		>
@@ -119,17 +118,8 @@
 	</div>
 </section>
 <section>
-	<h2 class="text-center font-semibold text-red-500">Softwares I made...</h2>
-	<p class="text-center">I also design and make softwares too</p>
-	<div class="my-5">
-		<img
-			class="block mx-auto"
-			src="https://kudadam.sirv.com/svg/dev.svg?q=1"
-			loading="lazy"
-			style="height: 300px;"
-			alt="developer in front of a computer"
-		/>
-	</div>
+	<h2 class="text-center font-semibold">Projects</h2>
+	<p class="text-center">Some things I have done so far</p>
 	<div class="flex flex-wrap">
 		<ProjectCard
 			image="https://kudadam.sirv.com/FLAMES/image.png"
@@ -145,3 +135,4 @@
 		/>
 	</div>
 </section>
+</div>

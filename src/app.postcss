@@ -1,3 +1,7 @@
+:root {
+	--primary-color: tomato;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,7 +20,7 @@ body::-webkit-scrollbar-thumb:active{
 
 
 * :focus-visible {
-	outline: none;
+	outline: none
 }
 
 * .dark {
@@ -30,6 +34,8 @@ body {
 
 @layer base {
 
+	
+	
 	.icon {
 		@apply h-[1.3rem] inline;
 	}
@@ -91,13 +97,19 @@ body {
 	strong {
 		@apply font-medium;
 	}
+
+	h2,h3,h4,h5,h6 {
+		color: var(--primary-color)
+	}
+
 	h1 {
+		@apply dark:text-white;
 		font-size: clamp(33px, 1em + 2vw, 45px);
 		margin: 24px;
 	}
 	h2 {
 		font-size: clamp(28px, 1em + 2vw, 35px);
-		margin: 24px;
+		margin: 10px;
 	}
 	h3 {
 		font-size: clamp(23px, 1em + 2vw, 26px);
@@ -115,8 +127,9 @@ body {
 		font-size: clamp(13px, 1em + 2vw, 15px);
 		margin: 24px;
 	}
+
 	a {
-		@apply dark:text-blue-400 text-blue-500;
+		color: var(--primary-color)
 	}
 
 	blockquote {
@@ -183,7 +196,7 @@ pre[class*="language-"] {
 	}
 	h2 {
 		font-size: 32px;
-		margin: 24px;
+		margin: 10px;
 	}
 	h3 {
 		font-size: 28px;

@@ -36,8 +36,8 @@
 	}}
 />
 
-<h1 class="text-center font-bold text-red-500">About me</h1>
-<div class="md:px-24">
+<h1 class="text-center font-bold">About me</h1>
+<div>
 	<img
 		src="https://kudadam.sirv.com/profile/lucretius.jpg?thumbnail=300&q=90"
 		alt=""

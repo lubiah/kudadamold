@@ -6,7 +6,7 @@
 	"description": "Lucretius' personal website",
 	"display": "standalone",
 	"background_color": "white",
-	"theme_color":"#ef4444",
+	"theme_color":"tomato",
 	"orientation":"portrait-primary",
 	"icons": [
 		{

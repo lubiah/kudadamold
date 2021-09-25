@@ -5,7 +5,8 @@ export const initDB = ()=>{
 		host: "localhost",
 		user: import.meta.env.VITE_DB_USER,
 		password: import.meta.env.VITE_DB_PASSWORD,
-		database: "eakloeor_kudadam"
+		database: "eakloeor_kudadam",
+		multipleStatements: true
 	});
 	db.connect(err=>{
 		if (err)

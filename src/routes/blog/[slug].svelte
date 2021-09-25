@@ -1,6 +1,7 @@
 <script context="module">
 	import { onMount } from 'svelte';
 	import SEO from 'svelte-seo';
+	import Button from "$lib/Components/Button.svelte";
 	import PageProgress from '$lib/Components/PageProgress.svelte';
 	import 'prismjs/themes/prism-tomorrow.css';
 	import _ from 'lodash';
@@ -14,6 +15,7 @@
 
 		try {
 			let component = await import(`./_blog/${slug}/index.md`);
+			component.metadata["slug"] = slug;
 			return {
 				props: {
 					metadata: component.metadata,
@@ -27,43 +29,33 @@
 <script type="text/javascript">
 	export let metadata, content;
 
-	let __semio__params = {
-    graphcommentId: "Kudadam-Website", // make sure the id is yours
+	let comment_loaded = false;
 
-    behaviour: {
-      // HIGHLY RECOMMENDED
-      uid: `${metadata.slug}`, // uniq identifer for the comments thread on your page (ex: your page id)
-    },
-
-    // configure your variables here
-
-  }
- 
-	function __semio__onload() {
-    __semio__gc_graphlogin(__semio__params)
-  	}
-
-	onMount(()=>{
-		let comment_tag = document.createElement("script");
-		comment_tag.async = true; comment_tag.type = "text/javascript";
-		comment_tag.onload = __semio__onload; comment_tag.defer = true;
-		comment_tag.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
-		document.getElementsByTagName('head')[0].appendChild(comment_tag);
-
-
-	})
+	const loadComments = ()=>{
+		let script_tag = document.createElement("script");
+		script_tag.setAttribute("repo","biah/www.kudadam.com");
+		script_tag.setAttribute("issue-term","title");
+		script_tag.setAttribute("src","https://utteranc.es/client.js");
+		script_tag.setAttribute("label","Comment");
+		script_tag.setAttribute("theme","preferred-color-scheme");
+		script_tag.setAttribute("crossorigin","anonymous");
+		script_tag.setAttribute("async",true);
+		document.querySelector("#comment__box").appendChild(script_tag);
+		comment_loaded = true;
+	}
+	
 </script>
 
 <SEO
 	title="{metadata.title} • Kudadam Blog"
 	description={metadata.description}
 	keywords={metadata.keywords}
-	canonical="https://kudadam.com/blog/{metadata.url}"
+	canonical="https://kudadam.com/blog/{metadata.slug}"
 	openGraph={{
 		title: `${metadata.title}`,
 		description: `${metadata.description}`,
 		type: 'article',
-		url: `https://www.kudadam.com/blog/${metadata.url}`,
+		url: `https://www.kudadam.com/blog/${metadata.slug}`,
 		article: {
 			publishedTime: `${metadata.date}`,
 			// modifiedTime: `${post[0].last_updated}`,
@@ -106,25 +98,29 @@
 		<div class="leading-tight px-2" id="content">
 			<svelte:component  this={content} />
 		</div>
+		<div id="comment__box">
+			{#if !comment_loaded}
+				<Button class="block mt-6 mx-auto !py-2" on:click={loadComments}>Load/Add Comment</Button>
+			{/if}
+		</div>
+			
 	</div>
+	
 </div>
 
 {#if browser}
-	<PageProgress color="red" height="5px" />
+	<PageProgress color="tomato" height="5px" />
 {/if}
 
-<div>
-	<div id="graphcomment"></div>
-</div>
 
-<style type="text/css">
+
+<style type="text/postcss">
 	#post :global(h2),
 	:global(h3),
 	:global(h4),
 	:global(h5),
 	:global(h6) {
 		margin: 10px 2px;
-		@apply font-semibold text-red-500;
 	}
 	:global(img.Sirv:not([width]):not([height])) {
 		max-width: 100%;
