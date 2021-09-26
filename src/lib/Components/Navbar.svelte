@@ -134,6 +134,10 @@
 		padding: 0px !important;
 		list-style: none !important;
 	}
+	ul li::before {
+		content: unset;
+		padding: 0px;
+	}
 	.active {
 		color: var(--primary-color);
 	}

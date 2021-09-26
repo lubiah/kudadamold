@@ -12,28 +12,28 @@ The Card component is used to house the blog posts
 	export let hide_category = false;
 </script>
 
-<div id="card" class="w-full md:w-1/2 lg:w-1/3 px-2 mb-9 relative">
+<div id="card" class="md:mr-6 w-[350px] border border-gray-300 dark:border-gray-100 rounded mb-9 relative">
 	<a
 		sveltekit:prefetch
 		href="blog/{slug}"
 		class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500"
 		id="card-title"
 	>
-		<img src={optimizeSirv(image, 2)} class="rounded w-full" alt="" id="card-image" />
+		<img src={optimizeSirv(image, 2)} class="w-full" alt="" id="card-image" />
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{_.snakeCase(category)}">
 		<span class="category category_{_.snakeCase(category)}">{category}</span></a
 	>
-	<div>
-		<h2 class="text-xl mx-1 my-2 font-semibold">
+	<div class="p-2">
+		<h2 class="text-xl m-0 pb-8 font-semibold">
 			<a
-				rel="prefetch"
+				sveltekit:prefetch
 				href="/blog/{slug}"
-				class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500"
+				class="hover:text-red-500 text-gray-700 dark:text-white dark:hover:text-red-500"
 				id="card-title">{title}</a
 			>
 		</h2>
-		<small class="text-xs mx-1 font-semibold dark:text-gray-300 text-gray-600">
+		<small class="text-xs absolute bottom-[5px] font-semibold dark:text-gray-300 text-gray-600">
 			<time datetime={date}>{new Date(date).toDateString()}</time>
 		</small>
 	</div>
@@ -47,9 +47,5 @@ The Card component is used to house the blog posts
 	#card-image {
 		height: 200px;
 	}
-	#card-image:empty {
-		border: 0;
-		border-radius: 5px;
-		background-image: #cfcfcf;
-	}
+
 </style>

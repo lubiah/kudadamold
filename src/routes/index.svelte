@@ -75,15 +75,13 @@
 				alt="Showing a resume"
 				width="491"
 				height="365"
-				style="max-height: 400px;width: 100%"
+				style="max-height: 200px;width: 100%"
 			/>
 		</div>
 		<div class="w-full my-2 md:w-1/2 flex items-center justify-center">
 			<p>
-				My primary area of interest is in back-end development. Passing data through the hands of
-				functions and giving them instructions is very fun for me.<br />
-				Nevertheless, am equally good in frontend development too. Being able to turn common words into
-				beautiful designs is a skill one should be proud of.
+				My primary area of interest is in back-end development and software development.
+				Nevertheless, am equally good in frontend development too with 3+ years experience
 			</p>
 		</div>
 	</div>
@@ -98,21 +96,23 @@
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:px-10">
 		<div>
 			<p class="font-bold my-3">Backend languages</p>
-				<ul class="rounded border divide-y divide-gray-300 p-0">
+				<ul class="rounded border divide-y divide-gray-300 p-0 hide_list_style">
 					<li class="flex p-2">Ruby</li>
 					<li class="flex p-2">C++</li>
 					<li class="flex p-2">Python</li>
 					<li class="flex p-2">MySQL</li>
 					<li class="flex p-2">JavaScript</li>
 					<li class="flex p-2">PHP</li>
+					<li class="flex p-2">Node JS</li>
 				</ul>
 		</div>
 		<div class="w-full">
 			<p class="font-bold my-3">Front-end languages</p>
-				<ul class="rounded border divide-y divide-gray-300 p-0">
+				<ul class="rounded border divide-y divide-gray-300 p-0 hide_list_style">
 					<li class="flex p-2">HTML</li>
 					<li class="flex p-2">CSS</li>
 					<li class="flex p-2">SASS</li>
+					<li class="flex p-2">Svelte</li>
 				</ul>
 		</div>			
 	</div>
@@ -125,7 +125,7 @@
 			image="https://kudadam.sirv.com/FLAMES/image.png"
 			title="FLAMES Game"
 			description="A simple game which can tell the relationship between two people with the use of their names"
-			url="https://www.kudadam.com/flames"
+			url="/flames"
 		/>
 		<ProjectCard
 			image="https://kudadam.sirv.com/extractfrom/version_5.png?thumbnail=200"

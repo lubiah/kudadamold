@@ -68,9 +68,9 @@
 </div>
 
 <div class="md:mx-24">
-	<h2 class="ml-4 my-6 font-bold headings dark:text-white inline-block">Latest Articles</h2>
+	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
 
-	<div class="flex flex-wrap">
+	<div class="flex flex-wrap justify-center">
 		{#each posts as post (post.id)}
 			<Card
 				title={post.title}
@@ -87,7 +87,12 @@
 	<Button class="mx-auto block" on:click={loadData}>Load More</Button>
 {/if}
 
-<style type="text/css">
+<style type="text/postcss">
+
+	:global(#layout__container){
+		width:unset;
+	}
+
 	:global(.post_category) {
 		position: absolute;
 		padding: 2px 5px;

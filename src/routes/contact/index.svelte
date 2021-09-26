@@ -43,12 +43,13 @@
 	If I don't reply, them maybe am in school.
 </p>
 <div class="dark:text-gray-300">
-	<ul class="p-0 list-none">
-		<li class="p-1 px-5"><a on:click={handleEmail} href="/contact">Click to reveal</a></li>
-		<li class="p-1 px-5"><a href="tel:0249005710">Telephone</a></li>
-		<li class="p-1 px-5"><a href="https://wa.link/jebvr2">WhatsApp</a></li>
+	<ul class="p-0 hide_list_style">
+		<li><a on:click={handleEmail} href="/contact">Click to reveal</a></li>
+		<li><a href="tel:0249005710">Telephone</a></li>
+		<li><a href="https://wa.link/jebvr2">WhatsApp</a></li>
 	</ul>
 	<span class="font-bold block">OR</span>
 	<p>Fill the form and submit</p>
 	<Contact />
 </div>
+

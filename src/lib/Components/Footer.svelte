@@ -5,7 +5,7 @@
 	import RSS from "$lib/Icons/rss.svelte";
 </script>
 
-<footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-8">
+<footer class="hide_list_style bg-gray-800 text-gray-400 text-base pt-4 mt-8">
 	<div class="pl-3 flex flex-wrap justify-center gap-x-10 mt-4 mb-2" id="flexible">
 		<div>
 			<p class="font-bold">Quick Links</p>

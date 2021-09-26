@@ -20,7 +20,7 @@
 
 <form
 	method="post"
-	class="max-w-screen-sm my-2 border-gray-300 dark:border-gray-500 border rounded shadow-lg p-4 mx-2"
+	class="max-w-screen-sm my-2 border-gray-300 dark:border-gray-500 border rounded shadow-lg p-4"
 	on:submit|preventDefault={submit}
 >
 	<div class="my-1">
