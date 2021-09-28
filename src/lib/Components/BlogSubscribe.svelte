@@ -4,7 +4,9 @@
     let data = {
        name: "",
        email: "",
-       type: "subscribe_user"
+       type: "subscribe_user",
+       
+
     };
 	const subscribeUser = async ()=>{
         const query = await fetch("/contact.json",{

@@ -16,7 +16,6 @@ let transporter = nodemailer.createTransport({
 });
 
 const addSubscriber = async request =>{
-
 	name = request.body.name.trim();
 	user = new Object();
 	user.date_joined = new Date();
@@ -46,21 +45,30 @@ const addSubscriber = async request =>{
 	}
 	}
 	contact.includeListIds = [3];
-	contact.redirectionUrl = "https://www.kudadam.com";
+	contact.redirectionUrl = "https://www.kudadam.com/newsletter/thanks";
 	contact.templateId = 7;
 	apiInstance.createDoiContact(contact).then(()=>{
-		console.log("success");
+		return {
+			body: {
+				"message":"success"
+			}
+		}
 	
 	})
 	.catch(err=>{
-		console.log(err)
+		console.log(err);
+		return {
+			body:{
+				"message":"error"
+			}
+		}
 	})
 }
 
 export async function post(request) {
 	switch (request.body.type){
 		case "subscribe_user":
-			console.log(await addSubscriber(request));
+			await console.log(await addSubscriber(request));
 		break;
 	}
 	
