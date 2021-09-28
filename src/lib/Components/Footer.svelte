@@ -3,10 +3,14 @@
 	import Twitter from "$lib/Icons/twitter.svelte";
 	import Envelope from "$lib/Icons/envelope.svelte";
 	import RSS from "$lib/Icons/rss.svelte";
+	import Subscribe from "./BlogSubscribe.svelte";
 </script>
 
-<footer class="hide_list_style bg-gray-800 text-gray-400 text-base pt-4 mt-8">
-	<div class="pl-3 flex flex-wrap justify-center gap-x-10 mt-4 mb-2" id="flexible">
+<footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-14 md:relative">
+	<div class="px-3 flex flex-wrap justify-evenly xl:justify-center  gap-x-20 mt-4 mb-2" id="flexible">
+		<div class="xl:absolute xl:-top-8 xl:left-2 mb-6 xl:left-4">
+			<Subscribe/>
+		</div>
 		<div>
 			<p class="font-bold">Quick Links</p>
 			<ul>

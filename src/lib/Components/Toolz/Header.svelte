@@ -32,7 +32,7 @@
 	}}
 />
 <div class="text-center mt-4 mb-6">
-	<h1 class="my-1 font-semibold text-blue-500">{tool.name}</h1>
+	<h1 class="my-1 font-semibold">{tool.name}</h1>
 	<p class="text-lg">{tool.description}</p>
 </div>
 {#if buggy}

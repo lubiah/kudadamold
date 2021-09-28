@@ -41,6 +41,7 @@
 		"remark-attr": "^0.11.1",
 		"remark-emoji": "^3.0.1",
 		"remark-slug": "^7.0.0",
+		"sib-api-v3-sdk": "^8.2.1",
 		"sitemap-generator": "^8.5.1",
 		"socket.io": "^4.2.0",
 		"svelte-modal": "^0.4.0",

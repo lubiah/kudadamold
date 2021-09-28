@@ -37,7 +37,7 @@
 />
 
 <h1 class="text-center font-bold">About me</h1>
-<div>
+<div class="xl:w-[65%] mx-auto">
 	<img
 		src="https://kudadam.sirv.com/profile/lucretius.jpg?thumbnail=300&q=90"
 		alt=""

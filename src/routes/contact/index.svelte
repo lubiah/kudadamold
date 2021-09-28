@@ -37,13 +37,15 @@
 		imageAlt: 'Logo of Kudadam'
 	}}
 />
+
+<div class="mx-auto xl:w-[65%]">
 <h1 class="text-center font-bold">Contact</h1>
 <p>
 	In case you ever want to contact me, just pick an option below. The fastest is email.<br />
 	If I don't reply, them maybe am in school.
 </p>
 <div class="dark:text-gray-300">
-	<ul class="p-0 hide_list_style">
+	<ul class="p-0 list-none">
 		<li><a on:click={handleEmail} href="/contact">Click to reveal</a></li>
 		<li><a href="tel:0249005710">Telephone</a></li>
 		<li><a href="https://wa.link/jebvr2">WhatsApp</a></li>
@@ -53,3 +55,4 @@
 	<Contact />
 </div>
 
+</div>

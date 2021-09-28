@@ -81,14 +81,6 @@
 			<Sun class/>
 		{/if}
 	</span>
-	<!-- <img
-		on:click={set_mode}
-		id="theme"
-		loading="lazy"
-		alt="Mode"
-		class="ml-auto my-auto h-3/4"
-		title="Change Mode"
-	/> -->
 
 	<button
 		class="ml-auto px-1 md:hidden"
@@ -113,9 +105,9 @@
 		</svg>
 	</button>
 	<div class="block md:flex md:ml-auto w-full md:w-auto" class:hidden id="nav-menu">
-		<ul class="md:flex">
+		<ul class="md:flex list-none">
 			{#each nav_links as { name, url, id } (id)}
-				<li class="p-2 text-base text-gray-700 text-lg font-semibold">
+				<li class="p-2 text-gray-700 text-lg font-semibold">
 					<a
 						href={url}
 						sveltekit:prefetch
@@ -132,17 +124,21 @@
 <style type="text/css">
 	ul {
 		padding: 0px !important;
-		list-style: none !important;
 	}
-	ul li::before {
-		content: unset;
-		padding: 0px;
-	}
+
 	.active {
-		color: var(--primary-color);
+		color: var(--primary-color) !important;
 	}
 
 	#nav-menu ul li *:not(.active) {
 		@apply dark:text-white;
+	}
+
+	a:visited {
+		color: initial;
+	}
+
+	a:hover {
+		text-decoration: none !important;
 	}
 </style>

@@ -1,5 +1,6 @@
 :root {
 	--primary-color: tomato;
+	--primary-color-deep:#ff3915;
 }
 
 @tailwind base;
@@ -40,11 +41,6 @@ body {
 		@apply h-[1.3rem] inline;
 	}
 
-	.hide_list_style li::before {
-		content: unset;
-		padding: unset;
-	}
-
 	* {
 		@apply leading-relaxed;
 	}
@@ -74,7 +70,7 @@ body {
 	ul,
 	ol {
 		padding-inline-start: 30px;
-		list-style-position: outside;
+		list-style-position: inside;
 	}
 
 	ul:first-child,
@@ -83,17 +79,17 @@ body {
 	}
 
 	ol {
-		list-style-type: lower-roman;
+		list-style-type: number;
 	}
 
 	ul {
-		list-style-type: none;
+		list-style-type: disc;
 	}
 
-	ul li::before{
-		content: "➢";
-		@apply pr-1;
+	ul li::marker, ol li::marker{
+		color: var(--primary-color)
 	}
+
 
 	html {
 		scroll-behavior: smooth;
@@ -139,15 +135,16 @@ body {
 	}
 
 	a {
-		color: var(--primary-color)
+		color: var(--primary-color);
+	}
+
+	a:hover {
+		text-decoration: underline;
 	}
 
 	blockquote {
-		@apply dark:bg-gray-700 border-red-500;
-		border-left-width: 10px;
-		font-style: italic;
-		padding: 5px 5px 5px 20px;
-		border-radius: 4px;
+		@apply border-l-[15px] p-2 rounded-xl;
+		border-left-color: var(--primary-color);
 	}
 
 	button * {

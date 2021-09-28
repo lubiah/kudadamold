@@ -89,10 +89,6 @@
 
 <style type="text/postcss">
 
-	:global(#layout__container){
-		width:unset;
-	}
-
 	:global(.post_category) {
 		position: absolute;
 		padding: 2px 5px;

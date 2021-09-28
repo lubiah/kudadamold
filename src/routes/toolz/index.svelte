@@ -68,12 +68,12 @@
 	<p class="text-lg"><i>A set of tools curated and designed by me</i></p>
 </div>
 
-<div class="mt-6 block ml-auto mr-4 md:mr-32 w-[60%] md:w-[25%]">
-	<input type="search" class="p-1.5 pl-3 rounded-xl" placeholder="Search..." bind:value={search_value} on:input={search_function}>
+<div class="mt-6 block ml-auto mr-4 md:mr-32 w-[70%] md:w-[30%]">
+	<input type="search" class="p-1.5 pl-3 rounded-[40px]" placeholder="Search..." bind:value={search_value} on:input={search_function}>
 </div>
 
-<div class="md:mx-36 md:pl-6 my-10">
-	<ul class="divide-y list-none divide-gray-300 dark:divide-gray-500">
+<div class="mx-auto md:w-2/3 md:pl-6 my-10">
+	<ul class="divide-y list-none hide_list_style divide-gray-300 dark:divide-gray-500">
 		{#each tools as tool (tool.id)}
 			<li class="py-3 px-2">
 				<p class="my-1 text-lg font-semibold">

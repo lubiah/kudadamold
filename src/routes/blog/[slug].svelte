@@ -79,13 +79,13 @@
 	}}
 />
 
-<div class="my-4" id="post">
-	<div class="md:w-2/3 md:mx-auto">
+<div class="my-4 xl:w-[65%] mx-auto" id="post">
+	<div class="md:mx-auto">
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
 		<div class="py-2 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
 			<p class="pl-2 text-base">
 				<span><a href="/blog/category/{_.snakeCase(metadata.category)}">{metadata.category}</a></span>
-				• <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date> • <span></span>
+				• <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
 			</p>
 		</div>
 		<img
@@ -135,6 +135,12 @@
 	:global(.intro){
 		@apply italic text-xl py-6;
 	}
+
+	:global(.intro::before){
+		content: "\201D";
+		@apply text-2xl
+	}
+
 	:global(.toc) {
 		@apply my-4;
 	}

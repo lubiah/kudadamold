@@ -1,5 +1,5 @@
 <script>
-	import '../app.postcss';
+	import '../app.css';
 	import NavBar from '$lib/Components/Navbar.svelte';
 	import Footer from '$lib/Components/Footer.svelte';
 	import Head from 'svelte-seo';
@@ -7,7 +7,7 @@
 
 
 <NavBar />
-<div class="container min-h-screen mt-20 px-3 xl:w-[65%] mx-auto" id="layout__container">
+<div class="container min-h-screen mt-20 px-3" id="layout__container">
 	<slot />
 </div>
 <Footer />
