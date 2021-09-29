@@ -38,7 +38,7 @@
 
 <h1 class="text-center font-bold">About me</h1>
 <div class="xl:w-[65%] mx-auto">
-	<img
+	<img height="300" width="300" 
 		src="https://kudadam.sirv.com/profile/lucretius.jpg?thumbnail=300&q=90"
 		alt=""
 		class="my-4 p-1 border rounded mx-auto"

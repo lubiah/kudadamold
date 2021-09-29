@@ -48,27 +48,21 @@ const addSubscriber = async request =>{
 	contact.redirectionUrl = "https://www.kudadam.com/newsletter/thanks";
 	contact.templateId = 7;
 	apiInstance.createDoiContact(contact).then(()=>{
-		return {
-			body: {
-				"message":"success"
-			}
-		}
+		return true;
 	
 	})
 	.catch(err=>{
-		console.log(err);
-		return {
-			body:{
-				"message":"error"
-			}
-		}
+		return false;
 	})
 }
 
 export async function post(request) {
 	switch (request.body.type){
 		case "subscribe_user":
-			await console.log(await addSubscriber(request));
+			addSubscriber(request)
+			.then(res=>{
+				console.log(res);
+			})
 		break;
 	}
 	

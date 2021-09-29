@@ -25,15 +25,15 @@ Now, we have finished building our project, move on to your cpanel's homepage. I
 
 <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/cpanel_homepage.jpg" alt="Homepage of Cpanel" />
 
-- **Click on Setup Node.js App**
+- **Click on Setup Node.js App**  
   In the software section of your cpanel, you will see a "Setup Node.js App". This is where we will be creating our application, after clicking on it, it should take you to another page.
 
-- **Click on "Create Application"**
+- **Click on "Create Application"**  
   After you are taken to a new page after clicking on "Setup Node.js App", you will see a button on your upper right hand side labelled 'Create Application'.
 
   <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_application.jpg" alt="Create application button on Cpanel" />
 
-- **Fill in the Form**
+- **Fill in the Form**  
   After you click on the button, you will be taken to a page with a form. You are supposed to fill the mandatory portions of it.
   For mine, I chose the node version to be 14 and also, I set the application mode to production. This is very important as it will set the environment variable to production for your app.
   Then to the application root. This refers to the location of your app in your web server. For mine, I used the name of my domain for it. This will create a folder with my domain name inside my `public_html` folder.

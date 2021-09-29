@@ -1,6 +1,8 @@
 :root {
 	--primary-color: tomato;
-	--primary-color-deep:#ff3915;
+	--primary-color-deep: #ff3915;
+	--light-text-color: #374151;
+	--dark-text-color: #d1d5db;
 }
 
 @tailwind base;
@@ -76,6 +78,10 @@ body {
 	ul:first-child,
 	ol:first-child {
 		padding-inline-start: 5px;
+	}
+
+	li > *:first-child {
+		display: inline;
 	}
 
 	ol {

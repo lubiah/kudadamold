@@ -73,13 +73,16 @@
 </div>
 
 <div class="mx-auto md:w-2/3 md:pl-6 my-10">
-	<ul class="divide-y list-none hide_list_style divide-gray-300 dark:divide-gray-500">
+	<ul class="divide-y list-none divide-gray-300 dark:divide-gray-500">
 		{#each tools as tool (tool.id)}
-			<li class="py-3 px-2">
-				<p class="my-1 text-lg font-semibold">
-					<a href={tool.url} sveltekit:prefetch>{tool.name}</a>
+			<li class="">
+				<p class="text-lg font-semibold ">
+					<a class="hover:no-underline dark:hover:bg-gray-600 hover:bg-gray-200 py-3 px-2 block" href={tool.url} sveltekit:prefetch>
+					<span class="block">{tool.name}</span>
+					<p class="py-1 text-[color:var(--light-text-color)] dark:text-[color:var(--dark-text-color)] font-normal">{tool.description}</p>
+				</a>
 				</p>
-				<p>{tool.description}</p>
+				
 			</li>
 		{/each}
 	</ul>
