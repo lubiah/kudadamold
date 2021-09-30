@@ -27,7 +27,7 @@ const addSubscriber = async request =>{
 
 	let client  =sib_api.ApiClient.instance;
 	let apiKey = client.authentications["api-key"];
-	apiKey.apiKey = import.meta.env.VITE_SIB_API_KEY;
+	apiKey.apiKey = import.meta.env.VITE_SIB_API_KEY || process.env.VITE_SIB_API_KEY;
 	let apiInstance = new sib_api.ContactsApi();
 	let contact = new sib_api.CreateDoiContact();
 	contact.email = user.email;
@@ -52,7 +52,7 @@ const addSubscriber = async request =>{
 	
 	})
 	.catch(err=>{
-		return import.meta.env;
+		return process.env;
 	})
 }
 
