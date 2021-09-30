@@ -16,13 +16,19 @@
         	},
         	body: JSON.stringify(data)
         });
-  
+        const { message } = await query.json();
+        if (message){
+        	document.querySelector("#form_container").innerHTML = `<span class='text-green-500'>Please verify your email in your inbox</span>`
+        }
+        else {
+        	document.querySelector("#form_container").innerHTML = `<span class='text-red-500'>Error</span>`
+        }
 	}
 </script>
 
 <form method="post" class="max-w-sm bg-purple-700 py-1 px-3 rounded-lg" on:submit|preventDefault={subscribeUser}>
 	<h3 class="text-3xl text-white mb-4 font-semibold">Subscribe to Newsletter</h3>
-	<div>
+	<div id="form_container">
 		<input class="mb-3 p-1 !bg-white" type="text" title="Your full name" bind:value={data.name} placeholder="Name" required>
 		<input type="email" class="!bg-white p-1" placeholder="Email Account" bind:value={data.email} title="Your email address" required>
 		<Button class="mt-3 text-lg" type="submit">Subscribe</Button>

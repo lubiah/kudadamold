@@ -47,7 +47,7 @@ const addSubscriber = async request =>{
 	contact.includeListIds = [3];
 	contact.redirectionUrl = "https://www.kudadam.com/newsletter/thanks";
 	contact.templateId = 7;
-	apiInstance.createDoiContact(contact).then(()=>{
+	return apiInstance.createDoiContact(contact).then(()=>{
 		return true;
 	
 	})
@@ -57,13 +57,13 @@ const addSubscriber = async request =>{
 }
 
 export async function post(request) {
-	switch (request.body.type){
-		case "subscribe_user":
-			addSubscriber(request)
-			.then(res=>{
-				console.log(res);
-			})
-		break;
+
+	if (request.body.type === "subscribe_user"){
+		const result = await addSubscriber(request);
+		return {
+			body: {"message":result
+		}
+	}
 	}
 	
 	// let sent = true;
@@ -88,7 +88,5 @@ export async function post(request) {
 	// 		sent: sent
 	// 	}
 	// };
-	return {
-		body: {"a":1}
-	}
+	
 }
