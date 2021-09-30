@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"dotenv": "^10.0.0",
 		"fdir": "^5.1.0",
 		"front-matter": "^4.0.2",
 		"html-minifier": "^4.0.0",
