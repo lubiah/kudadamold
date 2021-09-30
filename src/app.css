@@ -40,7 +40,7 @@ body {
 	
 	
 	.icon {
-		@apply h-[1.3rem] inline;
+		@apply h-[1rem] inline;
 	}
 
 	* {

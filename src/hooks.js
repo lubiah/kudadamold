@@ -23,9 +23,9 @@ const minification_options = {
 export async function handle({ request, resolve }) {
   const response = await resolve(request);
 
+
   if (response.headers['content-type'] === 'text/html') {
     response.body = minify(response.body, minification_options);
   }
-  
   return response;
 }

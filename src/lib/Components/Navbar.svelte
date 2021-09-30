@@ -70,7 +70,7 @@
 		class="flex font-medium md:font-semibold text-lg items-center justify-center"
 		href="/"
 		><img src="https://kudadam.sirv.com/logo/logo.png?q=5" class="h-10" height="40" width="40" alt="" /><span
-			class="hidden md:inline text-[color:var(--light-text-color)] dark:text-[color:var(--dark-text-color)]">Kudadam</span
+			class="hidden md:inline text-[color:var(--light-text-color)] dark:text-white">Kudadam</span
 		></a
 	>
 
@@ -131,7 +131,7 @@
 	}
 
 	#nav-menu ul li *:not(.active) {
-		@apply dark:text-[color:var(--dark-text-color)]
+		@apply dark:text-white;
 	}
 
 	a:visited {

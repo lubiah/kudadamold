@@ -1,11 +1,18 @@
-import { mode } from "$app/env";
-
 const get_items = async () => {
-	let url = (mode == "development") ? "http://localhost:3000/blog.json?all=true" : "https://kudadam.com/blog.json?all=true";
-	let res = await fetch(url);
+
+	try {
+		let res = await fetch( "http://localhost:3000/blog.json?all=true");
+		let { posts } = await res.json();
+		return posts;
+
+	} 
+
+	catch(e) {
+	let res = await fetch( "https://kudadam.com/blog.json?all=true");
 	let { posts } = await res.json();
 	return posts;
-};
+}
+}
 
 const sort_items = (posts) => {
 	let rss = ``;

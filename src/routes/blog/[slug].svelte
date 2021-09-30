@@ -9,10 +9,6 @@
 
 	export async function load({ page, fetch }) {
 		const slug = page.params.slug;
-
-		let res = await fetch(`/blog/${slug}.json`);
-		let data = await res.json();
-
 		try {
 			let component = await import(`./_blog/${slug}/index.md`);
 			component.metadata["slug"] = slug;

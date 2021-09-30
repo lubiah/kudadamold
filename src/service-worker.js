@@ -13,7 +13,7 @@ const dynamic_pages = [
 	"/offline",
 	"/about",
 	"/contact"
-]
+];
 
 
 const limitCacheSize = (name,size)=>{
@@ -64,14 +64,17 @@ self.addEventListener("activate", event =>{
 
 
 self.addEventListener("fetch", event =>{
+	if (event.request.method !== 'GET' || event.request.headers.has('range')) return;
+
 	event.respondWith(
+		
 		caches.match(event.request)
 		.then(response => {
 			if (response)
 				return response
-			return fetch(event.request)
+			return fetch(event.request, {mode:"no-cors"})
 			.then(fetch_res=>{
-				if (!fetch_res || fetch_res.status !== 200)
+				if (!fetch_res || fetch_res.status !== 200 || fetch_res.type !== "basic")
 					return fetch_res;
 				return caches.open(dynamic_cache)
 				.then(cache =>{
@@ -81,8 +84,13 @@ self.addEventListener("fetch", event =>{
 				})
 			})
 			.catch(err=>{
-				if (new URL(event.request.url).origin === self.location.origin && event.request.url.search("_app/pages") === 1)
-				return caches.match("/offline");
+		
+			if (new URL(event.request.url).origin === self.origin){
+				console.log(event.request);
+				console.log("Serving offline file instead");
+				console.log(event.request.url)
+				return caches.match("/offline");	
+				}
 			});
 		})
 		)

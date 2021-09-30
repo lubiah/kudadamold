@@ -3,6 +3,7 @@
 	import Twitter from "$lib/Icons/twitter.svelte";
 	import Envelope from "$lib/Icons/envelope.svelte";
 	import RSS from "$lib/Icons/rss.svelte";
+	import Heart from "$lib/Icons/heart.svelte";
 	import Subscribe from "./BlogSubscribe.svelte";
 </script>
 
@@ -40,7 +41,7 @@
 	<div class="text-center">
 		<p class="pb-1">
 			<span class="block md:inline"
-				>Made with <i class="fas fa-heart text-red-500 animate-pulse" /> and built with
+				>Made with <Heart class="text-red-500 animate-pulse"/> and built with
 				<a href="https://kit.svelte.dev" target="_blank" rel="noopener">SvelteKit</a></span
 			>
 			<span class="invisible md:visible">·</span>
