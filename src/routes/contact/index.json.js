@@ -1,9 +1,9 @@
 import nodemailer from 'nodemailer';
 import sib_api from "sib-api-v3-sdk";
 import dotenv from "dotenv";
+const env = dotenv.config().parsed;
 
-
-
+	
 const GMAIL_ACCOUNT = import.meta.env.VITE_GMAIL_ACCOUNT;
 const GMAIL_PASSWORD = import.meta.env.VITE_GMAIL_PASSWORD;
 
@@ -27,10 +27,9 @@ const addSubscriber = async request =>{
 		user.first_name = name.split(" ")[0];
 		user.last_name = name.split(" ")[name.split(" ").length - 1];
 	}
-	console.log(process.env.VITE_SIB_API_KEY);
 	let client  =sib_api.ApiClient.instance;
 	let apiKey = client.authentications["api-key"];
-	apiKey.apiKey = import.meta.env.VITE_SIB_API_KEY || process.env.VITE_SIB_API_KEY;
+	apiKey.apiKey = env.SIB_API_KEY;
 	let apiInstance = new sib_api.ContactsApi();
 	let contact = new sib_api.CreateDoiContact();
 	contact.email = user.email;
