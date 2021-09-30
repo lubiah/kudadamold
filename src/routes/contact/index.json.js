@@ -52,7 +52,7 @@ const addSubscriber = async request =>{
 	
 	})
 	.catch(err=>{
-		return import.meta.env.VITE_SIB_API_KEY;
+		return import.meta.env;
 	})
 }
 
