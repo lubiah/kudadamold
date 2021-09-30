@@ -52,8 +52,7 @@ const addSubscriber = async request =>{
 	
 	})
 	.catch(err=>{
-		console.log(err);
-		return false;
+		return err;
 	})
 }
 
