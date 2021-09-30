@@ -16,8 +16,8 @@ let transporter = nodemailer.createTransport({
 });
 
 const addSubscriber = async request =>{
-	name = request.body.name.trim();
-	user = new Object();
+	let name = request.body.name.trim();
+	let user = new Object();
 	user.date_joined = new Date();
 	user.email = request.body.email;
 	if (name.split(" ").length > 1){
@@ -52,6 +52,7 @@ const addSubscriber = async request =>{
 	
 	})
 	.catch(err=>{
+		console.log(err);
 		return false;
 	})
 }

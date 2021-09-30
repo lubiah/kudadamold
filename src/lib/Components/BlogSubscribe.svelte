@@ -21,7 +21,7 @@
         	document.querySelector("#form_container").innerHTML = `<span class='text-green-500'>Please verify your email in your inbox</span>`
         }
         else {
-        	document.querySelector("#form_container").innerHTML = `<span class='text-red-500'>Error</span>`
+        	document.querySelector("#form_container").innerHTML = `<text-red-500></text-red-500>'>Error</span>`
         }
 	}
 </script>
