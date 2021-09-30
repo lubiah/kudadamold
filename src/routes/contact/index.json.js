@@ -61,8 +61,7 @@ export async function post(request) {
 	if (request.body.type === "subscribe_user"){
 		const result = await addSubscriber(request);
 		return {
-			body: {"message":result
-		}
+			body: {"message":result}
 	}
 	}
 	
