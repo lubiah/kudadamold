@@ -132,10 +132,7 @@
 		@apply italic text-xl py-6;
 	}
 
-	:global(.intro::before){
-		content: "\201D";
-		@apply text-2xl
-	}
+
 
 	:global(.toc) {
 		@apply my-4;

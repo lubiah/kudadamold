@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 	background: #DADADA;
 }
 body::-webkit-scrollbar-thumb {
-			background: #757575
+			background: var(--primary-color);
 }
 body::-webkit-scrollbar-thumb:active{
 	background: #484444

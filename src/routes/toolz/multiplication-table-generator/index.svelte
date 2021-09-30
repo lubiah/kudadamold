@@ -1,13 +1,14 @@
 <script context="module">
-	export async function load({ page }) {
+	export async function load({ page, fetch }) {
 		let name = page.path.split('/').slice(-1).toString();
-		let res = await fetch(`/toolz.json?info=${name}`);
-		let { info } = await res.json();
+		let res = await fetch(`/toolz.json`);
+		let { tools } = await res.json();
+		let tool_name = tools.filter(tool => tool.url === `/toolz/${name}`)[0];
 		return {
 			props: {
-				tool: info
+				tool: tool_name
 			}
-		};
+		}
 	}
 </script>
 

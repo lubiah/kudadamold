@@ -21,14 +21,14 @@
 <div id="tools-list-main">
 	{#if !hidden}
 		{#await fetch_tools() then tools}
-			<div transition:scale class="bg-black py-4 rounded my-4 overflow-y-scroll" id="tools-list">
-				<ul class="p-0">
+			<div transition:scale class="bg-green-500 rounded my-4 overflow-y-scroll" id="tools-list">
+				<ul class="!p-0 list-none">
 					{#each tools as tool (tool.id)}
-						<li>
+						<li class="block w-full">
 							<a
 								on:click={() => (hidden = true)}
 								href={tool.url}
-								class="block px-2 py-1	 hover:bg-gray-500 text-white">{tool.name}</a
+								class="!block w-full px-1 py-1 hover:no-underline hover:bg-green-600 text-white">{tool.name}</a
 							>
 						</li>
 					{/each}
