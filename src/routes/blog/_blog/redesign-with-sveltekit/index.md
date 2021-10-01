@@ -37,4 +37,4 @@ Some of the changes are;
 
 So that's some of the stuff I changed, the list is more than this but I just decided to limit it to the few important ones
 
-## 
+## Improving Page Load Time
