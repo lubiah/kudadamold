@@ -77,7 +77,7 @@
 		{#each tools as tool (tool.id)}
 			<li class="">
 				<p class="text-lg font-semibold ">
-					<a class="hover:no-underline dark:hover:bg-gray-600 hover:bg-gray-200 py-3 px-2 block" href={tool.url} sveltekit:prefetch>
+					<a class="visited:text-[color:var(--primary-color)] dark:visited:text-[color:var(--primary-color)] hover:no-underline dark:hover:bg-gray-600 hover:bg-gray-200 py-3 px-2 block" href={tool.url} sveltekit:prefetch>
 					<span class="block">{tool.name}</span>
 					<p class="py-1 text-[color:var(--light-text-color)] dark:text-[color:var(--dark-text-color)] font-normal">{tool.description}</p>
 				</a>

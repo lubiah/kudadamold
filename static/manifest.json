@@ -46,7 +46,13 @@
 			"name": "Blog Posts",
 			"short_name": "Blog",
 			"description" : "Read Lucretius' Blog Posts",
-			"url":"/blog"
-		}
-	]
+			"url":"/blog",
+			"icons": [
+				{
+				"src":"https://kudadam.sirv.com/logo/logo_blog.png?h=512&w=512",
+				"type":"image/png",
+				"sizes":"512x512"
+				}
+
+			]
 }

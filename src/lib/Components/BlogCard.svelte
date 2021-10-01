@@ -29,7 +29,7 @@ The Card component is used to house the blog posts
 			<a
 				sveltekit:prefetch
 				href="/blog/{slug}"
-				class="hover:text-red-500 hover:no-underline text-gray-700 dark:text-white dark:hover:text-red-500"
+				class="visited:text-gray-700 dark:visited:text-white hover:text-red-500 hover:no-underline text-gray-700 dark:text-white dark:hover:text-red-500"
 				id="card-title">{title}</a
 			>
 		</h2>

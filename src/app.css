@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 	background: #DADADA;
 }
 body::-webkit-scrollbar-thumb {
-			background: var(--primary-color);
+			background: #6F6F6F;
 }
 body::-webkit-scrollbar-thumb:active{
 	background: #484444
@@ -93,7 +93,8 @@ body {
 	}
 
 	ul li::marker, ol li::marker{
-		color: var(--primary-color)
+		color: var(--primary-color);
+		font-style: italic;
 	}
 
 
@@ -142,6 +143,10 @@ body {
 
 	a {
 		color: var(--primary-color);
+	}
+
+	a:visited {
+		@apply text-blue-500 dark:text-blue-300;
 	}
 
 	a:hover {
