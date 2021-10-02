@@ -5,16 +5,12 @@
 	import Sun from "$lib/Icons/sun.svelte";
 	import { mode } from "/src/stores/store.js"; 
 
-	let segment;
-	$: segment = $page.path === '/' ? '/home' : $page.path;
-
 	let hidden = true;
 	let nav_links = [
-		{ name: 'Home', url: '/', id: 1 },
-		{ name: 'About', url: '/about', id: 2 },
-		{ name: 'Contact', url: '/contact', id: 3 },
-		{ name: 'Blog', url: '/blog', id: 4 },
-		{ name: 'Toolz', url: '/toolz', id: 5 }
+		{ name: 'About', url: '/about', id: 1 },
+		{ name: 'Contact', url: '/contact', id: 2 },
+		{ name: 'Blog', url: '/blog', id: 3 },
+		{ name: 'Toolz', url: '/toolz', id: 4 }
 	];
 
 	const setMode = () => {
@@ -112,7 +108,7 @@
 						href={url}
 						sveltekit:prefetch
 						class="text-gray-700 block"
-						class:active={segment === `/${name.toLowerCase()}`}>{name}</a
+						class:active={$page.path === `/${name.toLowerCase()}`}>{name}</a
 					>
 				</li>
 			{/each}

@@ -148,5 +148,4 @@ So after adding a service-worker to my website, I decided to turn it into a P.W.
 }
 ```
 
-
-So the code above is what makes my website a progressive web app, If you are using the Chrome browser on your mobile device, you can install it like any other ordinary app and you can even share the app.
+So the code above is what makes my website a progressive web app, If you are using the Chrome browser on your mobile device, you can install it like any other ordinary app and you can even share the app

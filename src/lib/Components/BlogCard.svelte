@@ -3,13 +3,17 @@ The Card component is used to house the blog posts
  -->
 <script type="text/javascript">
 	import _ from 'lodash';
-	import optimizeSirv from '$lib/scripts/optimizeSirvImage.js';
-	export let image = "https://kudadam.sirv.com/logo/logo_blog.png";
+	export let image  = "https://kudadam.sirv.com/logo/logo_blog.png";
 	export let title;
 	export let date;
 	export let slug = "";
 	export let category;
 	export let hide_category = false;
+
+	if (new URL(image).host === "kudadam.sirv.com"){
+		image = new URL(image);
+		image.searchParams.set("q",2);
+	}
 </script>
 
 <div id="card" class="md:mr-6 w-[350px] border border-gray-300 dark:border-gray-600 hover:shadow-lg rounded mb-9 relative">
@@ -19,7 +23,7 @@ The Card component is used to house the blog posts
 		class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500"
 		id="card-title"
 	>
-		<img src={optimizeSirv(image, 2)} class="w-full" alt="" id="card-image" />
+		<img src={image} class="w-full" alt="" id="card-image" />
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{_.snakeCase(category)}">
 		<span class="category category_{_.snakeCase(category)}">{category}</span></a

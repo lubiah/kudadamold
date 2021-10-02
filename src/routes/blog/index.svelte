@@ -70,7 +70,7 @@
 <div class="md:mx-24">
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
 
-	<div class="flex flex-wrap justify-center">
+	<div class="flex flex-wrap">
 		{#each posts as post (post.id)}
 			<Card
 				title={post.title}
