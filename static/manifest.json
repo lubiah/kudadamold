@@ -41,7 +41,7 @@
 		}
 
 	],
-	"shortcuts":[
+	"shortcuts": [
 		{
 			"name": "Blog Posts",
 			"short_name": "Blog",
@@ -53,6 +53,20 @@
 				"type":"image/png",
 				"sizes":"512x512"
 				}
-
 			]
+		},
+		{
+			"name": "Web Tools",
+			"short_name": "Tools",
+			"description": "Use the web tools on the website",
+			"url":"/toolz",
+			"icons": [
+				{
+					"src": "https://kudadam.sirv.com/logo/logo_toolz.png?h=512&w=512",
+					"type": "image/png",
+					"sizes": "512x512"
+				}
+			]
+		}
+	]
 }

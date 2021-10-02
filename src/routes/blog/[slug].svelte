@@ -112,12 +112,13 @@
 
 <style type="text/postcss">
 	#post :global(h2),
-	:global(h3),
-	:global(h4),
-	:global(h5),
-	:global(h6) {
-		margin: 10px 2px;
+	#post :global(h3),
+	#post :global(h4),
+	#post :global(h5),
+	#post :global(h6) {
+		@apply mt-[25px] mb-[10px] mx-[2px] font-semibold capitalize;
 	}
+	
 	:global(img.Sirv:not([width]):not([height])) {
 		max-width: 100%;
 		max-height: 400px;

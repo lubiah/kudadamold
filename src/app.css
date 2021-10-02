@@ -163,14 +163,9 @@ body {
 	}
 
 	code {
-		@apply leading-relaxed;
+		@apply leading-relaxed px-[1.5px] py-0.5 rounded bg-[#E9E9E9] dark:bg-[#3F3F46];
 		word-wrap: break-word;
 		white-space: pre-wrap;
-		padding: 0.5px;
-		padding:1px;
-
-		border:1px solid #888;
-		border-radius: 3px;
 		font-family: monospace;
 	}
 
