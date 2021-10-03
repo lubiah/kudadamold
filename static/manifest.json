@@ -37,6 +37,12 @@
 			"src": "https://kudadam.sirv.com/logo/logo.png?h=512&w=512",
 			"type": "image/png",
 			"sizes": "512x512"
+		},
+                {
+			"src": "https://kudadam.sirv.com/logo/logo.png?h=512&w=512",
+			"type": "image/png",
+			"sizes": "512x512",
+                        "purpose" : "maskable"
 		}
 
 	],
