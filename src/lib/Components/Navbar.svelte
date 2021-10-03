@@ -74,7 +74,7 @@
 		{#if $mode === "light"}
 			<Moon/>
 		{:else}
-			<Sun class/>
+			<Sun/>
 		{/if}
 	</span>
 

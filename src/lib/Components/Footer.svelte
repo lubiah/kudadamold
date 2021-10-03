@@ -37,7 +37,6 @@
 			</ul>
 		</div>
 	</div>
-
 	<div class="text-center">
 		<p class="pb-1">
 			<span class="block md:inline"
@@ -53,7 +52,7 @@
 				></span
 			>
 		</p>
-		<p class="bg-black py-2">copyright &copy; 2020 - Now, Lucretius Biah</p>
+		<p class="bg-black py-2">copyright &copy; 2020 - Now, Lucretius Biah <Heart/></p>
 	</div>
 </footer>
 
