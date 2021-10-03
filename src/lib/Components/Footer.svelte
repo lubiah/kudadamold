@@ -52,7 +52,7 @@
 				></span
 			>
 		</p>
-		<p class="bg-black py-2">copyright &copy; 2020 - Now, Lucretius Biah <Heart/></p>
+		<p class="bg-black py-2">copyright &copy; 2020 - Now, Lucretius Biah</p>
 	</div>
 </footer>
 

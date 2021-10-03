@@ -46,7 +46,7 @@ In order to get a good score on [Google Page Insights](https://developers.google
         <small>Sapper version of my website's score on Page insights</small>
     </div>
 	<div>
-    	<img src="https://kudadam.sirv.com/blog/redesign-with-sveltekit/sveltekit_page_insights_score.PNG"/>
+    	<img src="https://kudadam.sirv.com/blog/redesign-with-sveltekit/sveltekit_page_insights_score.PNG" alt="SvelteKit page insights score of my website"/>
         <small>SvelteKit version of my website's score on Page insights</small>
     </div>
 </div>

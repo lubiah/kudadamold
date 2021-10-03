@@ -6,67 +6,61 @@
 	"description": "Lucretius' personal website",
 	"display": "standalone",
 	"background_color": "white",
-	"theme_color":"tomato",
-	"orientation":"portrait-primary",
-	"icons": [
-		{
-			"src":"https://kudadam.sirv.com/logo/logo.png?h=72&w=72",
-			"type":"image/png",
-			"sizes":"72x72"
+	"theme_color": "tomato",
+	"orientation": "portrait-primary",
+	"icons": [{
+			"src": "https://kudadam.sirv.com/logo/logo.png?h=72&w=72",
+			"type": "image/png",
+			"sizes": "72x72"
 		},
 		{
-			"src":"https://kudadam.sirv.com/logo/logo.png?h=96&w=96",
-			"type":"image/png",
-			"sizes":"96x96"
+			"src": "https://kudadam.sirv.com/logo/logo.png?h=96&w=96",
+			"type": "image/png",
+			"sizes": "96x96"
 		},
 		{
-			"src":"https://kudadam.sirv.com/logo/logo.png?h=128&w=128",
-			"type":"image/png",
-			"sizes":"128x128"
+			"src": "https://kudadam.sirv.com/logo/logo.png?h=128&w=128",
+			"type": "image/png",
+			"sizes": "128x128"
 		},
 		{
-			"src":"https://kudadam.sirv.com/logo/logo.png?h=192&w=192",
-			"type":"image/png",
-			"sizes":"192x192"
+			"src": "https://kudadam.sirv.com/logo/logo.png?h=192&w=192",
+			"type": "image/png",
+			"sizes": "192x192"
 		},
 		{
-			"src":"https://kudadam.sirv.com/logo/logo.png?h=144&w=144",
-			"type":"image/png",
-			"sizes":"144x144"
+			"src": "https://kudadam.sirv.com/logo/logo.png?h=144&w=144",
+			"type": "image/png",
+			"sizes": "144x144"
 		},
 		{
-			"src":"https://kudadam.sirv.com/logo/logo.png?h=512&w=512",
-			"type":"image/png",
-			"sizes":"512x512"
+			"src": "https://kudadam.sirv.com/logo/logo.png?h=512&w=512",
+			"type": "image/png",
+			"sizes": "512x512"
 		}
 
 	],
-	"shortcuts": [
-		{
+	"shortcuts": [{
 			"name": "Blog Posts",
 			"short_name": "Blog",
-			"description" : "Read Lucretius' Blog Posts",
-			"url":"/blog",
-			"icons": [
-				{
-				"src":"https://kudadam.sirv.com/logo/logo_blog.png?h=512&w=512",
-				"type":"image/png",
-				"sizes":"512x512"
-				}
-			]
+			"description": "Read Lucretius' Blog Posts",
+			"url": "/blog",
+			"icons": [{
+				"src": "https://kudadam.sirv.com/logo/logo_blog.png?h=512&w=512",
+				"type": "image/png",
+				"sizes": "512x512"
+			}]
 		},
 		{
 			"name": "Web Tools",
 			"short_name": "Tools",
 			"description": "Use the web tools on the website",
-			"url":"/toolz",
-			"icons": [
-				{
-					"src": "https://kudadam.sirv.com/logo/logo_toolz.png?h=512&w=512",
-					"type": "image/png",
-					"sizes": "512x512"
-				}
-			]
+			"url": "/toolz",
+			"icons": [{
+				"src": "https://kudadam.sirv.com/logo/logo_toolz.png?h=512&w=512",
+				"type": "image/png",
+				"sizes": "512x512"
+			}]
 		}
 	]
 }
