@@ -74,7 +74,7 @@ self.addEventListener("fetch", event =>{
 				return response
 			return fetch(event.request, {mode:"no-cors"})
 			.then(fetch_res=>{
-				if (!fetch_res || fetch_res.status !== 200 || fetch_res.type !== "basic")
+				if (!fetch_res || fetch_res.status !== 200)
 					return fetch_res;
 				return caches.open(dynamic_cache)
 				.then(cache =>{
