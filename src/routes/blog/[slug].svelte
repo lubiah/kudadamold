@@ -134,7 +134,6 @@
 	}
 
 
-
 	:global(.toc) {
 		@apply my-4;
 	}

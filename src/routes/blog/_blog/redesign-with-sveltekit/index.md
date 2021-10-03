@@ -40,10 +40,17 @@ So that's some of the stuff I changed, the list is more than this but I just dec
 
 In order to get a good score on [Google Page Insights](https://developers.google.com/speed/pagespeed/insights/), you website must load incredibly fast. My old website which was made with Sapper was scoring 45%:astonished:. Yeah, the score is really bad. But when I migrated to [SvelteKit](https://kit.svelte.dev), am scoring 100%.
 
-<div style="background:red;height:200px;display:flex;margin:50px 0px;">
-	<div style="background:linear-gradient(pink,yellow);width:50%"></div>
-	<div style="background:linear-gradient(90deg,blue,lightgreen);width:50%"></div>
+<div style="display:flex; margin:10px auto;justify-content:space-evenly;flex-wrap:wrap">
+	<div>
+    	<img src="https://kudadam.sirv.com/blog/redesign-with-sveltekit/sapper_page_insights_score.PNG" alt="Sapper pageinsights score of my website"/>
+        <small>Sapper version of my website's score on Page insights</small>
+    </div>
+	<div>
+    	<img src="https://kudadam.sirv.com/blog/redesign-with-sveltekit/sveltekit_page_insights_score.PNG"/>
+        <small>SvelteKit version of my website's score on Page insights</small>
+    </div>
 </div>
+
 
 
 I also made some adjustments which helped me to score 100% on Page Insights.
@@ -149,3 +156,11 @@ So after adding a service-worker to my website, I decided to turn it into a P.W.
 ```
 
 So the code above is what makes my website a progressive web app, If you are using the Chrome browser on your mobile device, you can install it like any other ordinary app and you can even share the app
+
+
+
+## Adding a newsletter to the website
+
+So for the very first time in my entire my life of blogging, I decided to add a newsletter to my website. I use [sendinblue](https://www.sendinblue.com) to store my subscribers and also, they provide an API which enables me to send emails. With sendinblue, I can store an unlimited number of contacts and can only send 300 emails per day.
+
+Though I have never used newsletters before, am learning much. On my website, the newsletter subscription form is placed in the footer component of the website  and it's available on all the pages so that the user will see it.
