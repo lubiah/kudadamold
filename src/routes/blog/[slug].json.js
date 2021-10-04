@@ -8,7 +8,8 @@ const { db } = initDB();
 	
 export const get = async (request)=>{
 	const slug = request.params.slug;
-	const path = request.path;
+	const posts_res = await fetch(`http://${request.headers.host}/blog.json`);
+	const posts = await posts_res.json();
 
 	return {
 		headers: {

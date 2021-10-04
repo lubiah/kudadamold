@@ -1,4 +1,7 @@
 <script context="module">
+
+	import { dev } from "$app/env";
+
 	export function load({ error, status }) {
 
 		return {
@@ -15,7 +18,8 @@
 	import SEO from 'svelte-seo';
 	export let status, error;
 
-	console.log(status,error);
+	if (dev) console.log(status,error);
+	
 
 </script>
 

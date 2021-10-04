@@ -46,7 +46,7 @@ In order to get a good score on [Google Page Insights](https://developers.google
         <small>Sapper version of my website's score on Page insights</small>
     </div>
 	<div>
-    	<img src="https://kudadam.sirv.com/blog/redesign-with-sveltekit/sveltekit_page_insights_score.PNG" alt="SvelteKit page insights score of my website"/>
+    	<img src="https://kudadam.sirv.com/blog/redesign-with-sveltekit/sveltekit_page_insights_score.PNG" alt="Sveltekit page insights score of my website"/>
         <small>SvelteKit version of my website's score on Page insights</small>
     </div>
 </div>
@@ -166,3 +166,24 @@ So for the very first time in my entire my life of blogging, I decided to add a 
 Though I have never used newsletters before, am learning much. On my website, the newsletter subscription form is placed in the footer component of the website  and it's available on all the pages so that the user will see it and not miss it.
 
 If you have not already subscribed, you should really do so because I will be sending useful contents to you.
+
+
+
+## Adding Comments to Blog Posts
+
+The first version of my website used Disqus for it's comment system but after I found out that they were injecting other scripts into my page, I decided to opt out.
+
+ At first I decided to create my own comment system then I realized it would be much work maintaining a website and a comment system so finally I decided to settle on [Utterances](https://utteranc.es), a lightweight comments widget built on Github issues. What Utterances does is that, it stores each comment as a Github issue on the repository where the website is hosted. Utterances is really cool but there are some limitations;
+
+Some of the limitations are;
+
+* The person commenting must have  a Github account
+
+* You can use Utterances on  a private repository (repo)
+
+* You can not nest comments
+
+Well, that is some of the limitations of Utterances, apart from these, the comment system is good just like the others. I use it on my website so if you want to try it out, please comment on this blog post down below.
+
+
+

@@ -8,7 +8,7 @@ import rehype_toc from 'rehype-toc';
 const settings = {
 	extension: '.md',
 	rehypePlugins: [rehype_toc],
-	remarkPlugins: [[remark_attr, { scope: 'every' }], remark_slug, remark_emoji,remark_breaks]
+	remarkPlugins: [[remark_attr, { scope: 'every' }], remark_slug, remark_emoji, remark_breaks]
 };
 
 export default settings;

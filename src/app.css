@@ -146,11 +146,11 @@ body {
 	}
 
 	a:visited {
-		@apply text-blue-500 dark:text-blue-300;
+		@apply text-red-500;
 	}
 
 	a:hover {
-		text-decoration: underline;
+		@apply text-blue-500 dark:text-blue-300;
 	}
 
 	blockquote {

@@ -3,22 +3,52 @@
 	import SEO from 'svelte-seo';
 	import Button from "$lib/Components/Button.svelte";
 	import PageProgress from '$lib/Components/PageProgress.svelte';
+	import Card from "$lib/Components/BlogCard.svelte";
 	import 'prismjs/themes/prism-tomorrow.css';
 	import _ from 'lodash';
+	import {token_set_ratio } from "fuzzball";	
 	import { browser } from '$app/env';
+
+
+	const getRelatedArticles = (title,posts)=>{
+		const titles = posts
+		.map(post=> { return post.title})
+		.filter(post => post !== title);
+		const related_titles = titles.filter(post =>{ return token_set_ratio(title,post) >= 50 });
+		const related_posts = new Set();
+		for (let i in related_titles){
+			let related_title = related_titles[i];
+			for (let j in posts){
+				let post = posts[j];
+				if (post.title === related_title){
+					related_posts.add(post);
+				}
+			}
+		}
+		return related_posts;
+	}
+
+
 
 	export async function load({ page, fetch }) {
 		const slug = page.params.slug;
 		try {
+
 			let component = await import(`./_blog/${slug}/index.md`);
 			component.metadata["slug"] = slug;
+			let articles_res = await fetch("/blog.json?all=true");
+			let { posts } = await articles_res.json();
+			const related_posts = getRelatedArticles(component.metadata.title, posts);
+			
+			component.metadata["related_articles"] = related_posts;
+
 			return {
 				props: {
 					metadata: component.metadata,
-					content: component.default
+					content: component.default,
 				}
 			};
-		} catch (e) {}
+		} catch (e) {console.log(e)}
 	}
 </script>
 
@@ -39,7 +69,7 @@
 		document.querySelector("#comment__box").appendChild(script_tag);
 		comment_loaded = true;
 	}
-	
+
 </script>
 
 <SEO
@@ -93,6 +123,22 @@
 		
 		<div class="leading-tight px-2" id="content">
 			<svelte:component  this={content} />
+		</div>
+		<div class="mt-[100px]">
+			<h3>Related Articles</h3>
+			{#if browser}
+				<div class="flex flex-wrap">
+					{#each [...metadata.related_articles] as article (article.id)}
+					<Card
+						title = "{article.title}"
+						date = "{article.date}"
+						slug = "{article.slug}"
+						category= "{article.category}"
+
+					/>
+					{/each}
+				</div>
+			{/if}
 		</div>
 		<div id="comment__box">
 			{#if !comment_loaded}
