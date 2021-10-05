@@ -133,17 +133,19 @@
 			<div class="mt-[100px]">
 			<h3>Related Articles</h3>
 				<div class="flex flex-wrap">
-					<svelte:component
-  					this={Carousel} particlesToShow=1 autoplay pauseOnFocus>
-  					{#each [...metadata.related_articles] as article (article.id)}
-  						<Card
-						title = "{article.title}"
-						date = "{article.date}"
-						slug = "{article.slug}"
-						category= "{article.category}"
-						image = "{article.image}"/>					
-					{/each} 
-					</svelte:component>
+					{#if window.matchMedia(`(max-width:600px)`).matches}
+						<svelte:component
+	  					this={Carousel} particlesToShow=1 autoplay pauseOnFocus>
+	  					{#each [...metadata.related_articles] as article (article.id)}
+	  						<Card
+							title = "{article.title}"
+							date = "{article.date}"
+							slug = "{article.slug}"
+							category= "{article.category}"
+							image = "{article.image}"/>					
+						{/each} 
+						</svelte:component>
+					{/if}
 				</div>
 			</div>
 			{/if}

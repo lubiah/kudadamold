@@ -164,17 +164,13 @@ So the code above is what makes my website a progressive web app, If you are usi
 So for the very first time in my entire my life of blogging, I decided to add a newsletter to my website. I use [sendinblue](https://www.sendinblue.com) to store my subscribers and also, they provide an API which enables me to send emails. With sendinblue, I can store an unlimited number of contacts and can only send 300 emails per day.
 
 Though I have never used newsletters before, am learning much. On my website, the newsletter subscription form is placed in the footer component of the website  and it's available on all the pages so that the user will see it and not miss it.
-
 If you have not already subscribed, you should really do so because I will be sending useful contents to you.
-
-
 
 ## Adding Comments to Blog Posts
 
 The first version of my website used Disqus for it's comment system but after I found out that they were injecting other scripts into my page, I decided to opt out.
 
  At first I decided to create my own comment system then I realized it would be much work maintaining a website and a comment system so finally I decided to settle on [Utterances](https://utteranc.es), a lightweight comments widget built on Github issues. What Utterances does is that, it stores each comment as a Github issue on the repository where the website is hosted. Utterances is really cool but there are some limitations;
-
 
 Some of the limitations are;
 
