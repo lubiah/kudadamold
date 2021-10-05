@@ -175,6 +175,7 @@ The first version of my website used Disqus for it's comment system but after I 
 
  At first I decided to create my own comment system then I realized it would be much work maintaining a website and a comment system so finally I decided to settle on [Utterances](https://utteranc.es), a lightweight comments widget built on Github issues. What Utterances does is that, it stores each comment as a Github issue on the repository where the website is hosted. Utterances is really cool but there are some limitations;
 
+
 Some of the limitations are;
 
 * The person commenting must have  a Github account
