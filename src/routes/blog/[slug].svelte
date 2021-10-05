@@ -75,9 +75,6 @@
     Carousel = module.default;
   });
 
-	if (browser){
-		window.carouselParticleNumber = window.matchMedia(`(max-width:600px)`).matches ? 1 : 3;
-	}
 </script>
 
 <SEO
@@ -136,8 +133,9 @@
 			<div class="mt-[100px]">
 			<h3>Related Articles</h3>
 				<div class="flex flex-wrap">
+					{#if window.matchMedia(`(max-width:600px)`) === true}
 					<svelte:component
-  					this={Carousel} particlesToShow={window.carouselParticleNumber} autoplay pauseOnFocus>
+  					this={Carousel} particlesToShow=1 autoplay pauseOnFocus>
   					{#each [...metadata.related_articles] as article (article.id)}
   						<Card
 						title = "{article.title}"
@@ -147,6 +145,16 @@
 						image = "{article.image}"/>					
 					{/each} 
 					</svelte:component>
+					{:else}
+						{#each [...metadata.related_articles] as article (article.id)}
+  						<Card
+						title = "{article.title}"
+						date = "{article.date}"
+						slug = "{article.slug}"
+						category= "{article.category}"
+						image = "{article.image}"/>					
+					{/each} 
+					{/if}
 					
 				</div>
 				</div>
