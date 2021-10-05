@@ -31,15 +31,14 @@
 		"remark-slug": "^7.0.0",
 		"svelte-preprocess": "^4.9.4",
 		"tailwindcss": "^2.2.14",
-		"vite-plugin-env-compatible": "^1.1.1",
-		"html-minifier": "^4.0.0",
-		"front-matter": "^4.0.2",
-		"fdir": "^5.1.0",
-		"svelte-carousel": "^1.0.16"
+		"vite-plugin-env-compatible": "^1.1.1"
 	},
 	"type": "module",
 	"dependencies": {
 		"dotenv": "^10.0.0",
+		"fdir": "^5.1.0",
+		"front-matter": "^4.0.2",
+		"html-minifier": "^4.0.0",
 		"jquery": "^3.6.0",
 		"js-search": "^2.0.0",
 		"mysql": "^2.18.1",
@@ -48,7 +47,7 @@
 		"regex-escape": "^3.4.10",
 		"sib-api-v3-sdk": "^8.2.1",
 		"socket.io": "^4.2.0",
-		
+		"svelte-carousel": "^1.0.16",
 		"svelte-modal": "^0.4.0",
 		"svelte-seo": "^1.3.0"
 	}
