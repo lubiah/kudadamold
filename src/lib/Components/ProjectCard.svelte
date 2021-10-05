@@ -18,7 +18,7 @@ This component is used to display my projects in a more organized manner
 		<p>{description}</p>
 	</div>
 	<div class="flex px-1">
-		<Button class="block w-full"><a href={url}>View Project</a></Button>
+		<Button class="block w-full"><a class="block hover:text-white visited:text-white" href={url}>View Project</a></Button>
 	</div>
 </div>
 	

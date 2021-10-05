@@ -7,8 +7,7 @@
 	import 'prismjs/themes/prism-tomorrow.css';
 	import _ from 'lodash';
 	import {token_set_ratio } from "fuzzball";	
-	import { browser } from '$app/env';
-
+	import { browser } from "$app/env";
 
 	const getRelatedArticles = (title,posts)=>{
 		const titles = posts
@@ -70,6 +69,12 @@
 		comment_loaded = true;
 	}
 
+	let Carousel; // for saving Carousel component class
+  	let carousel; // for calling methods of the carousel instance
+	onMount(async () => {
+    const module = await import('svelte-carousel');
+    Carousel = module.default;
+  });
 </script>
 
 <SEO
@@ -128,7 +133,10 @@
 			<h3>Related Articles</h3>
 			{#if browser}
 				<div class="flex flex-wrap">
-					{#each [...metadata.related_articles] as article (article.id)}
+					<svelte:component
+  					this={Carousel}
+ 					bind:this={carousel} particlesToShow=3 autoplay pauseOnFocus>
+  						{#each [...metadata.related_articles] as article (article.id)}
 					<Card
 						title = "{article.title}"
 						date = "{article.date}"
@@ -137,6 +145,7 @@
 
 					/>
 					{/each}
+					</svelte:component>
 				</div>
 			{/if}
 		</div>
