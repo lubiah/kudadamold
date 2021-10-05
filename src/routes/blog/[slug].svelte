@@ -145,6 +145,18 @@
 							image = "{article.image}"/>					
 						{/each} 
 						</svelte:component>
+					{:else}
+						<svelte:component
+	  					this={Carousel} particlesToShow=3 autoplay pauseOnFocus>
+	  					{#each [...metadata.related_articles] as article (article.id)}
+	  						<Card
+							title = "{article.title}"
+							date = "{article.date}"
+							slug = "{article.slug}"
+							category= "{article.category}"
+							image = "{article.image}"/>					
+						{/each} 
+						</svelte:component>
 					{/if}
 				</div>
 			</div>

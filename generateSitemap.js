@@ -10,8 +10,8 @@ const generator = SitemapGenerator(`https://www.kudadam.com`, {
 	stripQuerystring: false,
 	changeFreq: 'weekly',
 	lastMod: true,
-	filepath: './build/assets/sitemap.xml',
-	priorityMap: [1.0, 0.9]
+	filepath: './sitemap.xml',
+	priorityMap: [1]
 });
 
 generator.on('done', () => {});
