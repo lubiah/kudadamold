@@ -74,6 +74,10 @@
     const module = await import('svelte-carousel');
     Carousel = module.default;
   });
+
+	if (browser){
+		window.carouselParticleNumber = window.matchMedia(`(max-width:600px)`).matches ? 1 : 3;
+	}
 </script>
 
 <SEO
@@ -133,7 +137,7 @@
 			<h3>Related Articles</h3>
 				<div class="flex flex-wrap">
 					<svelte:component
-  					this={Carousel} particlesToShow={window.matchMedia(`(max-width:600px)`).matches ? 1 : 3} autoplay pauseOnFocus>
+  					this={Carousel} particlesToShow={window.carouselParticleNumber} autoplay pauseOnFocus>
   					{#each [...metadata.related_articles] as article (article.id)}
   						<Card
 						title = "{article.title}"

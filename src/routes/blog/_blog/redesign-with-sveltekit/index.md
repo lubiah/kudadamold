@@ -184,6 +184,3 @@ Some of the limitations are;
 * You can not nest comments
 
 Well, that is some of the limitations of Utterances, apart from these, the comment system is good just like the others. I use it on my website so if you want to try it out, please comment on this blog post down below.
-
-
-
