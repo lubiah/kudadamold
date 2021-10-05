@@ -133,7 +133,8 @@
 			<h3>Related Articles</h3>
 			{#if browser}
 				<div class="flex flex-wrap">
-					<svelte:component
+					{#if browser}
+						<svelte:component
   					this={Carousel}
  					bind:this={carousel} particlesToShow=3 autoplay pauseOnFocus>
   						{#each [...metadata.related_articles] as article (article.id)}
@@ -146,6 +147,8 @@
 					/>
 					{/each}
 					</svelte:component>
+					{/if}
+					
 				</div>
 			{/if}
 		</div>
