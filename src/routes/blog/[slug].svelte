@@ -8,7 +8,6 @@
 	import _ from 'lodash';
 	import {token_set_ratio } from "fuzzball";	
 	import { browser } from "$app/env";
-
 	const getRelatedArticles = (title,posts)=>{
 		const titles = posts
 		.map(post=> { return post.title})
@@ -70,8 +69,8 @@
 	}
 
 	let Carousel; // for saving Carousel component class
-  	let carousel; // for calling methods of the carousel instance
 	onMount(async () => {
+
     const module = await import('svelte-carousel');
     Carousel = module.default;
   });
@@ -129,29 +128,26 @@
 		<div class="leading-tight px-2" id="content">
 			<svelte:component  this={content} />
 		</div>
-		<div class="mt-[100px]">
+			{#if browser && [...metadata.related_articles].length >= 1}
+			<div class="mt-[100px]">
 			<h3>Related Articles</h3>
-			{#if browser}
 				<div class="flex flex-wrap">
-					{#if browser}
-						<svelte:component
-  					this={Carousel}
- 					bind:this={carousel} particlesToShow=3 autoplay pauseOnFocus>
-  						{#each [...metadata.related_articles] as article (article.id)}
-					<Card
+					<svelte:component
+  					this={Carousel} particlesToShow={window.matchMedia(`(max-width:600px)`).matches ? 1 : 3} autoplay pauseOnFocus>
+  					{#each [...metadata.related_articles] as article (article.id)}
+  						<Card
 						title = "{article.title}"
 						date = "{article.date}"
 						slug = "{article.slug}"
 						category= "{article.category}"
-
-					/>
-					{/each}
+						image = "{article.image}"/>					
+					{/each} 
 					</svelte:component>
-					{/if}
 					
 				</div>
+				</div>
 			{/if}
-		</div>
+		
 		<div id="comment__box">
 			{#if !comment_loaded}
 				<Button class="block mt-6 mx-auto !py-2" on:click={loadComments}>Load/Add Comment</Button>
