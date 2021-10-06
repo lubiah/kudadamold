@@ -1,38 +1,35 @@
-import { fdir } from 'fdir';
-import front_matter from 'front-matter';
-import fs from 'fs';
+
+import Path from "path";
 import _ from 'lodash';
-import path from 'path';
 import { mode } from "$app/env";
 
-const blog_contents_dir = 'src/routes/blog/_blog';
-const crawler = new fdir().onlyDirs().normalize(); //The crawler
-let files = crawler.crawl(blog_contents_dir).sync(); //Gets the files
-files = files.map((file) => {
-	return file.split(path.sep).slice(-1)[0];
-}); //Removes the root path leaving only the folder name
-files = files.slice(1);
 
+
+let files = new Array();
+let imports = import.meta.glob("./_blog/**/*.md");
+
+for (let key in imports){
+	files.push([Path.win32.basename(Path.dirname(key)),imports[key]])
+}
 let id = 1;
-let filtered = files.filter((file) => {
-	let contents = fs.readFileSync(`${blog_contents_dir}/${file}/index.md`, 'utf-8');
-	let fm = front_matter(contents).attributes;
-	if (fm.draft !== true || mode == "development") return fm;
-});
-let posts = filtered.map((file) => {
-	let contents = fs.readFileSync(`${blog_contents_dir}/${file}/index.md`, 'utf-8');
-	let fm = front_matter(contents).attributes;
-	fm['slug'] = file;
-	fm['id'] = id;
-	id++;
-	return fm;
-});
-posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-let unsorted = posts;
-posts = _.chunk(posts, 6);
+files = Promise.all(files.map(async file=>{
+		let res = await file[1]();
+		let { metadata } = await res;
+		metadata.slug = file[0];
+		metadata.id = id; id++;
+		if (metadata.draft !== true || mode === "development")
+			return metadata;
+	})
+	);
 
 export async function get({ query }) {
+
+	let posts = await files;
+	posts = posts.filter(file=> file !== undefined);
+	posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+	let unsorted = posts;
+	posts = _.chunk(posts,6);
+
 	let results = new Object();
 	results['posts'] = posts[0];
 

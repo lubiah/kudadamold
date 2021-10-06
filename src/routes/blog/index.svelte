@@ -1,17 +1,20 @@
 <script context="module">
 	import Card from '$lib/Components/BlogCard.svelte';
 	import SEO from 'svelte-seo';
+	import { onMount } from "svelte";
 	import Button from '$lib/Components/Button.svelte';
-
+	import _ from "lodash";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?limit=true');
 		let json = await res.json();
-
+		res = await fetch("/blog.json?all=true");
+		let { posts } = await res.json();
 		if (res.ok) {
 			return {
 				props: {
 					posts: json.posts,
-					limit: json.limit
+					limit: json.limit,
+					all_posts: posts
 				}
 			};
 		}
@@ -19,14 +22,12 @@
 </script>
 
 <script type="text/javascript">
-	export let posts, limit;
-
+	export let posts, limit, all_posts;
 	let page = 1;
-
+	all_posts = _.chunk(all_posts,6);     
 	const loadData = async () => {
-		let res = await fetch(`/blog.json?page=${page + 1}`);
-		let data = await res.json();
-		posts = [...posts, ...data.posts];
+		let data = all_posts[page];
+		posts = [...posts, ...data];
 		page++;
 	};
 </script>
