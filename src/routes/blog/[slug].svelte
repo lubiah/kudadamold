@@ -1,5 +1,4 @@
 <script context="module">
-	import { onMount } from 'svelte';
 	import SEO from 'svelte-seo';
 	import Button from "$lib/Components/Button.svelte";
 	import PageProgress from '$lib/Components/PageProgress.svelte';
@@ -8,6 +7,9 @@
 	import _ from 'lodash';
 	import {token_set_ratio } from "fuzzball";	
 	import { browser } from "$app/env";
+	import Carousel from '@beyonk/svelte-carousel';
+
+
 	const getRelatedArticles = (title,posts)=>{
 		const titles = posts
 		.map(post=> { return post.title})
@@ -46,7 +48,7 @@
 					content: component.default,
 				}
 			};
-		} catch (e) {console.log(e)}
+		} catch (e) {}
 	}
 </script>
 
@@ -67,13 +69,6 @@
 		document.querySelector("#comment__box").appendChild(script_tag);
 		comment_loaded = true;
 	}
-
-	let Carousel; // for saving Carousel component class
-	onMount(async () => {
-
-    const module = await import('svelte-carousel');
-    Carousel = module.default;
-  });
 
 </script>
 
@@ -132,33 +127,16 @@
 			{#if browser && [...metadata.related_articles].length >= 1}
 			<div class="mt-[100px]">
 			<h3>Related Articles</h3>
-				<div class="flex flex-wrap">
-					{#if window.matchMedia(`(max-width:600px)`).matches}
-						<svelte:component
-	  					this={Carousel} particlesToShow=1 autoplay pauseOnFocus>
-	  					{#each [...metadata.related_articles] as article (article.id)}
-	  						<Card
-							title = "{article.title}"
-							date = "{article.date}"
-							slug = "{article.slug}"
-							category= "{article.category}"
-							image = "{article.image}"/>					
-						{/each} 
-						</svelte:component>
-					{:else}
-						<svelte:component
-	  					this={Carousel} particlesToShow=3 autoplay pauseOnFocus>
-	  					{#each [...metadata.related_articles] as article (article.id)}
-	  						<Card
-							title = "{article.title}"
-							date = "{article.date}"
-							slug = "{article.slug}"
-							category= "{article.category}"
-							image = "{article.image}"/>					
-						{/each} 
-						</svelte:component>
-					{/if}
-				</div>
+					<Carousel perPage={{ 600: 1, 800:2,900:3}}>
+					{#each [...metadata.related_articles] as article (article.id)}
+					<Card class="mx-3"
+					title = "{article.title}"
+					date = "{article.date}"
+					slug = "{article.slug}"
+					category= "{article.category}"
+					image = "{article.image}"/>		
+					{/each}	
+				</Carousel>		
 			</div>
 			{/if}
 		

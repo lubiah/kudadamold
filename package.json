@@ -9,6 +9,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@beyonk/svelte-carousel": "^2.8.0",
 		"@sveltejs/adapter-node": "^1.0.0-next.46",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.3.4",
@@ -16,8 +17,6 @@
 		"eslint": "^7.22.0",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-svelte3": "^3.2.0",
-		"fdir": "^5.1.0",
-		"front-matter": "^4.0.2",
 		"fuzzball": "^2.0.2",
 		"mdsvex": "^0.9.8",
 		"postcss": "^8.3.6",
@@ -32,7 +31,6 @@
 		"remark-slug": "^7.0.0",
 		"remark-toc": "^8.0.0",
 		"svelte": "^3.34.0",
-		"svelte-carousel": "^1.0.16",
 		"svelte-preprocess": "^4.9.4",
 		"svelte-seo": "^1.3.1",
 		"tailwindcss": "^2.2.14",

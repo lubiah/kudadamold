@@ -72,7 +72,12 @@
 			"name": "FLAMES Game",
 			"short_name": "FLAMES",
 			"description": "A game which can determine the relationship between two people with the use of thier names",
-			"url": "/flames"
+			"url": "/flames",
+			"icons": [{
+				"src": "https://kudadam.sirv.com/FLAMES/image.png",
+				"type": "image/png",
+				"sizes": "512x512"
+			}]
 		}
 	]
 }
