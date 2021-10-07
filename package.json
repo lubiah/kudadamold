@@ -41,11 +41,8 @@
 		"html-minifier": "^4.0.0",
 		"jquery": "^3.6.0",
 		"js-search": "^2.0.0",
-		"mysql": "^2.18.1",
 		"nodemailer": "^6.6.3",
 		"regex-escape": "^3.4.10",
-		"sib-api-v3-sdk": "^8.2.1",
-		"socket.io": "^4.2.0",
-		"svelte-modal": "^0.4.0"
+		"sib-api-v3-sdk": "^8.2.1"
 	}
 }
