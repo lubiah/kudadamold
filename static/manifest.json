@@ -42,7 +42,7 @@
 			"src": "https://kudadam.sirv.com/logo/logo.png?h=512&w=512",
 			"type": "image/png",
 			"sizes": "512x512",
-                        "purpose" : "maskable"
+            "purpose" : "maskable"
 		}
 
 	],
@@ -74,7 +74,7 @@
 			"description": "A game which can determine the relationship between two people with the use of thier names",
 			"url": "/flames",
 			"icons": [{
-				"src": "https://kudadam.sirv.com/FLAMES/image.png",
+				"src": "https://kudadam.sirv.com/FLAMES/image.png?h=512&w=512",
 				"type": "image/png",
 				"sizes": "512x512"
 			}]

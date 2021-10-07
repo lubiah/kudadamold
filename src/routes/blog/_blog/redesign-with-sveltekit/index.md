@@ -65,7 +65,7 @@ Here are some of the adjustments I made:
 
   Adding this attribute to my image elements helped to reduce the page load time. What the attribute does is that, it does not load the image until the image is in view. This helps to reduce the number of requests made on page load.
   
-* [Minifying the rendered HTML](/blog/sveltekit-minify-rendered-html)
+* Minifying the rendered HTML
 
   SvelteKit has a feature called hooks. This is a JavaScript file which is run when requests are made to the server.  By intercepting the results being sent back to the browser,  I am able to minify the contents thereby reducing the size of the HTML page which has to be downloaded. You can [read more about it here](/blog/sveltekit-minify-rendered-html).
 
@@ -155,9 +155,7 @@ So after adding a service-worker to my website, I decided to turn it into a P.W.
 }
 ```
 
-So the code above is what makes my website a progressive web app, If you are using the Chrome browser on your mobile device, you can install it like any other ordinary app and you can even share the app
-
-
+So the code above is what makes my website a progressive web app, If you are using the Chrome browser on your mobile device, you can install it like any other ordinary app and you can even share the app.   
 
 ## Adding a newsletter to the website
 
@@ -181,3 +179,7 @@ Some of the limitations are;
 * You can not nest comments
 
 Well, that is some of the limitations of Utterances, apart from these, the comment system is good just like the others. I use it on my website so if you want to try it out, please comment on this blog post down below.
+
+
+
+Fellas, that's all there is to say about my new redesign, Will be waiting to see your name in the subscriber's list.

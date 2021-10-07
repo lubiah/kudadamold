@@ -1,6 +1,5 @@
 <script>
 	let Class = '';
-
 	export { Class as class };
 	export let type = 'button';
 	export let disabled = false;
@@ -9,6 +8,7 @@
 </script>
 
 <button
+	id = "{$$props.id}"
 	on:click
 	{type}
 	{disabled}
@@ -23,6 +23,11 @@
 	button:active{
 		transform: translateY(0.5px);
 		box-shadow: unset;
+	}
+
+	button:disabled {
+		background: #cccccc;
+		color: #666666;
 	}
 
 	.primary {
