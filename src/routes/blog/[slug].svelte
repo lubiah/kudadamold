@@ -7,8 +7,7 @@
 	import _ from 'lodash';
 	import {token_set_ratio } from "fuzzball";	
 	import { browser } from "$app/env";
-	import Carousel from '@beyonk/svelte-carousel';
-
+	import { onMount } from 'svelte';
 
 	const getRelatedArticles = (title,posts)=>{
 		const titles = posts
@@ -70,6 +69,27 @@
 		comment_loaded = true;
 	}
 
+  	onMount(async () => {
+    const module = await import("@splidejs/splide");
+   	const Splide = module.default;
+    const splide_css = await import("@splidejs/splide/dist/css/splide.min.css");
+    new Splide( '.splide',{
+    	perPage:3,
+    	type:"loop",
+    	rewind: true,
+    	permove: 1,
+    	autoplay: true,
+    	breakpoints: {
+    		750: {
+    			perPage: 1
+    		},
+    		800:{
+    			perPage: 2
+    		}
+    	}
+    }).mount();
+  });
+
 </script>
 
 <SEO
@@ -127,16 +147,22 @@
 			{#if browser && [...metadata.related_articles].length >= 1}
 			<div class="mt-[100px]">
 			<h3>Related Articles</h3>
-					<Carousel perPage={{ 600: 1, 800:2,900:3}}>
-					{#each [...metadata.related_articles] as article (article.id)}
-					<Card class="mx-3"
-					title = "{article.title}"
-					date = "{article.date}"
-					slug = "{article.slug}"
-					category= "{article.category}"
-					image = "{article.image}"/>		
-					{/each}	
-				</Carousel>		
+				<div class="splide">
+					<div class="splide__track">
+						<div class="splide__list">
+							{#each [...metadata.related_articles] as article (article.id)}
+							<div class="splide__slide flex"><Card 
+							title = "{article.title}"
+							date = "{article.date}"
+							slug = "{article.slug}"
+							category= "{article.category}"
+							image = "{article.image}"/></div>
+	  									
+						{/each} 
+						</div>
+					</div>
+	  					
+				</div>
 			</div>
 			{/if}
 		
