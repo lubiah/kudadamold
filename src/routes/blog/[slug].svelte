@@ -132,7 +132,7 @@
 					<div class="flex overflow-auto">
 						{#each [...metadata.relatedArticles] as article (article.id)}
 						<div class="flex">
-							<Card
+							<Card class="mr-3"
 									title="{article.title}"
 									slug="{article.slug}"
 									image="{article.image}"
