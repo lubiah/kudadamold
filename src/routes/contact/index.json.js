@@ -27,6 +27,8 @@ const addSubscriber = async request =>{
 		user.first_name = name.split(" ")[0];
 		user.last_name = name.split(" ")[name.split(" ").length - 1];
 	}
+	let redirectionUrl = new URL("https://www.kudadam.com/newsletter/thanks");
+	redirectionUrl.searchParams.append("name",name);
 	let client  =sib_api.ApiClient.instance;
 	let apiKey = client.authentications["api-key"];
 	apiKey.apiKey = env.SIB_API_KEY;
@@ -47,7 +49,7 @@ const addSubscriber = async request =>{
 	}
 	}
 	contact.includeListIds = [3];
-	contact.redirectionUrl = "https://www.kudadam.com/newsletter/thanks";
+	contact.redirectionUrl = "";
 	contact.templateId = 7;
 	return apiInstance.createDoiContact(contact).then(()=>{
 		return true;
