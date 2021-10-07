@@ -7,7 +7,7 @@
 	import _ from 'lodash';
 	import {token_set_ratio } from "fuzzball";	
 	import { browser } from "$app/env";
-	import { onMount } from 'svelte';
+	import { onMount, beforeUpdate } from 'svelte';
 
 	const getRelatedArticles = (title,posts)=>{
 		const titles = posts
@@ -73,7 +73,7 @@
     const module = await import("@splidejs/splide");
    	const Splide = module.default;
     const splide_css = await import("@splidejs/splide/dist/css/splide.min.css");
-    new Splide( '.splide',{
+    const carousel = new Splide( '.splide',{
     	perPage:3,
     	type:"loop",
     	rewind: true,
@@ -87,7 +87,9 @@
     			perPage: 2
     		}
     	}
-    }).mount();
+    });
+    carousel.refresh();
+    carousel.mount();
   });
 
 </script>
