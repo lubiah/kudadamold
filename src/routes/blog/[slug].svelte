@@ -8,7 +8,6 @@
 	import {token_set_ratio } from "fuzzball";	
 	import { browser } from "$app/env";
 	import { onMount, beforeUpdate } from 'svelte';
-	import Carousel from '@beyonk/svelte-carousel';
 
 	const getRelatedArticles = (title,posts)=>{
 		const titles = posts
