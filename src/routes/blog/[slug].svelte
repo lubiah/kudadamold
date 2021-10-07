@@ -8,6 +8,7 @@
 	import {token_set_ratio } from "fuzzball";	
 	import { browser } from "$app/env";
 	import { onMount, beforeUpdate } from 'svelte';
+	import Carousel from '@beyonk/svelte-carousel';
 
 	const getRelatedArticles = (title,posts)=>{
 		const titles = posts
@@ -38,8 +39,8 @@
 			let articles_res = await fetch("/blog.json?all=true");
 			let { posts } = await articles_res.json();
 			const related_posts = getRelatedArticles(component.metadata.title, posts);
-			
-			component.metadata["related_articles"] = related_posts;
+			component.metadata["relatedArticles"] = related_posts;
+			component.metadata["relatedArticlesNumber"] = related_posts.size;
 
 			return {
 				props: {
@@ -69,28 +70,8 @@
 		comment_loaded = true;
 	}
 
-  	onMount(async () => {
-    const module = await import("@splidejs/splide");
-   	const Splide = module.default;
-    const splide_css = await import("@splidejs/splide/dist/css/splide.min.css");
-    const carousel = new Splide( '.splide',{
-    	perPage:3,
-    	type:"loop",
-    	rewind: true,
-    	permove: 1,
-    	autoplay: true,
-    	breakpoints: {
-    		750: {
-    			perPage: 1
-    		},
-    		800:{
-    			perPage: 2
-    		}
-    	}
-    });
-    carousel.refresh();
-    carousel.mount();
-  });
+	onMount(async()=>{
+	})
 
 </script>
 
@@ -144,28 +125,25 @@
 		/>
 		
 		<div class="leading-tight px-2" id="content">
-			<svelte:component  this={content} />
+			<svelte:component this={content} />
 		</div>
-			{#if browser && [...metadata.related_articles].length >= 1}
-			<div class="mt-[100px]">
-			<h3>Related Articles</h3>
-				<div class="splide">
-					<div class="splide__track">
-						<div class="splide__list">
-							{#each [...metadata.related_articles] as article (article.id)}
-							<div class="splide__slide flex"><Card 
-							title = "{article.title}"
-							date = "{article.date}"
-							slug = "{article.slug}"
-							category= "{article.category}"
-							image = "{article.image}"/></div>
-	  									
-						{/each} 
-						</div>
+			{#if browser && [...metadata.relatedArticles].length >= 1}
+				<div class="mt-[100px]">
+					<h3>Related Articles</h3>
+					<div class="flex overflow-auto">
+						{#each [...metadata.relatedArticles] as article (article.id)}
+						<div class="flex">
+							<Card
+									title="{article.title}"
+									slug="{article.slug}"
+									image="{article.image}"
+									date="{article.date}"
+									category="{article.category}"
+								/>
+						</div>			
+						{/each}	
 					</div>
-	  					
 				</div>
-			</div>
 			{/if}
 		
 		<div id="comment__box">
