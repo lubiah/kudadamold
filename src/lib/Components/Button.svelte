@@ -27,7 +27,7 @@
 
 	button:disabled {
 		background: #cccccc;
-		color: #666666;
+		color: #666666; 
 	}
 
 	.primary {
