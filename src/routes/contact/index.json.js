@@ -49,14 +49,14 @@ const addSubscriber = async request =>{
 	}
 	}
 	contact.includeListIds = [3];
-	contact.redirectionUrl = "";
+	contact.redirectionUrl = redirectionUrl;
 	contact.templateId = 7;
 	return apiInstance.createDoiContact(contact).then(()=>{
 		return true;
 	
 	})
 	.catch(err=>{
-		return false;
+		return err;
 	})
 }
 
