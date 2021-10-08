@@ -1,1 +1,0 @@
-<h2>Sorry, you are offline</h2>

@@ -8,9 +8,10 @@ const dynamic_pages = [
 	"/",
 	"/blog",
 	"/blog.json?limit=true",
+	"/blog.json?all=true",
 	"/toolz",
 	"/toolz.json",
-	"/offline",
+	"/offline.html",
 	"/about",
 	"/contact"
 ];
@@ -52,7 +53,7 @@ self.addEventListener("activate", event =>{
 		caches.keys()
 		.then(keys=>{
 			return Promise.all(keys
-			.filter(key => key !== cache && key !== dynamic_cache)
+			.filter(key => key !== cache || key !== dynamic_cache)
 			.map(key => caches.delete(key))
 				)
 			self.client.claim()
@@ -84,13 +85,7 @@ self.addEventListener("fetch", event =>{
 				})
 			})
 			.catch(err=>{
-		
-			if (new URL(event.request.url).origin === self.origin){
-				console.log(event.request);
-				console.log("Serving offline file instead");
-				console.log(event.request.url)
-				return caches.match("/offline");	
-				}
+				return caches.match("/offline.html");
 			});
 		})
 		)
