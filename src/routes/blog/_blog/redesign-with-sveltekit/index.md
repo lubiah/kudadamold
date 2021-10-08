@@ -10,7 +10,6 @@ keywords:
   - website in SvelteKit
   - SvelteKit website design
 date: 2021-09-30
-draft: true
 ---
 
 <p class="intro">

@@ -26,7 +26,7 @@
         }
         else {
         	document.querySelector("#subscription__heading_text").innerText = "Error";
-        	document.querySelector("#form_container").innerHTML = `<p class='text-red-500'>Sorry, an error occured</p>`
+        	document.querySelector("#form_container").innerHTML = `<p>Sorry, an error occured</p>`
         }
 	}
 </script>
