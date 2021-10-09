@@ -1,72 +1,141 @@
 <script>
-	import Banner from "./_components/banner.svelte";
-	import { onMount, onDestroy } from "svelte";
-	import Head from "svelte-seo";
-	let animate = true;
+	import SEO from "svelte-seo";
+	import Body from "./_Components/Body.svelte";
+	import Show from "./_Components/Show.svelte";
+	import Flames from "./_flames.js";
 
-	const animate_banner = async ()=>{
-		let banner = document.querySelector("#banner");
-		let text = banner.innerText;
-		for (let i = 0; i < text.length; i++) {
-			await sleep(500);
-			banner.innerHTML = text.replace(text[i],`<span class='text-red-800'>${text[i]}</span>`)
-		}
+	let game;
+	let error = {
+		first:"",
+		second:""
+	}
+	let hidden = true;
 
-		if (animate === true){
-			animate_banner();
-		}
+	let data = {
+		valid: false,
+		first:"",
+		second: ""
 	}
 
-	const sleep = async time =>{
-		await new Promise(resolve => setTimeout(resolve,time));
+	const resetError = ()=>{
+		error.first = "";
+		error.second = "";
 	}
 
-	onMount(()=>{
-		animate_banner();
-	});
-	onDestroy(()=>{
-		animate = false;
-	})
+	const reset = ()=>{
+		hidden = true;
+		data.first =  "";
+		data.second = "";
+
+	}
+
+
+	const validateInput = event=>{
+		if ((event.keyCode > 64 && event.keyCode < 91) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 32)
+		{
+		event.target.value += event.key;
+		if (event.target.getAttribute("data-player") === "first"){
+			data.first = event.target.value;
+		}
+
+		else if (event.target.getAttribute("data-player") === "second"){
+			data.second = event.target.value;
+		}
+
+		}
+		else return event;
+	}
+
+	const validate = ()=>{
+		data.valid = true;
+		if (data.first.trim().length < 1){
+			error.first = "Enter your name";
+			data.valid = false;
+			return;
+		} 
+		if (data.second.trim().length < 1){
+			error.second = "Enter your name";
+			data.valid = false;
+			return;
+			
+		}
+		if (data.first.trim().split(" ").length < 2){
+			error.first = "Please enter your full name";
+			error.valid = false;
+			return;
+		}
+		if (data.second.trim().split(" ").length < 2){
+			error.second = "Please enter your full name";
+			error.valid = false;
+			return;
+		}
+
+		game = new Flames(data.first, data.second);
+		hidden = false;
+
+	}
+
+
+
+
 </script>
 
-<Head
-title = "FLAMES GAME • Kudadam"
-description = "Flames is a simple and fun game which can determine the relationship between two individuals with the use of their names"
-keywords = "flames, flames game, real flames, real flames game"
-canonical = "https://www.kudadam.com/flames"
-
-OpenGraph = {{
-	title: "FLAMES GAME • Kudadam",
-	description: "Flames is a simple and fun game which can determine the relationship between two individuals with the use of their names",
-	url:"https://www.kudadam.com/flames",
-	type: "website"
-}}
-
-
-twitter = {{
-	site:"@lucretius_1",
-	title:"FLAMES GAME • Kudadam",
-	description: "Flames is a simple and fun game which can determine the relationship between two individuals with the use of their names"
-}}
+<SEO
+title = "FLAMES Game • Kudadam"
+description = "Flames is a simple and fun game which can determine the relationship between two people with the use of their names. The results are not to be taken seriously since this is just a game"
 />
 
-<Banner/>
 
-<div id="buttons__container" class="max-w-screen-sm mx-auto pt-20 px-20 md:px-[150px]">
-	<button><a href="/flames/new">New Game</a></button>
-	<button><a href="/flames/about">About</a></button>
-</div>
+{#if !hidden}
+	<Show data={game} on:hide={reset}/>
+{/if}
+
+<Body>
+	<form on:submit|preventDefault={validate}>
+		<div class="text-center">
+		<h1 class="text-[5rem] m-0 md:text-[10rem] text-transparent bg-clip-text from-red-700 to-yellow-500 bg-gradient-to-r leading-none xl:text-[13rem] font-bold" id="header">FLAMES</h1>
+		<p class="italic text-[1.5rem] text-gray-800">Fun way to find the relationship between two people</p>	
+	</div>
+	<div id="game" class="pt-[80px]">
+		<div><input on:keypress={resetError} on:keypress|preventDefault={validateInput}  data-player="first" type="text" data-id="names" placeholder="Your Full Name" required bind:value={data.first}>
+		<small>{error.first}</small>
+		</div>
+		<div><input type="text" data-player="second" on:keypress|preventDefault={validateInput}  on:keypress={resetError} data-id="names" placeholder="Partner's Full Name" bind:value={data.second} required>
+			<small>{error.second}</small>
+		</div>
+	</div>
+			<button type="submit" class="block mx-auto p-4 hover:bg-red-800 w-1/3 rounded-lg my-10 bg-red-700 text-white" id="play">Check FLAMES</button>
+	</form>
+	
+</Body>
 
 
-<style>
-	#buttons__container button {
-		@apply block w-full bg-red-600 my-10 rounded-lg hover:bg-red-700 active:bg-blue-500;
+<style type="text/postcss">
+
+	#game input[data-id="names"]{
+		@apply block border-0 border-b-2 text-2xl text-gray-900 xl:w-[70%] mx-auto pt-10 p-3 rounded-none bg-transparent font-semibold;
 	}
-	#buttons__container button:active {
-		box-shadow: 5px 10px black;
+	#game input[data-id="names"]::placeholder {
+		@apply text-gray-800;
 	}
 
-	#buttons__container button a {
-		@apply block text-xl p-4;
+	#game small{
+		@apply text-center block mt-2 text-lg text-red-600 font-semibold;
 	}
+
+	#play {
+		box-shadow: 3px 4px 1px black;
+	}
+
+	#play:hover {
+		transform: translateY(1px);
+		box-shadow: 1px 1px 1px black;
+
+	}
+
+	#play:active{
+		transform: translateY(2px);
+		box-shadow:0px 0px 0px;
+	}
+	
 </style>

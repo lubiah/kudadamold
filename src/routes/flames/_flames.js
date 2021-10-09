@@ -15,6 +15,7 @@ class Flames {
 		delete this.a;
 		delete this.b;
 	}
+
 	getDifference(){
 		//This method is responsible for cancelling the common letters
 		//out and returning the uncancelled letters
@@ -52,6 +53,5 @@ class Flames {
 	}
 
 }
-
 
 export default Flames;
