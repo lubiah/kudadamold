@@ -2,8 +2,8 @@
 	import { createEventDispatcher } from "svelte";
 
 	const dispatch = createEventDispatcher();
-
 	export let data;
+	console.log(data)
 	
 	const hideBackdrop = ()=>{
 		dispatch("hide",{

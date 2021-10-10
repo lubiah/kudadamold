@@ -93,8 +93,8 @@ description = "Flames is a simple and fun game which can determine the relations
 <Body>
 	<form on:submit|preventDefault={validate}>
 		<div class="text-center">
-		<h1 class="text-[5rem] m-0 md:text-[10rem] text-transparent bg-clip-text from-red-700 to-yellow-500 bg-gradient-to-r leading-none xl:text-[13rem] font-bold" id="header">FLAMES</h1>
-		<p class="italic text-[1.5rem] text-gray-800">Fun way to find the relationship between two people</p>	
+		<h1 class="text-[5rem] m-0 md:text-[10rem] text-transparent bg-clip-text from-red-700 to-yellow-500 bg-gradient-to-r leading-none xl:text-[13rem] font-bold pt-1" id="header">FLAMES</h1>
+		<p class="italic text-[1.5rem] text-red-600">Fun way to find the relationship between two people</p>	
 	</div>
 	<div id="game" class="pt-[80px]">
 		<div><input on:keypress={resetError} on:keypress|preventDefault={validateInput}  data-player="first" type="text" data-id="names" placeholder="Your Full Name" required bind:value={data.first}>
@@ -104,7 +104,7 @@ description = "Flames is a simple and fun game which can determine the relations
 			<small>{error.second}</small>
 		</div>
 	</div>
-			<button type="submit" class="block mx-auto p-4 hover:bg-red-800 w-1/3 rounded-lg my-10 bg-red-700 text-white" id="play">Check FLAMES</button>
+			<button type="submit" class="block mx-auto text-lg p-2 hover:bg-red-800 md:w-1/3 rounded-lg my-10 bg-red-700 text-white" id="play">FLAMES</button>
 	</form>
 	
 </Body>

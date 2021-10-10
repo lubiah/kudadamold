@@ -35,6 +35,7 @@ class Flames {
 				}
 			}
 		}
+		this.differenceContent = this.a + this.b;
 		this.difference = this.a.length + this.b.length;
 		return this.difference;
 	}
