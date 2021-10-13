@@ -5,6 +5,8 @@
 	--primary-color-deep: #ff3915;
 	--light-text-color: #374151;
 	--dark-text-color: #d1d5db;
+	--scrollbar-background: #DADADA;
+	--scrollbar-thumb: #6F6F6F;
 }
 
 @tailwind base;
@@ -13,10 +15,10 @@
 
 body::-webkit-scrollbar {
 	width: 8px;
-	background: #DADADA;
+	background: var(--scrollbar-background);
 }
 body::-webkit-scrollbar-thumb {
-			background: #6F6F6F;
+			background: var(--scrollbar-thumb);
 }
 body::-webkit-scrollbar-thumb:active{
 	background: #484444
@@ -39,7 +41,9 @@ body {
 
 @layer base {
 
-	
+	::selection {
+		@apply bg-[tomato] text-white;
+	}
 	
 	.icon {
 		@apply h-[1rem] inline;
@@ -51,7 +55,7 @@ body {
 
 	kbd {
 		@apply bg-black text-white rounded px-2 py-0.5 border border-gray-500 mx-3;
-		box-shadow: 5px 0.5px black
+		box-shadow: 3px 0.5px black
 	}
 
 	input:focus-visible,
@@ -171,8 +175,6 @@ body {
 
 	code {
 		@apply leading-relaxed px-[1.5px] py-0.5 rounded bg-[#E9E9E9] dark:bg-[#3F3F46];
-		word-wrap: break-word;
-		white-space: pre-wrap;
 		font-family: monospace;
 	}
 
@@ -185,9 +187,21 @@ body {
 		white-space: pre-wrap !important;
 	}
 
-	pre > code::webkit-scrollbar {
-		width: 10px
+	code::-webkit-scrollbar  {
+		@apply w-[3px] bg-transparent;
 	}
+	code::-webkit-scrollbar:horizontal {
+		@apply h-[3px]
+	}
+
+	code::-webkit-scrollbar-thumb:active{
+	background: #484444
+}
+
+	code::-webkit-scrollbar-thumb {
+		@apply bg-[color:var(--scrollbar-thumb)]
+	}
+
 
 pre[class*="language-"] {
 	padding: 0px !important;
