@@ -2,6 +2,7 @@
 title: Save WhatsApp Status With Python on Android
 description: You can save your WhatsApp statuses on your mobile phone with Python with the help of the Termux application. Termux enables you to run your python scripts on your mobile phone
 category: Programming
+image: https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/hero.jpg
 draft: true
 keywords:
    - termux
@@ -125,7 +126,7 @@ After writing the code, Press <kbd>Ctrl</kbd>+<kbd>X</kbd> to close the editor. 
 
 Inside the directory in which you created the python file, run the command `python main.py` where `main.py` is the name of the python file you just created
 
-## Working Proof The App
+## Working Proof Of The App
 
 So, after creating the code, I decided to test it on my mobile device to see if it would work and guess what, it did!!
 
