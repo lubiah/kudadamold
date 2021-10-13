@@ -68,7 +68,7 @@
 	</p>
 </div>
 
-<div class="md:mx-24">
+<div class="md:w-[80%] mx-auto">
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
 
 	<div class="flex flex-wrap">

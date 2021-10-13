@@ -103,11 +103,11 @@
 	<div class="block md:flex md:ml-auto w-full md:w-auto" class:hidden id="nav-menu">
 		<ul class="md:flex list-none">
 			{#each nav_links as { name, url, id } (id)}
-				<li class="p-2 text-gray-700 text-lg font-semibold">
+				<li class="p-2 text-lg font-semibold">
 					<a
 						href={url}
 						sveltekit:prefetch
-						class="text-gray-700 block"
+						class="text-gray-700 !block"
 						class:active={$page.path === `/${name.toLowerCase()}`}>{name}</a
 					>
 				</li>
@@ -127,7 +127,7 @@
 	}
 
 	#nav-menu ul li *:not(.active) {
-		@apply dark:text-white;
+		@apply dark:text-white text-gray-700;
 	}
 
 	a:visited {

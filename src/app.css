@@ -49,6 +49,11 @@ body {
 		@apply leading-relaxed;
 	}
 
+	kbd {
+		@apply bg-black text-white rounded px-2 py-0.5 border border-gray-500 mx-3;
+		box-shadow: 5px 0.5px black
+	}
+
 	input:focus-visible,
 	textarea:focus-visible {
 		border: 1px solid tomato;
@@ -178,6 +183,10 @@ body {
 		max-height: 300px;
 		scrollbar-width: thin;
 		white-space: pre-wrap !important;
+	}
+
+	pre > code::webkit-scrollbar {
+		width: 10px
 	}
 
 pre[class*="language-"] {

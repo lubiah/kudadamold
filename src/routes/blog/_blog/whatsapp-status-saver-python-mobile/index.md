@@ -11,7 +11,6 @@ keywords:
    - whatsapp status
    - termux whatsapp python
 date: 12-10-2021
-draft: true
 ---
 
 <p class="intro">
@@ -32,20 +31,20 @@ So if your output looks like the image above, then it means you have successfull
 
 So let's move on to the next step
 
-## Installing the WatchDog module
+## Installing the WatchGod module
 
-So, we are going to use the watchdog module to help us to know when a status has been downloaded. The watchdog module watches a directory and then reports changes that happen in the directory which it is watching. You can read more [about it here](https://pypi.org/project/watchgod/). 
+So, we are going to use the watchgod module to help us to know when a status has been downloaded. The watchgod module watches a directory and then reports changes that happen in the directory which it is watching. You can read more [about it here](https://pypi.org/project/watchgod/). 
 
 This is how we are going to code our application.
 
-1. Watchdog will watch the `statuses` folder inside your WhatsApp directory.
-2. When ever you watch a new status on WhatsApp, it will be downloaded to the `statuses` folder.
-3. This will trigger an event in watchdog since it is watching the directory. 
-4. We then try to find the new file which has been created from the event reported by watchdog.
+1. watchgod will watch the `statuses` folder inside your WhatsApp directory.
+2. Whenever you watch a new status on WhatsApp, it will be downloaded to the `statuses` folder.
+3. This will trigger an event in watchgod since it is watching the directory. 
+4. We then try to find the new file which has been created from the event reported by watchgod.
 5. We then copy the file to another location
 6. Done! :100:
 
-To install the watchdog module, exit the python interpreter <i>Type(<kbd>Ctrl</kbd>+<kbd>z</kbd>)</i>.
+To install the watchgod module, exit the python interpreter, <i>Type(<kbd>Ctrl</kbd>+<kbd>z</kbd>)</i>.
 
 Then enter `pip install watchgod`. 
 
@@ -55,7 +54,7 @@ If  everything installed successfully, you are good to go. If you also receive a
 
 By default, termux's current working directory is always `/data/data/com.termux/files/home`, you need to change it to your phone's home directory. You can do so by entering `cd /storage/emulated/0`. This command should take you straight to your phone's home directory.
 
-We then need to create a folder which will house our simple app. Let's call our app "Status Saver", or???. We can create the folder with the command `mkdir "Status Saver"`. We then change to that directory with `cd "Status Saver"`. 
+We then need to create a folder which will house our simple app. Let's call our app "Status Saver", or :question:.We can create the folder with the command `mkdir "Status Saver"`. We then change to that directory with `cd "Status Saver"`. 
 
 Luckily for us, termux comes with nano pre installed. nano is a text editor which we will be using to write our code.
 
@@ -110,19 +109,29 @@ The constant  `WHATSAPP_STATUSES_DIRECTORY` directory contains the default path 
 
 The  `STATUS_SAVER_DIRECTORY` is a default path where your statuses will be saved. The reason why I chose to save it in `DCIM` is that, it gets to appear inside your gallery. Isn't that cool?:sunglasses:
 
-The function `main()` is the function which does all the work. We iterate through watch method and wait for it's event to report. We then use the regex to extract the event type and the file which was affected. Then we try to see if the event type was adding a file, modifying it or deleting it. If it adds a file, we then copy that file to your `STATUS_SAVER_DIRECTORY`. 
+The function `main()` is the function which does all the work. We iterate through the watch method and wait for it's event to report. We then use the regex to extract the event type and the file which was affected. Then we try to see if the event type was adding a file, modifying it or deleting it. If it adds a file, we then copy that file to your `STATUS_SAVER_DIRECTORY`. 
 
-Someone might asks why check to see the type of event whiles we can just copy the contents of the directory into the `STATUS_SAVER_DIRECTORY`. Well, the reason is that, it will just be a waste of resources overwriting files over and over again. 
+Someone might ask why check to see the type of event whiles we could just copy the contents of the directory into the `STATUS_SAVER_DIRECTORY`. Well, the reason is that, it will just be a waste of resources overwriting files over and over again. 
 
 The function `create_directory_if_not_exits()` just creates the `STATUS_SAVER_DIRECTORY` directory if it does not exists.
 
-Then finally, the `__name__ == "__main__"`condition means, if the code is being run directory, it should run the two functions. It's nothing special, just fun to add it.:laughing:
+Then finally, the `__name__ == "__main__"` condition means, if the code is being run directly, it should run the two functions. It's nothing special, just fun to add it.:laughing: 
+
+After writing the code, Press <kbd>Ctrl</kbd>+<kbd>X</kbd> to close the editor. Remember to save the file if prompted.
+
+
+
+## Running The Code
+
+Inside the directory in which you created the python file, run the command `python main.py` where `main.py` is the name of the python file you just created
 
 ## Working Proof The App
 
 So, after creating the code, I decided to test it on my mobile device to see if it would work and guess what, it did!!
 
 <!--![Working proof of the python status saver]()-->
+
+Happy Coding!!! :smile:
 
 
 
