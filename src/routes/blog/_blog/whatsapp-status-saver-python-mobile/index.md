@@ -60,7 +60,7 @@ Luckily for us, termux comes with nano pre installed. nano is a text editor whic
 
 To create a new file, enter `nano main.py` in your terminal and this should open a new empty file where we will write our code.
 
-<img src="https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/nano_file.png" height="500" alt="Nano text editor opened"/>
+<img src="https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/nano_file.png" height="500px" alt="Nano text editor opened"/>
 
 Now, enter the following code into the editor, I will explain below
 
@@ -129,7 +129,7 @@ Inside the directory in which you created the python file, run the command `pyth
 
 So, after creating the code, I decided to test it on my mobile device to see if it would work and guess what, it did!!
 
-<!--![Working proof of the python status saver]()-->
+![Working proof of the python status saver](https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/working_proof.gif)
 
 Happy Coding!!! :smile:
 

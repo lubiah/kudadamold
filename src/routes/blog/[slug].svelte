@@ -170,9 +170,8 @@
 		@apply mt-[25px] mb-[10px] mx-[2px] font-semibold capitalize;
 	}
 	
-	:global(img.Sirv:not([width]):not([height])) {
-		max-width: 100%;
-		max-height: 400px;
+	#post :global(img:not(#post-image)){
+		@apply max-h-[500px];
 	}
 
 	:global(#post-image:empty) {
