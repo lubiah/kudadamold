@@ -19,6 +19,10 @@ date: 12-10-2021
 
 So today, I wanted to be able to save my WhatsApp statuses without using a WhatsApp status saver app. I knew I could easily implement this with bash script but I wanted to use python so this is how I did it.
 
+
+## TL;DR Version
+The whole code is available as a [gist over here](t.github.com/biah/2b5f6bba5678fa688e4d5e2726cefbe6). Just clone the gist and follow the steps below. Also, don't forget to give it a star
+
 ## Installing Termux
 
 Termux is a terminal emulator for Android that allows for running a Linux environment on an android device. This application will allow you to install Python on your mobile device in order to run the script. You can [click here to download it](https://play.google.com/store/apps/details?id=com.termux&hl=en&gl=US).
