@@ -14,12 +14,16 @@
 		{ name: 'Toolz', url: '/toolz', id: 4 }
 	];
 
-	const setMode = () => {
-		if ($mode === 'light') {
+
+
+	const check_mode = () => {
+		if (
+			$mode === 'dark' ||
+			(window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
 			document.documentElement.classList.add('dark');
 			mode.set("dark");
-		} 
-		else {
+		} else {
 			document.documentElement.classList.remove('dark');
 			mode.set("light");
 		}

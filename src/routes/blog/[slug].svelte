@@ -171,7 +171,7 @@
 	}
 	
 	#post :global(img:not(#post-image)){
-		@apply max-h-[500px];
+		@apply max-h-[500px] mx-auto my-4 rounded;
 	}
 
 	:global(#post-image:empty) {
