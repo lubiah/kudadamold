@@ -16,20 +16,16 @@
 
 
 
-	const check_mode = () => {
-		if (
-			$mode === 'dark' ||
-			(window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
+	const setMode = () => {
+		if ($mode === 'light') {
 			document.documentElement.classList.add('dark');
 			mode.set("dark");
-		} else {
+		} 
+		else {
 			document.documentElement.classList.remove('dark');
 			mode.set("light");
 		}
 	};
-
-
 	const add_border_on_scroll_down = ()=>{
 		let html = document.querySelector("html");
 		let scroll_point = html.scrollTop;

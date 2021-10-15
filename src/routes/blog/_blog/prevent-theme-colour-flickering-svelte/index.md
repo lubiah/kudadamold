@@ -60,3 +60,4 @@ Now look at how the page loads without flickering
 ![Now the page loads without flickering](https://kudadam.sirv.com/blog/prevent-theme-colour-flickering-svelte/non_flickering.gif)
 
 Happy Coding!:smile:
+
