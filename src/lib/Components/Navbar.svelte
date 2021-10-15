@@ -1,9 +1,10 @@
 <script type="text/javascript">
-	import { afterUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Moon from "$lib/Icons/moon.svelte";
 	import Sun from "$lib/Icons/sun.svelte";
-	import { mode } from "/src/stores/store.js"; 
+	import { mode } from "/src/stores/store.js";
+	import { browser } from "$app/env";
 
 	let hidden = true;
 	let nav_links = [
@@ -35,29 +36,28 @@
 		}
 	}
 
-	const check_mode = () => {
-		if (
-			$mode === 'dark' ||
-			(window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
-			document.documentElement.classList.add('dark');
-			mode.set("dark");
-		} else {
-			document.documentElement.classList.remove('dark');
-			mode.set("light");
-		}
-	};
-
-	afterUpdate(() => {
+	onMount(() => {
 		document.addEventListener('mouseup', (e) => {
 			let selected = e.target;
 			let closest = selected.closest('nav');
 			if (closest == null) hidden = true;
 		});
-		check_mode();
 		window.addEventListener("scroll",add_border_on_scroll_down);
 	});
 </script>
+
+<svelte:head>
+	{#if browser}
+		{#if $mode === 'dark' || (window.matchMedia('(prefers-color-scheme: dark)').matches) }
+			{document.documentElement.classList.add('dark')}
+			{mode.set("dark")}
+		{:else}
+			{document.documentElement.classList.remove('dark')}
+			{mode.set("light")}
+
+		{/if}
+	{/if}
+</svelte:head>
 
 <nav id="header" 
 	class="flex fixed p-1 md:p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 border-gray-200 dark:border-gray-500"

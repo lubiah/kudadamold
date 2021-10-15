@@ -23,7 +23,8 @@ const sort_items = (posts) => {
 	<link>https://www.kudadam.com/blog/${post.slug}</link>
 	<description>${post.description}</description>
 	<category>${post.category}</category>
-	<pubDate>${post.date}</pubDate>
+	<guid>${post.id}</guid>
+	<pubDate>${new Date(post.date).toUCTString()}</pubDate> 
 </item>\n`;
 	});
 	return rss;
@@ -43,10 +44,11 @@ export async function get(request) {
 		<category>Technology</category>
 		<image>
     		<url>https://kudadam.sirv.com/logo/logo.png</url>
-    		<title>Kudadam Blog logo</title>
+    		<title>Kudadam Blog</title>
     		<link>https://www.kudadam.com/blog</link>
   		</image>
 		${sorted}
+		<copyright>2021 - Now, Lucretius Biah.</copyright>
 	</channel>
 </rss>`;
 
