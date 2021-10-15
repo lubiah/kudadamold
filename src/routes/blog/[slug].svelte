@@ -1,8 +1,8 @@
-<script context="module">
+	<script context="module">
 	import SEO from 'svelte-seo';
 	import Button from "$lib/Components/Button.svelte";
 	import 'prismjs/themes/prism-tomorrow.css';
-	import { snakeCase } from 'lodash';
+	import  snakeCase from 'lodash.snakecase';
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 
