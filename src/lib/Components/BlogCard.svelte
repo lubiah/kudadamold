@@ -2,7 +2,7 @@
 The Card component is used to house the blog posts
  -->
 <script type="text/javascript">
-	import _ from 'lodash';
+	import snakeCase from "lodash.snakecase";
 	export let image  = "https://kudadam.sirv.com/logo/logo_blog.png";
 	export let title;
 	export let date;
@@ -27,7 +27,7 @@ The Card component is used to house the blog posts
 	>
 		<img src={image} class="w-full" alt="" id="card-image" />
 	</a>
-	<a class:hidden={hide_category} href="/blog/category/{_.snakeCase(category)}">
+	<a class:hidden={hide_category} href="/blog/category/{snakeCase(category)}">
 		<span class="category category_{_.snakeCase(category)}">{category}</span></a
 	>
 	<div class="p-2">
