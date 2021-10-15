@@ -1,15 +1,13 @@
 <script context="module">
 	import SEO from 'svelte-seo';
 	import Button from "$lib/Components/Button.svelte";
-	import PageProgress from '$lib/Components/PageProgress.svelte';
-	import Card from "$lib/Components/BlogCard.svelte";
 	import 'prismjs/themes/prism-tomorrow.css';
-	import _ from 'lodash';
-	import {token_set_ratio } from "fuzzball";	
+	import { snakeCase } from 'lodash';
 	import { browser } from "$app/env";
-	import { onMount, beforeUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 
-	const getRelatedArticles = (title,posts)=>{
+	const getRelatedArticles = async (title,posts)=>{
+		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
 		const titles = posts
 		.map(post=> { return post.title})
 		.filter(post => post !== title);
@@ -35,11 +33,6 @@
 
 			let component = await import(`./_blog/${slug}/index.md`);
 			component.metadata["slug"] = slug;
-			let articles_res = await fetch("/blog.json?all=true");
-			let { posts } = await articles_res.json();
-			const related_posts = getRelatedArticles(component.metadata.title, posts);
-			component.metadata["relatedArticles"] = related_posts;
-			component.metadata["relatedArticlesNumber"] = related_posts.size;
 
 			return {
 				props: {
@@ -53,12 +46,10 @@
 
 <script type="text/javascript">
 	export let metadata, content;
-
 	let comment_loaded = false;
-
 	const loadComments = ()=>{
 		let script_tag = document.createElement("script");
-		script_tag.setAttribute("repo","biah/www.kudadam.com");
+		script_tag.setAttribute("repo","biah/kudadam");
 		script_tag.setAttribute("issue-term","title");
 		script_tag.setAttribute("src","https://utteranc.es/client.js");
 		script_tag.setAttribute("label","Comment");
@@ -69,8 +60,16 @@
 		comment_loaded = true;
 	}
 
-	onMount(async()=>{
-	})
+	let relatedArticles;
+	let Card;
+	let PageProgress;
+	onMount(async ()=>{
+		PageProgress = await import("$lib/Components/PageProgress.svelte").then(e => e.default);
+		Card = await import("$lib/Components/BlogCard.svelte").then(e=> e.default);
+		let { posts } = await fetch("/blog.json?all=true").then(e => e.json().then(e.posts));
+		relatedArticles = await getRelatedArticles(metadata.title, posts);
+	});
+
 
 </script>
 
@@ -112,7 +111,7 @@
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
 		<div class="py-2 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
 			<p class="pl-2 text-base">
-				<span><a href="/blog/category/{_.snakeCase(metadata.category)}">{metadata.category}</a></span>
+				<span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span>
 				• <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
 			</p>
 		</div>
@@ -126,7 +125,25 @@
 		<div class="leading-tight px-2" id="content">
 			<svelte:component this={content} />
 		</div>
-			{#if browser && [...metadata.relatedArticles].length >= 1}
+		{#if browser && relatedArticles && [...relatedArticles].length >= 1}
+			<div class="mt-[100px]">
+				<h3>Related Articles</h3>
+				<div class="flex overflow-auto">
+					{#each [...relatedArticles] as article (article.id)}
+						<div class="flex"></div>
+						<svelte:component this={Card}
+						title="{article.title}"
+						slug="{article.slug}"
+						image="{article.image}"
+						date="{article.date}"
+						category="{article.category}"
+						class = "mr-3 w-[300px]"
+						/>
+					{/each}
+				</div>
+			</div>
+		{/if}
+		<!-- 	{#if browser && [...metadata.relatedArticles].length >= 1}
 				<div class="mt-[100px]">
 					<h3>Related Articles</h3>
 					<div class="flex overflow-auto">
@@ -143,7 +160,7 @@
 						{/each}	
 					</div>
 				</div>
-			{/if}
+			{/if} -->
 		
 		<div id="comment__box">
 			{#if !comment_loaded}
@@ -156,7 +173,7 @@
 </div>
 
 {#if browser}
-	<PageProgress color="tomato" height="5px" />
+	<svelte:component this={PageProgress} color="tomato" height="5px" />
 {/if}
 
 

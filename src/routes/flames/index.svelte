@@ -92,7 +92,7 @@ description = "Flames is a simple and fun game which can determine the relations
 
 <Body>
 	<form on:submit|preventDefault={validate}>
-		<div class="text-center mt-[100px]">
+		<div class="text-center pt-[100px]">
 		<h1 class="text-[5rem] m-0 md:text-[10rem] text-transparent bg-clip-text from-red-700 to-yellow-500 bg-gradient-to-r leading-none xl:text-[13rem] font-bold pt-1" id="header">FLAMES</h1>
 		<p class="italic text-[1.5rem] text-red-600">Fun way to find the relationship between two people</p>	
 	</div>
