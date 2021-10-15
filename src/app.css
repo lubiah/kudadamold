@@ -32,11 +32,16 @@ body::-webkit-scrollbar-thumb:active{
 	box-sizing: border-box;
 }
 
-body {
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,sans-serif
-}
+
 
 @layer base {
+
+
+
+	body {
+	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,sans-serif;
+	@apply lg:dark:font-light;
+	}
 
 	::selection {
 		@apply bg-[tomato] text-white;

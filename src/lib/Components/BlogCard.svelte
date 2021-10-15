@@ -28,7 +28,7 @@ The Card component is used to house the blog posts
 		<img src={image} class="w-full" alt="" id="card-image" />
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{snakeCase(category)}">
-		<span class="category category_{_.snakeCase(category)}">{category}</span></a
+		<span class="category category_{snakeCase(category)}">{category}</span></a
 	>
 	<div class="p-2">
 		<h2 class="text-xl m-0 pb-8 font-semibold">

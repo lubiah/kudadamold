@@ -10,7 +10,7 @@ keywords:
    - whatsapp python
    - whatsapp status
    - termux whatsapp python
-date: 12-10-2021
+date: 2021-10-10
 ---
 
 <p class="intro">

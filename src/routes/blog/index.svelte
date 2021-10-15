@@ -35,7 +35,7 @@
 <SEO
 	title="Kudadam • Blog"
 	description="A place where I write about everthing tech related"
-	keywords="kudadam blog, lucretius blog"
+	keywords="kudadam blog, lucretius blog,programmer,python,javascript,sveltekit,svelte,sapper,web development"
 	canonical="https://www.kudadam.com/blog"
 	openGraph={{
 		title: 'Kudadam • Blog',
