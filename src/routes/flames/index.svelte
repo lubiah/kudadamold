@@ -104,7 +104,7 @@ description = "Flames is a simple and fun game which can determine the relations
 			<small>{error.second}</small>
 		</div>
 	</div>
-			<button type="submit" class="block mx-auto text-lg p-2 hover:bg-red-800 md:w-1/3 rounded-lg my-10 bg-red-700 text-white" id="play">FLAMES</button>
+			<button type="submit" class="block mx-auto text-lg p-2 hover:bg-red-800 w-1/2 md:w-1/3 rounded-lg my-10 bg-red-700 text-white" id="play">FLAMES</button>
 	</form>
 	
 </Body>

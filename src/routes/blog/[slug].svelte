@@ -130,37 +130,20 @@
 				<h3>Related Articles</h3>
 				<div class="flex overflow-auto">
 					{#each [...relatedArticles] as article (article.id)}
-						<div class="flex"></div>
+						<div class="flex">
 						<svelte:component this={Card}
 						title="{article.title}"
 						slug="{article.slug}"
 						image="{article.image}"
 						date="{article.date}"
 						category="{article.category}"
-						class = "mr-3 w-[300px]"
+						class = "mr-3 w-[290px]"
 						/>
+						</div>
 					{/each}
 				</div>
 			</div>
 		{/if}
-		<!-- 	{#if browser && [...metadata.relatedArticles].length >= 1}
-				<div class="mt-[100px]">
-					<h3>Related Articles</h3>
-					<div class="flex overflow-auto">
-						{#each [...metadata.relatedArticles] as article (article.id)}
-						<div class="flex">
-							<Card class="mr-3"
-									title="{article.title}"
-									slug="{article.slug}"
-									image="{article.image}"
-									date="{article.date}"
-									category="{article.category}"
-								/>
-						</div>			
-						{/each}	
-					</div>
-				</div>
-			{/if} -->
 		
 		<div id="comment__box">
 			{#if !comment_loaded}
