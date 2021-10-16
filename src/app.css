@@ -209,6 +209,9 @@ pre[class*="language-"] {
 	padding: 0px !important;
 }
 
+code[class*="language-"] {
+	@apply text-base break-words;
+}
 
 	table,
 	thead,

@@ -170,7 +170,7 @@
 		@apply mt-[25px] mb-[10px] mx-[2px] font-semibold capitalize;
 	}
 	
-	#post :global(img:not(#post-image)){
+	#content :global(img:not(#post-image)){
 		@apply max-h-[500px] mx-auto my-4 rounded;
 	}
 
