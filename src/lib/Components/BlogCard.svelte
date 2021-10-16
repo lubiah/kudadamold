@@ -3,7 +3,7 @@ The Card component is used to house the blog posts
  -->
 <script type="text/javascript">
 	import snakeCase from "lodash.snakecase";
-	export let image  = "https://kudadam.sirv.com/logo/logo_blog.png";
+	export let image  = "https://kudadam.sirv.com/logo/logo_blog.png?q=2&canvas.color=white";
 	export let title;
 	export let date;
 	export let slug = "";
