@@ -6,34 +6,15 @@ const assets = new Set(build.concat(files));
 const dynamic_cache = `offline-${timestamp}`;
 const dynamic_pages = [
 	"/",
-	"/blog",
-	"/blog.json?limit=true",
-	"/blog.json?all=true",
-	"/toolz",
-	"/toolz.json",
-	"/offline.html",
-	"/about",
-	"/contact"
+	"/offline"
 ];
 
-
-const limitCacheSize = (name,size)=>{
-	caches.open(name)
-	.then(cache=>{
-		cache.keys()
-		.then(keys=>{
-			if (keys.length > size){
-				cache.delete(keys[0]).
-				then(limitCacheSize(name,size));
-			}
-		})
-	})
-}
-
 self.addEventListener("install", event =>{
-
+	console.log("[service worker] installing...");
+	console.log(assets);
 	self.skipWaiting();
 	event.waitUntil(
+	
 		caches.open(cache)
 		.then(cache=>{
 			return cache.addAll(assets);
@@ -53,39 +34,39 @@ self.addEventListener("activate", event =>{
 		caches.keys()
 		.then(keys=>{
 			return Promise.all(keys
-			.filter(key => key !== cache || key !== dynamic_cache)
+			.filter(key => key !== cache && key !== dynamic_cache)
 			.map(key => caches.delete(key))
 				)
 			self.client.claim()
-
 		})
 		)
+	console.log("[service worker] activated")
 })
 
 
 
 self.addEventListener("fetch", event =>{
 	if (event.request.method !== 'GET' || event.request.headers.has('range')) return;
-
-	event.respondWith(
+	event.respondWith(	
 		
 		caches.match(event.request)
 		.then(response => {
 			if (response)
 				return response
-			return fetch(event.request, {mode:"no-cors"})
+			return fetch(event.request)
 			.then(fetch_res=>{
 				if (!fetch_res || fetch_res.status !== 200)
 					return fetch_res;
 				return caches.open(dynamic_cache)
 				.then(cache =>{
 					cache.put(event.request.url, fetch_res.clone());
-					limitCacheSize(dynamic_cache,80);
 					return fetch_res;
 				})
 			})
 			.catch(err=>{
-				return caches.match("/offline.html");
+				if (event.request.mode === "cors"){
+					return caches.match("offline");
+				}
 			});
 		})
 		)

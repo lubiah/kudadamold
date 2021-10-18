@@ -18,7 +18,7 @@
 	import SEO from 'svelte-seo';
 	export let status, error;
 
-	if (dev) console.log(status,error);
+	console.log(status,error);
 	
 
 </script>
