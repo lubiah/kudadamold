@@ -7,6 +7,7 @@ class Flames {
 		//to lowercase and remove all white spaces in them
 		//NB: The reason for creating the clone is because we don't
 		//want to mess with the original data
+
 		this.a = this.first_name.toLowerCase().replace(/\s/g,"");
 		this.b = this.second_name.toLowerCase().replace(/\s/g,"");
 		this.getDifference();
