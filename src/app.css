@@ -184,7 +184,6 @@ body::-webkit-scrollbar-thumb:active{
 		display: block;
 		padding: 5px;
 		overflow: auto;
-		max-height: 300px;
 		scrollbar-width: thin;
 		white-space: pre-wrap !important;
 	}
