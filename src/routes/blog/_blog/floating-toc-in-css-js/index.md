@@ -9,6 +9,10 @@ keywords:
 date: 2021-04-18
 ---
 
+<svelte:head>
+	<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</svelte:head>
+
 Normally, when we visit some websites, we do see the table of contents at the top of the page. However, when you scroll down, it vanishes and there's no way to access it unless you scroll to the top.
 We are going to learn how to create a floating table of contents that appears on the click of a button. If you were a regular visitor to this site, you will already see that a similar one existed here.
 Let's get started...
@@ -158,7 +162,7 @@ function float_toc(){
 window.onload = float_toc(); // Fires the function after the window has finished loading
 ```
 
-In our JavaScript file, we created a function called `float_toc`, it is responsible for dislpaying the floating table. First of all, a click event is added to the `#toc-button`. Whenever, the `#toc-button` is clicked, it checks to see if there is any element with classname `custom-toc` which is the class name of our floating table. If it checks and it exists, it removes the element from the DOM, else, it grabs the HTML of the initial table of contents and render a new floating table of contents.
+In our JavaScript file, we created a function called `float_toc`, it is responsible for displaying the floating table. First of all, a click event is added to the `#toc-button`. Whenever, the `#toc-button` is clicked, it checks to see if there is any element with classname `custom-toc` which is the class name of our floating table. If it checks and it exists, it removes the element from the DOM, else, it grabs the HTML of the initial table of contents and render a new floating table of contents.
 
 On the last line, the function is fired when the window has fully loaded. However, this is not necessary, if you save the JavaScript in another file and import it into your HTML, you don't need to add the last line, just include the `script` tag before the closing `body` tag and don't forget to call the function.
 
