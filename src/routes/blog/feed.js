@@ -17,14 +17,15 @@ const get_items = async () => {
 const sort_items = (posts) => {
 	let rss = ``;
 	posts.forEach((post) => {
+		console.log(new Date(post.date).toUTCString());
 		rss += `
 <item>
 	<title>${post.title}</title>
 	<link>https://www.kudadam.com/blog/${post.slug}</link>
 	<description>${post.description}</description>
 	<category>${post.category}</category>
-	<guid>${post.id}</guid>
-	<pubDate>${new Date(post.date).toUCTString()}</pubDate> 
+	<guid>https://www.kudadam.com/blog/${post.slug}</guid>
+	<pubDate>${new Date(post.date)}</pubDate> 
 </item>\n`;
 	});
 	return rss;
