@@ -68,7 +68,7 @@
 	<p class="text-lg"><i>A set of tools curated and designed by me</i></p>
 </div>
 
-<div class="mt-6 block ml-auto mr-4 md:mr-32 w-[70%] md:w-[30%]">
+<div class="mt-6 block ml-auto mr-4 md:mr-32 w-full md:w-[40%]">
 	<input type="search" class="p-1.5 pl-3 rounded-[40px]" placeholder="Search..." bind:value={search_value} on:input={search_function}>
 </div>
 
