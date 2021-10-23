@@ -18,7 +18,7 @@ The Card component is used to house the blog posts
 	}
 </script>
 
-<div id="card" class="md:mr-6 w-[350px] border  border-gray-300 dark:border-gray-600 hover:shadow-lg rounded mb-9 relative {Class}">
+<div id="card" class="md:mr-6 w-[350px] border border-gray-300 dark:border-gray-600 hover:shadow-lg rounded mb-9 relative {Class}">
 	<a
 		sveltekit:prefetch
 		href="/blog/{slug}"
@@ -28,10 +28,10 @@ The Card component is used to house the blog posts
 		<img src={image} class="w-full" alt="" id="card-image" />
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{snakeCase(category)}">
-		<span class="category category_{snakeCase(category)}">{category}</span></a
+		<span class="absolute px-2 text-white rounded top-[5px] left-[5px] category_{snakeCase(category)}">{category}</span></a
 	>
 	<div class="p-2">
-		<h2 class="text-xl m-0 pb-8 font-semibold">
+		<h2 class="text-xl m-0 pb-8 font-semibold dark:font-medium">
 			<a
 				sveltekit:prefetch
 				href="/blog/{slug}"
@@ -53,5 +53,17 @@ The Card component is used to house the blog posts
 	#card-image {
 		height: 200px;
 	}
+
+.category_programming {
+	background: orange;
+}
+.category_tips_and_tricks {
+	background: #142f54;
+}
+.category_personal {
+	background: #01a9bc;
+}
+
+
 
 </style>

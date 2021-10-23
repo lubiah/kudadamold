@@ -17,6 +17,7 @@
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-svelte3": "^3.2.0",
 		"fuzzball": "^2.0.2",
+		"html-entities": "^2.3.2",
 		"lodash.snakecase": "^4.1.1",
 		"mdsvex": "^0.9.8",
 		"postcss": "^8.3.6",

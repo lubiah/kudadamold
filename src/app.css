@@ -209,12 +209,12 @@ pre[class*="language-"] {
 }
 
 code[class*="language-"] {
-	@apply text-base break-words;
+	@apply text-base;
 }
 
 	table,
 	thead,
-	td {
+	td,th {
 		@apply border border-gray-300 dark:border-gray-500;
 	}
 
@@ -222,8 +222,8 @@ code[class*="language-"] {
 		@apply font-semibold;
 	}
 
-	table td {
-		@apply p-3;
+	table td, th {
+		@apply p-2;
 	}
 
 	.text-inherit {
@@ -257,25 +257,6 @@ code[class*="language-"] {
 		margin: 24px;
 	}
 }
-
-.category {
-	position: absolute;
-	padding: 2px 5px;
-	border-radius: 5px;
-	color: white;
-	top: 10px;
-	left: 15px;
-}
-.category_programming {
-	background: orange;
-}
-.category_tips_and_tricks {
-	background: #142f54;
-}
-.category_personal {
-	background: #01a9bc;
-}
-
 
 /* roboto-100 - latin */
 @font-face {

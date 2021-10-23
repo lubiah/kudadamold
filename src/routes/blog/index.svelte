@@ -24,12 +24,19 @@
 <script type="text/javascript">
 	export let posts, limit, all_posts;
 	let page = 1;
+	let SearchBar;
+	let documents = all_posts;
 	all_posts = _.chunk(all_posts,6);     
 	const loadData = async () => {
 		let data = all_posts[page];
 		posts = [...posts, ...data];
 		page++;
 	};
+
+	onMount(async ()=>{
+		SearchBar = await import("$lib/Components/BlogSearchBar.svelte").then(e=> e.default);
+	})
+	
 </script>
 
 <SEO
@@ -69,9 +76,11 @@
 </div>
 
 <div class="md:w-[80%] mx-auto">
-	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
+ 
+	<svelte:component this={SearchBar} {documents}/>
 
-	<div class="flex flex-wrap">
+	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
+	<div class="flex flex-wrap justify-center">
 		{#each posts as post (post.id)}
 			<Card
 				title={post.title}
@@ -89,22 +98,6 @@
 {/if}
 
 <style type="text/postcss">
-
-	:global(.post_category) {
-		position: absolute;
-		padding: 2px 5px;
-		border-bottom-right-radius: 5px;
-		color: white;
-	}
-	:global(.category_programming) {
-		background: orange;
-	}
-	:global(.category_tips_and_tricks) {
-		background: #142f54;
-	}
-	:global(.category_personal) {
-		background: #01a9bc;
-	}
 
 	:global(.headings::after) {
 		display: block;

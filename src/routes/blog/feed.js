@@ -1,40 +1,49 @@
-const get_items = async () => {
+import Path from "path";
+import _ from 'lodash';
+import { mode } from "$app/env";
+import { encode } from 'html-entities';
 
-	try {
-		let res = await fetch( "http://localhost:3000/blog.json?all=true");
-		let { posts } = await res.json();
-		return posts;
 
-	} 
+let files = new Array();
+let imports = import.meta.glob("./_blog/**/*.md");
 
-	catch(e) {
-	let res = await fetch( "https://kudadam.com/blog.json?all=true");
-	let { posts } = await res.json();
-	return posts;
+for (let key in imports){
+	files.push([Path.win32.basename(Path.dirname(key)),imports[key]])
 }
-}
+let id = 1;
+files = Promise.all(files.map(async file=>{
+	let res = await file[1]();
+	let { metadata } = await res;
+	metadata.slug = file[0];
+	metadata.id = id; id++;
+	metadata.html = encode(res.default.render().html)
+	if (metadata.draft !== true || mode === "development")
+		return metadata;
+	})
+);
 
-const sort_items = (posts) => {
+const sort_items = async() => {
+	files = await files;
 	let rss = ``;
-	posts.forEach((post) => {
-		console.log(new Date(post.date).toUTCString());
-		rss += `
-<item>
-	<title>${post.title}</title>
-	<link>https://www.kudadam.com/blog/${post.slug}</link>
-	<description>${post.description}</description>
-	<category>${post.category}</category>
-	<guid>https://www.kudadam.com/blog/${post.slug}</guid>
-	<pubDate>${new Date(post.date)}</pubDate> 
-</item>\n`;
-	});
+	files.forEach(post=>{
+		rss += 
+		`
+		<item>
+			<title>${post.title}</title>
+			<link>https://www.Kudadam.com/blog/${post.slug}</link>
+			<description>${post.html}</description>
+			<category>${post.category}</category>
+			<guid>https://www.Kudadam.com/blog/${post.slug}</guid>
+			<pubDate>${new Date(post.date)}</pubDate>
+		</item>
+		`
+	})
 	return rss;
 };
 
 export async function get(request) {
 	try {
-	let posts = await get_items();
-	let sorted = sort_items(posts);
+	let sorted = sort_items();
 	let rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 	<channel>
@@ -44,11 +53,11 @@ export async function get(request) {
 		<description>Lucretius' personal blog on tech, programming and stuff</description>
 		<category>Technology</category>
 		<image>
-    		<url>https://kudadam.sirv.com/logo/logo.png</url>
-    		<title>Kudadam Blog</title>
-    		<link>https://www.kudadam.com/blog</link>
-  		</image>
-		${sorted}
+			<url>https://kudadam.sirv.com/logo/logo.png</url>
+			<title>Kudadam Blog</title>
+			<link>https://www.kudadam.com/blog</link>
+		</image>
+		${await sorted}
 		<copyright>2021 - Now, Lucretius Biah.</copyright>
 	</channel>
 </rss>`;
@@ -62,6 +71,7 @@ export async function get(request) {
 	}
 
 	catch(e){
+		console.log(e)
 		return {
 			body: "Error Occured"
 		}
