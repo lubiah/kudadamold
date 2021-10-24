@@ -86,7 +86,7 @@
 			id="ignore_whitespaces"
 			bind:checked={data.ignore_whitespaces}
 		/>
-		<Button block on:click={isPalindrome}>Check</Button>
+		<Button class="block !my-2" on:click={isPalindrome}>Check</Button>
 	</div>
 	<div>
 		<span>Answer will show here</span>

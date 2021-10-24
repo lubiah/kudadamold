@@ -51,7 +51,7 @@ In order to use the code, just create an array and call the count method like th
 
 ```javascript
 let names = ["David","Walsh","David","Tania","Lucretius"];
-names.count("David") //=>
+names.count("David") //=> 2
 ```
 
 Happy Coding Fellas :smile:

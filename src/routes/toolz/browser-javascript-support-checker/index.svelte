@@ -20,7 +20,7 @@
 	export let tool;
 
 	onMount(() => {
-		docuument.querySelector("#body").innerHTML = `<h2 class='text-green-500 my-2 text-4xl'>Congratulations</h2>
+		document.querySelector("#body").innerHTML = `<h2 class='text-green-500 my-2 text-4xl'>Congratulations</h2>
             <p class='text-lg'>Your web browser has JavaScript enabled</p>`
 	});
 </script>
