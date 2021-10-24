@@ -7,7 +7,7 @@ keywords:
   - array count javascript
   - find item number array
   - javascript array count
-date: 2021-08-23
+date: 2021-10-23
 ---
 
 <p class="intro">
