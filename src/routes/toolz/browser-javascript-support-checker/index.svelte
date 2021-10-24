@@ -15,14 +15,13 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import jquery from 'jquery';
 	import { onMount } from 'svelte';
 
 	export let tool;
 
 	onMount(() => {
-		jquery('#body').html(`<h2 class='text-green-500 my-2 text-4xl'>Congratulations</h2>
-            <p class='text-lg'>Your web browser has JavaScript enabled</p>`);
+		docuument.querySelector("#body").innerHTML = `<h2 class='text-green-500 my-2 text-4xl'>Congratulations</h2>
+            <p class='text-lg'>Your web browser has JavaScript enabled</p>`
 	});
 </script>
 

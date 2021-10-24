@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import jquery from 'jquery';
 	import Button from '$lib/Components/Button.svelte';
 	export let tool;
 	let error = '';
@@ -30,8 +29,8 @@
 		if (valid) {
 			let is_even = number % 2 == 0 ? true : false;
 			is_even
-				? jquery('#results').val('Number is an even number')
-				: jquery('#results').val('Number is an odd number');
+				? document.querySelector('#results').value ='Number is an even number'
+				: document.querySelector('#results').value = 'Number is an odd number';
 		}
 	};
 </script>

@@ -19,7 +19,6 @@
 	export let tool;
 
 	import * as Palindrome from './_script.js';
-	import jquery from 'jquery';
 
 	let data = {
 		text: '',
@@ -39,8 +38,8 @@
 		data.text = data.ignore_whitespaces ? data.text.replace(/\s/g, '') : data.text;
 		let formatted_text = data.case_sensitive ? data.text : data.text.toLowerCase();
 		let res = Palindrome.palindrome_checker(data.text);
-		if (res) jquery('#results_input').val('Text is a palindrome');
-		else jquery('#results_input').val('Text is not a palindrome');
+		if (res) document.querySelector('#results_input').value = 'Text is a palindrome';
+		else document.querySelector('#results_input').value = 'Text is not a palindrome';
 
 		if (data.text.length >= 3) {
 			explanation = Palindrome.explanation(
