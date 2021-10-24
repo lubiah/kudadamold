@@ -4,9 +4,12 @@ import { build , files, timestamp } from "$service-worker";
 const cache = `cache-${timestamp}`;
 const assets = new Set(build.concat(files));
 const dynamic_cache = `offline-${timestamp}`;
-const dynamic_pages = [
+const dynamic_pages = 
+	[
 	"/",
-	"/offline"
+	"/offline",
+	"/blog",
+	"/toolz"
 ];
 
 self.addEventListener("install", event =>{

@@ -2,6 +2,7 @@
 title: How To Find The Number Of Times An Item Appears In An Array
 description: Learn how to find the number of times an item appears in an array in JavaScript
 category: Programming
+image: https://kudadam.sirv.com/blog/python-count-in-javascript/hero.jpg
 keywords:
   - javascript count	
   - array count javascript
