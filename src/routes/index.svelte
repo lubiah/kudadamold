@@ -120,7 +120,7 @@
 <section>
 	<h2 class="text-center font-semibold">Projects</h2>
 	<p class="text-center">Some things I have done so far</p>
-	<div class="flex flex-wrap">
+	<div class="flex flex-wrap justify-center">
 		<ProjectCard
 			image="https://kudadam.sirv.com/FLAMES/image.png"
 			title="FLAMES Game"

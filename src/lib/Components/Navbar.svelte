@@ -26,15 +26,6 @@
 			mode.set("light");
 		}
 	};
-	const add_border_on_scroll_down = ()=>{
-		let html = document.querySelector("html");
-		let scroll_point = html.scrollTop;
-		if (scroll_point >= 50){
-				document.querySelector("nav#header").classList.add("border-b");
-		} else {
-			document.querySelector("nav#header").classList.remove("border-b");
-		}
-	}
 
 	onMount(() => {
 		document.addEventListener('mouseup', (e) => {
@@ -42,7 +33,7 @@
 			let closest = selected.closest('nav');
 			if (closest == null) hidden = true;
 		});
-		window.addEventListener("scroll",add_border_on_scroll_down);
+	
 	});
 </script>
 
@@ -62,8 +53,8 @@
 	</script>
 </svelte:head>
 
-<nav id="header" 
-	class="flex fixed p-1 md:p-2 z-30 top-0 w-full bg-white flex-wrap dark:bg-gray-700 border-gray-200 dark:border-gray-500"
+<nav id="nav__header" 
+	class="flex fixed p-1 md:p-2 z-30 top-0 border-b w-full bg-white flex-wrap dark:bg-gray-700 border-gray-200 dark:border-gray-500"
 >
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center justify-center"
@@ -103,7 +94,7 @@
 			/>
 		</svg>
 	</button>
-	<div class="block md:flex md:ml-auto w-full md:w-auto" class:hidden id="nav-menu">
+	<div class="block md:flex md:ml-auto w-full md:w-auto duration-500 overflow-y-hidden" class:hidden id="nav-menu">
 		<ul class="md:flex list-none">
 			{#each nav_links as { name, url, id } (id)}
 				<li class="p-2 text-lg font-semibold">
@@ -111,8 +102,11 @@
 						href={url}
 						sveltekit:prefetch
 						class="text-gray-700 !block"
-						class:active={$page.path === `/${name.toLowerCase()}`}>{name}</a
-					>
+						class:active={$page.path === `/${name.toLowerCase()}`}
+						on:click={()=>{hidden = true}}
+						>
+						{name}
+					</a>
 				</li>
 			{/each}
 			<slot />
