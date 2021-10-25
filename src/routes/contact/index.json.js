@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-import sib_api from "sib-api-v3-sdk";
 import dotenv from "dotenv";
 const env = dotenv.config().parsed;
 
