@@ -178,7 +178,7 @@ body::-webkit-scrollbar-thumb:active{
 	}
 
 	code {
-		@apply leading-relaxed px-[1.5px] py-0.5 break-words rounded bg-[#E9E9E9] dark:bg-[#3F3F46];
+		@apply leading-relaxed px-[1.5px] py-0.5 break-words dark:xl:font-light rounded bg-[#E9E9E9] dark:bg-[#3F3F46];
 		font-family: monospace;
 	}
 

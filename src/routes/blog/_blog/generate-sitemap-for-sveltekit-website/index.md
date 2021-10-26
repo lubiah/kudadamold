@@ -1,6 +1,7 @@
 ---
 title: How To Generate A Sitemap For Your SvelteKit Website
 description: Learn how to generate a sitemap for your sveltekit website
+image: https://kudadam.sirv.com/blog/generate-sitemap-for-sveltekit-website/hero.jpg
 category: Programming
 keywords:
   - rss
@@ -10,7 +11,6 @@ keywords:
   - generate rss sveltekit
   - sveltekit generate sitemap
 date: 2021-10-26 06:59
-draft: true
 ---
 
 <p class="intro">
@@ -48,8 +48,26 @@ export async function get() {
   }
 }
 ```
-* Build and deploy your website. 
-I know this sounds weird but it's actually the right thing.
-The sitemap generator needs a live website in order to generate the sitemap.
 
-* Open your terminal and navigate to the root folder of your website on your server
+* Build and deploy your website. 
+  I know this sounds weird but it's actually the right thing.
+  The sitemap generator needs a live website in order to generate the sitemap.
+
+* Use SSH to connect to your server and navigate to the root directory of your website.
+  You need to connect to your server through SSH and navigate to the root directory in which the build folder is location. __NB:__ Not the `build` folder, but the folder in which the `build` folder resides in.
+
+* Execute the code below
+
+```bash
+ npx sitemap-generator-cli %your_website_url% --last-mod --change-freq daily --priority-map "1.0"
+```
+
+where `%your_website_url%` is the url to your website. The arguments are self explanatory so there will be no need for me to explain them. 
+This command will create a `sitemap.xml` file inside the website root folder.
+
+* Open your browser and navigate to `%your_website_url`/sitemap.xml and the sitemap should be there.
+
+
+## Conclusion
+
+So fellas, that is how you can create a sitemap for your sveltekit website. If you faced any challenges, please leave a comment below.
