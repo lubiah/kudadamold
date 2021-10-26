@@ -17,7 +17,7 @@ draft: true
   Generating a sitemap for your SvelteKit website is very easy. It requires no coding at all.
 </p>
 
-By default, SvelteKit has no sitemap generator at all. But there is an node module which can help you generate a `sitemap.xml` file for you website. It's called [sitemap-generator](https://github.com/lgraubner/sitemap-generator). It's a module which helps us to generate sitemaps. It is able to builld sitemaps for websites and even SPA's.
+By default, SvelteKit has no sitemap generator at all. But there is a node module which can help you generate a `sitemap.xml` file for you website. It's called [sitemap-generator](https://github.com/lgraubner/sitemap-generator). It's a module which helps us to generate sitemaps. It is able to builld sitemaps for websites and even SPA's.
 
 It comes along with a CLI _(Command Line TooL)_ which makes sitemap generation easier.
 
@@ -48,3 +48,8 @@ export async function get() {
   }
 }
 ```
+* Build and deploy your website. 
+I know this sounds weird but it's actually the right thing.
+The sitemap generator needs a live website in order to generate the sitemap.
+
+* Open your terminal and navigate to the root folder of your website on your server
