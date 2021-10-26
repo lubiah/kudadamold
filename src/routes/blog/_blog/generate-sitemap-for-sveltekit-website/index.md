@@ -4,12 +4,10 @@ description: Learn how to generate a sitemap for your sveltekit website
 image: https://kudadam.sirv.com/blog/generate-sitemap-for-sveltekit-website/hero.jpg
 category: Programming
 keywords:
-  - rss
-  - rss feed
-  - sapper
-  - sveltekit rss feed
-  - generate rss sveltekit
-  - sveltekit generate sitemap
+  - sveltekit sitemap
+  - generate sitemap sveltekit
+  - sveltekit sitemap generator
+  - generate sitemap for sveltekit
 date: 2021-10-26 06:59
 ---
 
