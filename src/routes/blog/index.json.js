@@ -7,7 +7,6 @@ import { mode } from "$app/env";
 
 let files = new Array();
 let imports = import.meta.glob("./_blog/**/*.md");
-
 for (let key in imports){
 	files.push([Path.win32.basename(Path.dirname(key)),imports[key]])
 }
