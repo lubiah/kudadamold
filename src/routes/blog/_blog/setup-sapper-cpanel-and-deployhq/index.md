@@ -17,13 +17,13 @@ So today, I wanted to move my website to my server. I had been using [netlify](h
 First of all, am assuming you have finished with your Sapper project and you are ready to deploy. Since I want to run my website server side, am going to use the `npm run build` command. However, if you want to deploy yours statically, you can also use the `npm run export` command. So in the directory of the project, open your terminal and run any of the two commands.
 If it was able to build successfully, your output should look similar to the image below ↓
 
-<img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building.jpg" alt="" />
+![Building](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building.jpg)
 
 ## Setting up project on Cpanel
 
 Now, we have finished building our project, move on to your cpanel's homepage. It should look similar to mine. Now follow the steps below as we configure a new new nodejs app.
 
-<img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/cpanel_homepage.jpg" alt="Homepage of Cpanel" />
+![Homepage of Cpanel](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/cpanel_homepage.jpg)
 
 - **Click on Setup Node.js App**  
   In the software section of your cpanel, you will see a "Setup Node.js App". This is where we will be creating our application, after clicking on it, it should take you to another page.
@@ -31,7 +31,7 @@ Now, we have finished building our project, move on to your cpanel's homepage. I
 - **Click on "Create Application"**  
   After you are taken to a new page after clicking on "Setup Node.js App", you will see a button on your upper right hand side labelled 'Create Application'.
 
-  <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_application.jpg" alt="Create application button on Cpanel" />
+  ![Create application button on Cpanel](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_application.jpg)
 
 - **Fill in the Form**  
   After you click on the button, you will be taken to a page with a form. You are supposed to fill the mandatory portions of it.
@@ -43,7 +43,7 @@ Now, we have finished building our project, move on to your cpanel's homepage. I
   Then click on CREATE on the upper right hand side of your screen.
   When you are done, your output should be similar to mine.
 
-  <img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/filling_form.jpg" alt="Filling the Node app form" />
+  ![Filling the Node app form](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/filling_form.jpg)
 
   Now, if you are to visit your application url, you will see a simple text that says 'it works'. This shows that our application is working correctly.
 
@@ -56,13 +56,14 @@ We are going to use a service called [deployhq](https://www.deployhq.com) which 
 
 Head over to their website at [deployhq.com](https://www.deployhq.com/r/wyzoak) and create an account.
 After filling all the forms and creating your account, you will be directed to their dashboard which looks like the image below Then you click on "Create a project".
+
 <img src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/deployhq_dashboard.jpg" width="1266" height="783" alt="Dashboard of deployhq" />
 
 ## Connecting DeployHQ to your Git repository
 
 In the projects tab, enter a new project name and select where your repository is hosted, for me, I will choose Github, then click on 'Create Project'.
 
-<img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_project_deployhq.jpg" alt="Creating a project on deployhq" />
+![Creating a project on deployhq](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_project_deployhq.jpg)
 
 After that, you select the repository which you want DeployHQ to watch, then you start to configure your server.
 
@@ -143,7 +144,7 @@ Also, if you do not want to use a `.deployignore` file, you can create the set o
 
 The build pipeline refers to commands which we want to run on DeployHQ's server before uploading them to our server. This is a very good place for us to build our sapper project and upload only the end results to the server.
 
-<img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building_files.jpg" alt="Using deployHQ's build pipeline" />
+![Using deployHQ's build pipeline](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building_files.jpg)
  
 <b>Steps...</b>
 
@@ -181,7 +182,7 @@ pm2 start __sapper__/build/index.js --name "website"
 
 The auto deployment won't work without this option, this is the place where we toggle the auto deployment for this specific project.
 
-<img class="Sirv" data-src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/auto_deployment.jpg" alt="Setting autodeployment" />
+![Setting autodeployment](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/auto_deployment.jpg)
 
 ## Deploying to server
 

@@ -189,7 +189,6 @@
 	}
 
 	:global(.toc::before) {
-		content: 'Table Of Contents';
 		@apply font-semibold text-xl inline-block my-1;
 	}
 

@@ -84,16 +84,16 @@ body::-webkit-scrollbar-thumb:active{
 		@apply border-gray-300 border rounded dark:bg-gray-600 dark:border-0 dark:text-white w-full p-1;
 	}
 
-	ul,
-	ol {
-		padding-inline-start: 30px;
-		list-style-position: inside;
+	ol, ul {
+		@apply list-inside;
+		padding-inline-start: 10px;
 	}
 
-	ul:first-child,
-	ol:first-child {
-		padding-inline-start: 5px;
+	ol ol, ul ul {
+		padding-inline-start: 30px;
 	}
+
+
 
 	li > *:first-child {
 		display: inline;

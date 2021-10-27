@@ -21,6 +21,7 @@ files = Promise.all(files.map(async file=>{
 	})
 	);
 
+
 export async function get({ query }) {
 
 	let posts = await files;
