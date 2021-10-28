@@ -7,14 +7,14 @@ const dynamic_cache = `offline-${timestamp}`;
 const dynamic_pages = 
 	[
 	"/",
-	"/offline",
+	"/blog.json?limit=true",
+	"/blog.json?all=true",
 	"/blog",
 	"/toolz"
 ];
 
 self.addEventListener("install", event =>{
 	console.log("[service worker] installing...");
-	console.log(assets);
 	self.skipWaiting();
 	event.waitUntil(
 	
