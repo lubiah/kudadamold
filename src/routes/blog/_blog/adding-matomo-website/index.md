@@ -3,7 +3,7 @@ title: Adding Matomo analytics to your website through CPanel
 description: CPanel has an application installer called softaculous, with it, you can install matomo analytics
 category: Tips and Tricks
 date: 2021-10-26 17:54
-image: https://kudadam.sirv.com/blog/adding-matomo-website/hero.jpg
+image: https://kudadam.sirv.com/blog/adding-matomo-website/hero.jpg  
 keywords:
   - matomo analytics
   - install matomo analytics
@@ -41,7 +41,6 @@ So am going to show a pretty easy way to install Matomo analytics on CPanel usin
 
 3. Search for 'matomo' inside the search bar and click on it
 
-   ![Searching for matomo analytics](C:\Users\Home1\AppData\Roaming\Typora\typora-user-images\image-20211027150504920.png)
 
 4. Click on Install and fill in the options
 
