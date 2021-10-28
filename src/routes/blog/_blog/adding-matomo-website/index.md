@@ -25,7 +25,7 @@ tags:
 
 
 
-So am going to show a pretty easy way to install Matomo analytics on CPanel using the Softacalous application installer.
+So am going to show a pretty easy way to install Matomo analytics on CPanel using the Softaculous application installer.
 
 ## Steps To Install
 
@@ -37,7 +37,7 @@ So am going to show a pretty easy way to install Matomo analytics on CPanel usin
 
 2. Locate 'Softcalous Apps Installer'  under the Software section of your CPanel and click on it.
 
-   ![Locating Softacalous](https://kudadam.sirv.com/blog/adding-matomo-website/locating_softacalous.PNG)
+   ![Locating Softucalous](https://kudadam.sirv.com/blog/adding-matomo-website/locating_softacalous.PNG)
 
 3. Search for 'matomo' inside the search bar and click on it
 
@@ -88,7 +88,7 @@ Close the file and visit the application page again.
 
 ![Sign In Error](https://kudadam.sirv.com/blog/adding-matomo-website/sign_in_error.PNG)
 
-It is very obvious that you will run into this error when installing Matomo from Softacalous but don't worry, this is a solution.
+It is very obvious that you will run into this error when installing Matomo from Softaculous but don't worry, this is a solution.
 
 Just clear your browser cache and you will be good to go.
 
@@ -96,6 +96,6 @@ Just clear your browser cache and you will be good to go.
 
 ## Conclusion
 
-So that's how you can easily install matomo analytics on CPanel using Softcalous, if you faced any more challenges, please do state it in the comments section.
+So that's how you can easily install matomo analytics on CPanel using Softaculous, if you faced any more challenges, please do state it in the comments section.
 
 Happy Coding :smile:
