@@ -4,7 +4,7 @@ description: Make a simple search engine using only html and client-side JavaScr
 image: https://kudadam.sirv.com/blog/search_tool_html_javascript/hero.jpg
 category: Programming
 keywords:
-  - javascript search tool,
+  - javascript search tool
   - client-side search
   - html search tool
 date: 2021-09-16

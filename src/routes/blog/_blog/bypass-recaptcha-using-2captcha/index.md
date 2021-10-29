@@ -60,8 +60,8 @@ After everything has finished installing, you then need to install Chrome browse
 ```python
 from selenium import webdriver
 
-driver_path = r"C:\Program Files (x86)\chromedriver_win32\chromedriver.exe"
-brave_path = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+driver_path = "C:\\Program Files (x86)\\chromedriver_win32\\chromedriver.exe"
+brave_path = "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
 
 option = webdriver.ChromeOptions()
 option.binary_location = brave_path
@@ -155,8 +155,8 @@ from selenium import webdriver
 import requests
 import time
 
-driver_path = r"C:\Program Files (x86)\chromedriver_win32\chromedriver.exe"
-brave_path = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+driver_path = r"C:\\Program Files (x86)\\chromedriver_win32\\chromedriver.exe"
+brave_path = r"C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
 
 option = webdriver.ChromeOptions()
 option.binary_location = brave_path
