@@ -1,94 +1,39 @@
-import nodemailer from 'nodemailer';
-import dotenv from "dotenv";
-const env = dotenv.config().parsed;
+export const post = async (request)=>{
+	const body = request.body;
 
-	
-const GMAIL_ACCOUNT = import.meta.env.VITE_GMAIL_ACCOUNT;
-const GMAIL_PASSWORD = import.meta.env.VITE_GMAIL_PASSWORD;
+	switch (body.type){
 
-let transporter = nodemailer.createTransport({
-	host: 'smtp.gmail.com',
-	secure: true,
-	service: 'gmail',
-	ignoreTLS: true,
-	auth: {
-		user: `${GMAIL_ACCOUNT}`,
-		pass: `${GMAIL_PASSWORD}`
-	}
-});
+		case "ADD_SUBSCRIBER":
+			let bodyRequest = {
+				email : body.email,
+				metadata : {
+					name : body.name,
+					date_joined: new Date().toDateString(),
+					time_joined: new Date().toTimeString()
+				}
+			}
 
-const addSubscriber = async request =>{
-	let name = request.body.name.trim();
-	let user = new Object();
-	user.date_joined = new Date();
-	user.email = request.body.email;
-	if (name.split(" ").length > 1){
-		user.first_name = name.split(" ")[0];
-		user.last_name = name.split(" ")[name.split(" ").length - 1];
-	}
-	let redirectionUrl = new URL("https://www.kudadam.com/newsletter/thanks");
-	redirectionUrl.searchParams.append("name",name);
-	let client  =sib_api.ApiClient.instance;
-	let apiKey = client.authentications["api-key"];
-	apiKey.apiKey = env.SIB_API_KEY;
-	let apiInstance = new sib_api.ContactsApi();
-	let contact = new sib_api.CreateDoiContact();
-	contact.email = user.email;
-	if (user.first_name) {
-		contact.attributes = {
-			"FIRSTNAME": user.first_name,
-			"LASTNAME" : user.last_name,
-			"DATE_JOINED" : user.date_joined,
-		}
-	}
-	else {
-	contact.attributes = {
-		"FIRSTNAME": name,
-		"DATE_JOINED": user.date_joined
-	}
-	}
-	contact.includeListIds = [3];
-	contact.redirectionUrl = redirectionUrl;
-	contact.templateId = 7;
-	return apiInstance.createDoiContact(contact).then(()=>{
-		return true;
-	
-	})
-	.catch(err=>{
-		return false;
-	})
-}
+			const request = await fetch("https://api.buttondown.email/v1/subscribers", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"Authorization": `Token ${import.meta.env.VITE_BUTTONDOWN_API}`
+				},
+				body: JSON.stringify(bodyRequest)	
+			});
+			let response = await request.json();
+			let responseText = response[0];
+			console.log(responseText)
+			if (/has not confirmed their email/gmi.test(responseText)){
+				
+			}
 
-export async function post(request) {
+			else if (/is already subscribed/gmi.test(responseText)){
+				let responseToClient = "IS_ALREADY_SUBSCRIBED";
 
-	if (request.body.type === "subscribe_user"){
-		const result = await addSubscriber(request);
-		return {
-			body: {"message":result}
+				return {
+					body: JSON.stringify(responseToClient)
+				}
+			}
 	}
-	}
-	
-	// let sent = true;
-	// let data = request.body; //Response from the client;
-	// let mailOptions = {
-	// 	from: `"${data.name}" <${data.email}>`,
-	// 	to: `lucretiusbiah@protonmail.com`,
-	// 	subject: data.subject,
-	// 	text: data.message
-	// };
-	// transporter.sendMail(mailOptions, (err, info) => {
-	// 	if (err) {
-	// 		sent = false;
-	// 		console.log(err);
-	// 	}
-	// });
-	// return {
-	// 	headers: {
-	// 		'Content-Type': 'application/json'
-	// 	},
-	// 	body: {
-	// 		sent: sent
-	// 	}
-	// };
-	
 }
