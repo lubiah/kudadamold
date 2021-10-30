@@ -20,11 +20,22 @@
         const res = await query.json();
         console.log(res);
 
-        if (res === "IS_ALREADY_SUBSCRIBED"){
-        	document.querySelector("#form_container").remove();
-        	document.querySelector("#subscription__heading_text").innerHTML = "Hey,<br/> You are already subscribed"
+        switch (res){
+
+        	case "IS_ALREADY_SUBSCRIBED":
+        		document.querySelector("#form_container").remove();
+        		document.querySelector("#subscription__heading_text").innerHTML = "Hey,<br/> You are already subscribed";
+        		break;
+
+        	case "HAS_NOT_VERIFIED":
+        		document.querySelector("#form_container").remove();
+        		document.querySelector("#subscription__heading_text").innerHTML = "Hey,<br/>You have subscribed but have not verified your email yet";
+        		break;
+
+        	case "SUCCESSFUL":
+        		document.querySelector("#form_container").remove();
+        		document.querySelector("#subscription__heading_text").innerHTML = "Thanks for subscribing,<br/>Please confirm your email in your inbox";
         }
-     	
 	}
 </script>
 

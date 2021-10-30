@@ -23,9 +23,22 @@ export const post = async (request)=>{
 			});
 			let response = await request.json();
 			let responseText = response[0];
-			console.log(responseText)
+
+
+
+			if (response.id){
+				let responseToClient = "SUCCESSFUL";
+				return {
+					body: JSON.stringify(responseToClient)
+				}
+			}
+
+
 			if (/has not confirmed their email/gmi.test(responseText)){
-				
+				let responseToClient = "HAS_NOT_VERIFIED";
+				return {
+					body: JSON.stringify(responseToClient)
+				}
 			}
 
 			else if (/is already subscribed/gmi.test(responseText)){
