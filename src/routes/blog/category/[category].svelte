@@ -52,7 +52,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: `{category} Category • Kudadam Blog`,
 		description: `Blog posts under {category} category`,
 		image: 'https://kudadam.sirv.com/logo/logo.png',

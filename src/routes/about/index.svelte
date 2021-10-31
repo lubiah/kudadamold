@@ -27,7 +27,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: 'Kudadam • About',
 		description:
 			'A page about me. Info contained here is my name and other important stuff about me',

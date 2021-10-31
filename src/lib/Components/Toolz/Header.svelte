@@ -24,7 +24,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: `${tool.name} • Kudadam Toolz`,
 		description: `${tool.description}`,
 		image: 'https:kudadam.sirv.com/logo/logo_toolz.png',

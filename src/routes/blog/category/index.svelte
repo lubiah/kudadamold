@@ -38,7 +38,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: 'Category • Kudadam Blog',
 		description: 'A page which lists the various categories of the blog section',
 		image: 'https://kudadam.sirv.com/logo/logo.png',

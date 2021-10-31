@@ -26,7 +26,7 @@
 					<a href="mailto:lucretiusbiah@protonmail.com"><Envelope/> Email </a>
 				</li>
 				<li>
-					<a href="https://www.github.com/biah" target="_blank" rel="noopener">
+					<a href="https://www.github.com/kudadam" target="_blank" rel="noopener">
 						<Github/>
 						Github
 					</a>
@@ -48,7 +48,7 @@
 				>Source code is available on <a
 					target="_blank"
 					rel="noopener"
-					href="https://www.github.com/biah/www.kudadam.com">Github</a
+					href="https://www.github.com/kudadam/www.kudadam.com">Github</a
 				></span
 			>
 		</p>

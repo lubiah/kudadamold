@@ -55,7 +55,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: 'Kudadam • Toolz',
 		description:
 			'A set of tools designed and curated by me. Over here are free JavaScript based online tools. It has offline support meaning you can use it when your data is off',

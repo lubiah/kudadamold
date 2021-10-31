@@ -1,4 +1,4 @@
-	<script context="module">
+<script context="module">
 	import SEO from 'svelte-seo';
 	import Button from "$lib/Components/Button.svelte";
 	import 'prismjs/themes/prism-tomorrow.css';
@@ -98,7 +98,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: `${metadata.title}`,
 		description: `${metadata.description}`,
 		image: `${metadata.image}`,
@@ -106,7 +106,7 @@
 	}}
 />
 
-<div class="my-4 xl:w-[65%] mx-auto" id="post">
+<article class="my-4 xl:w-[65%] mx-auto" id="post" role="article">
 	<div class="md:mx-auto">
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
 		<div class="py-2 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
@@ -153,12 +153,11 @@
 			
 	</div>
 	
-</div>
+</article>
 
 {#if browser}
 	<svelte:component this={PageProgress} color="tomato" height="5px" />
 {/if}
-
 
 
 <style type="text/postcss">

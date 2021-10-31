@@ -30,7 +30,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: 'Kudadam • Contact',
 		description: 'Visit this page if  you want to contact me',
 		image: 'https://kudadam.sirv.com/logo/logo.png',

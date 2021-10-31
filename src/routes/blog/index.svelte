@@ -59,7 +59,7 @@
 		]
 	}}
 	twitter={{
-		site: '@lucretius_1',
+		site: '@kudadam_',
 		title: 'Kudadam • Blog',
 		description: 'A place where I write about everthing tech related',
 		image: 'https://kudadam.sirv.com/logo/logo_blog.png',
