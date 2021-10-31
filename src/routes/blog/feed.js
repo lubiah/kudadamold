@@ -25,10 +25,12 @@ files = Promise.all(files.map(async file=>{
 const sort_items = async() => {
 	files = await files;
 	let rss = ``;
-	files.forEach(post=>{
-		if (!post){
-		}
-		rss += 
+	for (let i in files){
+		let post = files[i];
+		if (!post)
+			continue;
+		else{
+			rss += 
 		`
 		<item>
 			<title>${post.title}</title>
@@ -38,10 +40,11 @@ const sort_items = async() => {
 			<guid>https://www.Kudadam.com/blog/${post.slug}</guid>
 			<pubDate>${new Date(post.date)}</pubDate>
 		</item>
-		`
-	})
+		`;
+		}
+	}
 	return rss;
-};
+	}
 
 export async function get(request) {
 	try {
@@ -73,8 +76,9 @@ export async function get(request) {
 	}
 
 	catch(e){
+		console.log(e)
 		return {
-			body: "Error Occured"
+			body: "Error"
 		}
 	}
 	
