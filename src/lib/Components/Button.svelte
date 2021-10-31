@@ -1,6 +1,4 @@
-<!-- 
-Custom button component
- -->
+
 <script>
 	let Class = '';
 	export { Class as class };

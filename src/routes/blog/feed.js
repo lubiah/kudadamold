@@ -17,9 +17,6 @@ files = Promise.all(files.map(async file=>{
 	metadata.slug = file[0];
 	metadata.id = id; id++;
 	metadata.html = encode(res.default.render().html)
-	if (metadata.id === 3){
-		console.log(metadata)
-	}
 	if (metadata.draft !== true || mode === "development")
 		return metadata;
 	})

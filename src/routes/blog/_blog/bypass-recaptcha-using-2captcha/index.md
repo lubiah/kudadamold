@@ -3,13 +3,12 @@ title: How to bypass reCAPTCHA using 2Captcha and Selenium in Python
 description: Learn how to use the 2Captcha solving services to bypass reCAPTCHA in Python using Selenium
 date: 2021-10-28 15:37
 image: https://kudadam.sirv.com/blog/bypass-recaptcha-using-2captcha/captcha.png?canvas.color=white
-draft: true
-category: Tips and Tricks
-sponsored: true
 keywords:
   - captcha solving software
   - how to bypass captcha
   - captcha solver
+draft: true
+sponsored: true
 ---
 
 
