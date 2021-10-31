@@ -18,64 +18,47 @@
 	import Button from '$lib/Components/Button.svelte';
 	export let tool;
 
-	import * as Palindrome from './_script.js';
+	import Palindrome from './_index.js';
 
 	let data = {
 		text: '',
-		case_sensitive: false,
-		ignore_whitespaces: false,
-		valid: true,
-		error: ''
+		caseSensitive: false,
+		ignoreWhitespace: false
 	};
 	let explanation = '';
-	const isPalindrome = () => {
-		data.valid = true;
-		if (data.text.length < 1 || data.length == '') {
-			data.error = 'Enter a word or phrase';
-			data.valid = false;
-		}
-		if (!data.valid) return;
-		data.text = data.ignore_whitespaces ? data.text.replace(/\s/g, '') : data.text;
-		let formatted_text = data.case_sensitive ? data.text : data.text.toLowerCase();
-		let res = Palindrome.palindrome_checker(data.text);
-		if (res) document.querySelector('#results_input').value = 'Text is a palindrome';
-		else document.querySelector('#results_input').value = 'Text is not a palindrome';
+	let results = "";
 
-		if (data.text.length >= 3) {
-			explanation = Palindrome.explanation(
-				res,
-				data.text,
-				formatted_text,
-				data.case_sensitive,
-				data.ignore_whitespaces
-			);
+	const isPalindrome = ()=>{
+		let palindrome = new Palindrome(data.text,data.caseSensitive, data.ignoreWhitespace);
+		if (palindrome.palindrome){
+			results = "Text is palindrome"
 		}
-	};
+		else {
+			results = "Text is not palindrome"
+		}
+
+		if (data.text.length > 3) {
+			explanation = palindrome.explanation
+		}
+	}
 </script>
 
 <Header {tool} />
 
 <Body>
-	<div>
-		<label for="word">Enter a word or sentence</label>
-		<input
-			type="text"
-			name="word"
-			required
-			id="word"
-			placeholder="Enter word here"
-			bind:value={data.text}
-			on:input={() => (data.error = '')}
-		/>
-		<span class="text-red-500 text-sm">{data.error}</span>
+	<form on:submit|preventDefault>
+		<div>
+		<label for="word">Enter a word or phrase</label>
+		<textarea class="my-1" required id="word" placeholder="Enter word or phrase" bind:value={data.text}></textarea>
 	</div>
+
 	<div class="mt-2">
 		<label for="case_sensitive">Case Sensitive</label>
 		<input
 			type="checkbox"
 			name="case_sensitive"
 			id="case_sensitive"
-			bind:checked={data.case_sensitive}
+			bind:checked={data.caseSensitive}
 		/>
 	</div>
 	<div>
@@ -84,13 +67,15 @@
 			type="checkbox"
 			name="ignore_whitespaces"
 			id="ignore_whitespaces"
-			bind:checked={data.ignore_whitespaces}
+			bind:checked={data.ignoreWhitespace}
 		/>
-		<Button class="block !my-2" on:click={isPalindrome}>Check</Button>
 	</div>
+		<Button type="submit" class="block !my-2" on:click={isPalindrome}>Check</Button>
+	</form>
+
 	<div>
 		<span>Answer will show here</span>
-		<input disabled type="text" name="results_input" id="results_input" class="form-control" />
+		<input readonly bind:value={results} type="text" name="results_input" id="results_input" class="form-control" />
 	</div>
 	<div id="explanation_div">
 		<h2>Explanation</h2>

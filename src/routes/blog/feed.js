@@ -29,9 +29,7 @@ const sort_items = async() => {
 	files = await files;
 	let rss = ``;
 	files.forEach(post=>{
-		console.log(post.id)
 		if (!post){
-			console.log(post)
 		}
 		rss += 
 		`
@@ -78,7 +76,6 @@ export async function get(request) {
 	}
 
 	catch(e){
-		console.log(e)
 		return {
 			body: "Error Occured"
 		}

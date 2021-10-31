@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import snakecase from 'lodash/snakeCase.js';
+	import  snakeCase from 'lodash.snakecase';
 
 	export let tool;
 	let data = {
@@ -24,7 +24,7 @@
 	};
 
 	const toSnakeCase = () => {
-		data.results = snakecase(data.text);
+		data.results = snakeCase(data.text);
 	};
 </script>
 

@@ -11,13 +11,4 @@
 	:global(input[type='checkbox']) {
 		width: inherit;
 	}
-
-	#main :global(pre) {
-		max-height: 400px;
-		white-space: pre-wrap;
-		word-break: break-all;
-		scroll-behavior: smooth;
-		scrollbar-width: thin;
-		overflow-y: scroll;
-	}
 </style>

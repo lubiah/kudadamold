@@ -66,7 +66,7 @@
 	</div>
 </section>
 <section>
-	<h2 class="text-center font-semibold">Area of interest</h2>
+	<h2 class="text-center">Area of interest</h2>
 	<div class="flex flex-wrap md:flex-row-reverse mb-2">
 		<div class="w-full md:w-1/2">
 			<img
@@ -118,7 +118,7 @@
 	</div>
 </section>
 <section>
-	<h2 class="text-center font-semibold">Projects</h2>
+	<h2 class="text-center">Projects</h2>
 	<p class="text-center">Some things I have done so far</p>
 	<div class="flex flex-wrap justify-center">
 		<ProjectCard
