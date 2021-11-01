@@ -128,7 +128,7 @@ while True:
 	time.sleep(10)
 	response = requests.get(fetch_url)
 
-	if resp.text[0:2] == 'OK':
+	if response.text[0:2] == 'OK':
     	break
 ```
 
