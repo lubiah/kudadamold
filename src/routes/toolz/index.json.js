@@ -1,11 +1,11 @@
-import _ from 'lodash';
+import kebabCase from 'lodash.kebabcase';
 import tools_list from './_tools.json';
 import * as JsSearch from "js-search";
 
 let id = 1;
 let tools = tools_list.map((tool) => {
 	tool['id'] = id;
-	tool['url'] = `/toolz/${_.kebabCase(tool.name)}`;
+	tool['url'] = `/toolz/${kebabCase(tool.name)}`;
 	id++;
 	return tool;
 });

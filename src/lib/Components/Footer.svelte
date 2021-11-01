@@ -32,7 +32,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="https://twitter.com/lucretius_1" target="_blank" rel="noopener"><Twitter/> Lucretius_1</a>
+					<a href="https://twitter.com/kudadam_" target="_blank" rel="noopener"><Twitter/> Lucretius_1</a>
 				</li>
 			</ul>
 		</div>
@@ -56,7 +56,7 @@
 	</div>
 </footer>
 
-<style type="text/css">
+<style type="text/postcss">
 	footer * {
 		@apply text-base !important;
 	}

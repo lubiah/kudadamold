@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import camelcase from 'lodash/camelCase.js';
+	import camelcase from 'lodash.camelcase';
 
 	export let tool;
 	let data = {

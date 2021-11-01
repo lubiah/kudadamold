@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import kebabcase from 'lodash/kebabCase.js';
+	import kebabcase from 'lodash.kebabcase';
 
 	export let tool;
 	let data = {

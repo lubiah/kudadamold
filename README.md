@@ -2,4 +2,8 @@
 
 # Kudadam.com
 
-This is my personal website built with Svelte-Kit.
+This is my personal website built with Svelte-Kit.  
+It's divided into three (3) main sections
+ - [Blog](#blog)
+ - [Projects](#projects)
+ - [Tools](#toolz)

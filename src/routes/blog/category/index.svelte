@@ -1,12 +1,13 @@
 <script context="module">
-	import _ from 'lodash';
+	import uniq from 'lodash.uniq';
+	import snakeCase from "lodash.snakecase";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?all=true');
 		let { posts } = await res.json();
 		let categories = posts.map((post) => {
 			return post.category;
 		});
-		categories = _.uniq(categories);
+		categories = uniq(categories);
 		return {
 			props: {
 				categories
@@ -51,8 +52,8 @@
 	<p class="text-black dark:text-white text-center"><i>Various categories for the blog</i></p>
 	<div class="flex flex-wrap mt-10 justify-center mx-auto h-screen">
 		{#each categories as category}
-			<a href="/blog/category/{_.snakeCase(category)}">
-				<span class="m-4 p-3 rounded-md text-white category_{_.snakeCase(category)}"
+			<a href="/blog/category/{snakeCase(category)}">
+				<span class="m-4 p-3 rounded-md text-white category_{snakeCase(category)}"
 					>{category}</span
 				>
 			</a>

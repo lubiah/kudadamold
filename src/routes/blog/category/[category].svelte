@@ -1,5 +1,5 @@
 <script context="module">
-	import _ from 'lodash';
+	import snakeCase from 'lodash.snakecase';
 
 	export async function load({ page, fetch }) {
 		let category = page.params.category;
@@ -7,7 +7,7 @@
 		const res = await fetch('/blog.json?all=true');
 		let { posts } = await res.json();
 		posts = posts.filter((post) => {
-			return _.snakeCase(post.category) === category;
+			return snakeCase(post.category) === category;
 		});
 
 		if (posts.length == 0) {

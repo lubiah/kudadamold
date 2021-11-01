@@ -1,6 +1,5 @@
-
 import Path from "path";
-import _ from 'lodash';
+import chunk from 'lodash.chunk';
 import { mode } from "$app/env";
 
 
@@ -28,7 +27,7 @@ export async function get({ query }) {
 	posts = posts.filter(file=> file !== undefined);
 	posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 	let unsorted = posts;
-	posts = _.chunk(posts,6);
+	posts = chunk(posts,6);
 
 	let results = new Object();
 	results['posts'] = posts[0];

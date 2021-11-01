@@ -1,5 +1,4 @@
 import Path from "path";
-import _ from 'lodash';
 import { mode } from "$app/env";
 import { encode } from 'html-entities';
 

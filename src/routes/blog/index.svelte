@@ -3,7 +3,7 @@
 	import SEO from 'svelte-seo';
 	import { onMount } from "svelte";
 	import Button from '$lib/Components/Button.svelte';
-	import _ from "lodash";
+	import chunk from "lodash.chunk";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?limit=true');
 		let json = await res.json();
@@ -26,7 +26,7 @@
 	let page = 1;
 	let SearchBar;
 	let documents = all_posts;
-	all_posts = _.chunk(all_posts,6);     
+	all_posts = chunk(all_posts,6);     
 	const loadData = async () => {
 		let data = all_posts[page];
 		posts = [...posts, ...data];
