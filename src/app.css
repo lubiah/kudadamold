@@ -68,6 +68,10 @@ body::-webkit-scrollbar-thumb:active{
 		border: 1px solid tomato;
 	}
 
+	input[type="search"]::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+	}
+
 	input:read-only {
 		@apply !bg-blue-200 !text-gray-700;
 	}
@@ -169,8 +173,14 @@ body::-webkit-scrollbar-thumb:active{
 		@apply text-blue-500 dark:text-blue-300;
 	}
 
+	blockquote::before{
+			content: "\201C";
+			line-height: 1;
+			@apply absolute w-[20px] text-[80px] top-2 left-0 block font-bold;
+	}
+
 	blockquote {
-		@apply border-l-[15px] p-2 rounded-xl;
+		@apply border-l-[8px] relative p-9 pb-2 bg-[#f5c2b9] text-gray-700 italic my-6;
 		border-left-color: var(--primary-color);
 	}
 

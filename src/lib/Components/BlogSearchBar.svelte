@@ -29,7 +29,7 @@
 </script>
 
 <div class="p-2 relative">
-	<input type="search" class="lg:w-[45%] block ml-auto py-1" placeholder="Search For Articles Here" on:keyup={Search} bind:value={searchInput}>
+	<input type="search" class="lg:w-[45%] block ml-auto py-1" placeholder="Search For Articles Here"  on:keyup={Search} bind:value={searchInput}>
 
 	{#if results.length !== 0}
 		<div class="absolute flex flex-wrap mt-8 p-2 z-40 border bg-white dark:bg-gray-700 border-1 dark:border-gray-500 shadow-lg w-full rounded overflow-y-auto max-h-[400px]" id="search-results-view">

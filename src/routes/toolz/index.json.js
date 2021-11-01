@@ -1,4 +1,5 @@
 import kebabCase from 'lodash.kebabcase';
+import orderBy from "lodash.orderby";
 import tools_list from './_tools.json';
 import * as JsSearch from "js-search";
 
@@ -18,7 +19,7 @@ const get_info = (tool_name) => {
 export async function get(request) {
 	let result = new Object();
 	let query = request.query;
-	result['tools'] = _.orderBy(tools, 'name', 'asc');
+	result['tools'] = orderBy(tools, 'name', 'asc');
 	if (query.has('info')) {
 		result['info'] = get_info(query.get('info'));
 		delete result['tools'];

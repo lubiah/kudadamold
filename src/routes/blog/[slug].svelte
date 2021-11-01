@@ -49,7 +49,7 @@
 	let comment_loaded = false;
 	const loadComments = ()=>{
 		let script_tag = document.createElement("script");
-		script_tag.setAttribute("repo","biah/kudadam");
+		script_tag.setAttribute("repo","kudadam/kudadam.com");
 		script_tag.setAttribute("issue-term","title");
 		script_tag.setAttribute("src","https://utteranc.es/client.js");
 		script_tag.setAttribute("label","Comment");
@@ -191,15 +191,8 @@
 		@apply font-semibold text-xl inline-block my-1;
 	}
 
-	:global(.toc ol) {
-		list-style: none;
-	}
+
 	:global(.toc ol li a){
 		color: inherit;
-	}
-	:global(.toc li::before){
-		content: "✓";
-		color: red;
-		@apply pr-1
 	}
 </style>

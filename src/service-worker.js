@@ -10,7 +10,7 @@ const dynamic_pages =
 	"/blog.json?limit=true",
 	"/blog.json?all=true",
 	"/blog",
-	"/toolz"
+	"/toolz.json"
 ];
 
 self.addEventListener("install", event =>{
