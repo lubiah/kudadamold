@@ -8,7 +8,6 @@ keywords:
   - captcha solving software
   - how to bypass captcha
   - captcha solver
-draft: true
 sponsored: true
 ---
 
