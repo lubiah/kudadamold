@@ -164,7 +164,7 @@ body::-webkit-scrollbar-thumb:active{
 	a {
 		color: var(--primary-color);
 	}
-
+   
 	a:visited {
 		@apply text-red-500;
 	}
