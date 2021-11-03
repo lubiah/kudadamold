@@ -54,7 +54,7 @@
 </svelte:head>
 
 <nav id="nav__header" role="navigation" 
-	class="flex fixed p-1 md:p-2 z-30 top-0 border-b w-full bg-white flex-wrap dark:bg-gray-700 border-gray-200 dark:border-gray-500"
+	class="flex fixed p-1 md:p-2 z-30 top-0 border-b w-full bg-white flex-wrap dark:bg-gray-900 border-gray-200 dark:border-gray-500"
 >
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center justify-center"

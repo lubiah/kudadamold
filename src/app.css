@@ -43,7 +43,7 @@ body::-webkit-scrollbar-thumb:active{
 
 	body {
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,sans-serif;
-	@apply lg:dark:font-light;
+	@apply lg:dark:font-light dark:bg-gray-900 dark:text-gray-300 text-gray-700 text-[1.15rem]	;
 	}
 
 	::selection {
@@ -81,12 +81,16 @@ body::-webkit-scrollbar-thumb:active{
 		width: unset;
 	}
 
+	.hoverable {
+		@apply dark:hover:bg-gray-800 hover:bg-gray-200;
+	}
+
 	input {
-		@apply dark:bg-gray-600  border border-gray-300 px-1 rounded p-0.5 dark:border-0 w-full;
+		@apply dark:bg-gray-800  border border-gray-300 px-1 rounded p-0.5 dark:border-0 w-full;
 	}
 
 	textarea {
-		@apply border-gray-300 border rounded dark:bg-gray-600 dark:border-0 dark:text-white w-full p-1;
+		@apply border-gray-300 border rounded dark:bg-gray-800 dark:border-0 dark:text-white w-full p-1;
 	}
 
 	ol, ul {
@@ -123,8 +127,6 @@ body::-webkit-scrollbar-thumb:active{
 		scrollbar-width: thin;
 	}
 
-	body {
-		@apply dark:bg-gray-700 dark:text-gray-300 text-gray-700 text-[1.15rem]	}
 
 	b,
 	strong {
