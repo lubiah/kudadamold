@@ -52,7 +52,7 @@
 				Also, am an open-source enthusiast, frequent gamer and an avid reader.
 				Welcome to my part of the internet where I <a href="/blog">share my knowledge</a>, <a href="/toolz">create useful tools</a> and <a href="/projects">showcase my projects</a>
 				</p>
-				<p>Want me to help you with a project? <a href="/contact" class="font-bold">Contact me</a></p>
+				<p>Want me to help you with a project? <a href="/contact">Contact me</a></p>
 			</div>
 			<img
 			class="w-80"
