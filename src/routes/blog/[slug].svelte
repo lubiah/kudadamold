@@ -5,7 +5,7 @@
 	import  snakeCase from 'lodash.snakecase';
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
-	import Like from "$lib/Icons/Heart.svelte";
+	import Like from "$lib/Icons/heart.svelte";
 	import Clock from "$lib/Icons/clock.svelte";
 
 	const getRelatedArticles = async (title,posts)=>{
