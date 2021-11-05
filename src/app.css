@@ -35,7 +35,12 @@ body::-webkit-scrollbar-thumb:active{
 
 
 .note {
-	@apply p-4 my-3 bg-gray-300 rounded dark:bg-gray-600;
+	@apply p-4 my-3 bg-gray-300 rounded dark:text-black dark:bg-trueGray-300;
+}
+
+.note::before{
+	content: "Note: ";
+	@apply block italic text-base font-bold text-green-800;
 }
 
 

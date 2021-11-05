@@ -5,6 +5,8 @@
 	import  snakeCase from 'lodash.snakecase';
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
+	import Like from "$lib/Icons/Heart.svelte";
+	import Clock from "$lib/Icons/clock.svelte";
 
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
@@ -25,19 +27,22 @@
 		return related_posts;
 	}
 
-
+	
 
 	export async function load({ page, fetch }) {
 		const slug = page.params.slug;
 		try {
-
+			let meta;
 			let component = await import(`./_blog/${slug}/index.md`);
 			component.metadata["slug"] = slug;
 
+			let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
+			meta = data;
 			return {
 				props: {
 					metadata: component.metadata,
 					content: component.default,
+					meta
 				}
 			};
 		} catch (e) {}
@@ -45,7 +50,49 @@
 </script>
 
 <script type="text/javascript">
-	export let metadata, content;
+	export let metadata, content, meta;
+
+	const setLikes = ()=>{
+		let slug = document.querySelector("#content").getAttribute("data-slug");
+		let like_button = document.querySelector("#like-button");
+		if (window.localStorage){
+			let liked = (localStorage[`blog_post_liked:${slug}`]) || false;
+			if (liked){
+				like_button.classList.add("text-red-500");
+				like_button.setAttribute("data-liked",true);
+			}
+			else{
+				like_button.classList.remove("text-red-500");
+				like_button.setAttribute("data-liked",false);
+			}
+		}
+	}
+
+
+	const likeClicked = async (event)=>{
+		let like_button = document.querySelector("#like-button");
+		let slug = document.querySelector("#content").getAttribute("data-slug");
+		if (window.localStorage){
+			if (localStorage[`blog_post_liked:${slug}`] === "true" ){
+				delete localStorage[`blog_post_liked:${slug}`];
+				like_button.classList.remove('text-red-500');
+				let request = await fetch(`/blog/${slug}.json?post_unliked=true`);
+				let res = await request.json();
+				if (res.post_unliked === true) meta.likes -= 1;
+				return;
+			}
+			else{
+				like_button.classList.add("text-red-500");
+				localStorage[`blog_post_liked:${slug}`] = true;
+				let request = await fetch(`/blog/${slug}.json?post_liked=true`);
+				let res = await request.json();
+				if (res.post_liked === true) meta.likes += 1;
+				return;
+			}
+			
+		}
+	}
+
 	let comment_loaded = false;
 	const loadComments = ()=>{
 		let script_tag = document.createElement("script");
@@ -60,14 +107,19 @@
 		comment_loaded = true;
 	}
 
+
 	let relatedArticles;
 	let Card;
 	let PageProgress;
+
+
 	onMount(async ()=>{
 		PageProgress = await import("$lib/Components/PageProgress.svelte").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard.svelte").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(e => e.json().then(e.posts));
 		relatedArticles = await getRelatedArticles(metadata.title, posts);
+		setLikes();
+
 	});
 
 
@@ -109,12 +161,15 @@
 <article class="my-4 xl:w-[65%] mx-auto" id="post" role="article">
 	<div class="md:mx-auto">
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
-		<div class="py-2 text-gray-700 dark:text-gray-300 ps-4x border-b my-1 border-gray-300">
-			<p class="pl-2 text-base">
-				<span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span>
-				• <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date>
-			</p>
-		</div>
+			<ul class="py-2 ps-4x border-b my-1 border-gray-300 text-base flex pl-2 list-none gap-x-2" id="meta__info">
+				<li><span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
+				<li><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></li>
+				{#if meta}
+					<li><span>Read Times: {meta.read_times}</span></li>
+					<li><span>Shares: {meta.shares}</span></li>
+					<li><span>Likes: {meta.likes}</span></li>
+				{/if}
+			</ul>
 		<img
 			src={metadata.image}
 			alt=""
@@ -122,8 +177,12 @@
 			class="h-52 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
 		/>
 		
-		<div class="leading-tight px-2" id="content">
+		<div class="leading-tight px-2" id="content" data-slug="{metadata.slug}">
 			<svelte:component this={content} />
+		</div>
+		<div id="like__container" class="mt-8">
+			<span on:click={likeClicked}><Like class="h-[2em] block mx-auto" id="like-button"/></span>
+			<span class="block mx-auto text-center">{meta.likes}</span>
 		</div>
 		{#if browser && relatedArticles && [...relatedArticles].length >= 1}
 			<div class="mt-[100px]">
@@ -152,7 +211,7 @@
 		</div>
 			
 	</div>
-	
+
 </article>
 
 {#if browser}
@@ -194,5 +253,14 @@
 
 	:global(.toc ol li a){
 		color: inherit;
+	}
+
+	#meta__info li::after{
+		content: "•";
+		@apply pl-0.5
+	}
+
+	#meta__info li:last-child::after {
+		content: "";
 	}
 </style>
