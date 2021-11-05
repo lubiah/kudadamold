@@ -161,7 +161,7 @@
 <article class="my-4 xl:w-[65%] mx-auto" id="post" role="article">
 	<div class="md:mx-auto">
 		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
-			<ul class="py-2 ps-4x border-b my-1 border-gray-300 text-base flex pl-2 list-none gap-x-2" id="meta__info">
+			<ul class="py-2 ps-4x border-b my-1 border-gray-300 text-base flex flex-wrap pl-2 list-none gap-x-2" id="meta__info">
 				<li><span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
 				<li><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></li>
 				{#if meta}
