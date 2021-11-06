@@ -180,9 +180,9 @@
 		<div class="leading-tight px-2" id="content" data-slug="{metadata.slug}">
 			<svelte:component this={content} />
 		</div>
-		<div id="like__container" class="mt-8">
-			<span on:click={likeClicked}><Like class="h-[2em] block mx-auto" id="like-button"/></span>
-			<span class="block mx-auto text-center">{meta.likes}</span>
+		<div id="like__container" class="mt-8 mx-auto text-center">
+			<span on:click={likeClicked}><Like class="h-[2em]" id="like-button"/></span>
+			<span class="block">{meta.likes}</span>
 		</div>
 		{#if browser && relatedArticles && [...relatedArticles].length >= 1}
 			<div class="mt-[100px]">
@@ -228,7 +228,7 @@
 		@apply mt-[25px] mb-[10px] mx-[2px] font-semibold capitalize;
 	}
 	
-	#content :global(img:not(#post-image)){
+	#content :global(img:not(#post-iLmage)){
 		@apply max-h-[500px] mx-auto my-4 rounded;
 	}
 
