@@ -89,6 +89,7 @@
 		<section class="flex">
 			{#each [...popular_articles] as post (post.id)}
 			<Card
+				class = "mr-3"
 				title={post.title}
 				image={post.image}
 				date={post.date}
