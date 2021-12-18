@@ -21,7 +21,7 @@
 
 	onMount(async ()=>{
 		SearchModule = await import("js-search");
-		BlogCard = await import("$lib/Components/BlogCard.svelte").then( e => e.default );
+		BlogCard = await import("$lib/Components/BlogCard").then( e => e.default );
 		SearchJS = new SearchModule.Search("id");
 		SearchJS.addIndex("title");
 		SearchJS.addDocuments(documents);

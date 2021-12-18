@@ -31,7 +31,7 @@
 	export let category;
 
 	import SEO from 'svelte-seo';
-	import Card from '$lib/Components/BlogCard.svelte';
+	import Card from '$lib/Components/BlogCard';
 </script>
 
 <SEO

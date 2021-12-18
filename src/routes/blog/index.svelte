@@ -1,11 +1,11 @@
 <script context="module">
-	import Card from '$lib/Components/BlogCard.svelte';
+	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { onMount } from "svelte";
 	import Button from '$lib/Components/Button.svelte';
 	import chunk from "lodash.chunk";
 	export async function load({ fetch }) {
-		let res = await fetch('/blog.json?limit=true');
+		let res = await fetch('/blog.json?limit=true&popular_articles=true');
 		let json = await res.json();
 		res = await fetch("/blog.json?all=true");
 		let { posts } = await res.json();
@@ -14,7 +14,8 @@
 				props: {
 					posts: json.posts,
 					limit: json.limit,
-					all_posts: posts
+					all_posts: posts,
+					popular_articles: json.popular_articles
 				}
 			};
 		}
@@ -22,7 +23,11 @@
 </script>
 
 <script type="text/javascript">
-	export let posts, limit, all_posts;
+	export let posts, limit, all_posts, popular_articles;
+	popular_articles = popular_articles.map(item => {return item.slug});
+	popular_articles = all_posts.filter(post=>{
+		return popular_articles.includes(post.slug);
+	});
 	let page = 1;
 	let SearchBar;
 	let documents = all_posts;
@@ -79,8 +84,25 @@
  
 	<svelte:component this={SearchBar} {documents}/>
 
+	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
+	<div class="overflow-x-scroll flex">
+		<section class="flex">
+			{#each [...popular_articles] as post (post.id)}
+			<Card
+				title={post.title}
+				image={post.image}
+				date={post.date}
+				slug={post.slug}
+				category={post.category}
+			/>
+			{/each}
+		</section>
+		
+	</div>
+	
+
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
-	<div class="flex flex-wrap justify-center">
+	<section class="flex flex-wrap justify-center">
 		{#each posts as post (post.id)}
 			<Card
 				title={post.title}
@@ -90,7 +112,7 @@
 				category={post.category}
 			/>
 		{/each}
-	</div>
+	</section>
 </div>
 
 {#if page != limit}

@@ -115,7 +115,7 @@
 
 	onMount(async ()=>{
 		PageProgress = await import("$lib/Components/PageProgress.svelte").then(e => e.default);
-		Card = await import("$lib/Components/BlogCard.svelte").then(e=> e.default);
+		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(e => e.json().then(e.posts));
 		relatedArticles = await getRelatedArticles(metadata.title, posts);
 		setLikes();

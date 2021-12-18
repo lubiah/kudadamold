@@ -44,6 +44,22 @@ export async function get({ query }) {
 	if (query.get('all')) {
 		results['posts'] = unsorted;
 	}
+
+	if (query.get('popular_articles')){
+		let sqlite = await import("sqlite3");
+		const db = new sqlite.Database("./database.db", err=>{});
+		let res = new Promise((resolve, reject)=>{
+			db.serialize(()=>{
+				db.all("SELECT * FROM blog ORDER BY read_times DESC LIMIT 6", async (err,data)=>{
+					if (err) reject(err);
+					else
+						resolve(data);
+				})
+			})
+		});
+		res = await res;
+		results['popular_articles'] = res;
+	}
 	return {
 		body: {
 			...results

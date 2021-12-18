@@ -18,14 +18,14 @@ The Card component is used to house the blog posts
 	}
 </script>
 
-<div id="card" class="md:mr-6 w-[350px] border border-gray-300 dark:border-gray-600 hover:shadow-lg rounded mb-9 relative {Class}">
+<article id="card" class="md:mr-6 w-[350px] border border-gray-300 dark:border-gray-600 hover:shadow-lg rounded mb-9 relative {Class}">
 	<a
 		sveltekit:prefetch
 		href="/blog/{slug}"
 		class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500"
 		id="card-title"
 	>
-		<img src={image} class="w-full" alt="" id="card-image" />
+		<img src={image} class="w-full h-[200px]" alt="" id="card-image" />
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{snakeCase(category)}">
 		<span class="absolute px-2 text-white rounded top-[5px] left-[5px] category_{snakeCase(category)}">{category}</span></a
@@ -43,27 +43,21 @@ The Card component is used to house the blog posts
 			<time datetime={date}>{new Date(date).toDateString()}</time>
 		</small>
 	</div>
-</div>
+</article>
 
 <style type="text/css">
 	#card:hover #card-title {
 		color: var(--primary-color);
 	}
 
-	#card-image {
-		height: 200px;
-	}
-
 .category_programming {
-	background: orange;
+	background: var(--category-programming)
 }
 .category_tips_and_tricks {
-	background: #142f54;
+	background: var(--category-tips-and-tricks)
 }
 .category_personal {
-	background: #01a9bc;
+	background: var(--category-personal)
 }
-
-
 
 </style>
