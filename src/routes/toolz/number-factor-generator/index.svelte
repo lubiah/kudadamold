@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import Button from '$lib/Components/Button.svelte';
 	export let tool;
 
 	let number = 2;
@@ -65,7 +64,7 @@
 		<input bind:value={number} type="number" id="number" on:input={() => (error = '')} />
 		<span class="text-red-500 text-sm">{error}</span>
 	</div>
-	<Button class="!my-3" on:click={generate}>Generate</Button>
+	<button class="!my-3" on:click={generate}>Generate</button>
 	<div>
 		<p class="block font-semibold">Factors</p>
 		<span class="m-3 max-w-sm text-lg break-word">{results}</span>

@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import Button from '$lib/Components/Button.svelte';
 	export let tool;
 	let data;
 	$: data = {
@@ -119,7 +118,7 @@
 			<span class="text-red-500 text-sm">{error.step}</span>
 		</div>
 		<div>
-			<Button on:click={handle_form}>Generate</Button>
+			<button on:click={handle_form}>Generate</button>
 		</div>
 	</div>
 	<pre>

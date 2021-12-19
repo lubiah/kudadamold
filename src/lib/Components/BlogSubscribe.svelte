@@ -1,6 +1,4 @@
 <script>
-	import Button from "$lib/Components/Button.svelte";
-
     let data = {
     	name: "",
     	email: "",
@@ -44,11 +42,11 @@
 	<div id="form_container">
 		<input type="name" class='!bg-white p-1 my-2' placeholder="First name" bind:value={data.name} title="Your First Name" required>
 		<input type="email" class="!bg-white p-1" placeholder="Email Account" bind:value={data.email} title="Your email address" required>
-		<Button class="mt-3 text-lg" type="submit" id="subscription__submit_button">Subscribe</Button>
+		<button class="mt-3 text-lg" type="submit" id="subscription__submit_button">Subscribe</button>
 	</div>
 </form>
 
-<style>
+<style type="text/postcss">
 	input {
 		color: black;
 	}

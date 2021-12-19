@@ -1,6 +1,5 @@
 <script context="module">
 	import SEO from 'svelte-seo';
-	import Button from "$lib/Components/Button.svelte";
 	import 'prismjs/themes/prism-tomorrow.css';
 	import  snakeCase from 'lodash.snakecase';
 	import { browser } from "$app/env";
@@ -206,7 +205,7 @@
 		
 		<div id="comment__box">
 			{#if !comment_loaded}
-				<Button class="block mt-6 mx-auto !py-2" on:click={loadComments}>Load/Add Comment</Button>
+				<button class="block mt-6 mx-auto !py-2" on:click={loadComments}>Load/Add Comment</button>
 			{/if}
 		</div>
 			

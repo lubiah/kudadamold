@@ -3,7 +3,6 @@ Project Card
 This component is used to display my projects in a more organized manner
  -->
 <script type="text/javascript">
-	import Button from './Button.svelte';
 
 	export let title;
 	export let description;
@@ -18,7 +17,7 @@ This component is used to display my projects in a more organized manner
 		<p>{description}</p>
 	</div>
 	<div class="flex px-1">
-		<Button class="block w-full"><a class="block hover:!text-white visited:text-white" href={url}>View Project</a></Button>
+		<button class="block w-full"><a class="block hover:!text-white visited:text-white" href={url}>View Project</a></button>
 	</div>
 </div>
 	

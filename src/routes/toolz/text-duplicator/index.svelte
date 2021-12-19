@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import Button from '$lib/Components/Button.svelte';
 	export let tool;
 
 	let data = {
@@ -38,6 +37,6 @@
 	<div>
 		<label for="times">Times</label>
 		<input id="times" type="number" name="" bind:value={data.times} />
-		<Button class="!my-3" on:click={duplicate}>Duplicate</Button>
+		<button class="!my-3" on:click={duplicate}>Duplicate</button>
 	</div>
 </Body>

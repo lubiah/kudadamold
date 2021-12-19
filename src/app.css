@@ -38,7 +38,7 @@ body::-webkit-scrollbar-thumb:active{
 
 
 .note {
-	@apply p-4 my-3 bg-gray-300 rounded dark:text-black dark:bg-trueGray-300;
+	@apply p-4 my-3 bg-gray-300 rounded dark:text-black dark:bg-slate-300;
 }
 
 .note::before{
@@ -196,6 +196,10 @@ body::-webkit-scrollbar-thumb:active{
 	blockquote {
 		@apply border-l-[8px] relative p-9 pb-2 bg-[#f5c2b9] text-gray-700 italic my-6;
 		border-left-color: var(--primary-color);
+	}
+
+	button, button[type="submit"] {
+		@apply text-white bg-[color:var(--primary-color)] px-4 py-1 text-base rounded my-2;
 	}
 
 	button * {

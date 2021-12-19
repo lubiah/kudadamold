@@ -91,13 +91,13 @@
 <div class="flex flex-wrap gap-3 my-2">
 	<div class="">
 		<img
-			src="https://github-readme-stats.vercel.app/api?username=biah&count_private=true&show_icons=true&theme=radical"
+			src="https://github-readme-stats.vercel.app/api?username=kudadam&count_private=true&show_icons=true&theme=radical"
 			alt=""
 		/>
 	</div>
 	<div class="">
 		<img
-			src="https://github-readme-stats.vercel.app/api/top-langs/?username=biah&langs_count=9"
+			src="https://github-readme-stats.vercel.app/api/top-langs/?username=kudadam&langs_count=9"
 			alt=""
 		/>
 	</div>

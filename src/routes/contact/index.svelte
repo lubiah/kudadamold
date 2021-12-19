@@ -50,8 +50,6 @@
 		<li><a href="https://wa.link/jebvr2">WhatsApp</a></li>
 		<li><a href="https://t.me/kudadam">Telegram</a></li>
 	</ul>
-	<span class="font-bold block">OR</span>
-	<p>Fill the form and submit</p>
 </div>
 
 </div>

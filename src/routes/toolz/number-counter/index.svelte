@@ -26,8 +26,8 @@
 
 <Body>
 	<div class="text-center text-3xl">
-		<div class="w-20 border border-gray-500 mx-auto">
-			<button on:click={() => number++}>+</button>
+		<div class="w-20 mx-auto">
+			<button  on:click={() => number++}>+</button>
 			<div class="text-center p-2" contenteditable>{number}</div>
 			<button on:click={() => number--}>-</button>
 		</div>

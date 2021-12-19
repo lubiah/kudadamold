@@ -1,5 +1,4 @@
 <script context="module">
-	import uniq from 'lodash.uniq';
 	import snakeCase from "lodash.snakecase";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?all=true');
@@ -7,7 +6,7 @@
 		let categories = posts.map((post) => {
 			return post.category;
 		});
-		categories = uniq(categories);
+		categories = new Set(categories);
 		return {
 			props: {
 				categories

@@ -16,7 +16,6 @@
 	import escape_reg from 'regex-escape';
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import Button from '$lib/Components/Button.svelte';
 	import Add from './_Add.svelte';
 	export let tool;
 	let hidden = true; //This is to show that the Add modal dialog is hidden;
@@ -95,7 +94,7 @@
 		class="border-blue-500 border w-full rounded p-3 my-3"
 		on:input={check}
 	/>
-	<Button on:click={() => (hidden = !hidden)}>Add Rule</Button>
+	<button on:click={() => (hidden = !hidden)}>Add Rule</button>
 
 	<div class="overflow-x-scroll my-8">
 		<table class="w-full py-4">

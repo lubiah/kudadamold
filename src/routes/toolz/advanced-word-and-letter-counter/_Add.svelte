@@ -1,5 +1,4 @@
 <script type="text/javascript">
-	import Button from '$lib/Components/Button.svelte';
 	import { createEventDispatcher } from 'svelte';
 	export let hidden = false;
 	let dispatch = createEventDispatcher();
@@ -81,10 +80,10 @@
 		<div class="border border-red-500 bg-red-100 p-2 my-1 rounded-md dark:text-black">
 			Don't include '/ /' when entering your regular Expressions, it is already done for you
 		</div>
-		<Button class="mx-3 !my-3" on:click={add}>Add</Button><Button
+		<button class="mx-3 !my-3" on:click={add}>Add</button><button
 			on:click={hide}
 			danger
-			primary={false}>Cancel</Button
+			primary={false}>Cancel</button
 		>
 	</div>
 </div>

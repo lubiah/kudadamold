@@ -4,7 +4,6 @@
 
 <script type="text/javascript">
 	import SEO from 'svelte-seo';
-	import Button from '$lib/Components/Button.svelte';
 	import ProjectCard from '$lib/Components/ProjectCard.svelte';
 </script>
 

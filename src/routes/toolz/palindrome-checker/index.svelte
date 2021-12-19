@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import Button from '$lib/Components/Button.svelte';
 	export let tool;
 
 	import Palindrome from './_index.js';
@@ -70,7 +69,7 @@
 			bind:checked={data.ignoreWhitespace}
 		/>
 	</div>
-		<Button type="submit" class="block !my-2" on:click={isPalindrome}>Check</Button>
+		<button type="submit" class="block !my-2" on:click={isPalindrome}>Check</button>
 	</form>
 
 	<div>

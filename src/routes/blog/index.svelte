@@ -2,7 +2,6 @@
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { onMount } from "svelte";
-	import Button from '$lib/Components/Button.svelte';
 	import chunk from "lodash.chunk";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?limit=true&popular_articles=true');
@@ -117,7 +116,7 @@
 </div>
 
 {#if page != limit}
-	<Button class="mx-auto block" on:click={loadData}>Load More</Button>
+	<button class="mx-auto block" on:click={loadData}>Load More</button>
 {/if}
 
 <style type="text/postcss">

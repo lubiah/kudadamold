@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import Button from '$lib/Components/Button.svelte';
 	export let tool;
 	let error = '';
 	let number = 0;
@@ -51,7 +50,7 @@
 			/>
 			<span class="text-red-500 text-sm">{error}</span>
 		</div>
-		<Button class="!my-2" on:click={handleForm}>Check</Button>
+		<button class="!my-2" on:click={handleForm}>Check</button>
 	</div>
 	<div id="results_div" class="mt-3">
 		<label for="results">Results appear here</label>

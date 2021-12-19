@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	import Header from '$lib/Components/Toolz/Header.svelte';
 	import Body from '$lib/Components/Toolz/Body.svelte';
-	import Button from '$lib/Components/Button.svelte';
 	import { random_int, output_type_changer } from './_script.js';
 	export let tool;
 
@@ -140,7 +139,7 @@
 		<span class="text-red-500 text-sm">{error.no_of_times}</span>
 	</div>
 	<div>
-		<Button class="!my-2" on:click={generate}>Generate</Button>
+		<button class="!my-2" on:click={generate}>Generate</button>
 	</div>
 	<pre>{res}</pre>
 </Body>
