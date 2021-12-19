@@ -4,7 +4,6 @@
 	import  snakeCase from 'lodash.snakecase';
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
-	import Like from "$lib/Icons/heart.svelte";
 	import Clock from "$lib/Icons/clock.svelte";
 
 	const getRelatedArticles = async (title,posts)=>{
@@ -51,47 +50,6 @@
 <script type="text/javascript">
 	export let metadata, content, meta;
 
-	const setLikes = ()=>{
-		let slug = document.querySelector("#content").getAttribute("data-slug");
-		let like_button = document.querySelector("#like-button");
-		if (window.localStorage){
-			let liked = (localStorage[`blog_post_liked:${slug}`]) || false;
-			if (liked){
-				like_button.classList.add("text-red-500");
-				like_button.setAttribute("data-liked",true);
-			}
-			else{
-				like_button.classList.remove("text-red-500");
-				like_button.setAttribute("data-liked",false);
-			}
-		}
-	}
-
-
-	const likeClicked = async (event)=>{
-		let like_button = document.querySelector("#like-button");
-		let slug = document.querySelector("#content").getAttribute("data-slug");
-		if (window.localStorage){
-			if (localStorage[`blog_post_liked:${slug}`] === "true" ){
-				delete localStorage[`blog_post_liked:${slug}`];
-				like_button.classList.remove('text-red-500');
-				let request = await fetch(`/blog/${slug}.json?post_unliked=true`);
-				let res = await request.json();
-				if (res.post_unliked === true) meta.likes -= 1;
-				return;
-			}
-			else{
-				like_button.classList.add("text-red-500");
-				localStorage[`blog_post_liked:${slug}`] = true;
-				let request = await fetch(`/blog/${slug}.json?post_liked=true`);
-				let res = await request.json();
-				if (res.post_liked === true) meta.likes += 1;
-				return;
-			}
-			
-		}
-	}
-
 	let comment_loaded = false;
 	const loadComments = ()=>{
 		let script_tag = document.createElement("script");
@@ -117,7 +75,6 @@
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(e => e.json().then(e.posts));
 		relatedArticles = await getRelatedArticles(metadata.title, posts);
-		setLikes();
 
 	});
 
@@ -166,22 +123,19 @@
 				{#if meta}
 					<li><span>Read Times: {meta.read_times}</span></li>
 					<li><span>Shares: {meta.shares}</span></li>
-					<li><span>Likes: {meta.likes}</span></li>
 				{/if}
 			</ul>
-		<img
+		{#if metadata.image}
+			<img
 			src={metadata.image}
 			alt=""
 			id="post-image"
 			class="h-52 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
-		/>
-		
+			/>
+		{/if}
+			
 		<div class="leading-tight px-2" id="content" data-slug="{metadata.slug}">
 			<svelte:component this={content} />
-		</div>
-		<div id="like__container" class="mt-8 mx-auto text-center">
-			<span on:click={likeClicked}><Like class="h-[2em]" id="like-button"/></span>
-			<span class="block">{meta.likes}</span>
 		</div>
 		{#if browser && relatedArticles && [...relatedArticles].length >= 1}
 			<div class="mt-[100px]">
