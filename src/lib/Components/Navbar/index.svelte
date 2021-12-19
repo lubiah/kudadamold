@@ -10,8 +10,9 @@
 	let nav_links = [
 		{ name: 'About', url: '/about', id: 1 },
 		{ name: 'Contact', url: '/contact', id: 2 },
-		{ name: 'Blog', url: '/blog', id: 3 },
-		{ name: 'Toolz', url: '/toolz', id: 4 }
+		{ name: 'Projects', url: '/projects', id: 3},
+		{ name: 'Blog', url: '/blog', id: 4 },
+		{ name: 'Toolz', url: '/toolz', id: 5 }
 	];
 
 
@@ -41,7 +42,7 @@
 	<script>
 		if (document){
 			let mode = localStorage.theme || "light";
-			if (mode === 'dark' || (window.matchMedia('(prefers-color-scheme: dark)').matches)){
+			if (mode === 'dark'){
 				document.documentElement.classList.add("dark");
 				localStorage.theme = "dark";
 			}
@@ -54,7 +55,7 @@
 </svelte:head>
 
 <nav id="nav__header" role="navigation" 
-	class="flex fixed p-1 md:p-2 z-30 top-0 border-b w-full bg-white flex-wrap dark:bg-gray-900 border-gray-200 dark:border-gray-500"
+	class="flex fixed md:p-2 z-30 top-0 border-b w-full bg-white flex-wrap dark:bg-gray-900 border-gray-200 dark:border-gray-500"
 >
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center justify-center"
@@ -64,7 +65,7 @@
 		></a
 	>
 
-	<span class="ml-auto my-auto h-3/4" on:click={setMode} title="Change Mode">
+	<span class="ml-auto my-auto" on:click={setMode} title="Change Mode">
 		{#if $mode === "light"}
 			<Moon/>
 		{:else}
