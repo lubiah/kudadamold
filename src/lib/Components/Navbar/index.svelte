@@ -73,7 +73,8 @@
 	</span>
 
 	<button
-		class="ml-auto px-1 md:hidden"
+		aria-label="{hidden === true ? "Open" : "Close"}"
+		class="ml-auto px-1 md:hidden bg-transparent"
 		on:click={() => {
 			hidden = !hidden;
 		}}
