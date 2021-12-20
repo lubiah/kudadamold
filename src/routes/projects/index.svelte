@@ -1,9 +1,9 @@
 <script context="module">
-	import projects from "./projects.json";
+	import projects_json from "./projects.json";
 		export async function load(){
 			return {
 				props: {
-					projects
+					projects_json
 				}
 			}
 		}	
