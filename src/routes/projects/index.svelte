@@ -3,7 +3,7 @@
 		export async function load(){
 			return {
 				props: {
-					projects_json
+					projects: projects_json
 				}
 			}
 		}	
