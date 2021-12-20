@@ -52,7 +52,7 @@ openGraph={{
 		<p class="italic">Stuff curated by me</p>
 	</div>
 
-	<section class="flex flex-wrap mt-[50px]">	
+	<section class="flex flex-wrap mt-[50px] gap-x-4 gap-y-4">	
 		{#each projects as project (project.id) }
 			<Card
 			title="{project.name}"
