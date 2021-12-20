@@ -2,7 +2,6 @@ import sqlite from "sqlite3";
 
 const db = new sqlite.Database("./database.db", err=>{});
 
-//db.run("DROP Table blog");
 db.serialize(()=>{
 	db.run(`
 	CREATE TABLE IF NOT EXISTS blog	 (

@@ -2,6 +2,7 @@
 title: How to view source code of a website on mobile device
 description: A tutorial showing how the view the source code of any website on your mobile device.
 category: Tips and Tricks
+excerpt: On desktop browsers, we simple just right-click and click on "view page source" from the context menu but there's no option like this on mobile devices. So then, how do we view the source code on a mobile device?
 keywords:
   - source code
   - website source code

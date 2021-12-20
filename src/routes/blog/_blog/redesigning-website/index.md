@@ -2,6 +2,7 @@
 title: Re-designing my website
 description: A blog post which shows how I re-designed my website from scratch up
 category: Personal
+excerpt: I re-designed my website with PHP and MySql, where I stored the blog contents in a Mysql database.
 keywords:
   - re-design
   - website redesign

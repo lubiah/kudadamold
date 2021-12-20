@@ -2,6 +2,7 @@
 title: How To Prevent Theme Colour From Flickering in Svelte Or SvelteKit
 description: Learn how to prevent your theme colours from flickering when your page loads in your Svelte or SvelteKit website
 category: Programming
+excerpt: Many websites theme colours flick on page load, learn how to solve that
 image: https://kudadam.sirv.com/blog/prevent-theme-colour-flickering-svelte/hero.jpg
 keywords:
   - sveltekit flickering css

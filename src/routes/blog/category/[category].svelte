@@ -1,6 +1,5 @@
 <script context="module">
 	import snakeCase from 'lodash.snakecase';
-
 	export async function load({ page, fetch }) {
 		let category = page.params.category;
 
@@ -76,6 +75,7 @@
 				date={post.date}
 				slug={post.slug}
 				category={post.category}
+				excerpt={post.excerpt}
 			/>
 		{/each}
 	</div>

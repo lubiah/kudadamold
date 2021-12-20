@@ -25,6 +25,11 @@
 		SearchJS = new SearchModule.Search("id");
 		SearchJS.addIndex("title");
 		SearchJS.addDocuments(documents);
+		document.addEventListener("mouseup", e => {
+			let selected = e.target;
+			let closest = selected.closest("#search-results-view");
+			if (closest === null) results.length = 0;
+		})
 	})
 </script>
 

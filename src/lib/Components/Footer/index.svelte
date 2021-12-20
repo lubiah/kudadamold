@@ -4,7 +4,7 @@
 	import Envelope from "$lib/Icons/envelope.svelte";
 	import RSS from "$lib/Icons/rss.svelte";
 	import Heart from "$lib/Icons/heart.svelte";
-	import Subscribe from "./BlogSubscribe.svelte";
+	import Subscribe from "$lib/Components/NewsletterSubscribeForm";
 </script>
 
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-14 md:relative">

@@ -6,7 +6,7 @@
 		let categories = posts.map((post) => {
 			return post.category;
 		});
-		categories = new Set(categories);
+		categories = [...new Set(categories)];
 		return {
 			props: {
 				categories

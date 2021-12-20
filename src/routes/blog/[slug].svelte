@@ -68,10 +68,12 @@
 	let relatedArticles;
 	let Card;
 	let PageProgress;
+	let CommentBox;
 
 
 	onMount(async ()=>{
-		PageProgress = await import("$lib/Components/PageProgress.svelte").then(e => e.default);
+		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
+		CommentBox = await import("$lib/Components/CommentBox").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(e => e.json().then(e.posts));
 		relatedArticles = await getRelatedArticles(metadata.title, posts);
@@ -140,7 +142,7 @@
 		{#if browser && relatedArticles && [...relatedArticles].length >= 1}
 			<div class="mt-[100px]">
 				<h3>Related Articles</h3>
-				<div class="flex overflow-auto">
+				<div class="flex overflow-auto snap-x xl:fancy-scrollbar">
 					{#each [...relatedArticles] as article (article.id)}
 						<div class="flex">
 						<svelte:component this={Card}
@@ -149,7 +151,7 @@
 						image="{article.image}"
 						date="{article.date}"
 						category="{article.category}"
-						class = "mr-3 w-[290px]"
+						class = "mr-3 w-[290px] snap-start"
 						/>
 						</div>
 					{/each}
@@ -166,6 +168,7 @@
 	</div>
 
 </article>
+<svelte:component this={CommentBox} />
 
 {#if browser}
 	<svelte:component this={PageProgress} color="tomato" height="5px" />

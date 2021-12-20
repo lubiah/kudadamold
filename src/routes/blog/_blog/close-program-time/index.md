@@ -3,6 +3,7 @@ title: Programmatically Close A Program With Python After A Certain Time
 description: Learn how to use Python to close a program at a certain time.
 category: Programming
 image: https://kudadam.sirv.com/blog/close_program_time/hero.jpg
+excerpt: Making a program which automates the closing of softwares at a certain time
 keywords:
   - automation
   - python automation

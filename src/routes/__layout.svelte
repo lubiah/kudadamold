@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 	import NavBar from '$lib/Components/Navbar';
-	import Footer from '$lib/Components/Footer.svelte';
+	import Footer from '$lib/Components/Footer';
 	import Head from 'svelte-seo';
 </script>
 

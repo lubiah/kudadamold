@@ -38,7 +38,7 @@
 	};
 
 	onMount(async ()=>{
-		SearchBar = await import("$lib/Components/BlogSearchBar.svelte").then(e=> e.default);
+		SearchBar = await import("$lib/Components/BlogSearchBar").then(e=> e.default);
 	})
 	
 </script>
@@ -84,16 +84,17 @@
 	<svelte:component this={SearchBar} {documents}/>
 
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
-	<div class="overflow-x-scroll flex">
+	<div class="overflow-x-auto lg:fancy-scrollbar flex scroll-smooth snap-x">
 		<section class="flex">
 			{#each [...popular_articles] as post (post.id)}
 			<Card
-				class = "mr-3"
+				class = "mr-3 snap-start"
 				title={post.title}
 				image={post.image}
 				date={post.date}
 				slug={post.slug}
 				category={post.category}
+				excerpt={post.excerpt}
 			/>
 			{/each}
 		</section>
@@ -110,6 +111,7 @@
 				date={post.date}
 				slug={post.slug}
 				category={post.category}
+				excerpt={post.excerpt}
 			/>
 		{/each}
 	</section>

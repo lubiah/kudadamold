@@ -57,6 +57,18 @@ body::-webkit-scrollbar-thumb:active{
 	::selection {
 		@apply bg-[tomato] text-white;
 	}
+
+	.fancy-scrollbar::-webkit-scrollbar {
+		@apply h-[10px] dark:bg-gray-800 bg-[color:var(--scrollbar-background)];
+	}
+
+	.fancy-scrollbar::-webkit-scrollbar-thumb {
+		@apply bg-[color:var(--scrollbar-thumb)] rounded;
+	}
+
+	.fancy-scrollbar::-webkit-scrollbar-thumb:active {
+		@apply bg-[#484444];
+	}
 	
 	.icon {
 		@apply h-[1rem] inline;
@@ -133,7 +145,7 @@ body::-webkit-scrollbar-thumb:active{
 	html {
 		scroll-behavior: smooth;
 		scrollbar-width: thin;
-	}
+	} 
 
 
 	b,
@@ -202,8 +214,20 @@ body::-webkit-scrollbar-thumb:active{
 		@apply text-white bg-[color:var(--primary-color)] px-4 py-1 text-base rounded my-2;
 	}
 
-	button * {
-		@apply text-white dark:text-white;
+	button[data-theme="secondary"] {
+		@apply bg-blue-600;
+	}
+
+	button:hover {
+		transform: translateY(0.5px);
+	}
+
+	button:active {
+		transform: translateY(2px)
+	}
+
+	button *, button > * {
+		@apply text-white dark:text-white !important;
 	}
 
 	code {

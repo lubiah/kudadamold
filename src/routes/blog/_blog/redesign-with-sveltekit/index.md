@@ -3,6 +3,7 @@ title: Migrating My Website From Sapper To SvelteKit
 description: A step by step process showing how I migrated my website from Sapper to Svelte-kit
 category: Personal
 image: https://kudadam.sirv.com/blog/redesign-with-sveltekit/hero.webp
+excerpt: Finally, I migrated my website to SvelteKit after using Sapper for some time, the process was not hard at all
 keywords:
   - Migrating Sapper to SvelteKit
   - Migrating Sapper

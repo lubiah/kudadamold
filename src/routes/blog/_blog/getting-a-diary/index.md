@@ -3,6 +3,7 @@ title: Getting a diary
 description: The importance of diaries and why you should get yourself one
 category: Personal
 image: https://kudadam.sirv.com/blog/person_writing.jpg
+excerpt: How I got involved with diaries and blah blah blah...
 keywords:
   - diary
   - getting diary

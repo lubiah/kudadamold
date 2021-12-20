@@ -3,6 +3,7 @@ title: Setting Up Sapper Project With Cpanel And Deploying With DeployHQ
 description: How to set up your sapper website with cpanel and auto deploying it with deployhq from your git repository
 category: Tips and Tricks
 image: https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/hero.jpg
+excerpt: Learn how to use DeployHQ to automatically deploy your Svelte website when you push to github
 keywords:
   - deployhq
   - cpanel
@@ -145,7 +146,7 @@ Also, if you do not want to use a `.deployignore` file, you can create the set o
 The build pipeline refers to commands which we want to run on DeployHQ's server before uploading them to our server. This is a very good place for us to build our sapper project and upload only the end results to the server.
 
 ![Using deployHQ's build pipeline](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building_files.jpg)
- 
+
 <b>Steps...</b>
 
 - Select NPM as the template

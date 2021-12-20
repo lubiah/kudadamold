@@ -2,6 +2,7 @@
 title: Simple Search Tool In HTML And JavaScript
 description: Make a simple search engine using only html and client-side JavaScript, no backend needed
 image: https://kudadam.sirv.com/blog/search_tool_html_javascript/hero.jpg
+excerpt: Learn how to make a simple search tool for your website in HTML and JavaScript
 category: Programming
 keywords:
   - javascript search tool

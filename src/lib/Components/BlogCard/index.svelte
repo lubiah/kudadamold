@@ -6,7 +6,8 @@ The Card component is used to house the blog posts
 	export let image  = "https://kudadam.sirv.com/logo/logo.png?q=2&canvas.color=white";
 	export let title;
 	export let date;
-	export let slug = "";
+	export let slug;
+	export let excerpt = "";
 	export let category;
 	let Class = "";
 	export let hide_category = false;
@@ -18,20 +19,20 @@ The Card component is used to house the blog posts
 	}
 </script>
 
-<article id="card" class="md:mr-6 w-[350px] border border-gray-300 dark:border-gray-600 hover:shadow-lg rounded mb-9 relative {Class}">
+<article id="blog_card" class="dark:bg-slate-900 md:mr-6 w-[350px] border border-gray-300 dark:border-gray-600 hover:shadow-lg rounded mb-9 relative {Class}">
 	<a
 		sveltekit:prefetch
 		href="/blog/{slug}"
 		class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500"
 		id="card-title"
 	>
-		<img src={image} class="w-full h-[200px]" alt="" id="card-image" />
+		<img src={image} class="w-full h-[160px]" alt="" id="card-image" />
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{snakeCase(category)}">
 		<span class="absolute px-2 text-white rounded top-[5px] left-[5px] category_{snakeCase(category)}">{category}</span></a
 	>
-	<div class="p-2">
-		<h2 class="text-xl m-0 pb-8 font-semibold dark:font-medium">
+	<div class="p-2 pb-8" id="blog_card__body">
+		<h2 class="text-xl m-0 pb-1 font-semibold dark:font-medium">
 			<a
 				sveltekit:prefetch
 				href="/blog/{slug}"
@@ -39,6 +40,9 @@ The Card component is used to house the blog posts
 				id="card-title">{title}</a
 			>
 		</h2>
+		<p id="blog_card__excerpt" class="text-base leading-5">
+			{excerpt}
+		</p>
 		<small class="text-xs absolute bottom-[5px] font-semibold dark:text-gray-300 text-gray-600">
 			<time datetime={date}>{new Date(date).toDateString()}</time>
 		</small>
@@ -46,7 +50,7 @@ The Card component is used to house the blog posts
 </article>
 
 <style type="text/css">
-	#card:hover #card-title {
+	#blog_card:hover #card-title {
 		color: var(--primary-color);
 	}
 
@@ -59,5 +63,17 @@ The Card component is used to house the blog posts
 .category_personal {
 	background: var(--category-personal)
 }
+
+ #blog_card__excerpt {
+ 	-webkit-box-orient: vertical;
+ 	-webkit-line-clamp:2;
+ 	display: -webkit-box;
+ 	overflow: hidden;
+ }
+
+ #blog_card:hover  #blog_card__excerpt {
+ 	-webkit-box-orient: unset;
+ 	display: block;
+ }
 
 </style>

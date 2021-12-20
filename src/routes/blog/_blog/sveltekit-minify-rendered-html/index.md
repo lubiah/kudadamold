@@ -2,6 +2,7 @@
 title: Minify Rendered HTML in SvelteKit
 description: How to minify the HTML which svelte-kit renders
 category: Programming
+excerpt: Svelte-kit doesn't minify the HTML it renders, Yeah! But there is a way you can do it
 keywords:
   - svelte
   - svelte-kit

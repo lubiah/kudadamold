@@ -2,6 +2,7 @@
 title: Preventing Key Delay In TextArea Using Event
 description: A tutorial showing how to prevent a key delay in a textarea element when using event to listen for change
 category: Programming
+excerpt: When using the onkeypress event to grab text, it's always 1 character delayed. Learn how to solve that problem
 image: https://kudadam.sirv.com/blog/prevent_key_delay_textarea/hero.jpg
 keywords:
   - textarea events

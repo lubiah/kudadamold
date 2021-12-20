@@ -3,6 +3,7 @@ title: Designing A Simple Keylogger In Python
 description: A tutorial which teaches you how to develop a simple keylogger in Python. Keyloggers are applications which are used to log keys when typed, naturally, keyloggers are not illegal unless used unlawful purposes
 category: Programming
 image: https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/hero.jpg
+excerpt: With Python, you can make a keylogger which will log the keypress of the keyboard and save the contents to a file
 keywords:
   - keylogger
   - keylogging in python
@@ -14,7 +15,9 @@ date: 2021-04-24
 >
 > ~ [Wikipedia](https://en.wikipedia.org/wiki/Keystroke_logging) ~
 
+<p class="intro">
 The above context is extracted from Wikipedia and it explains what a keylogger is and what it does. Well, I hope most of you know what a keylogger is. Keyloggers are in two forms, software and hardware but the one we are going to be creating today is the software form of a keylogger. It is going to listen to all the key strokes and log them to a file. Cool right?
+</p>
 
 Before we start, you need to be conversant with the python programming language, it is what we are going to use in this tutorial. Let's get started.
 

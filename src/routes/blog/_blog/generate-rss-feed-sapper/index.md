@@ -2,6 +2,7 @@
 title: How To Generate RSS Feed For Your Sapper Website
 description: How to generate an RSS feed for your sapper based website using javascript
 category: Programming
+excerpt: Learn how to generate an RSS feed for your Svelte/Sapper website
 image: https://kudadam.sirv.com/blog/generate_rss_feed_sapper/hero.jpg
 keywords:
   - rss

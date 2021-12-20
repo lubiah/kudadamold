@@ -43,13 +43,15 @@
 		alt=""
 		class="my-4 p-1 border rounded mx-auto"
 	/>
-	<p>
+	<section>
+		<h2>Who am I?</h2>
+		<p>
 		Hello World <img
 			alt="👋"
 			class="emojione"
 			src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f44b.png"
 			title=":wave:"
-		/>, Am Lucretius Biah
+		/>, Am Lucretius Biah.
 		<img
 			alt="👦"
 			class="emojione"
@@ -58,18 +60,19 @@
 		/><br /> Well, to describe myself on this page is a bit difficult as it is hard to find the
 		right words to use.<br /> Anyway, let's see how this ends...
 	</p>
+	</section>
+	
 	<p>
 		My name is Lucretius and welcome to my part of the internet.<br /> Am a 17 y/o self-taught developer
 		and I can code in 8+ programming languages but my favourites are Python, JavaScript, Ruby and C++.
 	</p>
 	<p>
-		Am based somewhere in Wakanda🇬🇭.<br /> Professionally, am a full stack developer. For Front-end,
-		I normally use HTML, JavaScript and CSS or Sass. Then for backend development, I use PHP or Python
-		or Ruby. When it comes to handling databases, I use MySQL. Also, I use Java when am developing android
-		applications.
+		Am based somewhere in Wakanda🇬🇭.<br /> Professionally, am a full stack developer with 5+ experience, I kinda started coding early.
 	</p>
-	<p>
-		<strong>When am not coding...</strong><br /> Am a bookworm<img
+	<section>
+		<h2>When am not coding...</h2>
+		<p>
+		 Am a bookworm<img
 			alt="📘"
 			class="emojione"
 			src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4d8.png"
@@ -77,8 +80,8 @@
 		/>. My favourite story book is
 		<a href="https://en.wikipedia.org/wiki/The_Hardy_Boys">Hardy Boys</a>
 		by <a href="https://en.wikipedia.org/wiki/Franklin_W._Dixon">Franklin Dixon</a>.<br /> It's a
-		series, am yet to finish it.<br /> Am also a gamer, I mostly complete every game I start
-		<em class="text-muted">(Not bragging)</em>. I have completed about 35+ games without cheats<img
+		series, am yet to finish it. Also, I spend most times on <a href="https://play.google.com/store/apps/details?id=com.light.reader.books&hl=en&gl=US" target="_blank">Light Reader app</a> reading novels.<br /> Am a gamer, I mostly complete every game I start
+		<em class="text-muted">(Not bragging)</em>. I have completed about 35+ and without cheats<img
 			alt="😎"
 			class="emojione"
 			src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f60e.png"
@@ -86,9 +89,10 @@
 		/>.<br /> I love music too, but I don't have a favourite.<br /> I write in my diary in my spare time,
 		code when I have a computer close-by and play games when am bored.
 	</p>
-	<p>That's all I can say for now.<br /> Below are some stats about me</p>
-</div>
-<div class="flex flex-wrap gap-3 my-2">
+	</section>
+	<section>
+		<h2>Some stats about me</h2>
+		<div class="flex flex-wrap gap-3 my-5">
 	<div class="">
 		<img
 			src="https://github-readme-stats.vercel.app/api?username=kudadam&count_private=true&show_icons=true&theme=radical"
@@ -105,6 +109,10 @@
 		<img src="https://github-readme-stats.vercel.app/api/wakatime?username=Lucretius" alt="" />
 	</div>
 </div>
+	</section>
+</div>
+
+
 
 <style type="text/css">
 	.emojione {
