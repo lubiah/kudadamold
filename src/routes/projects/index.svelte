@@ -48,7 +48,7 @@ openGraph={{
 
 <main class="xl:w-[65%] mx-auto">
 	<div class="text-center">
-		<h2>Projects</h2>
+		<h1 class= "font-bold">Projects</h1>
 		<p class="italic">Stuff curated by me</p>
 	</div>
 
