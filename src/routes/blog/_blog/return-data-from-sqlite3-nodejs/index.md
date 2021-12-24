@@ -1,5 +1,6 @@
 ---
 title: "JavaScript: How To Return Data From A Function In Sqlite3"
+image: https://kudadam.sirv.com/blog/return-data-from-sqlite3-nodejs/hero.jpg
 description: How to return data from a function when using Sqlite3 in node javascript
 excerpt: Whiles trying to implement a read counter for my website this morning, I run into a bug. The function which returned the query from the database always returned undefined
 category: Programming
