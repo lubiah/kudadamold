@@ -1,5 +1,5 @@
 <script>
-	import ToolzList from './ToolList.svelte';
+	import ToolzList from '$lib/Components/ToolsList';
 </script>
 
 <div id="main" class="mx-auto md:w-2/3 mt-10">

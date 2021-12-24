@@ -1,9 +1,9 @@
-<script type="text/javascript">
+	<script type="text/javascript">
 	import { scale } from 'svelte/transition';
 	import { afterUpdate } from 'svelte';
 	let hidden = true;
 
-	const fetch_tools = async () => {
+	const fetchTools = async () => {
 		let res = await fetch('/toolz.json');
 		let { tools } = await res.json();
 		return tools;
@@ -20,15 +20,15 @@
 
 <div id="tools-list-main">
 	{#if !hidden}
-		{#await fetch_tools() then tools}
-			<div transition:scale class="bg-green-500 rounded my-4 overflow-y-scroll" id="tools-list">
+		{#await fetchTools() then tools}
+			<div transition:scale class="bg-white p-2 border-2 dark:border-gray-800 fancy-scrollbar dark:bg-gray-900  text-inherit rounded my-4 overflow-y-scroll" id="tools-list">
 				<ul class="!p-0 list-none">
 					{#each tools as tool (tool.id)}
 						<li class="block w-full">
 							<a
 								on:click={() => (hidden = true)}
 								href={tool.url}
-								class="!block w-full px-1 py-1 hover:no-underline hover:bg-green-600 text-white">{tool.name}</a
+								class="!block w-full px-1 py-1 hover:no-underline text-inherit">{tool.name}</a
 							>
 						</li>
 					{/each}
@@ -59,7 +59,7 @@
 	</button>
 </div>
 
-<style type="text/css">
+<style type="text/postcss">
 	#tools-list-main {
 		position: fixed;
 		bottom: 10px;
@@ -69,17 +69,7 @@
 	button {
 		float: right;
 	}
-	ul li a {
-		@apply text-white;
-	}
 	#tools-list {
 		max-height: 350px;
-	}
-	#tools-list::-webkit-scrollbar {
-		width: 3px;
-		background-color: white;
-	}
-	#tools-list::-webkit-scrollbar-thumb {
-		background-color: #ff6969;
 	}
 </style>

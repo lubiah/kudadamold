@@ -114,6 +114,25 @@
 		image: `${metadata.image}`,
 		imageAlt: `${metadata.title}`
 	}}
+
+	jsonLd={{
+		"@type": "TechArticle",
+		headline: `${metadata.title}`,
+		keywords: `${metadata.keywords}`,
+		datePublished: `${new Date(metadata.date).toISOString()}`,
+		image: [`${metadata.image ? metadata.image : "https://kudadam.sirv.com/logo/logo.png?q=30"}`],
+		author: {
+			"@type": "Person",
+			"name": "Lucretius Biah",
+			"url": "https://www.kudadam.com/about"
+		},
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": `https://www.kudadam.com/blog/${metadata.slug}`
+		}
+
+
+	}}
 />
 
 <article class="my-4 xl:w-[65%] mx-auto" id="post" role="article">
@@ -149,6 +168,7 @@
 						title="{article.title}"
 						slug="{article.slug}"
 						image="{article.image}"
+						excerpt="{article.excerpt}"
 						date="{article.date}"
 						category="{article.category}"
 						class = "mr-3 w-[290px] snap-start"
