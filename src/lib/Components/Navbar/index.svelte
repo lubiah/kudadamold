@@ -89,7 +89,7 @@
 		>
 			<path
 				stroke-linecap="round"
-				class="text-gray-700 dark:text-white"
+				class="!text-gray-700 !dark:text-white"
 				stroke-linejoin="round"
 				stroke-width="2"
 				d="M4 6h16M4 12h16M4 18h16"
