@@ -1,6 +1,6 @@
 	<script type="text/javascript">
 	import { scale } from 'svelte/transition';
-	import { afterUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 	let hidden = true;
 
 	const fetchTools = async () => {
@@ -9,7 +9,7 @@
 		return tools;
 	};
 
-	afterUpdate(() => {
+	onMount(() => {
 		document.addEventListener('mouseup', (e) => {
 			let selected = e.target;
 			let closest = selected.closest('#tools-list-main');
@@ -21,14 +21,14 @@
 <div id="tools-list-main">
 	{#if !hidden}
 		{#await fetchTools() then tools}
-			<div transition:scale class="bg-white p-2 border-2 dark:border-gray-800 fancy-scrollbar dark:bg-gray-900  text-inherit rounded my-4 overflow-y-scroll" id="tools-list">
+			<div transition:scale class="bg-white border-2 dark:border-gray-800 fancy-scrollbar dark:bg-gray-900  text-inherit rounded my-4 overflow-y-scroll" id="tools-list">
 				<ul class="!p-0 list-none">
 					{#each tools as tool (tool.id)}
-						<li class="block w-full">
+						<li class="block w-full hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-white">
 							<a
 								on:click={() => (hidden = true)}
 								href={tool.url}
-								class="!block w-full px-1 py-1 hover:no-underline text-inherit">{tool.name}</a
+								class="!block w-full px-2 py-1 visited:text-inherit dark:visited:text-white hover:no-underline dark:hover:!text-white hover:!text-inherit text-inherit">{tool.name}</a
 							>
 						</li>
 					{/each}
@@ -39,7 +39,7 @@
 
 	<button
 		class:rotate-45={!hidden}
-		class="transition-transform bg-blue-500 hover:bg-red-500 text-white transform rounded-full p-4"
+		class="transition-transform hover:bg-red-500 text-white transform rounded-full p-4"
 		on:click={() => (hidden = !hidden)}
 	>
 		<svg

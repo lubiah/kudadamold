@@ -100,5 +100,41 @@
 		"description": "Duplicate text any number of times",
 		"created": "2021-06-02",
 		"updated": null
+	},
+	{
+		"name": "Celsius To Fahrenheit Converter",
+		"description": "Convert temperature in celsius to fahrenheit",
+		"created": "2021-12-24",
+		"updated": null
+	},
+	{
+		"name": "Fahrenheit To Celsius Converter",
+		"description": "Convert temperature in Fahrenheit to Celsius",
+		"created": "2021-12-24",
+		"updated": null
+	},
+	{
+		"name": "Celsius To Kelvin Converter",
+		"description": "Convert temperature in Celsius To Kelvin",
+		"created": "2021-12-24",
+		"updated": null
+	},
+	{
+		"name": "Fahrenheit To Kelvin Converter",
+		"description": "Convert temperature in Fahrenheit to Kelvin",
+		"created": "2021-12-24",
+		"updated": null
+	},
+	{
+		"name": "Kelvin To Celsius Converter",
+		"description": "Convert temperature in Kelvin to Celsius",
+		"created": "2021-12-24",
+		"updated": null
+	},
+	{
+		"name": "Kelvin To Fahrenheit Converter",
+		"description": "Convert temperature in Kelvin To Fahrenheit",
+		"created": "2021-12-24",
+		"updated": null
 	}
 ]

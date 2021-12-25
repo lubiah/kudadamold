@@ -93,7 +93,7 @@ body::-webkit-scrollbar-thumb:active{
 	}
 
 	input:read-only {
-		@apply !bg-blue-200 !text-gray-700;
+		@apply dark:!bg-zinc-800 dark:!text-inherit !bg-blue-200 !text-gray-700;
 	}
 
 	input[type='checkbox'],

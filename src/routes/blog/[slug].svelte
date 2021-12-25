@@ -50,20 +50,6 @@
 <script type="text/javascript">
 	export let metadata, content, meta;
 
-	let comment_loaded = false;
-	const loadComments = ()=>{
-		let script_tag = document.createElement("script");
-		script_tag.setAttribute("repo","kudadam/kudadam.com");
-		script_tag.setAttribute("issue-term","title");
-		script_tag.setAttribute("src","https://utteranc.es/client.js");
-		script_tag.setAttribute("label","Comment");
-		script_tag.setAttribute("theme","preferred-color-scheme");
-		script_tag.setAttribute("crossorigin","anonymous");
-		script_tag.setAttribute("async",true);
-		document.querySelector("#comment__box").appendChild(script_tag);
-		comment_loaded = true;
-	}
-
 
 	let relatedArticles;
 	let Card;
@@ -179,11 +165,6 @@
 			</div>
 		{/if}
 		
-		<div id="comment__box">
-			{#if !comment_loaded}
-				<button class="block mt-6 mx-auto !py-2" on:click={loadComments}>Load/Add Comment</button>
-			{/if}
-		</div>
 			
 	</div>
 
