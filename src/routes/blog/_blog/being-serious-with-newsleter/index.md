@@ -10,6 +10,7 @@ keywords:
 tags:
   - newsletter
 date: 2021-12-24 14:56
+image:https://kudadam.sirv.com/blog/being-serious-with-newsleter/hero.jpg
 ---
 
 <p class="intro">
