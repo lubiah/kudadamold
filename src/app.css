@@ -1,0 +1,414 @@
+:root {
+	--primary-color: tomato;
+	--primary-color-deep: #ff3915;
+	--light-text-color: #374151;
+	--dark-text-color: #d1d5db;
+	--scrollbar-background: #dadada;
+	--scrollbar-thumb: #6f6f6f;
+	--category-programming: orange;
+	--category-tips-and-tricks: #142f54;
+	--category-personal: #01a9bc;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+	width: 8px;
+	background: var(--scrollbar-background);
+}
+body::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-thumb);
+}
+body::-webkit-scrollbar-thumb:active {
+	background: #484444;
+}
+
+* :focus-visible {
+	outline: none;
+}
+
+* .dark {
+	@apply transition-colors;
+	box-sizing: border-box;
+}
+
+.note {
+	@apply p-4 my-3 bg-gray-300 rounded dark:text-black dark:bg-slate-300;
+}
+
+.note::before {
+	content: 'Note: ';
+	@apply block italic text-base font-bold text-green-800;
+}
+
+@layer base {
+	body {
+		font-family: Inter, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,
+			sans-serif;
+		@apply lg:dark:font-light dark:bg-slate-900 dark:text-gray-300 text-gray-700 text-[1.15rem];
+	}
+
+	::selection {
+		@apply bg-[tomato] text-white;
+	}
+
+	.fancy-scrollbar::-webkit-scrollbar {
+		@apply h-[10px] w-[10px] dark:bg-gray-800 bg-[color:var(--scrollbar-background)];
+	}
+
+	.fancy-scrollbar::-webkit-scrollbar-thumb {
+		@apply bg-[color:var(--scrollbar-thumb)] rounded;
+	}
+
+	.fancy-scrollbar::-webkit-scrollbar-thumb:active {
+		@apply bg-[#484444];
+	}
+
+	.icon {
+		@apply h-[1rem] inline;
+	}
+
+	* {
+		@apply leading-relaxed;
+	}
+
+	kbd {
+		@apply bg-black text-white rounded px-2 py-0.5 border border-gray-500 mx-3;
+		box-shadow: 3px 0.5px black;
+	}
+
+	input:focus-visible,
+	textarea:focus-visible {
+		border: 1px solid tomato;
+	}
+
+	input[type='search']::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+	}
+
+	input:read-only {
+		@apply dark:!bg-zinc-800 dark:!text-inherit !bg-blue-200 !text-gray-700;
+	}
+
+	input[type='checkbox'],
+	input[type='radio'] {
+		width: unset;
+	}
+
+	.hoverable {
+		@apply dark:hover:bg-gray-800 hover:bg-gray-200;
+	}
+
+	input {
+		@apply dark:bg-gray-800  border border-gray-300 px-1 rounded p-0.5 dark:border-0 w-full;
+	}
+
+	textarea {
+		@apply border-gray-300 border rounded dark:bg-gray-800 dark:border-0 dark:text-white w-full p-1;
+	}
+
+	ol,
+	ul {
+		@apply list-inside;
+		padding-inline-start: 10px;
+	}
+
+	ol ol,
+	ul ul {
+		padding-inline-start: 30px;
+	}
+
+	li > *:first-child {
+		display: inline;
+	}
+
+	ol {
+		list-style-type: number;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ul li::marker,
+	ol li::marker {
+		color: var(--primary-color);
+		@apply font-semibold;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		scrollbar-width: thin;
+	}
+
+	b,
+	strong {
+		@apply font-medium;
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--primary-color);
+	}
+
+	h1 {
+		@apply dark:text-white;
+		font-size: clamp(33px, 1em + 2vw, 45px);
+		margin: 24px;
+	}
+	h2 {
+		font-size: clamp(28px, 1em + 2vw, 35px);
+		margin: 10px;
+	}
+	h3 {
+		font-size: clamp(23px, 1em + 2vw, 26px);
+		margin: 24px;
+	}
+	h4 {
+		font-size: clamp(20px, 1em + 2vw, 22px);
+		margin: 24px;
+	}
+	h5 {
+		font-size: clamp(16px, 1em + 2vw, 19px);
+		margin: 24px;
+	}
+	h6 {
+		font-size: clamp(13px, 1em + 2vw, 15px);
+		margin: 24px;
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-semibold;
+	}
+
+	a {
+		color: var(--primary-color);
+	}
+
+	a:visited {
+		@apply text-red-500;
+	}
+
+	a:hover {
+		@apply text-blue-500 dark:text-blue-300;
+	}
+
+	blockquote::before {
+		content: '\201C';
+		line-height: 1;
+		@apply absolute w-[20px] text-[80px] top-2 left-0 block font-bold;
+	}
+
+	blockquote::after {
+		content: '\201D';
+		line-height: 1;
+		@apply text-[80px] absolute right-0 font-bold w-[20px] block;
+	}
+
+	blockquote {
+		@apply relative p-9 pb-2 italic my-12;
+		border-left-color: var(--primary-color);
+	}
+
+	button,
+	button[type='submit'] {
+		@apply text-white bg-[color:var(--primary-color)] px-4 py-1 text-base rounded my-2;
+	}
+
+	button[data-theme='secondary'] {
+		@apply bg-blue-600;
+	}
+
+	button:hover {
+		transform: translateY(0.5px);
+	}
+
+	button:active {
+		transform: translateY(2px);
+	}
+
+	button *,
+	button > * {
+		@apply text-white dark:text-white !important;
+	}
+
+	code {
+		@apply leading-relaxed px-[1.5px] py-0.5 break-words dark:xl:font-light rounded bg-[#E9E9E9] dark:bg-[#3F3F46];
+		font-family: monospace;
+	}
+
+	pre > code {
+		display: block;
+		padding: 5px;
+		overflow: auto;
+		scrollbar-width: thin;
+	}
+
+	code::-webkit-scrollbar {
+		@apply w-[3px] bg-transparent;
+	}
+	code::-webkit-scrollbar:horizontal {
+		@apply h-[3px];
+	}
+
+	code::-webkit-scrollbar-thumb:active {
+		background: #484444;
+	}
+
+	code::-webkit-scrollbar-thumb {
+		@apply bg-[color:var(--scrollbar-thumb)];
+	}
+
+	pre {
+		width: inherit;
+	}
+
+	pre[class*='language-'] {
+		padding: 0px !important;
+	}
+
+	code[class*='language-'] {
+		@apply text-base;
+	}
+
+	table,
+	thead,
+	td,
+	th {
+		@apply border border-gray-300 dark:border-gray-500;
+	}
+
+	table > thead {
+		@apply font-semibold;
+	}
+
+	table td,
+	th {
+		@apply p-2;
+	}
+
+	.text-inherit {
+		color: inherit;
+	}
+}
+
+@screen lg {
+	h1 {
+		font-size: 40px;
+		margin: 20px;
+	}
+	h2 {
+		font-size: 32px;
+		margin: 10px;
+	}
+	h3 {
+		font-size: 28px;
+		margin: 24px;
+	}
+	h4 {
+		font-size: 24px;
+		margin: 24px;
+	}
+	h5 {
+		font-size: 20px;
+		margin: 24px;
+	}
+	h6 {
+		font-size: 16px;
+		margin: 24px;
+	}
+}
+
+/* inter-100 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 100;
+	font-display: swap;
+	src: local(''), url('/fonts/inter-v3-latin-100.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-100.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-200 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 200;
+	font-display: swap;
+	src: local(''), url('/fonts/inter-v3-latin-200.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-200.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-300 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 300;
+	src: local(''), url('/fonts/inter-v3-latin-300.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-regular - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''), url('/fonts/inter-v3-latin-regular.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-regular.woff')
+			format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-500 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: local(''), url('/fonts/inter-v3-latin-500.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-600 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: local(''), url('/fonts/inter-v3-latin-600.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-700 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''), url('/fonts/inter-v3-latin-700.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-800 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 800;
+	src: local(''), url('/fonts/inter-v3-latin-800.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-900 - latin */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: local(''), url('/fonts/inter-v3-latin-900.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@tailwind components;
+@tailwind utilities;
