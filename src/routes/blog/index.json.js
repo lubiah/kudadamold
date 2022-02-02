@@ -2,8 +2,6 @@ import Path from "path";
 import chunk from 'chunk';
 import { mode } from "$app/env";
 
-
-
 let files = new Array();
 let imports = import.meta.glob("./_blog/**/*.md");
 for (let key in imports){
@@ -21,14 +19,13 @@ files = Promise.all(files.map(async file=>{
 	);
 
 
-export async function get({ query }) {
-
+export async function get({ url }) {
 	let posts = await files;
 	posts = posts.filter(file=> file !== undefined);
 	posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 	let unsorted = posts;
 	posts = chunk(posts,6);
-
+	let query = url.searchParams
 	let results = new Object();
 	results['posts'] = posts[0];
 
@@ -45,24 +42,31 @@ export async function get({ query }) {
 		results['posts'] = unsorted;
 	}
 
-	if (query.get('popular_articles')){
-		let sqlite = await import("sqlite3").then(sqlite => {return sqlite.default});
-		const db =  new sqlite.Database("./database.db", err=>{});
-		let res = new Promise((resolve, reject)=>{
-			db.serialize(()=>{
-				db.all("SELECT * FROM blog ORDER BY read_times DESC LIMIT 6", async (err,data)=>{
-					if (err) reject(err);
-					else
-						resolve(data);
-				})
-			})
-		});
-		res = await res;
-		results['popular_articles'] = res;
-	}
-	return {
-		body: {
-			...results
+	//if (query.get('popular_articles')){
+	//	let sqlite = await import("sqlite3").then(sqlite => {return sqlite.default});
+		//const db =  new sqlite.Database("./database.db", err=>{});
+		//let res = new Promise((resolve, reject)=>{
+		//	db.serialize(()=>{
+			//	db.all("SELECT * FROM blog ORDER BY read_times DESC LIMIT 6", async (err,data)=>{
+			//		if (err) reject(err);
+			//		else
+		//				resolve(data);
+			//	})
+		//	})
+	//	});
+		
+//	}
+	//res = await res;
+	//results['popular_articles'] = res;
+	const response = new Response(JSON.stringify(results),{
+		headers: {
+			"Content-Type":"application/json"
 		}
-	};
+	});
+
+	return {
+		status: 201,
+		body: JSON.stringify(results)
+	}
+
 }

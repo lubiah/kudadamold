@@ -6,7 +6,7 @@
 </script>
 
 <NavBar/>
-	<div class="container mx-auto min-h-screen mt-20 px-3" id="layout__container">
-		<slot />
-	</div>
-<Footer/>
+<div class="container mx-auto min-h-screen mt-20 px-3" id="layout__container">
+<slot />
+</div>
+<Footer />
