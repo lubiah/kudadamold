@@ -1,6 +1,7 @@
 import Path from "path";
 import chunk from 'chunk';
 import { mode } from "$app/env";
+import sqlite from "sqlite3";
 
 let files = new Array();
 let imports = import.meta.glob("./_blog/**/*.md");
@@ -42,31 +43,10 @@ export async function get({ url }) {
 		results['posts'] = unsorted;
 	}
 
-	//if (query.get('popular_articles')){
-	//	let sqlite = await import("sqlite3").then(sqlite => {return sqlite.default});
-		//const db =  new sqlite.Database("./database.db", err=>{});
-		//let res = new Promise((resolve, reject)=>{
-		//	db.serialize(()=>{
-			//	db.all("SELECT * FROM blog ORDER BY read_times DESC LIMIT 6", async (err,data)=>{
-			//		if (err) reject(err);
-			//		else
-		//				resolve(data);
-			//	})
-		//	})
-	//	});
-		
-//	}
-	//res = await res;
-	//results['popular_articles'] = res;
-	const response = new Response(JSON.stringify(results),{
-		headers: {
-			"Content-Type":"application/json"
-		}
-	});
 
 	return {
-		status: 201,
 		body: JSON.stringify(results)
 	}
 
+	
 }
