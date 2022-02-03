@@ -38,6 +38,19 @@
 		image: 'https://kudadam.sirv.com/logo/logo.png',
 		imageAlt: 'Logo of Kudadam'
 	}}
+
+	jsonLd={{
+		"@type": "Website",
+		url: "https://www.kudadam.com",
+		potentialAction: {
+			"@type": "SearchAction",
+			target: {
+				"@type": "EntryPoint",
+				urlTemplate: "https://www.kudadam.com/search?q={search_term_string}"
+			},
+			"query-input": "required name=search_term_string"
+		}
+	}}
 />
 <div class="xl:w-[65%] mx-auto">
 <section>

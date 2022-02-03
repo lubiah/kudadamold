@@ -10,6 +10,7 @@
 	import Header from "svelte-headroom";
 	import Search from "$lib/Components/SiteSearch";
 
+
 	let hidden = true;
 	let nav_links = [
 		{ name: 'About', url: '/about', id: 1 },
@@ -86,29 +87,15 @@ openGraph={{
 			class="hidden md:inline text-[color:var(--light-text-color)] dark:text-white">Kudadam</span
 		></a>
 	<Search class="ml-auto"/>	
-	<button
-		aria-label="{hidden === true ? "Open" : "Close"}"
-		class="ml-auto px-1 md:hidden bg-transparent"
+	<button title="Open or close navigation bar"
+		aria-label="{hidden === true ? "open" : "close"}"
+		class="ml-auto px-1 md:hidden bg-transparent !text-inherit"
 		on:click={() => {
 			hidden = !hidden;
 		}}
-	>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="h-7 w-7"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-		>
-			<path
-				stroke-linecap="round"
-				class="!text-gray-700 !dark:text-white"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M4 6h16M4 12h16M4 18h16"
-			/>
-		</svg>
-	</button>
+	><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 !text-inherit" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+		<path stroke-linecap="round" stroke-linejoin="round" class="!text-gray-700 dark:text-gray-300" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+	</svg></button>
 	<div class="block md:flex md:ml-auto w-full md:w-auto duration-500 overflow-y-hidden" class:hidden id="nav-menu">
 		<ul class="md:flex list-none">
 			{#each nav_links as { name, url, id } (id)}
