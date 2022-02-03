@@ -27,20 +27,20 @@
 
 	   
 
-	export async function load({ page, fetch }) {
-		const slug = page.params.slug;
+	export async function load({ params }) {
+		const slug = params.slug;
 		try {
 			let meta;
 			let component = await import(`./_blog/${slug}/index.md`);
 			component.metadata["slug"] = slug;
 
-			let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
-			meta = data;
+			//let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
+			//meta = data;
 			return {
 				props: {
 					metadata: component.metadata,
 					content: component.default,
-					meta
+					//meta
 				}
 			};
 		} catch (e) {}

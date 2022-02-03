@@ -1,32 +1,28 @@
 <script context="module">
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
+	import { paginate, PaginationNav } from "svelte-paginate";
 	import { onMount } from "svelte";
 	export async function load({ fetch }) {
-		let res = await fetch('/blog.json?limit=true&popular_articles=true');
+		let res = await fetch('/blog.json?all=true');
 		let json = await res.json();
-		res = await fetch("/blog.json?all=true");
-		let { posts } = await res.json();
 		if (res.ok) {
 			return {
 				props: {
-					posts: json.posts,
-					limit: json.limit,
-					all_posts: posts,
-					popular_articles: json.popular_articles
-				}
+					posts: json.posts
+					}
 			};
 		}
 	}
 </script>
 
 <script type="text/javascript">
-	export let posts, limit, all_posts, popular_articles;
-	popular_articles = popular_articles.map(item => {return item.slug});
-	popular_articles = all_posts.filter(post=>{
-		return popular_articles.includes(post.slug);
-	});
-	
+	export let posts;
+	let pageSize = 6;
+	let currentPage = 1;
+	let items = posts;
+	let firstPage = paginate({ items , pageSize, currentPage });
+	console.log(firstPage.length);
 </script>
 
 <SEO
@@ -67,7 +63,7 @@
 
 <div class="md:w-[80%] mx-auto">
 
-
+	<!--
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
 	<div class="overflow-x-auto lg:fancy-scrollbar flex scroll-smooth snap-x">
 		<section class="flex">
@@ -86,10 +82,10 @@
 		
 	</div>
 	
-
+-->
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
 	<section class="flex flex-wrap justify-center">
-		{#each posts as post (post.id)}
+		{#each firstPage as post (post.id)}
 			<Card
 				title={post.title}
 				image={post.image}
@@ -100,6 +96,10 @@
 			/>
 		{/each}
 	</section>
+	<PaginationNav let:value={pageNumber} {currentPage} totalItems={items.length} pageSize={6} limit={2} on:setPage={e=>{currentPage = e.detail.page}}>
+		<a href="/blog/page/{pageNumber}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
+		<span slot="ellipsis" class="button">...</span>
+	</PaginationNav>
 </div>
 
 
@@ -113,4 +113,9 @@
 		width: 98%;
 		background-color: tomato;
 	}
+	:global(.pagination-nav){
+		@apply text-center
+	}
 </style>
+
+

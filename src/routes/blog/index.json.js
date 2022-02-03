@@ -1,7 +1,6 @@
 import Path from "path";
 import chunk from 'chunk';
 import { mode } from "$app/env";
-import sqlite from "sqlite3";
 
 let files = new Array();
 let imports = import.meta.glob("./_blog/**/*.md");

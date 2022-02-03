@@ -219,6 +219,7 @@ body::-webkit-scrollbar-thumb:active {
 		border-left-color: var(--primary-color);
 	}
 
+	.button,
 	button,
 	button[type='submit'] {
 		@apply text-white bg-[color:var(--primary-color)] px-4 py-1 text-base rounded my-2;

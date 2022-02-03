@@ -39,7 +39,7 @@ The Card component is used to house the blog posts
 				id="card-title">{title}</a
 			>
 		</h2>
-		<p id="blog_card__excerpt" class="leading-7">
+		<p id="blog_card__excerpt" class="leading-7 text-base">
 			{excerpt}
 		</p>
 		<small class="text-xs absolute bottom-[5px] font-semibold dark:text-gray-300 text-gray-600">

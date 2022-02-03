@@ -9,7 +9,7 @@
 
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-14 md:relative">
 	<div class="px-3 flex flex-wrap justify-evenly xl:justify-center  gap-x-20 mt-4 mb-2" id="flexible">
-		<div class="xl:absolute xl:-top-8 xl:left-2 mb-6 xl:left-4">
+		<div class="xl:absolute xl:-top-8 mb-6 xl:left-4">
 			<Subscribe/>
 		</div>
 		<div>

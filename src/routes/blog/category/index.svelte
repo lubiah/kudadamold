@@ -22,6 +22,8 @@
 
 <SEO
 	title="Category • Kudadam Blog"
+	nofollow="true"
+	noindex="true"
 	description="A page which lists the various categories of the blog section"
 	OpenGraph={{
 		title: 'Category • Kudadam Blog',
