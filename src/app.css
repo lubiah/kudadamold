@@ -26,7 +26,7 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 * :focus-visible {
-	outline: none;
+	outline: 2px dashed tomato;
 }
 
 * .dark {
@@ -85,7 +85,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	input[type='search']::-webkit-search-cancel-button {
-		-webkit-appearance: none;
+		
 	}
 
 	input:read-only {
