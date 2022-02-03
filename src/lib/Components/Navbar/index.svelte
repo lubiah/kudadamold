@@ -1,4 +1,5 @@
 <script type="text/javascript">
+	import SEO from 'svelte-seo';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Moon from "$lib/Icons/moon.svelte";
@@ -7,6 +8,7 @@
 	import { browser } from "$app/env";
 	let element;
 	import Header from "svelte-headroom";
+	import Search from "$lib/Components/SiteSearch";
 
 	let hidden = true;
 	let nav_links = [
@@ -37,7 +39,25 @@
 		});
 		document.querySelector("#nav__header").parentElement.style.zIndex = 9999;
 	});
+
+	let seo = {
+		title: "Kudadam • Search | Every information on my website can be located here",
+		description: "This is where every information on my website can be located",
+		canonical: "https://www.kudadam.com/search"
+	}
 </script>
+
+<SEO
+title="{seo.title}"
+description="{seo.description}"
+nofollow=true
+canonical={seo.canonical}
+openGraph={{
+	title: `${seo.title}`,
+	description: `${seo.description}`,
+
+}}
+/>
 
 <svelte:head>
 	<script>
@@ -64,8 +84,8 @@
 		href="/" title="Go to homepage"
 		><img src="https://kudadam.sirv.com/logo/logo.png?q=5" class="h-10" height="40" width="40" alt="" /><span
 			class="hidden md:inline text-[color:var(--light-text-color)] dark:text-white">Kudadam</span
-		></a
-	>
+		></a>
+	<Search class="ml-auto"/>	
 	<button
 		aria-label="{hidden === true ? "Open" : "Close"}"
 		class="ml-auto px-1 md:hidden bg-transparent"
@@ -104,7 +124,7 @@
 					</a>
 				</li>
 			{/each}
-			<li class="p-2 pt-3 text-lg font-semibold">
+			<li class="p-2 text-lg font-semibold">
 				<span on:click={setMode} title="Change Mode">
 					{#if $mode === "light"}<Moon/>{:else}<Sun/>{/if}
 				</span>
