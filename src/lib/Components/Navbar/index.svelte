@@ -5,7 +5,7 @@
 	import Sun from "$lib/Icons/sun.svelte";
 	import { mode } from "/src/stores/store.js";
 	import { browser } from "$app/env";
-
+	let element;
 	import Header from "svelte-headroom";
 
 	let hidden = true;
@@ -35,7 +35,7 @@
 			let closest = selected.closest('nav');
 			if (closest == null) hidden = true;
 		});
-	
+		document.querySelector("#nav__header").parentElement.style.zIndex = 9999;
 	});
 </script>
 
@@ -55,7 +55,7 @@
 	</script>
 </svelte:head>
 
-<Header offset={250}>
+<Header offset={250} on:pin={()=>{document.querySelector("#nav__header").parentElement.style.zIndex="9999"}}>
 <nav id="nav__header" 
 	class="flex md:p-2 z-30 top-0 border-b w-full bg-white navbar flex-wrap dark:bg-slate-900 border-gray-200 dark:border-gray-800"
 >
@@ -66,15 +66,6 @@
 			class="hidden md:inline text-[color:var(--light-text-color)] dark:text-white">Kudadam</span
 		></a
 	>
-
-	<span class="ml-auto my-auto" on:click={setMode} title="Change Mode">
-		{#if $mode === "light"}
-			<Moon/>
-		{:else}
-			<Sun/>
-		{/if}
-	</span>
-
 	<button
 		aria-label="{hidden === true ? "Open" : "Close"}"
 		class="ml-auto px-1 md:hidden bg-transparent"
@@ -113,6 +104,11 @@
 					</a>
 				</li>
 			{/each}
+			<li class="p-2 pt-3 text-lg font-semibold">
+				<span on:click={setMode} title="Change Mode">
+					{#if $mode === "light"}<Moon/>{:else}<Sun/>{/if}
+				</span>
+			</li>
 			<slot />
 		</ul>
 	</div>
@@ -120,6 +116,10 @@
 </Header>
 
 <style type="text/postcss">
+	:global(.svelte-headroom--unpin){
+		z-index:9999
+	}
+
 	ul {
 		padding: 0px !important;
 	}
