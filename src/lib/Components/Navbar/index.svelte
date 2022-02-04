@@ -51,7 +51,7 @@
 <SEO
 title="{seo.title}"
 description="{seo.description}"
-nofollow=true
+nofollow={true}
 canonical={seo.canonical}
 openGraph={{
 	title: `${seo.title}`,
@@ -111,7 +111,7 @@ openGraph={{
 					</a>
 				</li>
 			{/each}
-			<li class="p-2 text-lg font-semibold">
+			<li class="p-3 text-lg font-semibold">
 				<span on:click={setMode} title="Change Mode">
 					{#if $mode === "light"}<Moon/>{:else}<Sun/>{/if}
 				</span>
