@@ -1,4 +1,4 @@
-import sqlite from "sqlite3"; //we import the sqlite module
+//import sqlite from "sqlite3"; //we import the sqlite module
 
 const db = new sqlite.Database("./database.db", err=>{}); //This command will create the database for us if it does not exist 
 
