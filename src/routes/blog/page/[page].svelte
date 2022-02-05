@@ -95,13 +95,3 @@
 		<span slot="ellipsis" class="button">...</span>
 	</PaginationNav>
 </div>
-
-<style type="text/postcss">
-	:global(.pagination-nav){
-		@apply text-center
-	}
-
-	:global(.option.active > a){
-		@apply bg-blue-500;
-	}
-</style>

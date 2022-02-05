@@ -1,8 +1,8 @@
 <script context="module">
     import Search from "minisearch";
     import { onMount } from "svelte";
-
-
+	import SEO from 'svelte-seo';
+    
     export const load = async ({ url, fetch  })=>{
         let data = await fetch("/blog.json?all= true");
         let query = url.searchParams.get("q");
@@ -16,6 +16,18 @@
     }
 }
 </script>
+
+<SEO
+title="{seo.title}"
+description="{seo.description}"
+nofollow={true}
+canonical={seo.canonical}
+openGraph={{
+	title: `${seo.title}`,
+	description: `${seo.description}`,
+
+}}
+/>
 
 <script>
     export let data,query;
@@ -40,6 +52,12 @@
     onMount(()=>{
         findResults()
     })
+
+    let seo = {
+		title: "Kudadam • Search | Every information on my website can be located here",
+		description: "This is where every information on my website can be located",
+		canonical: "https://www.kudadam.com/search"
+	}
 </script>
 
 

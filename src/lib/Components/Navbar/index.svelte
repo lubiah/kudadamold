@@ -1,5 +1,4 @@
 <script type="text/javascript">
-	import SEO from 'svelte-seo';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Moon from "$lib/Icons/moon.svelte";
@@ -41,24 +40,10 @@
 		document.querySelector("#nav__header").parentElement.style.zIndex = 9999;
 	});
 
-	let seo = {
-		title: "Kudadam • Search | Every information on my website can be located here",
-		description: "This is where every information on my website can be located",
-		canonical: "https://www.kudadam.com/search"
-	}
+	
 </script>
 
-<SEO
-title="{seo.title}"
-description="{seo.description}"
-nofollow={true}
-canonical={seo.canonical}
-openGraph={{
-	title: `${seo.title}`,
-	description: `${seo.description}`,
 
-}}
-/>
 
 <svelte:head>
 	<script>

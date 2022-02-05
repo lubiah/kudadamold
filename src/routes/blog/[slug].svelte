@@ -50,12 +50,10 @@
 <script type="text/javascript">
 	export let metadata, content, meta;
 
-
 	let relatedArticles;
 	let Card;
 	let PageProgress;
 	let CommentBox;
-
 
 	onMount(async ()=>{
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
@@ -140,7 +138,7 @@
 			src={metadata.image}
 			alt=""
 			id="post-image"
-			class="h-52 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
+			class="h-56 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
 			/>
 		{/if}
 			

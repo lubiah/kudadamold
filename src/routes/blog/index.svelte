@@ -61,7 +61,7 @@
 	</p>
 </div>
 
-<div class="md:w-[80%] mx-auto">
+<div class="xl:w-[80%] mx-auto">
 
 	<!--
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
@@ -83,7 +83,8 @@
 	</div>
 	
 -->
-	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
+
+	<h2 class=" my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
 	<section class="flex flex-wrap justify-center">
 		{#each firstPage as post (post.id)}
 			<Card
@@ -96,6 +97,8 @@
 			/>
 		{/each}
 	</section>
+
+
 	<PaginationNav let:value={pageNumber} {currentPage} totalItems={items.length} pageSize={6} limit={2} on:setPage={e=>{currentPage = e.detail.page}}>
 		<a href="/blog/page/{pageNumber}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
 		<span slot="ellipsis" class="button">...</span>
@@ -112,9 +115,6 @@
 		border-radius: 8px;
 		width: 98%;
 		background-color: tomato;
-	}
-	:global(.pagination-nav){
-		@apply text-center
 	}
 </style>
 

@@ -29,8 +29,7 @@ body::-webkit-scrollbar-thumb:active {
 	outline: 2px dashed tomato;
 }
 
-* .dark {
-	@apply transition-colors;
+*  {
 	box-sizing: border-box;
 }
 
@@ -41,6 +40,14 @@ body::-webkit-scrollbar-thumb:active {
 .note::before {
 	content: 'Note: ';
 	@apply block italic text-base font-bold text-green-800;
+}
+
+.pagination-nav {
+	@apply text-center;
+}
+
+.pagination-nav .active > a {
+	@apply bg-blue-500;
 }
 
 @layer base {
