@@ -11,7 +11,7 @@ const generator = SitemapGenerator(`https://www.kudadam.com`, {
 		return /^https:\/\/www\.kudadam.com\/$/.test(url)
 	}
 });
-
+ 
 const crawler = generator.getCrawler()
 const sitemap = generator.getSitemap()
 
