@@ -1,4 +1,5 @@
 <script context="module">
+	export const prerender = true;
 	export const load = async ({ params, fetch })=>{
 		let page = params.page;
 		let res = await fetch('/blog.json?all=true&limit=true');
@@ -77,7 +78,7 @@
 	</h1>
 </div>
 
-<div class="md:w-[80%] mx-auto">
+<div class="xl:w-[90%] mx-auto">
 	<section class="flex flex-wrap justify-center mt-20">
 		{#each Page as post (post.id)}
 			<Card
@@ -91,7 +92,7 @@
 		{/each}
 	</section>
 <PaginationNav let:value={pageNumber} {currentPage} totalItems={items.length} pageSize={6} limit={2} on:setPage={e=>{currentPage = e.detail.page}}>
-		<a href="/blog/page/{pageNumber}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
+		<a href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
 		<span slot="ellipsis" class="button">...</span>
 	</PaginationNav>
 </div>

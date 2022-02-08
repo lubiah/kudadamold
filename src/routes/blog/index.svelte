@@ -1,4 +1,5 @@
 <script context="module">
+	export const prerender = true;
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { paginate, PaginationNav } from "svelte-paginate";
@@ -22,7 +23,6 @@
 	let currentPage = 1;
 	let items = posts;
 	let firstPage = paginate({ items , pageSize, currentPage });
-	console.log(firstPage.length);
 </script>
 
 <SEO
@@ -61,7 +61,7 @@
 	</p>
 </div>
 
-<div class="xl:w-[80%] mx-auto">
+<div class="xl:w-[90%] mx-auto">
 
 	<!--
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
@@ -100,7 +100,7 @@
 
 
 	<PaginationNav let:value={pageNumber} {currentPage} totalItems={items.length} pageSize={6} limit={2} on:setPage={e=>{currentPage = e.detail.page}}>
-		<a href="/blog/page/{pageNumber}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
+		<a href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
 		<span slot="ellipsis" class="button">...</span>
 	</PaginationNav>
 </div>

@@ -1,4 +1,5 @@
 <script context="module">
+	export const prerender = true;
 	import SEO from 'svelte-seo';
 	import 'prismjs/themes/prism-tomorrow.css';
 	import  snakeCase from 'just-snake-case';
