@@ -1,7 +1,7 @@
 <script context="module">
 	import snakeCase from 'just-snake-case';
-	export async function load({ page, fetch }) {
-		let category = page.params.category;
+	export async function load({ params, fetch }) {
+		let category = params.category;
 
 		const res = await fetch('/blog.json?all=true');
 		let { posts } = await res.json();
@@ -61,14 +61,14 @@
 	}}
 />
 
-<div>
+<div class="xl:w-[90%] mx-auto">
 	<div class="mb-4 mt-8 text-center">
 		<h2 class="capitalize text-red-500 dark:text-white font-bold">{category} category</h2>
 		<p class="text-black dark:text-white">
 			<i>Blog posts under {category}</i>
 		</p>
 	</div>
-	<div class="flex flex-wrap h-full mt-8 md:mx-32">
+	<div class="flex flex-wrap mt-8 justify-center">
 		{#each posts as post}
 			<Card
 				hide_category

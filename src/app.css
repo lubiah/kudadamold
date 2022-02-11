@@ -14,6 +14,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.category_personal {
+	background: var(--category-personal);
+}
+
+.category_tips_and_tricks {
+	background: var(--category-tips-and-tricks);
+}
+
+.category_programming {
+	background: var(--category-programming);
+}
+
 body::-webkit-scrollbar {
 	width: 8px;
 	background: var(--scrollbar-background);

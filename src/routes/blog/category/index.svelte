@@ -1,4 +1,5 @@
 <script context="module">
+	export const prerender = true;
 	import snakeCase from "just-snake-case";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?all=true');
@@ -25,7 +26,7 @@
 	nofollow="true"
 	noindex="true"
 	description="A page which lists the various categories of the blog section"
-	OpenGraph={{
+	openGraph={{
 		title: 'Category • Kudadam Blog',
 		description: 'Category • Kudadam Blog',
 		url: 'https://www.kudadam.com/blog/category',
@@ -53,7 +54,7 @@
 	<p class="text-black dark:text-white text-center"><i>Various categories for the blog</i></p>
 	<div class="flex flex-wrap mt-10 justify-center mx-auto h-screen">
 		{#each categories as category}
-			<a href="/blog/category/{snakeCase(category)}">
+			<a href="/blog/category/{snakeCase(category)}" class="hover:animate-pulse">
 				<span class="m-4 p-3 rounded-md text-white category_{snakeCase(category)}"
 					>{category}</span
 				>
@@ -61,15 +62,3 @@
 		{/each}
 	</div>
 </div>
-
-<style>
-	:global(.category_programming) {
-		background: orange;
-	}
-	:global(.category_tips_and_tricks) {
-		background: #142f54;
-	}
-	:global(.category_personal) {
-		background: #01a9bc;
-	}
-</style>

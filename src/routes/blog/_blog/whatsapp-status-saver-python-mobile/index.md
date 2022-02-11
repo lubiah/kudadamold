@@ -22,7 +22,7 @@ So today, I wanted to be able to save my WhatsApp statuses without using a Whats
 
 
 ## TL;DR Version
-The whole code is available as a [gist over here](t.github.com/kudadam/2b5f6bba5678fa688e4d5e2726cefbe6). Just clone the gist and follow the steps below. Also, don't forget to give it a star
+The whole code is available as a [gist over here](https://.github.com/kudadam/2b5f6bba5678fa688e4d5e2726cefbe6). Just clone the gist and follow the steps below. Also, don't forget to give it a star
 
 ## Installing Termux
 
