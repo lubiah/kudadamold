@@ -52,7 +52,7 @@
 		}
 	}}
 />
-<div class="xl:w-[65%] mx-auto">
+<main class="xl:w-[65%] mx-auto">
 <section>
 	<div>
 		<div class="flex justify-center flex-wrap md:flex-nowrap mx-auto" id="banner">
@@ -146,4 +146,4 @@
 		/>
 	</div>
 </section>
-</div>
+</main>
