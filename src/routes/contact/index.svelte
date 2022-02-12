@@ -37,18 +37,22 @@
 	}}
 />
 
-<div class="mx-auto xl:w-[65%]">
+<main class="mx-auto xl:w-[65%]">
 <h1 class="text-center font-bold">Contact</h1>
 <p>
-	In case you ever want to contact me, just pick an option below. The fastest is email.
+	In order to contact me, just pick an option below, I do well to reply all my messages.<br/>
+	You can contact me if you have a proposition, contract or maybe if you are just feeling bored and you want someone to talk to.
 </p>
-<div class="dark:text-gray-300">
-	<ul class="p-0 list-none space-y-2">
-		<li><a on:click={handleEmail} href="/contact">Click to reveal</a></li>
-		<li><a href="tel:0249005710">Telephone</a></li>
-		<li><a href="https://wa.link/jebvr2">WhatsApp</a></li>
-		<li><a href="https://t.me/kudadam">Telegram</a></li>
-	</ul>
-</div>
+<ul id="details_list" class="dark:text-gray-300 mt-6 border p-2 dark:border-gray-700 rounded inline-block w-[300px] p-0 list-none space-y-2">
+	<li><a on:click={handleEmail} href="/contact">Email (Click to reveal)</a></li>
+	<li><a href="tel:0249005710">Telephone</a></li>
+	<li><a href="https://wa.link/jebvr2">WhatsApp</a></li>
+	<li><a href="https://t.me/kudadam">Telegram</a></li>
+</ul>
+</main>
 
-</div>
+<style type="text/postcss">
+	#details_list li a {
+		@apply text-inherit block !important;
+	}
+</style>
