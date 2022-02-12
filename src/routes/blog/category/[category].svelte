@@ -36,8 +36,8 @@
 <SEO
 	title="{category} Category • Kudadam Blog"
 	description="Blog posts under {category} category"
-	noindex=true
-	nofollow=true
+	noindex={true}
+	nofollow={true}
 	openGraph={{
 		title: `{category} Category • Kudadam Blog`,
 		description: `Blog posts under {category} category`,

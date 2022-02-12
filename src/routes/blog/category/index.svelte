@@ -23,7 +23,7 @@
 
 <SEO
 	title="Category • Kudadam Blog"
-	nofollow="true"
+	nofollow={true}
 	noindex="true"
 	description="A page which lists the various categories of the blog section"
 	openGraph={{
