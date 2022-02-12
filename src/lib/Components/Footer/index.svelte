@@ -15,7 +15,7 @@
 		<div>
 			<p class="font-bold">Quick Links</p>
 			<ul>
-				<li><a href="/blog/feed"><RSS/> RSS feed</a></li>
+				<li><a href="/blog/feed" rel="external"><RSS/> RSS feed</a></li>
 				<li><a href="/sitemap.xml">Sitemap.xml</a></li>
 			</ul>
 		</div>

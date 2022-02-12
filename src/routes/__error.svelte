@@ -28,6 +28,9 @@
 	{#if status === 404}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
 		<p class="text-3xl mt-10">Hey, it seems you are lost</p>
+		{#if dev}
+			{error}
+		{/if}
 		<img
 			src="https://kudadam.sirv.com/svg/astronaut.svg"
 			loading="lazy"
@@ -37,6 +40,9 @@
 	{:else if status === 500}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
 		<p class="text-3xl mt-10">Sorry, Error from my server</p>
+		{#if dev}
+			{error}
+		{/if}
 		<img
 			src="https://kudadam.sirv.com/svg/error_server.svg"
 			loading="lazy"

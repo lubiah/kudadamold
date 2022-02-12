@@ -66,5 +66,5 @@ So basically, what we did was wrap the whole function in a Promise and pass the 
 
 
 <p class="note">
-    Oh, by the way, you can get the json of how many times this blog post has been read from this url <a href="/blog/return-data-from-sqlite3-nodejs.json">/blog/return-data-from-sqlite3-nodejs.json</a>
+    Oh, by the way, you can get the json of how many times this blog post has been read from this url <a href="https://www.kudadam.com/blog/return-data-from-sqlite3-nodejs.json">/blog/return-data-from-sqlite3-nodejs.json</a>
 </p>

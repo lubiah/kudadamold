@@ -45,7 +45,7 @@ const sort_items = async() => {
 	return rss;
 	}
 
-export async function get(request) {
+export async function get() {
 	try {
 	let sorted = sort_items();
 	let rss = `<?xml version="1.0" encoding="UTF-8" ?>

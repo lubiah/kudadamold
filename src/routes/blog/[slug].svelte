@@ -1,4 +1,5 @@
 <script context="module">
+	export const prerender = true;
 	import SEO from 'svelte-seo';
 	import 'prismjs/themes/prism-tomorrow.css';
 	import  snakeCase from 'just-snake-case';
@@ -29,21 +30,19 @@
 
 	export async function load({ params }) {
 		const slug = params.slug;
-		try {
-			//let meta;
-			let component = await import(`./_blog/${slug}/index.md`);
-			component.metadata["slug"] = slug;
-
+		//let meta;
+		let component = await import(`./_blog/${slug}/index.md`);
+		component.metadata["slug"] = slug;
 			//let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
 			//meta = data;
-			return {
-				props: {
-					metadata: component.metadata,
-					content: component.default
-					//meta
-				}
+		return {
+			fallthrough: true,
+			props: {
+				metadata: component.metadata,
+				content: component.default
+				//meta
+			}
 			};
-		} catch (e) {console.log(e)}
 	}
 </script>
 

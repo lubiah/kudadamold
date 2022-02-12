@@ -19,7 +19,7 @@ date: 2021-09-30
 </p>
 
 
-So after using [Sapper](https://sapper.svelte.dev) for some time, I decided to move my website to [SvelteKit](https://kit.svelte.dev). I [remember saying](/blog/another-redesign-svelte) that I would not move to SvelteKit till they hit version 1 but the framework looks too promising. It had features which I needed and those features weren't in Sapper.
+So after using [Sapper](https://sapper.svelte.dev) for some time, I decided to move my website to [SvelteKit](https://kit.svelte.dev). I [remember saying](https://www.kudadam.com/blog/another-redesign-svelte) that I would not move to SvelteKit till they hit version 1 but the framework looks too promising. It had features which I needed and those features weren't in Sapper.
 
 ## Migration Process
 
@@ -67,7 +67,7 @@ Here are some of the adjustments I made:
   
 * Minifying the rendered HTML
 
-  SvelteKit has a feature called hooks. This is a JavaScript file which is run when requests are made to the server.  By intercepting the results being sent back to the browser,  I am able to minify the contents thereby reducing the size of the HTML page which has to be downloaded. You can [read more about it here](/blog/sveltekit-minify-rendered-html).
+  SvelteKit has a feature called hooks. This is a JavaScript file which is run when requests are made to the server.  By intercepting the results being sent back to the browser,  I am able to minify the contents thereby reducing the size of the HTML page which has to be downloaded. You can [read more about it here](https://www.kudadam.com/blog/sveltekit-minify-rendered-html).
 
 ## Adding Offline Support
 
