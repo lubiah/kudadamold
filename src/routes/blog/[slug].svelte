@@ -1,5 +1,4 @@
 <script context="module">
-	export const prerender = true;
 	import SEO from 'svelte-seo';
 	import 'prismjs/themes/prism-tomorrow.css';
 	import  snakeCase from 'just-snake-case';
@@ -44,14 +43,12 @@
 					//meta
 				}
 			};
-		} catch (e) {}
+		} catch (e) {console.log(e)}
 	}
 </script>
 
 <script type="text/javascript">
-	export let metadata, content
-	//, meta;
-
+	export let metadata, content;
 	let relatedArticles;
 	let Card;
 	let PageProgress;

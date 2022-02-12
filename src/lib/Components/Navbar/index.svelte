@@ -63,7 +63,7 @@
 
 <Header offset={250} on:pin={()=>{document.querySelector("#nav__header").parentElement.style.zIndex="9999"}}>
 <nav id="nav__header" 
-	class="flex md:p-2 z-30 top-0 border-b w-full bg-white navbar flex-wrap dark:bg-slate-900 border-gray-200 dark:border-gray-800"
+	class="flex md:p-2 z-30 top-0 w-full bg-white navbar flex-wrap dark:bg-slate-900"
 >
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center justify-center"

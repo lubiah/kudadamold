@@ -9,6 +9,9 @@ keywords:
   - flames game code
   - flames code
   - flames game javascript
+  - flames game how to play
+  - how to do flames
+  - how do you play flames
   - flames code in javascript
 date: 2021-10-19
 ---
@@ -19,7 +22,7 @@ date: 2021-10-19
 
 
 
-If  you haven't read about my article on the FLAMES game, you can [read it here](/blog/the-flames-game). 
+If  you haven't read about my article on the FLAMES game, you can [read it here](https://www.kudadam.com/blog/the-flames-game). 
 
 ## The Algorithm
 

@@ -5,9 +5,11 @@ category: Personal
 image: https://kudadam.sirv.com/blog/the-flames-game/hero.jpg
 excerpt: The FLAMES game is a game which is usually played by kids, it can determine the relationship between two people with the use of their names.
 keywords:	
-  -  flames game
+  - flames
+  - flames game
   - how flames game work
-  - how is flames played	
+  - how is flames played
+  - how to play flames
   - how to use flames
   - who invented flames game
 date: 2021-10-18
