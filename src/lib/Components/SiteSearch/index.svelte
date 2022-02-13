@@ -44,8 +44,8 @@
 
 <form class="{Class} my-auto" id="search-container">
     <span on:click={()=>hidden = !hidden} title="Search the website for information"><SearchIcon/></span>
-    <div class="flex flex-wrap fixed inset-x-0 border max-w-sm mx-auto w-[90%]" class:hidden>
-        <input type="search" bind:value class="border-0 border-r h-10 rounded-none w-full" on:input={findResults} name="" id="" placeholder="Enter your query...">
+    <div class="flex flex-wrap fixed inset-x-0 border max-w-sm mx-auto w-[90%] p-3 border-gray-200 rounded-sm bg-white" class:hidden>
+        <input type="search" bind:value class="border-r h-10 rounded-none w-full" on:input={findResults} name="" id="" placeholder="Enter your query...">
         <div class="basis-[100%] bg-white dark:bg-slate-900 max-h-[400px] overflow-y-auto fancy-scrollbar">
             {#if results.length !== 0}
                 {#each results as item}
