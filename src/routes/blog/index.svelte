@@ -3,7 +3,6 @@
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { paginate, PaginationNav } from "svelte-paginate";
-	import { onMount } from "svelte";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?all=true');
 		let json = await res.json();

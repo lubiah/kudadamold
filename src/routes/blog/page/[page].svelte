@@ -32,7 +32,6 @@
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { paginate, PaginationNav } from "svelte-paginate";
-	import { onMount } from "svelte";
 
 	export let posts,page;
 	let pageSize = 6;

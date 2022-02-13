@@ -36,7 +36,6 @@
 			//let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
 			//meta = data;
 		return {
-			fallthrough: true,
 			props: {
 				metadata: component.metadata,
 				content: component.default
