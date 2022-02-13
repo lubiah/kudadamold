@@ -5,7 +5,7 @@ const generator = SitemapGenerator(`https://www.kudadam.com`, {
 	stripQuerystring: false,
 	changeFreq: 'weekly',
 	lastMod: true,
-	filepath: 'build/static',
+	filepath: 'build/static/sitemap.xml',
 	priorityMap: [1],
 	ignore: url => {
 		return /^https:\/\/www\.kudadam.com\/$/.test(url)
