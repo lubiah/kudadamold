@@ -32,7 +32,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="https://twitter.com/kudadam_" target="_blank" rel="noopener"><Twitter/> Lucretius_1</a>
+					<a href="https://twitter.com/kudadam_" target="_blank" rel="noopener"><Twitter/>kudadam_</a>
 				</li>
 			</ul>
 		</div>
