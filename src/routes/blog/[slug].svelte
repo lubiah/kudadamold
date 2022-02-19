@@ -6,6 +6,7 @@
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";
+import Error from '../__error.svelte';
 
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
@@ -28,8 +29,9 @@
 
 	   
 
-	export async function load({ params }) {
-		const slug = params.slug;
+	export async function load({ params, url }) {
+		try{
+			const slug = params.slug;
 		//let meta;
 		let component = await import(`./_blog/${slug}/index.md`);
 		component.metadata["slug"] = slug;
@@ -42,6 +44,14 @@
 				//meta
 			}
 			};
+		}
+
+		catch(error){
+			return {
+				
+			}
+		}
+		
 	}
 </script>
 

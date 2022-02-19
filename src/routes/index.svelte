@@ -52,10 +52,10 @@
 		}
 	}}
 />
-<main class="xl:w-[65%] mx-auto">
+<main class="mx-auto max-w-4xl">
 <section>
 	<div>
-		<div class="flex justify-center flex-wrap md:flex-nowrap mx-auto" id="banner">
+		<div class="flex justify-center flex-wrap mx-auto" id="banner">
 			<div>
 				<h1 class="font-bold !m-1">Hey, I'm Lucretius</h1>
 				<p>

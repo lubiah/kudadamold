@@ -60,7 +60,7 @@
 	}}
 />
 
-<main class="xl:w-[65%] mx-auto">
+<main class="max-w-4xl mx-auto">
 	<h1 class="text-center font-bold">About me</h1>
 	<img height="300" width="300" 
 		src="https://kudadam.sirv.com/profile/lucretius.jpg?thumbnail=300&q=90"
@@ -70,23 +70,13 @@
 	<section>
 		<h2>Who am I?</h2>
 		<p>
-		Hello World <img
-			alt="👋"
-			class="emojione"
-			src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f44b.png"
-			title=":wave:"
-		/>, Am Lucretius Biah.
-		<img
-			alt="👦"
-			class="emojione"
-			src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f466.png"
-			title=":boy:"
-		/><br /> Well, to describe myself on this page is a bit difficult as it is hard to find the
+		Hello World👋, Am Lucretius Biah 👦.
+		<br /> Well, to describe myself on this page is a bit difficult as it is hard to find the
 		right words to use.<br /> Anyway, let's see how this ends...
 	</p>
 	</section>
 	<p>
-		My name is Lucretius and welcome to my part of the internet.<br /> Am a 17 y/o self-taught developer
+		My name is Lucretius and welcome to my part of the internet.<br /> Am an 18 y/o self-taught developer
 		and I can code in 8+ programming languages but my favourites are Python, JavaScript, Ruby and C++.
 	</p>
 	<p>

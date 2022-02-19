@@ -1,16 +1,15 @@
 <script type="text/javascript">
+	import SearchIcon from '$lib/Icons/search.svelte';
+	import Search from "$lib/Components/SiteSearch";
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Moon from "$lib/Icons/moon.svelte";
 	import Sun from "$lib/Icons/sun.svelte";
-	import { mode } from "/src/stores/store.js";
-	import { browser } from "$app/env";
-	let element;
+	import { mode } from "$lib/stores";
 	import Header from "svelte-headroom";
-	import Search from "$lib/Components/SiteSearch";
-
 
 	let hidden = true;
+	let hideSearch = true;
 	let nav_links = [
 		{ name: 'About', url: '/about', id: 1 },
 		{ name: 'Contact', url: '/contact', id: 2 },
@@ -20,7 +19,7 @@
 
 
 
-	const setMode = () => {
+	const setMode = () => {;
 		if ($mode === 'light') {
 			document.documentElement.classList.add('dark');
 			mode.set("dark");
@@ -61,7 +60,7 @@
 	</script>
 </svelte:head>
 
-<Header offset={250} on:pin={()=>{document.querySelector("#nav__header").parentElement.style.zIndex="9999"}}>
+<Header offset={250} on:pin={()=>{document.querySelector("#nav__header").parentElement.style.zIndex="8888"}}>
 <nav id="nav__header" 
 	class="flex md:p-2 z-30 top-0 w-full bg-white navbar flex-wrap dark:bg-slate-900"
 >
@@ -71,7 +70,7 @@
 		><img src="https://kudadam.sirv.com/logo/logo.png?q=5" class="h-10" height="40" width="40" alt="" /><span
 			class="hidden md:inline text-[color:var(--light-text-color)] dark:text-white">Kudadam</span
 		></a>
-	<Search class="ml-auto"/>	
+	<span class="ml-auto block p-3" on:click={()=> hideSearch = !hideSearch} title="Search the website for information"><SearchIcon/></span>	
 	<button title="Open or close navigation bar"
 		aria-label="{hidden === true ? "open" : "close"}"
 		class="ml-auto px-1 md:hidden bg-transparent !text-inherit"
@@ -106,7 +105,7 @@
 	</div>
 </nav>
 </Header>
-
+<Search hidden={hideSearch} on:hide={()=> hideSearch = true}/>
 <style type="text/postcss">
 	:global(.svelte-headroom--unpin){
 		z-index:9999

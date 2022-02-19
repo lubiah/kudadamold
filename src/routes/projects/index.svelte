@@ -47,7 +47,7 @@ openGraph={{
 
 />
 
-<main class="xl:w-[65%] mx-auto">
+<main class="max-w-4xl mx-auto">
 	<div class="text-center">
 		<h1 class= "font-bold">Projects</h1>
 		<p class="italic">This is a list of awesome projects curated by me in my spare time</p>

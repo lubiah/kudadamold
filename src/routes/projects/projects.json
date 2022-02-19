@@ -13,5 +13,13 @@
 		"image": "https://kudadam.sirv.com/extractfrom/version_5.png?thumbnail=200",
 		"url": "https://www.kudadam.com/extractfrom",
 		"repo": "https://www.github.com/kudadam/extractfrom"
+	},
+	{
+		"id": 3,
+		"name": "Useful Toolz",
+		"description": "A set of online tools which you might use everyday",
+		"image": "https://kudadam.sirv.com/logo/logo.png",
+		"url": "https://useful-toolz.vercel.app",
+		"repo": "https://www.github.com/kudadam/useful-toolz"
 	}
 ]

@@ -17,6 +17,7 @@
 </script>
 
 <script type="text/javascript">
+
 	export let posts;
 	let pageSize = 6;
 	let currentPage = 1;
@@ -60,7 +61,7 @@
 	</p>
 </div>
 
-<div class="xl:w-[90%] mx-auto">
+<div class="max-w-6xl mx-auto">
 
 	<!--
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
