@@ -46,10 +46,7 @@ const settings = {
 
 	smartypants: {
 		dashes: 'oldschool'
-	},
-
-	remarkPlugins: [],
-	rehypePlugins: []
+	}
 };
 
 export default settings;

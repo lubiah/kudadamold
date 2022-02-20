@@ -305,7 +305,10 @@ body::-webkit-scrollbar-thumb:active {
 		@apply text-base;
 	}
 
-	table,
+	table {
+		@apply block my-3 w-fit;
+	}
+
 	thead,
 	td,
 	th {

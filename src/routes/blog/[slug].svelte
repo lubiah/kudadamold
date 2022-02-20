@@ -6,7 +6,6 @@
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";
-import Error from '../__error.svelte';
 
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
@@ -192,7 +191,7 @@ import Error from '../__error.svelte';
 		@apply mt-[25px] mb-[10px] mx-[2px] font-semibold capitalize;
 	}
 	
-	#content :global(img:not(#post-iLmage)){
+	#content :global(img:not(#post-image)){
 		@apply max-h-[500px] mx-auto my-4 rounded;
 	}
 
@@ -202,7 +201,7 @@ import Error from '../__error.svelte';
 	}
 
 	:global(.intro){
-		@apply text-xl py-6;
+		@apply text-xl font-light italic py-6;
 	}
 
 

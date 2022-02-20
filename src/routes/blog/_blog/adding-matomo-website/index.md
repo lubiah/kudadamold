@@ -15,6 +15,7 @@ keywords:
 tags:
   - matomo
   - cpanel
+
 ---
 
 <p class="intro">
@@ -28,7 +29,7 @@ tags:
 
 So am going to show a pretty easy way to install Matomo analytics on CPanel using the Softaculous application installer.
 
-## Steps To Install
+## Steps To Install  
 
 1. Log in to CPanel
 
