@@ -6,6 +6,7 @@
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";
+	import Readotron from '@untemps/svelte-readotron'
 
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
@@ -28,7 +29,7 @@
 
 	   
 
-	export async function load({ params, url }) {
+	export async function load({ params }) {
 		try{
 			const slug = params.slug;
 		//let meta;
@@ -135,6 +136,11 @@
 			<ul class="py-2 ps-4x border-b my-1 border-gray-300 dark:border-gray-700` text-base flex flex-wrap pl-2 list-none gap-x-2" id="meta__info">
 				<li><span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
 				<li><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></li>
+				<li>
+					{#if browser}
+						<Readotron selector="#content"/>
+					{/if}
+				</li>
 				<!-- {#if meta}
 					<li><span>Read Times: {meta.read_times}</span></li>
 				{/if} -->
