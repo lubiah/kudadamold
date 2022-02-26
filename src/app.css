@@ -8,6 +8,7 @@
 	--category-programming: orange;
 	--category-tips-and-tricks: #142f54;
 	--category-personal: #01a9bc;
+	--category-web-development:  #d800cd;
 }
 
 @tailwind base;
@@ -24,6 +25,10 @@
 
 .category_programming {
 	background: var(--category-programming);
+}
+
+.category_web_development {
+	background: var(--category-web-development);
 }
 
 body::-webkit-scrollbar {
@@ -267,8 +272,12 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	code {
-		@apply leading-relaxed px-[1.5px] py-0.5 break-words dark:xl:font-light rounded bg-[#E9E9E9] dark:bg-[#3F3F46];
+		@apply leading-relaxed px-[1.5px] py-0.5 break-words dark:xl:font-light rounded bg-[#E9E9E9] dark:bg-gray-800;
 		font-family: monospace;
+	}
+
+	p {
+		@apply my-4
 	}
 
 	pre > code {
