@@ -29,7 +29,7 @@
 
 	   
 
-	export async function load({ params }) {
+	export async function load({ params, url }) {
 		try{
 			const slug = params.slug;
 		//let meta;
@@ -137,9 +137,7 @@
 				<li><span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
 				<li><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></li>
 				<li>
-					{#if browser}
-						<Readotron selector="#content"/>
-					{/if}
+					
 				</li>
 				<!-- {#if meta}
 					<li><span>Read Times: {meta.read_times}</span></li>
