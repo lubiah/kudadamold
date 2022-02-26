@@ -11,6 +11,9 @@ keywords:
    - whatsapp python
    - whatsapp status
    - termux whatsapp python
+tags:
+  - python
+  - android
 date: 2021-10-10
 ---
 

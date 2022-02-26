@@ -3,12 +3,15 @@ title: How To Generate A Sitemap For Your SvelteKit Website
 description: Learn how to generate a sitemap for your sveltekit website
 image: https://kudadam.sirv.com/blog/generate-sitemap-for-sveltekit-website/hero.jpg
 excerpt: Generating a sitemap for your svelte site is very easy, it requires no coding at all.
-category: Programming
+category: Web Development
 keywords:
   - sveltekit sitemap
   - generate sitemap sveltekit
   - sveltekit sitemap generator
   - generate sitemap for sveltekit
+tags:
+  - svelte
+  - sveltekit
 date: 2021-10-26 06:59
 ---
 

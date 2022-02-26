@@ -9,6 +9,8 @@ keywords:
   - redesign
   - redesign website
 date: 2021-05-13
+tags:
+  - svelte
 ---
 
 I thought I had finished re-designing my website and everything was perfect, till one day, I was browsing the internet and I stumbled upon [svelte](https://svelte.dev)

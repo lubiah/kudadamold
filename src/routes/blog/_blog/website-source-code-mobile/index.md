@@ -11,6 +11,8 @@ keywords:
   - mobile
 image: https://kudadam.sirv.com/blog/code_image.jpg
 date: 2021-04-07
+tags:
+  - android
 ---
 
 Most of the times, when we visit a nice looking website, we always want to look at it's HTML source code. On desktop browsers, we simple just right-click and click on "view page source" from the context menu but there's no option like this on mobile devices. So then, how do we view the source code on a mobile device?

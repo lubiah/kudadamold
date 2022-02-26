@@ -14,6 +14,9 @@ keywords:
   - how do you play flames
   - flames code in javascript
 date: 2021-10-19
+tags:
+  - flames
+  - javascript
 ---
 
 <p class="intro">

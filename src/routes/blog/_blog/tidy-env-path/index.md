@@ -9,6 +9,9 @@ keywords:
   - env
   - enviroment paths
 date: 2021-05-27
+tags:
+  - ruby
+  - windows
 ---
 
 <p class="intro">

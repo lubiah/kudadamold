@@ -11,6 +11,8 @@ keywords:
   - decryption
   - encryption Caesar cipher
 date: 2021-09-16
+tags:
+  - ruby
 ---
 
 <p class="intro">

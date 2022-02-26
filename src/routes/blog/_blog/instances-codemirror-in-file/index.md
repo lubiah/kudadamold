@@ -1,7 +1,7 @@
 ---
 title: Using multiples instance of CodeMirror in a file
 description: How to create many instances of CodeMirror with a simple function
-category: Programming
+category: Web Development
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Baboon.svg/1200px-Baboon.svg.png
 excerpt: The default configuration for codemirror is somehow complicated, learn how you can simplify it.
 keywords:
@@ -9,6 +9,8 @@ keywords:
   - multiple instances of codemirror
   - multiple codemirror
   - simplifying codemirror
+tags:
+  - codemirror
 date: 2021-03-30
 ---
 

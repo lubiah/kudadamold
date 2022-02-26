@@ -12,6 +12,9 @@ keywords:
   - windows
   - kill application
 date: 2021-07-15
+tags:
+  - python
+  - terminal
 ---
 
 <p class="intro">
