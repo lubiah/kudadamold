@@ -6,7 +6,7 @@
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";
-	import Readotron from '@untemps/svelte-readotron'
+
 
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
@@ -29,26 +29,26 @@
 
 	   
 
-	export async function load({ params, url }) {
+	export async function load({ params, fetch }) {
 		try{
-			const slug = params.slug;
-		//let meta;
+		const slug = params.slug;
+		let meta;
 		let component = await import(`./_blog/${slug}/index.md`);
 		component.metadata["slug"] = slug;
-			//let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
-			//meta = data;
+		let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
+		meta = data;
 		return {
 			props: {
 				metadata: component.metadata,
-				content: component.default
-				//meta
+				content: component.default,
+				meta
 			}
 			};
 		}
 
 		catch(error){
 			return {
-				
+				fallthrough: true
 			}
 		}
 		
@@ -56,7 +56,7 @@
 </script>
 
 <script type="text/javascript">
-	export let metadata, content;
+	export let metadata, content, meta;
 	let relatedArticles;
 	let Card;
 	let PageProgress;
@@ -139,9 +139,9 @@
 				<li>
 					
 				</li>
-				<!-- {#if meta}
+				{#if meta}
 					<li><span>Read Times: {meta.read_times}</span></li>
-				{/if} -->
+				{/if}
 			</ul>
 		{#if metadata.image}
 			<img

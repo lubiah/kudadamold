@@ -13,7 +13,6 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-node": "^1.0.0-next.67",
 		"@sveltejs/kit": "^1.0.0-next.278",
-		"@untemps/svelte-readotron": "^1.5.0",
 		"autoprefixer": "^10.4.2",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
@@ -21,6 +20,7 @@
 		"fuzzball": "^2.1.2",
 		"html-entities": "^2.3.2",
 		"mdsvex": "^0.9.8",
+		"plop": "^3.0.5",
 		"postcss": "^8.4.5",
 		"postcss-load-config": "^3.1.1",
 		"prettier": "^2.4.1",
@@ -32,7 +32,6 @@
 		"remark-emoji": "^3.0.2",
 		"remark-slug": "^7.0.1",
 		"svelte": "^3.46.4",
-		"svelte-actions": "^0.1.0",
 		"svelte-headroom": "^2.2.1",
 		"svelte-paginate": "0.0.1",
 		"svelte-preprocess": "^4.10.1",
@@ -50,6 +49,7 @@
 		"chunk": "^0.0.3",
 		"html-minifier": "^4.0.0",
 		"just-snake-case": "^3.0.1",
-		"minisearch": "^3.2.0"
+		"minisearch": "^3.2.0",
+		"sqlite3": "^5.0.2"
 	}
 }
