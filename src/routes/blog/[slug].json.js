@@ -42,7 +42,7 @@ const getData = async (slug)=>{
 				}
 				else{
 					let times_read = rows.read_times;
-					db.run("UPDATE blog SET read_times = ? WHERE slug = ?",times_read+1,slug,(err,data)=>{})
+					db.run("UPDATE blog SET read_times = ? WHERE slug = ?",times_read+1,slug,(err,data)=>{});
 					resolve(rows);
 				}
 			}
@@ -56,6 +56,7 @@ export const get = async ({ params})=>{
 	try {
 	let results = new Object();
 	let { slug } = params;
+	console.log(slug)
 	let data = await getData(slug);
 	results['data'] = data;
 	return {
