@@ -7,7 +7,7 @@
 	import Subscribe from "$lib/Components/NewsletterSubscribeForm";
 </script>
 
-<footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-14 md:relative">
+<footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-14 md:relative w-fullx`x">
 	<div class="px-3 flex flex-wrap justify-evenly xl:justify-center  gap-x-20 mt-4 mb-2" id="flexible">
 		<div class="xl:absolute xl:-top-8 mb-6 xl:left-4">
 			<Subscribe/>
@@ -52,7 +52,7 @@
 				></span
 			>
 		</p>
-		<p class="bg-black py-2">copyright &copy; 2020 - Now, Lucretius Biah</p>
+		<p class="bg-black py-2 m-0">copyright &copy; 2020 - Now, Lucretius Biah</p>
 	</div>
 </footer>
 
