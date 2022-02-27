@@ -39,11 +39,11 @@ self.addEventListener("activate", event =>{
     console.info("[service worker] activated")
 })
 
-self.addEventListener("fetch", event=>{
-    event.respondWith(
-        caches.match(event.request)
-        .then(cacheRes=>{
-            return cacheRes || fetch(event.request)
-        })
-    )
-})
+// self.addEventListener("fetch", event=>{
+//     event.respondWith(
+//         caches.match(event.request)
+//         .then(cacheRes=>{
+//             return cacheRes || fetch(event.request)
+//         })
+//     )
+// })
