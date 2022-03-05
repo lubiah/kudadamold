@@ -1,5 +1,5 @@
 {
-	"name": "Kudadam Website",
+	"name": "Kudadam",
 	"short_name": "Kudadam",
 	"start_url": "/",
 	"scope": "/",
@@ -53,28 +53,6 @@
 			"url": "/blog",
 			"icons": [{
 				"src": "https://kudadam.sirv.com/logo/logo_blog.png?h=512&w=512",
-				"type": "image/png",
-				"sizes": "512x512"
-			}]
-		},
-		{
-			"name": "Web Tools",
-			"short_name": "Tools",
-			"description": "Use the web tools on the website",
-			"url": "/toolz",
-			"icons": [{
-				"src": "https://kudadam.sirv.com/logo/logo_toolz.png?h=512&w=512",
-				"type": "image/png",
-				"sizes": "512x512"
-			}]
-		},
-		{
-			"name": "FLAMES Game",
-			"short_name": "FLAMES",
-			"description": "A game which can determine the relationship between two people with the use of thier names",
-			"url": "/flames",
-			"icons": [{
-				"src": "https://kudadam.sirv.com/FLAMES/image.png?h=512&w=512",
 				"type": "image/png",
 				"sizes": "512x512"
 			}]
