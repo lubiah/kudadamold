@@ -8,6 +8,8 @@ keywords:
   - keylogger
   - keylogging in python
   - python keylogger
+tags:
+  - python
 date: 2021-04-24
 ---
 

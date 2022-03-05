@@ -10,6 +10,9 @@ keywords:
   - find item number array
   - javascript array count
 date: 2021-10-23
+tags:
+  - python
+  - javascript
 last_updated: "2021-10-23 20:45"
 ---
 

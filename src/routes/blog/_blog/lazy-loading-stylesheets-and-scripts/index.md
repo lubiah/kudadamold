@@ -8,6 +8,9 @@ keywords:
   - lazy-loading
   - lazyloading stylesheets
   - slow loading
+tags:
+  - javascript
+  - css
 date: 2021-03-29
 ---
 

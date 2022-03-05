@@ -8,8 +8,6 @@ keywords:
   - website redesign
 image: https://kudadam.sirv.com/blog/redesigning_my_website/red_construction_hat.jpg
 date: 2021-04-16
-tags:
-  - website redesign
 ---
 
 <p class="intro">

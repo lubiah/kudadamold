@@ -10,6 +10,10 @@ keywords:
   - how to bypass captcha
   - captcha solver
 sponsored: true
+tags:
+  - recaptcha
+  - python
+  - selenium
 ---
 
 

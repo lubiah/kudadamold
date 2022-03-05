@@ -9,6 +9,9 @@ keywords:
   - minify svelte-kit
   - minify svelte html
 date: 2021-09-22
+tags:
+  - sveltekit
+  - svelte
 image: https://kudadam.sirv.com/blog/sveltekit-minify-rendered-html/hero.jpg
 ---
 

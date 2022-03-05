@@ -9,6 +9,9 @@ keywords:
   - setting time
   - automation with python
   - python automation
+tags:
+  - python
+  - windows
 date: 2021-07-14
 ---
 

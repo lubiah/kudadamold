@@ -10,6 +10,8 @@ keywords:
   - random words python
   - random
   - python
+tags:
+  - python
 date: 2021-03-29
 ---
 

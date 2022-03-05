@@ -4,6 +4,9 @@ description: A tutorial showing how to implement python's input function in Ruby
 category: Programming
 excerpt: Ruby is a general-purpose programming language and it's syntax is close to Python's own. One of the functions I wanted to implement was the input() function.
 image: https://kudadam.sirv.com/blog/ruby_input.png
+tags:
+  - python
+  - ruby
 keywords:
   - python input
   - ruby input

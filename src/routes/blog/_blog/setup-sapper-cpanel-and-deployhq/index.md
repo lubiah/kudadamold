@@ -8,6 +8,10 @@ keywords:
   - deployhq
   - cpanel
   - sapper
+tags:
+  - deployhq
+  - cpanel
+  - sapper
 date: 2021-05-20
 ---
 

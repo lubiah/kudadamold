@@ -10,6 +10,10 @@ keywords:
   - design in SvelteKit
   - website in SvelteKit
   - SvelteKit website design
+tags:
+  - sveltekit
+  - sapper
+  - svelte
 date: 2021-09-30
 ---
 

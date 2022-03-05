@@ -11,6 +11,8 @@ keywords:
   - svelte css
   - sveltekit css
   - css flickering
+tags:
+  - svelte
 date: 2021-10-15	
 ---
 
