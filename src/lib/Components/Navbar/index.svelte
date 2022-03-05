@@ -60,9 +60,9 @@
 	</script>
 </svelte:head>
 
-<Header offset={250} on:pin={()=>{document.querySelector("#nav__header").parentElement.style.zIndex="8888"}}>
+<Header offset={250} on:unpin={()=>{hidden = true}} on:pin={()=>{document.querySelector("#nav__header").parentElement.style.zIndex="8888"}}>
 <nav id="nav__header" 
-	class="flex md:p-2 z-30 top-0 w-full bg-white navbar flex-wrap dark:bg-slate-900"
+	class="flex z-30 p-2 top-0 w-full bg-white navbar flex-wrap dark:bg-slate-900"
 >
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center justify-center"
