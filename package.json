@@ -6,6 +6,7 @@
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
+		"plop": "plop",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
@@ -46,7 +47,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"chunk": "^0.0.3",
 		"html-minifier": "^4.0.0",
 		"just-snake-case": "^3.0.1",
 		"minisearch": "^3.2.0",

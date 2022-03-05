@@ -1,5 +1,5 @@
 import Path from "path";
-import chunk from 'chunk';
+import { chunk } from "$lib/Scripts/util.js";
 import { mode } from "$app/env";
 
 let files = new Array();

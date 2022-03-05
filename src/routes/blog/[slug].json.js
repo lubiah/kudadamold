@@ -52,11 +52,10 @@ const getData = async (slug)=>{
 	})
 }
 
-export const get = async ({ params})=>{
+export const get = async ({ params })=>{
 	try {
 	let results = new Object();
 	let { slug } = params;
-	console.log(slug)
 	let data = await getData(slug);
 	results['data'] = data;
 	return {

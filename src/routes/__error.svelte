@@ -27,7 +27,7 @@
 <div class="text-center" id="error_box">
 	{#if status === 404}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
-		<p class="text-3xl mt-10">Hey, it seems you are lost</p>
+		<p class="text-3xl mt-10">Hey, it seems you are lost😕</p>
 		{#if dev}
 			{error}
 		{/if}
