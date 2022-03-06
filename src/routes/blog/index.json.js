@@ -18,6 +18,10 @@ files = Promise.all(files.map(async file=>{
 	})
 	);
 
+const getFiles = async ()=>{
+	return files;
+}
+
 
 export async function get({ url }) {
 	let posts = await files;
@@ -49,3 +53,7 @@ export async function get({ url }) {
 
 	
 }
+
+
+
+export { getFiles }

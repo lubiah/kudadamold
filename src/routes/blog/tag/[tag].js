@@ -1,9 +1,8 @@
+import { getFiles } from "../index.json";
+
 export const get = async ({ url, params })=>{
     let tag = params.tag;
-    let endpoint = new URL(`${url.origin}/blog.json`);
-    endpoint.searchParams.set("all","true");
-    let request = await fetch(endpoint);
-    let { posts } = await request.json();
+    let posts = await getFiles();
     let filtered = posts.filter(post => {
         if (post.tags){
             return post.tags.includes(tag)

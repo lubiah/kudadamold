@@ -1,6 +1,6 @@
 <script context="module">
     export const prerender = true;
-</script>t
+</script>
 
 <script>
     export let tags;
