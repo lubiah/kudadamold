@@ -298,6 +298,10 @@ body::-webkit-scrollbar-thumb:active {
 		background: #484444;
 	}
 
+	hr {
+		@apply dark:border-gray-700
+	}
+
 	code::-webkit-scrollbar-thumb {
 		@apply bg-[color:var(--scrollbar-thumb)];
 	}

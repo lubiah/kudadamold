@@ -6,7 +6,9 @@
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";
-
+	import RectangleList from '$lib/Icons/RectangleList.svelte';
+	import Tags from '$lib/Icons/Tags.svelte';
+	import Eye from '$lib/Icons/Eye.svelte';
 
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
@@ -130,33 +132,36 @@
 	}}
 />
 
-<article class="my-4 xl:w-[65%] mx-auto" id="post">
-	<div class="md:mx-auto">
-		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
-			<ul class="py-2 ps-4x border-b my-1 border-gray-300 dark:border-gray-700` text-base flex flex-wrap pl-2 list-none gap-x-2" id="meta__info">
-				<li><span><a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
-				<li><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></li>
-				<li>
-					
-				</li>
-				{#if meta}
-					<li><span>Read Times: {meta.read_times}</span></li>
-				{/if}
-			</ul>
-		{#if metadata.image}
+<div class="my-4 xl:w-[65%] mx-auto" id="post">
+	<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
+	<p class="flex text-base items-center justify-end gap-x-2"><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></p>
+	{#if metadata.image}
 			<img
 			src={metadata.image}
 			alt=""
 			id="post-image"
 			class="h-56 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
 			/>
-		{/if}
-			
-		<div class="leading-tight px-2" id="content" data-slug="{metadata.slug}">
-			<svelte:component this={content} />
-		</div>
-		<div class="sharethis-inline-share-buttons mt-[50px] mb-[20px]"></div>
-		{#if browser && relatedArticles && [...relatedArticles].length >= 1}
+	{/if}
+	<article class="leading-tight px-2" id="content" data-slug="{metadata.slug}">
+		<svelte:component this={content} />
+	</article>
+	<ul class="py-2 px-4 my-1 text-base pl-2 list-none gap-x-2">
+		<li><span><RectangleList/> <a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
+		<li class="flex gap-x-3 items-center">
+			{#if metadata.tags}
+			<Tags/>
+				{#each metadata.tags as tag}
+					<a href="/blog/tag/{tag}">#{tag}</a>
+				{/each}
+			{/if}
+		</li>
+		<li>
+			<Eye/> {meta.read_times}
+		</li>
+	</ul>
+	<div class="sharethis-inline-share-buttons mt-[50px] mb-[20px]"></div>
+	{#if browser && relatedArticles && [...relatedArticles].length >= 1}
 			<div class="mt-[100px]">
 				<h3>Related Articles</h3>
 				<div class="flex overflow-auto snap-x xl:fancy-scrollbar">
@@ -176,11 +181,8 @@
 				</div>
 			</div>
 		{/if}
-		
-			
-	</div>
-</article>
-<svelte:component this={CommentBox} />
+	
+</div>
 {#if browser}
 	<svelte:component this={PageProgress} color="tomato" height="5px" />
 {/if}
@@ -222,12 +224,4 @@
 		color: inherit;
 	}
 
-	#meta__info li::after{
-		content: "•";
-		@apply pl-0.5
-	}
-
-	#meta__info li:last-child::after {
-		content: "";
-	}
 </style>
