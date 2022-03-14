@@ -41,7 +41,7 @@
 <h1 class="text-center font-bold">Contact</h1>
 <p>
 	In order to contact me, just pick an option below, I do well to reply all my messages.<br/>
-	You can contact me if you have a proposition, contract or maybe if you are just feeling bored and you want someone to talk to.
+	You can contact me if you have a proposition, contract or blah. blah.. blah...
 </p>
 <ul id="details_list" class="dark:text-gray-300 mt-6 p-2 rounded inline-block w-[300px] p-0 space-y-2">
 	<li><a on:click={handleEmail} href="/contact">Email (Click to reveal)</a></li>

@@ -77,11 +77,10 @@
 	</section>
 	<p>
 		My name is Lucretius and welcome to my part of the internet.<br /> Am an 18 y/o self-taught developer
-		and I can code in 8+ programming languages but my favourites are Python, JavaScript, Ruby and C++.
+		and I can code in 8+ programming languages but my favourites are Python, JavaScript, Ruby and C++.<br/>
+		Am based somewhere in Wakanda🇬🇭
 	</p>
-	<p>
-		Am based somewhere in Wakanda🇬🇭.<br /> Professionally, am a full stack developer with 5+ experience, I kinda started coding early.
-	</p>
+
 	<section>
 	  <h2>What I do?</h2>
 	  <p>
@@ -97,20 +96,20 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4d8.png"
 			title=":blue_book:"
 		/>. My favourite story book is
-		<a href="https://en.wikipedia.org/wiki/The_Hardy_Boys">Hardy Boys</a>
-		by <a href="https://en.wikipedia.org/wiki/Franklin_W._Dixon">Franklin Dixon</a>.<br /> It's a
+		<a href="https://en.wikipedia.org/wiki/The_Hardy_Boys" target="_blank">Hardy Boys</a>
+		by <a href="https://en.wikipedia.org/wiki/Franklin_W._Dixon" target="_blank">Franklin Dixon</a>.<br /> It's a
 		series, am yet to finish it. Also, I spend most times on <a href="https://play.google.com/store/apps/details?id=com.light.reader.books&hl=en&gl=US" target="_blank">Light Reader app</a> reading novels.<br /> Am a gamer, I mostly complete every game I start
 		<em class="text-muted">(Not bragging)</em>. I have completed about 35+ and without cheats<img
 			alt="😎"
 			class="emojione"
 			src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f60e.png"
 			title=":sunglasses:"
-		/>.<br /> I love music too, but I don't have a favourite.<br /> I write in my diary in my spare time,
+		/>.<br /> I love music 🎶 too, but I don't have a favourite.<br /> I write in my diary📓 in my spare time,
 		code when I have a computer close-by and play games when am bored.
 	</p>
 	</section>
 	<section>
-		<h2>Some stats about me</h2>
+		<h2>Some Github stats about me</h2>
 		<div class="flex flex-wrap gap-3 my-5">
 	<div class="">
 		<img
@@ -120,7 +119,7 @@
 	</div>
 	<div class="">
 		<img
-			src="https://github-readme-stats.vercel.app/api/top-langs/?username=kudadam&langs_count=9"
+			src="https://github-readme-stats.vercel.app/api/top-langs/?username=kudadam&langs_count=10"
 			alt=""
 		/>
 	</div>
