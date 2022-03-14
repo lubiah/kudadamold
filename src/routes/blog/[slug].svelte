@@ -1,24 +1,4 @@
 <script context="module">
-	const getRelatedArticles = async (title,posts)=>{
-		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
-		const titles = posts
-		.map(post=> { return post.title})
-		.filter(post => post !== title);
-		const related_titles = titles.filter(post =>{ return token_set_ratio(title,post) >= 50 });
-		const related_posts = new Set();
-		for (let i in related_titles){
-			let related_title = related_titles[i];
-			for (let j in posts){
-				let post = posts[j];
-				if (post.title === related_title){
-					related_posts.add(post);
-				}
-			}
-		}
-		return related_posts;
-	}
-
-	   
 
 	export async function load({ params, fetch }) {
 		try{
@@ -64,6 +44,25 @@
 	let hits;
 	$: hits = 0;
 
+	const getRelatedArticles = async (title,posts)=>{
+		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
+		const titles = posts
+		.map(post=> { return post.title})
+		.filter(post => post !== title);
+		const related_titles = titles.filter(post =>{ return token_set_ratio(title,post) >= 50 });
+		const related_posts = new Set();
+		for (let i in related_titles){
+			let related_title = related_titles[i];
+			for (let j in posts){
+				let post = posts[j];
+				if (post.title === related_title){
+					related_posts.add(post);
+				}
+			}
+		}
+		return related_posts;
+	}
+
 	onMount(async ()=>{
 
 		//Get the page hits count from the api if the mode is production
@@ -75,7 +74,8 @@
 
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
-		let { posts } = await fetch("/blog.json?all=true").then(e => e.json().then(e.posts));
+		let { posts } = await fetch("/blog.json?all=true").then(response=>response.json());
+		console.log(posts);
 		relatedArticles = await getRelatedArticles(metadata.title, posts);
 		let sharejsElement = document.createElement("script");
 		sharejsElement.src = "https://platform-api.sharethis.com/js/sharethis.js#property=61d2ee20cb125900193f457d&product=sop";
