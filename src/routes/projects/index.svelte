@@ -47,12 +47,12 @@ openGraph={{
 
 />
 
-<main class="max-w-4xl mx-auto">
+<main class="max-w-6xl mx-auto">
 	<div class="text-center">
 		<h1 class= "font-bold">Projects</h1>
 		<p class="italic">This is a list of awesome projects curated by me in my spare time</p>
 	</div>
-	<section class="flex flex-wrap mt-[50px] gap-x-4 gap-y-4">	
+	<section class="flex flex-wrap justify-center items-center mt-[50px] gap-x-4 gap-y-4">	
 		{#each projects as project (project.id) }
 			<Card
 			title="{project.name}"

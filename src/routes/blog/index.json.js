@@ -18,8 +18,11 @@ files = Promise.all(files.map(async file=>{
 	})
 	);
 
+
 const getFiles = async ()=>{
-	return files;
+	let posts = await files;
+	posts = posts.filter(file => file !== undefined);
+	return posts;
 }
 
 

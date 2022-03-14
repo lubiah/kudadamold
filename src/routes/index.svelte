@@ -10,6 +10,7 @@
 <svelte:head>
 	<meta name="google-site-verification" content="RHfIklWVoksL16DFRd-8qvkEbHTJVyre13PUFcBEzqs" />
 </svelte:head>
+
 <SEO
 	title="Lucretius Biah • Kudadam"
 	description="Hey, am Lucretius, a software developer and website designer. Welcome to my part of the internet. Feel free to read my blog post, download my softwares or just look around"

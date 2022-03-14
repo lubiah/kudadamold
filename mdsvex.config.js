@@ -1,3 +1,5 @@
+import { defineMDSveXConfig as defineConfig } from 'mdsvex';
+
 import remark_slug from 'remark-slug';
 import remark_emoji from 'remark-emoji';
 import remark_attr from 'remark-attr';
@@ -6,7 +8,7 @@ import remark_breaks from 'remark-breaks';
 import rehype_toc from 'rehype-toc';
 import rehype_external_links from 'rehype-external-links';
 
-const settings = {
+const config = defineConfig({
 	extensions: ['.md'],
 
 	rehypePlugins: [
@@ -47,6 +49,6 @@ const settings = {
 	smartypants: {
 		dashes: 'oldschool'
 	}
-};
+});
 
-export default settings;
+export default config;

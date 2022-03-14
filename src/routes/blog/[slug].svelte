@@ -1,15 +1,4 @@
 <script context="module">
-	export const prerender = true;
-	import SEO from 'svelte-seo';
-	import 'prismjs/themes/prism-tomorrow.css';
-	import  snakeCase from 'just-snake-case';
-	import { browser } from "$app/env";
-	import { onMount } from 'svelte';
-	import Clock from "$lib/Icons/clock.svelte";
-	import RectangleList from '$lib/Icons/RectangleList.svelte';
-	import Tags from '$lib/Icons/Tags.svelte';
-	import Eye from '$lib/Icons/Eye.svelte';
-
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
 		const titles = posts
@@ -58,15 +47,33 @@
 </script>
 
 <script type="text/javascript">
-	export let metadata, content, meta;
+	import SEO from 'svelte-seo';
+	import 'prismjs/themes/prism-tomorrow.css';
+	import  snakeCase from 'just-snake-case';
+	import { browser, mode } from "$app/env";
+	import { onMount } from 'svelte';
+	import Clock from "$lib/Icons/clock.svelte";
+	import RectangleList from '$lib/Icons/RectangleList.svelte';
+	import Tags from '$lib/Icons/Tags.svelte';
+	import Eye from '$lib/Icons/Eye.svelte';
+
+	export let metadata, content;
 	let relatedArticles;
 	let Card;
 	let PageProgress;
-	let CommentBox;
+	let hits;
+	$: hits = 0;
 
 	onMount(async ()=>{
+
+		//Get the page hits count from the api if the mode is production
+		if (mode === "production"){
+			let hits_response = await fetch(`https://api.countapi.xyz/hit/kudadam.com/${metadata.slug}`);
+			let hit = await hits_response.json();
+			hits  = await hit.value;
+		}
+
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
-		CommentBox = await import("$lib/Components/CommentBox").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(e => e.json().then(e.posts));
 		relatedArticles = await getRelatedArticles(metadata.title, posts);
@@ -138,7 +145,7 @@
 	{#if metadata.image}
 			<img
 			src={metadata.image}
-			alt=""
+			alt="{metadata.title}"
 			id="post-image"
 			class="h-56 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
 			/>
@@ -157,7 +164,7 @@
 			{/if}
 		</li>
 		<li>
-			<Eye/> {meta.read_times}
+			<Eye/> {hits}
 		</li>
 	</ul>
 	<div class="sharethis-inline-share-buttons mt-[50px] mb-[20px]"></div>

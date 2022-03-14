@@ -1,3 +1,7 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+
 :root {
 	--primary-color: tomato;
 	--primary-color-deep: #ff3915;
@@ -8,7 +12,7 @@
 	--category-programming: orange;
 	--category-tips-and-tricks: #142f54;
 	--category-personal: #01a9bc;
-	--category-web-development:  #d800cd;
+	--category-web-development: #d800cd;
 }
 
 @tailwind base;
@@ -46,7 +50,7 @@ body::-webkit-scrollbar-thumb:active {
 	outline: 2px dashed tomato;
 }
 
-*  {
+* {
 	box-sizing: border-box;
 }
 
@@ -67,7 +71,6 @@ body::-webkit-scrollbar-thumb:active {
 	@apply bg-blue-500;
 }
 
-
 @layer base {
 	body {
 		font-family: Inter, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,
@@ -80,7 +83,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	.fancy-scrollbar {
-		scrollbar-width: thin
+		scrollbar-width: thin;
 	}
 
 	.fancy-scrollbar::-webkit-scrollbar {
@@ -114,7 +117,6 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	input[type='search']::-webkit-search-cancel-button {
-		
 	}
 
 	input:read-only {
@@ -141,7 +143,7 @@ body::-webkit-scrollbar-thumb:active {
 	ol,
 	ul {
 		@apply list-inside;
-		padding-inline-start: 10px;
+		padding-inline-start: 20px;
 	}
 
 	ol ol,
@@ -277,7 +279,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	p {
-		@apply my-4
+		@apply my-4;
 	}
 
 	pre > code {
@@ -291,7 +293,7 @@ body::-webkit-scrollbar-thumb:active {
 		@apply w-[3px] bg-transparent;
 	}
 	code::-webkit-scrollbar:horizontal {
-		@apply h-[3px];
+		@apply h-[7px];
 	}
 
 	code::-webkit-scrollbar-thumb:active {
@@ -299,7 +301,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	hr {
-		@apply dark:border-gray-700
+		@apply dark:border-gray-700;
 	}
 
 	code::-webkit-scrollbar-thumb {
@@ -451,3 +453,5 @@ body::-webkit-scrollbar-thumb:active {
 	src: local(''), url('/fonts/inter-v3-latin-900.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+@tailwind components;
+@tailwind utilities;

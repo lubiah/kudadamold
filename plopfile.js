@@ -1,6 +1,12 @@
 "use strict";
+
 export default function(plop){
-    plop.setWelcomeMessage(`
+    const today = new Date(Date.now())
+const shortDate = today.toISOString().split("T")[0]
+plop.setHelper("date", () => shortDate),
+plop.setHelper("ISOStringDate", () => today.toISOString()),
+
+plop.setWelcomeMessage(`
     Kudadam.com 👦
 ------------------------------------------
 My personal website built with SvelteKit & TailwindCSS`);
@@ -40,12 +46,40 @@ My personal website built with SvelteKit & TailwindCSS`);
                     {name: "Tips And Tricks"},
                     {name: "Personal"}
                 ]
+            },
+            {
+                type: "input",
+                name: "keywords",
+                message: "Keywords (Separate multiple with ',')",
+                filter: (data)=>{
+                    return data.split(",")
+                    .map(keyword=>{
+                        return keyword.trim()
+                    })
+                },
+
+            },
+            {
+                type: "input",
+                name: "slug",
+                message: "Enter the slug",
+                validate: (slug)=>{
+                    if (/^[a-z](-?[a-z])*$/.test(slug))
+                        return true
+                    return "Slug cannot contain spaces and other foreign characters except '-'"
+                }
+            },
+            {
+                type: "confirm",
+                name: "confirmed",
+                message: "Proceed to create blog post?"
             }
         ],
         actions: [
             {
                 type: "add",
-                
+                path: "src/routes/blog/_blog/{{lowerCase slug}}/index.md",
+                templateFile: "plop-templates/new_blog.hbs"
             }
         ]
     })
