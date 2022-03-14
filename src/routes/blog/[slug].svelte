@@ -1,5 +1,5 @@
 <script context="module">
-
+	export const prerender = true;
 	export async function load({ params, fetch }) {
 		try{
 		const slug = params.slug;
