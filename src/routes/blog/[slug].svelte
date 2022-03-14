@@ -99,7 +99,7 @@
 		description: `${metadata.description}`,
 		type: 'article',
 		url: `https://www.kudadam.com/blog/${metadata.slug}`,
-		article: {
+		article: {``
 			publishedTime: `${metadata.date}`,
 			// modifiedTime: `${post[0].last_updated}`,
 			authors: [`Lucretius Biah`]

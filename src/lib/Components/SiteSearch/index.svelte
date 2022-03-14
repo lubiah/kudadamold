@@ -1,12 +1,12 @@
 <script>
 	import Modal from '$lib/Components/Modal';
-    import Search from "minisearch";
     import { onMount } from "svelte";
     let documents, value, search;
     export let hidden = true;
     let results = [];
+    let Search;
     onMount(async ()=>{
-
+        Search = await import("minisearch").then(module=>module.default);
         let documents_res = await fetch("/blog.json?all=true");
         documents = await documents_res.json();
         search = new Search({
