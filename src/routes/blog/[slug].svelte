@@ -31,11 +31,11 @@
 	import RectangleList from '$lib/Icons/RectangleList.svelte';
 	import Tags from '$lib/Icons/Tags.svelte';
 	import Eye from '$lib/Icons/Eye.svelte';
+	import snakeCase from "just-snake-case";
 
 	export let metadata, content;
 	let relatedArticles;
 	let Card;
-	let snakeCase;
 	let PageProgress;
 	let hits;
 	$: hits = 0;
@@ -60,11 +60,9 @@
 	}
 
 	onMount(async ()=>{
-
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
 		let { data } = await hits_response.json();
 		hits  = await data.hits;
-		snakeCase = await import("just-snake-case").then(res=>res.default);
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(response=>response.json());
