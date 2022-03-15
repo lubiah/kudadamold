@@ -25,7 +25,6 @@
 <script type="text/javascript">
 	import SEO from 'svelte-seo';
 	import 'prismjs/themes/prism-tomorrow.css';
-	import  snakeCase from 'just-snake-case';
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";
@@ -36,6 +35,7 @@
 	export let metadata, content;
 	let relatedArticles;
 	let Card;
+	let snakeCase;
 	let PageProgress;
 	let hits;
 	$: hits = 0;
@@ -64,7 +64,7 @@
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
 		let { data } = await hits_response.json();
 		hits  = await data.hits;
-
+		snakeCase = await import("just-snake-case").then(res=>res.default);
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(response=>response.json());
