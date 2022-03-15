@@ -1,9 +1,7 @@
 <script context="module">
-	export const prerender = true;
 	export async function load({ params, fetch }) {
 		try{
 		const slug = params.slug;
-		let meta;
 		let component = await import(`./_blog/${slug}/index.md`);
 		component.metadata["slug"] = slug;
 		return {
