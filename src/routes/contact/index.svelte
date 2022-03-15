@@ -45,7 +45,7 @@
 </p>
 <ul id="details_list" class="dark:text-gray-300 mt-6 p-2 rounded inline-block w-[300px] p-0 space-y-2">
 	<li><a on:click={handleEmail} href="/contact">Email (Click to reveal)</a></li>
-	<li><a href="tel:0249005710">Telephone</a></li>
+	<li><a href="tel:0249005710">+233 249 005 710</a></li>
 	<li><a href="https://wa.link/jebvr2">WhatsApp</a></li>
 	<li><a href="https://t.me/kudadam">Telegram</a></li>
 </ul>
