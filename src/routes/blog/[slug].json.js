@@ -6,7 +6,7 @@ db.serialize(()=>{
 	db.run(`
 	CREATE TABLE IF NOT EXISTS blog	 (
 		slug VARCHAR(255) UNIQUE NOT NULL,
-		read_times INT DEFAULT 1 NOT NULL
+		hits INT DEFAULT 1 NOT NULL
 	)
 `, (err)=>{})
 });
@@ -28,7 +28,7 @@ const getData = async (slug)=>{
 					let insert =  new Promise((resolve,reject)=>{
 						db.run("INSERT INTO blog (slug) VALUES (?)",slug, (err,data)=>{
 							if (err) reject(err)
-							else resolve({read_times: 1, likes: 0,shares: 0});
+							else resolve({hits: 1, likes: 0,shares: 0});
 						})
 					});
 					try{
@@ -41,8 +41,8 @@ const getData = async (slug)=>{
 					
 				}
 				else{
-					let times_read = rows.read_times;
-					db.run("UPDATE blog SET read_times = ? WHERE slug = ?",times_read+1,slug,(err,data)=>{});
+					let times_read = rows.hits;
+					db.run("UPDATE blog SET hits = ? WHERE slug = ?",times_read+1,slug,(err,data)=>{});
 					resolve(rows);
 				}
 			}

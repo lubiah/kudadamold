@@ -6,13 +6,10 @@
 		let meta;
 		let component = await import(`./_blog/${slug}/index.md`);
 		component.metadata["slug"] = slug;
-		let { data } = await fetch(`/blog/${slug}.json`).then(e=>e.json()).catch(err=>{});
-		meta = data;
 		return {
 			props: {
 				metadata: component.metadata,
-				content: component.default,
-				meta
+				content: component.default
 			}
 			};
 		}
@@ -65,17 +62,13 @@
 
 	onMount(async ()=>{
 
-		//Get the page hits count from the api if the mode is production
-		if (mode === "production"){
-			let hits_response = await fetch(`https://api.countapi.xyz/hit/kudadam.com/${metadata.slug}`);
-			let hit = await hits_response.json();
-			hits  = await hit.value;
-		}
+		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
+		let { data } = await hits_response.json();
+		hits  = await data.hits;
 
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		let { posts } = await fetch("/blog.json?all=true").then(response=>response.json());
-		console.log(posts);
 		relatedArticles = await getRelatedArticles(metadata.title, posts);
 		let sharejsElement = document.createElement("script");
 		sharejsElement.src = "https://platform-api.sharethis.com/js/sharethis.js#property=61d2ee20cb125900193f457d&product=sop";
