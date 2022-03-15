@@ -25,7 +25,7 @@
 	import SEO from 'svelte-seo';
 	import 'prismjs/themes/prism-tomorrow.css';
 	import  snakeCase from 'just-snake-case';
-	import { browser, mode } from "$app/env";
+	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";
 	import RectangleList from '$lib/Icons/RectangleList.svelte';
