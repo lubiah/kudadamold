@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /home5/eakloeor/nodevenv/public_html/www.kudadam.com/14/bin/activate && cd /home5/eakloeor/public_html/www.kudadam.com
+source /home5/eakloeor/nodevenv/public_html/kudadam.com/14/bin/activate && cd /home5/eakloeor/public_html/kudadam.com
 npm config set scripts-prepend-node-path true
 npm install
 touch tmp/restart.txt
