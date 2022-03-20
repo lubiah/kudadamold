@@ -15,7 +15,7 @@ keywords:
 tags:
     - python
     - sololearn
-image: https://kudadam.sirv.com/blog/letter-counter-python/index.jpg
+image: https://lucretius.sirv.com/blog/letter-counter-python/index.jpg
 date: 2021-12-29
 ---
 

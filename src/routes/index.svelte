@@ -24,7 +24,7 @@
 		type: 'website',
 		images: [
 			{
-				url: 'https:kudadam.sirv.com/logo/logo.png',
+				url: 'https:lucretius.sirv.com/logo/logo.png',
 				width: 850,
 				height: 650,
 				alt: 'Kudadam Logo'
@@ -36,7 +36,7 @@
 		title: "Lucretius Biah • Kudadam",
 		description:
 			'Hey, am Lucretius, a software developer and website designer. Welcome to my part of the internet. Feel free to read my blog post, download my softwares or just look around',
-		image: 'https://kudadam.sirv.com/logo/logo.png',
+		image: 'https://lucretius.sirv.com/logo/logo.png',
 		imageAlt: 'Logo of Kudadam'
 	}}
 
@@ -71,7 +71,7 @@
 			width="320"
 			height="320.5"
 			loading="lazy"
-			src="https://kudadam.sirv.com/svg/boy.svg?q=1"
+			src="https://lucretius.sirv.com/svg/boy.svg?q=1"
 			alt="Cartoonish boy winking his eye"
 		/>
 		</div>
@@ -83,7 +83,7 @@
 		<div class="w-full md:w-1/2">
 			<img
 				loading="lazy"
-				src="https://kudadam.sirv.com/svg/showing_resume.svg?q=1"
+				src="https://lucretius.sirv.com/svg/showing_resume.svg?q=1"
 				alt="Showing a resume"
 				width="491"
 				height="365"
@@ -134,13 +134,13 @@
 	<p class="text-center">Some things I have done so far</p>
 	<div class="flex flex-wrap justify-center">
 		<ProjectCard
-			image="https://kudadam.sirv.com/FLAMES/image.png"
+			image="https://lucretius.sirv.com/FLAMES/image.png"
 			title="FLAMES Game"
 			description="A simple game which can tell the relationship between two people with the use of their names"
 			url="/flames"
 		/>
 		<ProjectCard
-			image="https://kudadam.sirv.com/extractfrom/version_5.png?thumbnail=200"
+			image="https://lucretius.sirv.com/extractfrom/version_5.png?thumbnail=200"
 			title="Extract From"
 			description="A software which helps you to extract a specific file type from one place to another"
 			url="https://www.kudadam.com/extractfrom"

@@ -2,7 +2,7 @@
 title: Designing A Simple Keylogger In Python
 description: A tutorial which teaches you how to develop a simple keylogger in Python. Keyloggers are applications which are used to log keys when typed, naturally, keyloggers are not illegal unless used unlawful purposes
 category: Programming
-image: https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/hero.jpg
+image: https://lucretius.sirv.com/blog/designing_a_keylogger_in_python/hero.jpg
 excerpt: With Python, you can make a keylogger which will log the keypress of the keyboard and save the contents to a file
 keywords:
   - keylogger
@@ -44,11 +44,11 @@ keyboard.wait()
 I can say we are done, maybe above 50% done. Let me explain the code; on the first line, we imported the `keyboard` module. Then we defined our `logger(event)` function, it takes `event` as parameter and then it print's it's `.name` out. Then to the next line, we assigned the `logger` function as a parameter to the `keyboard.on_press` method. The `keyboard.on_press` method takes a function as parameter and passes an event to it. Then to the last line, the `keyboard.wait` makes the program run without closing, it acts like a while loop.
 
 If we are to run our code in the terminal, it runs successfully without any errors. However, there is a problem, try typing this sentence after activating the logger `"am a hacker"`.
-<img class="Sirv" src="https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/before_filter.gif" alt="" />
+<img class="Sirv" src="https://lucretius.sirv.com/blog/designing_a_keylogger_in_python/before_filter.gif" alt="" />
 
 We really might not see the effect because, when the program is ran on the terminal, each character is printed on a new line but if the results were stored in a file, this is how it will look.
 
-<img class="Sirv" src="https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/before_filter_txt.png" alt="" />
+<img class="Sirv" src="https://lucretius.sirv.com/blog/designing_a_keylogger_in_python/before_filter_txt.png" alt="" />
 
 You might be confused, let me explain, when special keys are pressed, their names are returned and thus it makes it difficult for us to know if it was a character or special key. For example, if a user presses <kbd>space</kbd>, it will print out "space" or if <kbd>enter</kbd>, it will print out "enter", when this data is appended to a file, it just adds up to the letters and makes it difficult for us to know whether it was a special key or not.
 
@@ -68,7 +68,7 @@ def filter(char):
 
 Well, this new code just popped into my head :laughing: , the first time I made the `filter` function, it was like this.
 
-<img class="Sirv" src="https://kudadam.sirv.com/blog/designing_a_keylogger_in_python/first_filter_function.png" alt="" />
+<img class="Sirv" src="https://lucretius.sirv.com/blog/designing_a_keylogger_in_python/first_filter_function.png" alt="" />
 
 This function above was 98 lines, this was because, I hard-coded every key inside my function, but now, I use a simple logic for the filter function. if we are to look at all the "special keys", we will find out that the length of their name is more than one whereas the length of normal characters or letters is one. So in our new `filter` function, we first checked if the `char == 'space'`, we then return `" "` if true. Then on the next line, we check if the length of the `char` is greater than one, if it is, then it means it is a special key so we wrap `[]`around it. else, we just return the `char`. Now our keylogger logs the characters much better.
 

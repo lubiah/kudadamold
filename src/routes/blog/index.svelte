@@ -37,7 +37,7 @@
 		type: 'website',
 		images: [
 			{
-				url: 'https://kudadam.sirv.com/logo/logo_blog.png',
+				url: 'https://lucretius.sirv.com/logo/logo_blog.png',
 				width: 850,
 				height: 650,
 				alt: 'Blog post'
@@ -48,7 +48,7 @@
 		site: '@kudadam_',
 		title: 'Kudadam • Blog',
 		description: 'A place where I write about everthing tech related',
-		image: 'https://kudadam.sirv.com/logo/logo_blog.png',
+		image: 'https://lucretius.sirv.com/logo/logo_blog.png',
 		imageAlt: 'Blog Logo'
 	}}
 />

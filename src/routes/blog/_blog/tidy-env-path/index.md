@@ -3,7 +3,7 @@ title: Tidying Up Your Environment Path With Ruby
 description: How to tidy up your environment path and remove paths which are dead links using the Ruby programming language
 category: Programming
 excerpt: The more you install and uninstall softwares, the more your environment path gets dirty
-image: https://kudadam.sirv.com/blog/tidy_env_path/hero.jpg
+image: https://lucretius.sirv.com/blog/tidy_env_path/hero.jpg
 keywords:
   - environment variables
   - env

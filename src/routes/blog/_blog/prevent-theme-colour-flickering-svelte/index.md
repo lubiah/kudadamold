@@ -3,7 +3,7 @@ title: How To Prevent Theme Colour From Flickering in Svelte Or SvelteKit
 description: Learn how to prevent your theme colours from flickering when your page loads in your Svelte or SvelteKit website
 category: Programming
 excerpt: Many websites theme colours flick on page load, learn how to solve that
-image: https://kudadam.sirv.com/blog/prevent-theme-colour-flickering-svelte/hero.jpg
+image: https://lucretius.sirv.com/blog/prevent-theme-colour-flickering-svelte/hero.jpg
 keywords:
   - sveltekit flickering css
   - svelte flickering
@@ -24,7 +24,7 @@ date: 2021-10-15
 
 At first, I was changing my website's theme colour inside the `onMount` function but the theme colours were always flickering. The reason was that, the body loads before the `onMount` function sets the theme colour.
 Here's a gif showing the problem
-![How the screen was flickering before I found a solution](https://kudadam.sirv.com/blog/prevent-theme-colour-flickering-svelte/flickering.gif)
+![How the screen was flickering before I found a solution](https://lucretius.sirv.com/blog/prevent-theme-colour-flickering-svelte/flickering.gif)
 
 So as you can see, when the page is reloaded, the light theme is first shown, then after the document has finished loading, the `onMount` will then set the theme colour
 
@@ -61,7 +61,7 @@ Then on the next line, we try to retrieve the theme from the `localStorage`, if 
 Then the next steps are the addition of classes and setting of the theme in the `localStorage`.
 
 Now look at how the page loads without flickering
-![Now the page loads without flickering](https://kudadam.sirv.com/blog/prevent-theme-colour-flickering-svelte/non_flickering.gif)
+![Now the page loads without flickering](https://lucretius.sirv.com/blog/prevent-theme-colour-flickering-svelte/non_flickering.gif)
 
 Happy Coding!:smile:
 

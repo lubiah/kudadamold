@@ -6,7 +6,7 @@
 		{
 			title: "HackerRank Python (Basic) Certificate",
 			date: new Date("17-07-2021"),
-			image_url: "https://kudadam.sirv.com/certificates/hackerrank_python_beginner.png",		
+			image_url: "https://lucretius.sirv.com/certificates/hackerrank_python_beginner.png",		
 			url: "https://www.hackerrank.com/certificates/7d591cc394d8",
 			id: 1
 		}

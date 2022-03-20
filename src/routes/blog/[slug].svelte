@@ -116,7 +116,7 @@
 		headline: `${metadata.title}`,
 		keywords: `${metadata.keywords}`,
 		datePublished: `${new Date(metadata.date).toISOString()}`,
-		image: [`${metadata.image ? metadata.image : "https://kudadam.sirv.com/logo/logo.png?q=30"}`],
+		image: [`${metadata.image ? metadata.image : "https://lucretius.sirv.com/logo/logo.png?q=30"}`],
 		author: {
 			"@type": "Person",
 			"name": "Lucretius Biah",

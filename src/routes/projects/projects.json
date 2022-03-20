@@ -3,14 +3,14 @@
 		"id": 1,
 		"name": "FLAMES Game",
 		"description": "A simple game which can tell the relationship between two people with the use of their names",
-		"image": "https://kudadam.sirv.com/FLAMES/image.png",
+		"image": "https://lucretius.sirv.com/FLAMES/image.png",
 		"url": "/flames"
 	},
 	{
 		"id": 2,
 		"name": "ExtractFrom",
 		"description": "A software which helps you to extract a specific file type from one place to another",
-		"image": "https://kudadam.sirv.com/extractfrom/version_5.png?thumbnail=200",
+		"image": "https://lucretius.sirv.com/extractfrom/version_5.png?thumbnail=200",
 		"url": "https://www.kudadam.com/extractfrom",
 		"repo": "https://www.github.com/kudadam/extractfrom"
 	},
@@ -18,7 +18,7 @@
 		"id": 3,
 		"name": "Useful Toolz",
 		"description": "A set of online tools which you might use everyday",
-		"image": "https://kudadam.sirv.com/logo/logo.png",
+		"image": "https://lucretius.sirv.com/logo/logo.png",
 		"url": "https://useful-toolz.vercel.app",
 		"repo": "https://www.github.com/kudadam/useful-toolz"
 	}

@@ -3,7 +3,7 @@ title: Automatically Setting Your Computer's time with Python
 description: Learn how to make a python script which can set your computer's time correctly whenever it goes wrong
 category: Programming
 excerpt: Setting your computer's time whenever it goes wrong can be soo boring... Fortunately, you can automate the process
-image: https://kudadam.sirv.com/blog/setting_time_python/hero.jpg
+image: https://lucretius.sirv.com/blog/setting_time_python/hero.jpg
 keywords:
   - python
   - setting time

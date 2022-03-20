@@ -17,7 +17,7 @@
 
 {#if !hidden}
      <div id="backdrop" on:click|self={hideModal}>
-        <div id="modal-content" class="bg-white max-w-sm mx-auto mt-[70px] dark:bg-slate-900 dark:shadow {Class}">
+        <div id="modal-content" class="bg-white max-w-sm mx-3 mt-[10%] md:mx-auto md:max-w-md lg:max-w-[800px] dark:bg-slate-900 shadow {Class}">
             <slot/>
         </div>
      </div>

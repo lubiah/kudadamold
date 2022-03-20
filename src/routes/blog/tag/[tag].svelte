@@ -26,7 +26,7 @@ openGraph = {{
     type: "website",
     images: [
 			{
-				url: 'https://kudadam.sirv.com/logo/logo.png',
+				url: 'https://lucretius.sirv.com/logo/logo.png',
 				width: 850,
 				height: 650,
 				alt: 'Og Image Alt'
@@ -38,7 +38,7 @@ twitter={{
     site: '@kudadam_',
     title: seo.title,
     description: seo.description,
-    image: 'https://kudadam.sirv.com/logo/logo.png',
+    image: 'https://lucretius.sirv.com/logo/logo.png',
     imageAlt: 'Kudadam Logo'
 }}
 />

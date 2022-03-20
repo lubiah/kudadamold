@@ -32,7 +32,7 @@
 			{error}
 		{/if}
 		<img
-			src="https://kudadam.sirv.com/svg/astronaut.svg"
+			src="https://lucretius.sirv.com/svg/astronaut.svg"
 			loading="lazy"
 			alt="Error"
 			class="block mx-auto w-full"
@@ -44,7 +44,7 @@
 			{error}
 		{/if}
 		<img
-			src="https://kudadam.sirv.com/svg/error_server.svg"
+			src="https://lucretius.sirv.com/svg/error_server.svg"
 			loading="lazy"
 			alt="Error"
 			class="block mx-auto w-full"

@@ -3,7 +3,7 @@ title: Creating Python's input function in Ruby
 description: A tutorial showing how to implement python's input function in Ruby. The input function is used to get user's input.
 category: Programming
 excerpt: Ruby is a general-purpose programming language and it's syntax is close to Python's own. One of the functions I wanted to implement was the input() function.
-image: https://kudadam.sirv.com/blog/ruby_input.png
+image: https://lucretius.sirv.com/blog/ruby_input.png
 tags:
   - python
   - ruby

@@ -29,7 +29,7 @@ openGraph={{
     type: 'website',
     images: [
       {
-        url: 'https://kudadam.sirv.com/logo/logo.png?q=10',
+        url: 'https://lucretius.sirv.com/logo/logo.png?q=10',
         width: 850,
         height: 650,
         alt: 'Website logo image'
@@ -41,7 +41,7 @@ openGraph={{
     site: "@kudadam_",
     title: "Projects - Stuff Curated by me • Kudadam",
     description: "This is a page which showcases a list of projects which were curated or designed by me",
-    image: "https://kudadam.sirv.com/logo/logo.png?q=10",
+    image: "https://lucretius.sirv.com/logo/logo.png?q=10",
     imageAlt: "Website logo image",
   }}
 

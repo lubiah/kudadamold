@@ -3,7 +3,7 @@ title: Save WhatsApp Status With Python on Android
 description: You can save your WhatsApp statuses on your mobile phone with Python with the help of the Termux application. Termux enables you to run your python scripts on your mobile phone
 category: Programming
 excerpt: You actually don't need an application to save your WhatsApp statuses for you. You can make one yourself
-image: https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/hero.jpg
+image: https://lucretius.sirv.com/blog/whatsapp-status-saver-python-mobile/hero.jpg
 keywords:
    - termux
    - termux python
@@ -33,7 +33,7 @@ Termux is a terminal emulator for Android that allows for running a Linux enviro
 
 After installing the application, open the application and type in `pkg install python`.  After running this command, enter `python` on the terminal to see if a python interpreter will pop up. You should see something like the image below :arrow_down:  
 
-<img src="https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/python_shell.png" height="500" alt="Python shell"/>
+<img src="https://lucretius.sirv.com/blog/whatsapp-status-saver-python-mobile/python_shell.png" height="500" alt="Python shell"/>
 
 So if your output looks like the image above, then it means you have successfully installed Python onto your mobile device. Hurray!!! :fireworks: 
 
@@ -68,7 +68,7 @@ Luckily for us, termux comes with nano pre installed. nano is a text editor whic
 
 To create a new file, enter `nano main.py` in your terminal and this should open a new empty file where we will write our code.
 
-<img src="https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/nano_file.png" height="500px" alt="Nano text editor opened"/>
+<img src="https://lucretius.sirv.com/blog/whatsapp-status-saver-python-mobile/nano_file.png" height="500px" alt="Nano text editor opened"/>
 
 Now, enter the following code into the editor, I will explain below
 
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 	main()
 ```
 
-![Code written in nano text editor](https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/nano_with_code.png)
+![Code written in nano text editor](https://lucretius.sirv.com/blog/whatsapp-status-saver-python-mobile/nano_with_code.png)
 This is how your code should look like in the app
 
 
@@ -141,7 +141,7 @@ Inside the directory in which you created the python file, run the command `pyth
 
 So, after creating the code, I decided to test it on my mobile device to see if it would work and guess what, it did!!
 
-![Working proof of the python status saver](https://kudadam.sirv.com/blog/whatsapp-status-saver-python-mobile/working_proof.gif)
+![Working proof of the python status saver](https://lucretius.sirv.com/blog/whatsapp-status-saver-python-mobile/working_proof.gif)
 
 Happy Coding!!! :smile:
 

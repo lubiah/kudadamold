@@ -3,7 +3,7 @@ title: Preventing Key Delay In TextArea Using Event
 description: A tutorial showing how to prevent a key delay in a textarea element when using event to listen for change
 category: Programming
 excerpt: When using the onkeypress event to grab text, it's always 1 character delayed. Learn how to solve that problem
-image: https://kudadam.sirv.com/blog/prevent_key_delay_textarea/hero.jpg
+image: https://lucretius.sirv.com/blog/prevent_key_delay_textarea/hero.jpg
 keywords:
   - textarea events
   - textarea input
@@ -19,7 +19,7 @@ Whiles working with the textarea element today, I found a problem
 I was using the `onkeypress` event to grab the text from the textarea element but I realized that the data collected was one character delayed. I then tried the `onkeyup` and `onkeydown` but it was still one character delayed.
 
 Initially, I thought this was a bug with my code but after a careful consideration, I realized my code was fine and the `onkeypress` event was also working correctly so why the one character delay?
-![A gif showing the problem](https://kudadam.sirv.com/blog/prevent_key_delay_textarea/keydelay.gif)
+![A gif showing the problem](https://lucretius.sirv.com/blog/prevent_key_delay_textarea/keydelay.gif)
 
 ## What was really happening
 
@@ -34,7 +34,7 @@ const show = (e) => {
 };
 ```
 
-![A gif debugging the problem](https://kudadam.sirv.com/blog/prevent_key_delay_textarea/debugging.gif)
+![A gif debugging the problem](https://lucretius.sirv.com/blog/prevent_key_delay_textarea/debugging.gif)
 When the first character is entered, the `event.target.value` is '', this is because, the value is contained in the event object not the `event.target.value`.
 This same analogy happens as we continue to type
 

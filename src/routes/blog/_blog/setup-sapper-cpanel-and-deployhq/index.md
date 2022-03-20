@@ -2,7 +2,7 @@
 title: Setting Up Sapper Project With Cpanel And Deploying With DeployHQ
 description: How to set up your sapper website with cpanel and auto deploying it with deployhq from your git repository
 category: Tips and Tricks
-image: https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/hero.jpg
+image: https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/hero.jpg
 excerpt: Learn how to use DeployHQ to automatically deploy your Svelte website when you push to github
 keywords:
   - deployhq
@@ -22,13 +22,13 @@ So today, I wanted to move my website to my server. I had been using [netlify](h
 First of all, am assuming you have finished with your Sapper project and you are ready to deploy. Since I want to run my website server side, am going to use the `npm run build` command. However, if you want to deploy yours statically, you can also use the `npm run export` command. So in the directory of the project, open your terminal and run any of the two commands.
 If it was able to build successfully, your output should look similar to the image below ↓
 
-![Building](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building.jpg)
+![Building](https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building.jpg)
 
 ## Setting up project on Cpanel
 
 Now, we have finished building our project, move on to your cpanel's homepage. It should look similar to mine. Now follow the steps below as we configure a new new nodejs app.
 
-![Homepage of Cpanel](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/cpanel_homepage.jpg)
+![Homepage of Cpanel](https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/cpanel_homepage.jpg)
 
 - **Click on Setup Node.js App**  
   In the software section of your cpanel, you will see a "Setup Node.js App". This is where we will be creating our application, after clicking on it, it should take you to another page.
@@ -36,7 +36,7 @@ Now, we have finished building our project, move on to your cpanel's homepage. I
 - **Click on "Create Application"**  
   After you are taken to a new page after clicking on "Setup Node.js App", you will see a button on your upper right hand side labelled 'Create Application'.
 
-  ![Create application button on Cpanel](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_application.jpg)
+  ![Create application button on Cpanel](https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_application.jpg)
 
 - **Fill in the Form**  
   After you click on the button, you will be taken to a page with a form. You are supposed to fill the mandatory portions of it.
@@ -48,7 +48,7 @@ Now, we have finished building our project, move on to your cpanel's homepage. I
   Then click on CREATE on the upper right hand side of your screen.
   When you are done, your output should be similar to mine.
 
-  ![Filling the Node app form](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/filling_form.jpg)
+  ![Filling the Node app form](https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/filling_form.jpg)
 
   Now, if you are to visit your application url, you will see a simple text that says 'it works'. This shows that our application is working correctly.
 
@@ -62,13 +62,13 @@ We are going to use a service called [deployhq](https://www.deployhq.com) which 
 Head over to their website at [deployhq.com](https://www.deployhq.com/r/wyzoak) and create an account.
 After filling all the forms and creating your account, you will be directed to their dashboard which looks like the image below Then you click on "Create a project".
 
-<img src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/deployhq_dashboard.jpg" width="1266" height="783" alt="Dashboard of deployhq" />
+<img src="https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/deployhq_dashboard.jpg" width="1266" height="783" alt="Dashboard of deployhq" />
 
 ## Connecting DeployHQ to your Git repository
 
 In the projects tab, enter a new project name and select where your repository is hosted, for me, I will choose Github, then click on 'Create Project'.
 
-![Creating a project on deployhq](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_project_deployhq.jpg)
+![Creating a project on deployhq](https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/create_project_deployhq.jpg)
 
 After that, you select the repository which you want DeployHQ to watch, then you start to configure your server.
 
@@ -143,13 +143,13 @@ For an in-depth tutorial on globbing, visit [linuxhint.com/bash_globbing_tutoria
 
 Also, if you do not want to use a `.deployignore` file, you can create the set of files which you want to exclude using their web interface, however, this approach is tiring and slower than the first.
 
-<img src="https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/ecluding_files.jpg" width="1398" height="580" alt="Excluding files using deployhq's web interface" />
+<img src="https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/ecluding_files.jpg" width="1398" height="580" alt="Excluding files using deployhq's web interface" />
 
 ## Creating a build pipeline
 
 The build pipeline refers to commands which we want to run on DeployHQ's server before uploading them to our server. This is a very good place for us to build our sapper project and upload only the end results to the server.
 
-![Using deployHQ's build pipeline](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building_files.jpg)
+![Using deployHQ's build pipeline](https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/building_files.jpg)
 
 <b>Steps...</b>
 
@@ -187,7 +187,7 @@ pm2 start __sapper__/build/index.js --name "website"
 
 The auto deployment won't work without this option, this is the place where we toggle the auto deployment for this specific project.
 
-![Setting autodeployment](https://kudadam.sirv.com/blog/setup_sapper_cpanel_and_deployhq/auto_deployment.jpg)
+![Setting autodeployment](https://lucretius.sirv.com/blog/setup_sapper_cpanel_and_deployhq/auto_deployment.jpg)
 
 ## Deploying to server
 

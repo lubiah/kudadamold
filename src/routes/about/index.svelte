@@ -9,7 +9,7 @@
 	    description: "Hey, am Lucretius Biah. A 17 year old developer located in Wakanda. I program useful softwares and also help to design beautiful websites. This is my personal website where I write almost anything i like",
 	    keywords: "about kudadam, about lucretius biah, about lucretius biah, about teen developer, lucretius biah, lucretius, lucretius programmer",
 	    canonical: "https://www.kudadam.com/about",
-	    image: "https://kudadam.sirv.com/profile/lucretius.jpg"
+	    image: "https://lucretius.sirv.com/profile/lucretius.jpg"
 	    
 	};
 </script>
@@ -27,7 +27,7 @@
 		type: 'profile',
 		images: [
 			{
-				url: "https://kudadam.sirv.com/profile/lucretius.jpg?q=5&w=850&h=650",
+				url: "https://lucretius.sirv.com/profile/lucretius.jpg?q=5&w=850&h=650",
 				width: 850,
 				height: 650,
 				alt: 'Kudadam Profile image'
@@ -38,14 +38,14 @@
 		site: '@kudadam_',
 		title: `${meta.title}`,
 		description: `${meta.description}`,
-		image: "https://kudadam.sirv.com/profile/lucretius.jpg?q=5",
+		image: "https://lucretius.sirv.com/profile/lucretius.jpg?q=5",
 		imageAlt: 'Profile image of Lucretius'
 	}}
 	
 	jsonLd = {{
 	    "@type": "AboutPage",
 	    description: `${meta.description}`,
-	    image: `https://kudadam.sirv.com/profile/lucretius.jpg?q=10`,
+	    image: `https://lucretius.sirv.com/profile/lucretius.jpg?q=10`,
 	    mainEntityOfPage: `${meta.canonical}`,
 	    url: `${meta.canonical}`,
 	    breadcrumb: {
@@ -63,7 +63,7 @@
 <main class="max-w-4xl mx-auto">
 	<h1 class="text-center font-bold">About me</h1>
 	<img height="300" width="300" 
-		src="https://kudadam.sirv.com/profile/lucretius.jpg?thumbnail=300&q=90"
+		src="https://lucretius.sirv.com/profile/lucretius.jpg?thumbnail=300&q=90"
 		alt=""
 		class="my-4 p-1 border rounded mx-auto"
 	/>

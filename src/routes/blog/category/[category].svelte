@@ -45,7 +45,7 @@
 		type: 'website',
 		images: [
 			{
-				url: 'https://kudadam.sirv.com/logo/logo.png',
+				url: 'https://lucretius.sirv.com/logo/logo.png',
 				width: 850,
 				height: 650,
 				alt: 'Og Image Alt'
@@ -56,7 +56,7 @@
 		site: '@kudadam_',
 		title: `{category} Category • Kudadam Blog`,
 		description: `Blog posts under {category} category`,
-		image: 'https://kudadam.sirv.com/logo/logo.png',
+		image: 'https://lucretius.sirv.com/logo/logo.png',
 		imageAlt: 'Kudadam Logo'
 	}}
 />
