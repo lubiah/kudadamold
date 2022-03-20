@@ -3,7 +3,7 @@ The Card component is used to house the blog posts
  -->
 <script type="text/javascript">
 	import snakeCase from "just-snake-case";
-	export let image  = "https://kudadam.sirv.com/logo/logo.png?q=2&canvas.color=white";
+	export let image  = "https://lucretius.sirv.com/logo/logo.png?q=2&canvas.color=white";
 	export let title;
 	export let date;
 	export let slug;
@@ -13,7 +13,7 @@ The Card component is used to house the blog posts
 	export let hide_category = false;
 	export {Class as class};
 
-	if (new URL(image).host === "kudadam.sirv.com"){
+	if (new URL(image).host === "lucretius.sirv.com"){
 		image = new URL(image);
 		image.searchParams.set("q",2);
 	}

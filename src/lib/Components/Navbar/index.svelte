@@ -67,7 +67,7 @@
 	<a
 		class="flex font-medium md:font-semibold text-lg items-center justify-center"
 		href="/" title="Go to homepage"
-		><img src="https://kudadam.sirv.com/logo/logo.png?q=5" class="h-10" height="40" width="40" alt="" /><span
+		><img src="https://lucretius.sirv.com/logo/logo.png?q=5" class="h-10" height="40" width="40" alt="" /><span
 			class="hidden md:inline text-[color:var(--light-text-color)] dark:text-white">Kudadam</span
 		></a>
 	<span class="ml-auto block p-3" on:click={()=> hideSearch = !hideSearch} title="Search the website for information"><SearchIcon/></span>	
