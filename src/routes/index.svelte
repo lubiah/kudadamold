@@ -71,7 +71,7 @@
 			width="320"
 			height="320.5"
 			loading="lazy"
-			src="https://lucretius.sirv.com/svg/boy.svg?q=1"
+			src="https://lucretius.sirv.com/profile/avatar.svg?q=1"
 			alt="Cartoonish boy winking his eye"
 		/>
 		</div>
