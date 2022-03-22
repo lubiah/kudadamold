@@ -1,9 +1,10 @@
 <script context="module">
 	export const prerender = true;
 	export async function load({ params, fetch }) {
+		
 		try{
 		const slug = params.slug;
-		let component = await import(`./_blog/${slug}/index.md`);
+		let component = await import(`../_blog/${slug}/index.md`);
 		component.metadata["slug"] = slug;
 		return {
 			props: {
@@ -14,6 +15,7 @@
 		}
 
 		catch(error){
+			console.log(error)
 			return {
 				fallthrough: true
 			}
