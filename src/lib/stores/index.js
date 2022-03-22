@@ -1,12 +1,12 @@
 import { browser } from "$app/env";
 import { writable } from "svelte/store";
-export const mode = writable("light");
+export const theme = writable("light");
 
 
 if (browser){
 	let mode_value = localStorage.theme;
-	mode.set(mode_value || "light");
-	mode.subscribe(data => {
+	theme.set(mode_value || "light");
+	theme.subscribe(data => {
 		localStorage.theme = data;
 	})
 }
