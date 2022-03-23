@@ -5,7 +5,7 @@
 	import { page } from '$app/stores';
 	import Moon from "$lib/Icons/moon.svelte";
 	import Sun from "$lib/Icons/sun.svelte";
-	import { mode } from "$lib/stores";
+	import { theme } from "$lib/stores";
 	import Header from "svelte-headroom";
 
 	let hidden = true;
@@ -20,13 +20,13 @@
 
 
 	const setMode = () => {;
-		if ($mode === 'light') {
+		if ($theme === 'light') {
 			document.documentElement.classList.add('dark');
-			mode.set("dark");
+			theme.set("dark");
 		} 
 		else {
 			document.documentElement.classList.remove('dark');
-			mode.set("light");
+			theme.set("light");
 		}
 	};
 
@@ -47,8 +47,9 @@
 <svelte:head>
 	<script>
 		if (document){
-			let mode = localStorage.theme || "light";
-			if (mode === 'dark'){
+			let site_theme = localStorage.theme || "light";
+
+			if (site_theme === 'dark'){
 				document.documentElement.classList.add("dark");
 				localStorage.theme = "dark";
 			}
@@ -97,7 +98,7 @@
 			{/each}
 			<li class="p-3 text-lg font-semibold">
 				<span on:click={setMode} title="Change Mode">
-					{#if $mode === "light"}<Moon/>{:else}<Sun/>{/if}
+					{#if $theme === "light"}<Moon/>{:else}<Sun/>{/if}
 				</span>
 			</li>
 			<slot />

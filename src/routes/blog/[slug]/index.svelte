@@ -26,6 +26,7 @@
 
 <script type="text/javascript">
 	import SEO from 'svelte-seo';
+	import { page } from "$app/stores";
 	import 'prismjs/themes/prism-tomorrow.css';
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
@@ -34,6 +35,7 @@
 	import Tags from '$lib/Icons/Tags.svelte';
 	import Eye from '$lib/Icons/Eye.svelte';
 	import snakeCase from "just-snake-case";
+	import { theme } from "$lib/stores";
 
 	export let metadata, content;
 	let relatedArticles;
@@ -61,6 +63,8 @@
 		return related_posts;
 	}
 
+
+
 	onMount(async ()=>{
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
 		let { data } = await hits_response.json();
@@ -72,15 +76,18 @@
 		let sharejsElement = document.createElement("script");
 		sharejsElement.src = "https://platform-api.sharethis.com/js/sharethis.js#property=61d2ee20cb125900193f457d&product=sop";
 		sharejsElement.type = "text/javascript";
+		sharejsElement.setAttribute("data-name","share this")
 		sharejsElement.defer = true;
-		document.querySelector("body").appendChild(sharejsElement);
-		
-
+		document.querySelector("head").appendChild(sharejsElement);
+		let cusdis = document.createElement("script");
+		cusdis.src = "https://cusdis.com/js/cusdis.es.js";
+		cusdis.addEventListener("load", event=>{
+			window.CUSDIS.initial();
+		})
+		document.querySelector("head").appendChild(cusdis);
 	});
 
-
 </script>
-
 <SEO
 	title="{metadata.title} • Kudadam Blog"
 	description={metadata.description}
@@ -180,8 +187,19 @@
 				</div>
 			</div>
 		{/if}
+		<h3>Comments</h3>
+		<div id="cusdis_thread"
+		data-host="https://cusdis.com"
+		data-app-id="2f49c941-a723-4350-a9eb-cad6fab4772b"
+		data-page-id="{metadata.slug}"
+		data-page-url="{$page.url.pathname}"
+		data-page-title="{metadata.title}"
+		data-theme="{$theme}"
+	  ></div>
 	
 </div>
+
+
 {#if browser}
 	<svelte:component this={PageProgress} color="tomato" height="5px" />
 {/if}
