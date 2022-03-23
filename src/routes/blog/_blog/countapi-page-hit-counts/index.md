@@ -3,6 +3,7 @@ title: Migrating My Blog Page Hits Data To CountAPI
 description: I migrated the page hits data for my website to CountAPI
 category: Tips And Tricks
 date: 2022-03-12
+image: https://lucretius.sirv.com/blog/countapi-page-hit-counts/hero.jpg
 excerpt: I migrated the page hits data for my website to CountAPI
 keywords: 
   - count api
@@ -60,7 +61,7 @@ The API has endpoints which you use to store your data.
   * ### set
     
       This endpoint is used for setting the value for a key.
-        
+      
       ```curl
       https://api.countapi.xyz/set/test?value=69
       => {"old_value":10096,"value":10096}
