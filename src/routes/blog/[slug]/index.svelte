@@ -166,7 +166,10 @@
 			<Eye/> {hits}
 		</li>
 	</ul>
+	<p class="font-bold text-lg text-[tomato] text-center">Share this article</p>
 	<div class="sharethis-inline-share-buttons mt-[50px] mb-[20px]"></div>
+	<p class="font-bold text-lg text-[tomato] text-center">Your reaction</p>
+	<div class="sharethis-inline-reaction-buttons"></div>
 	{#if browser && relatedArticles && [...relatedArticles].length >= 1}
 			<div class="mt-[100px]">
 				<h3>Related Articles</h3>
