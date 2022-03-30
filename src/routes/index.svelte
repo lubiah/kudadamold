@@ -70,7 +70,6 @@
 			class="w-80"
 			width="320"
 			height="320.5"
-			loading="lazy"
 			src="https://lucretius.sirv.com/profile/avatar.svg?q=1"
 			alt="Cartoonish boy winking his eye"
 		/>
