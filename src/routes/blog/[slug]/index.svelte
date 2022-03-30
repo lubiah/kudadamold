@@ -41,6 +41,7 @@
 	let relatedArticles;
 	let Card;
 	let PageProgress;
+	let Cusdis;
 	let hits;
 	$: hits = 0;
 
@@ -66,6 +67,7 @@
 
 
 	onMount(async ()=>{
+		Cusdis = await import("svelte-cusdis").then(e => e.default);
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
 		let { data } = await hits_response.json();
 		hits  = await data.hits;
@@ -79,12 +81,9 @@
 		sharejsElement.setAttribute("data-name","share this")
 		sharejsElement.defer = true;
 		document.querySelector("head").appendChild(sharejsElement);
-		let cusdis = document.createElement("script");
-		cusdis.src = "https://cusdis.com/js/cusdis.es.js";
-		cusdis.addEventListener("load", event=>{
-			window.CUSDIS.initial();
+		theme.subscribe(value=> {
+			window.CUSDIS.setTheme(value);
 		})
-		document.querySelector("head").appendChild(cusdis);
 	});
 
 </script>
@@ -191,14 +190,16 @@
 			</div>
 		{/if}
 		<h3>Comments</h3>
-		<div id="cusdis_thread"
-		data-host="https://cusdis.com"
-		data-app-id="2f49c941-a723-4350-a9eb-cad6fab4772b"
-		data-page-id="{metadata.slug}"
-		data-page-url="{$page.url.pathname}"
-		data-page-title="{metadata.title}"
-		data-theme="{$theme}"
-	  ></div>
+		<svelte:component this={Cusdis}
+			attrs = {{
+				appId: "2f49c941-a723-4350-a9eb-cad6fab4772b",
+				pageId: `${metadata.slug}`,
+				pageUrl: `${$page.url.pathname}`,
+				pageTitle: `${metadata.title}`,
+				theme: `${$theme}`
+			}}
+		/>
+
 	
 </div>
 

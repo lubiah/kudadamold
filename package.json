@@ -38,6 +38,7 @@
 		"remark-emoji": "^3.0.2",
 		"remark-slug": "^7.0.1",
 		"svelte": "^3.44.0",
+		"svelte-cusdis": "^0.0.2",
 		"svelte-headroom": "^2.2.1",
 		"svelte-paginate": "^0.0.1",
 		"svelte-preprocess": "^4.10.1",
