@@ -20,7 +20,6 @@
 
 	export let posts;
 	export let popular_articles;
-	console.log(popular_articles);
 	let pageSize = 6;
 	let currentPage = 1;
 	let items = posts;
