@@ -47,6 +47,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"cache": "^2.3.1",
 		"html-minifier": "^4.0.0",
 		"sqlite3": "^5.0.2"
 	}

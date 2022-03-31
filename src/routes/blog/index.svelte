@@ -1,14 +1,14 @@
 <script context="module">
-	export const prerender = true;
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { paginate, PaginationNav } from "svelte-paginate";
 	export async function load({ fetch }) {
-		let res = await fetch('/blog.json?all=true');
+		let res = await fetch('/blog.json?all=true&popular_articles=true');
 		let json = await res.json();
 		if (res.ok) {
 			return {
 				props: {
+					popular_articles: json.popular_articles,
 					posts: json.posts
 					}
 			};
@@ -19,6 +19,8 @@
 <script type="text/javascript">
 
 	export let posts;
+	export let popular_articles;
+	console.log(popular_articles);
 	let pageSize = 6;
 	let currentPage = 1;
 	let items = posts;
@@ -63,7 +65,7 @@
 
 <div class="max-w-6xl mx-auto">
 
-	<!--
+	
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
 	<div class="overflow-x-auto lg:fancy-scrollbar flex scroll-smooth snap-x">
 		<section class="flex">
@@ -82,7 +84,7 @@
 		
 	</div>
 	
--->
+
 
 	<h2 class=" my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
 	<section class="flex flex-wrap justify-center">
