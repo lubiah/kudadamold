@@ -68,7 +68,7 @@
 	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
 	<div class="overflow-x-auto lg:fancy-scrollbar flex scroll-smooth snap-x mb-8">
 		<section class="flex">
-			{#each [...popular_articles] as post (post.id)}
+			{#each popular_articles as post (post.id)}
 			<Card
 				class = "mr-3 snap-start"
 				title={post.title}
