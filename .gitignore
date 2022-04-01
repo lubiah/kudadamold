@@ -9,3 +9,4 @@ node_modules
 database.db
 database.db-shm
 database.db-wal
+/src/routes/blog/_blog/.obsidian
