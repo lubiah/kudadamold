@@ -1,4 +1,5 @@
 <script context="module">
+    export const prerender = true;
     import Search from "minisearch";
     import { onMount } from "svelte";
 	import SEO from 'svelte-seo';
