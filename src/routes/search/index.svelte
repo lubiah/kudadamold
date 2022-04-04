@@ -6,13 +6,11 @@
     
     export const load = async ({ url, fetch  })=>{
         let data = await fetch("/blog.json?all= true");
-        let query = url.searchParams.get("q");
         let json = await data.json();
 
     return {
         props: {
-            data: json.posts,
-            query
+            data: json.posts
         }
     }
 }
@@ -31,15 +29,16 @@ openGraph={{
 />
 
 <script>
-    export let data,query;
+    export let data;
     let results = [];
-
+    let query;
     let search = new Search({
         fields: ['title','keywords'],
         storeFields: ['title','slug','excerpt']
     });
     search.addAll(data);
     const findResults = ()=>{
+        query = url.searchParams.get("q");
         query === null ? query = "" : query = query;
         results = search.search(query, {
             boost: {

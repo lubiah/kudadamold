@@ -83,6 +83,17 @@ export async function get({ url }) {
 		results['posts'] = unsorted;
 	}
 
+	if (query.has("exclude")){
+		/* 
+		This always has to be the last, 
+		it is used to removed items from the object
+		*/
+		let excluded = query.get("exclude").split(",");
+		excluded.forEach(key=>{
+			delete results[key]
+		})
+	}
+
 
 	return {
 		body: JSON.stringify(results)

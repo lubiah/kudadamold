@@ -1,5 +1,5 @@
 <script context="module">
-	import snakeCase from 'just-snake-case';
+	import { snakeCase } from "$lib/Scripts/util.js";
 	export async function load({ params, fetch }) {
 		let category = params.category;
 

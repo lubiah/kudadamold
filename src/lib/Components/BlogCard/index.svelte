@@ -2,7 +2,7 @@
 The Card component is used to house the blog posts
  -->
 <script type="text/javascript">
-	import snakeCase from "just-snake-case";
+	import { snakeCase } from "$lib/Scripts/util.js";
 	export let image  = "https://lucretius.sirv.com/logo/logo.png?q=2&canvas.color=white";
 	export let title;
 	export let date;

@@ -1,6 +1,7 @@
 <script context="module">
 	export const prerender = true;
-	import snakeCase from "just-snake-case";
+
+	import { snakeCase } from "$lib/Scripts/util";
 	export async function load({ fetch }) {
 		let res = await fetch('/blog.json?all=true');
 		let { posts } = await res.json();

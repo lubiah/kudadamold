@@ -31,7 +31,7 @@
 	import RectangleList from '$lib/Icons/RectangleList.svelte';
 	import Tags from '$lib/Icons/Tags.svelte';
 	import Eye from '$lib/Icons/Eye.svelte';
-	import snakeCase from "just-snake-case";
+	import { snakeCase } from "$lib/Scripts/util.js"
 	import { theme } from "$lib/stores";
 
 	export let metadata, content;

@@ -23,7 +23,6 @@
 		"eslint-plugin-svelte3": "^3.2.1",
 		"fuzzball": "^2.1.2",
 		"html-entities": "^2.3.2",
-		"just-snake-case": "^3.0.1",
 		"mdsvex": "^0.10.5",
 		"minisearch": "^4.0.3",
 		"plop": "^3.0.5",
