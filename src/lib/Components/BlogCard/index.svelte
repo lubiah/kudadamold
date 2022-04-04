@@ -15,7 +15,7 @@ The Card component is used to house the blog posts
 
 	if (new URL(image).host === "lucretius.sirv.com"){
 		image = new URL(image);
-		image.searchParams.set("q",10);
+		image.searchParams.set("q",5);
 	}
 </script>
 
