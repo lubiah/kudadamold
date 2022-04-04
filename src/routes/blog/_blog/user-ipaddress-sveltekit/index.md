@@ -9,6 +9,7 @@ keywords:
   - ip address
   - sveltekit ip
   - svelte ip address
+image: https://lucretius.sirv.com/blog/user-ipaddress-sveltekit/hero.jpg
 ---
 <p class="intro">
     SvelteKit now makes it super easy to get the I.P address of a user
