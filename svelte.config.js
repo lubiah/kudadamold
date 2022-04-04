@@ -9,10 +9,7 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		trailingSlash: 'never',
-		serviceWorker: {
-			register: false
-		}
+		trailingSlash: 'never'
 	},
 	preprocess: [
 		mdsvex(mdsvexConfig),
