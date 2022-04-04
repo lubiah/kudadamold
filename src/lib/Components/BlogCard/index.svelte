@@ -15,12 +15,11 @@ The Card component is used to house the blog posts
 
 	if (new URL(image).host === "lucretius.sirv.com"){
 		image = new URL(image);
-		image.searchParams.set("q",2);
-		image.searchParams.set("w",300)
+		image.searchParams.set("q",10);
 	}
 </script>
 
-<article class="dark:bg-slate-900 md:mr-6 w-[320px] hover:shadow-lg rounded mb-9 relative {Class} blog_card">
+<article class="dark:bg-slate-900 md:mr-6 w-[320px] shadow-sm hover:shadow-lg rounded mb-9 relative {Class} blog_card">
 	<a
 		sveltekit:prefetch
 		href="/blog/{slug}"

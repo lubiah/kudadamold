@@ -1,16 +1,16 @@
 <script context="module">
-	export const prerender = true;
+
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { paginate, PaginationNav } from "svelte-paginate";
 	export async function load({ fetch }) {
-		let res = await fetch('/blog.json?all=true&popular_articles=true');
+		let res = await fetch('/blog.json?all=true');
 		let json = await res.json();
+		let { posts } = json;
 		if (res.ok) {
 			return {
 				props: {
-					popular_articles: json.popular_articles,
-					posts: json.posts
+					posts
 					}
 			};
 		}
@@ -20,11 +20,11 @@
 <script type="text/javascript">
 
 	export let posts;
-	export let popular_articles;
 	let pageSize = 6;
 	let currentPage = 1;
 	let items = posts;
 	let firstPage = paginate({ items , pageSize, currentPage });
+
 </script>
 
 <SEO
@@ -66,23 +66,23 @@
 <div class="max-w-6xl mx-auto">
 
 	
-	<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
+	<!-- <h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
 	<div class="overflow-x-auto lg:fancy-scrollbar flex scroll-smooth snap-x mb-8">
 		<section class="flex">
-			{#each popular_articles as post (post.id)}
+			{#each popular_articles as article (article.id)}
 			<Card
 				class = "mr-3 snap-start"
-				title={post.title}
-				image={post.image}
-				date={post.date}
-				slug={post.slug}
-				category={post.category}
-				excerpt={post.excerpt}
+				title={article.title}
+				image={article.image}
+				date={article.date}
+				slug={article.slug}
+				category={article.category}
+				excerpt={article.excerpt}
 			/>
 			{/each}
-		</section>
+		</section> 
 		
-	</div>
+	</div> -->
 	
 
 

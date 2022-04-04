@@ -1,10 +1,8 @@
 import Path from "path";
 import { chunk } from "$lib/Scripts/util.js";
 import { mode } from "$app/env";
-import Cache from "cache";
 import sqlite from "sqlite3";
 
-let cache = new Cache(86400 * 1000);
 let files = new Array();
 let imports = import.meta.glob("./_blog/**/*.md");
 const db = new sqlite.Database("./database.db", err=>{});
@@ -30,20 +28,17 @@ const getFiles = async ()=>{
 }
 
 const getPopularArticles = async ()=>{
-	if (cache.get("popular_articles") === null){
-		return new Promise((resolve, reject)=>{
-			db.serialize(()=>{
-				db.all("SELECT * FROM BLOG ORDER BY hits DESC LIMIT 0,6",(err,data)=>{
-					if (err)
-						reject(err)
-					cache.put("popular_articles",data);
-					resolve(data)
-				})
+	return new Promise((resolve, reject)=>{
+		db.serialize(()=>{
+			db.all("SELECT * FROM BLOG ORDER BY hits DESC LIMIT 0,6",(err,data)=>{
+				if (err)
+					reject(err)
+				resolve(data)
 			})
 		})
-	}
-	return cache.get("popular_articles");
+	})
 }
+
 
 export async function get({ url }) {
 	let posts = await files;
@@ -72,7 +67,11 @@ export async function get({ url }) {
 
 			}
 		});
-		results["popular_articles"] = files;
+		files = files.map(file =>{
+			delete file['html'];
+			return file; 
+		})
+		results["popular_articles"] = [...files];
 	}
 
 	if (query.get('limit')) {
