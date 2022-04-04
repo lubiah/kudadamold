@@ -1,3 +1,6 @@
+<script context="module">
+	export const prerender =  true;
+</script>
 <script type="text/javascript">
 	import SEO from 'svelte-seo';
 	let email =

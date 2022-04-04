@@ -15,10 +15,7 @@
 		}
 
 		catch(error){
-			console.log(error)
-			return {
-				fallthrough: true
-			}
+			console.log(error);
 		}
 		
 	}

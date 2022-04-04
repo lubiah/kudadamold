@@ -17,7 +17,7 @@ tags:
   - svelte
   - nodejs
   - sqlite3
-image: https://lucretius.sirv.com/blog/page-hit-counter-svelte/hero.svg
+image: https://lucretius.sirv.com/blog/page-hit-counter-svelte/hero.jpg
 ---
 
 <p class="intro">
@@ -27,7 +27,7 @@ image: https://lucretius.sirv.com/blog/page-hit-counter-svelte/hero.svg
 ## What's a hit counter?
 
 > A web counter or hit counter is a computer software program that indicates the number of visitors, or hits, a particular webpage has received. Once set up, these counters will be incremented by one every time the web page is accessed in a web browser. [Wikipedia](https://en.m.wikipedia.org/wiki/Web_counter)
- 
+
  So yeah, Wikipedia says it all.
  Basically, there are two types of hit counters;
 1. Unique hit counter

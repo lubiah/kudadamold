@@ -1,7 +1,7 @@
 ---
 title: Migrating My Blog Page Hits Data To CountAPI
 description: I migrated the page hits data for my website to CountAPI
-category: Tips And Tricks
+category: Tips and Tricks
 date: 2022-03-12
 image: https://lucretius.sirv.com/blog/countapi-page-hit-counts/hero.jpg
 excerpt: I migrated the page hits data for my website to CountAPI
