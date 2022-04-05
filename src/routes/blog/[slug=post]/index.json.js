@@ -59,12 +59,9 @@ export const get = async ({ params })=>{
 	let data = await getData(slug);
 	results['data'] = data;
 	return {
-		headers: {
-			"Cache-Control": "no-cache"
-		},
 		body: JSON.stringify(results)
 	}
-	}
+}
 	catch(err){
 		console.log(err);
 		return {
