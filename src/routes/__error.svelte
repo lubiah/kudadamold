@@ -18,9 +18,6 @@
 	import SEO from 'svelte-seo';
 	export let status, error;
 
-	console.log(status,error);
-	
-
 </script>
 
 <SEO title="{status} Error" />
