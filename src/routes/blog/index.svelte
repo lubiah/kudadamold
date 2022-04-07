@@ -1,5 +1,6 @@
 <script context="module">
-
+	export const prerender = true;
+	
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
 	import { PaginationNav } from "svelte-paginate";
