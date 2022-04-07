@@ -78,6 +78,10 @@ export async function get({ url }) {
 		results['limit'] = posts.length;
 	}
 
+	if (query.has("total")){
+		results["total"] = unsorted.length;
+	}
+
 	if (query.get('all')) {
 		results['posts'] = unsorted;
 	}

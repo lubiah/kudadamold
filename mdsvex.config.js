@@ -43,7 +43,10 @@ const config = defineConfig({
 		]
 	],
 
-	remarkPlugins: [[remark_attr, { scope: 'every' }], remark_slug, remark_emoji, remark_breaks],
+	remarkPlugins: [[remark_attr, {
+		scope: "every",
+		SUPPORTED_ELEMENTS: "fencedCode"
+	}], remark_slug, remark_emoji, remark_breaks],
 	extensions: ['.svelte.md', '.md', '.svx'],
 
 	smartypants: {

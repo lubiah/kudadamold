@@ -8,7 +8,9 @@ const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			precompress: true
+		}),
 		trailingSlash: 'never'
 	},
 	preprocess: [

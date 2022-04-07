@@ -1,4 +1,5 @@
 <script context="module">
+	export const prerender = true;
 	import { snakeCase } from "$lib/Scripts/util.js";
 	export async function load({ params, fetch }) {
 		let category = params.category;

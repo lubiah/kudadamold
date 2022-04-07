@@ -1,35 +1,44 @@
 import { build, files, version, prerendered } from '$service-worker';
 
-const CACHE = `cache-${version}`;
-const DYNAMIC_CACHE = `offline-${version}`
-const assets = new Set(build.concat(files, prerendered));
+const APPLICATION_CACHE = `applicationCache-${version}`;
+const STATIC_CACHE = `staticCache-${version}`;
+const DYNAMIC_CACHE = `dynamicCache-${version}`;
 const networkFirstUrls = [/^\/blog\/[\w-]+\.json$/gm]
 
 self.addEventListener('install', event => {
     console.info("[service worker] installing")
     self.skipWaiting();
     event.waitUntil(
-        caches
-            .open(CACHE)
-            .then(cache =>{
-                return cache.addAll(assets)
-            })
+      Promise.all([
+        caches.open(DYNAMIC_CACHE)
+        .then(cache=>{
+          cache.addAll([...prerendered,"/offline"])
+        }),
+        caches.open(APPLICATION_CACHE)
+        .then(cache=>{
+          cache.addAll(build)
+        }),
+        caches.open(STATIC_CACHE)
+        .then(cache=>{
+          cache.addAll(files)
+        })
+      ])
     );
 });
 
 
 self.addEventListener("activate", event =>{
-    event.waitUntil(
-        caches.keys()
-        .then(keys=>{
-            return Promise.all(keys
-            .filter(key => key !== CACHE && key !== DYNAMIC_CACHE)
-            .map(key => caches.delete(key))
-                )
-        })
-        );
-    console.info("[service worker] activated");
-    return self.clients.claim();
+  event.waitUntil(
+      caches.keys()
+      .then(keys=>{
+          return Promise.all(keys
+          .filter(key => key !== APPLICATION_CACHE && key !== DYNAMIC_CACHE && key !== STATIC_CACHE)
+          .map(key => caches.delete(key))
+              )
+      })
+      );
+  console.info("[service worker] activated");
+  return self.clients.claim();
 })
 
 const networkFirst = event =>{
@@ -72,14 +81,20 @@ const cacheFirst  = event =>{
         return fetchResponse;
       }
     })
-    .catch(err=>{
-      return;
+    .catch(async err=>{
+        return caches.match("/offline")
     })
   })
 }
 
 self.addEventListener("fetch", event=>{
+  
+  if (event.request.method !== "GET" || event.request.headers.has("range"))
+    return;
+
+
   let url = new URL(event.request.url);
+
   if (url.hostname === "localhost" || url.hostname === "kudadam.com"){
     /* localhost is when using sveltekit preview 
     The point of all this is to prevent the service worker from caching the hits 
@@ -105,3 +120,5 @@ self.addEventListener("fetch", event=>{
 
   
 })
+
+

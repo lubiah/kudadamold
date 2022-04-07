@@ -1,4 +1,5 @@
 <script context="module">
+	export const prerender = true;
 	import projects_json from "./projects.json";
 		export async function load(){
 			return {

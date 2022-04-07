@@ -2,15 +2,17 @@
 
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
-	import { paginate, PaginationNav } from "svelte-paginate";
+	import { PaginationNav } from "svelte-paginate";
 	export async function load({ fetch }) {
-		let res = await fetch('/blog.json?all=true');
+		let res = await fetch('/blog.json?total=true');
 		let json = await res.json();
 		let { posts } = json;
+		let { total } = json;
 		if (res.ok) {
 			return {
 				props: {
-					posts
+					posts,
+					total
 					}
 			};
 		}
@@ -19,12 +21,7 @@
 
 <script type="text/javascript">
 
-	export let posts;
-	let pageSize = 6;
-	let currentPage = 1;
-	let items = posts;
-	let firstPage = paginate({ items , pageSize, currentPage });
-
+	export let posts, total;
 </script>
 
 <SEO
@@ -88,7 +85,7 @@
 
 	<h2 class=" my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
 	<section class="flex flex-wrap justify-center">
-		{#each firstPage as post (post.id)}
+		{#each posts as post (post.id)}
 			<Card
 				title={post.title}
 				image={post.image}
@@ -101,8 +98,8 @@
 	</section>
 
 
-	<PaginationNav let:value={pageNumber} {currentPage} totalItems={items.length} pageSize={6} limit={2} on:setPage={e=>{currentPage = e.detail.page}}>
-		<a href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
+	<PaginationNav let:value={pageNumber} currentPage={1} totalItems={total} pageSize={6} limit={2}>
+		<a sveltekit:prefetch href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
 		<span slot="ellipsis" class="button">...</span>
 	</PaginationNav>
 </div>

@@ -1,44 +1,14 @@
 <script context="module">
 	export const prerender = true;
-	export const load = async ({ params, fetch })=>{
-		let page = params.page;
-		let res = await fetch('/blog.json?all=true&limit=true');
-		let json = await res.json();
-		
-		if (page === "1"){
-			return {
-				redirect: "/blog",
-				status: 301
-			}
-		}
-		if (page > json.limit || !/^\d+$/gm.test(page) || page == "0"){
-			return {
-				status: 404
-			}
-		}
-
-
-		return {
-			props: {
-				page,
-				posts: json.posts
-			}
-		}
-	}
 </script>
 
 
 <script>
 	import Card from '$lib/Components/BlogCard';
 	import SEO from 'svelte-seo';
-	import { paginate, PaginationNav } from "svelte-paginate";
+	import { PaginationNav } from "svelte-paginate";
 
-	export let posts,page;
-	let pageSize = 6;
-	let currentPage = parseInt(page);
-	let items = posts;
-	let Page;
-	$: Page = paginate({ items , pageSize, currentPage });
+	export let posts,page, total;
 </script>
 
 
@@ -80,7 +50,7 @@
 
 <div class="xl:w-[90%] mx-auto">
 	<section class="flex flex-wrap justify-center mt-20">
-		{#each Page as post (post.id)}
+		{#each posts as post (post.id)}
 			<Card
 				title={post.title}
 				image={post.image}
@@ -91,8 +61,8 @@
 			/>
 		{/each}
 	</section>
-<PaginationNav let:value={pageNumber} {currentPage} totalItems={items.length} pageSize={6} limit={2} on:setPage={e=>{currentPage = e.detail.page}}>
-		<a href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
+<PaginationNav currentPage={parseInt(page)} let:value={pageNumber} totalItems={total} pageSize={6} limit={2} >
+		<a sveltekit:prefetch href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
 		<span slot="ellipsis" class="button">...</span>
 	</PaginationNav>
 </div>

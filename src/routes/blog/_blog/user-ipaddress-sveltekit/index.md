@@ -20,6 +20,7 @@ image: https://lucretius.sirv.com/blog/user-ipaddress-sveltekit/hero.jpg
 An IP address is a unique address that identifies a device on the internet or a local network. It is what the internet uses to differentiate between computers. It is a string of numbers separated by periods, an example is 192.168.42.1 . You [can read more about I.P addresses here](https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address#:~:text=An%20IP%20address%20is%20a,the%20internet%20or%20local%20network.)
 
 ## Extracting an I.P address in SvelteKit
+
 In SvelteKit, you can get the I.P address of your user through endpoints. Endpoints are modules written in `.js` (or `.ts`) files that export [request handler](https://kit.svelte.dev/docs/types#sveltejs-kit-requesthandler) functions corresponding to HTTP methods. Their job is to make it possible to read and write data that is only available on the server.
 
 The list of functions are;

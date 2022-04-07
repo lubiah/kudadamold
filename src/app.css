@@ -63,6 +63,7 @@ body::-webkit-scrollbar-thumb:active {
 	@apply text-center;
 }
 
+
 .pagination-nav .active > a {
 	@apply bg-blue-500;
 }
