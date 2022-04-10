@@ -24,7 +24,7 @@
 <script type="text/javascript">
 	import SEO from 'svelte-seo';
 	import { page } from "$app/stores";
-	import 'prismjs/themes/prism-tomorrow.css';
+	//import 'prismjs/themes/prism-tomorrow.css';
 	import { browser } from "$app/env";
 	import { onMount } from 'svelte';
 	import Clock from "$lib/Icons/clock.svelte";

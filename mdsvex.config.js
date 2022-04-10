@@ -10,7 +10,7 @@ import rehype_external_links from 'rehype-external-links';
 
 const config = defineConfig({
 	extensions: ['.md'],
-
+	smartypants: true,
 	rehypePlugins: [
 		[
 			rehype_toc,
