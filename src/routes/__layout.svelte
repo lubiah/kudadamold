@@ -2,6 +2,7 @@
 	import '../app.css';
 	import NavBar from '$lib/Components/Navbar';
 	import Footer from '$lib/Components/Footer';
+	import Update from "$lib/Components/UpdateWebsite";
 </script>
 
 <NavBar/>
@@ -15,3 +16,5 @@
 </div>
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101360697ns.gif" /></p></noscript>
 <Footer />
+
+<Update/>
