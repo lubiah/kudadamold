@@ -6,8 +6,7 @@ const DYNAMIC_CACHE = `dynamicCache-${version}`;
 const networkFirstUrls = [/^\/blog\/[\w-]+\.json$/gm]
 
 self.addEventListener('install', event => {
-    console.info("[service worker] installing")
-    self.skipWaiting();
+    console.info("[service worker] installing");
     event.waitUntil(
       Promise.all([
         caches.open(DYNAMIC_CACHE)
@@ -82,7 +81,7 @@ const cacheFirst  = event =>{
       }
     })
     .catch(async err=>{
-        return caches.match("/offline")
+        return new Response("Offline");
     })
   })
 }
@@ -122,3 +121,8 @@ self.addEventListener("fetch", event=>{
 })
 
 
+self.addEventListener("message", async event=>{
+  if (event.data === "SKIP_WAITING"){
+    self.skipWaiting();
+  }
+})
