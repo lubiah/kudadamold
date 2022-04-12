@@ -257,6 +257,7 @@ body::-webkit-scrollbar-thumb:active {
 		@apply bg-blue-600;
 	}
 
+
 	button:hover {
 		transform: translateY(0.5px);
 	}
