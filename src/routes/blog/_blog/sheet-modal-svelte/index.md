@@ -3,6 +3,7 @@ title: Creating A Modal Sheet Component In Svelte
 description: Modal sheets are containers which contain contents and is anchored to the bottom of the screen
 category: Web Development
 date: 2022-04-08
+image: https://lucretius.sirv.com/blog/sheet-modal-svelte/hero.jpg
 excerpt: Modal sheets are containers which contain contents and is anchored to the bottom of the screen
 keywords: 
   - svelte
@@ -20,7 +21,7 @@ This is a dialog which is used to display addition information in mobile apps. M
 
 ## Why did I create one?
 
-Well the reason is simple, I wanted a component which will allow me to display information on the bottom of my site, I didn't want to use a modal so I needed to create a new component which will satisfy my needs. The component is very simple and does not contain much features. However, if you are interested in adding more features, you can submit a pull request to [my github repository](https://github.com/kudadam/svelte-sheet-modal).
+Well the reason is simple, I wanted a component which would allow me to display information on the bottom of my site, I didn't want to use a modal so I needed to create a new component which will satisfy my needs. The component is very simple and does not contain much features. However, if you are interested in adding more features, you can submit a pull request to [my github repository](https://github.com/kudadam/svelte-sheet-modal).
 
 If you want to install it, you type in `npm install -D svelte-sheet-modal` and you are good to go.
 Here is a demo of it in action,  just click on the button below and watch the component slide out.
