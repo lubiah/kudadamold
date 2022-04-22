@@ -72,7 +72,7 @@ body::-webkit-scrollbar-thumb:active {
 	body {
 		font-family: Inter, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,
 			sans-serif;
-		@apply lg:dark:font-light dark:bg-slate-900 dark:text-gray-300 text-gray-700 text-[1.15rem];
+		@apply lg:dark:font-light dark:bg-slate-900 dark:text-gray-300 text-gray-800 text-[1.17rem];
 	}
 
 	::selection {
@@ -96,7 +96,41 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	.icon {
-		@apply h-[1rem] inline;
+		@apply h-[1.15rem] inline;
+	}
+	/* The display is copied from bootstrap */
+
+	.display-1 {
+		font-size: calc(1.625rem + 4.5vw);
+	}
+
+	.display-2 {
+		font-size: calc(1.575rem + 3.9vw);
+		font-weight: 300;
+		line-height: 1.2;
+	}
+
+	.display-3 {
+		font-size: calc(1.525rem + 3.3vw);
+		font-weight: 300;
+		line-height: 1.2;
+	}
+	
+	.display-4 {
+		font-size: calc(1.475rem + 2.7vw);
+		line-height: 1.2;
+	}
+
+	.display-6 {
+		font-size: calc(1.375rem + 1.5vw);
+	}
+
+	.display-7 {
+		font-size: calc(1.12rem + 1.2vw);
+	}
+
+	.display-8 {
+		font-size: calc(1.1rem + 1vw);
 	}
 
 	* {
@@ -176,12 +210,22 @@ body::-webkit-scrollbar-thumb:active {
 		@apply font-medium;
 	}
 
+	img {
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+
+
+	h1 {
+		@apply font-bold;
+	}
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
 		color: var(--primary-color);
+		@apply font-bold
 	}
 
 	h1 {
@@ -208,14 +252,6 @@ body::-webkit-scrollbar-thumb:active {
 	h6 {
 		font-size: clamp(13px, 1em + 2vw, 15px);
 		margin: 24px;
-	}
-
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-semibold;
 	}
 
 	a {
@@ -253,10 +289,15 @@ body::-webkit-scrollbar-thumb:active {
 		@apply text-white bg-[color:var(--primary-color)] px-4 py-1 text-base rounded my-2;
 	}
 
+
 	button[data-theme='secondary'] {
 		@apply bg-blue-600;
 	}
 
+	
+	button:disabled {
+		@apply bg-gray-700 text-gray-600;
+	}
 
 	button:hover {
 		transform: translateY(0.5px);

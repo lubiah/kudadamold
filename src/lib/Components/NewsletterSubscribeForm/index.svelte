@@ -1,49 +1,33 @@
 <script>
-    let data = {
-    	name: "",
-    	email: "",
-    	type: "ADD_SUBSCRIBER"
-    };
-
-	const subscribeUser = async ()=>{
-			let button = document.querySelector("#subscription__submit_button");
-
-        const query = await fetch("/contact.json",{
-        	method: "POST",
-        	headers: {
-        		"Content-Type": "application/json"
-        	},
-        	body: JSON.stringify(data)
-        });
-        const res = await query.json();
-        console.log(res);
-
-        switch (res){
-
-        	case "IS_ALREADY_SUBSCRIBED":
-        		document.querySelector("#form_container").remove();
-        		document.querySelector("#subscription__heading_text").innerHTML = "Hey,<br/> You are already subscribed";
-        		break;
-
-        	case "HAS_NOT_VERIFIED":
-        		document.querySelector("#form_container").remove();
-        		document.querySelector("#subscription__heading_text").innerHTML = "Hey,<br/>You have subscribed but have not verified your email yet";
-        		break;
-
-        	case "SUCCESSFUL":
-        		document.querySelector("#form_container").remove();
-        		document.querySelector("#subscription__heading_text").innerHTML = "Thanks for subscribing,<br/>Please confirm your email in your inbox";
-        }
+	const enhance = node =>{
+		const handleSubmit = async event=>{
+			event.preventDefault();
+			node.querySelector(`button[type="submit"]`).disabled = true;
+			const response = await fetch(node.action, {
+				method: node.method,
+				body: new FormData(node),
+				headers: {accept: "application/json"}
+			});
+			if (response.ok)
+				alert("Hello, a verification email has been sent to your inbox");
+			node.reset();
+			node.querySelector(`button[type="submit"]`).disabled = false;
+		}
+		node.addEventListener("submit", handleSubmit);
+		
+		return {
+			destroy(){
+				node.removeEventListener("submit", handleSubmit)
+			}
+		}
 	}
 </script>
 
-<form method="post" id="subscription__form" class="max-w-sm bg-purple-700 py-1 px-3 rounded-lg" on:submit|preventDefault={subscribeUser}>
-	<h3 id="subscription__heading_text" class="text-3xl text-white mb-4 font-semibold">Subscribe to Newsletter</h3>
-	<div id="form_container">
-		<input type="name" class='!bg-white p-1 my-2' placeholder="First name" bind:value={data.name} title="Your First Name" required>
-		<input type="email" class="!bg-white p-1" placeholder="Email Account" bind:value={data.email} title="Your email address" required>
-		<button class="mt-3 text-lg" type="submit" id="subscription__submit_button">Subscribe</button>
-	</div>
+
+<form class="max-w-sm bg-purple-700 py-1 px-3 rounded-lg" use:enhance action="https://buttondown.email/api/emails/embed-subscribe/lucretius" method="POST">
+	<h3 class="text-3xl text-white mb-4 font-semibold">Subscribe to Newsletter</h3>
+	<input type="email" class="!bg-white p-1" name="email" placeholder="Email Account" title="Your email address" required>
+	<button class="mt-3 text-lg" type="submit">Subscribe</button>
 </form>
 
 <style type="text/postcss">
@@ -53,4 +37,5 @@
 	input::placeholder {
 		@apply text-gray-600;
 	}
+
 </style>

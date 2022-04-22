@@ -1,7 +1,7 @@
 <script>
-	import Github from "$lib/Icons/github.svelte";
+	import Github from "$lib/Icons/Github.svelte";
 	import Twitter from "$lib/Icons/twitter.svelte";
-	import Envelope from "$lib/Icons/envelope.svelte";
+	import Whatsapp from "$lib/Icons/Whatsapp.svelte";
 	import RSS from "$lib/Icons/rss.svelte";
 	import Heart from "$lib/Icons/heart.svelte";
 	import Subscribe from "$lib/Components/NewsletterSubscribeForm";
@@ -17,14 +17,13 @@
 			<ul>
 				<li><a href="/blog/feed"><RSS/> RSS feed</a></li>
 				<li><a href="/sitemap.xml">Sitemap.xml</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/projects">Projects</a></li>
 			</ul>
 		</div>
 		<div>
 			<p class="font-bold">Contact</p>
 			<ul>
-				<li>
-					<a href="mailto:lucretiusbiah@protonmail.com"><Envelope/> Email </a>
-				</li>
 				<li>
 					<a href="https://www.github.com/kudadam" target="_blank" rel="noopener">
 						<Github/>
@@ -32,7 +31,10 @@
 					</a>
 				</li>
 				<li>
-					<a href="https://twitter.com/kudadam_" target="_blank" rel="noopener"><Twitter/>kudadam_</a>
+					<a href="https://twitter.com/kudadam_" target="_blank" rel="noopener"><Twitter/> kudadam_</a>
+				</li>
+				<li>
+					<a href="https://wa.link/7hc27i"><Whatsapp/> WhatsApp</a>
 				</li>
 			</ul>
 		</div>

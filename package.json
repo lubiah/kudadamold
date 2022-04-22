@@ -15,12 +15,14 @@
 		"@playwright/test": "^1.20.2",
 		"@sveltejs/adapter-node": "^1.0.0-next.73",
 		"@sveltejs/kit": "^1.0.0-next.309",
+		"aos": "^3.0.0-beta.6",
 		"autoprefixer": "^10.4.4",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^3.4.1",
 		"fuzzball": "^2.1.2",
 		"html-entities": "^2.3.3",
+		"imagekit-javascript": "^1.4.3",
 		"mdsvex": "^0.10.5",
 		"minisearch": "^4.0.3",
 		"plop": "^3.0.5",
@@ -41,11 +43,12 @@
 		"svelte-preprocess": "^4.10.5",
 		"svelte-seo": "^1.4.0",
 		"svelte-sheet-modal": "^0.0.9",
-		"tailwindcss": "^3.0.23"
+		"tailwindcss": "^3.0.23",
+		"typeit": "^8.4.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"html-minifier": "^4.0.0",
-		"sqlite3": "^5.0.2"
+		"better-sqlite3": "^7.5.1",
+		"html-minifier": "^4.0.0"
 	}
 }

@@ -1,13 +1,5 @@
 <script context="module">
 	export const prerender = true;
-	import projects_json from "./projects.json";
-		export async function load(){
-			return {
-				props: {
-					projects: projects_json
-				}
-			}
-		}	
 </script>
 
 <script>	
@@ -48,13 +40,17 @@ openGraph={{
 
 />
 
-<main class="max-w-6xl mx-auto">
-	<div class="text-center">
-		<h1 class= "font-bold">Projects</h1>
-		<p class="italic">This is a list of awesome projects curated by me in my spare time</p>
-	</div>
-	<section class="flex flex-wrap justify-center items-center mt-[50px] gap-x-4 gap-y-4">	
-		{#each projects as project (project.id) }
+<main>
+  <section>
+    <div class="text-center">
+      <h1>Projects</h1>
+      <p>
+        A list of stuff curated by me
+      </p>
+    </div>
+    <section>
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      {#each projects as project (project.id) }
 			<Card
 			title="{project.name}"
 			description="{project.description}"
@@ -62,6 +58,19 @@ openGraph={{
 			repo="{project.repo}"
 			url="{project.url}"
 			/>
-		{/each}
-	</section>	
+		  {/each}
+    </div>
+    </section>
+  </section>
 </main>
+
+<style>
+  main {
+    display: grid;
+    grid-template-columns: 1fr min(100%, 72rem) 1fr;
+  }
+
+   section {
+    grid-column: 2/3;
+  }
+</style>
