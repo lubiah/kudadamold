@@ -1,40 +1,33 @@
 <script context="module">
 	export const prerender = true;
-
-	import { snakeCase } from "$lib/Scripts/util";
-	export async function load({ fetch }) {
-		let res = await fetch('/blog.json?all=true');
-		let { posts } = await res.json();
-		let categories = posts.map((post) => {
-			return post.category;
-		});
-		categories = [...new Set(categories)];
-		return {
-			props: {
-				categories
-			}
-		};
-	}
 </script>
 
 <script>
-	import SEO from 'svelte-seo';
+	import Head from "svelte-seo";
+	import { snakeCase } from "$lib/Scripts/util.js";
 	export let categories;
+	const meta = {
+		title: "Blog Category • Kudadam",
+		description: "This page displays all the blog categories",
+		canonical: "https://www.kudadam.com/blog/category",
+		image: "https://lucretius.sirv.com/logo/logo.png"
+
+	}
 </script>
 
-<SEO
-	title="Category • Kudadam Blog"
+<Head
+	title="{meta.title}"
 	nofollow={true}
 	noindex={true}
-	description="A page which lists the various categories of the blog section"
+	description="{meta.description}"
 	openGraph={{
-		title: 'Category • Kudadam Blog',
-		description: 'Category • Kudadam Blog',
-		url: 'https://www.kudadam.com/blog/category',
+		title: `${meta.title}`,
+		description: `${meta.description}`,
+		url: `${meta.canonical}`,
 		type: 'website',
 		images: [
 			{
-				url: 'https://lucretius.sirv.com/logo/logo.png',
+				url: `${meta.image}`,
 				width: 850,
 				height: 650,
 				alt: 'Logo'
@@ -43,23 +36,37 @@
 	}}
 	twitter={{
 		site: '@kudadam_',
-		title: 'Category • Kudadam Blog',
-		description: 'A page which lists the various categories of the blog section',
-		image: 'https://lucretius.sirv.com/logo/logo.png',
+		title: `${meta.title}`,
+		description: `${meta.description}`,
+		image: `${meta.image}`,
 		imageAlt: 'Logo of Kudadam'
 	}}
 />
 
-<div>
-	<h1 class="text-center font-bold dark:text-white text-red-500 my-4">Blog Category</h1>
-	<p class="text-black dark:text-white text-center"><i>Various categories for the blog</i></p>
-	<div class="flex flex-wrap mt-10 justify-center mx-auto h-screen">
-		{#each categories as category}
-			<a href="/blog/category/{snakeCase(category)}" class="hover:animate-pulse">
-				<span class="m-4 p-3 rounded-md text-white category_{snakeCase(category)}"
-					>{category}</span
-				>
-			</a>
-		{/each}
+<main>
+	<div>
+		<h1 class="text-center font-bold dark:text-white text-red-500 my-4">Blog Category</h1>
+		<p class="text-black dark:text-white text-center"><i>Various categories for the blog</i></p>
+		<div class="flex flex-wrap mt-10 justify-center mx-auto h-screen">
+			{#each categories as category}
+				<a sveltekit:prefetch href="/blog/category/{snakeCase(category)}" class="hover:animate-pulse">
+					<span class="m-4 p-3 rounded-md text-white category_{snakeCase(category)}"
+						>{category}</span
+					>
+				</a>
+			{/each}
+		</div>	
 	</div>
-</div>
+</main>
+
+
+<style>
+	main {
+		display: grid;
+		grid-template-columns: 1fr min(65ch, 100%) 1fr;
+	}
+
+	main > div {
+		grid-column: 2/3;
+	}
+</style>

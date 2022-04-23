@@ -73,9 +73,7 @@ export const get = async ( { url })=> {
 		results["popular_articles"] = [...files];
 	}
 
-	if (query.get('limit')) {
-		results['limit'] = posts.length;
-	}
+
 
 	if (query.get('per_page'))
 		perPage = query.get('per_page');
@@ -91,6 +89,15 @@ export const get = async ( { url })=> {
 		results['all'] = unsorted;
 	}
 
+
+
+	let chunked = chunk(posts,perPage);
+	results['posts'] = chunked[page - 1];
+
+	if (query.get('limit')) {
+		results['limit'] = chunked.length;
+	}
+
 	if (query.has("exclude")){
 		/* 
 		This always has to be the last, 
@@ -101,9 +108,6 @@ export const get = async ( { url })=> {
 			delete results[key]
 		})
 	}
-
-	let chunked = chunk(posts,perPage);
-	results['posts'] = chunked[page - 1];
 	
 	return {
 		headers: {
