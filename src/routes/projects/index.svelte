@@ -7,22 +7,30 @@
 	import Card from "$lib/Components/ProjectCard";
 	export let projects;
 
+  const SEO = {
+    meta: "Projects - Stuff curated by me • Kudadam",
+    description: "This is a page which showcases a list of projects which were curated or designed by me",
+    keywords: "kudadam projects, lucretius projects, developer projects, web development projects, software development projects",
+    canonical: "https://www.kudadam.com/projects",
+    image: "https://lucretius.sirv.com/logo/logo.png"
+  }
+
 </script>	
 
 <Head
-title = "Projects - Stuff Curated by me • Kudadam"
-description = "This is a page which showcases a list of projects which were curated or designed by me"
-keywords = "kudadam projects, lucretius projects, developer projects, web development projects, software development projects"
-canonical = "https://www.kudadam.com/projects"
+title = "{SEO.title}"
+description = "{SEO.description}"
+keywords = "{SEO.keywords}"
+canonical = "{SEO.canonical}"
 
 openGraph={{
-    title: 'Projects - Stuff Curated by me • Kudadam',
-    description: 'This is a page which showcases a list of projects which were curated or designed by me',
-    url: 'https://www.kudadam.com/projects',
+    title: `${SEO.title}`,
+    description: `${SEO.description}`,
+    url: `${SEO.canonical}`,
     type: 'website',
     images: [
       {
-        url: 'https://lucretius.sirv.com/logo/logo.png?q=10',
+        url: `${SEO.image}`,
         width: 850,
         height: 650,
         alt: 'Website logo image'
@@ -32,9 +40,9 @@ openGraph={{
 
     twitter={{
     site: "@kudadam_",
-    title: "Projects - Stuff Curated by me • Kudadam",
-    description: "This is a page which showcases a list of projects which were curated or designed by me",
-    image: "https://lucretius.sirv.com/logo/logo.png?q=10",
+    title: `${SEO.title}`,
+    description: `${SEO.description}`,
+    image: `${SEO.image}`,
     imageAlt: "Website logo image",
   }}
 

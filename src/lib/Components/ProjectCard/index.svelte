@@ -13,7 +13,7 @@ This component is used to display my projects in a more organized manner
 
 <article class="border w-[300px]  dark:border-gray-800 border-gray-400 mr-3 rounded" id="project_card">
 	<img src={image} class="block mx-auto w-full h-[200px]" loading="lazy" alt="" width="318" height="200" />
-	<div class="p-2 text-center border-t dark:border-gray-300 border-gray-400">
+	<div class="p-2 text-center border-t dark:border-gray-800 border-gray-400">
 		<h2 class="font-semibold text-xl my-1 text-inherit hover:text-[color:var(--primary-color)]" id="project_card__title">{title}</h2>
 		<p id="project_card__description" class="leading-6 text-base">{description}</p>
 	</div>

@@ -1,30 +1,44 @@
 <script context="module">
-	export const prerender =  true;
-</script>
-<script type="text/javascript">
-	import SEO from 'svelte-seo';
-	let email =
-		'\u0020\u006c\u0075\u0063\u0072\u0065\u0074\u0069\u0075\u0073\u0062\u0069\u0061\u0068\u0040\u0070\u0072\u006f\u0074\u006f\u006e\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';
-
-	const handleEmail = (e) => {
-		e.target.innerText = email;
-		e.target.href = `mailto:${email}`;
-	};
+	export const prerender = true;
 </script>
 
-<SEO
-	title="Kudadam • Contact"
-	description="Visit this page if  you want to contact me"
-	keywords="contact lucretius, contact kudadam, contact lucretius biah"
-	canonical="https://www.kudadam.com/contact"
+<script>
+	import Head from "svelte-seo";
+	import { enhance } from "$lib/Scripts/form";
+	import Whatsapp from "$lib/Icons/Whatsapp.svelte";
+	import Phone from "$lib/Icons/Phone.svelte";
+	import Telegram from "$lib/Icons/Telegram.svelte";
+
+	const SEO = {
+		title: "Contact Me • Kudadam",
+		description: "This page contains all the information needed to contact me",
+		keywords: "contact lucretius, contact kudadam, contact lucretius biah",
+		canonical: "https://www.kudadam.com/contact",
+		image: "https:lucretius.sirv.com/logo/logo.png"
+	}
+
+	const done = ()=>{
+		alert("Mail has been sent");
+	}
+
+	const error = ()=>{
+		alert("There was an error sending the mail")
+	}
+</script>
+
+<Head
+	title="{SEO.title}"
+	description="{SEO.description}"
+	keywords="{SEO.keywords}"
+	canonical="{SEO.canonical}"
 	openGraph={{
-		title: 'Kudadam • Contact',
-		description: 'Visit this page if  you want to contact me',
-		url: 'https://www.kudadam.com/contact',
+		title: `${SEO.title}`,
+		description: `${SEO.description}`,
+		url: `${SEO.canonical}`,
 		type: 'website',
 		images: [
 			{
-				url: 'https:lucretius.sirv.com/logo/logo.png',
+				url: `${SEO.image}`,
 				width: 850,
 				height: 650,
 				alt: 'Kudadam Logo'
@@ -33,29 +47,59 @@
 	}}
 	twitter={{
 		site: '@kudadam_',
-		title: 'Kudadam • Contact',
-		description: 'Visit this page if  you want to contact me',
-		image: 'https://lucretius.sirv.com/logo/logo.png',
+		title: `${SEO.title}`,
+		description: `${SEO.description}`,
+		image: `${SEO.image}`,
 		imageAlt: 'Logo of Kudadam'
 	}}
 />
 
-<main class="mx-auto max-w-4xl">
-<h1 class="text-center font-bold">Contact</h1>
-<p>
-	In order to contact me, just pick an option below, I do well to reply all my messages.<br/>
-	You can contact me if you have a proposition, contract or blah. blah.. blah...
-</p>
-<ul id="details_list" class="dark:text-gray-300 mt-6 p-2 rounded inline-block w-[300px] p-0 space-y-2">
-	<li><a on:click={handleEmail} href="/contact">Email (Click to reveal)</a></li>
-	<li><a href="tel:0249005710">+233 249 005 710</a></li>
-	<li><a href="https://wa.link/jebvr2">WhatsApp</a></li>
-	<li><a href="https://t.me/kudadam">Telegram</a></li>
-</ul>
+<main>
+	<div>
+		<div class="text-center">
+			<h1>Contact Page</h1>
+			<p>In case you ever want to get in touch with me😊</p>
+		</div>
+		<form use:enhance={{done, error}} action="https://usebasin.com/f/d5fbba0eef70" method="POST" class="mt-8 max-w-sm p-3 border dark:border-gray-800 rounded">
+			<div>
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name">
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email">
+			</div>
+			<div>
+				<label for="message">Message</label>
+				<textarea name="message" id="" cols="30" rows="4"></textarea>
+			</div>
+			<button type="submit">Submit</button>
+		</form>
+		<ul class="grid list-none grid-cols-1 mt-6 md:grid-cols-2">
+			<li><a href="tel:0249005710"><Phone/> +233 249 005 710</a></li>
+			<li><a href="https://wa.link/jebvr2"><Whatsapp/> WhatsApp</a></li>
+			<li><a href="https://t.me/kudadam"><Telegram/> Telegram</a></li>
+		</ul>
+	</div>
 </main>
 
-<style type="text/postcss">
-	#details_list li a {
-		@apply text-inherit !important;
+<style>
+	main {
+		display: grid;
+		grid-template-columns: 1fr min(65ch,100%) 1fr;
+	}
+
+	main > div {
+		grid-column: 2/3;
+	}
+
+	ul li a {
+		text-decoration: none;
+		color: inherit;
+		padding: 0px 3px;
+	}
+
+	main form > div {
+		@apply my-2;
 	}
 </style>
