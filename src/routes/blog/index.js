@@ -1,14 +1,12 @@
 import Path from "path";
 import { chunk } from "$lib/Scripts/util.js";
 import { mode } from "$app/env";
-import sqlite from "better-sqlite3";
+import sqlite from "sqlite3";
 
 let files = new Array();
 let imports = import.meta.glob("./_blog/**/*.md");
-const db = new sqlite("./database.db",{
-	readonly:true,
-	fileMustExist: true,
-});
+const db = new sqlite.Database("./database.db",(err)=>{});
+
 
 for (let key in imports){
 	files.push([Path.win32.basename(Path.dirname(key)),imports[key]])
@@ -22,7 +20,7 @@ files = Promise.all(files.map(async file=>{
 		if (metadata.draft !== true || mode === "development")
 			return metadata;
 	})
-	);
+);
 
 
 const getFiles = async ()=>{
@@ -32,15 +30,14 @@ const getFiles = async ()=>{
 }
 
 const getPopularArticles = async ()=>{
-
 	return new Promise((resolve, reject)=>{
-		try {
-			let statement = db.prepare("SELECT * FROM BLOG ORDER BY hits DESC LIMIT 0,6");
-			let results = statement.all();
-			resolve(results)
-		} catch (error) {
-			reject(new Error(error))
-		}
+		db.serialize(()=>{
+			db.all("SELECT * FROM BLOG ORDER BY hits DESC LIMIT 0,6",(err,data)=>{
+				if (err)
+					reject(err)
+				resolve(data)
+			})
+		})
 	})
 }
 

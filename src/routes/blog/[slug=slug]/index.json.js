@@ -1,81 +1,71 @@
-import sqlite from "better-sqlite3"; //we import the sqlite module
+import sqlite from "sqlite3"; //we import the sqlite module
 
-const db = new sqlite("./database.db"); //This command will create the database for us if it does not exist 
-let statement = db.prepare(`
-CREATE TABLE IF NOT EXISTS blog	 (
-	slug VARCHAR(255) UNIQUE NOT NULL,
-	hits INT DEFAULT 1 NOT NULL
-)
-`);
-let transaction = db.transaction(()=>{return statement.run()});
-transaction();
+const db = new sqlite.Database("./database.db", err=>{}); //This command will create the database for us if it does not exist 
 
-const increseHitCounts = async (slug,hits)=>{
+db.serialize(()=>{
+	db.run(`
+	CREATE TABLE IF NOT EXISTS blog	 (
+		slug VARCHAR(255) UNIQUE NOT NULL,
+		hits INT DEFAULT 1 NOT NULL
+	)
+`, (err)=>{})
+});
+//Then over here we create our table which will store the hit counts
+
+
+const getData = async (slug)=>{
+  /*
+  this is the function responsible for fetching and updating the hit count
+  */
 	return new Promise((resolve, reject)=>{
-		try {
-			let statement = db.prepare("UPDATE blog SET hits = ? WHERE slug = ?");
-			const transaction = db.transaction(slug => {
-				return statement.run(hits+1,slug);
-			});
-			let info = transaction(slug);
-			resolve(info)
-			
-		} catch (error) {
-			reject(error)
-		}
-
-	
-	})
-}
-
-const getHitCounts = async (slug)=>{
-	return new Promise((resolve, reject)=>{
-		let statement = db.prepare("SELECT * FROM blog WHERE slug = ?");
-		let transaction = db.transaction(slug=>{
-			return statement.get(slug)
-		});
-		let { hits } = transaction(slug);
-		
-		if (!hits){
-			let statement = db.prepare("INSERT INTO blog (slug) VALUES (?)");
-			let transaction = db.transaction(slug=>{
-				return statement.run(slug,1);
-			let info = transaction(slug);
-			if (info.changes > 1){
-				resolve({slug:slug, hits: 1})
+	db.serialize(()=>{
+		db.get('SELECT * FROM blog WHERE slug = ?',slug, async (err, rows)=>{
+			if (err){
+				reject(err)
 			}
-			})
-		}
-		resolve(transaction(slug));
+			else{
+				if (rows === undefined){
+					let insert =  new Promise((resolve,reject)=>{
+						db.run("INSERT INTO blog (slug) VALUES (?)",slug, (err,data)=>{
+							if (err) reject(err)
+							else resolve({hits: 1, likes: 0,shares: 0});
+						})
+					});
+					try{
+						let data = await insert;
+						resolve(data);	
+					}
+					catch(err){
+						reject(err)
+					}
+					
+				}
+				else{
+					let times_read = rows.hits;
+					db.run("UPDATE blog SET hits = ? WHERE slug = ?",times_read+1,slug,(err,data)=>{});
+					resolve(rows);
+				}
+			}
+			
+		})
+	});
 	})
 }
-
-
 
 export const get = async ({ params })=>{
-	const slug = params.slug;
-	const results = new Object();
-	let hitsCount = await getHitCounts(slug);
-
-	results["hits"] = hitsCount.hits;
-	results["slug"] = hitsCount.slug;
-
-		
+	try {
+	let results = new Object();
+	let { slug } = params;
+	let data = await getData(slug);
+	results['data'] = data;
 	return {
-		body: results
+		body: JSON.stringify(results)
 	}
 }
-
-export const post = async ({ params, request })=>{
-	const body = await request.json();
-	const slug = params.slug;
-
-	if (body.hits){
-		const { hits } = await getHitCounts(slug);
-		let increment = await increseHitCounts(slug, hits);
+	catch(err){
+		console.log(err);
 		return {
-			body: {"success": "true"}
+			body: JSON.stringify(false)
 		}
-	
 	}
 }
