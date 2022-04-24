@@ -1,5 +1,32 @@
 <script context="module">
 	export const prerender = true;
+
+	export const load = async ( { fetch, params })=>{
+		const page = params.page; 
+    const request = await fetch(`/blog/__data.json?page=${page}&total=true&limit=true`);
+    const { posts, total, limit } = await request.json();
+
+    if (page === "1"){
+        return {
+            headers: {Location:"/blog"},
+            status: 301
+        }
+    }
+    
+    if (page > limit || page === "0"){
+        return {
+            status: 404
+        }
+    }
+
+	return {
+		props: {
+			posts,
+			total,
+			page
+		}
+	}
+	}
 </script>
 
 <script>

@@ -1,5 +1,22 @@
 <script context="module">
     export const prerender = true;
+
+    export const load = async ( { fetch })=>{
+        let request = await fetch(`/blog/__data.json?all=true&exclude=posts`);
+        let { all } = await request.json();
+        let tags = new Set();
+        all.forEach(post => {
+        if (post.tags){
+            tags.add(...post.tags);
+        }
+    });
+
+    return {
+        props: {
+            tags: [...tags]
+        }
+    }
+    }
 </script>
 
 <script>

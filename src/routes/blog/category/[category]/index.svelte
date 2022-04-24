@@ -1,5 +1,27 @@
 <script context="module">
+	import { snakeCase } from "$lib/Scripts/util";
 	export const prerender = true;
+	export const load = async ( { fetch, params })=>{
+		const category = params.category;
+    	const request = await fetch(`/blog/__data.json?all=true`);
+    	let { all } = await request.json();
+    	all = all.filter(post=>{
+        	return snakeCase(post.category) === category;
+    		});
+
+    	if (all.length === 0){
+        	return {
+            	status: 404
+        	}
+    	}
+
+		return {
+			props: {
+				category,
+				posts: all
+			}
+		}
+    }
 </script>
 
 <script>
