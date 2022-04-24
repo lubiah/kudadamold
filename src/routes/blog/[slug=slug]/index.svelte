@@ -1,46 +1,5 @@
 <script context="module">
 	export const prerender = true;
-	export async function load({ params, fetch }) {
-		
-		try{
-		const slug = params.slug;
-		let component = await import(`../_blog/${slug}/index.md`);
-		component.metadata["slug"] = slug;
-		return {
-			props: {
-				metadata: component.metadata,
-				content: component.default
-			}
-			};
-		}
-
-		catch(error){
-			console.log(error);
-		}
-		
-	}
-</script>
-
-<script type="text/javascript">
-	import SEO from 'svelte-seo';
-	import { page } from "$app/stores";
-	import '$lib/css/prism-tomorrow.min.css';
-	import { browser } from "$app/env";
-	import { onMount } from 'svelte';
-	import Clock from "$lib/Icons/clock.svelte";
-	import RectangleList from '$lib/Icons/RectangleList.svelte';
-	import Tags from '$lib/Icons/Tags.svelte';
-	import Eye from '$lib/Icons/Eye.svelte';
-	import { snakeCase } from "$lib/Scripts/util.js"
-	import { theme } from "$lib/stores";
-
-	export let metadata, content;
-	let relatedArticles;
-	let Card;
-	let PageProgress;
-	let Cusdis;
-	let hits;
-	$: hits = 0;
 
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
@@ -61,30 +20,61 @@
 		return related_posts;
 	}
 
+	export const load = async ({ fetch, params })=>{
+		const slug = params.slug;
+		let component = await import(`../_blog/${slug}/index.md`);
+		let request = await fetch("/blog/__data.json?all=true&exlude=posts");
+		let { all } = await request.json();	
+		let related_articles = await getRelatedArticles(component.metadata.title,all);
+		component.metadata['slug'] = slug;
+		return {
+			props: {
+				content: component.default,
+				metadata: component.metadata,
+				related_articles
+			}
+		}
+	}
+</script>
 
+<script>
+	import Head from 'svelte-seo';
+	import Clock from "$lib/Icons/clock.svelte";
+	import RectangleList from '$lib/Icons/RectangleList.svelte';
+	import Tags from '$lib/Icons/Tags.svelte';
+	import Eye from '$lib/Icons/Eye.svelte';
+	import { snakeCase } from "$lib/Scripts/util.js";
+	import { onMount } from "svelte";
+	import { browser } from  "$app/env";
+	import { page } from "$app/stores";
+	import { theme } from "$lib/stores";
+	import { importScripts } from "$lib/Scripts/util.js";
+
+	export let metadata, content, related_articles;
+
+	let hits, PageProgress, Card, Cusdis;
+	$: hits = 0;
 
 	onMount(async ()=>{
+		await fetch(`/blog/${metadata.slug}.json`, {
+			method: "POST",
+			body: JSON.stringify({"hits":"increase"})
+		});
+		await importScripts("https://platform-api.sharethis.com/js/sharethis.js#property=61d2ee20cb125900193f457d&product=sop")
 		Cusdis = await import("svelte-cusdis").then(e => e.default);
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
-		let { data } = await hits_response.json();
-		hits  = await data.hits;
+		let hits_data = await hits_response.json();
+		hits = hits_data.hits;
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
 		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
-		let { posts } = await fetch("/blog.json?all=true").then(response=>response.json());
-		relatedArticles = await getRelatedArticles(metadata.title, posts);
-		let sharejsElement = document.createElement("script");
-		sharejsElement.src = "https://platform-api.sharethis.com/js/sharethis.js#property=61d2ee20cb125900193f457d&product=sop";
-		sharejsElement.type = "text/javascript";
-		sharejsElement.setAttribute("data-name","share this")
-		sharejsElement.defer = true;
-		document.querySelector("head").appendChild(sharejsElement);
 		theme.subscribe(value=> {
 			window.CUSDIS.setTheme(value);
-		})
-	});
+		});
 
+	});
 </script>
-<SEO
+
+<Head
 	title="{metadata.title} • Kudadam Blog"
 	description={metadata.description}
 	keywords={metadata.keywords}
@@ -134,43 +124,43 @@
 	}}
 />
 
-<div class="my-4 xl:w-[65%] mx-auto" id="post">
-	<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
-	<p class="flex text-base items-center justify-end gap-x-2"><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></p>
-	{#if metadata.image}
-			<img
-			src={metadata.image}
-			alt="{metadata.title}"
-			id="post-image"
-			class="h-56 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
-			/>
-	{/if}
-	<article class="leading-tight px-2" id="content" data-slug="{metadata.slug}">
-		<svelte:component this={content} />
-	</article>
-	<ul class="py-2 px-4 my-1 text-base pl-2 list-none gap-x-2">
-		<li><span><RectangleList/> <a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
-		<li class="flex gap-x-3 items-center">
-			{#if metadata.tags}
-			<Tags/>
-				{#each metadata.tags as tag}
-					<a href="/blog/tag/{tag}">#{tag}</a>
-				{/each}
-			{/if}
-		</li>
-		<li>
-			<Eye/> {hits}
-		</li>
-	</ul>
-	<p class="font-bold text-lg text-[tomato] text-center">Share this article</p>
-	<div class="sharethis-inline-share-buttons mt-[50px] mb-[20px]"></div>
-	<p class="font-bold text-lg text-[tomato] text-center">Your reaction</p>
-	<div class="sharethis-inline-reaction-buttons"></div>
-	{#if browser && relatedArticles && [...relatedArticles].length >= 1}
+<main>
+	<div id="page">
+		<h1 class="text-center font-bold text-gray-700 capitalize dark:text-white">{metadata.title}</h1>
+		<p class="flex text-base items-center justify-end gap-x-2"><Clock class="h-[0.8rem]"/> <date datetime={metadata.date}>{new Date(metadata.date).toDateString()}</date></p>
+		{#if metadata.image}
+				<img
+				src={metadata.image}
+				alt="{metadata.title}"
+				id="post-image"
+				class="h-56 my-4 rounded md:h-80 md:max-h-80 max-h-52 w-full"
+				/>
+		{/if}
+		<article class="leading-tight px-2" id="content" data-slug="{metadata.slug}">
+			<svelte:component this={content} />
+		</article>
+		<ul class="py-2 px-4 my-1 text-base pl-2 list-none gap-x-2">
+			<li><span><RectangleList/> <a href="/blog/category/{snakeCase(metadata.category)}">{metadata.category}</a></span></li>
+			<li class="flex gap-x-3 items-center">
+				{#if metadata.tags}
+				<Tags/>
+					{#each metadata.tags as tag}
+						<a href="/blog/tag/{tag}">#{tag}</a>
+					{/each}
+				{/if}
+			</li>
+			<li><Eye/> {hits}</li>
+		</ul>
+		<p class="font-bold text-lg text-[tomato] text-center">Share this article</p>
+		<div class="sharethis-inline-share-buttons mt-[50px] mb-[20px]"></div>
+		<p class="font-bold text-lg text-[tomato] text-center">Your reaction</p>
+		<div class="sharethis-inline-reaction-buttons"></div>
+
+		{#if browser && related_articles && [...related_articles].length >= 1}
 			<div class="mt-[100px]">
 				<h3>Related Articles</h3>
 				<div class="flex overflow-auto snap-x xl:fancy-scrollbar">
-					{#each [...relatedArticles] as article (article.id)}
+					{#each [...related_articles] as article (article.id)}
 						<div class="flex">
 						<svelte:component this={Card}
 						title="{article.title}"
@@ -196,32 +186,34 @@
 				theme: `${$theme}`
 			}}
 		/>
+	</div>
 
-	
-</div>
+	{#if browser}
+		<svelte:component this={PageProgress} color="tomato" height="5px" />
+	{/if}
+
+</main>
 
 
-{#if browser}
-	<svelte:component this={PageProgress} color="tomato" height="5px" />
-{/if}
+<style>
+	main {
+		display: grid;
+		grid-template-columns: 1fr min(65ch, 100%) 1fr;
+	}
+	main > div#page {
+		grid-column: 2/3
+	}
 
-
-<style type="text/postcss">
-	#post :global(h2),
-	#post :global(h3),
-	#post :global(h4),
-	#post :global(h5),
-	#post :global(h6) {
+	article :global(h2),
+	article :global(h3),
+	article :global(h4),
+	article :global(h5),
+	article :global(h6) {
 		@apply mt-[25px] mb-[10px] mx-[2px] font-semibold capitalize;
 	}
 	
 	#content :global(img:not(#post-image)){
 		@apply max-h-[500px] mx-auto my-4 rounded;
-	}
-
-	:global(#post-image:empty) {
-		background: #d5d5d5;
-		width: 100%;
 	}
 
 	:global(.intro){
@@ -240,6 +232,7 @@
 
 	:global(.toc ol li a){
 		color: inherit;
+
 	}
 
 </style>

@@ -7,9 +7,19 @@ export const get = async ({ url, params })=>{
     all = all.filter(post=>{
         return snakeCase(post.category) === category;
     });
+
+    if (all.length === 0){
+        return {
+            status: 404
+        }
+    }
+    
+
     const results = new Object();
     results["posts"] = all;
-    
+    results["category"] = all[0].category;
+
+
     return {
         body: results
     }

@@ -26,7 +26,7 @@
 	let timer;
 	const debounce = (fn) => {
 		clearTimeout(timer);
-		timer = setTimeout(fn, 100);
+		timer = setTimeout(fn, 50);
 	};
 
 	const watchScrollingDebounce = () => debounce(watchScrolling);

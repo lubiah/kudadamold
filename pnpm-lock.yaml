@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@playwright/test': ^1.20.2
   '@sveltejs/adapter-node': ^1.0.0-next.73
-  '@sveltejs/kit': ^1.0.0-next.309
+  '@sveltejs/kit': ^1.0.0-next.320
   aos: ^3.0.0-beta.6
   autoprefixer: ^10.4.4
   better-sqlite3: ^7.5.1
@@ -44,7 +44,7 @@ dependencies:
 devDependencies:
   '@playwright/test': 1.20.2
   '@sveltejs/adapter-node': 1.0.0-next.73
-  '@sveltejs/kit': 1.0.0-next.309_svelte@3.47.0
+  '@sveltejs/kit': 1.0.0-next.320_svelte@3.47.0
   aos: 3.0.0-beta.6
   autoprefixer: 10.4.4_postcss@8.4.12
   eslint: 7.32.0
@@ -582,7 +582,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.16.7
       '@babel/parser': 7.17.9
       '@babel/types': 7.17.0
-      debug: 4.3.3
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -728,14 +728,15 @@ packages:
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.309_svelte@3.47.0:
-    resolution: {integrity: sha512-voZ6tqlVLQURxIvbE+wrRtMg9YcJc4uMu0CMI02jldbxnv7GYdZHFyDzjkLJ3BCu6jumSD6kVoxE+FmkaTdNmQ==}
+  /@sveltejs/kit/1.0.0-next.320_svelte@3.47.0:
+    resolution: {integrity: sha512-BDgF+gd73Gxls65rb3H2oacdQUrK8fM0X174t2kMfGS+MeNN6oZ+Kw+j0IJMzMaZSGco89+/wkPeArvDzM/2MQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
       svelte: ^3.44.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.41_svelte@3.47.0+vite@2.9.1
+      chokidar: 3.5.3
       sade: 1.8.1
       svelte: 3.47.0
       vite: 2.9.1
@@ -896,7 +897,7 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.3
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1975,7 +1976,7 @@ packages:
     engines: {node: '>= 10.17.0'}
     hasBin: true
     dependencies:
-      debug: 4.3.3
+      debug: 4.3.4
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -2359,7 +2360,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.3
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3833,7 +3834,7 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.3
+      debug: 4.3.4
       socks: 2.6.2
     transitivePeerDependencies:
       - supports-color

@@ -8,6 +8,7 @@
 
     const hideModal = ()=>{
         hidden = !hidden;
+        document.body.style.overflowY = "scroll";
         dispatch("hide",{
             value: hidden
         })
@@ -16,16 +17,17 @@
 
 
 {#if !hidden}
-     <div id="backdrop" on:click|self={hideModal}>
-        <div id="modal-content" class="bg-white max-w-sm mx-3 mt-[10%] md:mx-auto md:max-w-md lg:max-w-[800px] dark:bg-slate-900 shadow {Class}">
+{document.body.style.overflowY = "hidden"}
+    <div class="backdrop" on:click|self={hideModal}>
+        <div class="mx-auto my-[5%] {Class}">
             <slot/>
         </div>
-     </div>
+    </div>
 {/if}
 
 
 <style>
-    #backdrop {
+    .backdrop {
         background: rgba(0,0,0,0.7);
         position: fixed;
         width: 100%;
@@ -34,5 +36,10 @@
         left: 0;
         top: 0;
         z-index: 88888;
+        display: flex;
+        align-content: center;
+
     }
+
+
 </style>

@@ -1,17 +1,16 @@
-import { getFiles } from "../index.json";
-
 export const get = async ({ url })=>{
-    let posts = await getFiles();
+    let request = await fetch(`${url.origin}/blog/__data.json?all=true&exclude=posts`);
+    let { all } = await request.json();
     let tags = new Set();
-    posts.forEach(post => {
+    all.forEach(post => {
         if (post.tags){
             tags.add(...post.tags);
         }
     });
-    tags = new Array(...tags);
+
+    const results = new Object();
+    results["tags"] = [...tags];
     return {
-        body: {
-            tags
-        }
+        body: results
     }
 }
