@@ -1,5 +1,5 @@
 <script>
-    let Class;
+    let Class = "";
     export {Class as class};
     export let color = "currentColor";
 </script>

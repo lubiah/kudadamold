@@ -19,25 +19,18 @@ The Card component is used to house the blog posts
 	}
 </script>
 
-<article class="dark:bg-slate-900 md:mr-6 w-[320px] shadow-sm hover:shadow-lg rounded mb-9 relative {Class} blog_card">
-	<a
-		sveltekit:prefetch
-		href="/blog/{slug}"
-		class="hover:text-red-500 text-black dark:text-white dark:hover:text-red-500 card-title"
-	>
-		<img src={image} class="w-full h-[160px]" height="160" alt="" id="card-image" />
+<article class="dark:bg-gray-900 mr-2 w-[310px] shadow-sm hover:shadow-lg rounded mb-9 relative {Class}">
+	<a href="/blog/{slug}" sveltekit:prefetch>
+		<img src={image} class="w-full h-[160px]" height="160" alt="{title}" id="card-image" />
 	</a>
 	<a class:hidden={hide_category} href="/blog/category/{snakeCase(category)}">
-		<span class="absolute px-2 text-white rounded top-[5px] left-[5px] category_{snakeCase(category)}">{category}</span></a
+		<span class="absolute px-2 text-white rounded top-[5px] left-[5px] category_{snakeCase(category)}">{category}</span>
+	</a
 	>
-	<div class="p-2 pb-8 blog_card__body">
+	<div class="p-2 pb-8">
 		<h2 class="text-xl m-0 pb-1 font-semibold dark:font-medium">
-			<a
-				sveltekit:prefetch
-				href="/blog/{slug}"
-				class="visited:text-gray-700 dark:visited:text-white hover:text-red-500 hover:no-underline text-gray-700 dark:text-white dark:hover:text-red-500"
-				id="card-title">{title}</a
-			>
+			<a sveltekit:prefetch href="/blog/{slug}" class="visited:text-gray-700 dark:visited:text-white hover:text-red-500 hover:no-underline text-gray-700 dark:text-white dark:hover:text-red-500" id="card-title">{title}
+			</a>
 		</h2>
 		<p id="blog_card__excerpt" class="leading-7 text-base">
 			{excerpt}
@@ -49,7 +42,7 @@ The Card component is used to house the blog posts
 </article>
 
 <style type="text/css">
-	.blog_card:hover .card-title {
+	article .card-title {
 		color: var(--primary-color);
 	}
 

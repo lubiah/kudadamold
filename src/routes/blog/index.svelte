@@ -1,5 +1,4 @@
 <script context="module">
-	
 	import Card from "$lib/Components/BlogCard";
 	import { PaginationNav } from "svelte-paginate";
 	import Head from "svelte-seo";
@@ -67,7 +66,7 @@
 		<div>
 			<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
 			<div class="overflow-x-auto lg:fancy-scrollbar flex scroll-smooth snap-x mb-8">
-				<section class="flex">
+				<section class="flex gap-x-4">
 					{#each popular_articles as article (article.id)}
 					<Card
 						class = "mr-3 snap-start"
@@ -83,7 +82,7 @@
 		</div>
 		<div>
 			<h2 class=" my-6 font-bold headings dark:text-white text-current inline-block">Latest Articles</h2>
-			<section class="flex flex-wrap justify-center">
+			<section class="flex gap-x-4 flex-wrap justify-center">
 				{#each posts as post (post.id)}
 					<Card
 						title={post.title}

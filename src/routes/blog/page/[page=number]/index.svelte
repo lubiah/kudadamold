@@ -81,7 +81,7 @@
 				The Blog • Page {page}
 			</h1>
 		</div>
-		<section class="flex flex-wrap justify-center mt-20">
+		<section class="flex flex-wrap gap-x-4 justify-center mt-20">
 			{#each posts as post (post.id)}
 				<Card
 					title={post.title}

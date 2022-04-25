@@ -17,7 +17,7 @@
 
 		return {
 			props: {
-				category,
+				category: all[0].category,
 				posts: all
 			}
 		}
@@ -74,7 +74,7 @@
 				<i>Blog posts under {category}</i>
 			</p>
 		</div>
-		<div class="flex flex-wrap mt-8 justify-center">
+		<div class="flex flex-wrap gap-x-4 mt-8 justify-center">
 			{#each posts as post}
 				<Card
 					hide_category
