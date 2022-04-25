@@ -5,7 +5,7 @@
 	import SEO from 'svelte-seo';
     
     export const load = async ({ url, fetch  })=>{
-        let data = await fetch("/blog/__data.json?all= true&all=true");
+        let data = await fetch("/blog.json?all= true&all=true");
         let { all } = await data.json();
 
     return {

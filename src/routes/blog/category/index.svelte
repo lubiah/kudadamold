@@ -2,7 +2,7 @@
 	export const prerender = true;
 
 	export const load = async ( { fetch })=>{
-		let request = await fetch(`/blog/__data.json?all=true&exclude=posts`);
+		let request = await fetch(`/blog.json?all=true&exclude=posts`);
     let { all } = await request.json();
     const categories = new Set(all.map(post=> {
         return post.category;

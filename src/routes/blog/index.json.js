@@ -86,16 +86,7 @@ export const get = async ( { url })=> {
 		results['all'] = unsorted;
 	}
 
-
-
-	let chunked = chunk(posts,perPage);
-	results['posts'] = chunked[page - 1];
-
-	if (query.get('limit')) {
-		results['limit'] = chunked.length;
-	}
-
-	if (query.has("exclude")){
+		if (query.has("exclude")){
 		/* 
 		This always has to be the last, 
 		it is used to removed items from the object
@@ -105,6 +96,15 @@ export const get = async ( { url })=> {
 			delete results[key]
 		})
 	}
+
+
+	let chunked = chunk(posts,perPage);
+	results['posts'] = chunked[page - 1];
+
+	if (query.get('limit')) {
+		results['limit'] = chunked.length;
+	}
+
 	
 	return {
 		headers: {

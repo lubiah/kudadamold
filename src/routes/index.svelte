@@ -1,7 +1,7 @@
 <script context="module">
 	export const prerender = true;
 	export const load = async ( { fetch })=>{
-		let articlesFetch = await fetch(`/blog/__data.json?popular_articles=true&exclude=posts`);
+		let articlesFetch = await fetch(`/blog.json?popular_articles=true&exclude=posts`);
 		let articles = await articlesFetch.json();
 		let projectsFetch = await fetch(`/projects/__data.json?per_page=6`);
 		let { projects } = await projectsFetch.json();

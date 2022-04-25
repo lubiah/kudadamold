@@ -9,7 +9,7 @@
     
     onMount(async ()=>{
         Search = await import("minisearch").then(module=>module.default);
-        let request = await fetch("/blog/__data.json?all=true&exlude=posts");
+        let request = await fetch("/blog.json?all=true&exlude=posts");
         let { all } = await request.json();
         search = new Search({
         fields: ['title','description'],

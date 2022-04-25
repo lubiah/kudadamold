@@ -23,7 +23,7 @@
 	export const load = async ({ fetch, params })=>{
 		const slug = params.slug;
 		let component = await import(`../_blog/${slug}/index.md`);
-		let request = await fetch("/blog/__data.json?all=true&exlude=posts");
+		let request = await fetch("/blog.json?all=true&exlude=posts");
 		let { all } = await request.json();	
 		let related_articles = await getRelatedArticles(component.metadata.title,all);
 		component.metadata['slug'] = slug;

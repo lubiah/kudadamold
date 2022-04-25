@@ -3,7 +3,7 @@
 	export const prerender = true;
 	export const load = async ( { fetch, params })=>{
 		const category = params.category;
-    	const request = await fetch(`/blog/__data.json?all=true`);
+    	const request = await fetch(`/blog.json?all=true`);
     	let { all } = await request.json();
     	all = all.filter(post=>{
         	return snakeCase(post.category) === category;
