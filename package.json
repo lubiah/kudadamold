@@ -49,6 +49,6 @@
 	"type": "module",
 	"dependencies": {
 		"html-minifier": "^4.0.0",
-		"sqlite3": "^5.0.5"
+		"sqlite3": "5.0.2"
 	}
 }
