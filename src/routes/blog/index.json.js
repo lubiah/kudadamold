@@ -43,7 +43,7 @@ const getPopularArticles = async ()=>{
 }
 
 
-export const get = async ( { url })=> {
+export const get = async ( { url })=> {  
 	let posts = await files;
 	posts = posts.filter(file=> file !== undefined);
 	posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
