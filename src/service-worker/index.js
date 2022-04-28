@@ -81,7 +81,7 @@ const cacheFirst  = event =>{
       }
     })
     .catch(async err=>{
-        return new Response("Offline");
+        return caches.match("/offline")
     })
   })
 }
