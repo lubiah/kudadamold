@@ -35,7 +35,8 @@ const getPopularArticles = async ()=>{
 			db.all("SELECT * FROM BLOG ORDER BY hits DESC LIMIT 0,6",(err,data)=>{
 				if (err)
 					reject(err)
-				resolve(data)
+				else
+					resolve(data)
 			})
 		})
 	})
@@ -69,7 +70,6 @@ export const get = async ( { url })=> {
 		});
 		results["popular_articles"] = [...files];
 	}
-
 
 
 	if (query.get('per_page'))
