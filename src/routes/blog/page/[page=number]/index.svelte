@@ -3,7 +3,7 @@
 
 	export const load = async ( { fetch, params })=>{
 		const page = params.page; 
-    const request = await fetch(`/blog/data.json?page=${page}&total=true&limit=true`);
+    const request = await fetch(`/blog/__data.json?page=${page}&total=true&limit=true`);
     const { posts, total, limit } = await request.json();
 
     if (page === "1"){
