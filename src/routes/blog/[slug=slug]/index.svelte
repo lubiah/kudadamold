@@ -1,6 +1,4 @@
 <script context="module">
-	import { getFiles } from "../index.js";
-
 	export const prerender = true;
 
 	const getRelatedArticles = async (title,posts)=>{
@@ -25,8 +23,9 @@
 	export const load = async ({ fetch, params })=>{
 		const slug = params.slug;
 		let component = await import(`../_blog/${slug}/index.md`);
-		let posts = await getFiles();
-		let related_articles = await getRelatedArticles(component.metadata.title, posts);
+		let request = await fetch("/blog.json?all=true");
+		let { all } = await request.json();
+		let related_articles = await getRelatedArticles(component.metadata.title, all);
 		component.metadata['slug'] = slug;
 		return {
 			props: {

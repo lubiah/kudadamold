@@ -1,4 +1,4 @@
-import { getFiles } from "../index.js";
+import { getFiles } from "../index.json.js";
 
 export const get = async ()=>{
 	const posts = await getFiles();

@@ -5,18 +5,10 @@
 
 	export const prerender = true;
 
-	export const load = async ( { fetch })=>{
-		let request = await fetch("/blog/__data.json?total=true&popular_articles=true");
-		let { posts, total, popular_articles } = await request.json();
+</script>
 
-		return {
-			props: {
-				posts,
-				total,
-				popular_articles
-			}
-		}
-	}
+<script>
+	export let posts, total, popular_articles
 
 	const meta = {
 		title: "Blog - My personal journal • Kudadam",
@@ -25,10 +17,6 @@
 		canonical: "https://www.kudadam.com/blog",
 		image: "https://lucretius.sirv.com/logo/logo.png"
 	}
-</script>
-
-<script>
-	export let posts, total, popular_articles
 </script>
 
 <Head

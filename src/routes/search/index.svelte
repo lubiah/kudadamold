@@ -3,7 +3,7 @@
     import Search from "minisearch";
     import { onMount } from "svelte";
 	import SEO from 'svelte-seo';
-    import { getFiles } from "../blog/index.js";
+    import { getFiles } from "../blog/index.json.js";
     
     export const load = async ({ url })=>{
         let posts = await getFiles();

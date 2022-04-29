@@ -1,4 +1,4 @@
-import { getFiles } from "../../index.js";
+import { getFiles } from "../../index.json.js";
 import { snakeCase } from "$lib/Scripts/util.js";
 
 export const get = async ({ params })=>{
