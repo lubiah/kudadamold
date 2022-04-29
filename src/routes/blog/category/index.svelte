@@ -1,22 +1,5 @@
 <script context="module">
 	export const prerender = true;
-
-	export const load = async ( { fetch })=>{
-		let request = await fetch(`/blog.json?all=true&exclude=posts`);
-    let { all } = await request.json();
-    const categories = new Set(all.map(post=> {
-        return post.category;
-    }));
-    const results = new Object();
-    results["categories"] = [...categories];
-
-	return {
-		props: {
-			categories: [...categories]
-		}
-	}
-
-	}
 </script>
 
 <script>

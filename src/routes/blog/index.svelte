@@ -6,7 +6,7 @@
 	export const prerender = true;
 
 	export const load = async ( { fetch })=>{
-		let request = await fetch("/blog.json?total=true&popular_articles=true");
+		let request = await fetch("/blog/__data.json?total=true&popular_articles=true");
 		let { posts, total, popular_articles } = await request.json();
 
 		return {

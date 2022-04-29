@@ -3,40 +3,49 @@ import { chunk } from "$lib/Scripts/util.js";
 import { mode } from "$app/env";
 import sqlite from "sqlite3";
 
-let files = new Array();
-let imports = import.meta.glob("./_blog/**/*.md");
 const db = new sqlite.Database("./database.db",(err)=>{});
 
 
-for (let key in imports){
-	files.push([Path.win32.basename(Path.dirname(key)),imports[key]])
-}
-let id = 1;
-files = Promise.all(files.map(async file=>{
-		let res = await file[1]();
-		let { metadata } = await res;
+
+export const getFiles = async ()=>{
+	let array = new Array();
+	let data = import.meta.glob("./_blog/**/*.md");
+	for (const datum in data)
+		array.push([Path.win32.basename(Path.dirname(datum)),data[datum]()]);
+	let id = 1;
+	let files = Promise.all(array.map(async file=>{
+		let contents = await file[1];
+		let { metadata } = await contents;
 		metadata.slug = file[0];
 		metadata.id = id; id++;
 		if (metadata.draft !== true || mode === "development")
-			return metadata;
-	})
-);
-
-
-const getFiles = async ()=>{
-	let posts = await files;
-	posts = posts.filter(file => file !== undefined);
-	return posts;
+			return metadata
+	}).filter(async file => {
+		return await file !== undefined;
+	}));
+	
+	return files;
 }
 
-const getPopularArticles = async ()=>{
+export const getPopularArticles = async ()=>{
 	return new Promise((resolve, reject)=>{
 		db.serialize(()=>{
 			db.all("SELECT * FROM BLOG ORDER BY hits DESC LIMIT 0,6",(err,data)=>{
 				if (err)
 					reject(err)
-				else
-					resolve(data)
+				else {
+					getFiles().then(files => {
+						let valid = files.filter(file => {
+							let popular_slug = data.map(data => {return data.slug});
+							return popular_slug.includes(file.slug)
+						})
+						.map(file => {
+							delete file['html'];
+							return file;
+						});
+						resolve(valid)
+					})
+				}
 			})
 		})
 	})
@@ -44,8 +53,7 @@ const getPopularArticles = async ()=>{
 
 
 export const get = async ( { url })=> {  
-	let posts = await files;
-	posts = posts.filter(file=> file !== undefined);
+	let posts = await getFiles();
 	posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 	let unsorted = posts;
 	let perPage = 6;
@@ -61,14 +69,7 @@ export const get = async ( { url })=> {
 
 	if (query.get("popular_articles")) {
 		let popular_data = await getPopularArticles();
-		popular_data = popular_data.map(data=>{ return data.slug});
-		let files = await getFiles();
-		files = files.filter(file => popular_data.includes(file.slug));
-		files = files.map(file =>{
-			delete file['html'];
-			return file; 
-		});
-		results["popular_articles"] = [...files];
+		results["popular_articles"] = popular_data;
 	}
 
 
@@ -117,5 +118,3 @@ export const get = async ( { url })=> {
 }
 
 
-
-export { getFiles }

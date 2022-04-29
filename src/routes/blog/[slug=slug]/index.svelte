@@ -1,4 +1,6 @@
 <script context="module">
+	import { getFiles } from "../index.js";
+
 	export const prerender = true;
 
 	const getRelatedArticles = async (title,posts)=>{
@@ -23,22 +25,22 @@
 	export const load = async ({ fetch, params })=>{
 		const slug = params.slug;
 		let component = await import(`../_blog/${slug}/index.md`);
-		let request = await fetch("/blog.json?all=true&exlude=posts");
-		let { all } = await request.json();	
-		let related_articles = await getRelatedArticles(component.metadata.title,all);
+		let posts = await getFiles();
+		let related_articles = await getRelatedArticles(component.metadata.title, posts);
 		component.metadata['slug'] = slug;
 		return {
 			props: {
 				content: component.default,
 				metadata: component.metadata,
-				related_articles
+				related_articles: [...related_articles]
 			}
 		}
 	}
 </script>
-
+	
 <script>
 	import Head from 'svelte-seo';
+	import Card from "$lib/Components/BlogCard";
 	import Clock from "$lib/Icons/clock.svelte";
 	import RectangleList from '$lib/Icons/RectangleList.svelte';
 	import Tags from '$lib/Icons/Tags.svelte';
@@ -52,7 +54,7 @@
 
 	export let metadata, content, related_articles;
 
-	let hits, PageProgress, Card, Cusdis;
+	let hits, PageProgress, Cusdis;
 	$: hits = 0;
 
 	onMount(async ()=>{
@@ -67,7 +69,6 @@
 		let hits_data = await hits_response.json();
 		hits = hits_data.hits;
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
-		Card = await import("$lib/Components/BlogCard").then(e=> e.default);
 		theme.subscribe(value=> {
 			window.CUSDIS.setTheme(value);
 		});
@@ -157,13 +158,13 @@
 		<p class="font-bold text-lg text-[tomato] text-center">Your reaction</p>
 		<div class="sharethis-inline-reaction-buttons"></div>
 
-		{#if browser && related_articles && [...related_articles].length >= 1}
+		{#if browser && related_articles && related_articles.length >= 1}
 			<div class="mt-[100px]">
 				<h3>Related Articles</h3>
 				<div class="flex overflow-auto snap-x xl:fancy-scrollbar">
-					{#each [...related_articles] as article (article.id)}
+					{#each related_articles as article (article.id)}
 						<div class="flex">
-						<svelte:component this={Card}
+						<Card
 						title="{article.title}"
 						slug="{article.slug}"
 						image="{article.image}"
@@ -196,7 +197,7 @@
 </main>
 
 
-<style>
+<style type="text/postcss">
 	main {
 		display: grid;
 		grid-template-columns: 1fr min(65ch, 100%) 1fr;

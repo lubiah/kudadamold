@@ -20,3 +20,7 @@ export const get = async ({ url })=>{
 		body: new Object(results)
 	}
 }
+
+export const getProjects = ()=>{
+	return projects;
+}

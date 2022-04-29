@@ -11,7 +11,7 @@ self.addEventListener('install', event => {
       Promise.all([
         caches.open(DYNAMIC_CACHE)
         .then(cache=>{
-          cache.addAll([...prerendered,"/offline"])
+          cache.addAll(prerendered)
         }),
         caches.open(APPLICATION_CACHE)
         .then(cache=>{
@@ -81,7 +81,7 @@ const cacheFirst  = event =>{
       }
     })
     .catch(async err=>{
-        return caches.match("/offline")
+        return 
     })
   })
 }

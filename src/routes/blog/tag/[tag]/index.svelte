@@ -1,22 +1,5 @@
 <script context="module">
     export const prerender = true;
-    export const load = async ({ fetch, params })=>{
-        const tag = params.tag;
-        const request = await fetch(`/blog.json?all=true&exlude=posts`);
-        let  { all } = await request.json();
-        all = all.filter(post=>{
-        if (post.tags){
-            return post.tags.includes(tag);
-        }
-        })
-
-        return {
-            props: {
-                posts: all,
-                tag
-            }
-        }
-    }
 </script>
 
 <script>

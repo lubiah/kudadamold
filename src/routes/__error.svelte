@@ -3,7 +3,7 @@
 	import { dev } from "$app/env";
 
 	export function load({ error, status }) {
-
+		console.log(error, status)
 		return {
 			props: {
 				error,

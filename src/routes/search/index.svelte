@@ -3,14 +3,13 @@
     import Search from "minisearch";
     import { onMount } from "svelte";
 	import SEO from 'svelte-seo';
+    import { getFiles } from "../blog/index.js";
     
-    export const load = async ({ url, fetch  })=>{
-        let data = await fetch("/blog.json?all= true&all=true");
-        let { all } = await data.json();
-
+    export const load = async ({ url })=>{
+        let posts = await getFiles();
     return {
         props: {
-            data: all
+            data: posts
         }
     }
 }
