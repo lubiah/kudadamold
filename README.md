@@ -1,3 +1,3 @@
 # Kudadam.com
 
-My personal website made with Svelte
+My personal website made with SvelteKit
