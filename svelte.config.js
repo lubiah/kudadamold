@@ -11,7 +11,11 @@ const config = {
 		adapter: adapter({
 			precompress: true
 		}),
-		trailingSlash: 'never'
+		trailingSlash: 'never',
+		prerender: {
+			default: true
+			
+		}
 	},
 	preprocess: [
 		mdsvex(mdsvexConfig),

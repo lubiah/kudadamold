@@ -23,7 +23,8 @@ export const getFiles = async ()=>{
 	}).filter(async file => {
 		return await file !== undefined;
 	}));
-	
+	files = await files;
+	files = await files.sort((a, b)=>  new Date(b.date) - new Date(a.date))
 	return files;
 }
 

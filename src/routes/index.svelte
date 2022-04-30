@@ -1,7 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <script type="text/javascript">
 	import Head from 'svelte-seo';
 	import { fade } from "svelte/transition";

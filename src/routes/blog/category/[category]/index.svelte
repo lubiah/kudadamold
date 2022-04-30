@@ -1,7 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <script>
 	import Head from "svelte-seo";
 	import Card from '$lib/Components/BlogCard';

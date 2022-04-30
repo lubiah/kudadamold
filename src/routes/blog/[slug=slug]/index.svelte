@@ -1,6 +1,4 @@
 <script context="module">
-	export const prerender = true;
-
 	const getRelatedArticles = async (title,posts)=>{
 		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
 		const titles = posts
