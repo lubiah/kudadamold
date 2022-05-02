@@ -131,7 +131,7 @@ token_url = "http://2captcha.com/res.php?key={}&action=get&id={}".format(key,cap
 
 while True:
 	time.sleep(10)
-	response = requests.get(fetch_url)
+	response = requests.get(token_url)
 
 	if response.text[0:2] == 'OK':
     	break
@@ -189,7 +189,7 @@ token_url = "http://2captcha.com/res.php?key={}&action=get&id={}".format(key,cap
 
 while True:
 	time.sleep(10)
-	response = requests.get(fetch_url)
+	response = requests.get(token_url)
 
 	if response.text[0:2] == 'OK':
     	break
