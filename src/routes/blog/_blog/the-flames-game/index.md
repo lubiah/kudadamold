@@ -22,7 +22,7 @@ date: 2021-10-18
 
 ## What is FLAMES?
 
-Flames is an acronym which stands out for _"Friends Lovers Admirers Marriage Enemies 'Secret Lovers' "_. This game can determine the relationship between two people with the use of their names. It is usually played among teens to find if they are compatible with their crushes😄. <small><i>Well, I played some before and it was fun</i></small>. Even though some websites use different meanings for the acronym, the words they use are just synonyms to the original, but the meaning above, is the original.
+Flames is an acronym which stands out for _"Friends Lovers Admirers Marriage Enemies 'Secret Lovers' "_. This game can determine the relationship between two people with the use of their names. It is usually played among teens to find if they are compatible with their crushes😄. <small><i>Well, I played some before and it was fun</i></small>. Even though some websites use different meanings for the FLAMES acronym, it is good to stick to one definition. I suggest you stick to the definition above because it's the perfect fit and also the meaning I've known since childhood.
 
 ## Who Invented The FLAMES Game?
 
@@ -77,7 +77,10 @@ So the number 10, will end at M. We then compare the answer to this simple table
 
 So, the relationship between _"Tony Stark"_ and _"Pepper Stark"_ is Marriage.
 
+​	
+
 ## Conclusion
 
-So fellas, that's all about the FLAMES game. Go ahead and try it out. 
+So fellas, that's all about the FLAMES game. Also, I have built an online version of the flames game.
 
+You can [play it here](https://flames-game.netlify.app/). Make sure to write out your thoughts in the comment section
