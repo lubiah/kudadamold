@@ -3,8 +3,8 @@
 		"id": 1,
 		"name": "FLAMES Game",
 		"description": "A simple game which can tell the relationship between two people with the use of their names",
-		"image": "https://lucretius.sirv.com/FLAMES/image.png",
-		"url": "/flames"
+		"image": "https://raw.githubusercontent.com/kudadam/flames-game/master/static/android-chrome-512x512.png",
+		"url": "https://flames-game.netlify.app"
 	},
 	{
 		"id": 2,
