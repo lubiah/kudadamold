@@ -4,7 +4,8 @@
 		"name": "FLAMES Game",
 		"description": "A simple game which can tell the relationship between two people with the use of their names",
 		"image": "https://raw.githubusercontent.com/kudadam/flames-game/master/static/android-chrome-512x512.png",
-		"url": "https://flames-game.netlify.app"
+		"url": "https://flames-game.netlify.app",
+		"repo": "https://www.github.com/kudadam/flames-game"
 	},
 	{
 		"id": 2,
