@@ -37,7 +37,6 @@
 		"remark-emoji": "^3.0.2",
 		"remark-slug": "^7.0.1",
 		"svelte": "^3.47.0",
-		"svelte-cusdis": "^0.0.2",
 		"svelte-headroom": "^2.2.1",
 		"svelte-paginate": "^0.0.1",
 		"svelte-preprocess": "^4.10.5",
@@ -49,6 +48,7 @@
 	"type": "module",
 	"dependencies": {
 		"html-minifier": "^4.0.0",
-		"sqlite3": "5.0.2"
+		"sqlite3": "5.0.2",
+		"svelte-cusdis": "^0.0.4"
 	}
 }

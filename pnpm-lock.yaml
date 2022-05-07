@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@playwright/test': ^1.20.2
@@ -28,7 +28,7 @@ specifiers:
   remark-slug: ^7.0.1
   sqlite3: 5.0.2
   svelte: ^3.47.0
-  svelte-cusdis: ^0.0.2
+  svelte-cusdis: ^0.0.4
   svelte-headroom: ^2.2.1
   svelte-paginate: ^0.0.1
   svelte-preprocess: ^4.10.5
@@ -40,6 +40,7 @@ specifiers:
 dependencies:
   html-minifier: 4.0.0
   sqlite3: 5.0.2
+  svelte-cusdis: 0.0.4
 
 devDependencies:
   '@playwright/test': 1.21.1
@@ -49,7 +50,7 @@ devDependencies:
   autoprefixer: 10.4.5_postcss@8.4.12
   eslint: 7.32.0
   eslint-config-prettier: 8.5.0_eslint@7.32.0
-  eslint-plugin-svelte3: 3.4.1_eslint@7.32.0+svelte@3.47.0
+  eslint-plugin-svelte3: 3.4.1_4oxeyilw5mxcaksmcxtpjddhfe
   fuzzball: 2.1.2
   html-entities: 2.3.3
   imagekit-javascript: 1.4.3
@@ -59,7 +60,7 @@ devDependencies:
   postcss: 8.4.12
   postcss-load-config: 3.1.4_postcss@8.4.12
   prettier: 2.6.2
-  prettier-plugin-svelte: 2.7.0_prettier@2.6.2+svelte@3.47.0
+  prettier-plugin-svelte: 2.7.0_sqtt6dzjlskmywoml5ykunxlce
   rehype-external-links: 1.0.1
   rehype-toc: 3.0.2
   remark-attr: 0.11.1
@@ -67,10 +68,9 @@ devDependencies:
   remark-emoji: 3.0.2
   remark-slug: 7.0.1
   svelte: 3.47.0
-  svelte-cusdis: 0.0.2
   svelte-headroom: 2.2.1
   svelte-paginate: 0.0.1
-  svelte-preprocess: 4.10.6_8ad6e20ce4e2d7da0239e3010622d126
+  svelte-preprocess: 4.10.6_rlloedhe4ll5uarz4maqmiwrey
   svelte-seo: 1.4.0
   svelte-sheet-modal: 0.0.9
   tailwindcss: 3.0.24
@@ -1851,7 +1851,7 @@ packages:
       eslint: 7.32.0
     dev: true
 
-  /eslint-plugin-svelte3/3.4.1_eslint@7.32.0+svelte@3.47.0:
+  /eslint-plugin-svelte3/3.4.1_4oxeyilw5mxcaksmcxtpjddhfe:
     resolution: {integrity: sha512-7p59WG8qV8L6wLdl4d/c3mdjkgVglQCdv5XOTk/iNPBKXuuV+Q0eFP5Wa6iJd/G2M1qR3BkLPEzaANOqKAZczw==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -3620,7 +3620,7 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.7.0_prettier@2.6.2+svelte@3.47.0:
+  /prettier-plugin-svelte/2.7.0_sqtt6dzjlskmywoml5ykunxlce:
     resolution: {integrity: sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
@@ -4279,9 +4279,9 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-cusdis/0.0.2:
-    resolution: {integrity: sha512-G5IThSSCqsOODs/2o5gd5vEsOM82mHZwpM4yYvtcvTNzOzVPSjfd+Z5sEMJkAMc4HmyVIHqOFc62dITX1W5ClQ==}
-    dev: true
+  /svelte-cusdis/0.0.4:
+    resolution: {integrity: sha512-FV7uq7vpnnZE5ZZ8CLw7RJd/dXmKKpXZNfgUnyeOYDGrfX94fxwfb6+cqNqCZIoZIOgoNLITnhEpNKdyU39N/g==}
+    dev: false
 
   /svelte-headroom/2.2.1:
     resolution: {integrity: sha512-A9bhw6gIuA0a03LdCmQZsGaXzs+tapL8ugpXFLYFv933C5OJ+bkBiawOG/TJmLIKlQFzQPmmcJtQDzGSrrbVoA==}
@@ -4302,7 +4302,7 @@ packages:
       sirv-cli: 0.4.6
     dev: true
 
-  /svelte-preprocess/4.10.6_8ad6e20ce4e2d7da0239e3010622d126:
+  /svelte-preprocess/4.10.6_rlloedhe4ll5uarz4maqmiwrey:
     resolution: {integrity: sha512-I2SV1w/AveMvgIQlUF/ZOO3PYVnhxfcpNyGt8pxpUVhPfyfL/CZBkkw/KPfuFix5FJ9TnnNYMhACK3DtSaYVVQ==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true

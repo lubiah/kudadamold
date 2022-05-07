@@ -66,10 +66,6 @@
 		let hits_data = await hits_response.json();
 		hits = hits_data.hits;
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
-		theme.subscribe(value=> {
-			window.CUSDIS.setTheme(value);
-		});
-
 	});
 </script>
 
@@ -177,6 +173,10 @@
 		{/if}
 		<h3>Comments</h3>
 		<svelte:component this={Cusdis}
+			on:load={()=>{
+				window.CUSDIS.initial();
+				window.CUSDIS.setTheme($theme);
+			}}
 			attrs = {{
 				appId: "2f49c941-a723-4350-a9eb-cad6fab4772b",
 				pageId: `${metadata.slug}`,
