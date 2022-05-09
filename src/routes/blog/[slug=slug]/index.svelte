@@ -1,35 +1,15 @@
 <script context="module">
-	const getRelatedArticles = async (title,posts)=>{
-		let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
-		const titles = posts
-		.map(post=> { return post.title})
-		.filter(post => post !== title);
-		const related_titles = titles.filter(post =>{ return token_set_ratio(title,post) >= 50 });
-		const related_posts = new Set();
-		for (let i in related_titles){
-			let related_title = related_titles[i];
-			for (let j in posts){
-				let post = posts[j];
-				if (post.title === related_title){
-					related_posts.add(post);
-				}
-			}
-		}
-		return related_posts;
-	}
 
-	export const load = async ({ fetch, params })=>{
+
+	export const load = async ({ fetch, params, props })=>{
 		const slug = params.slug;
 		let component = await import(`../_blog/${slug}/index.md`);
-		let request = await fetch("/blog.json?all=true");
-		let { all } = await request.json();
-		let related_articles = await getRelatedArticles(component.metadata.title, all);
 		component.metadata['slug'] = slug;
 		return {
 			props: {
 				content: component.default,
 				metadata: component.metadata,
-				related_articles: [...related_articles]
+				related_articles: [...props.related_articles]
 			}
 		}
 	}
