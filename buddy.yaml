@@ -1,0 +1,139 @@
+- pipeline: "Build Application"
+  on: "CLICK"
+  refs:
+  - "refs/heads/master"
+  priority: "NORMAL"
+  target_site_url: "https://www.kudadam.com"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Get the database file"
+    type: "DOWNLOAD_FTP"
+    source_path: "/public_html/kudadam.com/database.db"
+    login: "eakloeor"
+    password: "secure!y08rS8X2TDMiChdtNkRFB/Kw2m6QfwxIMP4vbNmj3yg=.MHeeUTGDMLtbvr9tTZzS7w=="
+    host: "kudadam.com"
+    port: "21"
+  - action: "Run the build command"
+    type: "BUILD"
+    working_directory: "/buddy/kudadam-com"
+    docker_image_name: "library/node"
+    docker_image_tag: "latest"
+    execute_commands:
+    - "npm install"
+    - "npm run build"
+    volume_mappings:
+    - "/:/buddy/kudadam-com"
+    cache_base_image: true
+    shell: "BASH"
+  - action: "Remove database file"
+    type: "BUILD"
+    working_directory: "/buddy/kudadam-com"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "18.04"
+    execute_commands:
+    - "rm database.db;"
+    volume_mappings:
+    - "/:/buddy/kudadam-com"
+    cache_base_image: true
+    shell: "BASH"
+  - action: "Send SMS notification"
+    type: "SMS"
+    trigger_time: "ON_FAILURE"
+    content: "Hello Lucretius, \r\nThe action, \"$BUDDY_FAILED_ACTION_NAME\" failed:\r\nLogs\r\n--------\r\n$BUDDY_FAILED_ACTION_LOGS"
+    recipients: "233552410669"
+- pipeline: "Deploy to Server"
+  on: "CLICK"
+  refs:
+  - "refs/heads/master"
+  priority: "NORMAL"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Copy files from kudadam/Build Application"
+    type: "COPY_FILES"
+    source_path: "/"
+    target_path: "/"
+    source_project_name: "kudadam-com"
+    source_pipeline_name: "Build Application"
+  - action: "Upload files to kudadam.com"
+    type: "FTP"
+    input_type: "BUILD_ARTIFACTS"
+    local_path: "/"
+    remote_path: "/public_html/kudadam.com"
+    login: "eakloeor"
+    password: "secure!2TEQFUUsF4FNPj2UnLLAw62MVLSjG4yeoheQN56Q0bY=.elHkkYqt8+SQJAXp5JYIwg=="
+    host: "kudadam.com"
+    port: "21"
+    use_temporary_files: true
+    deployment_excludes:
+    - "*"
+    deployment_includes:
+    - "/build/"
+    - "/package.json"
+  - action: "Generate Sitemap"
+    type: "BUILD"
+    working_directory: "/buddy/kudadam-com"
+    docker_image_name: "library/node"
+    docker_image_tag: "16"
+    execute_commands:
+    - "npm install sitemap-generator"
+    - "rm -rf build/static/sitemap.xml"
+    - "node scripts/generateSitemap.js"
+    - "npm uninstall sitemap-generator"
+    volume_mappings:
+    - "/:/buddy/kudadam-com"
+    cache_base_image: true
+    shell: "BASH"
+  - action: "Upload sitemap to server"
+    type: "FTP"
+    input_type: "BUILD_ARTIFACTS"
+    local_path: "build/static"
+    remote_path: "/public_html/kudadam.com/build/static"
+    login: "eakloeor"
+    password: "secure!2TEQFUUsF4FNPj2UnLLAw62MVLSjG4yeoheQN56Q0bY=.elHkkYqt8+SQJAXp5JYIwg=="
+    host: "kudadam.com"
+    port: "21"
+    use_temporary_files: true
+    deployment_excludes:
+    - "*/**/*"
+    - "*"
+    deployment_includes:
+    - "static/sitemap.xml"
+  - action: "Restart the server"
+    type: "SSH_COMMAND"
+    working_directory: "/home5/eakloeor/public_html/kudadam.com"
+    login: "eakloeor"
+    password: "secure!2TEQFUUsF4FNPj2UnLLAw62MVLSjG4yeoheQN56Q0bY=.elHkkYqt8+SQJAXp5JYIwg=="
+    host: "kudadam.com"
+    port: "22"
+    authentication_mode: "PASS"
+    commands:
+    - "source /home5/eakloeor/nodevenv/public_html/kudadam.com/14/bin/activate && cd /home5/eakloeor/public_html/kudadam.com"
+    - "pnpm install --no-frozen-lockfile"
+    - "touch tmp/restart.txt"
+    run_as_script: true
+    shell: "BASH"
+- pipeline: "Run Pipelines"
+  on: "EVENT"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/master"
+  priority: "NORMAL"
+  target_site_url: "https://www.kudadam.com"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Run kudadam/Build Application"
+    type: "RUN_NEXT_PIPELINE"
+    comment: "Triggered by $BUDDY_PIPELINE_NAME execution #$BUDDY_EXECUTION_ID"
+    revision: "INHERIT"
+    next_project_name: "kudadam-com"
+    next_pipeline_name: "Build Application"
+  - action: "Run kudadam/Deploy to Server"
+    type: "RUN_NEXT_PIPELINE"
+    comment: "Triggered by $BUDDY_PIPELINE_NAME execution #$BUDDY_EXECUTION_ID"
+    revision: "INHERIT"
+    next_project_name: "kudadam-com"
+    next_pipeline_name: "Deploy to Server"
