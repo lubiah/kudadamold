@@ -13,19 +13,29 @@ export const getFiles = async ()=>{
 	for (const datum in data)
 		array.push([Path.win32.basename(Path.dirname(datum)),data[datum]()]);
 	let id = 1;
-	let files = Promise.all(array.filter(async file=>{
-		let contents = await file[1];
-		let { metadata } = await contents;
+	// let files = array.filter(async file=>{
+	// 	let contents = await file[1];
+	// 	let { metadata } = await contents;
+	// 	metadata.slug = file[0];
+	// 	metadata.id = id; id++;
+	// 	return metadata.draft !== true || mode === "development"
+	// }).map(async file => {
+	// 	let contents = await file[1];
+	// 	let { metadata } = await contents;
+	// 	if (metadata.draft === true)
+	// 		console.log(metadata)
+	// 	return metadata;
+	// });
+	let files = Promise.all(array.map(async file => {
+		let { metadata } = await file[1];
 		metadata.slug = file[0];
 		metadata.id = id; id++;
-		return metadata.draft !== true || mode === "development"
-	}).map(async file => {
-		let contents = await file[1];
-		let { metadata } = await contents;
-		return metadata;
+		return metadata
 	}));
+
 	files = await files;
-	files = await files.sort((a, b)=>  new Date(b.date) - new Date(a.date))
+	files = files.filter(data => data.draft !== true || mode === "development")
+	files = files.sort((a, b)=>  new Date(b.date) - new Date(a.date))
 	return files;
 }
 
