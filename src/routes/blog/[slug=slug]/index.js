@@ -1,7 +1,7 @@
 import { getFiles } from "../index.json";
+import { token_set_ratio } from "fuzzball";
 
 const getRelatedArticles = async (title,posts)=>{
-    let token_set_ratio = await import("fuzzball").then(e=>e.token_set_ratio);
     const titles = posts
     .map(post=> { return post.title})
     .filter(post => post !== title);
@@ -16,7 +16,12 @@ const getRelatedArticles = async (title,posts)=>{
             }
         }
     }
-    return related_posts;
+    const related_articles = [...related_posts].map(post => {
+        delete post["html"];
+        return post;
+    });
+    console.log(related_articles)
+    return related_articles;
 }
 
 
