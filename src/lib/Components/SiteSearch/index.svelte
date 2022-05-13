@@ -9,15 +9,15 @@
     
     onMount(async ()=>{
         Search = await import("minisearch").then(module=>module.default);
-        let request = await fetch("/blog/__data.json?all=true");
-        let { all } = await request.json();
+        let documentsFetch = await fetch("/blog.json?all=true");
+        let documents = await documentsFetch.json();
         search = new Search({
         fields: ['title','description'],
         storeFields: ['title','slug','description'],
         processTerm: (term, _fieldName) =>
             stop_words.has(term) ? null : term.toLowerCase()
     });
-    search.addAll(all);
+    search.addAll(documents.all);
     })
 
     
