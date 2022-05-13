@@ -10,7 +10,7 @@
 
 <Head>
 	<link rel="alternate" type="application/rss+xml" href="https://www.kudadam.com/blog/feed" />
-	<script defer src="//static.getclicky.com/101360697.js"></script>
+	<script async src="//static.getclicky.com/101366242.js"></script>
 	<link rel="preconnect" href="https://lucretius.sirv.com" />
 </Head>
 
@@ -18,7 +18,7 @@
 	<slot />
 </div>
 
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101360697ns.gif" /></p></noscript>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101366242ns.gif" /></p></noscript>
 <Footer />
 
 <Update/>
