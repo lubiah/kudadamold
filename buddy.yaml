@@ -7,11 +7,11 @@
   fetch_all_refs: true
   fail_on_prepare_env_warning: true
   actions:
-  - action: "Get the database file"
+      - action: "Get the database file"
     type: "DOWNLOAD_FTP"
     source_path: "/public_html/kudadam.com/database.db"
     login: "eakloeor"
-    password: "secure!y08rS8X2TDMiChdtNkRFB/Kw2m6QfwxIMP4vbNmj3yg=.MHeeUTGDMLtbvr9tTZzS7w=="
+    password: "secure!wFfbL+U36zcT5yWrJ87xjFLauJJEF6ehaf0MU4wFTVU=.PJFO6U+QMb71oN5Lb7h4OA=="
     host: "kudadam.com"
     port: "21"
   - action: "Run the build command"
