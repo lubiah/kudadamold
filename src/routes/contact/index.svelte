@@ -13,8 +13,9 @@
 		image: "https:lucretius.sirv.com/logo/logo.png"
 	}
 
-	const done = ()=>{
+	const done = (request,data,form)=>{
 		alert("Mail has been sent");
+		form.reset();
 	}
 
 	const error = ()=>{
@@ -56,7 +57,7 @@
 			<h1>Contact Page</h1>
 			<p>In case you ever want to get in touch with me😊</p>
 		</div>
-		<form use:enhance={{done, error}} action="https://usebasin.com/f/d5fbba0eef70" method="POST" class="mt-8 max-w-sm p-3 border dark:border-gray-800 rounded">
+		<form use:enhance={{done, error}} action="https://usebasin.com/f/d5fbba0eef70" method="POST" class="mt-8 max-w-sm mx-auto p-3 border dark:border-gray-800 rounded">
 			<div>
 				<label for="name">Name</label>
 				<input type="text" id="name" name="name">
