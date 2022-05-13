@@ -17,6 +17,8 @@ keywords:
   - sirv migration
 ---
 
+[TOC]
+
 <p class="intro">
     Ever since I started using this domain, I have always been hosting my images on <a href="https://sirv.com" target="_blank">Sirv</a>. It's an image CDN which optimizes your images and delivers them faster.
 </p>
@@ -53,9 +55,14 @@ Now, this will download a CSV file onto your device. Opening the file with a CSV
 
 The CSV file which is downloaded should contain content similar to this. 
 
-Now, let's move on to writing the script. Open your IDE and paste the following code inside.
+### Installing Required Packages
 
-```python
+Obviously we will need to install some packages in order to make our script work. The only package which we will be installing is the ImageKit SDK.
 
+In order to install it, just open your terminal and paste in the following code.
+
+```cmd
+pip install imagekitio
 ```
 
+After the package has been successfully installed, create a new Python file and paste the following code inside.

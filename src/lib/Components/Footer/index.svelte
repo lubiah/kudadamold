@@ -50,7 +50,7 @@
 				>Source code is available on <a
 					target="_blank"
 					rel="noopener"
-					href="https://www.github.com/kudadam/www.kudadam.com">Github</a
+					href="https://github.com/kudadam/kudadam.com">Github</a
 				></span
 			>
 		</p>

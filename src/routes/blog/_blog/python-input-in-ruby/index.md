@@ -15,7 +15,7 @@ keywords:
 date: 2021-04-05
 ---
 
-[Ruby](https://www.ruby-lang.com/en) is a general-purpose programming language and it's syntax is close to Python's own.
+[Ruby](https://www.ruby-lang.org/en/) is a general-purpose programming language and it's syntax is close to Python's own.
 When I started learning Ruby, I was marveled at it's simplicity.
 Since I was coming from a Python background. I found it very easy to learn. Because of it's similarity in syntax, I wanted some of Python's function in Ruby.
 One of the functions I wanted to implement was the `input()` function. The reason was that, Ruby unlike Python, you will need to use both `puts` and `gets` if you want to get a user's input whiles displaying text in Ruby.
