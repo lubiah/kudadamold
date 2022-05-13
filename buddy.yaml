@@ -7,7 +7,7 @@
   fetch_all_refs: true
   fail_on_prepare_env_warning: true
   actions:
-    - action: "Get the database file"
+      - action: "Get the database file"
     type: "DOWNLOAD_FTP"
     source_path: "/public_html/kudadam.com/database.db"
     login: "eakloeor"
