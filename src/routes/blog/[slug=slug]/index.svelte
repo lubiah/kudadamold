@@ -39,7 +39,7 @@
 			method: "POST",
 			body: JSON.stringify({"hits":"increase"})
 		});
-		await importScripts("https://platform-api.sharethis.com/js/sharethis.js#property=61d2ee20cb125900193f457d&product=sop")
+		await importScripts("https://static.addtoany.com/menu/page.js")
 		Cusdis = await import("svelte-cusdis").then(e => e.default);
 		await import("$lib/css/prism-tomorrow.min.css");
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
@@ -127,9 +127,46 @@
 			<li><Eye/> {hits}</li>
 		</ul>
 		<p class="font-bold text-lg text-[tomato] text-center">Share this article</p>
-		<div class="sharethis-inline-share-buttons mt-[50px] mb-[20px]"></div>
-		<p class="font-bold text-lg text-[tomato] text-center">Your reaction</p>
-		<div class="sharethis-inline-reaction-buttons"></div>
+		<!-- AddToAny BEGIN -->
+	<div class="a2a_kit a2a_kit_size_38 flex justify-center a2a_default_style">
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_reddit"></a>
+		<!--svelte-ignore a11y-missing-attribute -->
+		<!--svelte-ignore a11y-missing-content -->
+		<a class="a2a_button_twitter"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_hacker_news"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_telegram"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_whatsapp"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_facebook"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_pocket"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_evernote"></a>
+		<!--svelte-ignore a11y-missing-content -->
+		<!--svelte-ignore a11y-missing-attribute -->
+		<a class="a2a_button_mastodon"></a>
+		<!--svelte-ignore a11y-missing-attribute -->
+		
+		</div>
+		<script>
+		var a2a_config = a2a_config || {};
+		a2a_config.onclick = 1;
+		</script>
+		<script async src="https://static.addtoany.com/menu/page.js"></script>
 
 		{#if browser && related_articles && related_articles.length >= 1}
 			<div class="mt-[100px]">

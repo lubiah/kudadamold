@@ -20,7 +20,6 @@ const getRelatedArticles = async (title,posts)=>{
         delete post["html"];
         return post;
     });
-    console.log(related_articles)
     return related_articles;
 }
 
