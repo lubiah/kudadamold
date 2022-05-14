@@ -34,7 +34,7 @@
     }
 </script>
 
-<Modal {hidden} class="rounded p-2 bg-white h-min w-[500px] dark:bg-gray-900 max-w-sm" on:hide>
+<Modal {hidden} class="rounded p-2 bg-white h-min w-[500px] dark:bg-neutral-800 max-w-sm" on:hide>
     <!-- svelte-ignore a11y-autofocus -->
     <input type="search" name="" class="outline-none rounded-none" id="" autofocus bind:value on:input={findResults} placeholder="Start typing to search"/>
     {#if results.length !== 0}

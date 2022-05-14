@@ -11,7 +11,7 @@ This component is used to display my projects in a more organized manner
 	export let repo = undefined;
 </script>
 
-<article class="border dark:border-gray-800 border-gray-300 w-[300px] my-3 mr-3 rounded">
+<article class="border dark:border-neutral-800 border-gray-300 w-[300px] my-3 mr-3 rounded">
 	<img src={image} class="block mx-auto w-full h-[200px]" loading="lazy" alt="{title}" width="300" height="200"/>
 	<div class="p-2 text-center">
 		<h2 class="font-semibold text-xl my-1 text-inherit hover:text-[color:var(--primary-color)]">{title}</h2>

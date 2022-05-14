@@ -153,13 +153,7 @@
 		<!--svelte-ignore a11y-missing-content -->
 		<!--svelte-ignore a11y-missing-attribute -->
 		<a class="a2a_button_pocket"></a>
-		<!--svelte-ignore a11y-missing-content -->
-		<!--svelte-ignore a11y-missing-attribute -->
-		<a class="a2a_button_evernote"></a>
-		<!--svelte-ignore a11y-missing-content -->
-		<!--svelte-ignore a11y-missing-attribute -->
-		<a class="a2a_button_mastodon"></a>
-		<!--svelte-ignore a11y-missing-attribute -->
+
 		
 		</div>
 		<script>

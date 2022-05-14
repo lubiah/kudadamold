@@ -72,7 +72,7 @@ body::-webkit-scrollbar-thumb:active {
 	body {
 		font-family: Inter, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,
 			sans-serif;
-		@apply lg:dark:font-light dark:bg-slate-900 dark:text-gray-300 text-gray-800 text-[1.17rem];
+		@apply lg:dark:font-light dark:bg-neutral-900 dark:text-gray-200 text-gray-800 text-[1.17rem];
 	}
 
 	::selection {
@@ -84,7 +84,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	.fancy-scrollbar::-webkit-scrollbar {
-		@apply h-[10px] w-[10px] dark:bg-gray-800 bg-[color:var(--scrollbar-background)];
+		@apply h-[10px] w-[10px] dark:bg-neutral-800 bg-[color:var(--scrollbar-background)];
 	}
 
 	.fancy-scrollbar::-webkit-scrollbar-thumb {
@@ -164,11 +164,11 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	input {
-		@apply dark:bg-gray-800  border border-gray-300 px-1 rounded p-0.5 dark:border-0 w-full;
+		@apply dark:bg-neutral-800  border border-gray-300 px-1 rounded p-0.5 dark:border-0 w-full;
 	}
 
 	textarea {
-		@apply border-gray-300 border rounded dark:bg-gray-800 dark:border-0 dark:text-white w-full p-1;
+		@apply border-gray-300 border rounded dark:bg-neutral-800 dark:border-0 dark:text-white w-full p-1;
 	}
 
 	ol,

@@ -19,7 +19,7 @@ The Card component is used to house the blog posts
 	}
 </script>
 
-<article class="dark:bg-gray-900 mr-2 w-[310px] shadow-sm hover:shadow-lg rounded mb-9 relative {Class}">
+<article class="dark:bg-neutral-800 mr-2 w-[310px] shadow-sm hover:shadow-lg rounded mb-9 relative {Class}">
 	<a href="/blog/{slug}" sveltekit:prefetch>
 		<img src={image} class="w-full h-[160px]" height="160" alt="{title}" id="card-image" />
 	</a>
