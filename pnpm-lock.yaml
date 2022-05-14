@@ -36,6 +36,7 @@ specifiers:
   svelte-sheet-modal: ^0.0.9
   tailwindcss: ^3.0.23
   typeit: ^8.4.0
+  unist-util-visit: ^4.1.0
 
 dependencies:
   html-minifier: 4.0.0
@@ -75,6 +76,7 @@ devDependencies:
   svelte-sheet-modal: 0.0.9
   tailwindcss: 3.0.24
   typeit: 8.5.2
+  unist-util-visit: 4.1.0
 
 packages:
 

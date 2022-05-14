@@ -17,7 +17,6 @@ keywords:
   - sirv migration
 ---
 
-[TOC]
 
 <p class="intro">
     Ever since I started using this domain, I have always been hosting my images on <a href="https://sirv.com" target="_blank">Sirv</a>. It's an image CDN which optimizes your images and delivers them faster.
@@ -61,8 +60,52 @@ Obviously we will need to install some packages in order to make our script work
 
 In order to install it, just open your terminal and paste in the following code.
 
-```cmd
+```command {.python}
 pip install imagekitio
 ```
 
 After the package has been successfully installed, create a new Python file and paste the following code inside.
+
+```python
+import csv
+from imagekitio import ImageKit
+
+imagekit = ImageKit(
+	private_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+	public_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+	url_endpoint = "https://ik.imagekit.io/your_endpoint/"
+	)
+
+
+
+with open("file-list.csv") as csv_file:
+	csv_reader = csv.DictReader(csv_file)
+	for row in csv_reader:
+		line = dict(row)	
+		folder = line["File"].split("/")[:-1]
+		folder.append("")
+		folder = "/".join(folder)
+		if line['Type'] != "folder":
+			imagekit.upload_file(
+				file = line["URL"],
+				file_name = line["Name"],
+				options = {
+					"use_unique_file_name": False,
+					"folder": folder
+				}
+				)
+		print("Uploaded " + line["Name"])
+```
+
+The code above is all you will need. First of all, we imported the `csv` and `ImageKit` packages. Then we created an instance of ImageKit, you must replace `private_key` and`public_key`  with your accounts private key and public key respectively. Then you also replace the `url_endpoint` with your accounts endpoint.
+
+On the next line, we opened the CSV file, <small>(I renamed the CSV file downloaded from Sirv to 'file-list.csv')</small> and created a csv reader.
+
+Then, we iterate through the rows in the CSV file and upload the files to ImageKit.
+
+## Outro
+
+So this is how I migrated all my images to ImageKit from Sirv. Following the method above will also migrate your images to ImageKit. If you face any problems, do make sure to write it out in the comments section.
+
+:wave:
+

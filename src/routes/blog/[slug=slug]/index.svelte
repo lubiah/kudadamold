@@ -44,6 +44,7 @@
 		await import("$lib/css/prism-tomorrow.min.css");
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
 		let hits_data = await hits_response.json();
+		console.log(hits_data)
 		hits = hits_data.hits;
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
 	});

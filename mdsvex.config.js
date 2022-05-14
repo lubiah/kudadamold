@@ -4,7 +4,7 @@ import remark_slug from 'remark-slug';
 import remark_emoji from 'remark-emoji';
 import remark_attr from 'remark-attr';
 import remark_breaks from 'remark-breaks';
-
+import remark_advanced_attr from "./plugins/remark-fencedcode-attr.js";
 import rehype_toc from 'rehype-toc';
 import rehype_external_links from 'rehype-external-links';
 
@@ -45,10 +45,10 @@ const config = defineConfig({
 
 	remarkPlugins: [[remark_attr, {
 		scope: "every",
-		SUPPORTED_ELEMENTS: "fencedCode"
+		elements: ["fencedCode"]
+		
 	}], remark_slug, remark_emoji, remark_breaks],
 	extensions: ['.svelte.md', '.md', '.svx'],
-
 	smartypants: {
 		dashes: 'oldschool'
 	}
