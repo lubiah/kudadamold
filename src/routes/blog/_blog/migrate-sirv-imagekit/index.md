@@ -2,7 +2,6 @@
 title: How I Migrated From Sirv To ImageKit Using Python
 description: A little write-up about how I used python to migrate all my images from sirv to imagekit
 category: Tips And Tricks
-draft: true
 image: https://lucretius.sirv.com/blog/migrate-sirv-imagekit/hero.jpg
 date: 2022-05-07
 excerpt:  A little write-up about how I used python to migrate all my images from sirv to imagekit
@@ -34,7 +33,7 @@ The image above is the bandwidth usage form April 30 - May 6 and it's 1.37 GB, a
 
 ## Coding The Migration Script
 
-As a developer, I tend to automate must stuff. I could have migrated image by image but that would take a century before am done so I decided to use [Python](https://www.python.org/) to quicken the process.
+As a developer, I tend to automate most stuff. I could have migrated image by image but that would take a century before am done so I decided to use [Python](https://www.python.org/) to quicken the process.
 
 ### How The Script Will Work
 
@@ -60,7 +59,7 @@ Obviously we will need to install some packages in order to make our script work
 
 In order to install it, just open your terminal and paste in the following code.
 
-```command {.python}
+```plaintext
 pip install imagekitio
 ```
 

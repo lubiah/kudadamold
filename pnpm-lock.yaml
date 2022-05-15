@@ -36,12 +36,10 @@ specifiers:
   svelte-sheet-modal: ^0.0.9
   tailwindcss: ^3.0.23
   typeit: ^8.4.0
-  unist-util-visit: ^4.1.0
 
 dependencies:
   html-minifier: 4.0.0
   sqlite3: 5.0.2
-  svelte-cusdis: 0.0.4
 
 devDependencies:
   '@playwright/test': 1.21.1
@@ -69,6 +67,7 @@ devDependencies:
   remark-emoji: 3.0.2
   remark-slug: 7.0.1
   svelte: 3.48.0
+  svelte-cusdis: 0.0.4
   svelte-headroom: 2.2.1
   svelte-paginate: 0.0.1
   svelte-preprocess: 4.10.6_lhgjd277matnne4wn224wtgbie
@@ -76,7 +75,6 @@ devDependencies:
   svelte-sheet-modal: 0.0.9
   tailwindcss: 3.0.24
   typeit: 8.5.2
-  unist-util-visit: 4.1.0
 
 packages:
 
@@ -4287,7 +4285,7 @@ packages:
 
   /svelte-cusdis/0.0.4:
     resolution: {integrity: sha512-FV7uq7vpnnZE5ZZ8CLw7RJd/dXmKKpXZNfgUnyeOYDGrfX94fxwfb6+cqNqCZIoZIOgoNLITnhEpNKdyU39N/g==}
-    dev: false
+    dev: true
 
   /svelte-headroom/2.2.1:
     resolution: {integrity: sha512-A9bhw6gIuA0a03LdCmQZsGaXzs+tapL8ugpXFLYFv933C5OJ+bkBiawOG/TJmLIKlQFzQPmmcJtQDzGSrrbVoA==}

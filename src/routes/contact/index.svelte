@@ -60,15 +60,15 @@
 		<form use:enhance={{done, error}} action="https://usebasin.com/f/d5fbba0eef70" method="POST" class="mt-8 max-w-sm mx-auto p-3 border dark:border-neutral-800 rounded">
 			<div>
 				<label for="name">Name</label>
-				<input type="text" id="name" name="name">
+				<input required type="text" id="name" name="name">
 			</div>
 			<div>
 				<label for="email">Email</label>
-				<input type="text" id="email" name="email">
+				<input required type="text" id="email" name="email">
 			</div>
 			<div>
 				<label for="message">Message</label>
-				<textarea name="message" id="" cols="30" rows="4"></textarea>
+				<textarea required name="message" id="" cols="30" rows="4"></textarea>
 			</div>
 			<button type="submit">Submit</button>
 		</form>

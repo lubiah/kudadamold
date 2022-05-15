@@ -37,19 +37,18 @@
 		"remark-emoji": "^3.0.2",
 		"remark-slug": "^7.0.1",
 		"svelte": "^3.48.0",
+		"svelte-cusdis": "^0.0.4",
 		"svelte-headroom": "^2.2.1",
 		"svelte-paginate": "^0.0.1",
 		"svelte-preprocess": "^4.10.5",
 		"svelte-seo": "^1.4.0",
 		"svelte-sheet-modal": "^0.0.9",
 		"tailwindcss": "^3.0.23",
-		"typeit": "^8.4.0",
-		"unist-util-visit": "^4.1.0"
+		"typeit": "^8.4.0"
 	},
 	"type": "module",
 	"dependencies": {
 		"html-minifier": "^4.0.0",
-		"sqlite3": "5.0.2",
-		"svelte-cusdis": "^0.0.4"
+		"sqlite3": "5.0.2"
 	}
 }

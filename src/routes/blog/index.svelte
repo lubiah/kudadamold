@@ -83,8 +83,8 @@
 			</section>
 		</div>
         <PaginationNav let:value={pageNumber} currentPage={1} totalItems={total} pageSize={6} limit={2}>
-		<a sveltekit:prefetch href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white" slot="number">{pageNumber}</a>
-		<span slot="ellipsis" class="button">...</span>
+		<a sveltekit:prefetch href="{pageNumber === 1 ? "/blog" : `/blog/page/${pageNumber}`}" class="button hover:text-white visited:text-white px-4" slot="number">{pageNumber}</a>
+		<span slot="ellipsis" class="button px-4">...</span>
 	</PaginationNav>
 	</div>
 

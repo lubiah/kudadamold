@@ -39,12 +39,11 @@
 			method: "POST",
 			body: JSON.stringify({"hits":"increase"})
 		});
-		await importScripts("https://static.addtoany.com/menu/page.js")
+		importScripts("https://static.addtoany.com/menu/page.js");
 		Cusdis = await import("svelte-cusdis").then(e => e.default);
 		await import("$lib/css/prism-tomorrow.min.css");
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
 		let hits_data = await hits_response.json();
-		console.log(hits_data)
 		hits = hits_data.hits;
 		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
 	});
@@ -224,7 +223,7 @@
 	}
 	
 	#content :global(img:not(#post-image)){
-		@apply max-h-[500px] mx-auto my-4 rounded;
+		@apply mx-auto my-4 rounded;
 	}
 
 	:global(.intro){
