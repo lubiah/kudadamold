@@ -74,7 +74,7 @@
 	<span class="ml-auto block p-3" on:click={()=> hideSearch = !hideSearch} title="Search the website for information"><SearchIcon/></span>	
 	<button title="Open or close navigation bar"
 		aria-label="{hidden === true ? "open" : "close"}"
-		class="ml-auto px-1 md:hidden bg-transparent !text-inherit"
+		class="ml-auto shadow-none px-1 md:hidden bg-transparent !text-inherit"
 		on:click={() => {
 			hidden = !hidden;
 		}}
