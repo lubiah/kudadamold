@@ -20,7 +20,7 @@ export const getFiles = async ()=>{
 		return metadata
 	}));
 	files = await files;
-	files = files.filter(data => data.draft !== true || mode === "development")
+	files = files.filter(data => data.draft !== true || mode === "development");
 	files = files.sort((a, b)=>  new Date(b.date) - new Date(a.date))
 	return files;
 }

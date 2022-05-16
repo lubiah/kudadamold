@@ -49,3 +49,9 @@ export const importLinks = (url,options={}) => {
     reject('already exists');
   })
 }
+
+export const includesMany = (arr, values) => {
+  return values.every(value => {
+    return arr.includes(value);
+  });
+}
