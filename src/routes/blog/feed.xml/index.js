@@ -1,5 +1,5 @@
-import { encode } from 'html-entities';
-import { getFiles } from '../index.json.js';
+import { encode} from 'html-entities';
+import { getFilesHtml } from '../index.json.js';
 import { snakeCase, includesMany } from '$lib/Scripts/util.js';
 
 
@@ -23,7 +23,7 @@ const sort_items = async files => {
 
 export async function get({ url }) {
 	try {
-	let files = await getFiles();
+	let files = await getFilesHtml();
 	if (url.searchParams.has("category")){
 		let categories = url.searchParams.get("category").split(",");
 		files = files.filter(file => {

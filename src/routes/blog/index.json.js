@@ -5,7 +5,25 @@ import sqlite from "sqlite3";
 
 const db = new sqlite.Database("./database.db",(err)=>{});
 
-
+export const getFilesHtml = async ()=>{
+	let array = new Array();
+	let data = import.meta.glob("./_blog/**/*.md");
+	for (const datum in data)
+		array.push([Path.win32.basename(Path.dirname(datum)),data[datum]()]);
+	let id = 1;
+	let files = Promise.all(array.map(async file => {
+		let { metadata } = await file[1];
+		let def = await file[1];
+		metadata.html = def.default.render().html;
+		metadata.slug = file[0];
+		metadata.id = id; id++;
+		return metadata
+	}));
+	files = await files;
+	files = files.filter(data => data.draft !== true || mode === "development");
+	files = files.sort((a, b)=>  new Date(b.date) - new Date(a.date))
+	return files;
+}
 
 export const getFiles = async ()=>{
 	let array = new Array();

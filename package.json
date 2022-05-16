@@ -21,7 +21,6 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^3.4.1",
 		"fuzzball": "^2.1.2",
-		"html-entities": "^2.3.3",
 		"imagekit-javascript": "^1.4.3",
 		"mdsvex": "^0.10.5",
 		"minisearch": "^4.0.3",
@@ -48,6 +47,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"html-entities": "^2.3.3",
 		"html-minifier": "^4.0.0",
 		"sqlite3": "5.0.2"
 	}

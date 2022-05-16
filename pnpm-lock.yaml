@@ -38,6 +38,7 @@ specifiers:
   typeit: ^8.4.0
 
 dependencies:
+  html-entities: 2.3.3
   html-minifier: 4.0.0
   sqlite3: 5.0.2
 
@@ -51,7 +52,6 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.4.1_6wevxxng4y4ff26nzlndg2wnpa
   fuzzball: 2.1.2
-  html-entities: 2.3.3
   imagekit-javascript: 1.4.3
   mdsvex: 0.10.5_svelte@3.48.0
   minisearch: 4.0.3
@@ -2436,7 +2436,7 @@ packages:
 
   /html-entities/2.3.3:
     resolution: {integrity: sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==}
-    dev: true
+    dev: false
 
   /html-minifier/4.0.0:
     resolution: {integrity: sha512-aoGxanpFPLg7MkIl/DDFYtb0iWz7jMFGqFhvEDZga6/4QTjneiD8I/NXL1x5aaoCp7FSIT6h/OhykDdPsbtMig==}
