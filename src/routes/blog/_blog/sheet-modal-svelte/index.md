@@ -43,7 +43,7 @@ on:close={()=>{open= false}}
 </SheetModal>
 
 <script>
-    import SheetModal from "svelte-sheet-modal";
+    import SheetModal from "$lib/Components/Sheet-Modal";
     let open = false;
 </script>
 

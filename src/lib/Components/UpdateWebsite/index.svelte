@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-    import SheetModal from "svelte-sheet-modal";
+    import SheetModal from "../Sheet-Modal";
     $: showUpdate = false;
 
 

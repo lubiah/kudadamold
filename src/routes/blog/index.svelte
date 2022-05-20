@@ -49,7 +49,7 @@
 		<div class="text-center">
 			<h1>The Blog</h1>
 			<p>My personal journal where I write about tutorials, hacks and everything in-between</p>
-		</div>
+		</div>	
 		<div>
 			<h2 class="ml-4 my-6 font-bold headings dark:text-white text-current inline-block">Popular Articles</h2>
 			<div class="overflow-x-auto lg:fancy-scrollbar flex scroll-smooth snap-x mb-8">
