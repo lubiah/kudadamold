@@ -6,14 +6,13 @@ import adapter from '@sveltejs/adapter-node';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
-
 	kit: {
 		adapter: adapter(),
 		trailingSlash: 'never',
 		prerender: {
 			default: true
 			
-		}  
+		}
 	},
 	preprocess: [
 		mdsvex(mdsvexConfig),
