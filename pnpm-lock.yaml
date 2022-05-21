@@ -10,7 +10,6 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^3.4.1
   fuzzball: ^2.1.2
-  html-entities: ^2.3.3
   html-minifier: ^4.0.0
   imagekit-javascript: ^1.4.3
   mdsvex: ^0.10.5
@@ -37,7 +36,6 @@ specifiers:
   typeit: ^8.4.0
 
 dependencies:
-  html-entities: 2.3.3
   html-minifier: 4.0.0
   sqlite3: 5.0.2
 
@@ -2431,10 +2429,6 @@ packages:
   /html-element-attributes/2.3.0:
     resolution: {integrity: sha512-RJv2v3BBaYSc0ODHwT0sqWI+2lFs6DATBvCRnW20BDmULxoAWvfT6r28uL8LcW1a9/eqUl+1DccUOJzw00qVXQ==}
     dev: true
-
-  /html-entities/2.3.3:
-    resolution: {integrity: sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==}
-    dev: false
 
   /html-minifier/4.0.0:
     resolution: {integrity: sha512-aoGxanpFPLg7MkIl/DDFYtb0iWz7jMFGqFhvEDZga6/4QTjneiD8I/NXL1x5aaoCp7FSIT6h/OhykDdPsbtMig==}

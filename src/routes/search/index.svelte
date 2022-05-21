@@ -3,16 +3,7 @@
     import Search from "minisearch";
     import { onMount } from "svelte";
 	import SEO from 'svelte-seo';
-    import { getFiles } from "../blog/index.json.js";
-    
-    export const load = async ({ url })=>{
-        let posts = await getFiles();
-    return {
-        props: {
-            data: posts
-        }
-    }
-}
+
 </script>
 
 <SEO
@@ -50,13 +41,16 @@ openGraph={{
                 title: 5
             },
             prefix: true,
-            fuzzy: 0.3
+            fuzzy: 0.2
         });
-        console.log(results);
     }
     
     onMount(()=>{
-        findResults()
+        if (new URL(window.location.href).searchParams.has("q")){
+            let parameter = new URL(window.location.href).searchParams.get("q");
+            query = parameter;
+        }
+        findResults();
     })
 
     let seo = {
