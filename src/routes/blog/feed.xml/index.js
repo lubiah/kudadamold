@@ -1,6 +1,6 @@
-import { encode} from 'html-entities';
 import { getFilesHtml } from '../index.json.js';
 import { snakeCase, includesMany } from '$lib/Scripts/util.js';
+import { encodeHtml } from "$lib/Scripts/util.js";
 
 
 const sort_items = async files => {
@@ -10,7 +10,7 @@ const sort_items = async files => {
 <item>
 	<title>${post.title}</title>
 	<link>https://www.Kudadam.com/blog/${post.slug}</link>
-	<description>${encode(post.html)}</description>
+	<description>${encodeHtml(post.html)}</description>
 	<category>${post.category}</category>
 	<guid>https://www.Kudadam.com/blog/${post.slug}</guid>
 	<pubDate>${new Date(post.date)}</pubDate>
