@@ -54,8 +54,8 @@ openGraph={{
     })
 
     let seo = {
-		title: "Kudadam • Search | Every information on my website can be located here",
-		description: "This is where every information on my website can be located",
+		title: "Kudadam • Search | All the information on my website can be located here",
+		description: "This is where all the information on my website can be located",
 		canonical: "https://www.kudadam.com/search"
 	}
 </script>

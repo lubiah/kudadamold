@@ -6,7 +6,7 @@
 
 	const SEO = {
 	    title: "About - Everything about Lucretius Biah • Kudadam",
-	    description: "Hey, am Lucretius Biah. A 17 year old developer located in Wakanda. I program useful softwares and also help to design beautiful websites. This is my personal website where I write almost anything i like",
+	    description: "Hey, I'm Lucretius Biah. A 17 year old developer located in Wakanda. I program useful software and also help to design beautiful websites. This is my personal website where I write almost anything i like",
 	    keywords: "about kudadam, about lucretius biah, about lucretius biah, about teen developer, lucretius biah, lucretius, lucretius programmer",
 	    canonical: "https://www.kudadam.com/about",
 	    image: "https://lucretius.sirv.com/profile/lucretius.jpg"
@@ -85,26 +85,26 @@
 			</div>
 		<h2>Who am I?</h2>
 		<p>
-			Hello World👋, Am Lucretius K. Biah 👦<br/>
-			Well, to describe myself on this page is a bit difficult as it is hard to find the right words to use.
+			Hello World👋, I'm Lucretius K. Biah 👦<br/>
+			Well, to describe myself on this page is a bit difficult, as it is hard to find the right words to use.
 			Anyway, let's see how this ends...🤔
 		</p>
 		<p>
 			My name is Lucretius and welcome to my part of the internet.<br/>
-			Am an 18 y/o self-taught developer and I can code in 5+ programming languages but my favourites are JavaScript, Python and Ruby.<br/>
-			Am based somewhere in Wakanda🇬🇭
+			I'm an 18 y/o self-taught developer and I can code in 5+ programming languages. My favourites are JavaScript, Python and Ruby.<br/>
+			I'm based somewhere in Wakanda🇬🇭
 		</p>
 		</section>
 		<section>
 			<h2>What I do</h2>
 			<p>
 				Simply put, I develop software and design websites.<br/>
-				I entered into the world of programming as a software developer<small class="italic before:[content:'('] after:[content:')']">which I still am</small> starting with the Python programming language, before Python, I used to code in bash and shell script.<br/>
+				I entered into the world of programming as a software developer<small class="italic before:[content:'('] after:[content:')']">which I still am</small> starting with the Python programming language. Before Python, I used to code in bash and shell script.<br/>
 			</p>
 			<p>
-				Then I decided to learn HTML to create a webpage to showcase my softwares, learnt CSS to style it and also learnt JavaScript to make it interactive.
-				I realized HTML was making me repeat so much code so I decided to learn PHP and separate my HTML into chunks. MySQL followed because I started blogging and I wanted to store the blog posts in a database and render them through PHP.<br/>
-				Long story short, I became a web developer and learnt fundamental web development skills.
+				Then I decided to learn HTML to create a webpage to showcase my software. I learned CSS to style it and JavaScript to make it interactive.
+				I found writing HTML repetitive, so I decided to learn PHP and separate my HTML into chunks. MySQL followed because I started blogging and I wanted to store the blog posts in a database and render them with PHP.<br/>
+				Long story short, I became a web developer and learned fundamental web development skills.
 			</p>
 		</section>
 		<section>
@@ -125,15 +125,15 @@
 			</ul>
 		</section>
 		<section>
-			<h2>When am not coding...</h2>
+			<h2>When I'm not coding...</h2>
 			<p>
-				Am a bookworm📘. My favourite story book is <a href="https://en.wikipedia.org/wiki/The_Hardy_Boys" target="_blank">Hardy Boys</a> by <a href="https://en.wikipedia.org/wiki/Franklin_W._Dixon" target="_blank">Franklin Dixon</a>.<br/>
-				I spend most time reading books, if not a hardcopy book, then online versions.<br/>
-				Also, I do play games, a lot, I almost complete every game I start<small>(not bragging)</small>.
+				I am a bookworm📘. My favourite story book is <a href="https://en.wikipedia.org/wiki/The_Hardy_Boys" target="_blank">Hardy Boys</a> by <a href="https://en.wikipedia.org/wiki/Franklin_W._Dixon" target="_blank">Franklin Dixon</a>.<br/>
+				I spend most of my time reading books, whether hardcopy or digital.<br/>
+				Also, I play games a lot. I almost complete every game I start<small>(not bragging)</small>.
 			</p>
 			<p>
-				I love music 🎶 too, but I don't have a favourite.<br/>
-				I write in my diary📓 in my spare time, code when I have a computer close-by and play games when am bored.				
+				I love music 🎶 too, but I don't have a favourite genre.<br/>
+				I write in my diary📓 in my spare time, code when I have a computer close by, and play games when I am bored.				
 			</p>
 		</section>
 		<section>
