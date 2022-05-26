@@ -65,7 +65,7 @@
 
 	const SEO = {
 		title: "Lucretius Biah • Kudadam",
-		description: "Hey, am Lucretius, a software developer and website designer. Welcome to my part of the internet. Feel free to read my blog post, download my softwares or just look around",
+		description: "Hey, am Lucretius, a software developer and website designer. Welcome to my part of the internet. Feel free to read my blog, download my software or just look around",
 		keywords: "lucretius, biah, lucretius biah, lucretius website",
 		canonical: "https://www.kudadam.com"
 
@@ -121,7 +121,7 @@
 	<section class="grid  grid-cols-3 items-center justify-center section">
 		
 		<div class="col-span-3 md:col-span-2">
-			<h1 class="display-1" id="me-text">Hey, am Lucretius</h1>
+			<h1 class="display-1" id="me-text">Hey, I'm Lucretius</h1>
 			<p class="display-8">
 				{#key currentText}<span style:display="inline-block" in:fade>{currentText}</span>{/key} located somewhere in Wakanda🌍. Welcome to my part of the internet where I <a href="/projects">showcase my projects</a> and <a href="/blog">write about tech and non-techy stuff</a>.
 			</p>
@@ -138,14 +138,14 @@
 		<h2 class="display-4 font-bold text-center col-span-3" data-aos="fade-down">What I do?</h2>
 		<div class="col-span-3 md:col-span-2 display-8" data-aos="fade-right" id="section-two-child-container" data-aos-id="section-two" use:sectionTwo>
 			
-I design stunning-looking web interfaces using cutting-edge web technologies with a key🔑 focus on accessibility and responsiveness to ensure users will have a great user experience💡.
+I design stunning web interfaces using cutting-edge web technologies with a key🔑 focus on accessibility and responsiveness to ensure users will have a great user experience💡.
 		</div>
 		<img data-aos="fade-left" class="col-span-3 row-start-2 md:row-start-[unset] md:col-span-1 mx-auto" alt="A developer standing by portfolio" src="https://ik.imagekit.io/kudadam/svg/showing_resume.svg?q=1" width="450" height="450" loading="lazy"/>
 	</section>
 	<section class="grid grid-cols-3 items-center justify-center  gap-4">
 		<img height="450" width="450" data-aos="flip-right" data-aos-id="section-three" class="col-span-3 md:col-span-1" src="https://ik.imagekit.io/kudadam/svg/dev.svg?q=1" alt="Developer sitting in front of a laptop">
 		<div class="display-8 col-span-3 md:col-span-2" data-aos="flip-left">
-			When am not designing user-interfaces, I develop softwares and write the behind-the-scenes code that makes a website function. I do everything database, servers and caching
+			When I am not designing user interfaces, I develop software and write the behind-the-scenes code that makes a website function. I do everything database, servers and caching
 		</div>
 	</section>
 	<section>

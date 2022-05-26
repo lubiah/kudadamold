@@ -35,7 +35,7 @@
 		/>
 	{:else if status === 500}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
-		<p class="text-3xl mt-10">Sorry, Error from my server</p>
+		<p class="text-3xl mt-10">Sorry, there has been a server error</p>
 		{#if dev}
 			{error}
 		{/if}
@@ -47,7 +47,7 @@
 		/>
 	{:else}
 		<h2 class="text-5xl md:text-7xl text-red-500 font-bold mt-10">{status} Error</h2>
-		<p class="text-3xl mt-10">There seem to be an error somewhere</p>
+		<p class="text-3xl mt-10">There seems to be an error somewhere</p>
 	{/if}
 </div>
 
