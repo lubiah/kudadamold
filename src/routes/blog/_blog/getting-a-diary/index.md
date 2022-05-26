@@ -2,7 +2,7 @@
 title: Getting a diary
 description: The importance of diaries and why you should get yourself one
 category: Personal
-image: https://lucretius.sirv.com/blog/person_writing.jpg
+image: https://ik.imagekit.io/kudadam/blog/person_writing.jpg
 excerpt: How I got involved with diaries and blah blah blah...
 keywords:
   - diary
@@ -39,7 +39,7 @@ So after careful thinking, I decided to encrypt it. Well, that's the only possib
 
 ## My first diary entry
 
-![first entry inside my diary](https://lucretius.sirv.com/blog/picture_of_my_diary.jpg?h=300&q=100)
+![first entry inside my diary](https://ik.imagekit.io/kudadam/blog/picture_of_my_diary.jpg?h=300&q=100)
 So after learning the Pig-Pen cipher, I never tried it in my diary. I wanted to become comfortable with it before writing in my diary. I did not want to make my diary dirty by cancelling all the time.
 The first time I made an entry was on the 6th of January, 2020. That was the second day after I went to school, I was too tired to write on the 5th so I decided to write the next day, well. I didn't write anything sensible the first day, I was just itching to start using my diary.
 One good advantage of Pig-Pen cipher is that, you can always change the pattern of the letters, if you are to use the cheat sheet above, you won't still be able to decode all the letters.

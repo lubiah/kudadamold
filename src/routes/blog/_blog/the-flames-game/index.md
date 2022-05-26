@@ -2,7 +2,7 @@
 title: The FLAMES Game. Everything You Need To Know About It
 description: Learn all about the FLAMES game, when it was invented, who invented it and many more
 category: Personal
-image: https://lucretius.sirv.com/blog/the-flames-game/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/the-flames-game/hero.jpg
 excerpt: The FLAMES game is a game which is usually played by kids, it can determine the relationship between two people with the use of their names.
 keywords:	
   - flames

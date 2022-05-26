@@ -5,11 +5,12 @@
 
 
     const dialogClicked = async ()=>{
+        showUpdate = false;
         const registration = await navigator.serviceWorker.getRegistration();
         if (registration.waiting){
             registration.waiting.postMessage("SKIP_WAITING");
         }
-        showUpdate = false;
+       
     }
 
     onMount(async ()=>{

@@ -3,7 +3,7 @@ title: Lazy-loading stylesheets with your own javascript function
 description: A tutorial on how to lazy load stylesheets and javascript files
 category: Programming
 excerpt: Learn how to lazy load your css and JavaScript files to speed up your website
-image: https://lucretius.sirv.com/blog/slow_sign_board.jpg
+image: https://ik.imagekit.io/kudadam/blog/slow_sign_board.jpg
 keywords:
   - lazy-loading
   - lazyloading stylesheets

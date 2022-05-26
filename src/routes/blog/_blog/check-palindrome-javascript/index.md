@@ -2,7 +2,7 @@
 title: "JavaScript: How to check if a string is a palindrome"
 description: How to check if a string is JavaScript is the same when read backwards or forward
 category: Programming
-image: https://lucretius.sirv.com/blog/check-palindrome-javascript/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/check-palindrome-javascript/hero.jpg
 excerpt: How to check if a string is the same when read either forward or backwards
 keywords:
   - javascript palindrome

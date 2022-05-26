@@ -3,7 +3,7 @@ title: Adding Matomo analytics to your website through CPanel
 description: CPanel has an application installer called softaculous, with it, you can install matomo analytics
 category: Tips and Tricks
 date: 2021-10-26 17:54
-image: https://lucretius.sirv.com/blog/adding-matomo-website/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/adding-matomo-website/hero.jpg
 excerpt: Learn how to use softaculous app installer to install Matomo analytics onto your website 
 keywords:
   - matomo analytics
@@ -23,7 +23,7 @@ tags:
 </p>
 
 
-![Leaving clicky](https://lucretius.sirv.com/blog/adding-matomo-website/leaving_clicky.PNG)
+![Leaving clicky](https://ik.imagekit.io/kudadam/blog/adding-matomo-website/leaving_clicky.PNG)
 
 
 
@@ -39,7 +39,7 @@ So am going to show a pretty easy way to install Matomo analytics on CPanel usin
 
 2. Locate 'Softcalous Apps Installer'  under the Software section of your CPanel and click on it.
 
-   ![Locating Softucalous](https://lucretius.sirv.com/blog/adding-matomo-website/locating_softacalous.PNG)
+   ![Locating Softucalous](https://ik.imagekit.io/kudadam/blog/adding-matomo-website/locating_softacalous.PNG)
 
 3. Search for 'matomo' inside the search bar and click on it
 
@@ -80,7 +80,7 @@ So am going to show a pretty easy way to install Matomo analytics on CPanel usin
 
 ### Cannot Connect To Database Error
 
-![Cannot connect to database error](https://lucretius.sirv.com/blog/adding-matomo-website/cannot-connect-to-db.PNG)
+![Cannot connect to database error](https://ik.imagekit.io/kudadam/blog/adding-matomo-website/cannot-connect-to-db.PNG)
 
 If you receive this error, open your file manager and locate the matomo installation folder. Open the config.ini.php file inside the config folder and change the host value to "127.0.0.1".
 
@@ -88,7 +88,7 @@ Close the file and visit the application page again.
 
 ## Sign In Error
 
-![Sign In Error](https://lucretius.sirv.com/blog/adding-matomo-website/sign_in_error.PNG)
+![Sign In Error](https://ik.imagekit.io/kudadam/blog/adding-matomo-website/sign_in_error.PNG)
 
 It is very obvious that you will run into this error when installing Matomo from Softaculous but don't worry, this is a solution.
 

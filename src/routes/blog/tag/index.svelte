@@ -7,7 +7,7 @@
         title: "Blog Tags • Kudadam",
         description: "This pages shows all the blog tags",
         url: "https://www.kudadam.com/blog/tag",
-        image: "https://lucretius.sirv.com/logo/logo.png"
+        image: "https://ik.imagekit.io/kudadam/logo/logo.png"
     }
 </script>
 

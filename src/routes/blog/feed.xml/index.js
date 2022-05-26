@@ -50,7 +50,7 @@ export async function get({ url }) {
 		<description>Lucretius' personal blog on tech, programming and stuff</description>
 		<category>Technology</category>
 		<image>
-			<url>https://lucretius.sirv.com/logo/logo.png</url>
+			<url>https://ik.imagekit.io/kudadam/logo/logo.png</url>
 			<title>Kudadam Blog</title>
 			<link>https://www.kudadam.com/blog</link>
 		</image>

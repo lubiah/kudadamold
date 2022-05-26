@@ -6,7 +6,7 @@ excerpt: I re-designed my website with PHP and MySql, where I stored the blog co
 keywords:
   - re-design
   - website redesign
-image: https://lucretius.sirv.com/blog/redesigning_my_website/red_construction_hat.jpg
+image: https://ik.imagekit.io/kudadam/blog/redesigning_my_website/red_construction_hat.jpg
 date: 2021-04-16
 ---
 
@@ -22,7 +22,7 @@ I could not move to my new domain with the design of my old website. Besides, wh
 
 ## The plan
 
-![Woman drawing](https://lucretius.sirv.com/blog/woman_drawing.jpg?h=500)
+![Woman drawing](https://ik.imagekit.io/kudadam/blog/woman_drawing.jpg?h=500)
 
 Whiles in school, I designed how I wanted my website to be _in my mind_. I know I should have written everything but I didn't. That actually led to increase in days spent on the re-design.
 
@@ -108,7 +108,7 @@ It's simple, I modified the first python script I made to handle the blog files.
 
 Whenever I want to create a new blog post, I just open my terminal and type in `kudadam create blog --title "Hello World" --description "Greeting the word" --category life` All the arguments starting with "--" are optional, meaning I can create a blog post without them.
 
-<img class="Sirv" data-src="https://lucretius.sirv.com/blog/redesigning_my_website/kudadam_cli_create.png" alt="" />
+<img class="Sirv" data-src="https://ik.imagekit.io/kudadam/blog/redesigning_my_website/kudadam_cli_create.png" alt="" />
 
 When I provide the title parameter, it checks to see if an article with the same name exists in the database, if it does, it will raise an error and will not continue to create the file. Also, if I use the command without specify a title, it raises a warning and uses a random word as file name.
 
@@ -116,7 +116,7 @@ When I provide the title parameter, it checks to see if an article with the same
 
 When ever I finish writing a blog post, I don't also manually insert them into the database. I just run `kudadam update blog %blog_directory%` then tadaa...
 
-<img class="Sirv d-block mx-auto" data-src="https://lucretius.sirv.com/blog/redesigning_my_website/kudadam_cli_update.png?q=100%" alt="" />
+<img class="Sirv d-block mx-auto" data-src="https://ik.imagekit.io/kudadam/blog/redesigning_my_website/kudadam_cli_update.png?q=100%" alt="" />
 
 It iterates over each file, then converts it's contents to HTML. It then minifies it and stores it in a database
 

@@ -2,7 +2,7 @@
 title: Caesar Cipher In Ruby
 description: How to encrypt or decrypt your data using the Caesar cipher in Ruby
 category: Programming
-image: https://lucretius.sirv.com/blog/caesar_cipher_ruby/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/caesar_cipher_ruby/hero.jpg
 excerpt: Learn how to make the famous Caesar in the ruby programming language
 keywords:
   - cipher

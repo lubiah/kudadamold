@@ -3,7 +3,7 @@ title: Designing a floating Table Of Contents With CSS and JavaScript
 description: A tutorial which show how to generate a floating table of contents
 category: Web Development
 excerpt: Design a table of contents which floats on the screen and appears on the click of a button
-image: https://lucretius.sirv.com/blog/designing_a_floating_toc/open_book.jpg
+image: https://ik.imagekit.io/kudadam/blog/designing_a_floating_toc/open_book.jpg
 keywords:
   - floating toc
   - table of contents

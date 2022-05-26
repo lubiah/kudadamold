@@ -4,6 +4,14 @@ import { mode } from "$app/env";
 import sqlite from "sqlite3";
 
 const db = new sqlite.Database("./database.db",(err)=>{});
+db.serialize(()=>{
+	db.run(`
+	CREATE TABLE IF NOT EXISTS blog	 (
+		slug VARCHAR(255) UNIQUE NOT NULL,
+		hits INT DEFAULT 1 NOT NULL
+	)
+`, (err)=>{})
+});
 
 export const getFilesHtml = async ()=>{
 	let array = new Array();
@@ -47,8 +55,9 @@ export const getPopularArticles = async ()=>{
 	return new Promise((resolve, reject)=>{
 		db.serialize(()=>{
 			db.all("SELECT * FROM BLOG ORDER BY hits DESC LIMIT 0,6",(err,data)=>{
-				if (err)
+				if (err){
 					reject(err)
+				}
 				else {
 					getFiles().then(files => {
 						let valid = files.filter(file => {

@@ -8,7 +8,7 @@
         title: `${tag} Tag • Kudadam Blog`,
         description: `A list of blog posts written under ${tag}`,
         canonical: `https://www.kudadam.com/blog/${tag}`,
-        image: `https://lucretius.sirv.com/logo/logo.png`
+        image: `https://ik.imagekit.io/kudadam/logo/logo.png`
     }
 </script>
 

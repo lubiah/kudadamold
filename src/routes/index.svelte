@@ -86,7 +86,7 @@
 		type: 'website',
 		images: [
 			{
-				url: 'https:lucretius.sirv.com/logo/logo.png?q=50&w=850&h=650',
+				url: 'https:imagekit.io/kudadam/logo/logo.png?q=50&w=850&h=650',
 				width: 850,
 				height: 650,
 				alt: 'Kudadam Logo'
@@ -98,7 +98,7 @@
 		site: '@kudadam_',
 		title: `${SEO.title}`,
 		description: `${SEO.description}`,
-		image: 'https:lucretius.sirv.com/logo/logo.png?q=50&w=850&h=650',
+		image: 'https:imagekit.io/kudadam/logo/logo.png?q=50&w=850&h=650',
 		imageAlt: 'Logo of Kudadam'
 	}}
 
@@ -128,7 +128,7 @@
 		</div>
 		<img
 		class="mx-auto col-span-3 md:col-span-1"
-		src="https://lucretius.sirv.com/profile/avatar.svg?q=1"
+		src="https://ik.imagekit.io/kudadam/profile/avatar.svg?q=1"
 		alt="Cartoonish boy winking his eye"
 		height="370"
 		width="370"
@@ -140,10 +140,10 @@
 			
 I design stunning-looking web interfaces using cutting-edge web technologies with a key🔑 focus on accessibility and responsiveness to ensure users will have a great user experience💡.
 		</div>
-		<img data-aos="fade-left" class="col-span-3 row-start-2 md:row-start-[unset] md:col-span-1 mx-auto" alt="A developer standing by portfolio" src="https://lucretius.sirv.com/svg/showing_resume.svg?q=1" width="450" height="450" loading="lazy"/>
+		<img data-aos="fade-left" class="col-span-3 row-start-2 md:row-start-[unset] md:col-span-1 mx-auto" alt="A developer standing by portfolio" src="https://ik.imagekit.io/kudadam/svg/showing_resume.svg?q=1" width="450" height="450" loading="lazy"/>
 	</section>
 	<section class="grid grid-cols-3 items-center justify-center  gap-4">
-		<img height="450" width="450" data-aos="flip-right" data-aos-id="section-three" class="col-span-3 md:col-span-1" src="https://lucretius.sirv.com/svg/dev.svg?q=1" alt="Developer sitting in front of a laptop">
+		<img height="450" width="450" data-aos="flip-right" data-aos-id="section-three" class="col-span-3 md:col-span-1" src="https://ik.imagekit.io/kudadam/svg/dev.svg?q=1" alt="Developer sitting in front of a laptop">
 		<div class="display-8 col-span-3 md:col-span-2" data-aos="flip-left">
 			When am not designing user-interfaces, I develop softwares and write the behind-the-scenes code that makes a website function. I do everything database, servers and caching
 		</div>

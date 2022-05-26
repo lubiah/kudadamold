@@ -12,7 +12,7 @@
 		description: "My personal journal where I write about tutorials, hacks and everything in-between",
 		keywords: "lucretius blog, lucretius biah blog, web developer blog, developer blog, portfolio",
 		canonical: "https://www.kudadam.com/blog",
-		image: "https://lucretius.sirv.com/logo/logo.png"
+		image: "https://ik.imagekit.io/kudadam/logo/logo.png"
 	}
 </script>
 

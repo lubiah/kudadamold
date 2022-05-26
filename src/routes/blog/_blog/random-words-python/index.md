@@ -2,7 +2,7 @@
 title: How to generate random words in python
 description: A tutorial showing how you can generate random words using python
 category: Programming
-image: https://lucretius.sirv.com/blog/random_image.jpg
+image: https://ik.imagekit.io/kudadam/blog/random_image.jpg
 excerpt: Random words are unorganized combination of letters, learn how to use python to create some
 keywords:
   - random words

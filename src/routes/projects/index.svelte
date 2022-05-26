@@ -8,7 +8,7 @@
     description: "This is a page which showcases a list of projects which were curated or designed by me",
     keywords: "kudadam projects, lucretius projects, developer projects, web development projects, software development projects",
     canonical: "https://www.kudadam.com/projects",
-    image: "https://lucretius.sirv.com/logo/logo.png"
+    image: "https://ik.imagekit.io/kudadam/logo/logo.png"
   }
 
 </script>	

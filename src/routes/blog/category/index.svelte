@@ -6,7 +6,7 @@
 		title: "Blog Category • Kudadam",
 		description: "This page displays all the blog categories",
 		canonical: "https://www.kudadam.com/blog/category",
-		image: "https://lucretius.sirv.com/logo/logo.png"
+		image: "https://ik.imagekit.io/kudadam/logo/logo.png"
 
 	}
 </script>

@@ -12,7 +12,7 @@ date: 2021-09-22
 tags:
   - sveltekit
   - svelte
-image: https://lucretius.sirv.com/blog/sveltekit-minify-rendered-html/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/sveltekit-minify-rendered-html/hero.jpg
 ---
 
 <p class="intro">

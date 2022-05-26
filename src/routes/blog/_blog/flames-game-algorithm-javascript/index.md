@@ -3,7 +3,7 @@ title: The FLAMES Game Algorithm in JavaScript
 description: Learn how to implement the FLAMES game algorithm in JavaScript
 category: Programming
 excerpt: A tutorial which shows you how to create the flames game in Javascript
-image: https://lucretius.sirv.com/blog/the-flames-game/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/the-flames-game/hero.jpg
 keywords:
   - the flames game
   - flames game code

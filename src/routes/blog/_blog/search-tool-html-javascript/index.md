@@ -1,7 +1,7 @@
 ---
 title: Simple Search Tool In HTML And JavaScript
 description: Make a simple search engine using only html and client-side JavaScript, no backend needed
-image: https://lucretius.sirv.com/blog/search_tool_html_javascript/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/search_tool_html_javascript/hero.jpg
 excerpt: Learn how to make a simple search tool for your website in HTML and JavaScript
 category: Programming
 keywords:
@@ -124,7 +124,7 @@ So we need to write down our HTML to make our page look nice, right? Yeah.
 
 The code above is the HTML for our simple project.
 Your HTML page should look like this
-![Preview of search tool](https://lucretius.sirv.com/blog/search_tool_html_javascript/preview.PNG)
+![Preview of search tool](https://ik.imagekit.io/kudadam/blog/search_tool_html_javascript/preview.PNG)
 
 ## Now, to the JavaScript
 
@@ -181,4 +181,4 @@ We then iterate over each data item and create HTML elements for them. Finally, 
 ## Preview Of The Project
 
 So if you followed the tutorial correctly, your page should be working and looking like the gif bellow
-![Preview of the code](https://lucretius.sirv.com/blog/search_tool_html_javascript/preview.gif)
+![Preview of the code](https://ik.imagekit.io/kudadam/blog/search_tool_html_javascript/preview.gif)

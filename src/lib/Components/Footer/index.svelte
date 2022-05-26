@@ -15,10 +15,10 @@
 		<div>
 			<p class="font-bold">Quick Links</p>
 			<ul>
-				<li><a href="/blog/feed"><RSS/> RSS feed</a></li>
-				<li><a href="/sitemap.xml">Sitemap.xml</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/projects">Projects</a></li>
+				<li><a href="/blog/feed.xml"><RSS/> RSS feed</a></li>
+				<li><a href="/sitemap.xml" sveltekit:prefetch>Sitemap.xml</a></li>
+				<li><a href="/blog" sveltekit:prefetch>Blog</a></li>
+				<li><a href="/projects" sveltekit:prefetch>Projects</a></li>
 			</ul>
 		</div>
 		<div>

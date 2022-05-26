@@ -10,7 +10,7 @@
 		description: "This page contains all the information needed to contact me",
 		keywords: "contact lucretius, contact kudadam, contact lucretius biah",
 		canonical: "https://www.kudadam.com/contact",
-		image: "https:lucretius.sirv.com/logo/logo.png"
+		image: "https:imagekit.io/kudadam/logo/logo.png"
 	}
 
 	const done = (request,data,form)=>{

@@ -8,7 +8,7 @@
 		title: `Blog Posts On ${category} • Kudadam`,
 		description: `Blog posts under ${category} category`,
 		canonical: `https://www.kudadam.com/category/${category}`,
-		image: "https://lucretius.sirv.com/logo/logo.png'"
+		image: "https://ik.imagekit.io/kudadam/logo/logo.png'"
 	}
 </script>
 

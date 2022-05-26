@@ -3,7 +3,7 @@ title: Adding A Comment System To My Blog
 description: A little write up about how I added cusdis comments to my website
 category: Web Development
 date: 2022-03-22
-image: https://lucretius.sirv.com/blog/adding-comment-system/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/adding-comment-system/hero.jpg
 excerpt: A little write up about how I added cusdis comments to my website
 keywords: 
   - cusdis

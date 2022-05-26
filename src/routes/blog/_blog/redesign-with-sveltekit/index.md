@@ -2,7 +2,7 @@
 title: Migrating My Website From Sapper To SvelteKit
 description: A step by step process showing how I migrated my website from Sapper to Svelte-kit
 category: Personal
-image: https://lucretius.sirv.com/blog/redesign-with-sveltekit/hero.webp
+image: https://ik.imagekit.io/kudadam/blog/redesign-with-sveltekit/hero.webp
 excerpt: Finally, I migrated my website to SvelteKit after using Sapper for some time, the process was not hard at all
 keywords:
   - Migrating Sapper to SvelteKit
@@ -46,11 +46,11 @@ In order to get a good score on [Google Page Insights](https://developers.google
 
 <div style="display:flex; margin:10px auto;justify-content:space-evenly;flex-wrap:wrap">
 	<div>
-    	<img src="https://lucretius.sirv.com/blog/redesign-with-sveltekit/sapper_page_insights_score.PNG" alt="Sapper pageinsights score of my website"/>
+    	<img src="https://ik.imagekit.io/kudadam/blog/redesign-with-sveltekit/sapper_page_insights_score.PNG" alt="Sapper pageinsights score of my website"/>
         <small>Sapper version of my website's score on Page insights</small>
     </div>
 	<div>
-    	<img src="https://lucretius.sirv.com/blog/redesign-with-sveltekit/sveltekit_page_insights_score.PNG" alt="Sveltekit page insights score of my website"/>
+    	<img src="https://ik.imagekit.io/kudadam/blog/redesign-with-sveltekit/sveltekit_page_insights_score.PNG" alt="Sveltekit page insights score of my website"/>
         <small>SvelteKit version of my website's score on Page insights</small>
     </div>
 </div>
@@ -98,32 +98,32 @@ So after adding a service-worker to my website, I decided to turn it into a P.W.
 	"orientation":"portrait-primary",
 	"icons": [
 		{
-			"src":"https://lucretius.sirv.com/logo/logo.png?h=72&w=72",
+			"src":"https://ik.imagekit.io/kudadam/logo/logo.png?h=72&w=72",
 			"type":"image/png",
 			"sizes":"72x72"
 		},
 		{
-			"src":"https://lucretius.sirv.com/logo/logo.png?h=96&w=96",
+			"src":"https://ik.imagekit.io/kudadam/logo/logo.png?h=96&w=96",
 			"type":"image/png",
 			"sizes":"96x96"
 		},
 		{
-			"src":"https://lucretius.sirv.com/logo/logo.png?h=128&w=128",
+			"src":"https://ik.imagekit.io/kudadam/logo/logo.png?h=128&w=128",
 			"type":"image/png",
 			"sizes":"128x128"
 		},
 		{
-			"src":"https://lucretius.sirv.com/logo/logo.png?h=192&w=192",
+			"src":"https://ik.imagekit.io/kudadam/logo/logo.png?h=192&w=192",
 			"type":"image/png",
 			"sizes":"192x192"
 		},
 		{
-			"src":"https://lucretius.sirv.com/logo/logo.png?h=144&w=144",
+			"src":"https://ik.imagekit.io/kudadam/logo/logo.png?h=144&w=144",
 			"type":"image/png",
 			"sizes":"144x144"
 		},
 		{
-			"src":"https://lucretius.sirv.com/logo/logo.png?h=512&w=512",
+			"src":"https://ik.imagekit.io/kudadam/logo/logo.png?h=512&w=512",
 			"type":"image/png",
 			"sizes":"512x512"
 		}
@@ -136,7 +136,7 @@ So after adding a service-worker to my website, I decided to turn it into a P.W.
 			"url":"/blog",
 			"icons": [
 				{
-				"src":"https://lucretius.sirv.com/logo/logo_blog.png?h=512&w=512",
+				"src":"https://ik.imagekit.io/kudadam/logo/logo_blog.png?h=512&w=512",
 				"type":"image/png",
 				"sizes":"512x512"
 				}
@@ -149,7 +149,7 @@ So after adding a service-worker to my website, I decided to turn it into a P.W.
 			"url":"/toolz",
 			"icons": [
 				{
-					"src": "https://lucretius.sirv.com/logo/logo_toolz.png?h=512&w=512",
+					"src": "https://ik.imagekit.io/kudadam/logo/logo_toolz.png?h=512&w=512",
 					"type": "image/png",
 					"sizes": "512x512"
 				}

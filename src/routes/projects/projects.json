@@ -11,7 +11,7 @@
 		"id": 2,
 		"name": "ExtractFrom",
 		"description": "A software which helps you to extract a specific file type from one place to another",
-		"image": "https://lucretius.sirv.com/extractfrom/version_5.png?thumbnail=200",
+		"image": "https://ik.imagekit.io/kudadam/extractfrom/version_5.png?thumbnail=200",
 		"url": "https://www.kudadam.com/extractfrom",
 		"repo": "https://www.github.com/kudadam/extractfrom"
 	},
@@ -19,7 +19,7 @@
 		"id": 3,
 		"name": "Useful Toolz",
 		"description": "A set of online tools which you might use everyday",
-		"image": "https://lucretius.sirv.com/logo/logo.png",
+		"image": "https://ik.imagekit.io/kudadam/logo/logo.png",
 		"url": "https://useful-toolz.vercel.app",
 		"repo": "https://www.github.com/kudadam/useful-toolz"
 	}

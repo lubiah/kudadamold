@@ -17,7 +17,7 @@ tags:
   - svelte
   - nodejs
   - sqlite3
-image: https://lucretius.sirv.com/blog/page-hit-counter-svelte/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/page-hit-counter-svelte/hero.jpg
 ---
 
 <p class="intro">

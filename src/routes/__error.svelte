@@ -28,7 +28,7 @@
 			{error}
 		{/if}
 		<img
-			src="https://lucretius.sirv.com/svg/astronaut.svg"
+			src="https://ik.imagekit.io/kudadam/svg/astronaut.svg"
 			loading="lazy"
 			alt="Error"
 			class="block mx-auto w-full"
@@ -40,7 +40,7 @@
 			{error}
 		{/if}
 		<img
-			src="https://lucretius.sirv.com/svg/error_server.svg"
+			src="https://ik.imagekit.io/kudadam/svg/error_server.svg"
 			loading="lazy"
 			alt="Error"
 			class="block mx-auto w-full"

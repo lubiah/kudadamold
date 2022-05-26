@@ -9,7 +9,7 @@
 	    description: "Hey, am Lucretius Biah. A 17 year old developer located in Wakanda. I program useful softwares and also help to design beautiful websites. This is my personal website where I write almost anything i like",
 	    keywords: "about kudadam, about lucretius biah, about lucretius biah, about teen developer, lucretius biah, lucretius, lucretius programmer",
 	    canonical: "https://www.kudadam.com/about",
-	    image: "https://lucretius.sirv.com/profile/lucretius.jpg"
+	    image: "https://ik.imagekit.io/kudadam/profile/lucretius.jpg"
 	    
 	};
 	const certificates = [
@@ -43,7 +43,7 @@
 		type: 'profile',
 		images: [
 			{
-				url: "https://lucretius.sirv.com/profile/lucretius.jpg?q=5&w=850&h=650",
+				url: "https://ik.imagekit.io/kudadam/profile/lucretius.jpg?q=5&w=850&h=650",
 				width: 850,
 				height: 650,
 				alt: 'Kudadam Profile image'
@@ -54,14 +54,14 @@
 		site: '@kudadam_',
 		title: `${SEO.title}`,
 		description: `${SEO.description}`,
-		image: "https://lucretius.sirv.com/profile/lucretius.jpg?q=5",
+		image: "https://ik.imagekit.io/kudadam/profile/lucretius.jpg?q=5",
 		imageAlt: 'Profile image of Lucretius'
 	}}
 	
 	jsonLd = {{
 	    "@type": "AboutPage",
 	    description: `${SEO.description}`,
-	    image: `https://lucretius.sirv.com/profile/lucretius.jpg?q=10`,
+	    image: `https://ik.imagekit.io/kudadam/profile/lucretius.jpg?q=10`,
 	    mainEntityOfPage: `${SEO.canonical}`,
 	    url: `${SEO.canonical}`,
 	    breadcrumb: {
