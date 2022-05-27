@@ -1,15 +1,15 @@
 <script>
-	import { onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 	import '../app.css';
 	import NavBar from '$lib/Components/Navbar';
 	import Footer from '$lib/Components/Footer';
 	import Update from "$lib/Components/UpdateWebsite";
 	import Head from "svelte-seo";
 
-	onMount(async ()=>{
+	afterUpdate(async ()=>{
 		const LazyloadImages = await import("$lib/Scripts/lazy-load-images").then(e => e.default);
+	});
 	
-	})
 </script>
 
 <NavBar/>
