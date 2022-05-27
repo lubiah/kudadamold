@@ -165,7 +165,7 @@
 		{#if browser && related_articles && related_articles.length >= 1}
 			<div class="mt-[100px]">
 				<h3>Related Articles</h3>
-				<div class="flex overflow-auto snap-x xl:fancy-scrollbar">
+				<div class="flex overflow-auto gap-x-4 snap-x xl:fancy-scrollbar">
 					{#each related_articles as article (article.id)}
 						<div class="flex">
 						<Card
@@ -175,7 +175,7 @@
 						excerpt="{article.excerpt}"
 						date="{article.date}"
 						category="{article.category}"
-						class = "mr-3 w-[290px] snap-start"
+						class = "mr-3 snap-start"
 						/>
 						</div>
 					{/each}

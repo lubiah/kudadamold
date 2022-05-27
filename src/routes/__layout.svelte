@@ -8,6 +8,7 @@
 
 	afterUpdate(async ()=>{
 		const LazyloadImages = await import("$lib/Scripts/lazy-load-images").then(e => e.default);
+		LazyloadImages();
 	});
 	
 </script>
