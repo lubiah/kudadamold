@@ -14,7 +14,8 @@ const config = {
 		},
 		csp: {
 			directives: {
-				'script-src': ['self']
+				'script-src': ['self', 'kudadam.com'],
+                                 
 			}
 		}
 	},
