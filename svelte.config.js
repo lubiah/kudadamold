@@ -10,8 +10,12 @@ const config = {
 		adapter: adapter(),
 		trailingSlash: 'never',
 		prerender: {
-			default: true
-			
+			default: true	
+		},
+		csp: {
+			directives: {
+				'script-src': ['self']
+			}
 		}
 	},
 	preprocess: [
