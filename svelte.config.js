@@ -11,12 +11,6 @@ const config = {
 		trailingSlash: 'never',
 		prerender: {
 			default: true	
-		},
-		csp: {
-			directives: {
-				'script-src': ['self', 'kudadam.com'],
-                                 
-			}
 		}
 	},
 	preprocess: [
