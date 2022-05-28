@@ -19,7 +19,7 @@
 			"sizes": "96x96"
 		},
 		{
-			"src": "https://ik.imagekit.io/kudadam/logo/logo.png?tr=w-96,h-96",
+			"src": "https://ik.imagekit.io/kudadam/logo/logo.png?tr=w-128,h-128",
 			"type": "image/png",
 			"sizes": "128x128"
 		},
