@@ -2,7 +2,7 @@
     export let posts, tag;
 
     import Head from "svelte-seo";
-    import Card from "$lib/Components/BlogCard"
+    import Card from "$components/BlogCard"
 
     const  meta = {
         title: `${tag} Tag • Kudadam Blog`,

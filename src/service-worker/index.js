@@ -5,7 +5,6 @@ const STATIC_CACHE = `staticCache-${version}`;
 const DYNAMIC_CACHE = `dynamicCache-${version}`;
 const networkFirstUrls = [/^\/blog\/[\w-]+\.json$/gm];
 
-importScripts("https://runtime.imagekit.io/0gr1w07bzr6iu/v1/js/network-based-adaption.js?v=" + new Date().getTime())
 
 self.addEventListener('install', event => {
     console.info("[service worker] installing");

@@ -1,9 +1,9 @@
 <script>
 	import Head from "svelte-seo";
 	import { enhance } from "$lib/Scripts/form";
-	import Whatsapp from "$lib/Icons/Whatsapp.svelte";
-	import Phone from "$lib/Icons/Phone.svelte";
-	import Telegram from "$lib/Icons/Telegram.svelte";
+	import Whatsapp from "$lib/icons/Whatsapp.svelte";
+	import Phone from "$lib/icons/Phone.svelte";
+	import Telegram from "$lib/icons/Telegram.svelte";
 
 	const SEO = {
 		title: "Contact Me • Kudadam",

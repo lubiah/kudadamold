@@ -1,6 +1,6 @@
 <script>	
 	import Head from "svelte-seo";
-	import Card from "$lib/Components/ProjectCard";
+	import Card from "$components/ProjectCard";
 	export let projects;
 
   const SEO = {

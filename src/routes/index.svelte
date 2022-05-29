@@ -26,8 +26,8 @@
 
 	onMount(async ()=>{
 		let Aos = await import("aos").then(e => e.default);
-		BlogCard = await import("$lib/Components/BlogCard").then(e=> e.default);
-		ProjectCard = await import("$lib/Components/ProjectCard").then(e=> e.default);
+		BlogCard = await import("$components/BlogCard").then(e=> e.default);
+		ProjectCard = await import("$components/ProjectCard").then(e=> e.default);
 		TypeWriter = await import("typeit").then(e=> e.default);
 		await import("aos/dist/aos.css");
 		Aos.init({

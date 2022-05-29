@@ -67,7 +67,4 @@ console.log(results) // => { slug: 'adding-matomo-website', read_times: 1, share
 
 So basically, what we did was wrap the whole function in a Promise and pass the `rows` to `resolve` if our code run successfully, else we pass the `err` to `reject` if there were any errors.
 
-
-<p class="note">
-    Oh, by the way, you can get the json of how many times this blog post has been read from this url <a href="https://www.kudadam.com/blog/return-data-from-sqlite3-nodejs.json">/blog/return-data-from-sqlite3-nodejs.json</a>
-</p>
+Oh, by the way, you can get the json of how many times this blog post has been read from this url [/blog/return-data-from-sqlite3-nodejs.json](https://www.kudadam.com/blog/return-data-from-sqlite3-nodejs.json)

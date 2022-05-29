@@ -1,6 +1,6 @@
 <script>
 	import Head from "svelte-seo";
-	import Card from '$lib/Components/BlogCard';
+	import Card from '$components/BlogCard';
 
 	export let posts, category;
 

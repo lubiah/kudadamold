@@ -2,7 +2,6 @@ import { getFilesHtml } from '../index.json.js';
 import { snakeCase, includesMany } from '$lib/Scripts/util.js';
 import { encodeHtml } from "$lib/Scripts/util.js";
 
-
 const sort_items = async files => {
 	let rss = ``;
 	files.forEach(post => {

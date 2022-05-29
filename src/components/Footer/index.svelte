@@ -1,10 +1,10 @@
 <script>
-	import Github from "$lib/Icons/Github.svelte";
-	import Twitter from "$lib/Icons/twitter.svelte";
-	import Whatsapp from "$lib/Icons/Whatsapp.svelte";
-	import RSS from "$lib/Icons/rss.svelte";
-	import Heart from "$lib/Icons/heart.svelte";
-	import Subscribe from "$lib/Components/NewsletterSubscribeForm";
+	import Github from "$lib/icons/Github.svelte";
+	import Twitter from "$lib/icons/twitter.svelte";
+	import Whatsapp from "$lib/icons/Whatsapp.svelte";
+	import RSS from "$lib/icons/rss.svelte";
+	import Heart from "$lib/icons/heart.svelte";
+	import Subscribe from "$components/NewsletterSubscribeForm";
 </script>
 
 <footer class="bg-gray-800 text-gray-400 text-base pt-4 mt-14 md:relative w-fullx`x">

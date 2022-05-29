@@ -14,7 +14,7 @@ const lazyLoad = ()=>{
                 element.setAttribute("src",element.getAttribute("data-src"));
                 element.removeAttribute("data-src");
                 observer.unobserve(element);
-                console.log(element)
+
             }
             else if (leaving){
                 leaving = false;

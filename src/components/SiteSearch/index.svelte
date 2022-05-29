@@ -1,5 +1,5 @@
 <script>
-	import Modal from '$lib/Components/Modal';
+	import Modal from '$components/Modal';
     import { onMount } from "svelte";
     let value, search;
     export let hidden = true;

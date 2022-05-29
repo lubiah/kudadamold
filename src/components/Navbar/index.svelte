@@ -1,10 +1,10 @@
 <script type="text/javascript">
-	import SearchIcon from '$lib/Icons/search.svelte';
-	import Search from "$lib/Components/SiteSearch";
+	import SearchIcon from '$lib/icons/search.svelte';
+	import Search from "$components/SiteSearch";
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-	import Moon from "$lib/Icons/moon.svelte";
-	import Sun from "$lib/Icons/sun.svelte";
+	import Moon from "$lib/icons/moon.svelte";
+	import Sun from "$lib/icons/sun.svelte";
 	import { theme } from "$lib/stores";
 	import Header from "svelte-headroom";
 

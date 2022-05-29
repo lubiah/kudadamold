@@ -43,7 +43,7 @@ on:close={()=>{open= false}}
 </SheetModal>
 
 <script>
-    import SheetModal from "$lib/Components/Sheet-Modal";
+    import SheetModal from "$components/Sheet-Modal";
     let open = false;
 </script>
 

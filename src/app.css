@@ -51,13 +51,13 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 .note {
-	@apply p-4 my-3 bg-gray-300 rounded dark:text-black dark:bg-slate-300;
+	@apply py-6 w-full p-3 rounded;
 }
 
-.note::before {
-	content: 'Note: ';
-	@apply block italic text-base font-bold text-green-800;
+.note__info {
+	@apply bg-blue-100 dark:bg-neutral-800 border-blue-700 border-l-4
 }
+
 
 .pagination-nav {
 	@apply text-center;
@@ -72,7 +72,7 @@ body::-webkit-scrollbar-thumb:active {
 	body {
 		font-family: Inter, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu,
 			sans-serif;
-		@apply lg:dark:font-extralight dark:bg-neutral-900 dark:text-gray-200 text-gray-800 text-[1.17rem];
+		@apply dark:bg-neutral-900 dark:text-gray-200 text-gray-800 text-[1.17rem];
 	}
 
 	::selection {
@@ -263,7 +263,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	a:hover {
-		@apply text-blue-500 dark:text-blue-300;
+		@apply underline
 	}
 
 	blockquote::before {
@@ -316,7 +316,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	code {
-		@apply leading-relaxed px-[1.5px] py-0.5 break-words dark:xl:font-light rounded bg-[#E9E9E9] dark:bg-gray-800;
+		@apply leading-relaxed px-[1.5px] py-0.5 break-words rounded bg-[#E9E9E9] dark:bg-neutral-700;
 		font-family: monospace;
 	}
 

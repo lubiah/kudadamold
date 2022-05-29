@@ -58,6 +58,6 @@ names.count("David") //=> 2
 
 Happy Coding Fellas :smile:
 
-<div class="note">
+<aside class="note note__info">
 	Thanks to <a href="https://dev.to/frankwisniewski">@frankwisniewski</a> for <a href="https://dev.to/frankwisniewski/comment/1j5oj">finding</a> a much better way to write the <code>count</code> method
-</div>
+</aside>

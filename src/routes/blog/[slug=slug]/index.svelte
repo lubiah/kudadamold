@@ -17,11 +17,11 @@
 	
 <script>
 	import Head from 'svelte-seo';
-	import Card from "$lib/Components/BlogCard";
-	import Clock from "$lib/Icons/clock.svelte";
-	import RectangleList from '$lib/Icons/RectangleList.svelte';
-	import Tags from '$lib/Icons/Tags.svelte';
-	import Eye from '$lib/Icons/Eye.svelte';
+	import Card from "$components/BlogCard";
+	import Clock from "$lib/icons/clock.svelte";
+	import RectangleList from '$lib/icons/RectangleList.svelte';
+	import Tags from '$lib/icons/Tags.svelte';
+	import Eye from '$lib/icons/Eye.svelte';
 	import { snakeCase } from "$lib/Scripts/util.js";
 	import { onMount } from "svelte";
 	import { browser } from  "$app/env";
@@ -45,7 +45,7 @@
 		let hits_response = await fetch(`/blog/${metadata.slug}.json`);
 		let hits_data = await hits_response.json();
 		hits = hits_data.hits;
-		PageProgress = await import("$lib/Components/PageProgress").then(e => e.default);
+		PageProgress = await import("$components/PageProgress").then(e => e.default);
 	});
 </script>
 

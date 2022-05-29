@@ -4,7 +4,7 @@
 
 <script>
 	import Head from "svelte-seo";
-	import Card from "$lib/Components/BlogCard";
+	import Card from "$components/BlogCard";
 	import { PaginationNav } from "svelte-paginate";
 
 	export let page, total, posts;

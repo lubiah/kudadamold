@@ -1,9 +1,9 @@
 <script>
 	import { afterUpdate } from 'svelte';
 	import '../app.css';
-	import NavBar from '$lib/Components/Navbar';
-	import Footer from '$lib/Components/Footer';
-	import Update from "$lib/Components/UpdateWebsite";
+	import NavBar from '$components/Navbar';
+	import Footer from '$components/Footer';
+	import Update from "$components/UpdateWebsite";
 	import Head from "svelte-seo";
 
 	afterUpdate(async ()=>{
