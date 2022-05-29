@@ -28,40 +28,12 @@
 		let Aos = await import("aos").then(e => e.default);
 		BlogCard = await import("$components/BlogCard").then(e=> e.default);
 		ProjectCard = await import("$components/ProjectCard").then(e=> e.default);
-		TypeWriter = await import("typeit").then(e=> e.default);
 		await import("aos/dist/aos.css");
 		Aos.init({
 			duration: 1500,
-			once: true
+			once: false
 		});
 	});
-
-
-	const sectionTwo = node =>{
-		const animateSection = ()=>{
-			let element = event.detail;
-			let elementContent = element.innerHTML;
-			element.innerHTML = "";
-			const TypeIt = new TypeWriter(node, {
-				speed: 40,
-				afterComplete: instance =>{
-					instance.destroy(true)
-				}
-			})
-			.type(elementContent)
-			.break()
-			.type("I can torn an ordinary")
-			.move(-14)
-			.delete(1)
-			.type("u")
-			.move(14)
-			.type(" <span class='ordinary-item'></span>")
-			.type(" into this <span class='unique-item animate-bounce'></span>")
-			.type(" with <span class='text-green-500'>&lt;/</span>code<span class='text-green-500'>&gt;</span>")
-			.go()
-		}
-		document.addEventListener("aos:in:section-two", animateSection)
-	}
 
 	const SEO = {
 		title: "Lucretius Biah • Kudadam",
@@ -136,14 +108,14 @@
 	</section>
 	<section class="grid grid-cols-3 items-center  justify-center gap-4">
 		<h2 class="display-4 font-bold text-center col-span-3" data-aos="fade-down">What I do?</h2>
-		<div class="col-span-3 md:col-span-2 display-8" data-aos="fade-right" id="section-two-child-container" data-aos-id="section-two" use:sectionTwo>
+		<div class="col-span-3 md:col-span-2 display-8" data-aos="fade-right">
 			
 I design stunning web interfaces using cutting-edge web technologies with a key🔑 focus on accessibility and responsiveness to ensure users will have a great user experience💡.
 		</div>
 		<img data-aos="fade-left" class="col-span-3 row-start-2 md:row-start-[unset] md:col-span-1 mx-auto" alt="A developer standing by portfolio" src="https://ik.imagekit.io/kudadam/svg/showing_resume.svg?q=1" width="450" height="450" loading="lazy"/>
 	</section>
 	<section class="grid grid-cols-3 items-center justify-center  gap-4">
-		<img height="450" width="450" data-aos="flip-right" data-aos-id="section-three" class="col-span-3 md:col-span-1" src="https://ik.imagekit.io/kudadam/svg/dev.svg?q=1" alt="Developer sitting in front of a laptop">
+		<img height="450" width="450" data-aos="flip-right" class="col-span-3 md:col-span-1" src="https://ik.imagekit.io/kudadam/svg/dev.svg?q=1" alt="Developer sitting in front of a laptop">
 		<div class="display-8 col-span-3 md:col-span-2" data-aos="flip-left">
 			When I am not designing user interfaces, I develop software and write the behind-the-scenes code that makes a website function. I do everything database, servers and caching
 		</div>

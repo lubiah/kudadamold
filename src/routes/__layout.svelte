@@ -1,7 +1,7 @@
 <script>
 	import { afterUpdate } from 'svelte';
 	import '../app.css';
-	import NavBar from '$components/Navbar';
+	import Navbar from '$components/Navbar';
 	import Footer from '$components/Footer';
 	import Update from "$components/UpdateWebsite";
 	import Head from "svelte-seo";
@@ -13,18 +13,17 @@
 	
 </script>
 
-<NavBar/>
+<Navbar/>
 
-<Head>
-	<link rel="alternate" type="application/rss+xml" href="https://www.kudadam.com/blog/feed.xml" />
-	<link rel="preconnect" href="https://ik.imagekit.io/kudadam" />
+<head>
+	<link rel="alternate" type="application/rss+xml" href="https://www.kudadam.com/blog/feed.xml">
+	<link rel="preconnect" href="https://ik.imagekit.io/kudadam">
 	<script async src="//static.getclicky.com/101367229.js"></script>
-</Head>
+</head>
 
 <div class="container mx-auto min-h-screen px-3 mt-20" id="layout_root">
-	<slot />
+	<slot></slot>
 </div>
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101367229ns.gif" /></p></noscript>
-<Footer />
-
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101367229ns.gif"></p></noscript>
+<Footer/>
 <Update/>

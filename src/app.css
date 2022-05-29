@@ -1,3 +1,7 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+
 :root {
 	--primary-color: tomato;
 	--primary-color-deep: #ff3915;
@@ -55,14 +59,12 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 .note__info {
-	@apply bg-blue-100 dark:bg-neutral-800 border-blue-700 border-l-4
+	@apply bg-blue-100 dark:bg-neutral-800 border-blue-700 border-l-4;
 }
-
 
 .pagination-nav {
 	@apply text-center;
 }
-
 
 .pagination-nav .active > a {
 	@apply bg-blue-500;
@@ -115,7 +117,7 @@ body::-webkit-scrollbar-thumb:active {
 		font-weight: 300;
 		line-height: 1.2;
 	}
-	
+
 	.display-4 {
 		font-size: calc(1.475rem + 2.7vw);
 		line-height: 1.2;
@@ -215,7 +217,6 @@ body::-webkit-scrollbar-thumb:active {
 		block-size: auto;
 	}
 
-
 	h1 {
 		@apply font-bold;
 	}
@@ -225,7 +226,7 @@ body::-webkit-scrollbar-thumb:active {
 	h5,
 	h6 {
 		color: var(--primary-color);
-		@apply font-bold
+		@apply font-bold;
 	}
 
 	h1 {
@@ -263,7 +264,7 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	a:hover {
-		@apply underline
+		@apply underline;
 	}
 
 	blockquote::before {
@@ -302,9 +303,8 @@ body::-webkit-scrollbar-thumb:active {
 	}
 
 	button:disabled:hover {
-		transform: unset;	
+		transform: unset;
 	}
-
 
 	button:active {
 		transform: translateY(2px);
@@ -357,7 +357,6 @@ body::-webkit-scrollbar-thumb:active {
 	pre[class*='language-'] {
 		padding: 0px !important;
 	}
-
 
 	table {
 		@apply block my-3 w-fit;
@@ -492,5 +491,7 @@ body::-webkit-scrollbar-thumb:active {
 	src: local(''), url('/fonts/inter-v3-latin-900.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v3-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+@tailwind components;
+@tailwind utilities;
 @tailwind components;
 @tailwind utilities;

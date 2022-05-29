@@ -6,7 +6,3 @@ node_modules
 .env
 .env.*
 !.env.example
-database.db
-database.db-shm
-database.db-wal
-/src/routes/blog/_blog/.obsidian

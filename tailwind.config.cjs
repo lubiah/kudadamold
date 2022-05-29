@@ -1,10 +1,10 @@
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	darkMode: 'class',
+	darkMode: "class",
 	theme: {
-		extend: {
-		}
+		extend: {}
 	},
+
 	plugins: []
 };
 

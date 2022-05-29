@@ -1,6 +1,6 @@
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
-import mdsvexConfig from './mdsvex.config.js'; 
+import mdsvexConfig from './mdsvex.config.js';
 import adapter from '@sveltejs/adapter-node';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -13,7 +13,7 @@ const config = {
 			default: true
 		},
 		alias: {
-			$components: "src/components"
+			$components: 'src/components'
 		}
 	},
 	preprocess: [
