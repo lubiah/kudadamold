@@ -10,14 +10,10 @@ const config = {
 		adapter: adapter(),
 		trailingSlash: 'never',
 		prerender: {
-<<<<<<< HEAD
 			default: true
 		},
 		alias: {
 			$components: "src/components"
-=======
-			default: true	
->>>>>>> 2518255b4396641205a3287b84c08140a7712b73
 		}
 	},
 	preprocess: [
