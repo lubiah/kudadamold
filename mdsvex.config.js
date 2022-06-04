@@ -14,6 +14,7 @@ const config = defineConfig({
 		[
 			rehype_toc,
 			{
+				
 				customizeTOC: (toc) => {
 					if (toc.children[0].children.length >= 1) {
 						// Adds a paragraph element which contains the text "Table Of Contents"
