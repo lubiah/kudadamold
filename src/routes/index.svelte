@@ -86,8 +86,9 @@
 			"query-input": "required name=search_term_string"
 		}
 	}}
-/>
-
+>
+<meta name="google-site-verification" content="RHfIklWVoksL16DFRd-8qvkEbHTJVyre13PUFcBEzqs" />
+</Head>
 
 <main>
 	<section class="grid  grid-cols-3 items-center justify-center section">
