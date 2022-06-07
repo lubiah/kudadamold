@@ -5,7 +5,6 @@ category: Web Development
 date: 2022-06-04
 image: https://ik.imagekit.io/kudadam/blog/understanding-sveltekit-hooks/hero
 excerpt: SvelteKit has something called hooks. A file which exports a set of functions which run on every request to the server.
-draft: true
 keywords: 
   - svelte
   - sveltekit
