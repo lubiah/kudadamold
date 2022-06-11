@@ -181,10 +181,6 @@ I design stunning web interfaces using cutting-edge web technologies with a keyð
 	@apply overflow-x-hidden;
 	}
 
-	:global(#layout_root){
-		@apply overflow-x-hidden;
-	}
-
 	:global(.ordinary-item) {
 		height: 30px;
 		width: 30px;
