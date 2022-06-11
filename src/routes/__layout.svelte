@@ -15,11 +15,11 @@
 
 <Navbar/>
 
-<head>
+<Head>
 	<link rel="alternate" type="application/rss+xml" href="https://www.kudadam.com/blog/feed.xml">
 	<link rel="preconnect" href="https://ik.imagekit.io/kudadam">
 	<script async src="//static.getclicky.com/101369509.js"></script>
-</head>
+</Head>
 
 <div class="container mx-auto min-h-screen px-3 mt-20" id="layout_root">
 	<slot></slot>
