@@ -23,11 +23,11 @@ jobs:
       - name: Installing packages
         run: pnpm install --frozen-lockfile
 
-      - name: Building website
-        run: pnpm build
-
       - name: Generating sitemap
         run: pnpm build:sitemap
+
+      - name: Building website
+        run: pnpm build
 
       - name: Generating dist folder
         run: |
