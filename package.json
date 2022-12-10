@@ -26,7 +26,6 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"html-minifier": "^4.0.0",
 		"husky": "^8.0.2",
 		"lint-staged": "^13.1.0",
 		"mdsvex": "^0.10.6",
@@ -57,5 +56,8 @@
 	"lint-staged": {
 		"*.svelte": "eslint --cache --fix",
 		"*.{js,css,md}": "prettier --write"
+	},
+	"dependencies": {
+		"html-minifier": "^4.0.0"
 	}
 }
