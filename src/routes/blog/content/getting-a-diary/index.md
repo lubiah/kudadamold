@@ -36,7 +36,7 @@ I was bored at home after finishing junior high school, so I turned to viewing s
 
 ## Taking pre-cautions
 
-![PigPen Cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pigpen_cipher_key.svg/1200px-Pigpen_cipher_key.svg.png){height=400, width=400}
+![PigPen Cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pigpen_cipher_key.svg/1200px-Pigpen_cipher_key.svg.png)
 
 One of the numerous reasons people avoid writing in diaries is the worry that their secrets will be revealed. Yes, it's awkward when a friend picks up your diary and discovers your secrets. As a result, I resolved to take precautions. I knew my diary could go missing, and I didn't want any stranger to read my sensitive information.
 

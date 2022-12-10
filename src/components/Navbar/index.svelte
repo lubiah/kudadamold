@@ -78,7 +78,7 @@
 
 <header
 	bind:this={HEADER_ELEMENT}
-	class="{headroomProps.headerClass} fixed top-0 left-0 shadow-neutral-300 bg-white w-full will-change-transform motion-safe:transition-transform duration-300 ease-linear z-10 px-0.5"
+	class="{headroomProps.headerClass} fixed top-0 left-0 shadow-neutral-200 bg-white w-full will-change-transform motion-safe:transition-transform duration-300 ease-linear z-10 px-0.5"
 >
 	<nav class="py-1 flex items-center" id="desktop-nav">
 		<a data-reset-styles href="/" aria-label="Visit the homepage" class="icon"><Logo /></a>

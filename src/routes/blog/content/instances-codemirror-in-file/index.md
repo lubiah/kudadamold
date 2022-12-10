@@ -51,32 +51,31 @@ See, that was easy!!!
 So now, we are going to use the function we just created. We are going to create an HTML file and implement the function in it.
 
 ```html
-<DOCTYPE html>
-	<html>
-		<head>
-			<script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
-			<link rel="stylesheet" type="text/css" src="codemirror/lib/codemirror.css" />
-			<script>
-				type="text/javascript" src="script.js"
-			</script>
-			<!-- Since, we are using python to test our function, we will import it's file -->
-			<script type="text/javascript" src="codemirror/mode/python/python.js"></script>
-			<title>CodeMirror Editor</title>
-		</head>
-		<body>
-			<h1>Hello World</h1>
-			<textarea class="python">
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
+		<link rel="stylesheet" type="text/css" src="codemirror/lib/codemirror.css" />
+		<script>
+			type="text/javascript" src="script.js"
+		</script>
+		<!-- Since, we are using python to test our function, we will import it's file -->
+		<script type="text/javascript" src="codemirror/mode/python/python.js"></script>
+		<title>CodeMirror Editor</title>
+	</head>
+	<body>
+		<h1>Hello World</h1>
+		<textarea class="python">
 def function():
     for i in range(1, 10):
         print(i)
         </textarea
-			>
-			<script>
-				ide('python'); //Call our function to initialize CodeMirror on the textarea with class "python"
-			</script>
-		</body>
-	</html></DOCTYPE
->
+		>
+		<script>
+			ide('python'); //Call our function to initialize CodeMirror on the textarea with class "python"
+		</script>
+	</body>
+</html>
 ```
 
 To explain the code, we created a simple HTML file, then we initiated it with the necessary HTML tags. Now the first script tag imports codemirror’s JavaScript file. Please remember that this file should be imported first. 
