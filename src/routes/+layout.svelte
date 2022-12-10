@@ -1,19 +1,19 @@
 <script>
-	import "../app.postcss";
-	import { assets } from "$app/paths";
+	import '../app.postcss';
+	import { assets } from '$app/paths';
 
-	import Head from "$components/Head";
-	import Navbar from "$components/Navbar";
-	import Footer from "$components/Footer";
+	import Head from '$components/Head';
+	import Navbar from '$components/Navbar';
+	import Footer from '$components/Footer';
 </script>
 
 <Head
 	twitter={{
-		card: "summary_large_image",
-		site: "@kudadam_",
-		creator: "@kudadam_",
-		image: "https://ik.imagekit.io/kudadam/assets/logo.jpg?tr=w-500,h-500",
-		imageAlt: "The website logo"
+		card: 'summary_large_image',
+		site: '@kudadam_',
+		creator: '@kudadam_',
+		image: 'https://ik.imagekit.io/kudadam/assets/logo.jpg?tr=w-500,h-500',
+		imageAlt: 'The website logo'
 	}}
 >
 	<link rel="icon" href="{assets}/favicon.svg" />

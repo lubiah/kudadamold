@@ -12,43 +12,40 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
-        command: ['Formatting and Linting','Svelte check','Vitest','Playwright']
+        command: ['Formatting and Linting', 'Svelte check', 'Vitest', 'Playwright']
 
     steps:
-     - uses: actions/checkout@v3
-     - uses: pnpm/action-setup@v2
-       with:
-         version: 7.17.1
-     - uses: actions/setup-node@v3
-       with:
-        node-version: 18.x
-        cache: "pnpm"
-          
-     - name: Installing dependencies
-       run: pnpm install --frozen-lockfile
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.17.1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'pnpm'
 
-     - if: matrix.command == 'Formatting and Linting'
-       name: 'Formatting and Linting Code'
-       run: |
-        pnpm format
-        pnpm lint
-          
-     - if: matrix.command == 'Svelte Check'
-       name: 'Running Svelte Check'
-       run: pnpm check
-  
-     - if: matrix.command == 'Vitest'
-       name: 'Running Vitest tests'
-       run: pnpm test:unit
-        
-     - if: matrix.command == 'Playwright'
-       name: 'Installing Playwright dependencies && Running Tests'
-       run: | 
-        pnpx playwright install
-        pnpm test
+      - name: Installing dependencies
+        run: pnpm install --frozen-lockfile
 
+      - if: matrix.command == 'Formatting and Linting'
+        name: 'Formatting and Linting Code'
+        run: |
+          pnpm format
+          pnpm lint
 
-        
+      - if: matrix.command == 'Svelte Check'
+        name: 'Running Svelte Check'
+        run: pnpm check
+
+      - if: matrix.command == 'Vitest'
+        name: 'Running Vitest tests'
+        run: pnpm test:unit
+
+      - if: matrix.command == 'Playwright'
+        name: 'Installing Playwright dependencies && Running Tests'
+        run: |
+          pnpx playwright install
+          pnpm test

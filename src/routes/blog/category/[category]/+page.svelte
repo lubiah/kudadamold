@@ -2,9 +2,9 @@
 	/**@type {import("./$types").PageData}*/
 	export let data;
 
-	import Head from "$components/Head";
-	import Card from "$components/BlogCard";
-	import { noCase } from "$utils";
+	import Head from '$components/Head';
+	import Card from '$components/BlogCard';
+	import { noCase } from '$utils';
 
 	const SEO = {
 		title: `Article on ${noCase(data.category)} • Kudadam`,

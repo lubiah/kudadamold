@@ -52,21 +52,21 @@
 	a:not(a[data-reset-styles]) {
 		@apply mr-0.5 border-b border-b-[var(--primary-400)] font-medium text-[color:var(--primary-500)] visited:border-b-neutral-700 visited:text-neutral-700 hover:border-dashed;
 
-		&[target="_blank"]::after,
-		&[target="blank"]::after {
+		&[target='_blank']::after,
+		&[target='blank']::after {
 			@apply ml-0.5 inline-block h-[1em] w-[.7em] bg-neutral-500 align-middle content-[''] [mask:no-repeat];
 			mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/%3E%3C/svg%3E%0A");
 		}
 	}
 
-	code:not(code[class*="language-"]) {
+	code:not(code[class*='language-']) {
 		@apply break-words before:content-['`'] after:content-['`'];
 	}
 
 	body {
 		@apply text-color my-0 min-w-[300px] max-w-full scroll-smooth selection:bg-purple-500 selection:text-white;
-		font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-			Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-size: clamp(1.11rem, 0.09vw + 1.1rem, 1.17rem);
 	}
 
@@ -103,10 +103,10 @@
 	}
 
 	button,
-	[role="button"],
-	[type="button"],
-	[type="submit"],
-	[type="reset"],
+	[role='button'],
+	[type='button'],
+	[type='submit'],
+	[type='reset'],
 	.button {
 		@apply inline-block rounded-md border px-3.5 py-1.5 transition-all duration-75 active:translate-y-[1px];
 	}
@@ -143,8 +143,8 @@
 		@apply mb-0.5 block text-base;
 	}
 
-	input[type="text"],
-	input[type="email"],
+	input[type='text'],
+	input[type='email'],
 	textarea {
 		@apply block w-full rounded-md  border border-neutral-300;
 	}
@@ -182,12 +182,12 @@
 
 @layer components {
 	button,
-	[role="button"],
-	[type="button"],
-	[type="submit"],
-	[type="reset"],
+	[role='button'],
+	[type='button'],
+	[type='submit'],
+	[type='reset'],
 	.button {
-		&[data-theme="primary"] {
+		&[data-theme='primary'] {
 			@apply bg-[var(--primary-500)] hover:bg-[var(--primary-600)] active:bg-[var(--primary-700)];
 
 			&,
@@ -201,82 +201,82 @@
 /* inter-100 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 100;
-	src: local(""), url("/fonts/inter-v12-latin-100.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-100.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-100.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-100.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-200 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 200;
-	src: local(""), url("/fonts/inter-v12-latin-200.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-200.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-200.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-200.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-300 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 300;
-	src: local(""), url("/fonts/inter-v12-latin-300.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-300.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-regular - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	src: local(""), url("/fonts/inter-v12-latin-regular.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-regular.woff")
-			format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-regular.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-regular.woff')
+			format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-500 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 500;
-	src: local(""), url("/fonts/inter-v12-latin-500.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-500.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-600 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 600;
-	src: local(""), url("/fonts/inter-v12-latin-600.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-600.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-700 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
-	src: local(""), url("/fonts/inter-v12-latin-700.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-700.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-800 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 800;
-	src: local(""), url("/fonts/inter-v12-latin-800.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-800.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* inter-900 - latin */
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 900;
-	src: local(""), url("/fonts/inter-v12-latin-900.woff2") format("woff2"),
-		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("/fonts/inter-v12-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	src: local(''), url('/fonts/inter-v12-latin-900.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/inter-v12-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

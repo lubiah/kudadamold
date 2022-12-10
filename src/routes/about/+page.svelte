@@ -1,11 +1,11 @@
 <script>
-	import Head from "$components/Head";
+	import Head from '$components/Head';
 
 	const SEO = {
-		title: "About Lucretius Biah - A software developer located in Wakanda • Kudadam",
+		title: 'About Lucretius Biah - A software developer located in Wakanda • Kudadam',
 		description:
-			"This page contains all the necessary information about Lucretius Biah, the software developer",
-		canonical: "https://kudadam.com/about"
+			'This page contains all the necessary information about Lucretius Biah, the software developer',
+		canonical: 'https://kudadam.com/about'
 	};
 </script>
 

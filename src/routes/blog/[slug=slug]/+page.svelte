@@ -2,11 +2,11 @@
 	/**@type {import('./$types').PageData}*/
 	export let data;
 
-	import { onMount } from "svelte";
-	import Head from "$components/Head";
-	import Progress from "svelte-scrollprogress";
-	import "$lib/css/prism.css";
-	import { toc, spy } from "./toc.js";
+	import { onMount } from 'svelte';
+	import Head from '$components/Head';
+	import Progress from 'svelte-scrollprogress';
+	import '$lib/css/prism.css';
+	import { toc, spy } from './toc.js';
 
 	const SEO = {
 		title: `${data.metadata.title} • Kudadam`,
@@ -21,10 +21,10 @@
 	};
 
 	onMount(() => {
-		const article = document.querySelector("article");
-		if (article) document.querySelector("main>div:first-child")?.appendChild(toc(article));
+		const article = document.querySelector('article');
+		if (article) document.querySelector('main>div:first-child')?.appendChild(toc(article));
 		//@ts-ignore
-		let Spy = spy(document.querySelector("article"));
+		let Spy = spy(document.querySelector('article'));
 
 		return () => {
 			Spy.stop();
@@ -40,7 +40,7 @@
 	openGraph={{
 		title: `${SEO.title}`,
 		description: `${SEO.description}`,
-		type: "article",
+		type: 'article',
 		images: [
 			{
 				url: `${SEO.image}`,
@@ -55,7 +55,7 @@
 				SEO.modified ?? new Date(data.metadata.modified).toISOString() ?? undefined
 			}`,
 			expiration_time: `${new Date(SEO.expiry).toISOString()}`,
-			author: ["https://kudadam.com/about"],
+			author: ['https://kudadam.com/about'],
 			tag: SEO.tags
 		}
 	}}
@@ -103,7 +103,7 @@
 	</style>
 </main>
 
-<Progress color={"red"} />
+<Progress color={'red'} />
 
 <style lang="postcss">
 	article :global(pre) {

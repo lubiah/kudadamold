@@ -50,7 +50,7 @@
 	/**@type {import("./types").SvelteSeo['facebook']}*/
 	export let facebook = undefined;
 
-	import OpenGraphComponent from "./openGraph.svelte";
+	import OpenGraphComponent from './openGraph.svelte';
 </script>
 
 <svelte:head>
@@ -102,11 +102,11 @@
 
 	<meta
 		name="robots"
-		content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`}
+		content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`}
 	/>
 	<meta
 		name="googlebot"
-		content={`${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`}
+		content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`}
 	/>
 
 	{#if nositelinkssearchbox}
@@ -119,7 +119,7 @@
 
 	{#if twitter}
 		{#each Object.entries(twitter) as [key, value]}
-			{@const transformed = key.replace(/([a-z])([A-Z])/g, "$1:$2").toLowerCase()}
+			{@const transformed = key.replace(/([a-z])([A-Z])/g, '$1:$2').toLowerCase()}
 			<!-- The `transformed` variable changecs eg, twitter.title into twitter:title
                 It loops over all the properties and changes the '.' into ':'
             -->

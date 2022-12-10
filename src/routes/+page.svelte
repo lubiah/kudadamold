@@ -1,17 +1,17 @@
 <script>
-	import Head from "$components/Head";
-	import BlogCard from "$components/BlogCard";
-	import ProjectCard from "$components/ProjectCard";
+	import Head from '$components/Head';
+	import BlogCard from '$components/BlogCard';
+	import ProjectCard from '$components/ProjectCard';
 
 	/**@type {import("./$types").PageServerData}*/
 	export let data;
 
 	const SEO = {
-		title: "Lucretius Biah — A teen software and web developer • Kudadam",
+		title: 'Lucretius Biah — A teen software and web developer • Kudadam',
 		description:
 			"This is Lucretius' personal website, where he shares his projects and writes articles about technology and other topics",
-		keywords: ["Lucretius Biah", "Lucretius", "Lucretius website", "kudadam", "kudadam biah"],
-		canonical: "https://kudadam.com"
+		keywords: ['Lucretius Biah', 'Lucretius', 'Lucretius website', 'kudadam', 'kudadam biah'],
+		canonical: 'https://kudadam.com'
 	};
 </script>
 
@@ -21,7 +21,7 @@
 	keywords={SEO.keywords.toString()}
 	canonical={SEO.canonical}
 	openGraph={{
-		type: "website",
+		type: 'website',
 		title: SEO.title,
 		description: SEO.description,
 		url: SEO.canonical

@@ -9,51 +9,46 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2
-      with:
-        version: latest
-    - uses: actions/setup-node@v3
-      with:
-        node-version: latest
-        cache: pnpm
-    - name: Installing packages
-      run: pnpm install --frozen-lockfile
-      
-    - name: Building website
-      run: pnpm build
-  
-    - name: Generating sitemap
-      run: pnpm build:sitemap
-      
-    - name: Generating dist folder
-      run: |
-        mkdir dist
-        cp -R build dist
-        cp package.json dist
-      
-    - name: Copying files to server
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: './dist/'
-        server-dir: 'public_html/kudadam/'
-      
-    - name: SSH Remote Commands
-      uses:  garygrossgarten/github-action-ssh@release
-      with:
-        host: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        command: |
-          ${{ secrets.DEPLOY_SCRIPT }} 
-          
-          
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: pnpm
+      - name: Installing packages
+        run: pnpm install --frozen-lockfile
 
-    
-      
+      - name: Building website
+        run: pnpm build
+
+      - name: Generating sitemap
+        run: pnpm build:sitemap
+
+      - name: Generating dist folder
+        run: |
+          mkdir dist
+          cp -R build dist
+          cp package.json dist
+
+      - name: Copying files to server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: './dist/'
+          server-dir: 'public_html/kudadam/'
+
+      - name: SSH Remote Commands
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          command: |
+            ${{ secrets.DEPLOY_SCRIPT }}

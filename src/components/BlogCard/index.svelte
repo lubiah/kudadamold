@@ -9,7 +9,7 @@
 	export let date;
 	/**@type {BlogPost['category']}*/
 	export let category;
-	import { noCase } from "$utils";
+	import { noCase } from '$utils';
 </script>
 
 <article class="flex flex-col">

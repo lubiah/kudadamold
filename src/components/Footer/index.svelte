@@ -1,9 +1,9 @@
 <script>
-	import Envelope from "$lib/icons/envelope.svg?component";
-	import Telegram from "$lib/icons/logo-telegram.svg?component";
-	import Twitter from "$lib/icons/logo-twitter.svg?component";
-	import Github from "$lib/icons/logo-github.svg?component";
-	import RSS from "$lib/icons/square-rss.svg?component";
+	import Envelope from '$lib/icons/envelope.svg?component';
+	import Telegram from '$lib/icons/logo-telegram.svg?component';
+	import Twitter from '$lib/icons/logo-twitter.svg?component';
+	import Github from '$lib/icons/logo-github.svg?component';
+	import RSS from '$lib/icons/square-rss.svg?component';
 </script>
 
 <footer class="text-base text-gray-400 bg-gray-800 border-t-[10px] border-gray-500 p-2">

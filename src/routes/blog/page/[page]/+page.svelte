@@ -1,7 +1,7 @@
 <script>
-	import Head from "$components/Head";
-	import Card from "$components/BlogCard";
-	import { PaginationNav } from "svelte-paginate";
+	import Head from '$components/Head';
+	import Card from '$components/BlogCard';
+	import { PaginationNav } from 'svelte-paginate';
 
 	/**@type {import("./$types").PageData}*/
 	export let data;
