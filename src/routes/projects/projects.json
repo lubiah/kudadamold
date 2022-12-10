@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Svelte ScrollProgress",
+		"description": "A reading progress indicator for Svelte & SvelteKit",
+		"demo": "https://kudadam.github.io/svelte-scrollprogress/",
+		"image": "https://ik.imagekit.io/kudadam/projects/svelte-scrollprogress/preview.gif?tr=w-320,h-180",
+		"source": "https://github.com/kudadam/svelte-scrollprogress"
+	},
+	{
+		"name": "Kudadam.com",
+		"description": "My personal website which was made using SvelteKit and TailwindCSS",
+		"image": "https://ik.imagekit.io/kudadam/projects/kudadam_com/preview.png?tr=h-180,w-320",
+		"demo": "https://kudadam.com",
+		"source": "https://github.com/kudadam/kudadam.com"
+	}
+]
