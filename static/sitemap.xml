@@ -1,438 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-        <?xml version=”1.0″ encoding=”UTF-8″?>
-        <urlset xmlns=”http://www.sitemaps.org/schemas/sitemap/0.9″>
-            
-            <url>
-                <loc>https://kudadam.com</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/about</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/projects</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/contact</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/black-background-windows-terminal</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/category/tips-and-tricks</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/redirect-sveltekit-hooks</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/category/web-development</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/svelte-reading-progress</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/category/personal</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/disable-volume-boost-vlc</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/github-achievements</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/understanding-sveltekit-hooks</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/migrate-sirv-imagekit</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/user-ipaddress-sveltekit</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/adding-comment-system</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/countapi-page-hit-counts</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/page/2</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/page/3</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/page/4</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/category/programming</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/windows</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/terminal</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/svelte</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/android</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/github</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/python</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/imagekit</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/sveltekit</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/javascript</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/sqlite3</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/sololearn</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/newsletter</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/games</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/sapper</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/ruby</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/cipher</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/html</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/css</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/mysql</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/php</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tag/personal</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/bypass-recaptcha-using-2captcha</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/website-source-code-mobile</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/generate-sitemap-for-sveltekit-website</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/generate-rss-feed-sveltekit</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/floating-toc-in-css-js</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/instances-codemirror-in-file</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/being-serious-with-newsletter</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/the-flames-game</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/redesign-with-sveltekit</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/another-redesign-svelte</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/redesigning-website</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/getting-a-diary</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/sveltekit-minify-rendered-html</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/check-palindrome-javascript</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/page-hit-counter-svelte</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/letter-counter-python</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/return-data-from-sqlite3-nodejs</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/python-count-in-javascript</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/flames-game-algorithm-javascript</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/prevent-theme-colour-flickering-svelte</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/whatsapp-status-saver-python-mobile</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/caesar-cipher-ruby</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/search-engine-javascript</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/close-program-time</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/setting-time-python</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/tidy-env-path</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/simple-keylogger-python</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/python-input-in-ruby</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-            <url>
-                <loc>https://kudadam.com/blog/random-words-python</loc>
-                <changefreq>weekly</changefreq/>
-                <priority>1</priority/>
-            </url>
-            
-        </urlset>
-        
+<url>
+    <loc>https://kudadam.com</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/about</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/projects</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/black-background-windows-terminal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/redirect-sveltekit-hooks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/svelte-reading-progress</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/disable-volume-boost-vlc</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/github-achievements</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/understanding-sveltekit-hooks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/migrate-sirv-imagekit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/user-ipaddress-sveltekit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/adding-comment-system</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/countapi-page-hit-counts</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/page/2</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/page/3</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/page/4</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/sveltekit-minify-rendered-html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/getting-a-diary</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/check-palindrome-javascript</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/page-hit-counter-svelte</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/letter-counter-python</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/being-serious-with-newsletter</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/return-data-from-sqlite3-nodejs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/bypass-recaptcha-using-2captcha</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/generate-sitemap-for-sveltekit-website</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/python-count-in-javascript</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/flames-game-algorithm-javascript</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/the-flames-game</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/prevent-theme-colour-flickering-svelte</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/whatsapp-status-saver-python-mobile</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/redesign-with-sveltekit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/caesar-cipher-ruby</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/search-engine-javascript</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/generate-rss-feed-sveltekit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/close-program-time</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/setting-time-python</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/tidy-env-path</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/another-redesign-svelte</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/simple-keylogger-python</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/floating-toc-in-css-js</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/redesigning-website</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/website-source-code-mobile</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/python-input-in-ruby</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/instances-codemirror-in-file</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+<url>
+    <loc>https://kudadam.com/blog/random-words-python</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+
+</urlset>

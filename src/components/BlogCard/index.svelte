@@ -16,7 +16,7 @@
 	<a
 		href="/blog/{slug}"
 		data-reset-styles
-		class="group w-[320px] flex-1 p-2 rounded-md flex flex-col pb-1 shadow-sm shadow-neutral-400 hover:shadow-neutral-300"
+		class="group w-[320px] flex-1 p-2 rounded-md flex flex-col pb-1 border hover:shadow"
 	>
 		<a
 			href="/blog/category/{category}"

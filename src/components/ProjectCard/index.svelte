@@ -12,7 +12,7 @@
 </script>
 
 <article
-	class="w-[320px] shadow-sm shadow-neutral-400 hover:shadow-neutral-300 rounded-md flex flex-col"
+	class="w-[320px] rounded-md flex flex-col border"
 >
 	<img src={image} width="320" height="180" alt="" class="h-[180px]" loading="lazy" />
 	<div class="p-2 flex-1">
@@ -31,6 +31,6 @@
 
 <style lang="postcss">
 	.button {
-		@apply w-full border-neutral-300 hover:border-neutral-400 transition-colors duration-75 text-center;
+		@apply w-full transition-colors duration-75 text-center;
 	}
 </style>

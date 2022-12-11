@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /blog/tag
+Disallow: /blog/category
+
 
 Sitemap: https://kudadam.com/sitemap.xml
