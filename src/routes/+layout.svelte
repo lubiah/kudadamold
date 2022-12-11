@@ -17,7 +17,7 @@
 	}}
 >
 	<link rel="icon" href="{assets}/favicon.svg" />
-	<script async defer src="//static.getclicky.com/101390079.js"></script>
+	<script defer async src="//static.getclicky.com/101390283.js"></script>
 </Head>
 
 <Navbar />
@@ -27,9 +27,4 @@
 </div>
 
 <Footer />
-
-<noscript
-	><p>
-		<img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101390079ns.gif" />
-	</p></noscript
->
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101390283ns.gif" /></p></noscript>

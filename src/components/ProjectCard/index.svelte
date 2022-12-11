@@ -12,7 +12,7 @@
 </script>
 
 <article
-	class="w-[320px] rounded-md flex flex-col border"
+	class="w-[320px] rounded-md flex flex-col border border-neutral-300"
 >
 	<img src={image} width="320" height="180" alt="" class="h-[180px]" loading="lazy" />
 	<div class="p-2 flex-1">

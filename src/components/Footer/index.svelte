@@ -6,8 +6,8 @@
 	import RSS from '$lib/icons/square-rss.svg?component';
 </script>
 
-<footer class="text-base text-gray-400 bg-gray-800 border-t-[10px] border-gray-500 p-2">
-	<div class="flex gap-x-8 justify-center mb-2">
+<footer class="text-base text-gray-400 bg-gray-800 pt-2 mt-[50px]">
+	<div class="flex gap-x-8 justify-evenly mb-2">
 		<div>
 			<p>Contact</p>
 			<ul class="list-none">
@@ -29,7 +29,7 @@
 			</ul>
 		</div>
 	</div>
-	<p class="text-center px-3 border-gray-700 pt-1 border-t">
+	<p class="text-center px-3 border-gray-700 pt-1 border-t w-[90%] !mx-auto">
 		&copy; Copyright 2020 - Now, Lucretius Biah
 	</p>
 </footer>
