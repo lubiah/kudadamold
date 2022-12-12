@@ -15,7 +15,6 @@
 	import Whatsapp from "$lib/icons/logo-whatsapp.svg?component";
 	import Email from "$lib/icons/envelope.svg?component";
 	import Linkedin from "$lib/icons/logo-linkedin.svg?component";
-	import Quora from "$lib/icons/logo-quora.svg?component";
 
 	const SEO = {
 		title: `${data.metadata.title} • Kudadam`,
@@ -103,17 +102,17 @@
 			</ul>
 			<svelte:component this={data.component} />
 		</article>
+		
 		<div id="share_component" class="row-start-2 max-w-md mx-auto border border-neutral-300 mt-5 p-2 rounded-md">
 			<p class="text-base font-semibold">Did you enjoy this article? Spread the word.</p>
 			<div class="flex flex-wrap gap-x-2 justify-evenly">
-				<Twitter class="icon" fill="#1DA1F2"/>
-				<Reddit class="icon" fill="#FF5700"/>
-				<Facebook class="icon" fill="#4267B2"/>
-				<HackerNews class="icon" fill="#ff6600"/>
-				<Whatsapp class="icon" fill="#25D366"/>
-				<Email class="icon" fill="#505264"/>
-				<Linkedin class="icon" fill="#0A66C2"/>
-				<Quora class="icon" fill="#B92B27"/>
+				<a target="_blank" rel="noreferrer" data-reset-styles href="{encodeURI(`https://twitter.com/intent/tweet?text=${data.metadata.title}&url=${SEO.canonical}&hashtags=${data.metadata.tags}&via=kudadam_`)}"><Twitter class="icon" fill="#1DA1F2"/></a>
+				<a target="_blank" rel="noreferrer" data-reset-styles href="{encodeURI(`http://www.reddit.com/submit?url=${SEO.canonical}`)}&title={data.metadata.title}"><Reddit class="icon" fill="#FF5700"/></a>
+				<a target="_blank" rel="noreferrer" data-reset-styles href="{encodeURI(`http://www.facebook.com/share.php?u=${SEO.canonical}`)}"><Facebook class="icon" fill="#4267B2"/></a>
+				<a target="_blank" rel="noreferrer" data-reset-styles href="{encodeURI(`https://news.ycombinator.com/submitlink?u=${SEO.canonical}`)}&t={data.metadata.title}"><HackerNews class="icon" fill="#ff6600"/></a>
+				<a target="_blank" rel="noreferrer" data-reset-styles href="{encodeURI(`https://wa.me/?text=${data.metadata.title}\n${SEO.canonical}`)}"><Whatsapp class="icon" fill="#25D366"/></a>
+				<a target="_blank" rel="noreferrer" data-reset-styles href="{encodeURI(`mailto:?subject=${data.metadata.title}&body=${data.metadata.excerpt}`)}"><Email class="icon" fill="#505264"/></a>
+				<a target="_blank" rel="noreferrer" data-reset-styles href="{encodeURI(`https://www.linkedin.com/sharing/share-offsite/?url=${SEO.canonical}`)}"><Linkedin class="icon" fill="#0A66C2"/></a>
 			</div>
 		</div>
 	</div>
