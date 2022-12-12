@@ -13,7 +13,7 @@ tags:
   - sveltekit
 date: 2021-10-26 06:59
 modified: 2022-10-24
-expiry: 2022-12-12
+expiry: 2023-05-05
 ---
 
 <!-- TODO: Rewrite this article -->
