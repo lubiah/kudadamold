@@ -49,6 +49,10 @@
 		@apply my-3 border-l-[10px] border-l-[color:var(--primary-300)] p-3 pl-2 italic;
 	}
 
+	a {
+		@apply break-words;
+	}
+
 	a:not(a[data-reset-styles]) {
 		@apply mr-0.5 border-b border-b-[var(--primary-400)] font-medium text-[color:var(--primary-500)] visited:border-b-neutral-700 visited:text-neutral-700 hover:border-dashed;
 
@@ -94,6 +98,7 @@
 	ol,
 	ul {
 		padding-inline-start: 30px;
+	
 	}
 
 	ul {

@@ -72,7 +72,7 @@
 <main>
 	<div class="flex justify-center">
 		<article
-			class="grid grid-cols-[1fr_min(65ch,calc(100%-10px))_1fr] [&_>_*]:col-start-2 [&_>_*]:col-end-3 lg:basis-[75%]"
+			class="min-w-0 grid grid-cols-[1fr_min(65ch,calc(100%-10px))_1fr] [&_>_*]:col-start-2 [&_>_*]:col-end-3 lg:basis-[75%]"
 		>
 			<h1 class="mb-10 mt-2">{data.metadata.title}</h1>
 			<ul
