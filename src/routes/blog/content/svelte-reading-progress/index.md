@@ -3,7 +3,7 @@ title: Creating A Reading Progress Indicator In Svelte
 description: A little write up about how to create a reading progress indicator for Svelte
 category: personal
 date: 2022-07-06
-expiry: 2022-12-12
+expiry: 2023-05-05
 excerpt: A little write up about how to create a reading progress indicator for Svelte
 keywords:
   - reading progress
@@ -56,7 +56,7 @@ So then, I decided to re-create the component in the way I wanted it to be. Besi
 
   @NormanGul's version allows only two properties. Which is the `color` and `height`.
 
-  However, mine includes `zIndex`, `background`,`position`, `debounceTimer` plus `color` and `height`.
+  However, mine includes `zIndex`, `background`,`position`, plus `color` and `height`.
 
 ## Conclusion
 

@@ -110,6 +110,7 @@
 		@apply col-span-4 md:col-start-2 md:col-end-3;
 	}
 
+
 	/* Styling for article */
 	article :global(p + :is(h2, h3, h4, h5, h6)) {
 		margin-top: 0px;

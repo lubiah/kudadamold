@@ -11,7 +11,7 @@ tags:
   - svelte
   - sveltekit
 date: 2021-07-18
-expiry: 2022-12-12
+expiry: 2023-05-05
 ---
 
 Adding an RSS feed to your website is an excellent way to notify readers when new blog posts are published.
