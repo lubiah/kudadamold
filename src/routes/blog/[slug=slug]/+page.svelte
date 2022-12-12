@@ -8,6 +8,15 @@
 	import '$lib/css/prism.css';
 	import { toc, spy } from './toc.js';
 
+	import Facebook from "$lib/icons/logo-facebook.svg?component";
+	import Twitter from "$lib/icons/logo-twitter.svg?component";
+	import Reddit from "$lib/icons/logo-reddit-alien.svg?component";
+	import HackerNews from "$lib/icons/logo-hacker-news.svg?component";
+	import Whatsapp from "$lib/icons/logo-whatsapp.svg?component";
+	import Email from "$lib/icons/envelope.svg?component";
+	import Linkedin from "$lib/icons/logo-linkedin.svg?component";
+	import Quora from "$lib/icons/logo-quora.svg?component";
+
 	const SEO = {
 		title: `${data.metadata.title} • Kudadam`,
 		description: data.metadata.description,
@@ -70,7 +79,7 @@
 <!-- TODO Add JSON Ld -->
 
 <main>
-	<div class="flex justify-center">
+	<div class="justify-center grid grid-cols-1 lg:grid-cols-[1fr_250px]">
 		<article
 			class="min-w-0 grid grid-cols-[1fr_min(65ch,calc(100%-10px))_1fr] [&_>_*]:col-start-2 [&_>_*]:col-end-3 lg:basis-[75%]"
 		>
@@ -94,6 +103,19 @@
 			</ul>
 			<svelte:component this={data.component} />
 		</article>
+		<div id="share_component" class="row-start-2 max-w-md mx-auto border border-neutral-300 mt-5 p-2 rounded-md">
+			<p class="text-base font-semibold">Did you enjoy this article? Spread the word.</p>
+			<div class="flex flex-wrap gap-x-2 justify-evenly">
+				<Twitter class="icon" fill="#1DA1F2"/>
+				<Reddit class="icon" fill="#FF5700"/>
+				<Facebook class="icon" fill="#4267B2"/>
+				<HackerNews class="icon" fill="#ff6600"/>
+				<Whatsapp class="icon" fill="#25D366"/>
+				<Email class="icon" fill="#505264"/>
+				<Linkedin class="icon" fill="#0A66C2"/>
+				<Quora class="icon" fill="#B92B27"/>
+			</div>
+		</div>
 	</div>
 	<style type="text/css">
 		#root-layout {
@@ -106,6 +128,11 @@
 <Progress color={'red'} />
 
 <style lang="postcss">
+
+	#share_component :global(.icon){
+		@apply hover:-translate-y-1.5 transition-transform duration-75;
+	}
+
 	article :global(pre) {
 		@apply col-span-4 md:col-start-2 md:col-end-3;
 	}

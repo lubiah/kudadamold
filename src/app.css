@@ -164,7 +164,11 @@
 	}
 
 	.icon {
-		@apply h-[44px] w-[44px] border-none p-1 hover:bg-neutral-50 active:bg-neutral-100;
+		@apply h-[44px] w-[44px] border-none p-1 rounded-md;
+	}
+
+	.icon-button {
+		@apply hover:bg-neutral-50 active:bg-neutral-100;
 	}
 
 	.display-1 {

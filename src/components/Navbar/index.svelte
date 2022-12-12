@@ -81,9 +81,9 @@
 	class="{headroomProps.headerClass} fixed top-0 left-0 shadow-neutral-200 bg-white w-full will-change-transform motion-safe:transition-transform duration-300 ease-linear z-10 px-0.5"
 >
 	<nav class="py-1 flex items-center" id="desktop-nav">
-		<a data-reset-styles href="/" aria-label="Visit the homepage" class="icon"><Logo /></a>
+		<a data-reset-styles href="/" aria-label="Visit the homepage" class="icon icon-button"><Logo /></a>
 		<button
-			class="icon ml-auto md:hidden"
+			class="icon icon-button ml-auto md:hidden"
 			aria-label="Open the naviation panel"
 			on:click|stopPropagation={openNavbar}><MenuButton aria-hidden={true} /></button
 		>
