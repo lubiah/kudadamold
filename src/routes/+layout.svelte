@@ -1,5 +1,5 @@
 <script>
-	import '../app.postcss';
+	import '../app.css';
 	import { assets } from '$app/paths';
 	import { dev } from "$app/environment";
 

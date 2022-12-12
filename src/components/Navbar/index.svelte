@@ -8,7 +8,7 @@
 	$: pathname = $page.url.pathname;
 
 	const PATHS = [
-		{ path: '/about', name: 'About', label: 'Read more aboout me here' },
+		{ path: '/about', name: 'About', label: 'Read more about me here' },
 		{ path: '/projects', name: 'Projects', label: 'Vist my projects page' },
 		{ path: '/blog', name: 'Blog', label: 'Read my blog posts' },
 		{ path: '/contact', name: 'Contact', label: 'Visit my contact page' }

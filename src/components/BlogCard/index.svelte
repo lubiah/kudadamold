@@ -9,27 +9,16 @@
 	export let date;
 	/**@type {BlogPost['category']}*/
 	export let category;
-	import { noCase } from '$utils';
+	
+	import Card from "$components/Card";
+	import { noCase } from "$utils";
 </script>
 
-<article class="flex flex-col">
-	<a
-		href="/blog/{slug}"
-		data-reset-styles
-		class="group w-[320px] flex-1 p-2 rounded-md flex flex-col pb-1 border border-neutral-300 hover:shadow"
-	>
-		<a
-			href="/blog/category/{category}"
-			class="text-sm w-fit bg-purple-50 text-purple-600 group-hover:bg-purple-200 group-hover:text-purple-600 font-bold px-2 py-1 rounded-md my-2"
-			data-reset-styles>{noCase(category)}</a
-		>
-		<h2 class="text-lg flex-1 font-medium m-0 p-0 mb-2 text-inherit">{title}</h2>
+<Card class="p-1 group">
+	<a data-reset-styles href="/blog/category" class="text-sm w-fit bg-purple-50 text-purple-600 group-hover:bg-purple-200 group-hover:text-purple-600 font-bold px-2 py-1 rounded-md my-0.5 mb-2">{noCase(category)}</a>
+		<h2 class="flex-1 text-lg font-medium m-0 p-0 mb-2 text-inherit hover:underline"><a data-reset-styles href="/blog/{slug}">{title}</a></h2>
 		<p class="text-base flex-1 p-0 m-0 text-gray-600">{excerpt}</p>
-		<div class="[&_*]:text-xs [&_*]:text-gray-600 font-semibold">
-			<small
-				><time datetime={new Date(date).toDateString()}>{new Date(date).toDateString()}</time
-				></small
-			>
-		</div>
-	</a>
-</article>
+	<div class="[&_*]:text-xs [&_*]:text-gray-600 font-semibold">
+		<small><time datetime="{new Date(date).toISOString()}">{new Date(date).toDateString()}</time></small>
+	</div>
+</Card>

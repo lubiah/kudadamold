@@ -9,11 +9,11 @@
 	export let demo = undefined;
 	/**@type {string|undefined}*/
 	export let source = undefined;
+
+	import Card from "$components/Card";
 </script>
 
-<article
-	class="w-[320px] rounded-md flex flex-col border border-neutral-300"
->
+<Card>
 	<img src={image} width="320" height="180" alt="" class="h-[180px]" loading="lazy" />
 	<div class="p-2 flex-1">
 		<h2 class="text-lg m-0 p-0 font-medium text-inherit">{name}</h2>
@@ -27,7 +27,7 @@
 			<a data-reset-styles class="button" href={source}>Source Code</a>
 		{/if}
 	</div>
-</article>
+</Card>
 
 <style lang="postcss">
 	.button {
