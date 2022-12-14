@@ -114,7 +114,7 @@
 				<a target="_blank" rel="noreferrer" aria-label="Share this article on Whatsapp" data-reset-styles href="{encodeURI(`https://wa.me/?text=${data.metadata.title}\n${SEO.canonical}`)}"><Whatsapp class="icon" aria-hidden={true} fill="#25D366"/></a>
 				<a target="_blank" rel="noreferrer" aria-label="Share this article through email" data-reset-styles href="{encodeURI(`mailto:?subject=${data.metadata.title}&body=${data.metadata.excerpt}`)}"><Email class="icon" aria-hidden={true} fill="#505264"/></a>
 				<a target="_blank" rel="noreferrer" aria-label="Share this article on linkedin" data-reset-styles href="{encodeURI(`https://www.linkedin.com/sharing/share-offsite/?url=${SEO.canonical}`)}"><Linkedin class="icon" aria-hidden={true} fill="#0A66C2"/></a>
-				<button data-reset-styles aria-label="Share this article" on:click={async ()=>{
+				<button class="p-0 m-0 border-none" aria-label="Share this article" on:click={async ()=>{
 					if ("share" in window.navigator){
 						await window.navigator.share({
 							title: data.metadata.title,

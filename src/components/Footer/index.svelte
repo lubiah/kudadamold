@@ -29,7 +29,7 @@
 			</ul>
 		</div>
 	</div>
-	<p class="text-center px-3 border-gray-300 pt-1 border-t w-[90%] !mx-auto">
+	<p class="text-center px-3 !py-1 !pt-3 !mx-auto">
 		&copy; Copyright 2020 - Now, Lucretius Biah
 	</p>
 </footer>

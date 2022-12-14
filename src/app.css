@@ -106,7 +106,7 @@
 		}
 	}
 
-	button:not(button[data-reset-styles]),
+	button,
 	[role='button'],
 	[type='button'],
 	[type='submit'],

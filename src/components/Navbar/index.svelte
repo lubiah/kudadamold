@@ -94,7 +94,7 @@
 						aria-current={pathname === path ? 'page' : false}
 						data-reset-styles
 						href={path}
-						class="p-2 hover:text-inherit font-semibold aria-[current='page']:text-[color:var(--primary-500)] text-neutral-500"
+						class="p-2 hover:text-inherit font-medium aria-[current='page']:text-[color:var(--primary-500)] text-neutral-500"
 						aria-label={label}>{name}</a
 					>
 				</li>
@@ -130,7 +130,7 @@
 					on:click={closeNavbar}
 					tabindex={NAVBAR_OPENED ? 0 : -1}
 					aria-current={pathname === path ? 'page' : false}
-					class="w-full block text-center py-3 my-8 aria-[current='page']:bg-[color:var(--primary-50)] aria-[current='page']:text-[color:var(--primary-600)] font-semibold text-neutral-500"
+					class="w-full block text-center py-3 my-8 aria-[current='page']:bg-[color:var(--primary-50)] aria-[current='page']:text-[color:var(--primary-600)] font-medium text-neutral-500"
 					href={path}
 					data-reset-styles
 					aria-label={label}>{name}</a
