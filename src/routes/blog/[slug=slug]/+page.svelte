@@ -12,8 +12,6 @@
 	import Twitter from "$lib/icons/logo-twitter.svg?component";
 	import Reddit from "$lib/icons/logo-reddit-alien.svg?component";
 	import HackerNews from "$lib/icons/logo-hacker-news.svg?component";
-	import Whatsapp from "$lib/icons/logo-whatsapp.svg?component";
-	import Email from "$lib/icons/envelope.svg?component";
 	import Linkedin from "$lib/icons/logo-linkedin.svg?component";
 	import Share from "$lib/icons/share-nodes.svg?component";
 
@@ -111,8 +109,6 @@
 				<a target="_blank" rel="noreferrer" aria-label="Share this article on Reddit" data-reset-styles href="{encodeURI(`http://www.reddit.com/submit?url=${SEO.canonical}`)}&title={data.metadata.title}"><Reddit aria-hidden={true} class="icon" fill="#FF5700"/></a>
 				<a target="_blank" rel="noreferrer" aria-label = "Share this article on facebook" data-reset-styles href="{encodeURI(`http://www.facebook.com/share.php?u=${SEO.canonical}`)}"><Facebook aria-hidden={true} class="icon" fill="#4267B2"/></a>
 				<a target="_blank" rel="noreferrer" aria-label="Share this article on Hacker News" data-reset-styles href="{encodeURI(`https://news.ycombinator.com/submitlink?u=${SEO.canonical}`)}&t={data.metadata.title}"><HackerNews aria-hidden={true} class="icon" fill="#ff6600"/></a>
-				<a target="_blank" rel="noreferrer" aria-label="Share this article on Whatsapp" data-reset-styles href="{encodeURI(`https://wa.me/?text=${data.metadata.title}\n${SEO.canonical}`)}"><Whatsapp class="icon" aria-hidden={true} fill="#25D366"/></a>
-				<a target="_blank" rel="noreferrer" aria-label="Share this article through email" data-reset-styles href="{encodeURI(`mailto:?subject=${data.metadata.title}&body=${data.metadata.excerpt}`)}"><Email class="icon" aria-hidden={true} fill="#505264"/></a>
 				<a target="_blank" rel="noreferrer" aria-label="Share this article on linkedin" data-reset-styles href="{encodeURI(`https://www.linkedin.com/sharing/share-offsite/?url=${SEO.canonical}`)}"><Linkedin class="icon" aria-hidden={true} fill="#0A66C2"/></a>
 				<button class="p-0 m-0 border-none" aria-label="Share this article" on:click={async ()=>{
 					if ("share" in window.navigator){
