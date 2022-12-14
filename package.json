@@ -17,9 +17,9 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
-		"@poppanator/sveltekit-svg": "^1.1.1",
+		"@poppanator/sveltekit-svg": "^2.0.0",
 		"@sveltejs/adapter-node": "1.0.0-next.104",
-		"@sveltejs/kit": "next",
+		"@sveltejs/kit": "1.0.0-next.586",
 		"@types/html-minifier": "^4.0.2",
 		"@types/simplecrawler": "^1.1.2",
 		"autoprefixer": "^10.4.13",
@@ -43,15 +43,15 @@
 		"remark-gfm": "^3.0.1",
 		"remark-slug": "^7.0.1",
 		"simplecrawler": "^1.1.9",
-		"svelte": "^3.54.0",
+		"svelte": "^3.55.0",
 		"svelte-check": "^2.10.2",
 		"svelte-paginate": "^0.1.0",
 		"svelte-preprocess": "^5.0.0",
 		"svelte-scrollprogress": "^1.0.4",
 		"tailwindcss": "^3.2.4",
 		"typescript": "^4.9.4",
-		"vite": "^4.0.0",
-		"vitest": "^0.25.7"
+		"vite": "^4.0.1",
+		"vitest": "^0.25.8"
 	},
 	"type": "module",
 	"lint-staged": {
