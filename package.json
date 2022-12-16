@@ -18,8 +18,8 @@
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@poppanator/sveltekit-svg": "^2.0.0",
-		"@sveltejs/adapter-node": "1.0.0-next.105",
-		"@sveltejs/kit": "1.0.0-next.588",
+		"@sveltejs/adapter-node": "1.0.0",
+		"@sveltejs/kit": "1.0.1",
 		"@types/html-minifier": "^4.0.2",
 		"@types/simplecrawler": "^1.1.2",
 		"autoprefixer": "^10.4.13",
