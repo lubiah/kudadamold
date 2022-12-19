@@ -14,10 +14,10 @@
 	import { noCase } from "$utils";
 </script>
 
-<Card>
-	<a data-reset-styles href="/blog/category/{category}" class="text-sm w-fit text-purple-600 font-bold py-1 rounded-md mb-1">{noCase(category)}</a>
-		<h2 class="flex-1 text-lg font-medium m-0 p-0 mb-2 text-inherit hover:underline"><a data-reset-styles href="/blog/{slug}">{title}</a></h2>
-		<p class="text-base flex-1 p-0 m-0 text-gray-600">{excerpt}</p>
+<Card class="border-none">
+	<h2 class="flex-1 text-lg font-medium m-0 p-0 mb-1 text-inherit hover:underline"><a class="block" data-reset-styles href="/blog/{slug}">{title}</a></h2>
+	<a data-reset-styles href="/blog/category/{category}" class="text-sm w-fit text-purple-600 font-medium py-1 rounded-md mb-1">{noCase(category)}</a>
+	<p class="text-sm flex-1 p-0 m-0 text-gray-600">{excerpt}</p>
 	<div class="[&_*]:text-xs [&_*]:text-gray-600 font-semibold">
 		<small><time datetime="{new Date(date).toISOString()}">{new Date(date).toDateString()}</time></small>
 	</div>

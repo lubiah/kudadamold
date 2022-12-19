@@ -135,7 +135,7 @@
 <style lang="postcss">
 
 	#share_component :global(.icon){
-		@apply hover:-translate-y-1 transition-transform duration-75;
+		@apply hover:-translate-y-1 transition-transform duration-75 h-[35px];
 	}
 
 	article :global(pre) {
@@ -147,6 +147,13 @@
 	article :global(p + :is(h2, h3, h4, h5, h6)) {
 		margin-top: 0px;
 	}
+
+	article :global(:is(h2,h3,h4,h5)) {
+		@apply text-[color:var(--primary-400)];
+	}
+
+	
+
 
 	/* Styling for table of contents */
 	main > div:first-of-type :global(.toc) {

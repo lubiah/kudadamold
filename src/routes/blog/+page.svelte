@@ -57,7 +57,7 @@
 		<div class="basis-[700px] flex-grow-[1]">
 			<section>
 				<h2 class="text-3xl text-neutral-600 mt-0">Latest articles</h2>
-				<div class="flex flex-wrap gap-x-5 gap-y-10 [&_>_*]:flex-grow-[1] md:[&_>*]:flex-grow-0">
+				<div class="flex flex-wrap justify-between gap-y-14 [&_>_*]:flex-grow-[1] md:[&_>*]:flex-grow-0">
 					{#each data.articles as article}
 						<BlogCard
 							title={article.title}
