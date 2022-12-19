@@ -93,7 +93,7 @@
 				order, but rather at random. You can <a href="/projects">view all the projects here</a>.
 			</p>
 		</div>
-		<div class="flex flex-wrap justify-center gap-10 mt-10">
+		<div class="flex flex-wrap md:justify-center gap-10 mt-10 [&_>*]:flex-grow-[1] md:[&_>*]:flex-grow-0">
 			{#each data.projects as project}
 				<ProjectCard
 					name={project.name}
@@ -113,7 +113,7 @@
 				popular writing may be seen below.
 			</p>
 		</div>
-		<div class="flex flex-wrap justify-center gap-10 mt-10">
+		<div class="flex flex-wrap md:justify-center gap-10 mt-10 [&_>*]:flex-grow-[1] md:[&_>*]:flex-grow-0">
 			{#each data.articles as article}
 				<BlogCard
 					title={article.title}

@@ -14,7 +14,7 @@
 </script>
 
 <Card>
-	<img src={image} width="320" height="180" alt="" class="h-[180px]" loading="lazy" />
+	<img src={image} width="320" height="180" alt="" class="h-[180px] w-full" loading="lazy" />
 	<div class="p-2 flex-1">
 		<h2 class="text-lg m-0 p-0 font-medium text-inherit">{name}</h2>
 		<p class="p-0 m-0 text-base">{description}</p>
