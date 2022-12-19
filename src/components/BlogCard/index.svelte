@@ -14,8 +14,8 @@
 	import { noCase } from "$utils";
 </script>
 
-<Card class="p-1 group">
-	<a data-reset-styles href="/blog/category/{category}" class="text-sm w-fit bg-purple-50 text-purple-600 group-hover:bg-purple-200 group-hover:text-purple-600 font-bold px-2 py-1 rounded-md my-0.5 mb-2">{noCase(category)}</a>
+<Card>
+	<a data-reset-styles href="/blog/category/{category}" class="text-sm w-fit text-purple-600 font-bold py-1 rounded-md mb-1">{noCase(category)}</a>
 		<h2 class="flex-1 text-lg font-medium m-0 p-0 mb-2 text-inherit hover:underline"><a data-reset-styles href="/blog/{slug}">{title}</a></h2>
 		<p class="text-base flex-1 p-0 m-0 text-gray-600">{excerpt}</p>
 	<div class="[&_*]:text-xs [&_*]:text-gray-600 font-semibold">
