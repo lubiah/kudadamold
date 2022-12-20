@@ -29,7 +29,7 @@ jobs:
       - name: Creating env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          file_name: .env.development
+          file_name: .env
           envkey_MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
           envkey_MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
           envkey_MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
