@@ -15,7 +15,7 @@
 </script>
 
 <Card class="border-none">
-	<h2 class="flex-1 text-lg font-semibold m-0 p-0 mb-1 text-inherit hover:underline"><a class="block" data-reset-styles href="/blog/{slug}">{title}</a></h2>
+	<h2 class="flex-1 text-lg font-semiboldh m-0 p-0 mb-1 text-inherit hover:underline"><a class="block" data-reset-styles href="/blog/{slug}">{title}</a></h2>
 	<a data-reset-styles href="/blog/category/{category}" class="text-sm w-fit text-purple-600 font-medium py-1 rounded-md mb-1">{noCase(category)}</a>
 	<p class="text-sm flex-1 p-0 m-0 text-gray-600">{excerpt}</p>
 	<div class="[&_*]:text-xs [&_*]:text-gray-600 font-semibold">

@@ -50,7 +50,7 @@
 		"tailwindcss": "^3.2.4",
 		"typescript": "^4.9.4",
 		"vite": "^4.0.2",
-		"vitest": "^0.26.0"
+		"vitest": "^0.26.1"
 	},
 	"type": "module",
 	"lint-staged": {
@@ -58,6 +58,7 @@
 		"*.{js,css,md}": "prettier --write"
 	},
 	"dependencies": {
-		"html-minifier": "^4.0.0"
+		"html-minifier": "^4.0.0",
+		"mysql2": "^2.3.3"
 	}
 }

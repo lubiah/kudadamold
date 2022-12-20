@@ -26,13 +26,17 @@
 		tags: [...data.metadata.tags] ?? undefined,
 		image: data.metadata.image ?? undefined //TODO: Find a way to implement opengraph for articles without images
 	};
+	let hits = "--"
 
-	onMount(() => {
+	onMount(async () => {
 		const article = document.querySelector('article');
 		if (article) document.querySelector('main>div:first-child')?.appendChild(toc(article));
 		//@ts-ignore
 		let Spy = spy(document.querySelector('article'));
-
+		let fetch_requests = await fetch(`/blog/${data.metadata.slug}.json`);
+		let fetch_json = await fetch_requests.json();
+		hits = fetch_json.hits;
+		console.log(hits);
 		return () => {
 			Spy.stop();
 		};
@@ -83,13 +87,14 @@
 		>
 			<h1 class="mb-10 mt-2">{data.metadata.title}</h1>
 			<ul
-				class="text-sm text-neutral-600 flex flex-wrap gap-x-2 m-0 my-3 p-0 [&_li]:marker:content-none [&_li]:after:content-['\2022'] [&_li]:after:ml-1 [&_li:last-child]:after:content-none"
+				class="text-sm text-neutral-600 flex flex-wrap justify-between gap-x-2 m-0 my-3 p-0 [&_li]:marker:content-none [&_li]:after:content-['\2022'] [&_li]:after:ml-1 [&_li:last-child]:after:content-none"
 			>
 				<li>
-					Written on <time datetime={new Date(data.metadata.date).toDateString()}
+					<time datetime={new Date(data.metadata.date).toDateString()}
 						>{new Date(data.metadata.date).toDateString()}</time
 					>
 				</li>
+			
 				{#if data.metadata.modified}
 					<li>
 						Last updated on <time datetime={new Date(data.metadata.date).toDateString()}
@@ -100,27 +105,30 @@
 				<li>{data.metadata.readingTime.text}</li>
 			</ul>
 			<svelte:component this={data.component} />
+			<ul class="list-none p-0 text-base text-gray-600">
+				<li>{hits} Views</li>
+			</ul>
 		</article>
-		
-		<div id="share_component" class="row-start-2 max-w-md mx-auto mt-5 p-2 rounded-md">
-			<p class="text-base font-semibold text-neutral-500 mb-2 text-center">Did you enjoy this article? Spread the word.</p>
-			<div class="flex flex-wrap gap-x-2 justify-evenly">
-				<a target="_blank" rel="noreferrer" aria-label="Share this article on Twitter" data-reset-styles href="{encodeURI(`https://twitter.com/intent/tweet?text=${data.metadata.title}&url=${SEO.canonical}&hashtags=${data.metadata.tags}&via=kudadam_`)}"><Twitter aria-hidden={true} class="icon" fill="#1DA1F2"/></a>
-				<a target="_blank" rel="noreferrer" aria-label="Share this article on Reddit" data-reset-styles href="{encodeURI(`http://www.reddit.com/submit?url=${SEO.canonical}`)}&title={data.metadata.title}"><Reddit aria-hidden={true} class="icon" fill="#FF5700"/></a>
-				<a target="_blank" rel="noreferrer" aria-label = "Share this article on facebook" data-reset-styles href="{encodeURI(`http://www.facebook.com/share.php?u=${SEO.canonical}`)}"><Facebook aria-hidden={true} class="icon" fill="#4267B2"/></a>
-				<a target="_blank" rel="noreferrer" aria-label="Share this article on Hacker News" data-reset-styles href="{encodeURI(`https://news.ycombinator.com/submitlink?u=${SEO.canonical}`)}&t={data.metadata.title}"><HackerNews aria-hidden={true} class="icon" fill="#ff6600"/></a>
-				<a target="_blank" rel="noreferrer" aria-label="Share this article on linkedin" data-reset-styles href="{encodeURI(`https://www.linkedin.com/sharing/share-offsite/?url=${SEO.canonical}`)}"><Linkedin class="icon" aria-hidden={true} fill="#0A66C2"/></a>
-				<button class="p-0 m-0 border-none" aria-label="Share this article" on:click={async ()=>{
-					if ("share" in window.navigator){
-						await window.navigator.share({
-							title: data.metadata.title,
-							text: data.metadata.excerpt,
-							url: SEO.canonical
-						})
-					}
-				}}><Share aria-hidden={true} class="icon" fill="grey"/></button>
+		<div class="row-start-2 max-w-md mx-auto">
+			<div id="share_component" class="mx-auto">
+				<p class="text-base font-semibold text-neutral-500 mb-2 text-center">Did you enjoy this article? Spread the word.</p>
+				<div class="flex flex-wrap gap-x-2 justify-evenly">
+					<a target="_blank" rel="noreferrer" aria-label="Share this article on Twitter" data-reset-styles href="{encodeURI(`https://twitter.com/intent/tweet?text=${data.metadata.title}&url=${SEO.canonical}&hashtags=${data.metadata.tags}&via=kudadam_`)}"><Twitter aria-hidden={true} class="icon" fill="#1DA1F2"/></a>
+					<a target="_blank" rel="noreferrer" aria-label="Share this article on Reddit" data-reset-styles href="{encodeURI(`http://www.reddit.com/submit?url=${SEO.canonical}`)}&title={data.metadata.title}"><Reddit aria-hidden={true} class="icon" fill="#FF5700"/></a>
+					<a target="_blank" rel="noreferrer" aria-label = "Share this article on facebook" data-reset-styles href="{encodeURI(`http://www.facebook.com/share.php?u=${SEO.canonical}`)}"><Facebook aria-hidden={true} class="icon" fill="#4267B2"/></a>
+					<a target="_blank" rel="noreferrer" aria-label="Share this article on Hacker News" data-reset-styles href="{encodeURI(`https://news.ycombinator.com/submitlink?u=${SEO.canonical}`)}&t={data.metadata.title}"><HackerNews aria-hidden={true} class="icon" fill="#ff6600"/></a>
+					<a target="_blank" rel="noreferrer" aria-label="Share this article on linkedin" data-reset-styles href="{encodeURI(`https://www.linkedin.com/sharing/share-offsite/?url=${SEO.canonical}`)}"><Linkedin class="icon" aria-hidden={true} fill="#0A66C2"/></a>
+					<button class="p-0 m-0 border-none" aria-label="Share this article" on:click={async ()=>{
+						if ("share" in window.navigator){
+							await window.navigator.share({
+								title: data.metadata.title,
+								text: data.metadata.excerpt,
+								url: SEO.canonical
+							})
+						}
+					}}><Share aria-hidden={true} class="icon" fill="grey"/></button>
+				</div>
 			</div>
-		</div>
 	</div>
 	<style type="text/css">
 		#root-layout {
@@ -146,10 +154,12 @@
 	/* Styling for article */
 	article :global(p + :is(h2, h3, h4, h5, h6)) {
 		margin-top: 0px;
+		margin-bottom: 0px;
+	
 	}
 
 	article :global(:is(h2,h3,h4,h5)) {
-		@apply text-[color:var(--primary-400)];
+		@apply text-inherit;
 	}
 
 	
