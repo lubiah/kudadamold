@@ -5,7 +5,6 @@ specifiers:
   '@poppanator/sveltekit-svg': ^2.0.0
   '@sveltejs/adapter-node': 1.0.0
   '@sveltejs/kit': 1.0.1
-  '@types/html-minifier': ^4.0.2
   '@types/simplecrawler': ^1.1.2
   autoprefixer: ^10.4.13
   cssnano: ^5.1.14
@@ -48,7 +47,6 @@ devDependencies:
   '@poppanator/sveltekit-svg': 2.0.0_svelte@3.55.0+vite@4.0.2
   '@sveltejs/adapter-node': 1.0.0_@sveltejs+kit@1.0.1
   '@sveltejs/kit': 1.0.1_svelte@3.55.0+vite@4.0.2
-  '@types/html-minifier': 4.0.2
   '@types/simplecrawler': 1.1.2
   autoprefixer: 10.4.13_postcss@8.4.20
   cssnano: 5.1.14_postcss@8.4.20
@@ -527,13 +525,6 @@ packages:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==}
     dev: true
 
-  /@types/clean-css/4.2.6:
-    resolution: {integrity: sha512-Ze1tf+LnGPmG6hBFMi0B4TEB0mhF7EiMM5oyjLDNPE9hxrPU0W+5+bHvO+eFPA+bt0iC1zkQMoU/iGdRVjcRbw==}
-    dependencies:
-      '@types/node': 18.11.17
-      source-map: 0.6.1
-    dev: true
-
   /@types/cookie/0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
     dev: true
@@ -554,14 +545,6 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /@types/html-minifier/4.0.2:
-    resolution: {integrity: sha512-4IkmkXJP/25R2fZsCHDX2abztXuQRzUAZq39PfCMz2loLFj8vS9y7aF6vDl58koXSTpsF+eL4Lc5Y4Aww/GCTQ==}
-    dependencies:
-      '@types/clean-css': 4.2.6
-      '@types/relateurl': 0.2.29
-      '@types/uglify-js': 3.17.1
-    dev: true
-
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
@@ -580,10 +563,6 @@ packages:
     resolution: {integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==}
     dev: true
 
-  /@types/relateurl/0.2.29:
-    resolution: {integrity: sha512-QSvevZ+IRww2ldtfv1QskYsqVVVwCKQf1XbwtcyyoRvLIQzfyPhj/C+3+PKzSDRdiyejaiLgnq//XTkleorpLg==}
-    dev: true
-
   /@types/resolve/1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: true
@@ -598,12 +577,6 @@ packages:
     resolution: {integrity: sha512-aI/zWVs9EkUpe5+UIQU4DXhhb9+Me0bU+t/1EnOgP+2J8KgL6G0b3DHjlVkjzDM0TuKJqzlIlCRWDCF5+QPloQ==}
     dependencies:
       '@types/node': 18.11.17
-    dev: true
-
-  /@types/uglify-js/3.17.1:
-    resolution: {integrity: sha512-GkewRA4i5oXacU/n4MA9+bLgt5/L3F1mKrYvFGm7r2ouLXhRKjuWwo9XHNnbx6WF3vlGW21S3fCvgqxvxXXc5g==}
-    dependencies:
-      source-map: 0.6.1
     dev: true
 
   /@types/unist/2.0.6:
