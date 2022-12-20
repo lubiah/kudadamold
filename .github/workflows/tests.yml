@@ -18,8 +18,6 @@ jobs:
         command: ["Formatting and Linting", "Svelte check", "Vitest", "Playwright"]
 
     steps:
-      - name: Setup upterm session
-      uses: lhotari/action-upterm@v1
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
@@ -31,11 +29,10 @@ jobs:
       - name: Creating env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          file_name: .env.production
+          file_name: .env
           envkey_MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
           envkey_MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
           envkey_MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
-
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
 
