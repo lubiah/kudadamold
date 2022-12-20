@@ -54,3 +54,5 @@ jobs:
             source /home6/eakloeor/nodevenv/public_html/kudadam/16/bin/activate && cd /home6/eakloeor/public_html/kudadam
             pnpm install --prod
             touch tmp/restart.txt
+            cd ~
+            rm -rf .local .npm
