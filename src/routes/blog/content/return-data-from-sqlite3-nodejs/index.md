@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript: How To Return Data From A Function In Sqlite3'
+title: "JavaScript: How To Return Data From A Function In Sqlite3"
 description: How to return data from a function when using Sqlite3 in node javascript
 excerpt: Learn how to return data from a function in sqlite
 keywords:
@@ -22,14 +22,14 @@ While trying to implement a read counter for my website this morning, I ran into
 const getData = (slug) => {
 	let data;
 	db.serialize(() => {
-		db.get('SELECT * FROM blog WHERE slug = ?', slug, (err, rows) => {
+		db.get("SELECT * FROM blog WHERE slug = ?", slug, (err, rows) => {
 			data = rows;
 		});
 	});
 	return data;
 };
 
-let data = getData('return-data-from-sqlite3-nodejs'); // => undefined
+let data = getData("return-data-from-sqlite3-nodejs"); // => undefined
 ```
 
 This was my code snippet. The function `getData` takes a slug as a parameter, then it searches the database to retrieve all the data for the slug. It then assigns the data to the data variable, and at the end of the function, it returns the data variable. The function without a doubt works perfectly, but when you run it, it will always return undefined.
@@ -48,7 +48,7 @@ Since the `db.get` function is asynchronous, we need to find a way to make it re
 const getData = (slug) => {
 	return new Promise((resolve, reject) => {
 		db.serialize(() => {
-			db.get('SELECT * FROM blog WHERE slug = ?', slug, (err, rows) => {
+			db.get("SELECT * FROM blog WHERE slug = ?", slug, (err, rows) => {
 				if (err) reject(err);
 				resolve(rows);
 			});
@@ -56,7 +56,7 @@ const getData = (slug) => {
 	});
 };
 
-let promise = getData('return-data-from-sqlite3-nodejs') // => Promise { <pending> }
+let promise = getData("return-data-from-sqlite3-nodejs") // => Promise { <pending> }
 	.then((results) => {
 		console.log(results); // => { slug: 'adding-matomo-website', read_times: 1, shares: 0, likes: 0 }
 	});

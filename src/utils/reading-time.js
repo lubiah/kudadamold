@@ -5,7 +5,7 @@
  * MIT Licensed
  */
 
-'use strict';
+"use strict";
 
 /**
  * @typedef {import('reading-time').Options['wordBound']} WordBoundFunction
@@ -25,7 +25,7 @@ function codeIsInRanges(number, arrayOfRanges) {
  * @type {WordBoundFunction}
  */
 function isCJK(c) {
-	if ('string' !== typeof c) {
+	if ("string" !== typeof c) {
 		return false;
 	}
 	const charCode = c.charCodeAt(0);
@@ -51,14 +51,14 @@ function isCJK(c) {
  * @type {WordBoundFunction}
  */
 function isAnsiWordBound(c) {
-	return ' \n\r\t'.includes(c);
+	return " \n\r\t".includes(c);
 }
 
 /**
  * @type {WordBoundFunction}
  */
 function isPunctuation(c) {
-	if ('string' !== typeof c) {
+	if ("string" !== typeof c) {
 		return false;
 	}
 	const charCode = c.charCodeAt(0);
@@ -125,7 +125,7 @@ function readingTime(text, options = {}) {
 	const displayed = Math.ceil(minutes.toFixed(2));
 
 	return {
-		text: displayed + ' min read',
+		text: displayed + " min read",
 		minutes: minutes,
 		time: time,
 		words: words

@@ -26,7 +26,7 @@ To begin, enter your terminal and type `npm install html-minifier` to install th
 Okay, in your project folder, open the file `src/hooks.server.js` in your code editor and paste the code below into it.
 
 ```javascript
-import { minify } from 'html-minifier'; //Imports the module
+import { minify } from "html-minifier"; //Imports the module
 
 const minification_options = {
 	collapseBooleanAttributes: true,
@@ -52,7 +52,7 @@ const minification_options = {
 export const handle = async ({ resolve, event }) => {
 	const response = await resolve(event);
 
-	if (response.headers.get('Content-Type') === 'text/html') {
+	if (response.headers.get("Content-Type") === "text/html") {
 		return new Response(minifyHtml.minify(await response.text(), minification_options), {
 			status: response.status,
 			headers: response.headers

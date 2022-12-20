@@ -1,4 +1,4 @@
-import minifyHtml from 'html-minifier';
+import minifyHtml from "html-minifier";
 
 const minification_options = {
 	collapseBooleanAttributes: true,
@@ -23,7 +23,7 @@ const minification_options = {
 export const minify = async ({ resolve, event }) => {
 	const response = await resolve(event);
 
-	if (response.headers.get('Content-Type') === 'text/html') {
+	if (response.headers.get("Content-Type") === "text/html") {
 		return new Response(minifyHtml.minify(await response.text(), minification_options), {
 			status: response.status,
 			headers: response.headers

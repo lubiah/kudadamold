@@ -2,23 +2,23 @@
 	/** @type {import("./$types").PageData}*/
 	export let data;
 
-	import Head from '$components/Head';
-	import BlogCard from '$components/BlogCard';
-	import { PaginationNav } from 'svelte-paginate';
+	import Head from "$components/Head";
+	import BlogCard from "$components/BlogCard";
+	import { PaginationNav } from "svelte-paginate";
 
 	const SEO = {
 		title:
-			'The Blog — My personal journal where I write about tutorials, hacks and everything in-between • Kudadam',
+			"The Blog — My personal journal where I write about tutorials, hacks and everything in-between • Kudadam",
 		description:
-			'A space where I use words to convey my knowledge, thoughts, and points of view on a variety of issues ranging from technology to the personal.',
+			"A space where I use words to convey my knowledge, thoughts, and points of view on a variety of issues ranging from technology to the personal.",
 		keywords: [
-			'lucretius blog',
-			'kudadam blog',
-			'kudadam journal',
-			'lucretius biah blog',
-			'kudadam web log'
+			"lucretius blog",
+			"kudadam blog",
+			"kudadam journal",
+			"lucretius biah blog",
+			"kudadam web log"
 		],
-		canonical: 'https://kudadam.com/blog'
+		canonical: "https://kudadam.com/blog"
 	};
 </script>
 
@@ -31,11 +31,11 @@
 		title: SEO.title,
 		description: SEO.description,
 		url: SEO.canonical,
-		type: 'website'
+		type: "website"
 		//TODO: Add openGraph images
 	}}
 	twitter={{
-		card: 'summary_large_image',
+		card: "summary_large_image",
 		title: SEO.title,
 		description: SEO.description
 
@@ -57,7 +57,9 @@
 		<div class="basis-[700px] flex-grow-[1]">
 			<section>
 				<h2 class="text-3xl text-neutral-600 mt-0">Latest articles</h2>
-				<div class="flex flex-wrap justify-between gap-y-14 [&_>_*]:flex-grow-[1] md:[&_>*]:flex-grow-0">
+				<div
+					class="flex flex-wrap justify-between gap-y-14 [&_>_*]:flex-grow-[1] md:[&_>*]:flex-grow-0"
+				>
 					{#each data.articles as article}
 						<BlogCard
 							title={article.title}

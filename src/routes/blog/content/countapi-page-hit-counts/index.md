@@ -89,7 +89,7 @@ Here's the code.
 ```javascript
 onMount(async () => {
 	//Get the page hits count from the api if the mode is production
-	if (mode === 'production') {
+	if (mode === "production") {
 		let hits_response = await fetch(`https://api.countapi.xyz/hit/kudadam.com/${metadata.slug}`);
 		let hit = await hits_response.json();
 		hits = await hit.value;

@@ -1,14 +1,14 @@
 <script>
-	import Head from '$components/Head';
-	import ProjectCard from '$components/ProjectCard';
+	import Head from "$components/Head";
+	import ProjectCard from "$components/ProjectCard";
 
 	/**@type {import("./$types").PageData}*/
 	export let data;
 
 	const SEO = {
-		title: 'The Projects Page • Kudadam',
-		description: 'This page contains a list of projects which are created by Lucretius Biah',
-		canonical: 'https://kudadam.com/projects'
+		title: "The Projects Page • Kudadam",
+		description: "This page contains a list of projects which are created by Lucretius Biah",
+		canonical: "https://kudadam.com/projects"
 	};
 </script>
 

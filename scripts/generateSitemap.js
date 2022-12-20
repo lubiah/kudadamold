@@ -1,13 +1,13 @@
-import { createServer } from 'vite';
-import Crawler from 'simplecrawler';
-import { fileURLToPath } from 'url';
-import { writeFileSync } from 'fs';
+import { createServer } from "vite";
+import Crawler from "simplecrawler";
+import { fileURLToPath } from "url";
+import { writeFileSync } from "fs";
 
 (async () => {
-	const configFile = fileURLToPath(new URL('../vite.config.js', import.meta.url));
+	const configFile = fileURLToPath(new URL("../vite.config.js", import.meta.url));
 	const Server = await createServer({
 		configFile,
-		mode: 'development',
+		mode: "development",
 		server: {
 			port: 9999
 		}
@@ -15,17 +15,17 @@ import { writeFileSync } from 'fs';
 	await Server.listen();
 	const crawler = new Crawler(`http://localhost:9999`);
 
-	crawler.on('complete', async () => {
+	crawler.on("complete", async () => {
 		let filtered = crawler.queue
 			.filter(
-				(queue) => queue.status === 'downloaded' && queue.stateData.contentType === 'text/html'
+				(queue) => queue.status === "downloaded" && queue.stateData.contentType === "text/html"
 			)
 			.map((queue) => queue.path);
-		let xml = '';
+		let xml = "";
 		filtered.map((location) => {
 			xml += `
 <url>
-    <loc>${new URL(location, 'https://kudadam.com').href.replace(/\/+$/, '')}</loc>
+    <loc>${new URL(location, "https://kudadam.com").href.replace(/\/+$/, "")}</loc>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
 </url>\n`;
@@ -37,7 +37,7 @@ import { writeFileSync } from 'fs';
 ${xml}
 </urlset>
         `;
-		writeFileSync('static/sitemap.xml', sitemap.trim());
+		writeFileSync("static/sitemap.xml", sitemap.trim());
 	});
 
 	crawler.start();

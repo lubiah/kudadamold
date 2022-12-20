@@ -86,7 +86,7 @@ The `resolve` function also supports a second optional parameter that also gives
    export const handle = async ({ event, resolve }) => {
    	const response = await resolve(event, {
    		transformPage: ({ html }) => {
-   			return html.replace('a', 'b');
+   			return html.replace("a", "b");
    		}
    	});
    	return response;
@@ -100,19 +100,19 @@ SvelteKit allows you to chain multiple `handle` functions with the use of the `s
 Let's look at an example.
 
 ```javascript
-import { sequence } from '@sveltejs/kit/hooks';
+import { sequence } from "@sveltejs/kit/hooks";
 
 const first = async ({ event, resolve }) => {
-	console.log('First handle start');
+	console.log("First handle start");
 	const result = await resolve(event);
-	console.log('First handle stop');
+	console.log("First handle stop");
 	return result;
 };
 
 const second = async ({ event, resolve }) => {
-	console.log('Second handle start');
+	console.log("Second handle start");
 	const result = await resolve(event);
-	console.log('Second handle stop');
+	console.log("Second handle stop");
 	return result;
 };
 
@@ -147,7 +147,7 @@ As you can see from the resulting output, the `first` function will be called fi
       example below
 
       ```javascript
-      import { sequence } from './sequence.js';
+      import { sequence } from "./sequence.js";
       ```
 
 ## handleError
@@ -171,8 +171,8 @@ Apart from accessing the session object, you can also set the session inside thi
 ```javascript
 export const getSession = (event) => {
 	return (event.locals.user = {
-		name: 'John Doe',
-		age: '20',
+		name: "John Doe",
+		age: "20",
 		id: 112244233434343
 	});
 };

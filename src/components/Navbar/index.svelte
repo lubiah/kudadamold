@@ -1,27 +1,27 @@
 <script>
-	import { page } from '$app/stores';
-	import { debounceWindow, trapFocus } from '$utils';
-	import MenuButton from '$lib/icons/menu.svg?component';
-	import Logo from '$lib/icons/logo.svg?component';
-	import CloseButton from '$lib/icons/x-mark.svg?component';
+	import { page } from "$app/stores";
+	import { debounceWindow, trapFocus } from "$utils";
+	import MenuButton from "$lib/icons/menu.svg?component";
+	import Logo from "$lib/icons/logo.svg?component";
+	import CloseButton from "$lib/icons/x-mark.svg?component";
 
 	$: pathname = $page.url.pathname;
 
 	const PATHS = [
-		{ path: '/about', name: 'About', label: 'Read more about me here' },
-		{ path: '/projects', name: 'Projects', label: 'Vist my projects page' },
-		{ path: '/blog', name: 'Blog', label: 'Read my blog posts' },
-		{ path: '/contact', name: 'Contact', label: 'Visit my contact page' }
+		{ path: "/about", name: "About", label: "Read more about me here" },
+		{ path: "/projects", name: "Projects", label: "Vist my projects page" },
+		{ path: "/blog", name: "Blog", label: "Read my blog posts" },
+		{ path: "/contact", name: "Contact", label: "Visit my contact page" }
 	];
 
 	const setY = () => (headroomProps.y = window.scrollY);
 
 	const deriveClass = (y = 0, scrolled = 0) => {
-		if (y < headroomProps.offset) return 'pin';
+		if (y < headroomProps.offset) return "pin";
 		if (!scrolled || Math.abs(scrolled) < headroomProps.tolerance) return headroomProps.headerClass;
-		const direction = scrolled < 0 ? 'down' : 'up';
-		if (direction === 'up') return 'pin';
-		if (direction === 'down') return 'unpin';
+		const direction = scrolled < 0 ? "down" : "up";
+		if (direction === "up") return "pin";
+		if (direction === "down") return "unpin";
 		return headroomProps.headerClass;
 	};
 
@@ -35,8 +35,8 @@
 	const headroomProps = {
 		offset: 50,
 		tolerance: 10,
-		headerClass: 'pin',
-		lastHeaderClass: 'pin',
+		headerClass: "pin",
+		lastHeaderClass: "pin",
 		y: 0,
 		lastY: 0
 	};
@@ -81,7 +81,9 @@
 	class="{headroomProps.headerClass} fixed top-0 left-0 shadow-neutral-200 bg-white w-full will-change-transform motion-safe:transition-transform duration-300 ease-linear z-10 px-0.5"
 >
 	<nav class="py-1 flex items-center" id="desktop-nav">
-		<a data-reset-styles href="/" aria-label="Visit the homepage" class="icon icon-button"><Logo /></a>
+		<a data-reset-styles href="/" aria-label="Visit the homepage" class="icon icon-button"
+			><Logo /></a
+		>
 		<button
 			class="icon icon-button ml-auto md:hidden"
 			aria-label="Open the naviation panel"
@@ -91,7 +93,7 @@
 			{#each PATHS as { path, name, label }}
 				<li>
 					<a
-						aria-current={pathname === path ? 'page' : false}
+						aria-current={pathname === path ? "page" : false}
 						data-reset-styles
 						href={path}
 						class="p-2 hover:text-inherit font-medium aria-[current='page']:text-[color:var(--primary-500)] text-neutral-500"
@@ -114,7 +116,7 @@
 <nav
 	use:trap={NAVBAR_OPENED}
 	id="mobileNavbar"
-	style:transform={NAVBAR_OPENED ? 'translateX(0%)' : 'translateX(-100%)'}
+	style:transform={NAVBAR_OPENED ? "translateX(0%)" : "translateX(-100%)"}
 	class="fixed bg-white inset-0 z-30 p-2 will-change-transform motion-safe:transition-transform duration-150 ease-linear md:hidden"
 >
 	<button
@@ -129,7 +131,7 @@
 				<a
 					on:click={closeNavbar}
 					tabindex={NAVBAR_OPENED ? 0 : -1}
-					aria-current={pathname === path ? 'page' : false}
+					aria-current={pathname === path ? "page" : false}
 					class="w-full block text-center py-3 my-8 aria-[current='page']:bg-[color:var(--primary-50)] aria-[current='page']:text-[color:var(--primary-600)] font-medium text-neutral-500"
 					href={path}
 					data-reset-styles
@@ -143,7 +145,7 @@
 	on:scroll={debounceWindow(setY)}
 	on:scroll={debounceWindow(() => {
 		window.scrollY >= 35
-			? HEADER_ELEMENT.classList.add('shadow-sm')
-			: HEADER_ELEMENT.classList.remove('shadow-sm');
+			? HEADER_ELEMENT.classList.add("shadow-sm")
+			: HEADER_ELEMENT.classList.remove("shadow-sm");
 	})}
 />

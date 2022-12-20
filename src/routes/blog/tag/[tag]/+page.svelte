@@ -2,8 +2,8 @@
 	/**@type {import("./$types").PageData}*/
 	export let data;
 
-	import Head from '$components/Head';
-	import Card from '$components/BlogCard';
+	import Head from "$components/Head";
+	import Card from "$components/BlogCard";
 
 	const SEO = {
 		title: `Articles with the tag ${data.tag} • Kudadam`,

@@ -35,10 +35,10 @@ These two other parameters are there to adjust how the function works.
 
 ```javascript
 const isPalindrome = (content, ignoreWhitespace = false, caseSensitive = false) => {
-	if (ignoreWhitespace) content = content.replaceAll(' ', '');
+	if (ignoreWhitespace) content = content.replaceAll(" ", "");
 	if (!caseSensitive) content = content.toLowerCase();
 
-	return content.split('').reverse().join('') === content;
+	return content.split("").reverse().join("") === content;
 };
 ```
 

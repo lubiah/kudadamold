@@ -63,10 +63,10 @@ class Flames {
 		//want to mess with the original data
 
 		if (first_name === undefined || second_name === undefined)
-			throw Error('Both names are required');
+			throw Error("Both names are required");
 
-		this.a = this.first_name.toLowerCase().replace(/\s/g, '');
-		this.b = this.second_name.toLowerCase().replace(/\s/g, '');
+		this.a = this.first_name.toLowerCase().replace(/\s/g, "");
+		this.b = this.second_name.toLowerCase().replace(/\s/g, "");
 		this.getDifference();
 		this.getRelationship();
 		//Now we remove the cloned variables since they are not needed
@@ -87,8 +87,8 @@ class Flames {
 				//the function is to make it run with the new data or else it will
 				//stick to the unreplaced data
 				if (this.a[i] === this.b[j]) {
-					this.a = this.a.replace(this.a[i], '');
-					this.b = this.b.replace(this.b[j], '');
+					this.a = this.a.replace(this.a[i], "");
+					this.b = this.b.replace(this.b[j], "");
 					this.getDifference();
 				}
 			}
@@ -100,12 +100,12 @@ class Flames {
 	getRelationship() {
 		//The method responsible for returning the relationship between both individuals
 		const FLAMES = {
-			0: ['F', 'Friends'],
-			1: ['L', 'Lovers'],
-			2: ['A', 'Admirers'],
-			3: ['M', 'Marriage'],
-			4: ['E', 'Enemies'],
-			5: ['S', 'Secret Lovers']
+			0: ["F", "Friends"],
+			1: ["L", "Lovers"],
+			2: ["A", "Admirers"],
+			3: ["M", "Marriage"],
+			4: ["E", "Enemies"],
+			5: ["S", "Secret Lovers"]
 		};
 		let modular_difference = this.difference % 6; //Gets the modular 6 of this.difference
 		this.relationship = FLAMES[modular_difference];

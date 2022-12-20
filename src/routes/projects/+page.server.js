@@ -1,6 +1,6 @@
 /**@type {import("./$types").PageServerLoad} */
 export const load = async () => {
-	const projects = await (await import('./index')).getProjets();
+	const projects = await (await import("./index")).getProjets();
 
 	return {
 		projects

@@ -1,9 +1,9 @@
-import { chunk } from '$utils';
+import { chunk } from "$utils";
 
 /** @type {import("./$types").PageServerLoad} */
 export const load = async () => {
-	const data = await (await import('./blog')).getFiles();
-	const projects = (await import('./projects')).getProjets();
+	const data = await (await import("./blog")).getFiles();
+	const projects = (await import("./projects")).getProjets();
 	/**@type {BlogPost[]} */
 	const articles = chunk(data, 3)[0];
 

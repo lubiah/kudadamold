@@ -4,13 +4,13 @@
  */
 export const trapFocus = (node) => {
 	const FOCUSABLE_ELEMENTS_LIST = [
-		'a[href]:not([disabled])',
-		'button:not([disabled])',
-		'textarea:not([disabled])',
-		'input:not([disabled])',
-		'select:not([disabled])'
+		"a[href]:not([disabled])",
+		"button:not([disabled])",
+		"textarea:not([disabled])",
+		"input:not([disabled])",
+		"select:not([disabled])"
 	];
-	const FOCUSABLE_ELEMENTS = node.querySelectorAll(FOCUSABLE_ELEMENTS_LIST.join(','));
+	const FOCUSABLE_ELEMENTS = node.querySelectorAll(FOCUSABLE_ELEMENTS_LIST.join(","));
 	const FIRST_FOCUSABLE = FOCUSABLE_ELEMENTS[0];
 	const LAST_FOCUSABLE = FOCUSABLE_ELEMENTS[FOCUSABLE_ELEMENTS.length - 1];
 
@@ -19,7 +19,7 @@ export const trapFocus = (node) => {
 	 * @param {KeyboardEvent} event
 	 */
 	const trap = (event) => {
-		let tabPressed = event.key === 'Tab';
+		let tabPressed = event.key === "Tab";
 		if (!tabPressed) return;
 
 		if (event.shiftKey) {
@@ -40,13 +40,13 @@ export const trapFocus = (node) => {
 	return {
 		/**Starts the trap */
 		start: () => {
-			node.addEventListener('keydown', trap);
+			node.addEventListener("keydown", trap);
 			// @ts-ignore
 			node?.firstElementChild?.focus();
 		},
 
 		destroy: () => {
-			node.removeEventListener('keydown', trap);
+			node.removeEventListener("keydown", trap);
 		}
 	};
 };

@@ -27,22 +27,22 @@ declare interface Project {
 	source?: string;
 }
 
-declare module '*.svg' {
+declare module "*.svg" {
 	const content: any;
 	export default content;
 }
 
-declare module '*.svg?component' {
+declare module "*.svg?component" {
 	const content: any;
 	export default content;
 }
 
-declare module '*.svg?src' {
+declare module "*.svg?src" {
 	const content: string;
 	export default content;
 }
 
-declare module '*.svg?url' {
+declare module "*.svg?url" {
 	const content: string;
 	export default content;
 }

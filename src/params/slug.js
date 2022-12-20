@@ -1,7 +1,7 @@
 /** @type {import('@sveltejs/kit').ParamMatcher} */
 export const match = (params) => {
-	const data = import.meta.glob('../routes/blog/content/**/*.md', {
-		import: 'metadata'
+	const data = import.meta.glob("../routes/blog/content/**/*.md", {
+		import: "metadata"
 	});
 	let paths = new Array();
 	for (const path in data) {

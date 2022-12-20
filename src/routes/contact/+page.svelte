@@ -1,13 +1,13 @@
 <script>
-	import { enhance } from '$app/forms';
-	import Head from '$components/Head';
+	import { enhance } from "$app/forms";
+	import Head from "$components/Head";
 
 	const SEO = {
 		title: "Contact Page of Lucretius' website • Kudadam",
 		description:
 			"This page contains various ways in which you can contact Lucretius. Send me a message and let's get in touch",
-		keywords: ['contact page lucretius', 'lucretius contact page', 'contact kudadam'],
-		canonical: 'https://kudadam.com/contact'
+		keywords: ["contact page lucretius", "lucretius contact page", "contact kudadam"],
+		canonical: "https://kudadam.com/contact"
 	};
 
 	const resetErrors = () => {
@@ -30,7 +30,7 @@
 	keywords={SEO.keywords.toString()}
 	canonical={SEO.canonical}
 	openGraph={{
-		type: 'website',
+		type: "website",
 		title: SEO.title,
 		description: SEO.description,
 		url: SEO.canonical
@@ -48,16 +48,16 @@
 	<form
 		use:enhance={({ data, cancel }) => {
 			for (const [name, value] of data.entries()) {
-				if (name !== '_gotcha' && value.toString().trim().length === 0) {
+				if (name !== "_gotcha" && value.toString().trim().length === 0) {
 					//@ts-ignore
 					errors[name] = `${name} is required`;
 				} else if (
-					name !== '_gotcha' &&
-					name === 'message' &&
-					value.toString().split(' ').length <= 5
+					name !== "_gotcha" &&
+					name === "message" &&
+					value.toString().split(" ").length <= 5
 				) {
 					//@ts-ignore;
-					errors['message'] = 'Your message is too short';
+					errors["message"] = "Your message is too short";
 				}
 			}
 			console.log(errors);

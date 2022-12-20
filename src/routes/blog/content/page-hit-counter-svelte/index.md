@@ -77,9 +77,9 @@ Now, we are going to edit our `[slug].json.js` file.
 Inside that file, paste this code, I will explain below
 
 ```javascript
-import sqlite from 'sqlite3'; //we import the sqlite module
+import sqlite from "sqlite3"; //we import the sqlite module
 
-const db = new sqlite.Database('./database.db', (err) => {}); //This command will create the database for us if it does not exist
+const db = new sqlite.Database("./database.db", (err) => {}); //This command will create the database for us if it does not exist
 
 db.serialize(() => {
 	db.run(
@@ -100,13 +100,13 @@ const getData = async (slug) => {
   */
 	return new Promise((resolve, reject) => {
 		db.serialize(() => {
-			db.get('SELECT * FROM blog WHERE slug = ?', slug, async (err, rows) => {
+			db.get("SELECT * FROM blog WHERE slug = ?", slug, async (err, rows) => {
 				if (err) {
 					reject(err);
 				} else {
 					if (rows === undefined) {
 						let insert = new Promise((resolve, reject) => {
-							db.run('INSERT INTO blog (slug) VALUES (?)', slug, (err, data) => {
+							db.run("INSERT INTO blog (slug) VALUES (?)", slug, (err, data) => {
 								if (err) reject(err);
 								else resolve({ read_times: 1, likes: 0, shares: 0 });
 							});
@@ -120,7 +120,7 @@ const getData = async (slug) => {
 					} else {
 						let times_read = rows.read_times;
 						db.run(
-							'UPDATE blog SET read_times = ? WHERE slug = ?',
+							"UPDATE blog SET read_times = ? WHERE slug = ?",
 							times_read + 1,
 							slug,
 							(err, data) => {}
@@ -138,10 +138,10 @@ export const GET = async ({ params, query }) => {
 		let results = new Object();
 		let { slug } = params;
 		let data = await getData(slug);
-		results['data'] = data;
+		results["data"] = data;
 		return {
 			headers: {
-				'Cache-Control': 'no-cache'
+				"Cache-Control": "no-cache"
 			},
 			body: JSON.stringify(results)
 		};

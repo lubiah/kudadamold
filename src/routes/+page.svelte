@@ -1,17 +1,17 @@
 <script>
-	import Head from '$components/Head';
-	import BlogCard from '$components/BlogCard';
-	import ProjectCard from '$components/ProjectCard';
+	import Head from "$components/Head";
+	import BlogCard from "$components/BlogCard";
+	import ProjectCard from "$components/ProjectCard";
 
 	/**@type {import("./$types").PageServerData}*/
 	export let data;
 
 	const SEO = {
-		title: 'Lucretius Biah — A teen software and web developer • Kudadam',
+		title: "Lucretius Biah — A teen software and web developer • Kudadam",
 		description:
 			"This is Lucretius' personal website, where he shares his projects and writes articles about technology and other topics",
-		keywords: ['Lucretius Biah', 'Lucretius', 'Lucretius website', 'kudadam', 'kudadam biah'],
-		canonical: 'https://kudadam.com'
+		keywords: ["Lucretius Biah", "Lucretius", "Lucretius website", "kudadam", "kudadam biah"],
+		canonical: "https://kudadam.com"
 	};
 </script>
 
@@ -21,7 +21,7 @@
 	keywords={SEO.keywords.toString()}
 	canonical={SEO.canonical}
 	openGraph={{
-		type: 'website',
+		type: "website",
 		title: SEO.title,
 		description: SEO.description,
 		url: SEO.canonical
@@ -93,7 +93,9 @@
 				order, but rather at random. You can <a href="/projects">view all the projects here</a>.
 			</p>
 		</div>
-		<div class="flex flex-wrap md:justify-center gap-10 mt-10 [&_>*]:flex-grow-[1] md:[&_>*]:flex-grow-0">
+		<div
+			class="flex flex-wrap md:justify-center gap-10 mt-10 [&_>*]:flex-grow-[1] md:[&_>*]:flex-grow-0"
+		>
 			{#each data.projects as project}
 				<ProjectCard
 					name={project.name}
@@ -113,7 +115,9 @@
 				popular writing may be seen below.
 			</p>
 		</div>
-		<div class="flex flex-wrap md:justify-center gap-10 mt-10 [&_>*]:flex-grow-[1] md:[&_>*]:flex-grow-0">
+		<div
+			class="flex flex-wrap md:justify-center gap-10 mt-10 [&_>*]:flex-grow-[1] md:[&_>*]:flex-grow-0"
+		>
 			{#each data.articles as article}
 				<BlogCard
 					title={article.title}

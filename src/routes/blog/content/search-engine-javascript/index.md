@@ -50,7 +50,7 @@ So we need to write down our HTML to make our page look nice, right? Yeah.
 				margin: 30px auto;
 			}
 
-			input[type='search'] {
+			input[type="search"] {
 				margin: auto;
 				width: 80%;
 				display: block;
@@ -97,7 +97,7 @@ So we need to write down our HTML to make our page look nice, right? Yeah.
 			}
 
 			@media (max-width: 600px) {
-				input[type='search'] {
+				input[type="search"] {
 					width: 100%;
 				}
 
@@ -134,22 +134,22 @@ Below the body tag, create a script tag and insert the following code inside
 ></script>
 <script>
 	const get_data = async () => {
-		let data = await fetch('https://dev.to/api/articles?per_page=900');
+		let data = await fetch("https://dev.to/api/articles?per_page=900");
 		let json = await data.json();
 		return json;
 	};
 
-	window.addEventListener('load', () => {
+	window.addEventListener("load", () => {
 		const articles = get_data().then(async (data) => {
-			const search = new JsSearch.Search('id');
-			search.addIndex('title');
+			const search = new JsSearch.Search("id");
+			search.addIndex("title");
 			search.addDocuments(data);
 
-			document.querySelector("input[type='search']").addEventListener('input', (event) => {
+			document.querySelector("input[type='search']").addEventListener("input", (event) => {
 				let value = event.target.value;
 				let results = search.search(value);
 
-				let html = '';
+				let html = "";
 				results.forEach((res) => {
 					let div = `
           <div class='post'>
@@ -159,7 +159,7 @@ Below the body tag, create a script tag and insert the following code inside
           `;
 					html += div;
 				});
-				document.querySelector('#results').innerHTML = html;
+				document.querySelector("#results").innerHTML = html;
 			});
 		});
 	});

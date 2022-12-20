@@ -1,4 +1,4 @@
-import { noCase } from '$utils';
+import { noCase } from "$utils";
 
 /** The max number of articles per page */
 export const PER_PAGE = 10;
@@ -8,8 +8,8 @@ export const PER_PAGE = 10;
  * @returns {Promise<BlogPost[]>} - An array of files metadata
  */
 export const getFiles = async () => {
-	let data = import.meta.glob('./content/**/*.md', {
-		import: 'metadata'
+	let data = import.meta.glob("./content/**/*.md", {
+		import: "metadata"
 	});
 
 	let files = [];
@@ -17,7 +17,7 @@ export const getFiles = async () => {
 	for (const path in data) {
 		/**@type {any} */
 		let current = await data[path]();
-		const slug = path.split('/')[2];
+		const slug = path.split("/")[2];
 		/** @type {BlogPost} */
 		const metadata = { ...current, slug };
 		files.push(metadata);

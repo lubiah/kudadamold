@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript: How To Find The Number Of Times An Item Appears In An Array'
+title: "JavaScript: How To Find The Number Of Times An Item Appears In An Array"
 description: Learn how to find the number of times an item appears in an array in JavaScript
 category: programming
 excerpt: Python has a count method for finding the number of times an item appears in an array, learn how to do that in JavaScript since it does not have that method
@@ -45,8 +45,8 @@ Simple.
 To utilise the code, simply construct an array and call the count method as shown below.
 
 ```javascript
-let names = ['David', 'Walsh', 'David', 'Tania', 'Lucretius'];
-names.count('David'); //=> 2
+let names = ["David", "Walsh", "David", "Tania", "Lucretius"];
+names.count("David"); //=> 2
 ```
 
 Fellas, happy coding! :smile:

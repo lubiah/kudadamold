@@ -75,7 +75,7 @@ export const GET = async () => {
 </rss>`;
 	return new Response(rss, {
 		headers: {
-			'Content-Type': 'application/xml'
+			"Content-Type": "application/xml"
 		}
 	});
 };

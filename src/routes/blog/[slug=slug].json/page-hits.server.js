@@ -6,15 +6,14 @@ import crypto from "crypto";
  */
 const init = (db) => {
 	return new Promise((resolve, reject) => {
-		const result = db
-			.execute(
-				`CREATE TABLE IF NOT EXISTS blog_hits (
+		db.execute(
+			`CREATE TABLE IF NOT EXISTS blog_hits (
             id INT PRIMARY KEY AUTO_INCREMENT,
             ip_hash VARCHAR(100) NOT NULL,
             slug VARCHAR(150) NOT NULL,
             date DATETIME NOT NULL
         );`
-			)
+		)
 			.then((data) => {
 				resolve(data);
 			})

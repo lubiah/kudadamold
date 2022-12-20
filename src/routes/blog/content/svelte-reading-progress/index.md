@@ -25,8 +25,8 @@ So then, I decided to re-create the component in the way I wanted it to be. Besi
 
   ```svelte
   <script>
-  	import PageScroll from 'svelte-page-progress';
-  	import { browser } from '$app/env';
+  	import PageScroll from "svelte-page-progress";
+  	import { browser } from "$app/env";
   </script>
 
   {#if browser}
@@ -38,7 +38,7 @@ So then, I decided to re-create the component in the way I wanted it to be. Besi
 
   ```svelte
   <script>
-  	import ScrollProgress from 'svelte-scrollprogress';
+  	import ScrollProgress from "svelte-scrollprogress";
   </script>
 
   <ScrollProgress />

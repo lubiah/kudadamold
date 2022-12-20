@@ -26,7 +26,7 @@ Let's call our function's name `"ide`". Yeah, just three letters, we don't want 
 `"The language, whether to show line numbers, theme, whether the editor should be read only."` Open your text editor and type the following inside
 
 ```javascript
-function ide(language, lineNumbers = true, readOnly = false, theme = 'default') {
+function ide(language, lineNumbers = true, readOnly = false, theme = "default") {
 	//Our JavaScript function to simplify CodeMirror
 	var textareas = document.getElementsByClassName(language); //Get all elements having a class name of the language.
 	for (let i = 0; i < textareas.length; i++) {
@@ -72,7 +72,7 @@ def function():
         </textarea
 		>
 		<script>
-			ide('python'); //Call our function to initialize CodeMirror on the textarea with class "python"
+			ide("python"); //Call our function to initialize CodeMirror on the textarea with class "python"
 		</script>
 	</body>
 </html>

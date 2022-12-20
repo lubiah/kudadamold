@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        command: ['Formatting and Linting', 'Svelte check', 'Vitest', 'Playwright']
+        command: ["Formatting and Linting", "Svelte check", "Vitest", "Playwright"]
 
     steps:
       - uses: actions/checkout@v3
@@ -25,27 +25,27 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
 
       - if: matrix.command == 'Formatting and Linting'
-        name: 'Formatting and Linting Code'
+        name: "Formatting and Linting Code"
         run: |
           pnpm format
           pnpm lint
 
       - if: matrix.command == 'Svelte Check'
-        name: 'Running Svelte Check'
+        name: "Running Svelte Check"
         run: pnpm check
 
       - if: matrix.command == 'Vitest'
-        name: 'Running Vitest tests'
+        name: "Running Vitest tests"
         run: pnpm test:unit
 
       - if: matrix.command == 'Playwright'
-        name: 'Installing Playwright dependencies && Running Tests'
+        name: "Installing Playwright dependencies && Running Tests"
         run: |
           pnpx playwright install
           pnpm test

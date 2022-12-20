@@ -1,4 +1,4 @@
-import { trapFocus } from './trap-focus';
+import { trapFocus } from "./trap-focus";
 
 export { trapFocus };
 
@@ -18,7 +18,7 @@ export const validateDate = (date) => {
  */
 export const encodeHtml = (string) => {
 	return string.replace(/[\u00A0-\u9999<>&]/g, function (i) {
-		return '&#' + i.charCodeAt(0) + ';';
+		return "&#" + i.charCodeAt(0) + ";";
 	});
 };
 
@@ -33,7 +33,7 @@ export const snakeCase = (str) => {
 		str
 			.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
 			?.map((x) => x.toLowerCase())
-			.join('_');
+			.join("_");
 	return snakecase || str;
 };
 
@@ -45,7 +45,7 @@ export const snakeCase = (str) => {
 export const kebabCase = (str) => {
 	const KEBAB_REGEX = /[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g;
 	return str.replace(KEBAB_REGEX, function (match) {
-		return '-' + match.toLowerCase();
+		return "-" + match.toLowerCase();
 	});
 };
 
@@ -81,7 +81,7 @@ export const noCase = (string) => {
 	 */
 	const uncamelize = (string) => {
 		return string.replace(camelSplitter, function (_m, previous, uppers) {
-			return previous + ' ' + uppers.toLowerCase().split('').join(' ');
+			return previous + " " + uppers.toLowerCase().split("").join(" ");
 		});
 	};
 
@@ -91,7 +91,7 @@ export const noCase = (string) => {
 	 */
 	const unseparate = (string) => {
 		return string.replace(separatorSplitter, function (_m, next) {
-			return next ? ' ' + next : '';
+			return next ? " " + next : "";
 		});
 	};
 

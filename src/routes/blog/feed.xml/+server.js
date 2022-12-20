@@ -1,6 +1,6 @@
-import Path from 'path';
-import { encodeHtml } from '$utils';
-import { dev } from '$app/environment';
+import Path from "path";
+import { encodeHtml } from "$utils";
+import { dev } from "$app/environment";
 
 /**
  *
@@ -26,7 +26,7 @@ const sort_items = async (files) => {
 
 const getFilesHtml = async () => {
 	let array = new Array();
-	let data = import.meta.glob('../content/**/*.md');
+	let data = import.meta.glob("../content/**/*.md");
 	for (const datum in data) array.push([Path.win32.basename(Path.dirname(datum)), data[datum]()]);
 	let id = 1;
 	let files = Promise.all(
@@ -69,7 +69,7 @@ export const GET = async () => {
 </rss>`;
 	return new Response(rss, {
 		headers: {
-			'Content-Type': 'application/xml'
+			"Content-Type": "application/xml"
 		}
 	});
 };

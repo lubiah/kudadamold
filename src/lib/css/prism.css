@@ -7,9 +7,9 @@
  * This work is licensed under the Creative Commons CC0 1.0 Universal License
  */
 
-code[class*='language-'],
-pre[class*='language-'] {
-	font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', 'Courier New', Courier, monospace;
+code[class*="language-"],
+pre[class*="language-"] {
+	font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New", Courier, monospace;
 	font-size: 16px;
 	line-height: 1.375;
 	direction: ltr;
@@ -31,19 +31,19 @@ pre[class*='language-'] {
 	color: #b9b5b8;
 }
 
-pre > code[class*='language-'] {
+pre > code[class*="language-"] {
 	font-size: 1em;
 }
 
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*="language-"] {
 	padding: 1em;
 	margin: 0.5em 0;
 	overflow: auto;
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
 	padding: 0.1em;
 	border-radius: 0.3em;
 }

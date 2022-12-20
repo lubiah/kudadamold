@@ -1,9 +1,9 @@
 <script>
-	import Envelope from '$lib/icons/envelope.svg?component';
-	import Telegram from '$lib/icons/logo-telegram.svg?component';
-	import Twitter from '$lib/icons/logo-twitter.svg?component';
-	import Github from '$lib/icons/logo-github.svg?component';
-	import RSS from '$lib/icons/square-rss.svg?component';
+	import Envelope from "$lib/icons/envelope.svg?component";
+	import Telegram from "$lib/icons/logo-telegram.svg?component";
+	import Twitter from "$lib/icons/logo-twitter.svg?component";
+	import Github from "$lib/icons/logo-github.svg?component";
+	import RSS from "$lib/icons/square-rss.svg?component";
 </script>
 
 <footer class="text-base bg-gray-200 text-gray-600 pt-4 mt-[50px]">
@@ -29,9 +29,7 @@
 			</ul>
 		</div>
 	</div>
-	<p class="text-center px-3 !py-1 !pt-3 !mx-auto">
-		&copy; Copyright 2020 - Now, Lucretius Biah
-	</p>
+	<p class="text-center px-3 !py-1 !pt-3 !mx-auto">&copy; Copyright 2020 - Now, Lucretius Biah</p>
 </footer>
 
 <style lang="postcss">

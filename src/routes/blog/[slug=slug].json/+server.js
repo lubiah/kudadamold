@@ -1,4 +1,4 @@
-import { json, error } from "@sveltejs/kit";
+import { json } from "@sveltejs/kit";
 
 /**@type {import("./$types").RequestHandler} */
 export const GET = async ({ getClientAddress, params }) => {
