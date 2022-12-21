@@ -8,8 +8,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    outputs:
-      test_status: '${{ job.status }}'
 
     strategy:
       matrix:
