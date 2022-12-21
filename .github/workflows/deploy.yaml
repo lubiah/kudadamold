@@ -1,10 +1,16 @@
 name: Deploying website
 on:
-  [push]
+  push:
+    branches:
+      - master
 jobs:
+  test:
+    uses: ./.github/workflows/deploy.yml
+    
+    
   build:
+    needs: [test]
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.event.head_commit.status == 'success' && steps.tests.outputs.test_result == 'success'
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
