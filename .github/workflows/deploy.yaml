@@ -1,16 +1,10 @@
 name: Deploying website
 on:
-  workflow_run:
-    workflows: [Running Tests]
-    types:
-      - completed
-    branches:
-      - master
+  [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: steps.test.outputs.test_status == 'success'
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
