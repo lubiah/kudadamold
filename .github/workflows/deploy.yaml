@@ -63,4 +63,4 @@ jobs:
             pnpm install --prod
             touch tmp/restart.txt
             cd ~
-            rm -rf .local .npm
+            rm -rf .local .npm .cache
