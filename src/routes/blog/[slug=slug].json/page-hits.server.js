@@ -40,7 +40,7 @@ const hashIP = (ip) => {
  * @param {string} slug
  */
 const hits = async (ip_address, slug) => {
-	const DB = await (await import("$lib/server/initDB")).initDB();
+	const DB = await (await import("$lib/server/database")).initDB();
 	const ip_hash = hashIP(ip_address);
 
 	await init(DB);
