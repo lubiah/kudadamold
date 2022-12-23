@@ -10,7 +10,7 @@ keywords:
   - sveltekit ip
   - svelte ip address
 modified: 2022-10-22
-expiry: 2022-05-31
+expiry: 2023-05-31
 tags:
   - sveltekit
   - svelte
