@@ -7,8 +7,8 @@
 		"build": "vite build",
 		"build:sitemap": "node scripts/generateSitemap.js",
 		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --use-new-transformation true --fail-on-warnings --fail-on-hints",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch --use-new-transformation true --fail-on-warnings --fail-on-hints",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json  --fail-on-warnings --fail-on-hints",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch --fail-on-warnings --fail-on-hints",
 		"test": "node tests/generateUrls.js && playwright test",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
@@ -16,7 +16,7 @@
 		"coverage": "vitest run --coverage"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.29.0",
+		"@playwright/test": "^1.29.1",
 		"@poppanator/sveltekit-svg": "^2.0.0",
 		"@sveltejs/adapter-node": "1.0.0",
 		"@sveltejs/kit": "1.0.1",
@@ -27,6 +27,7 @@
 		"eslint": "^8.30.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"html-minifier": "^4.0.0",
 		"husky": "^8.0.2",
 		"lint-staged": "^13.1.0",
 		"mdsvex": "^0.10.6",
@@ -44,13 +45,13 @@
 		"remark-slug": "^7.0.1",
 		"simplecrawler": "^1.1.9",
 		"svelte": "^3.55.0",
-		"svelte-check": "^2.10.2",
+		"svelte-check": "^3.0.1",
 		"svelte-paginate": "^0.1.0",
 		"svelte-scrollprogress": "^1.0.4",
 		"tailwindcss": "^3.2.4",
 		"typescript": "^4.9.4",
-		"vite": "^4.0.2",
-		"vitest": "^0.26.1"
+		"vite": "^4.0.3",
+		"vitest": "^0.26.2"
 	},
 	"type": "module",
 	"lint-staged": {
@@ -58,7 +59,7 @@
 		"*.{js,css,md}": "prettier --write"
 	},
 	"dependencies": {
-		"html-minifier": "^4.0.0",
-		"mysql2": "^2.3.3"
+		"sqlite": "^4.1.2",
+		"sqlite3": "^5.1.4"
 	}
 }

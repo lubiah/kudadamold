@@ -1,13 +1,13 @@
-import mysql from "mysql2/promise";
-import { MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DATABASE } from "$env/static/private";
-
+/**
+ * Initializes the sqlite database
+ * @returns {Promise<import("sqlite").Database>}}
+ */
 export const initDB = async () => {
-	const DB = mysql.createPool({
-		host: "localhost",
-		user: MYSQL_USERNAME,
-		password: MYSQL_PASSWORD,
-		database: MYSQL_DATABASE
+	const driver = (await import("sqlite3")).cached.Database;
+	const open = (await import("sqlite")).open;
+	const database = open({
+		filename: "database.db",
+		driver
 	});
-	await DB.getConnection();
-	return DB;
+	return database;
 };

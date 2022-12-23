@@ -2,25 +2,15 @@ import crypto from "crypto";
 
 /**
  * Initalizes the database and creates the necessary tables
- * @param {import("mysql2/promise").Pool} db
+ * @param {import("sqlite").Database} db
  */
-const init = (db) => {
-	return new Promise((resolve, reject) => {
-		db.execute(
-			`CREATE TABLE IF NOT EXISTS blog_hits (
-            id INT PRIMARY KEY AUTO_INCREMENT,
+const init = async (db) => {
+	await db.exec(
+		`CREATE TABLE IF NOT EXISTS blog_hits (
             ip_hash VARCHAR(100) NOT NULL,
             slug VARCHAR(150) NOT NULL,
-            date DATETIME NOT NULL
-        );`
-		)
-			.then((data) => {
-				resolve(data);
-			})
-			.catch((error) => {
-				reject(error);
-			});
-	});
+            date DATETIME NOT NULL)`
+	);
 };
 
 /**
@@ -44,23 +34,19 @@ const hits = async (ip_address, slug) => {
 	const ip_hash = hashIP(ip_address);
 
 	await init(DB);
-	const [results] = await DB.query("SELECT * FROM blog_hits WHERE slug = ? AND ip_hash = ?", [
+	const current_hits = await DB.get("SELECT * FROM blog_hits WHERE slug = (?) AND ip_hash = (?)", [
 		slug,
 		ip_hash
 	]);
-	const results_length = Object.keys(results).length;
+	if (!current_hits)
+		await DB.run("INSERT INTO blog_hits (ip_hash,slug,date) VALUES(?,?,DATE('now'))", [
+			ip_hash,
+			slug
+		]);
 
-	if (results_length === 0) {
-		DB.execute("INSERT INTO blog_hits (ip_hash,slug,date) VALUES(?,?,NOW())", [ip_hash, slug]);
-	}
-
-	const [rows] = await DB.query("SELECT COUNT(*) AS hits FROM blog_hits WHERE slug = ?", [slug]);
-	// @ts-ignore
-	const { hits } = rows[0];
-	const connection = await DB.getConnection();
-	connection.release();
+	const hits = await DB.get("SELECT COUNT(*) AS hits FROM blog_hits WHERE slug = ?", [slug]);
 	return {
-		hits
+		...hits
 	};
 };
 
