@@ -122,7 +122,7 @@
 						data-reset-styles
 						href={encodeURI(
 							`https://twitter.com/intent/tweet?text=${data.metadata.title}&url=${SEO.canonical}&hashtags=${data.metadata.tags}&via=kudadam_`
-						)}><Twitter aria-hidden={true} class="icon" fill="#1DA1F2" /></a
+						)}><Twitter aria-hidden={true} class="icon hover:fill-[#1DA1F2] fill-gray-700" /></a
 					>
 					<a
 						target="_blank"
@@ -130,7 +130,7 @@
 						aria-label="Share this article on Reddit"
 						data-reset-styles
 						href="{encodeURI(`http://www.reddit.com/submit?url=${SEO.canonical}`)}&title={data
-							.metadata.title}"><Reddit aria-hidden={true} class="icon" fill="#FF5700" /></a
+							.metadata.title}"><Reddit aria-hidden={true} class="icon hover:fill-[#FF5700] fill-gray-700" /></a
 					>
 					<a
 						target="_blank"
@@ -138,7 +138,7 @@
 						aria-label="Share this article on facebook"
 						data-reset-styles
 						href={encodeURI(`http://www.facebook.com/share.php?u=${SEO.canonical}`)}
-						><Facebook aria-hidden={true} class="icon" fill="#4267B2" /></a
+						><Facebook aria-hidden={true} class="icon hover:fill-[#4267B2] fill-gray-700" /></a
 					>
 					<a
 						target="_blank"
@@ -146,7 +146,7 @@
 						aria-label="Share this article on Hacker News"
 						data-reset-styles
 						href="{encodeURI(`https://news.ycombinator.com/submitlink?u=${SEO.canonical}`)}&t={data
-							.metadata.title}"><HackerNews aria-hidden={true} class="icon" fill="#ff6600" /></a
+							.metadata.title}"><HackerNews aria-hidden={true} class="icon hover:fill-[#ff6600] fill-gray-700" /></a
 					>
 					<a
 						target="_blank"
@@ -154,7 +154,7 @@
 						aria-label="Share this article on linkedin"
 						data-reset-styles
 						href={encodeURI(`https://www.linkedin.com/sharing/share-offsite/?url=${SEO.canonical}`)}
-						><Linkedin class="icon" aria-hidden={true} fill="#0A66C2" /></a
+						><Linkedin class="icon hover:fill-[#0A66C2] fill-gray-700" aria-hidden={true}/></a
 					>
 					<button
 						class="p-0 m-0 border-none"
@@ -185,7 +185,7 @@
 
 <style lang="postcss">
 	#share_component :global(.icon) {
-		@apply hover:-translate-y-1 transition-transform duration-75 h-[35px];
+		@apply hover:-translate-y-0.5 transition-all duration-75 h-[35px];
 	}
 
 	article :global(pre) {
