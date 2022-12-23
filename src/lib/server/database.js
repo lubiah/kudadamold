@@ -1,12 +1,12 @@
 import { open } from "sqlite";
-import { cached } from "sqlite3";
+import sqlite from "sqlite3";
 
 /**
  * Initializes the sqlite database
  * @returns {Promise<import("sqlite").Database>}}
  */
 export const initDB = async () => {
-	const driver = cached.Database;
+	const driver = sqlite.cached.Database;
 	const database = open({
 		filename: "database.db",
 		driver
