@@ -11,7 +11,7 @@ test.describe("Testing basic seo", () => {
 			await expect(page, "Title must contain the domain name Kudadam").toHaveTitle(/kudadam/i);
 			expect(await page.locator("meta[name='description']").getAttribute("content")).toBeDefined();
 			expect(await page.locator("link[rel='canonical']").getAttribute("href")).toBe(
-				new URL(path, "https://kudadam.com").href.replace(/\/+$/, "")
+				new URL(path, "https://www.kudadam.com").href.replace(/\/+$/, "")
 			);
 			expect(await page.locator("h1").count(), "Only one h1 tag must exist").toBe(1);
 		});

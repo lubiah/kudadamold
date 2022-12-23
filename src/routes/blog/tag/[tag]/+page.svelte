@@ -8,7 +8,7 @@
 	const SEO = {
 		title: `Articles with the tag ${data.tag} • Kudadam`,
 		description: `This page contains a list of articles which are written around the ${data.tag} tag`,
-		canonical: `https://kudadam.com/blog/tag/${data.tag}`
+		canonical: `https://www.kudadam.com/blog/tag/${data.tag}`
 	};
 </script>
 

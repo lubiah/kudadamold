@@ -8,7 +8,7 @@
 	const SEO = {
 		title: "The Projects Page • Kudadam",
 		description: "This page contains a list of projects which are created by Lucretius Biah",
-		canonical: "https://kudadam.com/projects"
+		canonical: "https://www.kudadam.com/projects"
 	};
 </script>
 

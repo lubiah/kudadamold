@@ -19,7 +19,7 @@
 		title: `${data.metadata.title} • Kudadam`,
 		description: data.metadata.description,
 		keywords: data.metadata.keywords,
-		canonical: `https://kudadam.com/blog/${data.metadata.slug}`,
+		canonical: `https://www.kudadam.com/blog/${data.metadata.slug}`,
 		date: data.metadata.date,
 		modified: data.metadata.modified ?? new Date(data.metadata.modified) ?? undefined,
 		expiry: data.metadata.expiry,
@@ -66,7 +66,7 @@
 				SEO.modified ?? new Date(data.metadata.modified).toISOString() ?? undefined
 			}`,
 			expiration_time: `${new Date(SEO.expiry).toISOString()}`,
-			author: ["https://kudadam.com/about"],
+			author: ["https://www.kudadam.com/about"],
 			tag: SEO.tags
 		}
 	}}

@@ -9,7 +9,7 @@
 	const SEO = {
 		title: `Article on ${noCase(data.category)} • Kudadam`,
 		description: `This page contains a list of articles in the ${noCase(data.category)} category`,
-		canonical: `https://kudadam.com/blog/category/${data.category}`
+		canonical: `https://wwww.kudadam.com/blog/category/${data.category}`
 	};
 </script>
 

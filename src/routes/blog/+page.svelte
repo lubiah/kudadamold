@@ -18,7 +18,7 @@
 			"lucretius biah blog",
 			"kudadam web log"
 		],
-		canonical: "https://kudadam.com/blog"
+		canonical: "https://www.kudadam.com/blog"
 	};
 </script>
 

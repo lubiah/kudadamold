@@ -10,7 +10,7 @@
 		"name": "Kudadam.com",
 		"description": "My personal website which was made using SvelteKit and TailwindCSS",
 		"image": "https://ik.imagekit.io/kudadam/projects/kudadam_com/preview.png?tr=h-180,w-320",
-		"demo": "https://kudadam.com",
+		"demo": "https://www.kudadam.com",
 		"source": "https://github.com/kudadam/kudadam.com"
 	}
 ]

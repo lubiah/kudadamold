@@ -13,10 +13,10 @@ const sort_items = async (files) => {
 		rss += `
 <item>
 	<title>${post.title}</title>
-	<link>https://kudadam.com/blog/${post.slug}</link>
+	<link>https://www.kudadam.com/blog/${post.slug}</link>
 	<description>${encodeHtml(post.html)}</description>
 	<category>${post.category}</category>
-	<guid>https://kudadam.com/blog/${post.slug}</guid>
+	<guid>https://www.kudadam.com/blog/${post.slug}</guid>
 	<pubDate>${new Date(post.date)}</pubDate>
 </item>`;
 	});
@@ -54,14 +54,14 @@ export const GET = async () => {
 <rss version="2.0">
 	<channel>
 		<title>Kudadam Blog</title>
-		<link>https://kudadam.com/blog</link>
+		<link>https://wwww.kudadam.com/blog</link>
 		<language>en-us</language>
 		<description>Lucretius' personal blog on tech, programming and stuff</description>
 		<category>Technology</category>
 		<image>
 			<url>https://ik.imagekit.io/kudadam/assets/logo.png</url>
 			<title>Kudadam Blog</title>
-			<link>https://kudadam.com/blog</link>
+			<link>https://www.kudadam.com/blog</link>
 		</image>
 		${await sorted}
 		<copyright>2021 - Now, Lucretius Biah.</copyright>

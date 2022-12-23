@@ -7,7 +7,7 @@
 		description:
 			"This page contains various ways in which you can contact Lucretius. Send me a message and let's get in touch",
 		keywords: ["contact page lucretius", "lucretius contact page", "contact kudadam"],
-		canonical: "https://kudadam.com/contact"
+		canonical: "https://www.kudadam.com/contact"
 	};
 
 	const resetErrors = () => {

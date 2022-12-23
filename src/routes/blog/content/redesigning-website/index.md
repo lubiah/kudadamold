@@ -68,7 +68,7 @@ All of the blog pages had to be moved to a MySQL database. I did not do it by my
 
 Since all the files were stored in a database, it meant that those files didn't exists physically on the server so a URL to a blog's file name will generate a 404 error. You wanna know the solution? I use [URL re-writing](https://www.smashingmagazine.com/2011/11/introduction-to-url-rewriting/).
 
-Well, it's simple, let's say a person visits this blog post through this URL https://kudadam.com/blog/redesigning-my-website. Under normal circumstance, it's going to generate a 404 error because there's no folder called "redesigning-my-website" in my blog folder. With URL re-writing, we will create an .htaccess file in our server root (works only if you are using Apache). Then we will write something like this
+Well, it's simple, let's say a person visits this blog post through this URL https://www.kudadam.com/blog/redesigning-my-website. Under normal circumstance, it's going to generate a 404 error because there's no folder called "redesigning-my-website" in my blog folder. With URL re-writing, we will create an .htaccess file in our server root (works only if you are using Apache). Then we will write something like this
 
 ```plaintext
 RewriteEngine On

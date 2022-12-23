@@ -9,7 +9,7 @@
 	const SEO = {
 		title: `The Blog - Page ${data.page} • Kudadam`,
 		description: `Page ${data.page} of blog posts`,
-		canonical: `https://kudadam.com/blog/page/${data.page}`
+		canonical: `https://www.kudadam.com/blog/page/${data.page}`
 	};
 </script>
 

@@ -25,7 +25,7 @@ import { writeFileSync } from "fs";
 		filtered.map((location) => {
 			xml += `
 <url>
-    <loc>${new URL(location, "https://kudadam.com").href.replace(/\/+$/, "")}</loc>
+    <loc>${new URL(location, "https://www.kudadam.com").href.replace(/\/+$/, "")}</loc>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
 </url>\n`;

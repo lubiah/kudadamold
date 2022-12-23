@@ -42,7 +42,7 @@ Also, they have a migration guide which helps you migrate from Sapper to SvelteK
 ## How blog contents are rendered
 
 In the previous version of my website, the blog posts were stored in a database. They are initially written in markdown, then compiled to HTML, minified, and then stored in a database. However, with Sapper, I decided to change the method. With this site, the contents are read directly from the markdown files and then converted on each request. Meaning, I do not need to compile a blog post to HTML after writing it; I just need to store it in my blog folder and, upon a request to the page, the contents will be converted to HTML before rendering it to the user. You're probably thinking that this slows down the page.In fact, it does not. It happens in the twinkle of an eye.
-Upon a request to a page with a URL like [/blog/getting-a-diary](/blog/getting-a-diary), the slug is extracted from the URL (everything after https://kudadam.com/blog/**) is considered a slug. Then, all the files in the blog directory are crawled with their extensions removed, and a filter function finds the right file. Snippet bellow
+Upon a request to a page with a URL like [/blog/getting-a-diary](/blog/getting-a-diary), the slug is extracted from the URL (everything after https://www.kudadam.com/blog/**) is considered a slug. Then, all the files in the blog directory are crawled with their extensions removed, and a filter function finds the right file. Snippet bellow
 
 ```js
 const crawler = new fdir().glob("*.md");

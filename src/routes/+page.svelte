@@ -11,7 +11,7 @@
 		description:
 			"This is Lucretius' personal website, where he shares his projects and writes articles about technology and other topics",
 		keywords: ["Lucretius Biah", "Lucretius", "Lucretius website", "kudadam", "kudadam biah"],
-		canonical: "https://kudadam.com"
+		canonical: "https://www.kudadam.com"
 	};
 </script>
 

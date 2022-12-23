@@ -5,7 +5,7 @@
 		title: "About Lucretius Biah - A software developer located in Wakanda • Kudadam",
 		description:
 			"This page contains all the necessary information about Lucretius Biah, the software developer",
-		canonical: "https://kudadam.com/about"
+		canonical: "https://www.kudadam.com/about"
 	};
 </script>
 

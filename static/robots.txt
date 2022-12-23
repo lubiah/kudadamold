@@ -4,4 +4,4 @@ Disallow: /blog/tag
 Disallow: /blog/category
 
 
-Sitemap: https://kudadam.com/sitemap.xml
+Sitemap: https://www.kudadam.com/sitemap.xml
