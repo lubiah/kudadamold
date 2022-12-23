@@ -22,14 +22,6 @@ jobs:
           cache: pnpm
       - name: Installing packages
         run: pnpm install --frozen-lockfile
-        
-      - name: Creating env file
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          file_name: .env
-          envkey_MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
-          envkey_MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
-          envkey_MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
 
       - name: Generating sitemap
         run: pnpm build:sitemap
