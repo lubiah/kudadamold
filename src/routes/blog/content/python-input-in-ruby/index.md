@@ -11,7 +11,7 @@ keywords:
   - ruby input
   - python and ruby input
   - input function
-expiry: 2022-12-24
+expiry: 2023-04-04
 date: 2021-04-05
 ---
 
