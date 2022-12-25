@@ -1,7 +1,7 @@
 import { noCase } from "$utils";
 
 /** The max number of articles per page */
-export const PER_PAGE = 10;
+export const PER_PAGE = 6;
 
 /**
  * This function returns the files metadata

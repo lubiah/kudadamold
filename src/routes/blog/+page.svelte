@@ -56,9 +56,9 @@
 	<section class="flex flex-wrap justify-center gap-x-2">
 		<div class="basis-[700px] flex-grow-[1]">
 			<section>
-				<h2 class="text-3xl text-neutral-600 mt-0">Latest articles</h2>
+				<p class="text-lg text-neutral-600 font-bold">Latest articles</p>
 				<div
-					class="flex flex-wrap justify-between gap-y-14 [&_>_*]:flex-grow-[1] md:[&_>*]:flex-grow-0"
+					class="flex flex-wrap justify-between gap-y-14 gap-x-10 [&_>_*]:flex-grow-[1] md:[&_>*]:flex-grow-0"
 				>
 					{#each data.articles as article}
 						<BlogCard

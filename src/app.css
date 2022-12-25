@@ -133,6 +133,12 @@
 		@apply mt-1.5 mb-0.5;
 	}
 
+	table,
+	th,
+	td {
+		@apply border border-neutral-300 p-1;
+	}
+
 	small {
 		font-size: var(--font-size-sm);
 	}
@@ -160,7 +166,7 @@
 	input[type="text"],
 	input[type="email"],
 	textarea {
-		@apply block w-full rounded-md  border border-neutral-300;
+		@apply block w-full rounded-md p-0.5  border border-neutral-300;
 	}
 }
 

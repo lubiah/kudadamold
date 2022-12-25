@@ -14,7 +14,7 @@
 	import { noCase } from "$utils";
 </script>
 
-<Card class="border-none">
+<Card class="border-none bg-gray-100 p-2">
 	<h2 class="flex-1 text-lg font-semiboldh m-0 p-0 mb-1 text-inherit hover:underline">
 		<a class="block" data-reset-styles href="/blog/{slug}">{title}</a>
 	</h2>

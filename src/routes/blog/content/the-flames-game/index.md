@@ -12,68 +12,123 @@ keywords:
   - how to use flames
   - who invented flames game
 date: 2021-10-18
-expiry: 2022-12-25
+expiry: 2025-10-18
+draft: true
 tags:
   - games
 ---
 
-The **FLAMES** game, which is commonly played by children, can detect the relationship between two people by using their names.
+<script type="text/javascript">
+  $: names = {
+    first: "tony stark",
+    second: "pepper stark"
+  }
 
-## What is FLAMES?
 
-Flames is an acronym which stands out for “Friends Lovers Admirers Marriage Enemies ‘Secret Lovers’ ”. This game can determine the relationship between two people using their names. It is usually played among teens to find out if they are compatible with their crushes😄. Well, I played some before, and it was fun. Even though some websites use different meanings for the FLAMES acronym, it is good to stick to one definition. I suggest you stick to the definition above because it’s the perfect fit and the meaning I’ve known since childhood.
+  $: showTutorial = names.first.trim().length !== 0 && names.second.trim().length !== 0;
 
-## Who Invented The FLAMES Game?
 
-Despite the fact that the game's creator is unknown, research I conducted indicates that it was likely produced in the 1990s, which is a very long time ago. Additionally, children and teenagers played it.
+  import { cancelLetters } from "./utils";
+</script>
 
-## Is the FLAMES Game Real?
+Some call it **"FLAMES"**, others call it **"FLAME"**, but whatever way you choose to call this game, it is the best game a teen can play. It is one of those games that has been around for a long time but is still popular today. Whether you are an adult or a teen, playing this game gives you happiness, especially when it reveals good results about your crush.
 
-The short answer is no. Another possibility is that it depends. The outcome of the game you play may or may not be favourable to you. Though it is based on a simple algorithm, it can be trusted if the results are accurate for you.
+Guys (including myself) used to play this game anytime there was a new girl in school, most likely to test our luck before "befriending" the girl. Sometimes, it gives us results we weren’t expecting; you might find out that the FLAMES between you and your crush is "Enemy", and you would keep trying to re-work the game to see if you made a mistake anyway. Also, we wasted a lot of paper playing the game😂.
 
-Technically, the outcomes produced are not real; they are the output of a mathematical procedure.
+No one knows for sure how old the game is, but one thing we know for sure is that it has existed for a very long time. Some even claim it is over a century old, which is quite a long period for a game.
 
-## How To Play The Game
+## The original acronym of the game
 
-The original version of FLAMES is played on paper. So you will need a pen and paper.
+It is not known for sure the original acronym of the game. Some prefer to call it “FLAME”, and others call it “FLAMES”, but whatever you call it, it doesn’t change the game. We should stick to one interpretation because I grew up believing it was FLAMES, but if you search online, you'll find numerous variations.
 
-1. **Write your name and your partner's name on a piece of paper**
+## Representation of each letter in the acronym
 
-You must write your full name and your partner's full name on the sheet of paper. Though not required, this is the best way to test your FLAMES. Also, avoid using nicknames.
+There are many different interpretations of the significance of the individual letters that make up the acronym. Some claim it is:
+_ FLAME: Friends, Lovers, Affectionate, Marriage, Enemies
+_ FLAMES: stands for - Friends, Lover, Affection, Marriage, Enemy, Sister
+_ FLAMES: Friendship, Love, Affection, Marriage, Enemy and Siblings
+_ FLAMES: Friends, Lovers, Affection, Marriage, Enemy, 'Secret Lovers' \* and more
+As you can see, there are plenty versions out there but in order to enjoy the game, you really need to stick to the one which suits you, for me, the version I have always known is "Friends Lovers Affection Marriage Enemy 'Secret Lovers'" and it's the one I stick to.
 
-For example, "Tony Stark" and "Pepper Stark" will be used.
+## How to play the game
 
-2. **Cancel out the common letters in both names**
+Flames was first played on paper, but thanks to technology, we now have online variations of the game. Being able to test your FLAMES with someone without having to look for the paper again is amazing.
 
-You must now cancel out the common letters in both names, regardless of the case in which the letters are written. It is important to note that you must only cancel out one instance of the letter in both names, not all instances of the letter.
+Am going to make an interactive tutorial to teach you how to play the FLAMES game. You can replace your name with the ones inside the boxes to better understand it works.
 
-Then we have "Tony" ~~Stark~~ and "Pepper ~~Stark~~."
+The game first start's by writing you and your partner's name on a piece of paper, though not compulsory, it is better to use your full names. As you can see in the input boxes below, there are two names, the first is your name and the second is your partner's name.
 
-3. **Count the number of remaining letters**
-   The number of letters that were not eliminated in both names is counted.
-   So we join the unscrambled letters to get "TonyPepper." The number is then counted, and we obtain 10.
+<div class="p-2 border border-neutral-300 mb-5 rounded-md">
+  <div class="mb-5">
+    <label for="first" class="text-neutral-600 font-bold">Your name</label>
+    <input id="first" type="text" bind:value={names.first} required class="lowercase peer/first">
+    <span class="text-sm text-red-600 hidden peer-invalid/first:block py-0.5">You need to enter your name here</span>
+    
+  </div>
+  <div>
+    <label for="second" class="text-neutral-600 font-bold">Patner's name</label>
+    <input id="second" type="text" bind:value={names.second} required class="lowercase peer/second">
+    <span class="text-sm text-red-600 hidden peer-invalid/second:block py-0.5">You need to enter your partner's name here</span>
+  </div>
+</div>
 
-4. **We then compare the number to the acronym FLAMES**
+Then, we cancel out the common letters in both names; each instance of a letter in the first person's name will cancel out a letter in the second person's name.
 
-So we begin by allocating each number to each letter in the acronym, such as 1 to F, 2 to L, 3 to A, and so on, until we reach 10. When we reach the end of the acronym, we reset the counter until we reach ten. For example, 6 to S, thus 7 will begin again at F till we reach the end of the number.
+{#if showTutorial}
 
-As a result, the number 10 will finish at M. The solution is then compared to the basic table below.
+  <div class="border p-2 rounded-md border-neutral-300 my-3" id="cancel-common">
+    <div class="mb-3 flex">
+      {#each cancelLetters(names.first, names.second) as {letter, cancelled}}
+        <span class="border p-2 mx-1" data-cancelled={cancelled} class:border-black={cancelled} class:line-through={cancelled}>{letter}</span>   
+      {/each}
+    </div>
+    <div class="flex">
+      {#each cancelLetters(names.second, names.first) as {letter, cancelled}}
+        <span class="border p-2 mx-1" data-cancelled={cancelled} class:border-black={cancelled} class:line-through={cancelled}>{letter}</span>
+      {/each}
+    </div>
+  </div>
+{/if}
 
-| Letter | Meaning       |
-| ------ | ------------- |
-| F      | Friendship    |
-| L      | Lovers        |
-| A      | Admirers      |
-| M      | Marriage      |
-| E      | Enemies       |
-| S      | Secret Lovers |
+After cancelling out the common letters in both names, we now combine the letters which were not cancelled.
 
-So, the relationship between "Tony Stark" and "Pepper Stark" is marriage.
+{#if showTutorial}
+{@const letters = cancelLetters(names.first, names.second).concat(cancelLetters(names.second, names.first))}
 
-​
+  <div class="border border-neutral-300 p-2 rounded-md">
+  {#each letters as { letter, cancelled}}
+    {#if !cancelled}
+      <span class="border p-2 mx-1">{letter}</span>
+    {/if}
+  {/each}
+  </div>
+{/if}
 
-## Conclusion
+Then, we count the number of the letters which were not cancelled. Take note of the number
 
-So, fellas, that’s all about the FLAMES game. Also, I have built an online version of the flames game.
+{#if showTutorial}
+{@const length = cancelLetters(names.first, names.second).concat(cancelLetters(names.second, names.first)).filter(letter => letter.cancelled !== true).length}
 
-You can [play it here](https://flames-game.netlify.app/). Make sure to write out your thoughts in the comment section
+In our example, the number of letters which were not cancelled is <span>{length}</span>.
+
+{/if}
+
+Now, we get the modular 6 of that number. The reason is that, incase the number is greater than 6, which is the number of letters in the acronym FLAMES, it will round it back to a number which is less than 6.
+
+{#if showTutorial}
+{@const length = cancelLetters(names.first, names.second).concat(cancelLetters(names.second, names.first)).filter(letter => letter.cancelled !== true).length}
+
+The modular {length} of 6 is {length % 6}
+
+{/if}
+
+We now compare the answer which we got to this little table
+
+| Number | Letter | Relationship  |
+| ------ | ------ | ------------- |
+| 0      | F      | Friends       |
+| 1      | L      | Lovers        |
+| 2      | A      | Admirers      |
+| 3      | M      | Marriage      |
+| 4      | E      | Enemy         |
+| 5      | S      | Secret Lovers |

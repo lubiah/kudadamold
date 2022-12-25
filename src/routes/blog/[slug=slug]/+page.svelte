@@ -210,7 +210,7 @@
 		}
 
 		& :global(.toc-link.active) {
-			@apply text-red-700 bg-red-50;
+			@apply text-purple-600;
 		}
 
 		& :global(li > a) {
