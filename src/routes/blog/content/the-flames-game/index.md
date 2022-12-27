@@ -43,20 +43,21 @@ It is not known for sure the original acronym of the game. Some prefer to call i
 
 ## Representation of each letter in the acronym
 
-There are many different interpretations of the significance of the individual letters that make up the acronym. Some claim it is:
-_ FLAME: Friends, Lovers, Affectionate, Marriage, Enemies
-_ FLAMES: stands for - Friends, Lover, Affection, Marriage, Enemy, Sister
-_ FLAMES: Friendship, Love, Affection, Marriage, Enemy and Siblings
-_ FLAMES: Friends, Lovers, Affection, Marriage, Enemy, 'Secret Lovers' \* and more
-As you can see, there are plenty versions out there but in order to enjoy the game, you really need to stick to the one which suits you, for me, the version I have always known is "Friends Lovers Affection Marriage Enemy 'Secret Lovers'" and it's the one I stick to.
+There are many different interpretations of the meaning of the individual letters that make up the acronym. Some claim it is:
+
+- FLAME: Friends, Lovers, Affectionate, Marriage, Enemies
+- FLAMES: stands for - Friends, Lover, Affection, Marriage, Enemy, Sister
+- FLAMES: Friendship, Love, Affection, Marriage, Enemy and Siblings
+- FLAMES: Friends, Lovers, Affection, Marriage, Enemy, 'Secret Lovers' and more
+
+As you can see, there are plenty of versions out there but to enjoy the game, you really need to stick to the one which suits you. For me, the version I have always known is "Friends Lovers Affection Marriage Enemy 'Secret Lovers'" and it's the one I stick to.
 
 ## How to play the game
 
-Flames was first played on paper, but thanks to technology, we now have online variations of the game. Being able to test your FLAMES with someone without having to look for the paper again is amazing.
+The game of Flames was initially played on paper, but now there are online versions. Being able to test your FLAMES with someone without having to look for paper again is fantastic.
 
-Am going to make an interactive tutorial to teach you how to play the FLAMES game. You can replace your name with the ones inside the boxes to better understand it works.
-
-The game first start's by writing you and your partner's name on a piece of paper, though not compulsory, it is better to use your full names. As you can see in the input boxes below, there are two names, the first is your name and the second is your partner's name.
+Here is an interactive tutorial to teach you how to play the FLAMES game. You can replace your name with the ones inside the boxes to better understand how it works.
+Although it's not required, it's preferable to use your full name when starting the game. You start by writing your name and your partner's name on a piece of paper. You can see that there are two names in the input boxes below; the first name is yours, and the second is the name of your partner.
 
 <div class="p-2 border border-neutral-300 mb-5 rounded-md">
   <div class="mb-5">
@@ -72,39 +73,39 @@ The game first start's by writing you and your partner's name on a piece of pape
   </div>
 </div>
 
-Then, we cancel out the common letters in both names; each instance of a letter in the first person's name will cancel out a letter in the second person's name.
+Then, we cancel out the common letters in both names; each instance in the first person’s name will cancel out another in the second person’s name.
 
 {#if showTutorial}
 
   <div class="border p-2 rounded-md border-neutral-300 my-3" id="cancel-common">
-    <div class="mb-3 flex">
+    <div class="mb-3 flex flex-wrap gap-2">
       {#each cancelLetters(names.first, names.second) as {letter, cancelled}}
-        <span class="border p-2 mx-1" data-cancelled={cancelled} class:border-black={cancelled} class:line-through={cancelled}>{letter}</span>   
+        <span class="border p-2" data-cancelled={cancelled} class:border-black={cancelled} class:line-through={cancelled}>{letter}</span>   
       {/each}
     </div>
-    <div class="flex">
+    <div class="flex flex-wrap gap-2">
       {#each cancelLetters(names.second, names.first) as {letter, cancelled}}
-        <span class="border p-2 mx-1" data-cancelled={cancelled} class:border-black={cancelled} class:line-through={cancelled}>{letter}</span>
+        <span class="border p-2" data-cancelled={cancelled} class:border-black={cancelled} class:line-through={cancelled}>{letter}</span>
       {/each}
     </div>
   </div>
 {/if}
 
-After cancelling out the common letters in both names, we now combine the letters which were not cancelled.
+We combine the letters not cancelled after cancelling the common letters in both names.
 
 {#if showTutorial}
 {@const letters = cancelLetters(names.first, names.second).concat(cancelLetters(names.second, names.first))}
 
-  <div class="border border-neutral-300 p-2 rounded-md">
+  <div class="border border-neutral-300 p-2 gap-2 rounded-md flex flex-wrap">
   {#each letters as { letter, cancelled}}
     {#if !cancelled}
-      <span class="border p-2 mx-1">{letter}</span>
+      <span class="border p-2">{letter}</span>
     {/if}
   {/each}
   </div>
 {/if}
 
-Then, we count the number of the letters which were not cancelled. Take note of the number
+Then, we count the number of letters which were not cancelled. Take note of the number.
 
 {#if showTutorial}
 {@const length = cancelLetters(names.first, names.second).concat(cancelLetters(names.second, names.first)).filter(letter => letter.cancelled !== true).length}
@@ -113,22 +114,21 @@ In our example, the number of letters which were not cancelled is <span>{length}
 
 {/if}
 
-Now, we get the modular 6 of that number. The reason is that, incase the number is greater than 6, which is the number of letters in the acronym FLAMES, it will round it back to a number which is less than 6.
+We then count the numbers through the letters FLAMES. 1 for F, 2 for L, and 3 for A till we reach 10. Upon reaching 7, you start back again at F till you finish. Then you compare your results to the table below.
+
+| Letter | Relationship  |
+| ------ | ------------- |
+| F      | Friends       |
+| L      | Lovers        |
+| A      | Admirers      |
+| M      | Marriage      |
+| E      | Enemy         |
+| S      | Secret Lovers |
 
 {#if showTutorial}
 {@const length = cancelLetters(names.first, names.second).concat(cancelLetters(names.second, names.first)).filter(letter => letter.cancelled !== true).length}
+{@const FLAMES = ['Friends','Lovers','Admirers','Marriage','Enemy','Secret Lovers']}
 
-The modular {length} of 6 is {length % 6}
+After counting through, we will get the letter **{FLAMES[(length - 1) % 6][0]}** which means the relationship between {names.first} and {names.second} is **{FLAMES[(length - 1) % 6]}**.
 
 {/if}
-
-We now compare the answer which we got to this little table
-
-| Number | Letter | Relationship  |
-| ------ | ------ | ------------- |
-| 0      | F      | Friends       |
-| 1      | L      | Lovers        |
-| 2      | A      | Admirers      |
-| 3      | M      | Marriage      |
-| 4      | E      | Enemy         |
-| 5      | S      | Secret Lovers |

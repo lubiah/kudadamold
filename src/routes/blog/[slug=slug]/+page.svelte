@@ -36,7 +36,6 @@
 		let fetch_requests = await fetch(`/blog/${data.metadata.slug}.json`);
 		let fetch_json = await fetch_requests.json();
 		hits = fetch_json.hits;
-		console.log(hits);
 		return () => {
 			Spy.stop();
 		};
