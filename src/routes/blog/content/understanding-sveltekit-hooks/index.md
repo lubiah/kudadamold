@@ -10,7 +10,7 @@ keywords:
   - sveltekit
 tags:
 	- svelte
-expiry: 2022-12-26
+expiry: 2023-02-30
 ---
 
 <p class="intro">
