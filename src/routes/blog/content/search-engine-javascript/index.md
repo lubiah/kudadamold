@@ -12,7 +12,7 @@ keywords:
   - javascript search data
   - html search tool
 date: 2021-09-16
-expiry: 2022-12-26
+expiry: 2023-06-24
 tags:
   - html
   - javascript
