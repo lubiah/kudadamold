@@ -19,7 +19,7 @@
 		"@playwright/test": "^1.29.1",
 		"@poppanator/sveltekit-svg": "^2.0.0",
 		"@sveltejs/adapter-node": "1.0.0",
-		"@sveltejs/kit": "1.0.1",
+		"@sveltejs/kit": "1.15.2",
 		"@types/html-minifier": "^4.0.2",
 		"@types/simplecrawler": "^1.1.2",
 		"autoprefixer": "^10.4.13",
